@@ -8,41 +8,76 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>nqou.net</title>
         <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
-        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" />
+        <link rel="stylesheet" href="css/listview-grid.css">
     </head>
     <body>
     <!--[if lt IE 7]>
     <p class="browsehappy">お使いのブラウザは有効期限が切れています． 是非，<a href="http://browsehappy.com/">新しいブラウザ</a>をお使いください．</p>
     <![endif]-->
-    <header>
-        <h1>nqou.net</h1>
-    </header>
+    <div data-role="page" data-theme="b" id="top" class="my-page">
+        <div data-role="header">
+            <h1>nqou.net</h1>
+        </div>
+        <div role="main" class="ui-content">
+            <ul data-role="listview" data-inset="true">
+                <li><a href="http://nqou.net">
+                    <img src="images/nqou_net.jpg" class="ui-li-thumb" />
+                    <h2>nqou.net</h2>
+                    <p>個人のページ</p>
+                    <p class="ui-li-aside">Personal</p>
+                </a></li>
+                <li><a href="http://www.nishimiyahara.net">
+                    <img src="http://www.nishimiyahara.net/wp-content/uploads/2014/02/iton.png" class="ui-li-thumb" />
+                    <h2>IT Office 西宮原</h2>
+                    <p>個人事業主っぽいページ</p>
+                    <p class="ui-li-aside">Business</p>
+                </a></li>
+                <li><a href="https://www.facebook.com/nobutaka.wakabayashi">
+                    <img src="images/FB-f-Logo__blue_512.png" class="ui-li-thumb" />
+                    <h2>Facebook</h2>
+                    <p>Facebookやってます</p>
+                    <p class="ui-li-aside">Facebook</p>
+                </a></li>
+                <li><a href="https://twitter.com/nqounet">
+                    <img src="images/Twitter_logo_blue.png" class="ui-li-thumb" />
+                    <h2>Twitter</h2>
+                    <p>Twitterやってます</p>
+                    <p class="ui-li-aside">Twitter</p>
+                </a></li>
+                <li><a href="https://github.com/nqounet">
+                    <img src="images/Octocat.jpg" class="ui-li-thumb" />
+                    <h2>Github</h2>
+                    <p>Githubやってます</p>
+                    <p class="ui-li-aside">Github</p>
+                </a></li>
+            </ul>
+        </div>
+        <div data-role="footer">
+            <h4>&copy; @nqounet</h4>
+        </div>
+    </div>
 
-  <ul>
-    <li><h2><a href="http://nqou.net">nqou.net</a></h2>
-    <li><h2><a href="http://www.nishimiyahara.net">IT Office 西宮原</a></h2>
-  </ul>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+    <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
-
-        <script>
-            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-            ga('create', 'UA-3538047-6', 'nqou.net');
-            ga('send', 'pageview');
-        </script>
-    </body>
+        ga('create', 'UA-3538047-6', 'nqou.net');
+        ga('send', 'pageview');
+    </script>
+</body>
 </html>
