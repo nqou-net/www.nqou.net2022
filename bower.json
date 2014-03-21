@@ -1,8 +1,6 @@
 {
   "name": "web-nqou-net",
   "private": true,
-  "dependencies": {
-    "modernizr": "~2.7.2"
-  },
+  "dependencies": {},
   "devDependencies": {}
 }
