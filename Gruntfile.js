@@ -289,6 +289,29 @@ module.exports = function (grunt) {
             }
         },
 
+        rsync: {
+            options: {
+                args: ['--verbose'],
+                exclude: ['.git*', '*.scss', 'node_modules'],
+                recursive: true
+            },
+            dist: {
+                options: {
+                    dryRun: true,
+                    src: '<%= config.app %>',
+                    dest: '<%= config.dist %>'
+                }
+            },
+            prod: {
+                options: {
+                    src: '<%= config.dist %>/',
+                    dest: '/home/nqounet/www/web-nqou_net/dist',
+                    host: 'sakura.nqounet',
+                    syncDestIgnoreExcl: true
+                }
+            },
+        },
+
         // Run some tasks in parallel to speed up build process
         concurrent: {
             server: [
@@ -352,6 +375,11 @@ module.exports = function (grunt) {
         'rev',
         'usemin',
         'htmlmin'
+    ]);
+
+    grunt.registerTask('deploy', [
+        'build',
+        'rsync:prod'
     ]);
 
     grunt.registerTask('default', [
