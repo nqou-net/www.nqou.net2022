@@ -1,6 +1,10 @@
 {
   "name": "web-nqou-net",
   "private": true,
-  "dependencies": {},
+  "dependencies": {
+    "jquery-snowfall": "*",
+    "modernizr": "~2.7.2",
+    "normalize-scss": "~3.0.1"
+  },
   "devDependencies": {}
 }
