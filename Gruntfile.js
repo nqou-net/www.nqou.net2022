@@ -377,6 +377,13 @@ module.exports = function (grunt) {
             },
         },
 
+        release: {
+            options: {
+                tagName: 'v<%= version %>',
+                npm: false
+            }
+        },
+
         // Run some tasks in parallel to speed up build process
         concurrent: {
             server: [
