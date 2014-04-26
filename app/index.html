@@ -1,22 +1,34 @@
 <!doctype html>
-<html lang="ja">
+<html lang="ja" class="no-js">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>nqou.net</title>
-        <meta name="description" content="">
+        <meta name="description" content="nqounetです。">
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <link rel="shortcut icon" href="apple-touch-icon.png">
         <link rel="shortcut icon" href="favicon.ico">
         <link rel="stylesheet" href="//code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" />
+        <!-- build:css styles/vendor.css -->
+        <!-- bower:css -->
+
+        <!-- endbower -->
+        <!-- endbuild -->
         <!-- build:css(.tmp) styles/main.css -->
         <link rel="stylesheet" href="styles/listview-grid.css">
         <link rel="stylesheet" href="styles/main.css">
         <!-- endbuild -->
         <script src="//code.jquery.com/jquery-1.9.1.min.js"></script>
         <script src="//code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+        <!-- build:js scripts/vendor/modernizr.js -->
+        <script src="../bower_components/modernizr/modernizr.js"></script>
+        <!-- endbuild -->
     </head>
     <body>
+        <!--[if lt IE 10]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
     <div data-role="page" data-theme="b" id="top" class="my-page">
         <div data-role="header">
             <h1>nqou.net</h1>
@@ -59,6 +71,13 @@
             <h4>&copy; @nqounet</h4>
         </div>
     </div>
+
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
