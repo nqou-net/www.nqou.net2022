@@ -1,8 +1,8 @@
 {
   "name": "web-nqou_net",
-  "version": "0.0.1",
-  "description":"My personal website.",
-  "homepage":"http://nqou.net",
+  "version": "0.0.2",
+  "description": "My personal website.",
+  "homepage": "http://nqou.net",
   "dependencies": {},
   "devDependencies": {
     "grunt": "~0.4.1",
