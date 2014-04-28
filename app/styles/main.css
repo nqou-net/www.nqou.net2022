@@ -304,3 +304,8 @@ textarea {
 }
 
 /* nqou.net */
+
+.version {
+    font-weight: normal;
+    /*float: right;*/
+}

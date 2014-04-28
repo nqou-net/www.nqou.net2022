@@ -483,7 +483,6 @@ module.exports = function (grunt) {
     ]);
 
     grunt.registerTask('deploy', [
-        'release',
         'build',
         'rsync:prod'
     ]);
