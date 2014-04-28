@@ -402,6 +402,17 @@ module.exports = function (grunt) {
             }
         },
 
+        replace: {
+            siteInformation: {
+                src: ['<%= config.dist %>/*.html'],
+                dest: '<%= config.dist %>/',
+                replacements: [{
+                    from: '\{\{pkg.version\}\}',
+                    to: 'v<%= pkg.version %>'
+                }]
+            }
+        },
+
         // Run some tasks in parallel to speed up build process
         concurrent: {
             server: [
@@ -464,6 +475,7 @@ module.exports = function (grunt) {
         'cssmin',
         'uglify',
         'copy:dist',
+        'replace',
         'modernizr',
         'rev',
         'usemin',
@@ -471,6 +483,7 @@ module.exports = function (grunt) {
     ]);
 
     grunt.registerTask('deploy', [
+        'release',
         'build',
         'rsync:prod'
     ]);
