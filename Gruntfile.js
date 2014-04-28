@@ -18,11 +18,14 @@ module.exports = function (grunt) {
     // Configurable paths
     var config = {
         app: 'app',
-        dist: 'dist'
+        dist: 'dist',
+        doc: 'yuidocs'
     };
 
     // Define the configuration for all the tasks
     grunt.initConfig({
+        // Package settings
+        pkg: grunt.file.readJSON('package.json'),
 
         // Project settings
         config: config,
@@ -121,6 +124,7 @@ module.exports = function (grunt) {
                     ]
                 }]
             },
+            docs: '<%= config.doc %>',
             server: '.tmp'
         },
 
@@ -384,6 +388,20 @@ module.exports = function (grunt) {
             }
         },
 
+        yuidoc: {
+            compile: {
+                name: '<%= pkg.name %>',
+                description: '<%= pkg.description %>',
+                version: '<%= pkg.version %>',
+                url: '<%= pkg.homepage %>',
+                options: {
+                    paths: '<%= config.app %>',
+                    // themedir: 'path/to/custom/theme/',
+                    outdir: '<%= config.doc %>'
+                }
+            }
+        },
+
         // Run some tasks in parallel to speed up build process
         concurrent: {
             server: [
@@ -455,6 +473,11 @@ module.exports = function (grunt) {
     grunt.registerTask('deploy', [
         'build',
         'rsync:prod'
+    ]);
+
+    grunt.registerTask('docs', [
+        'clean:docs',
+        'yuidoc'
     ]);
 
     grunt.registerTask('default', [
