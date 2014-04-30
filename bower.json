@@ -3,7 +3,8 @@
   "private": true,
   "dependencies": {
     "jquery-snowfall": "*",
-    "modernizr": "~2.7.2"
+    "modernizr": "~2.7.2",
+    "loglevel": "~0.6.0"
   },
   "devDependencies": {}
 }

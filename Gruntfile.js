@@ -407,9 +407,19 @@ module.exports = function (grunt) {
                 src: ['<%= config.dist %>/*.html'],
                 dest: '<%= config.dist %>/',
                 replacements: [{
-                    from: '\{\{pkg.version\}\}',
+                    from: '{{pkg.version}}',
                     to: 'v<%= pkg.version %>'
                 }]
+            }
+        },
+
+        removelogging: {
+            options: {
+                namespace: ['log'],
+                methods: ['setLevel', 'trace', 'debug', 'info']
+            },
+            dist: {
+                src: '.tmp/concat/scripts/*.js'
             }
         },
 
@@ -473,6 +483,7 @@ module.exports = function (grunt) {
         'autoprefixer',
         'concat',
         'cssmin',
+        'removelogging',
         'uglify',
         'copy:dist',
         'replace',
