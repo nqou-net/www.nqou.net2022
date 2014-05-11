@@ -227,7 +227,7 @@ module.exports = function (grunt) {
             options: {
                 dest: '<%= config.dist %>'
             },
-            html: '<%= config.app %>/*.html'
+            html: '<%= config.app %>/usemin.html'
         },
 
         // Performs rewrites based on rev and the useminPrepare configuration
@@ -361,24 +361,19 @@ module.exports = function (grunt) {
         rsync: {
             options: {
                 args: ['--verbose'],
-                exclude: ['.git*', '*.scss', 'node_modules'],
-                recursive: true
+                exclude: ['.git*', '*.scss', 'node_modules', 'usemin.html', 'samples'],
+                recursive: true,
+                src: '<%= config.dist %>/',
+                dest: '/home/nqounet/www/web-nqou_net/dist',
+                host: 'sakura.nqounet',
+                syncDestIgnoreExcl: true
             },
             dist: {
                 options: {
                     dryRun: true,
-                    src: '<%= config.app %>',
-                    dest: '<%= config.dist %>'
                 }
             },
-            prod: {
-                options: {
-                    src: '<%= config.dist %>/',
-                    dest: '/home/nqounet/www/web-nqou_net/dist',
-                    host: 'sakura.nqounet',
-                    syncDestIgnoreExcl: true
-                }
-            },
+            prod: {},
         },
 
         release: {
