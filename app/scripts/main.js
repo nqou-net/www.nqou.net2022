@@ -7,7 +7,30 @@
     'use strict';
     var
     modules,
+    vars,
     log,
+    /**
+    localize
+    @method setVars
+    @private
+    **/
+    setVars = function(){
+        var namespaces = ['modules', 'vars'];
+        namespaces.forEach(function(value){
+            window[value] = {};
+        });
+        modules = window.modules;
+        vars = window.vars;
+        log = window.log || window.console.error('loglevel.js required.');
+        log.setLevel('debug');
+    },
+    initVars = function(){
+        $('.jq-vars').each(function(index, el){
+            $.extend(vars, $(el).data());
+        });
+        log.debug('vars:', vars);
+    }
+
     /**
     snow fall
     @method snow
@@ -22,18 +45,25 @@
             round: true
         });
     },
-    setVars = function(){
-        modules = window.modules || {};
-        log = window.log;
-        log.setLevel('debug');
-    },
+
     /**
     init handlers
-    @method initHandlers
+    @method setHandlers
     @private
     **/
-    initHandlers = function(){
+    setHandlers = function(){
         $('#jq-run-snow').each(snow);
+    },
+
+    /**
+    ready
+    @method ready
+    @private
+    **/
+    ready = function(){
+        initVars();
+        setHandlers();
+        modules.main = {};
     },
     /**
     init
@@ -42,9 +72,7 @@
     **/
     init = function(){
         setVars();
-        initHandlers();
-        modules.main = {};
-        window.modules = modules;
+        $(ready);
     };
-    $(init);
+    init();
 }(jQuery, window, document));
