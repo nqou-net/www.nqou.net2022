@@ -479,12 +479,12 @@ module.exports = function (grunt) {
         'modernizr',
         'rev',
         'usemin',
-        'htmlmin',
-        'compress:all'
+        'htmlmin'
     ]);
 
     grunt.registerTask('deploy', [
         'build',
+        'compress:all',
         'rsync:prod'
     ]);
 
