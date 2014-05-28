@@ -386,6 +386,37 @@ module.exports = function (grunt) {
             }
         },
 
+        compress: {
+            all: {
+                options: {
+                    mode: 'gzip',
+                    level: 9
+                },
+                files: [{
+                    expand: true,
+                    cwd: '<%= config.dist %>',
+                    dest: '<%= config.dist %>',
+                    src: ['**/*.js'],
+                    ext: '.js.gz',
+                    extDot: 'last'
+                },{
+                    expand: true,
+                    cwd: '<%= config.dist %>',
+                    dest: '<%= config.dist %>',
+                    src: ['**/*.css'],
+                    ext: '.css.gz',
+                    extDot: 'last'
+                },{
+                    expand: true,
+                    cwd: '<%= config.dist %>',
+                    dest: '<%= config.dist %>',
+                    src: ['**/*.html'],
+                    ext: '.html.gz',
+                    extDot: 'last'
+                }]
+            }
+        },
+
         // Run some tasks in parallel to speed up build process
         concurrent: {
             server: [
@@ -419,11 +450,6 @@ module.exports = function (grunt) {
         ]);
     });
 
-    grunt.registerTask('server', function (target) {
-        grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
-        grunt.task.run([target ? ('serve:' + target) : 'serve']);
-    });
-
     grunt.registerTask('test', function (target) {
         if (target !== 'watch') {
             grunt.task.run([
@@ -453,7 +479,8 @@ module.exports = function (grunt) {
         'modernizr',
         'rev',
         'usemin',
-        'htmlmin'
+        'htmlmin',
+        'compress:all'
     ]);
 
     grunt.registerTask('deploy', [
