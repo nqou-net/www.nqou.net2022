@@ -29,7 +29,7 @@
             $.extend(vars, $(el).data());
         });
         log.debug('vars:', vars);
-    }
+    },
 
     /**
     snow fall
