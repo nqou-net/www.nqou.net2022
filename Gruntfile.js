@@ -478,7 +478,6 @@ module.exports = function (grunt) {
         'copy:dist',
         'replace',
         'modernizr',
-        'rev',
         'usemin',
         'htmlmin'
     ]);
