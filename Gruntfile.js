@@ -286,6 +286,7 @@ module.exports = function (grunt) {
                     cwd: '<%= config.app %>',
                     dest: '<%= config.dist %>',
                     src: [
+                        'api/**',
                         '*.{ico,png,txt}',
                         '.htaccess',
                         'images/{,*/}*.webp',
