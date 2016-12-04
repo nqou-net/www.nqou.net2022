@@ -1,0 +1,3 @@
+[submodule "themes/casual"]
+	path = themes/casual
+	url = git@github.com:nqounet/hexo-theme-casual.git
