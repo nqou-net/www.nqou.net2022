@@ -1,9 +1,7 @@
-node_modules
-dist
-.tmp
-.sass-cache
-bower_components
-test/bower_components
-
-# yuidoc
-yuidocs
+.DS_Store
+Thumbs.db
+db.json
+*.log
+node_modules/
+public/
+.deploy*/
