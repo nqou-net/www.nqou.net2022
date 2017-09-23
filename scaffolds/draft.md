@@ -1,4 +1,5 @@
 ---
 title: {{ title }}
-tags: undef
+tags:
+    - undef
 ---
