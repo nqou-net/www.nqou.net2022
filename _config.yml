@@ -70,6 +70,7 @@ theme: casual
 deploy:
     type: git
     repo: git@github.com:nqou-net/nqou-net.github.io.git
+  branch: gh-pages
 
 # deploy:
 #   type: rsync
