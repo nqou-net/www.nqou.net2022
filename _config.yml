@@ -69,7 +69,7 @@ theme: casual
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
     type: git
-    repo: git@github.com:nqou-net/nqou-net.github.io.git
+    repo: git@github.com:nqou-net/www.nqou.net.git
     branch: gh-pages
 
 # deploy:
