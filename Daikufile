@@ -1,0 +1,7 @@
+desc 'deploy';
+task deploy => sub {
+    sh qw{hexo clean};
+    sh qw{hexo deploy};
+};
+
+task default => sub { sh q{daiku -T} };
