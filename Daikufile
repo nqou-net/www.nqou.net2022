@@ -1,6 +1,7 @@
 desc 'deploy';
 task deploy => sub {
     sh qw{hexo clean};
+    sh qw{tools/rename_posts};
     sh qw{hexo deploy};
 };
 
