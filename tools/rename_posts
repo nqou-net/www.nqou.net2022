@@ -1,0 +1,27 @@
+#!/usr/bin/env perl
+use utf8;
+use strict;
+use warnings;
+use feature 'say';
+use open qw/:encoding(utf8) :std/;
+use Data::Printer {deparse => 1, caller_info => 1};
+
+use Path::Tiny qw(path);
+use YAML qw(Load);
+use Time::Moment;
+
+my $root = path(__FILE__)->absolute->parent(2);
+
+# 記事を取得
+my @posts = path($root, 'source', '_posts')->children;
+
+# 記事から時間を取得して、名称変更
+for my $post (@posts) {
+    my ($yaml) = split /\n---/, $post->slurp_utf8;
+    my $info = Load($yaml);
+    my $date = join('T', split(/\s/, $info->{date})) . '+09';
+    my $tm       = Time::Moment->from_string($date);
+    my $basename = $tm->strftime('%Y%m%d%H%M%S');
+    my $new_post = path($post->parent, qq{$basename.md})->absolute;
+    $post->move($new_post->stringify);
+}
