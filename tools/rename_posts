@@ -6,8 +6,6 @@ use Path::Tiny qw(path);
 use YAML         ();
 use Time::Moment ();
 
-use Data::Printer {deparse => 1, caller_info => 1};
-
 my $root = path(__FILE__)->absolute->parent(2);
 
 # 記事を取得
@@ -25,21 +23,21 @@ while (my $post = $iterator->()) {
     my $info = YAML::Load($yaml);
 
     # 時間がISO8601でない場合は変換
-    next unless -1 < index($info->{date}, ' ');
+    if (-1 < index($info->{date}, ' ')) {
+        my $date     = join('T', split(/\s/, $info->{date})) . 'Z';
+        my $tm       = Time::Moment->from_string($date);
+        my $new_date = $tm->with_offset_same_local($offset);
+        $info->{date} = $new_date->to_string;
 
-    my $date     = join('T', split(/\s/, $info->{date})) . 'Z';
-    my $tm       = Time::Moment->from_string($date);
-    my $new_date = $tm->with_offset_same_local($offset);
-    $info->{date} = $new_date->to_string;
-
-    # 結合して出力
-    my $dump_yaml = YAML::Dump($info);
-    my $body = join qq{\n---}, $dump_yaml, $after;
-    $post->spew_utf8($body);
+        # 結合して出力
+        my $dump_yaml = YAML::Dump($info);
+        my $body = join qq{\n---}, $dump_yaml, $after;
+        $post->spew_utf8($body);
+    }
 
     # 時間でファイル名を変更
-    $tm = Time::Moment->from_string($info->{date})->at_utc;
-    my $path = $tm->strftime('%Y/%m/%d/%H%M%S');
+    my $tm       = Time::Moment->from_string($info->{date})->at_utc;
+    my $path     = $tm->strftime('%Y/%m/%d/%H%M%S');
     my $new_post = path($posts_dir, qq{$path.md})->absolute;
     $new_post->parent->mkpath;
     $post->move($new_post->stringify);
