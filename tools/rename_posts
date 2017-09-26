@@ -3,8 +3,10 @@ use utf8;
 use strict;
 use warnings;
 use Path::Tiny qw(path);
-use YAML qw(Load);
-use Time::Moment;
+use YAML         ();
+use Time::Moment ();
+
+use Data::Printer {deparse => 1, caller_info => 1};
 
 my $root = path(__FILE__)->absolute->parent(2);
 
@@ -12,15 +14,33 @@ my $root = path(__FILE__)->absolute->parent(2);
 my $posts_dir = path($root, 'source', '_posts');
 my $iterator = $posts_dir->iterator(+{recurse => 1});
 
+# タイムゾーンを取得
+my $tm     = Time::Moment->now;
+my $offset = $tm->offset;
+
 # 記事から時間を取得して、名称変更
 while (my $post = $iterator->()) {
     next unless $post->is_file;
-    my ($yaml) = split /\n---/, $post->slurp_utf8;
-    my $info = Load($yaml);
-    my $date     = join('T', split(/\s/, $info->{date})) . '+09';
+    my ($yaml, $after) = split /\n---/, $post->slurp_utf8;
+    my $info = YAML::Load($yaml);
+
+    # 時間がISO8601でない場合は変換
+    next unless -1 < index($info->{date}, ' ');
+
+    my $date     = join('T', split(/\s/, $info->{date})) . 'Z';
     my $tm       = Time::Moment->from_string($date);
-    my $basename = $tm->strftime('%Y/%m/%d/%H%M%S');
-    my $new_post = path($posts_dir, qq{$basename.md})->absolute;
+    my $new_date = $tm->with_offset_same_local($offset);
+    $info->{date} = $new_date->to_string;
+
+    # 結合して出力
+    my $dump_yaml = YAML::Dump($info);
+    my $body = join qq{\n---}, $dump_yaml, $after;
+    $post->spew_utf8($body);
+
+    # 時間でファイル名を変更
+    $tm = Time::Moment->from_string($info->{date})->at_utc;
+    my $path = $tm->strftime('%Y/%m/%d/%H%M%S');
+    my $new_post = path($posts_dir, qq{$path.md})->absolute;
     $new_post->parent->mkpath;
     $post->move($new_post->stringify);
 }
