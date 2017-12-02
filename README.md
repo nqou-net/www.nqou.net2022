@@ -12,10 +12,15 @@ npm install
 
 ## new post
 ```
-hexo new post <title>
+hexo new [layout] <title>
+```
+
+## preview
+```
+hexo server
 ```
 
 ## deploy
 ```
-hexo deploy
+daiku deploy
 ```
