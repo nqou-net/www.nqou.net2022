@@ -6,7 +6,7 @@
   "repository": "git@github.com:nqounet/web-nqou_net.git",
   "private": true,
   "hexo": {
-    "version": "3.3.9"
+    "version": "3.4.2"
   },
   "dependencies": {
     "hexo": "^3.4.2",
