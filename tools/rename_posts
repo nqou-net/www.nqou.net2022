@@ -57,7 +57,7 @@ while (my $post = $iterator->()) {
     # my $tag = 'perl';
     # if ($after =~ /$tag\b/i) {
     #     my $tags = $info->{tags};
-    # 
+    #
     #     # undef が含まれていたら削除する
     #     $tags = +[grep { $_ ne 'undef' and $_ ne $tag } @{$tags}];
     #     push @{$tags}, $tag;
