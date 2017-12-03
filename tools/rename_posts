@@ -53,6 +53,18 @@ while (my $post = $iterator->()) {
         $modified = 1;
     }
 
+    # # 本文に文字列が含まれていたらタグを追加
+    # my $tag = 'linux';
+    # if ($after =~ /$tag\b/i) {
+    #     my $tags = $info->{tags};
+    #
+    #     # undef が含まれていたら削除する
+    #     $tags = +[grep { $_ ne 'undef' and $_ ne $tag } @{$tags}];
+    #     push @{$tags}, $tag;
+    #     $info->{tags} = +[sort @{$tags}];
+    #     $modified = 1;
+    # }
+
     # 変更されていたら保存する
     if ($modified) {
 
