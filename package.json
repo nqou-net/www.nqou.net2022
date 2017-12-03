@@ -9,6 +9,9 @@
     "version": "3.4.2"
   },
   "dependencies": {
+    "connect": "^3.6.5",
+    "constantinople": "^3.1.0",
+    "debug": "^3.1.0",
     "hexo": "^3.4.2",
     "hexo-browsersync": "^0.2.0",
     "hexo-deployer-git": "^0.3.1",
@@ -28,6 +31,8 @@
     "hexo-server": "^0.2.2",
     "jstransformer": "^1.0.0",
     "pug": "^2.0.0-rc.4",
-    "uglify-js": "^3.2.0"
+    "serve-static": "^1.13.1",
+    "sprintf-js": "^1.1.1",
+    "uglify-js": "^3.2.1"
   }
 }
