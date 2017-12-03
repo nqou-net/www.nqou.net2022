@@ -46,11 +46,7 @@ while (my $post = $iterator->()) {
         $modified = 1;
     }
 
-    # 本文のタグを除去
-    if (-1 < index($after, '<!--more-->')) {
-        $after =~ s{<!--more-->}{}msg;
-        $modified = 1;
-    }
+    # 変更されていたら保存する
     if ($modified) {
 
         # 結合して出力
