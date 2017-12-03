@@ -22,12 +22,39 @@ while (my $post = $iterator->()) {
     my ($yaml, $after) = split /\n---/, $post->slurp_utf8;
     my $info = YAML::Load($yaml);
 
-    # 時間がISO8601でない場合は変換
-    if (-1 < index($info->{date}, ' ')) {
-        my $date     = join('T', split(/\s/, $info->{date})) . 'Z';
-        my $tm       = Time::Moment->from_string($date);
-        my $new_date = $tm->with_offset_same_local($offset);
-        $info->{date} = $new_date->to_string;
+    my $modified;
+
+    # ISO8601を持っていない場合はdateからISOを作成
+    unless (exists $info->{iso8601}) {
+
+        # すでに変換済みであればそのまま渡す
+        if (-1 < index($info->{date}, 'T')) {
+            $info->{iso8601} = $info->{date};
+        }
+        else {
+            my $date     = join('T', split(/\s/, $info->{date})) . 'Z';
+            my $tm       = Time::Moment->from_string($date);
+            my $new_date = $tm->with_offset_same_local($offset);
+            $info->{iso8601} = $new_date->to_string;
+        }
+
+        # date はURLのために日本時間へ統一
+        my $tm       = Time::Moment->from_string($info->{iso8601});
+        my $url_date = $tm->with_offset_same_instant(540);
+        $info->{date} = $url_date->strftime('%F %T');
+        $modified = 1;
+    }
+
+    # 本文のタグを除去
+    if (-1 < index($after, '<div')) {
+        $after =~ s{<div class="entry-body">(.*)</div>}{$1}msg;
+        $modified = 1;
+    }
+    if (-1 < index($after, '<!--more-->')) {
+        $after =~ s{<!--more-->}{}msg;
+        $modified = 1;
+    }
+    if ($modified) {
 
         # 結合して出力
         my $dump_yaml = YAML::Dump($info);
@@ -36,7 +63,7 @@ while (my $post = $iterator->()) {
     }
 
     # 時間でファイル名を変更
-    my $tm       = Time::Moment->from_string($info->{date})->at_utc;
+    my $tm       = Time::Moment->from_string($info->{iso8601})->with_offset_same_instant(540);
     my $path     = $tm->strftime('%Y/%m/%d/%H%M%S');
     my $new_post = path($posts_dir, qq{$path.md})->absolute;
     $new_post->parent->mkpath;
