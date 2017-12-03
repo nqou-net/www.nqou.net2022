@@ -17,9 +17,9 @@ categories:
 <p>Mooについて深く知りたい方は、原典を見ることをオススメします。</p>
 
 <ul>
-<li><a href="http://perlnabe.connpass.com/" target="_blank">Perl鍋</a></li>
-<li><a href="https://naniwaperl.doorkeeper.jp/" target="_blank">なにわPerl</a></li>
-<li><a href="https://metacpan.org/pod/Moo" target="_blank">Moo</a></li>
+<li><a href="http://perlnabe.connpass.com/">Perl鍋</a></li>
+<li><a href="https://naniwaperl.doorkeeper.jp/">なにわPerl</a></li>
+<li><a href="https://metacpan.org/pod/Moo">Moo</a></li>
 </ul>
 
 <!--more-->
@@ -38,7 +38,7 @@ categories:
 
 <p>Perlの実行環境が無い場合は、Perl入学式の資料を見ながら環境構築をしてみましょう。</p>
 
-<p><a href="https://github.com/perl-entrance-org/workshop-2015-01/blob/master/slide.md" target="_blank">https://github.com/perl-entrance-org/workshop-2015-01/blob/master/slide.md</a></p>
+<p><a href="https://github.com/perl-entrance-org/workshop-2015-01/blob/master/slide.md">https://github.com/perl-entrance-org/workshop-2015-01/blob/master/slide.md</a></p>
 
 <p>つまづいたらTwitterなどで「#Perl入学式」というハッシュタグを付けてつぶやいてみると、誰かが助けてくれるかもしれません。</p>
 
