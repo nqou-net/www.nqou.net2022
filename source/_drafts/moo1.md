@@ -42,7 +42,7 @@ categories:
 
 <p>つまづいたらTwitterなどで「#Perl入学式」というハッシュタグを付けてつぶやいてみると、誰かが助けてくれるかもしれません。</p>
 
-<pre class="lang:perl">
+```perl
 package MyApp {
     use utf8;
     use Moo;
@@ -57,7 +57,7 @@ package MyApp {
 my $app = MyApp->new;
 $app->hoge('ほげ');
 $app->show;
-</pre>
+```
 
 <p>上記のコードを「hoge.pl」として保存してから、ターミナルで以下のように入力し、書いたプログラム（コード）を実行してみましょう。</p>
 
@@ -65,10 +65,10 @@ $app->show;
 
 <p>まずはコピペで動くのが確認できたら、改めて書いてみて、実行してみてください。</p>
 
-<pre class="lang:shell">
+```bash
 cpanm Moo
 perl hoge.pl
-</pre>
+```
 
 <p>「ほげ」という風に表示されましたか？</p>
 

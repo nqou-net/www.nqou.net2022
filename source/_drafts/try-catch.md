@@ -24,7 +24,7 @@ categories:
 
 <p>コードのイメージはこんな感じ。</p>
 
-<pre class="lang:perl">
+```perl
 my $obj;
 try {
   $obj = MyObj->new($row);
@@ -33,7 +33,7 @@ catch {
   return $row->id;
 };
 ...
-</pre>
+```
 
 <p>で、テストを書いて実行すると、何故かIDが返ってくるのでおかしいなと。</p>
 
@@ -53,7 +53,7 @@ catch {
 
 <h3>元のスクリプト</h3>
 
-<pre class="lang:perl">
+```perl
 use strict;
 use warnings;
 try {
@@ -62,11 +62,11 @@ try {
 catch {
     print "catch\n";
 };
-</pre>
+```
 
 <h3>上記の解析後のスクリプト</h3>
 
-<pre class="lang:perl">
+```perl
 use warnings;
 use strict;
 try {
@@ -74,13 +74,13 @@ try {
 } (catch {
     print "catch\n"
 } );
-</pre>
+```
 
 <p><code>use Try::Tiny;</code>すると、以下の様な感じになります。</p>
 
 <h3>Try::Tinyした元のスクリプト</h3>
 
-<pre class="lang:perl">
+```perl
 use strict;
 use warnings;
 use Try::Tiny;
@@ -90,11 +90,11 @@ try {
 catch {
     print "catch\n";
 };
-</pre>
+```
 
 <h3>上記の解析後のスクリプト</h3>
 
-<pre class="lang:perl">
+```perl
 use Try::Tiny;
 use warnings;
 use strict;
@@ -105,5 +105,5 @@ try sub {
     print "catch\n";
 }
 );
-</pre>
+```
     	
