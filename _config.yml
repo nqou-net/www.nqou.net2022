@@ -5,7 +5,10 @@
 # Site
 title: nqou.net
 subtitle: nqou.net
-description: nqou.net
+description: No Perl, No Life.
+keywords:
+    - mojolicious
+    - perl
 author: nqounet
 language: ja
 timezone:
