@@ -2,7 +2,7 @@
   "name": "web-nqou_net",
   "version": "0.1.1",
   "description": "My personal website.",
-  "homepage": "http://nqou.net",
+  "homepage": "http://www.nqou.net",
   "repository": "git@github.com:nqounet/web-nqou_net.git",
   "private": true,
   "hexo": {
