@@ -17,7 +17,7 @@ categories:
 <p>Mooについて深く知りたい方は、原典を見ることをオススメします。</p>
 
 <ul>
-<li><a href="http://perlnabe.connpass.com/">Perl鍋</a></li>
+<li><a href="https://perlnabe.connpass.com/">Perl鍋</a></li>
 <li><a href="https://naniwaperl.doorkeeper.jp/">なにわPerl</a></li>
 <li><a href="https://metacpan.org/pod/Moo">Moo</a></li>
 </ul>
