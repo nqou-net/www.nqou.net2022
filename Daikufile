@@ -5,4 +5,9 @@ task deploy => sub {
     sh qw{hexo deploy};
 };
 
+desc 'new post';
+task new => sub {
+    sh qw{hexo new post};
+};
+
 task default => sub { sh q{daiku -T} };
