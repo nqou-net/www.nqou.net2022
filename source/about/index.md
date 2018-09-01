@@ -53,7 +53,7 @@ IT Office 西宮原（大阪市淀川区）を設立。Perlプログラマとし
 
 もしご興味がございましたらご覧ください。
 
-また、広報の拠点として[プログラマーズ](http://www.seprogrammerjobs.com/)にも登録しています。
+また、広報の拠点として<a href="http://www.seprogrammerjobs.com/">プログラマーズ</a>にも登録しています。
 
 ## ご注意とお願い
 
