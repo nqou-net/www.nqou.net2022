@@ -21,7 +21,7 @@ categories:
 
 <p><code>perl
 my $filename = 'file.txt';
-open my $fh, '&lt;', $filename or die qq{can not open `$filename`};</code></p>
+open my $fh, '<', $filename or die qq{can not open `$filename`};</code></p>
 
 <p>とはいえ、モジュールが使えないような環境下でもファイル操作は必要でしょうから、たまにはopenを使って見ようと思います。</p>
     	
