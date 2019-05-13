@@ -9,9 +9,9 @@
     "version": "3.8.0"
   },
   "dependencies": {
-    "connect": "^3.6.5",
-    "constantinople": "^3.1.0",
-    "debug": "^3.1.0",
+    "connect": "^3.6.6",
+    "constantinople": "^3.1.2",
+    "debug": "^4.1.1",
     "hexo": "^3.8.0",
     "hexo-browsersync": "^0.3.0",
     "hexo-deployer-git": "^1.0.0",
@@ -23,15 +23,15 @@
     "hexo-generator-tag": "^0.2.0",
     "hexo-helper-simple-tagcloud": "^0.2.0",
     "hexo-renderer-jade": "^0.4.1",
-    "hexo-renderer-marked": "^0.3.0",
+    "hexo-renderer-marked": "^1.0.1",
     "hexo-renderer-scss": "^1.2.0",
     "hexo-renderer-stylus": "^0.3.3",
-    "hexo-server": "^0.2.2",
+    "hexo-server": "^0.3.3",
     "jstransformer": "^1.0.0",
-    "marked": "^0.3.12",
-    "pug": "^2.0.0-rc.4",
-    "serve-static": "^1.13.1",
-    "sprintf-js": "^1.1.1",
-    "uglify-js": "^3.2.1"
+    "marked": "^0.6.2",
+    "pug": "^2.0.3",
+    "serve-static": "^1.14.1",
+    "sprintf-js": "^1.1.2",
+    "uglify-js": "^3.5.12"
   }
 }
