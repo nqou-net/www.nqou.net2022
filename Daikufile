@@ -10,4 +10,11 @@ task new => sub {
     sh qw{hexo new post};
 };
 
+desc 'gutil';
+task 'gutil' => sub {
+    sh qw{hexo clean};
+    sh qw{tools/rename_posts};
+    sh qw{gsutil -m rsync -R public gs://beta.nqou.net};
+};
+
 task default => sub { sh q{daiku -T} };
