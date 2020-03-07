@@ -1,8 +1,8 @@
 {
-  "name": "nqou-net/www.nqou.net",
+  "name": "www.nqou.net",
   "version": "0.1.1",
   "description": "My personal website.",
-  "homepage": "http://www.nqou.net",
+  "homepage": "https://www.nqou.net",
   "repository": "git@github.com/nqou-net/www.nqou.net.git",
   "private": true,
   "hexo": {
@@ -30,7 +30,6 @@
     "hexo-generator-sitemap": "^2.0.0",
     "hexo-generator-tag": "^1.0.0",
     "hexo-helper-simple-tagcloud": "^0.2.0",
-    "hexo-renderer-jade": "^0.5.0",
     "hexo-renderer-marked": "^2.0.0",
     "hexo-renderer-pug": "^1.0.0",
     "hexo-renderer-scss": "^1.2.0",
