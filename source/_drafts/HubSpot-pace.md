@@ -2,10 +2,6 @@
 title: HubSpot/pace
 tags:
   - undef
-id: 2779
-comment: false
-categories:
-  - 情報技術について
 ---
 
 <p><a href="https://twitter.com/nqounet">@nqounet</a>です。</p>

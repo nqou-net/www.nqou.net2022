@@ -2,10 +2,6 @@
 title: humane.js
 tags:
   - undef
-id: 2745
-comment: false
-categories:
-  - 情報技術について
 ---
 
 <ul>

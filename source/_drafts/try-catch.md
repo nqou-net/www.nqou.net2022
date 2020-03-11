@@ -2,10 +2,6 @@
 title: 'try { ... } catch { ... }; でうっかりハマったので調べてみた'
 tags:
   - undef
-id: 3239
-comment: false
-categories:
-  - 情報技術について
 ---
 
 <p><a href="https://twitter.com/nqounet">@nqounet</a>です。</p>

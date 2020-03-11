@@ -2,10 +2,6 @@
 title: Perl でファイルを扱う時に open なんて使うな
 tags:
   - undef
-id: 3272
-comment: false
-categories:
-  - 情報技術について
 ---
 
 <p>おはようございます。

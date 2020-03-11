@@ -2,10 +2,6 @@
 title: 第2回-Mooで覚えるオブジェクト指向プログラミング
 tags:
   - undef
-id: 3233
-comment: false
-categories:
-  - 情報技術について
 ---
 
 <p><a href="https://twitter.com/nqounet">@nqounet</a>です。</p>
