@@ -4,20 +4,20 @@ tags:
   - undef
 ---
 
-<p>おはようございます。
-若林（<a href="https://twitter.com/nqounet">@nqounet</a>）です。</p>
+おはようございます。
+若林（[@nqounet](https://twitter.com/nqounet)）です。
 
-<p>Perl でファイルを扱うときは open を使うのですが、正しく使うのは結構面倒なので、私はいつも Path::Tiny でファイル操作をしています。</p>
+Perl でファイルを扱うときは open を使うのですが、正しく使うのは結構面倒なので、私はいつも Path::Tiny でファイル操作をしています。
 
-<p>標準モジュールではないので cpanm などを使用してインストールする必要があるのですが、今どき cpanm が使えない環境で Perl を使う事自体ありえないと思うので</p>
+標準モジュールではないので cpanm などを使用してインストールする必要があるのですが、今どき cpanm が使えない環境で Perl を使う事自体ありえないと思うので
 
 <!--more-->
 
-<h2>openは3引数</h2>
+## openは3引数
 
-<p><code>perl
+```perl
 my $filename = 'file.txt';
-open my $fh, '<', $filename or die qq{can not open `$filename`};</code></p>
+open my $fh, '<', $filename or die qq{can not open `$filename`};
+```
 
-<p>とはいえ、モジュールが使えないような環境下でもファイル操作は必要でしょうから、たまにはopenを使って見ようと思います。</p>
-    	
+とはいえ、モジュールが使えないような環境下でもファイル操作は必要でしょうから、たまにはopenを使って見ようと思います。
