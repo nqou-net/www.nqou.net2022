@@ -10,12 +10,12 @@
   },
   "dependencies": {
     "@hapi/cryptiles": "^5.1.0",
-    "@hapi/hoek": "^9.1.0",
-    "acorn": "^7.4.0",
+    "@hapi/hoek": "^9.1.1",
+    "acorn": "^7.4.1",
     "connect": "^3.7.0",
     "constantinople": "^4.0.1",
     "debug": "^4.1.1",
-    "engine.io-client": "^3.4.3",
+    "engine.io-client": "^3.5.1",
     "eslint": "^6.8.0",
     "express": "^4.17.1",
     "extend": "^3.0.2",
@@ -38,14 +38,14 @@
     "jstransformer": "^1.0.0",
     "marked": "^0.8.2",
     "merge": "^1.2.1",
-    "mime": "^2.4.6",
+    "mime": "^2.5.2",
     "pug": "^2.0.4",
     "randomatic": "^3.1.1",
     "serve-static": "^1.14.1",
-    "socket.io": "^2.4.0",
-    "socket.io-client": "^2.3.0",
+    "socket.io": "^2.4.1",
+    "socket.io-client": "^2.4.0",
     "sprintf-js": "^1.1.2",
-    "tar": "^6.0.5",
-    "uglify-js": "^3.10.4"
+    "tar": "^6.1.0",
+    "uglify-js": "^3.13.4"
   }
 }
