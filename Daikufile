@@ -16,4 +16,9 @@ task drafts => sub {
     sh qw{hugo list drafts};
 };
 
+desc 'develop server';
+task server => sub {
+    sh qw{hugo server -D};
+};
+
 task default => sub { sh q{daiku -T} };
