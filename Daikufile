@@ -1,0 +1,13 @@
+desc 'deploy';
+task deploy => sub {
+#    sh qw{hugo clean};
+    sh qw{tools/rename_posts.pl};
+#    sh qw{hugo deploy};
+};
+
+desc 'new post';
+task new => sub {
+    sh qw{hugo new post/new.md};
+};
+
+task default => sub { sh q{daiku -T} };
