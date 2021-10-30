@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.88.1" />
+
+  <title>ゲームネタ：航空機を作ろう &middot; nqou.net</title>
+
+  <meta name="description" content="" />
+
+  
+
+<meta itemprop="name" content="ゲームネタ：航空機を作ろう">
+<meta itemprop="description" content="航空機をゲーム的に設計してみたい、という感じでメモをしたこと"><meta itemprop="datePublished" content="2008-02-12T15:57:23+09:00" />
+<meta itemprop="dateModified" content="2008-02-12T15:57:23+09:00" />
+<meta itemprop="wordCount" content="938">
+<meta itemprop="keywords" content="game,idea," />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="ゲームネタ：航空機を作ろう"/>
+<meta name="twitter:description" content="航空機をゲーム的に設計してみたい、という感じでメモをしたこと"/>
+
+
+<meta property="og:title" content="ゲームネタ：航空機を作ろう" />
+<meta property="og:description" content="航空機をゲーム的に設計してみたい、という感じでメモをしたこと" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.nqou.net/2008/02/12/155723/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2008-02-12T15:57:23+09:00" />
+<meta property="article:modified_time" content="2008-02-12T15:57:23+09:00" /><meta property="og:site_name" content="nqou.net" />
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type":"Person",
+      "@id": "https://www.nqou.net/#author",
+      "name":  null ,
+      "image": {
+        "@type":"ImageObject",
+        "url": "https://www.gravatar.com/avatar/96267d00f89345335b76d21e0417ae39?s=400&d=mp"
+      },
+      "description": "Whisky, Perl, Kansai.pm"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.nqou.net/#website",
+      "url": "https://www.nqou.net/",
+      "name": "nqou.net",
+      "description": "Whisky, Perl, Kansai.pm",
+      "publisher": {
+        "@id": "https://www.nqou.net/#author"
+      },
+      "inLanguage": "ja"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.nqou.net/2008/02/12/155723/#webpage",
+      "url": "https://www.nqou.net/2008/02/12/155723/",
+      "name": "ゲームネタ：航空機を作ろう",
+      "isPartOf": {
+        "@id": "https://www.nqou.net/#website"
+      },
+      "about": {
+         "@id": "https://www.nqou.net/#author"
+      },
+      "datePublished": "2008-02-12T15:57:23+09:00",
+      "dateModified": "2008-02-12T15:57:23+09:00",
+      "description": "航空機をゲーム的に設計してみたい、という感じでメモをしたこと",
+      "inLanguage": "ja",
+      "potentialAction": [
+        {
+          "@type": "ReadAction",
+          "target": [
+            "https://www.nqou.net/2008/02/12/155723/"
+          ]
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "isPartOf": {
+        "@id": "https://www.nqou.net/2008/02/12/155723/#webpage"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://www.nqou.net/2008/02/12/155723/#webpage"
+      },
+      "headline": "ゲームネタ：航空機を作ろう",
+      "datePublished": "2008-02-12T15:57:23+09:00",
+      "dateModified": "2008-02-12T15:57:23+09:00",
+      "publisher": {
+        "@id": "https://www.nqou.net/#author"
+      },
+      "keywords": [
+        "game",
+        "idea"
+      ],
+      "articleSection": [
+      ],
+      "inLanguage": "ja",
+      "author": {
+        "@type": "Person",
+        "name":  null 
+      },
+      "potentialAction": [
+        {
+          "@type": "CommentAction",
+          "name": "Comment",
+          "target": [
+            "https://www.nqou.net/2008/02/12/155723/#comments"
+          ]
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/print.css"
+        media="print">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/poole.css">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/hyde.css">
+
+  
+
+
+  
+
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+        crossorigin="anonymous" />
+
+  <link rel="apple-touch-icon-precomposed"
+        sizes="144x144"
+        href="/apple-touch-icon-144-precomposed.png">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  </head>
+<body>
+  <aside class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      
+      <div class="author-image">
+        <a href="https://www.nqou.net/">
+          <img src="https://www.gravatar.com/avatar/96267d00f89345335b76d21e0417ae39?s=200&d=mp" class="img-circle img-headshot center" alt="Gravatar">
+        </a>
+      </div>
+      
+
+      <h1>nqou.net</h1>
+
+      
+      <p class="lead">Whisky, Perl, Kansai.pm</p>
+      
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li>
+          <a href="https://www.nqou.net/">Home</a>
+        </li>
+        <li>
+          <a href="/about/">About</a>
+        </li><li>
+          <a href="/post/">Posts</a>
+        </li><li>
+          <a href="/tags/">Tags</a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="social-icons">
+      
+      <a href="https://github.com/nqounet" rel="me" title="GitHub" target="_blank">
+        <i class="fab fa-github" aria-hidden="true"></i>
+      </a>
+      
+      <a href="https://twitter.com/nqounet" rel="me" title="Twitter" target="_blank">
+        <i class="fab fa-twitter" aria-hidden="true"></i>
+      </a>
+      
+    </section>
+  </div>
+</aside>
+
+
+  <main class="content container">
+  <div class="post">
+  <h1 class="title">ゲームネタ：航空機を作ろう</h1>
+  
+
+  <div class="post-date">
+    <time datetime="2008-02-12T15:57:23&#43;0900">Feb 12, 2008</time> <span class="readtime">&middot; 2 min read</span>
+  </div>
+
+  <div>
+  <p>航空機をゲーム的に設計してみたい、という感じでメモをしたこと。</p>
+<!-- raw HTML omitted -->
+<p>作って戦わせる、というゲームも好きだね。</p>
+<p>新潟にいる航空機マニア（他にも電車やスヌーピーのマニアでもある）と話をした時に、ふと思いついて質問をした。</p>
+<p>「航空機をパラメータで表現するとしたら、どんな項目があると思う？」</p>
+<p>しかし、残念ながら意味不明な質問だったようで、大した回答は得られなかった。
+それよりもイーグルのエンジン音や、整備士とコックピットとの通信を録音したCDを聞かせたくてうずうずしていたようだった。
+お互いに新しい世界へ引っ張り込もうとしていたようだが、お互いに失敗したようだ。</p>
+<p>このメモはその後に思い出して書きとめたのだが、本当に役に立たなさそうだ。
+そんな時はWikipedia。</p>
+<ul>
+<li><!-- raw HTML omitted -->航空機 - Wikipedia<!-- raw HTML omitted --></li>
+</ul>
+<p>いや、むしろこっちか。</p>
+<ul>
+<li><!-- raw HTML omitted -->戦闘機 - Wikipedia<!-- raw HTML omitted --></li>
+</ul>
+<p>よし、戦闘機を作ろう。</p>
+<p>「戦闘機の性能を計る際、注目すべき点」</p>
+<p>速力、上昇力、航続力、運動性・安定性・操縦性、推力重量比、パワーウェイトレシオ、翼面荷重、翼幅荷重、火力、探知能力、隠密性、乗員</p>
+<p>…見れば見るほどマニアに訊かないとわからないことばかりだ。
+ま、質問の答えとしては、こういうのを期待してたんだけどね。
+これらの能力を決めるのは、戦闘機の構造であろう。</p>
+<p>「構造」</p>
+<p>素材、エンジン、主翼、主翼前縁延長 (LEX)、カナード、胴翼融合、兵装、電子機器、列線交換ユニット (LRU)</p>
+<p>素材やエンジンはともかく、主翼をデータ化するのはかなり難しそうだ。
+主翼の選び方で、運動性・安定性・操縦性が大きく変わるようなので、主翼で機体の性格を決めることができる。
+主翼さえうまくデータ化すれば、素材（重量）を選んで全長、全幅を設定（重量や翼面荷重、翼幅荷重）し、主翼を選んで（運動性・安定性・操縦性など）エンジンを積めば（速力）大まかに機体の性能が決まるね。</p>
+<p>あとは構造というか、オプションという雰囲気が強い。
+兵装は火力に直接的に影響する。
+カナードは上昇力や運動性が向上するが、隠密性が下がる。などなど。</p>
+<p>項目には無いけど、燃料タンクの容量を増やせば航続力と重量に影響がある。
+重量は速力に影響を与えるし、速力はそのまま運動性や操縦性に影響を与える。
+このように一つの値が、複雑に組み合わさっていく過程が楽しみだね。</p>
+<p>…完成すればね。</p>
+
+  </div>
+
+  
+<div>
+  <ul class="tags">
+  <li>
+    <a href="https://www.nqou.net/tags/game/" class="tag-link">game</a>
+  </li>
+  
+  <li>
+    <a href="https://www.nqou.net/tags/idea/" class="tag-link">idea</a>
+  </li>
+  </ul>
+</div>
+
+
+
+  <div class="share-buttons">
+  <a class="twitter-share-button"
+     href="#"
+     title="Share on Twitter"
+     data-url="https://www.nqou.net/2008/02/12/155723/"
+     data-text="ゲームネタ：航空機を作ろう"><i class="fab fa-twitter"></i></a>
+
+  <a class="linkedin-share-button"
+     href="#"
+     title="Share on LinkedIn"
+     data-url="https://www.nqou.net/2008/02/12/155723/"
+     data-text="ゲームネタ：航空機を作ろう"><i class="fab fa-linkedin-in"></i></a>
+
+  <a class="facebook-share-button"
+     href="#"
+     title="Share on Facebook"
+     data-url="https://www.nqou.net/2008/02/12/155723/"
+     data-text="ゲームネタ：航空機を作ろう"><i class="fab fa-facebook"></i></a>
+
+  <a class="telegram-share-button"
+     href="#"
+     title="Share on Telegram"
+     data-url="https://www.nqou.net/2008/02/12/155723/"
+     data-text="ゲームネタ：航空機を作ろう"><i class="fab fa-telegram"></i></a>
+
+  <a class="pinterest-share-button"
+     href="#"
+     title="Share on Pinterest"
+     data-url="https://www.nqou.net/2008/02/12/155723/"
+     data-text="ゲームネタ：航空機を作ろう"><i class="fab fa-pinterest"></i></a>
+</div>
+
+
+  <div class="comments">
+    <h2>Comments</h2>
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "nqounet" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+</div>
+  </main>
+
+  <footer>
+  <div>
+    <p>
+      &copy; nqounet 2021
+
+      &middot; <a href="https://creativecommons.org/licenses/by/4.0" target="_blank">CC BY 4.0</a>
+
+      
+    </p>
+  </div>
+</footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
+          integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
+          crossorigin="anonymous"></script>
+
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/soho.js"></script>
+
+  
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-E50H9ESN7E', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.88.1" />
+
+  <title>XML::Simple におけるパーサーの実行速度比較 &middot; nqou.net</title>
+
+  <meta name="description" content="" />
+
+  
+
+<meta itemprop="name" content="XML::Simple におけるパーサーの実行速度比較">
+<meta itemprop="description" content="Benchmark: running XML::LibXML::SAX, XML::Parser, XML::SAX::Expat, XML::SAX::ExpatXS, XML::SAX::PP for at least 3 CPU seconds... XML::LibXML::SAX: 3 wallclock secs ( 3.03 usr &#43; 0.00 sys = 3.03 CPU) @ 20.79/s (n=63) XML::Parser:"><meta itemprop="datePublished" content="2009-02-23T23:10:43+09:00" />
+<meta itemprop="dateModified" content="2009-02-23T23:10:43+09:00" />
+<meta itemprop="wordCount" content="243">
+<meta itemprop="keywords" content="perl," />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="XML::Simple におけるパーサーの実行速度比較"/>
+<meta name="twitter:description" content="Benchmark: running XML::LibXML::SAX, XML::Parser, XML::SAX::Expat, XML::SAX::ExpatXS, XML::SAX::PP for at least 3 CPU seconds... XML::LibXML::SAX: 3 wallclock secs ( 3.03 usr &#43; 0.00 sys = 3.03 CPU) @ 20.79/s (n=63) XML::Parser:"/>
+
+
+<meta property="og:title" content="XML::Simple におけるパーサーの実行速度比較" />
+<meta property="og:description" content="Benchmark: running XML::LibXML::SAX, XML::Parser, XML::SAX::Expat, XML::SAX::ExpatXS, XML::SAX::PP for at least 3 CPU seconds... XML::LibXML::SAX: 3 wallclock secs ( 3.03 usr &#43; 0.00 sys = 3.03 CPU) @ 20.79/s (n=63) XML::Parser:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.nqou.net/2009/02/23/231043/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2009-02-23T23:10:43+09:00" />
+<meta property="article:modified_time" content="2009-02-23T23:10:43+09:00" /><meta property="og:site_name" content="nqou.net" />
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type":"Person",
+      "@id": "https://www.nqou.net/#author",
+      "name":  null ,
+      "image": {
+        "@type":"ImageObject",
+        "url": "https://www.gravatar.com/avatar/96267d00f89345335b76d21e0417ae39?s=400&d=mp"
+      },
+      "description": "Whisky, Perl, Kansai.pm"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.nqou.net/#website",
+      "url": "https://www.nqou.net/",
+      "name": "nqou.net",
+      "description": "Whisky, Perl, Kansai.pm",
+      "publisher": {
+        "@id": "https://www.nqou.net/#author"
+      },
+      "inLanguage": "ja"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.nqou.net/2009/02/23/231043/#webpage",
+      "url": "https://www.nqou.net/2009/02/23/231043/",
+      "name": "XML::Simple におけるパーサーの実行速度比較",
+      "isPartOf": {
+        "@id": "https://www.nqou.net/#website"
+      },
+      "about": {
+         "@id": "https://www.nqou.net/#author"
+      },
+      "datePublished": "2009-02-23T23:10:43+09:00",
+      "dateModified": "2009-02-23T23:10:43+09:00",
+      "description": "Benchmark: running XML::LibXML::SAX, XML::Parser, XML::SAX::Expat, XML::SAX::ExpatXS, XML::SAX::PP for at least 3 CPU seconds... XML::LibXML::SAX: 3 wallclock secs ( 3.03 usr + 0.00 sys = 3.03 CPU) @ 20.79/s (n=63) XML::Parser:",
+      "inLanguage": "ja",
+      "potentialAction": [
+        {
+          "@type": "ReadAction",
+          "target": [
+            "https://www.nqou.net/2009/02/23/231043/"
+          ]
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "isPartOf": {
+        "@id": "https://www.nqou.net/2009/02/23/231043/#webpage"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://www.nqou.net/2009/02/23/231043/#webpage"
+      },
+      "headline": "XML::Simple におけるパーサーの実行速度比較",
+      "datePublished": "2009-02-23T23:10:43+09:00",
+      "dateModified": "2009-02-23T23:10:43+09:00",
+      "publisher": {
+        "@id": "https://www.nqou.net/#author"
+      },
+      "keywords": [
+        "perl"
+      ],
+      "articleSection": [
+      ],
+      "inLanguage": "ja",
+      "author": {
+        "@type": "Person",
+        "name":  null 
+      },
+      "potentialAction": [
+        {
+          "@type": "CommentAction",
+          "name": "Comment",
+          "target": [
+            "https://www.nqou.net/2009/02/23/231043/#comments"
+          ]
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/print.css"
+        media="print">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/poole.css">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/hyde.css">
+
+  
+
+
+  
+
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+        crossorigin="anonymous" />
+
+  <link rel="apple-touch-icon-precomposed"
+        sizes="144x144"
+        href="/apple-touch-icon-144-precomposed.png">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  </head>
+<body>
+  <aside class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      
+      <div class="author-image">
+        <a href="https://www.nqou.net/">
+          <img src="https://www.gravatar.com/avatar/96267d00f89345335b76d21e0417ae39?s=200&d=mp" class="img-circle img-headshot center" alt="Gravatar">
+        </a>
+      </div>
+      
+
+      <h1>nqou.net</h1>
+
+      
+      <p class="lead">Whisky, Perl, Kansai.pm</p>
+      
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li>
+          <a href="https://www.nqou.net/">Home</a>
+        </li>
+        <li>
+          <a href="/about/">About</a>
+        </li><li>
+          <a href="/post/">Posts</a>
+        </li><li>
+          <a href="/tags/">Tags</a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="social-icons">
+      
+      <a href="https://github.com/nqounet" rel="me" title="GitHub" target="_blank">
+        <i class="fab fa-github" aria-hidden="true"></i>
+      </a>
+      
+      <a href="https://twitter.com/nqounet" rel="me" title="Twitter" target="_blank">
+        <i class="fab fa-twitter" aria-hidden="true"></i>
+      </a>
+      
+    </section>
+  </div>
+</aside>
+
+
+  <main class="content container">
+  <div class="post">
+  <h1 class="title">XML::Simple におけるパーサーの実行速度比較</h1>
+  
+
+  <div class="post-date">
+    <time datetime="2009-02-23T23:10:43&#43;0900">Feb 23, 2009</time> <span class="readtime">&middot; 1 min read</span>
+  </div>
+
+  <div>
+  <!-- raw HTML omitted -->
+<pre tabindex="0"><code class="language-default" data-lang="default">Benchmark: running XML::LibXML::SAX, XML::Parser, XML::SAX::Expat, XML::SAX::ExpatXS, XML::SAX::PP for at least 3 CPU seconds...
+XML::LibXML::SAX:  3 wallclock secs ( 3.03 usr +  0.00 sys =  3.03 CPU) @ 20.79/s (n=63)
+XML::Parser:  3 wallclock secs ( 3.11 usr +  0.01 sys =  3.12 CPU) @ 57.30/s (n=179)
+XML::SAX::Expat:  3 wallclock secs ( 3.27 usr +  0.00 sys =  3.27 CPU) @ 18.38/s (n=60)
+XML::SAX::ExpatXS:  3 wallclock secs ( 3.30 usr +  0.00 sys =  3.30 CPU) @ 67.33/s (n=222)
+XML::SAX::PP:  3 wallclock secs ( 3.25 usr +  0.00 sys =  3.25 CPU) @  4.00/s (n=13)
+Rate XML::SAX::PP XML::SAX::Expat XML::LibXML::SAX XML::Parser XML::SAX::ExpatXS
+XML::SAX::PP      4.00/s           --            -78%             -81%        -93%              -94%
+XML::SAX::Expat   18.4/s         360%              --             -12%        -68%              -73%
+XML::LibXML::SAX  20.8/s         420%             13%               --        -64%              -69%
+XML::Parser       57.3/s        1333%            212%             176%          --              -15%
+XML::SAX::ExpatXS 67.3/s        1584%            266%             224%         18%                --
+</code></pre><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<pre tabindex="0"><code class="language-default" data-lang="default">use strict;
+use warnings;
+use Benchmark qw(:all);
+use Perl6::Say;
+use FileHandle;
+use XML::Simple;
+use Data::Dumper;
+my $rss_file = &quot;../satomi.xml&quot;;
+my $fh = FileHandle-&gt;new($rss_file)
+or die &quot;cannot open $rss_file: $!&quot;;
+local $/; # slurp mode
+our $content = $fh-&gt;getline;
+$fh-&gt;close;
+sub parse {
+my $xml = XML::Simple-&gt;new-&gt;XMLin($content);
+#    say Dumper $xml;
+}
+cmpthese(timethese(0,
+{
+'XML::Parser'       =&gt; \&amp;with_xml_parser,
+'XML::LibXML::SAX'  =&gt; \&amp;with_xml_libxml_sax,
+'XML::SAX::ExpatXS' =&gt; \&amp;with_xml_sax_expatxs,
+'XML::SAX::Expat'   =&gt; \&amp;with_xml_sax_expat,
+'XML::SAX::PP'      =&gt; \&amp;with_xml_sax_pp,
+}));
+sub with_xml_parser {
+$XML::Simple::PREFERRED_PARSER = 'XML::Parser';
+parse();
+}
+sub with_xml_sax_pp {
+$XML::Simple::PREFERRED_PARSER = 'XML::SAX::PurePerl';
+parse();
+}
+sub with_xml_libxml_sax {
+$XML::Simple::PREFERRED_PARSER = 'XML::LibXML::SAX';
+parse();
+}
+sub with_xml_sax_expatxs {
+$XML::Simple::PREFERRED_PARSER = 'XML::SAX::ExpatXS';
+parse();
+}
+sub with_xml_sax_expat {
+$XML::Simple::PREFERRED_PARSER = 'XML::SAX::Expat';
+parse();
+}
+</code></pre>
+  </div>
+
+  
+<div>
+  <ul class="tags">
+  <li>
+    <a href="https://www.nqou.net/tags/perl/" class="tag-link">perl</a>
+  </li>
+  </ul>
+</div>
+
+
+
+  <div class="share-buttons">
+  <a class="twitter-share-button"
+     href="#"
+     title="Share on Twitter"
+     data-url="https://www.nqou.net/2009/02/23/231043/"
+     data-text="XML::Simple におけるパーサーの実行速度比較"><i class="fab fa-twitter"></i></a>
+
+  <a class="linkedin-share-button"
+     href="#"
+     title="Share on LinkedIn"
+     data-url="https://www.nqou.net/2009/02/23/231043/"
+     data-text="XML::Simple におけるパーサーの実行速度比較"><i class="fab fa-linkedin-in"></i></a>
+
+  <a class="facebook-share-button"
+     href="#"
+     title="Share on Facebook"
+     data-url="https://www.nqou.net/2009/02/23/231043/"
+     data-text="XML::Simple におけるパーサーの実行速度比較"><i class="fab fa-facebook"></i></a>
+
+  <a class="telegram-share-button"
+     href="#"
+     title="Share on Telegram"
+     data-url="https://www.nqou.net/2009/02/23/231043/"
+     data-text="XML::Simple におけるパーサーの実行速度比較"><i class="fab fa-telegram"></i></a>
+
+  <a class="pinterest-share-button"
+     href="#"
+     title="Share on Pinterest"
+     data-url="https://www.nqou.net/2009/02/23/231043/"
+     data-text="XML::Simple におけるパーサーの実行速度比較"><i class="fab fa-pinterest"></i></a>
+</div>
+
+
+  <div class="comments">
+    <h2>Comments</h2>
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "nqounet" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+</div>
+  </main>
+
+  <footer>
+  <div>
+    <p>
+      &copy; nqounet 2021
+
+      &middot; <a href="https://creativecommons.org/licenses/by/4.0" target="_blank">CC BY 4.0</a>
+
+      
+    </p>
+  </div>
+</footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
+          integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
+          crossorigin="anonymous"></script>
+
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/soho.js"></script>
+
+  
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-E50H9ESN7E', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

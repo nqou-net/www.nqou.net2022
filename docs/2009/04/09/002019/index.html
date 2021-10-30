@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.88.1" />
+
+  <title>配列Aから配列Bの要素を取り除いた配列Cを作る方法 &middot; nqou.net</title>
+
+  <meta name="description" content="" />
+
+  
+
+<meta itemprop="name" content="配列Aから配列Bの要素を取り除いた配列Cを作る方法">
+<meta itemprop="description" content="面白そうなネタを見つけたので、便乗してみた。 my @update = grep { my $a ="><meta itemprop="datePublished" content="2009-04-09T00:20:19+09:00" />
+<meta itemprop="dateModified" content="2009-04-09T00:20:19+09:00" />
+<meta itemprop="wordCount" content="1525">
+<meta itemprop="keywords" content="perl," />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="配列Aから配列Bの要素を取り除いた配列Cを作る方法"/>
+<meta name="twitter:description" content="面白そうなネタを見つけたので、便乗してみた。 my @update = grep { my $a ="/>
+
+
+<meta property="og:title" content="配列Aから配列Bの要素を取り除いた配列Cを作る方法" />
+<meta property="og:description" content="面白そうなネタを見つけたので、便乗してみた。 my @update = grep { my $a =" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.nqou.net/2009/04/09/002019/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2009-04-09T00:20:19+09:00" />
+<meta property="article:modified_time" content="2009-04-09T00:20:19+09:00" /><meta property="og:site_name" content="nqou.net" />
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type":"Person",
+      "@id": "https://www.nqou.net/#author",
+      "name":  null ,
+      "image": {
+        "@type":"ImageObject",
+        "url": "https://www.gravatar.com/avatar/96267d00f89345335b76d21e0417ae39?s=400&d=mp"
+      },
+      "description": "Whisky, Perl, Kansai.pm"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.nqou.net/#website",
+      "url": "https://www.nqou.net/",
+      "name": "nqou.net",
+      "description": "Whisky, Perl, Kansai.pm",
+      "publisher": {
+        "@id": "https://www.nqou.net/#author"
+      },
+      "inLanguage": "ja"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.nqou.net/2009/04/09/002019/#webpage",
+      "url": "https://www.nqou.net/2009/04/09/002019/",
+      "name": "配列Aから配列Bの要素を取り除いた配列Cを作る方法",
+      "isPartOf": {
+        "@id": "https://www.nqou.net/#website"
+      },
+      "about": {
+         "@id": "https://www.nqou.net/#author"
+      },
+      "datePublished": "2009-04-09T00:20:19+09:00",
+      "dateModified": "2009-04-09T00:20:19+09:00",
+      "description": "面白そうなネタを見つけたので、便乗してみた。 my @update = grep { my $a =",
+      "inLanguage": "ja",
+      "potentialAction": [
+        {
+          "@type": "ReadAction",
+          "target": [
+            "https://www.nqou.net/2009/04/09/002019/"
+          ]
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "isPartOf": {
+        "@id": "https://www.nqou.net/2009/04/09/002019/#webpage"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://www.nqou.net/2009/04/09/002019/#webpage"
+      },
+      "headline": "配列Aから配列Bの要素を取り除いた配列Cを作る方法",
+      "datePublished": "2009-04-09T00:20:19+09:00",
+      "dateModified": "2009-04-09T00:20:19+09:00",
+      "publisher": {
+        "@id": "https://www.nqou.net/#author"
+      },
+      "keywords": [
+        "perl"
+      ],
+      "articleSection": [
+      ],
+      "inLanguage": "ja",
+      "author": {
+        "@type": "Person",
+        "name":  null 
+      },
+      "potentialAction": [
+        {
+          "@type": "CommentAction",
+          "name": "Comment",
+          "target": [
+            "https://www.nqou.net/2009/04/09/002019/#comments"
+          ]
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/print.css"
+        media="print">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/poole.css">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/hyde.css">
+
+  
+
+
+  
+
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+        crossorigin="anonymous" />
+
+  <link rel="apple-touch-icon-precomposed"
+        sizes="144x144"
+        href="/apple-touch-icon-144-precomposed.png">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  </head>
+<body>
+  <aside class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      
+      <div class="author-image">
+        <a href="https://www.nqou.net/">
+          <img src="https://www.gravatar.com/avatar/96267d00f89345335b76d21e0417ae39?s=200&d=mp" class="img-circle img-headshot center" alt="Gravatar">
+        </a>
+      </div>
+      
+
+      <h1>nqou.net</h1>
+
+      
+      <p class="lead">Whisky, Perl, Kansai.pm</p>
+      
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li>
+          <a href="https://www.nqou.net/">Home</a>
+        </li>
+        <li>
+          <a href="/about/">About</a>
+        </li><li>
+          <a href="/post/">Posts</a>
+        </li><li>
+          <a href="/tags/">Tags</a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="social-icons">
+      
+      <a href="https://github.com/nqounet" rel="me" title="GitHub" target="_blank">
+        <i class="fab fa-github" aria-hidden="true"></i>
+      </a>
+      
+      <a href="https://twitter.com/nqounet" rel="me" title="Twitter" target="_blank">
+        <i class="fab fa-twitter" aria-hidden="true"></i>
+      </a>
+      
+    </section>
+  </div>
+</aside>
+
+
+  <main class="content container">
+  <div class="post">
+  <h1 class="title">配列Aから配列Bの要素を取り除いた配列Cを作る方法</h1>
+  
+
+  <div class="post-date">
+    <time datetime="2009-04-09T00:20:19&#43;0900">Apr 9, 2009</time> <span class="readtime">&middot; 4 min read</span>
+  </div>
+
+  <div>
+  <p>面白そうなネタを見つけたので、便乗してみた。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#66d9ef">my</span> @update <span style="color:#f92672">=</span> grep { <span style="color:#66d9ef">my</span> $a <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; <span style="color:#66d9ef">foreach</span> <span style="color:#66d9ef">my</span> $b (@key) { $a <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span> <span style="color:#66d9ef">if</span> $_ <span style="color:#f92672">eq</span> $b; } $a; } @items;
+</code></pre></div><ul>
+<li><a href="https://anond.hatelabo.jp/20090408034449">Perlで配列Aから配列Bにある要素を取り除くには？</a></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#66d9ef">my</span> %key <span style="color:#f92672">=</span> map { $_ <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">1</span> } @key;
+<span style="color:#66d9ef">my</span> @update <span style="color:#f92672">=</span> grep { <span style="color:#f92672">not</span> exists $key{$_} } @items;
+</code></pre></div><ul>
+<li><a href="https://anond.hatelabo.jp/20090408100019">Re: Perlで配列Aから配列Bにある要素を取り除くには？</a></li>
+</ul>
+<p>上の二つでは、ハッシュを使うほうが段違いに速い。</p>
+<p>その傾向は大きい配列になるほど顕著になる。</p>
+<p>でも、配列が大きくなると、mapの部分が結構時間がかかるようなので、ハッシュスライスにしてみた。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#66d9ef">my</span> %hash;
+undef @hash{@key};
+<span style="color:#66d9ef">my</span> @update <span style="color:#f92672">=</span> grep { <span style="color:#f92672">not</span> exists $hash{$_} } @items;
+</code></pre></div><p>その結果、さらに速くなった。</p>
+<p>しかも、配列が大きくなればなるほど効果も上がっている。</p>
+<p>やはり、スライスは使えるテクニックだ。</p>
+<p>参考ベンチの結果とソースは以下のとおり。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#75715e">#!/usr/bin/env perl</span>
+<span style="color:#66d9ef">use</span> strict;
+<span style="color:#66d9ef">use</span> warnings;
+<span style="color:#66d9ef">use</span> Benchmark <span style="color:#e6db74">qw(:all)</span>;
+<span style="color:#66d9ef">use</span> Data::Dumper::Names;
+$Data::Dumper::Indent <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+<span style="color:#66d9ef">sub</span> <span style="color:#a6e22e">p</span> (@) { <span style="color:#66d9ef">print</span> Dumper(@_) }
+<span style="color:#66d9ef">use</span> List::Util <span style="color:#e6db74">qw(shuffle)</span>;
+<span style="color:#66d9ef">use</span> Perl6::Say;
+<span style="color:#66d9ef">our</span> @items <span style="color:#f92672">=</span> shuffle(<span style="color:#e6db74">&#34;a&#34;</span> <span style="color:#f92672">..</span> <span style="color:#e6db74">&#34;z&#34;</span>);
+<span style="color:#66d9ef">our</span> @key   <span style="color:#f92672">=</span> shuffle(<span style="color:#e6db74">&#34;f&#34;</span> <span style="color:#f92672">..</span> <span style="color:#e6db74">&#34;zz&#34;</span>);
+say join <span style="color:#e6db74">&#39; &#39;</span>, <span style="color:#e6db74">&#39;@items = qw(&#39;</span>, @items, <span style="color:#e6db74">&#39;);&#39;</span>;
+say join <span style="color:#e6db74">&#39; &#39;</span>, <span style="color:#e6db74">&#39;@key   = qw(&#39;</span>, @key,   <span style="color:#e6db74">&#39;);&#39;</span>;
+cmpthese(
+    timethese(
+        <span style="color:#ae81ff">0</span>,
+        {
+            Linear <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">sub</span> {
+                <span style="color:#66d9ef">my</span> @update <span style="color:#f92672">=</span> grep {
+                    <span style="color:#66d9ef">my</span> $a <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+                    <span style="color:#66d9ef">foreach</span> <span style="color:#66d9ef">my</span> $b (@key) { $a <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span> <span style="color:#66d9ef">if</span> $_ <span style="color:#f92672">eq</span> $b; }
+                    $a;
+                } @items;
+            },
+            Hash <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">sub</span> {
+                <span style="color:#66d9ef">my</span> %key <span style="color:#f92672">=</span> map { $_ <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">1</span> } @key;
+                <span style="color:#66d9ef">my</span> @update <span style="color:#f92672">=</span> grep { <span style="color:#f92672">not</span> exists $key{$_} } @items;
+            },
+            Hash2a <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">sub</span> {
+                <span style="color:#66d9ef">my</span> %hash;
+                @hash{@key} <span style="color:#f92672">=</span> (<span style="color:#ae81ff">1</span>) x @key;
+                <span style="color:#66d9ef">my</span> @update <span style="color:#f92672">=</span> grep { <span style="color:#f92672">not</span> exists $hash{$_} } @items;
+            },
+            Hash2b <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">sub</span> {
+                <span style="color:#66d9ef">my</span> %hash;
+                @hash{@key} <span style="color:#f92672">=</span> (<span style="color:#ae81ff">1</span>) x @key;
+                <span style="color:#66d9ef">my</span> @update <span style="color:#f92672">=</span> grep { <span style="color:#f92672">!</span>$hash{$_} } @items;
+            },
+            Hash3 <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">sub</span> {
+                <span style="color:#66d9ef">my</span> %hash;
+                undef @hash{@key};
+                <span style="color:#66d9ef">my</span> @update <span style="color:#f92672">=</span> grep { <span style="color:#f92672">not</span> exists $hash{$_} } @items;
+            },
+        }
+    )
+);
+</code></pre></div><pre tabindex="0"><code>@items = qw( b t m e d k w r c s j z n v h g l q o y a u f x i p );
+@key   = qw( b c d a f e );
+Benchmark: running Hash, Hash2a, Hash2b, Hash3, Linear for at least 3 CPU seconds...
+Hash:  3 wallclock secs ( 3.22 usr +  0.00 sys =  3.22 CPU) @ 30791.86/s (n=99119)
+Hash2a:  3 wallclock secs ( 3.13 usr +  0.00 sys =  3.13 CPU) @ 38859.88/s (n=121476)
+Hash2b:  3 wallclock secs ( 3.16 usr +  0.00 sys =  3.16 CPU) @ 38478.30/s (n=121476)
+Hash3:  3 wallclock secs ( 3.19 usr +  0.00 sys =  3.19 CPU) @ 40126.10/s (n=127922)
+Linear:  3 wallclock secs ( 3.17 usr +  0.00 sys =  3.17 CPU) @ 14515.13/s (n=46042)
+Rate Linear   Hash Hash2b Hash2a  Hash3
+Linear 14515/s     --   -53%   -62%   -63%   -64%
+Hash   30792/s   112%     --   -20%   -21%   -23%
+Hash2b 38478/s   165%    25%     --    -1%    -4%
+Hash2a 38860/s   168%    26%     1%     --    -3%
+Hash3  40126/s   176%    30%     4%     3%     --
+</code></pre><pre tabindex="0"><code>@items = qw( y f n m b k l x w e p t a z o r q h u g j i s c d v );
+@key   = qw( bs uy we bq kg cn vq ap ue zr ot hh u ss cq s mv bf qi at ly yv sq hf jw ph yd rb yw wm he br lz lg kd uf ik lh hj rw gs ox xj qo tf ky kf lt pe zg lw ac er el ao sg jd v gl mz my sj sl xa ws lk iu cr xz gy bm ui k cj h yt ez gz rh oh ep gx de md aw gv tn vm hu mm ti m pk ry vi cb rg mt zv uq ew qw no cm wz nk gd nl ut ng vr vf rd au w rt vo pc fu ix xk xw mq px wu ef bk kb jp z li tg ka bp fw sn nr mj af vx vc ff zk zu o ni vy rv dr kr bj zi cw tb fb su fx fd tm zy ob vn iw uc pi xs bu fe qf wv zc uk hz do qg mb wx kp op dk zm aj kc oe ip cx ey jy pr wo bc sx um fl if fz jq yu in tv lb mw rf mx ha nx zd ea vl xb wt gp kh rx gr te py fj uv zx fg eb yb im ge qr ed bx ad aa hx wd lq ii du sp mi yl ud ru ie nj wf qk jt sa ee gi ij fm yz wb je lv pq wa is nt ej st qs tk pn it xh uu y ro gu gt sc pa sh bh vs et cs dh ne rj ku ze wl mp rn pd ai oq tj xu ga yy us un gc ck hs xr bg r ch vu oy to fa tu va oa td eu hg ki rp tc fy gk nn q qm eq dw yc za nm jr zf dq ct uj nz ft pz ba ym nq ub ib mu cd aq so bw eg i tz fo wk qu rq wh kw bb hr xy qd lu ln vg lf dn iq p dj zn zq pv bl tt or pg sd qp az mo uz kx xt an es fc ug xf jb kz pj nv ca ya mr ml pp fk hp al rl sf xm ae ig wj sr ei hq wg io nd kv ce as qe tl tp vp n sk tq x cc rs ev hb sw nb dm mk ko lj jk xx da ds qa wn vt js zh ar sv ma kl ul pl en re be xi wq xp os wr yf hk jg lc lr cz di ci hv od ux yp em iy cp qt vd bi bv am qq gq ps om vk qz np ov ho oz kj oo tx xl gf gh bt up hc dz po ic oi ou yn ht hd se ir mc ld fh la ec lx ia pt rk ol yr dl rr id cu dd dv go xo rc ay nu wi og il kn ra rz cl iv by yx ek xv qx f nf gw bz fv kk cv yo ql ag ke jo jl me ye jj qh ty fq yk ks sy zs ak sb kq yq ns mn hw vb jx vw rm mh ms ur vh gg on jz hl oc pm co vz fp jf ow tr av hm df cf gn ja ta ax qc fi l ri dy ts gm le of ah t nw sz ua jm zz ls fn xn jc zj zo ju ll qv dg cg lp nh g dc wc eo xg ji fr jh pb ys dp ok xq zw wy yg uo wp pf mg uw xe zl tw vv ww bd th gb iz yi bo pw ab yh bn hy oj zp lo gj zb xc jn ih si qj j lm hn fs zt sm pu db xd jv cy nc na ve mf hi dt ex uh qy kt eh vj qb yj dx km ny qn );
+Benchmark: running Hash, Hash2a, Hash2b, Hash3, Linear for at least 3 CPU seconds...
+Hash:  3 wallclock secs ( 3.17 usr +  0.00 sys =  3.17 CPU) @ 681.90/s (n=2163)
+Hash2a:  3 wallclock secs ( 3.26 usr +  0.00 sys =  3.26 CPU) @ 1994.49/s (n=6512)
+Hash2b:  3 wallclock secs ( 3.25 usr +  0.00 sys =  3.25 CPU) @ 1997.23/s (n=6491)
+Hash3:  3 wallclock secs ( 3.23 usr +  0.00 sys =  3.23 CPU) @ 2299.63/s (n=7437)
+Linear:  3 wallclock secs ( 3.17 usr +  0.00 sys =  3.17 CPU) @ 557.06/s (n=1767)
+Rate Linear   Hash Hash2a Hash2b  Hash3
+Linear  557/s     --   -18%   -72%   -72%   -76%
+Hash    682/s    22%     --   -66%   -66%   -70%
+Hash2a 1994/s   258%   192%     --    -0%   -13%
+Hash2b 1997/s   259%   193%     0%     --   -13%
+Hash3  2300/s   313%   237%    15%    15%     --
+</code></pre>
+  </div>
+
+  
+<div>
+  <ul class="tags">
+  <li>
+    <a href="https://www.nqou.net/tags/perl/" class="tag-link">perl</a>
+  </li>
+  </ul>
+</div>
+
+
+
+  <div class="share-buttons">
+  <a class="twitter-share-button"
+     href="#"
+     title="Share on Twitter"
+     data-url="https://www.nqou.net/2009/04/09/002019/"
+     data-text="配列Aから配列Bの要素を取り除いた配列Cを作る方法"><i class="fab fa-twitter"></i></a>
+
+  <a class="linkedin-share-button"
+     href="#"
+     title="Share on LinkedIn"
+     data-url="https://www.nqou.net/2009/04/09/002019/"
+     data-text="配列Aから配列Bの要素を取り除いた配列Cを作る方法"><i class="fab fa-linkedin-in"></i></a>
+
+  <a class="facebook-share-button"
+     href="#"
+     title="Share on Facebook"
+     data-url="https://www.nqou.net/2009/04/09/002019/"
+     data-text="配列Aから配列Bの要素を取り除いた配列Cを作る方法"><i class="fab fa-facebook"></i></a>
+
+  <a class="telegram-share-button"
+     href="#"
+     title="Share on Telegram"
+     data-url="https://www.nqou.net/2009/04/09/002019/"
+     data-text="配列Aから配列Bの要素を取り除いた配列Cを作る方法"><i class="fab fa-telegram"></i></a>
+
+  <a class="pinterest-share-button"
+     href="#"
+     title="Share on Pinterest"
+     data-url="https://www.nqou.net/2009/04/09/002019/"
+     data-text="配列Aから配列Bの要素を取り除いた配列Cを作る方法"><i class="fab fa-pinterest"></i></a>
+</div>
+
+
+  <div class="comments">
+    <h2>Comments</h2>
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "nqounet" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+</div>
+  </main>
+
+  <footer>
+  <div>
+    <p>
+      &copy; nqounet 2021
+
+      &middot; <a href="https://creativecommons.org/licenses/by/4.0" target="_blank">CC BY 4.0</a>
+
+      
+    </p>
+  </div>
+</footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
+          integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
+          crossorigin="anonymous"></script>
+
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/soho.js"></script>
+
+  
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-E50H9ESN7E', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

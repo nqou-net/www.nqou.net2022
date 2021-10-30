@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.88.1" />
+
+  <title>Mojolicious::Liteでフォームを使う &middot; nqou.net</title>
+
+  <meta name="description" content="" />
+
+  
+
+<meta itemprop="name" content="Mojolicious::Liteでフォームを使う">
+<meta itemprop="description" content="#!/usr/bin/env perl use Mojolicious::Lite; get &#39;/&#39; =&gt; &#39;index&#39;; get &#39;/foo&#39; =&gt; sub { my $c = shift; my $user = $c-&gt;param(&#39;user&#39;); $c-&gt;render(text =&gt; qq{Hello $user!}); }; app-&gt;start; __DATA__ @@ index.html.ep"><meta itemprop="datePublished" content="2015-02-05T08:50:40+09:00" />
+<meta itemprop="dateModified" content="2015-02-05T08:50:40+09:00" />
+<meta itemprop="wordCount" content="96">
+<meta itemprop="keywords" content="mojolicious,perl,perl-entrance," />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Mojolicious::Liteでフォームを使う"/>
+<meta name="twitter:description" content="#!/usr/bin/env perl use Mojolicious::Lite; get &#39;/&#39; =&gt; &#39;index&#39;; get &#39;/foo&#39; =&gt; sub { my $c = shift; my $user = $c-&gt;param(&#39;user&#39;); $c-&gt;render(text =&gt; qq{Hello $user!}); }; app-&gt;start; __DATA__ @@ index.html.ep"/>
+
+
+<meta property="og:title" content="Mojolicious::Liteでフォームを使う" />
+<meta property="og:description" content="#!/usr/bin/env perl use Mojolicious::Lite; get &#39;/&#39; =&gt; &#39;index&#39;; get &#39;/foo&#39; =&gt; sub { my $c = shift; my $user = $c-&gt;param(&#39;user&#39;); $c-&gt;render(text =&gt; qq{Hello $user!}); }; app-&gt;start; __DATA__ @@ index.html.ep" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.nqou.net/2015/02/05/085040/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2015-02-05T08:50:40+09:00" />
+<meta property="article:modified_time" content="2015-02-05T08:50:40+09:00" /><meta property="og:site_name" content="nqou.net" />
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type":"Person",
+      "@id": "https://www.nqou.net/#author",
+      "name":  null ,
+      "image": {
+        "@type":"ImageObject",
+        "url": "https://www.gravatar.com/avatar/96267d00f89345335b76d21e0417ae39?s=400&d=mp"
+      },
+      "description": "Whisky, Perl, Kansai.pm"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.nqou.net/#website",
+      "url": "https://www.nqou.net/",
+      "name": "nqou.net",
+      "description": "Whisky, Perl, Kansai.pm",
+      "publisher": {
+        "@id": "https://www.nqou.net/#author"
+      },
+      "inLanguage": "ja"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.nqou.net/2015/02/05/085040/#webpage",
+      "url": "https://www.nqou.net/2015/02/05/085040/",
+      "name": "Mojolicious::Liteでフォームを使う",
+      "isPartOf": {
+        "@id": "https://www.nqou.net/#website"
+      },
+      "about": {
+         "@id": "https://www.nqou.net/#author"
+      },
+      "datePublished": "2015-02-05T08:50:40+09:00",
+      "dateModified": "2015-02-05T08:50:40+09:00",
+      "description": "#!/usr/bin/env perl use Mojolicious::Lite; get \u0026#39;/\u0026#39; =\u0026gt; \u0026#39;index\u0026#39;; get \u0026#39;/foo\u0026#39; =\u0026gt; sub { my $c = shift; my $user = $c-\u0026gt;param(\u0026#39;user\u0026#39;); $c-\u0026gt;render(text =\u0026gt; qq{Hello $user!}); }; app-\u0026gt;start; __DATA__ @@ index.html.ep",
+      "inLanguage": "ja",
+      "potentialAction": [
+        {
+          "@type": "ReadAction",
+          "target": [
+            "https://www.nqou.net/2015/02/05/085040/"
+          ]
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "isPartOf": {
+        "@id": "https://www.nqou.net/2015/02/05/085040/#webpage"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://www.nqou.net/2015/02/05/085040/#webpage"
+      },
+      "headline": "Mojolicious::Liteでフォームを使う",
+      "datePublished": "2015-02-05T08:50:40+09:00",
+      "dateModified": "2015-02-05T08:50:40+09:00",
+      "publisher": {
+        "@id": "https://www.nqou.net/#author"
+      },
+      "keywords": [
+        "mojolicious",
+        "perl",
+        "perl-entrance"
+      ],
+      "articleSection": [
+      ],
+      "inLanguage": "ja",
+      "author": {
+        "@type": "Person",
+        "name":  null 
+      },
+      "potentialAction": [
+        {
+          "@type": "CommentAction",
+          "name": "Comment",
+          "target": [
+            "https://www.nqou.net/2015/02/05/085040/#comments"
+          ]
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/print.css"
+        media="print">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/poole.css">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/hyde.css">
+
+  
+
+
+  
+
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+        crossorigin="anonymous" />
+
+  <link rel="apple-touch-icon-precomposed"
+        sizes="144x144"
+        href="/apple-touch-icon-144-precomposed.png">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  </head>
+<body>
+  <aside class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      
+      <div class="author-image">
+        <a href="https://www.nqou.net/">
+          <img src="https://www.gravatar.com/avatar/96267d00f89345335b76d21e0417ae39?s=200&d=mp" class="img-circle img-headshot center" alt="Gravatar">
+        </a>
+      </div>
+      
+
+      <h1>nqou.net</h1>
+
+      
+      <p class="lead">Whisky, Perl, Kansai.pm</p>
+      
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li>
+          <a href="https://www.nqou.net/">Home</a>
+        </li>
+        <li>
+          <a href="/about/">About</a>
+        </li><li>
+          <a href="/post/">Posts</a>
+        </li><li>
+          <a href="/tags/">Tags</a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="social-icons">
+      
+      <a href="https://github.com/nqounet" rel="me" title="GitHub" target="_blank">
+        <i class="fab fa-github" aria-hidden="true"></i>
+      </a>
+      
+      <a href="https://twitter.com/nqounet" rel="me" title="Twitter" target="_blank">
+        <i class="fab fa-twitter" aria-hidden="true"></i>
+      </a>
+      
+    </section>
+  </div>
+</aside>
+
+
+  <main class="content container">
+  <div class="post">
+  <h1 class="title">Mojolicious::Liteでフォームを使う</h1>
+  
+
+  <div class="post-date">
+    <time datetime="2015-02-05T08:50:40&#43;0900">Feb 5, 2015</time> <span class="readtime">&middot; 1 min read</span>
+  </div>
+
+  <div>
+  <!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#75715e">#!/usr/bin/env perl</span>
+<span style="color:#66d9ef">use</span> Mojolicious::Lite;
+
+get <span style="color:#e6db74">&#39;/&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;index&#39;</span>;
+
+get <span style="color:#e6db74">&#39;/foo&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">sub</span> {
+    <span style="color:#66d9ef">my</span> $c    <span style="color:#f92672">=</span> shift;
+    <span style="color:#66d9ef">my</span> $user <span style="color:#f92672">=</span> $c<span style="color:#f92672">-&gt;</span>param(<span style="color:#e6db74">&#39;user&#39;</span>);
+    $c<span style="color:#f92672">-&gt;</span>render(text <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">qq{Hello $user!}</span>);
+};
+
+app<span style="color:#f92672">-&gt;</span>start;
+__DATA__
+@@ index<span style="color:#f92672">.</span>html<span style="color:#f92672">.</span>ep
+<span style="color:#f92672">&lt;!</span>DOCTYPE html<span style="color:#f92672">&gt;</span>
+<span style="color:#e6db74">&lt;html&gt;</span>
+
+<span style="color:#e6db74">&lt;head&gt;</span>
+    <span style="color:#e6db74">&lt;title&gt;</span>title<span style="color:#e6db74">&lt;/title&gt;</span>
+<span style="color:#e6db74">&lt;/head&gt;</span>
+
+<span style="color:#e6db74">&lt;body&gt;</span>
+    <span style="color:#f92672">&lt;</span>form action<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/foo&#34;</span><span style="color:#f92672">&gt;</span>
+        <span style="color:#f92672">&lt;</span>input name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;user&#34;</span> type<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span><span style="color:#f92672">&gt;</span>
+        <span style="color:#f92672">&lt;</span>input type<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit&#34;</span> value<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Submit!&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#e6db74">&lt;/form&gt;</span>
+<span style="color:#e6db74">&lt;/body&gt;</span>
+
+<span style="color:#e6db74">&lt;/html&gt;</span>
+</code></pre></div><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#75715e">#!/usr/bin/env perl</span>
+<span style="color:#66d9ef">use</span> Mojolicious::Lite;
+</code></pre></div><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl">get <span style="color:#e6db74">&#39;/&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;index&#39;</span>;
+</code></pre></div><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl">get <span style="color:#e6db74">&#39;/foo&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">sub</span> {
+    <span style="color:#66d9ef">my</span> $c <span style="color:#f92672">=</span> shift;
+    <span style="color:#66d9ef">my</span> $user <span style="color:#f92672">=</span> $c<span style="color:#f92672">-&gt;</span>param(<span style="color:#e6db74">&#39;user&#39;</span>);
+    $c<span style="color:#f92672">-&gt;</span>render(text <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">qq{Hello $user!}</span>);
+};
+</code></pre></div><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl">app<span style="color:#f92672">-&gt;</span>start;
+</code></pre></div><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl">__DATA__
+@@ index<span style="color:#f92672">.</span>html<span style="color:#f92672">.</span>ep
+<span style="color:#f92672">&lt;!</span>DOCTYPE html<span style="color:#f92672">&gt;</span>
+<span style="color:#e6db74">&lt;html&gt;</span>
+
+<span style="color:#e6db74">&lt;head&gt;</span>
+    <span style="color:#e6db74">&lt;title&gt;</span>title<span style="color:#e6db74">&lt;/title&gt;</span>
+<span style="color:#e6db74">&lt;/head&gt;</span>
+
+<span style="color:#e6db74">&lt;body&gt;</span>
+    <span style="color:#f92672">&lt;</span>form action<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/foo&#34;</span><span style="color:#f92672">&gt;</span>
+        <span style="color:#f92672">&lt;</span>input name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;user&#34;</span> type<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span><span style="color:#f92672">&gt;</span>
+        <span style="color:#f92672">&lt;</span>input type<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit&#34;</span> value<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Submit!&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#e6db74">&lt;/form&gt;</span>
+<span style="color:#e6db74">&lt;/body&gt;</span>
+
+<span style="color:#e6db74">&lt;/html&gt;</span>
+</code></pre></div><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+
+  </div>
+
+  
+<div>
+  <ul class="tags">
+  <li>
+    <a href="https://www.nqou.net/tags/mojolicious/" class="tag-link">mojolicious</a>
+  </li>
+  
+  <li>
+    <a href="https://www.nqou.net/tags/perl/" class="tag-link">perl</a>
+  </li>
+  
+  <li>
+    <a href="https://www.nqou.net/tags/perl-entrance/" class="tag-link">perl-entrance</a>
+  </li>
+  </ul>
+</div>
+
+
+
+  <div class="share-buttons">
+  <a class="twitter-share-button"
+     href="#"
+     title="Share on Twitter"
+     data-url="https://www.nqou.net/2015/02/05/085040/"
+     data-text="Mojolicious::Liteでフォームを使う"><i class="fab fa-twitter"></i></a>
+
+  <a class="linkedin-share-button"
+     href="#"
+     title="Share on LinkedIn"
+     data-url="https://www.nqou.net/2015/02/05/085040/"
+     data-text="Mojolicious::Liteでフォームを使う"><i class="fab fa-linkedin-in"></i></a>
+
+  <a class="facebook-share-button"
+     href="#"
+     title="Share on Facebook"
+     data-url="https://www.nqou.net/2015/02/05/085040/"
+     data-text="Mojolicious::Liteでフォームを使う"><i class="fab fa-facebook"></i></a>
+
+  <a class="telegram-share-button"
+     href="#"
+     title="Share on Telegram"
+     data-url="https://www.nqou.net/2015/02/05/085040/"
+     data-text="Mojolicious::Liteでフォームを使う"><i class="fab fa-telegram"></i></a>
+
+  <a class="pinterest-share-button"
+     href="#"
+     title="Share on Pinterest"
+     data-url="https://www.nqou.net/2015/02/05/085040/"
+     data-text="Mojolicious::Liteでフォームを使う"><i class="fab fa-pinterest"></i></a>
+</div>
+
+
+  <div class="comments">
+    <h2>Comments</h2>
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "nqounet" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+</div>
+  </main>
+
+  <footer>
+  <div>
+    <p>
+      &copy; nqounet 2021
+
+      &middot; <a href="https://creativecommons.org/licenses/by/4.0" target="_blank">CC BY 4.0</a>
+
+      
+    </p>
+  </div>
+</footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
+          integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
+          crossorigin="anonymous"></script>
+
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/soho.js"></script>
+
+  
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-E50H9ESN7E', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

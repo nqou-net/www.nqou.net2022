@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.88.1" />
+
+  <title>強引な「require」 &middot; nqou.net</title>
+
+  <meta name="description" content="" />
+
+  
+
+<meta itemprop="name" content="強引な「require」">
+<meta itemprop="description" content="&lt;p&gt;ソースコード&lt;/p&gt; #!/usr/bin/perl #BEGIN{ # print &quot;Content-type:"><meta itemprop="datePublished" content="2000-10-07T13:52:09+09:00" />
+<meta itemprop="dateModified" content="2000-10-07T13:52:09+09:00" />
+<meta itemprop="wordCount" content="571">
+<meta itemprop="keywords" content="perl," />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="強引な「require」"/>
+<meta name="twitter:description" content="&lt;p&gt;ソースコード&lt;/p&gt; #!/usr/bin/perl #BEGIN{ # print &quot;Content-type:"/>
+
+
+<meta property="og:title" content="強引な「require」" />
+<meta property="og:description" content="&lt;p&gt;ソースコード&lt;/p&gt; #!/usr/bin/perl #BEGIN{ # print &quot;Content-type:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.nqou.net/2000/10/07/135209/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2000-10-07T13:52:09+09:00" />
+<meta property="article:modified_time" content="2000-10-07T13:52:09+09:00" /><meta property="og:site_name" content="nqou.net" />
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type":"Person",
+      "@id": "https://www.nqou.net/#author",
+      "name":  null ,
+      "image": {
+        "@type":"ImageObject",
+        "url": "https://www.gravatar.com/avatar/96267d00f89345335b76d21e0417ae39?s=400&d=mp"
+      },
+      "description": "Whisky, Perl, Kansai.pm"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.nqou.net/#website",
+      "url": "https://www.nqou.net/",
+      "name": "nqou.net",
+      "description": "Whisky, Perl, Kansai.pm",
+      "publisher": {
+        "@id": "https://www.nqou.net/#author"
+      },
+      "inLanguage": "ja"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.nqou.net/2000/10/07/135209/#webpage",
+      "url": "https://www.nqou.net/2000/10/07/135209/",
+      "name": "強引な「require」",
+      "isPartOf": {
+        "@id": "https://www.nqou.net/#website"
+      },
+      "about": {
+         "@id": "https://www.nqou.net/#author"
+      },
+      "datePublished": "2000-10-07T13:52:09+09:00",
+      "dateModified": "2000-10-07T13:52:09+09:00",
+      "description": "\u0026lt;p\u0026gt;ソースコード\u0026lt;/p\u0026gt; #!/usr/bin/perl #BEGIN{ # print \u0026quot;Content-type:",
+      "inLanguage": "ja",
+      "potentialAction": [
+        {
+          "@type": "ReadAction",
+          "target": [
+            "https://www.nqou.net/2000/10/07/135209/"
+          ]
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "isPartOf": {
+        "@id": "https://www.nqou.net/2000/10/07/135209/#webpage"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://www.nqou.net/2000/10/07/135209/#webpage"
+      },
+      "headline": "強引な「require」",
+      "datePublished": "2000-10-07T13:52:09+09:00",
+      "dateModified": "2000-10-07T13:52:09+09:00",
+      "publisher": {
+        "@id": "https://www.nqou.net/#author"
+      },
+      "keywords": [
+        "perl"
+      ],
+      "articleSection": [
+      ],
+      "inLanguage": "ja",
+      "author": {
+        "@type": "Person",
+        "name":  null 
+      },
+      "potentialAction": [
+        {
+          "@type": "CommentAction",
+          "name": "Comment",
+          "target": [
+            "https://www.nqou.net/2000/10/07/135209/#comments"
+          ]
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/print.css"
+        media="print">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/poole.css">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/hyde.css">
+
+  
+
+
+  
+
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+        crossorigin="anonymous" />
+
+  <link rel="apple-touch-icon-precomposed"
+        sizes="144x144"
+        href="/apple-touch-icon-144-precomposed.png">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  </head>
+<body>
+  <aside class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      
+      <div class="author-image">
+        <a href="https://www.nqou.net/">
+          <img src="https://www.gravatar.com/avatar/96267d00f89345335b76d21e0417ae39?s=200&d=mp" class="img-circle img-headshot center" alt="Gravatar">
+        </a>
+      </div>
+      
+
+      <h1>nqou.net</h1>
+
+      
+      <p class="lead">Whisky, Perl, Kansai.pm</p>
+      
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li>
+          <a href="https://www.nqou.net/">Home</a>
+        </li>
+        <li>
+          <a href="/about/">About</a>
+        </li><li>
+          <a href="/post/">Posts</a>
+        </li><li>
+          <a href="/tags/">Tags</a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="social-icons">
+      
+      <a href="https://github.com/nqounet" rel="me" title="GitHub" target="_blank">
+        <i class="fab fa-github" aria-hidden="true"></i>
+      </a>
+      
+      <a href="https://twitter.com/nqounet" rel="me" title="Twitter" target="_blank">
+        <i class="fab fa-twitter" aria-hidden="true"></i>
+      </a>
+      
+    </section>
+  </div>
+</aside>
+
+
+  <main class="content container">
+  <div class="post">
+  <h1 class="title">強引な「require」</h1>
+  
+
+  <div class="post-date">
+    <time datetime="2000-10-07T13:52:09&#43;0900">Oct 7, 2000</time> <span class="readtime">&middot; 2 min read</span>
+  </div>
+
+  <div>
+  <!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<pre><code>                             &lt;p&gt;ソースコード&lt;/p&gt;
+</code></pre>
+<pre tabindex="0"><code class="language-default" data-lang="default">#!/usr/bin/perl
+
+#BEGIN{
+#   print &quot;Content-type: text/plainnn&quot;;
+#   open(STDERR, &quot;&gt;&amp;amp;STDOUT&quot;);
+#   $|=1;
+#}
+
+$timeBegin = times;
+$usr_title = 'テスト２７';
+
+require &quot;tsenv.pl&quot;;
+
+{
+    printHeader($usr_title);
+    printBodyHeader($usr_title);
+
+    Jprint('ほげてすと&lt;br&gt;');
+    Jprint('ちゃんとJISで表示されてますか？&lt;br&gt;&lt;br&gt;');
+#   print Jcode-&gt;new('げほてすと&lt;br&gt;これもJISですか？')-&gt;jis;
+
+    printFooter();
+
+    exit(0);
+}
+</code></pre><!-- raw HTML omitted -->
+<pre tabindex="0"><code class="language-default" data-lang="default"># tsenv.pl : TestCGI向き共通設定
+
+init() unless defined $info_copyright;
+
+sub init{
+#   use Jcode;
+    unshift(@INC, '../..');
+    require 'jcode.pl';
+
+    $info_copyright='';
+    open(IN, &quot;../../sig.txt&quot;);
+    &lt;IN&gt;;
+    while(&lt;IN&gt;){
+        $info_copyright .= $_;
+    }
+    close(IN);
+
+    $usr_outcode = 'jis' unless defined $usr_outcode;# 'sjis';# 'euc';# 'utf8';
+    if($usr_outcode eq 'sjis'){
+        $usr_outCharset = 'shift_jis';
+    }elsif($usr_outcode eq 'jis'){
+        $usr_outCharset = 'iso-2022-jp';
+    }elsif($usr_outcode eq 'euc'){
+        $usr_outCharset = 'euc-jp';
+#   }elsif($usr_outcode eq 'utf8'){
+#       $usr_outCharset = 'utf-8';
+    }
+
+    $usr_exTitle = $usr_title . 'の解説';
+    $usr_ex = $ENV{SCRIPT_NAME};
+    $usr_ex =~ s|cgi/(ts[0-9]{4})(_[12u])?.cgi$|$1.htm|;
+
+    @usr_stylesheet = (
+        '../../ipp.css',
+        '../test.css',
+    );
+
+#   %usr_links = (
+#       'Home'            =&gt;   '../../../index.htm',
+#       'Perl'            =&gt;   '../../',
+#       'TestCGI Index'   =&gt;   '../',
+#       $usr_exTitle    =&gt;   $usr_ex,
+#   );
+    @usr_linkName = (
+        'Home',
+        'Perl',
+        'TestCGI Index',
+        $usr_exTitle,
+    );
+    @usr_linkAddr = (
+        '../../../index.htm',
+        '../../',
+        '../',
+        $usr_ex,
+    );
+}
+
+sub printHeader{
+# 「&lt;title&gt;タグ」の文字列
+    my($title) = @_;
+    my $ss = '';
+    $ss .= qq(&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;$_&quot;&gt;n) foreach @usr_stylesheet;
+    Jprint(&lt;&lt;EOM);
+Content-type: text/html; charset=$usr_outCharset
+
+&lt;!doctype html public &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot;&gt;
+&lt;html lang=ja&gt;
+&lt;head&gt;
+&lt;meta name=&quot;ROBOTS&quot; content=&quot;NOINDEX&quot;&gt;
+&lt;meta http-equiv=&quot;Content-type&quot; content=&quot;text/html; charset=$usr_outCharset&quot;&gt;
+&lt;meta http-equiv=&quot;Content-style-type&quot; content=&quot;text/css&quot;&gt;
+
+&lt;title&gt;$title&lt;/title&gt;
+
+&lt;link rev=&quot;made&quot; href=&quot;$info_mailAddr&quot;&gt;
+$ss
+&lt;/head&gt;
+&lt;body&gt;
+EOM
+}
+
+sub printBodyHeader{
+# 英字なら「printBodyHeader(&quot;&lt;font face=times&gt;Title String&lt;/font&gt;&quot;);」がいいんだけど・・・。
+    my($title) = @_;
+    print &quot;&lt;div align=center&gt;n&quot;;
+    Jprint(qq(&lt;h2&gt;&lt;a name=&quot;top&quot;&gt;$title&lt;/a&gt;&lt;/h2&gt;n&lt;hr&gt;n));
+    printLinks();
+    print &quot;&lt;/div&gt;n&quot;;
+    print &quot;&lt;div class=test&gt;nn&quot;;
+}
+
+sub printFooter{
+    print &quot;n&lt;/div&gt;n&quot;;
+    print &quot;&lt;div align=center&gt;n&quot;;
+    print qq(&lt;a href=&quot;#top&quot; class=en&gt;Top&lt;/a&gt;n&lt;hr&gt;n);
+    printLinks();
+    print &quot;&lt;/div&gt;n&quot;;
+    print &quot;n&lt;div align=right&gt;n&quot;;
+    printf(&quot;Cost : %.2f&lt;br&gt;n&quot;, times);
+    print $info_copyright;
+    print &quot;n&lt;/div&gt;n&lt;/body&gt;n&lt;/html&gt;nn&quot;;
+}
+
+sub printLinks{
+#   my $cnt = 0;
+#   foreach(sort keys %usr_links){
+#       print &quot;/ &quot; if $cnt++;
+#       Jprint(qq(&lt;a href=&quot;$usr_links{$_}&quot;&gt;$_&lt;/a&gt;n));
+#   }
+
+#   for($i=0; $i&lt;@usr_linkName; $i++){
+    foreach $i(0 .. $#usr_linkName){
+        print &quot;/ &quot; if $i;
+        Jprint(qq(&lt;a href=&quot;$usr_linkAddr[$i]&quot; class=en&gt;$usr_linkName[$i]&lt;/a&gt;n));
+    }
+    print &quot;&lt;hr&gt;n&quot;;
+}
+
+sub Jprint{
+#   print Jcode::convert($_, $usr_outcode) foreach(@_);
+    print jcode::to($usr_outcode, $_) foreach @_;
+}
+
+1;
+</code></pre><pre><code>                          &lt;/div&gt;
+</code></pre>
+
+  </div>
+
+  
+<div>
+  <ul class="tags">
+  <li>
+    <a href="https://www.nqou.net/tags/perl/" class="tag-link">perl</a>
+  </li>
+  </ul>
+</div>
+
+
+
+  <div class="share-buttons">
+  <a class="twitter-share-button"
+     href="#"
+     title="Share on Twitter"
+     data-url="https://www.nqou.net/2000/10/07/135209/"
+     data-text="強引な「require」"><i class="fab fa-twitter"></i></a>
+
+  <a class="linkedin-share-button"
+     href="#"
+     title="Share on LinkedIn"
+     data-url="https://www.nqou.net/2000/10/07/135209/"
+     data-text="強引な「require」"><i class="fab fa-linkedin-in"></i></a>
+
+  <a class="facebook-share-button"
+     href="#"
+     title="Share on Facebook"
+     data-url="https://www.nqou.net/2000/10/07/135209/"
+     data-text="強引な「require」"><i class="fab fa-facebook"></i></a>
+
+  <a class="telegram-share-button"
+     href="#"
+     title="Share on Telegram"
+     data-url="https://www.nqou.net/2000/10/07/135209/"
+     data-text="強引な「require」"><i class="fab fa-telegram"></i></a>
+
+  <a class="pinterest-share-button"
+     href="#"
+     title="Share on Pinterest"
+     data-url="https://www.nqou.net/2000/10/07/135209/"
+     data-text="強引な「require」"><i class="fab fa-pinterest"></i></a>
+</div>
+
+
+  <div class="comments">
+    <h2>Comments</h2>
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "nqounet" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+</div>
+  </main>
+
+  <footer>
+  <div>
+    <p>
+      &copy; nqounet 2021
+
+      &middot; <a href="https://creativecommons.org/licenses/by/4.0" target="_blank">CC BY 4.0</a>
+
+      
+    </p>
+  </div>
+</footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
+          integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
+          crossorigin="anonymous"></script>
+
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/soho.js"></script>
+
+  
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-E50H9ESN7E', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

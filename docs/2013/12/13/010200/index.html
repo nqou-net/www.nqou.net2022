@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.88.1" />
+
+  <title>WindowsPowerShell&#43;Test::Moreでテストの時の文字化けを解消する方法 &middot; nqou.net</title>
+
+  <meta name="description" content="" />
+
+  
+
+<meta itemprop="name" content="WindowsPowerShell&#43;Test::Moreでテストの時の文字化けを解消する方法">
+<meta itemprop="description" content="@nqounetです． ここのところ，Macでもリロードするの"><meta itemprop="datePublished" content="2013-12-13T01:02:00+09:00" />
+<meta itemprop="dateModified" content="2013-12-13T01:02:00+09:00" />
+<meta itemprop="wordCount" content="970">
+<meta itemprop="keywords" content="undef," />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="WindowsPowerShell&#43;Test::Moreでテストの時の文字化けを解消する方法"/>
+<meta name="twitter:description" content="@nqounetです． ここのところ，Macでもリロードするの"/>
+
+
+<meta property="og:title" content="WindowsPowerShell&#43;Test::Moreでテストの時の文字化けを解消する方法" />
+<meta property="og:description" content="@nqounetです． ここのところ，Macでもリロードするの" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.nqou.net/2013/12/13/010200/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2013-12-13T01:02:00+09:00" />
+<meta property="article:modified_time" content="2013-12-13T01:02:00+09:00" /><meta property="og:site_name" content="nqou.net" />
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type":"Person",
+      "@id": "https://www.nqou.net/#author",
+      "name":  null ,
+      "image": {
+        "@type":"ImageObject",
+        "url": "https://www.gravatar.com/avatar/96267d00f89345335b76d21e0417ae39?s=400&d=mp"
+      },
+      "description": "Whisky, Perl, Kansai.pm"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.nqou.net/#website",
+      "url": "https://www.nqou.net/",
+      "name": "nqou.net",
+      "description": "Whisky, Perl, Kansai.pm",
+      "publisher": {
+        "@id": "https://www.nqou.net/#author"
+      },
+      "inLanguage": "ja"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.nqou.net/2013/12/13/010200/#webpage",
+      "url": "https://www.nqou.net/2013/12/13/010200/",
+      "name": "WindowsPowerShell+Test::Moreでテストの時の文字化けを解消する方法",
+      "isPartOf": {
+        "@id": "https://www.nqou.net/#website"
+      },
+      "about": {
+         "@id": "https://www.nqou.net/#author"
+      },
+      "datePublished": "2013-12-13T01:02:00+09:00",
+      "dateModified": "2013-12-13T01:02:00+09:00",
+      "description": "@nqounetです． ここのところ，Macでもリロードするの",
+      "inLanguage": "ja",
+      "potentialAction": [
+        {
+          "@type": "ReadAction",
+          "target": [
+            "https://www.nqou.net/2013/12/13/010200/"
+          ]
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "isPartOf": {
+        "@id": "https://www.nqou.net/2013/12/13/010200/#webpage"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://www.nqou.net/2013/12/13/010200/#webpage"
+      },
+      "headline": "WindowsPowerShell+Test::Moreでテストの時の文字化けを解消する方法",
+      "datePublished": "2013-12-13T01:02:00+09:00",
+      "dateModified": "2013-12-13T01:02:00+09:00",
+      "publisher": {
+        "@id": "https://www.nqou.net/#author"
+      },
+      "keywords": [
+        "undef"
+      ],
+      "articleSection": [
+      ],
+      "inLanguage": "ja",
+      "author": {
+        "@type": "Person",
+        "name":  null 
+      },
+      "potentialAction": [
+        {
+          "@type": "CommentAction",
+          "name": "Comment",
+          "target": [
+            "https://www.nqou.net/2013/12/13/010200/#comments"
+          ]
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/print.css"
+        media="print">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/poole.css">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/hyde.css">
+
+  
+
+
+  
+
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+        crossorigin="anonymous" />
+
+  <link rel="apple-touch-icon-precomposed"
+        sizes="144x144"
+        href="/apple-touch-icon-144-precomposed.png">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  </head>
+<body>
+  <aside class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      
+      <div class="author-image">
+        <a href="https://www.nqou.net/">
+          <img src="https://www.gravatar.com/avatar/96267d00f89345335b76d21e0417ae39?s=200&d=mp" class="img-circle img-headshot center" alt="Gravatar">
+        </a>
+      </div>
+      
+
+      <h1>nqou.net</h1>
+
+      
+      <p class="lead">Whisky, Perl, Kansai.pm</p>
+      
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li>
+          <a href="https://www.nqou.net/">Home</a>
+        </li>
+        <li>
+          <a href="/about/">About</a>
+        </li><li>
+          <a href="/post/">Posts</a>
+        </li><li>
+          <a href="/tags/">Tags</a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="social-icons">
+      
+      <a href="https://github.com/nqounet" rel="me" title="GitHub" target="_blank">
+        <i class="fab fa-github" aria-hidden="true"></i>
+      </a>
+      
+      <a href="https://twitter.com/nqounet" rel="me" title="Twitter" target="_blank">
+        <i class="fab fa-twitter" aria-hidden="true"></i>
+      </a>
+      
+    </section>
+  </div>
+</aside>
+
+
+  <main class="content container">
+  <div class="post">
+  <h1 class="title">WindowsPowerShell&#43;Test::Moreでテストの時の文字化けを解消する方法</h1>
+  
+
+  <div class="post-date">
+    <time datetime="2013-12-13T01:02:00&#43;0900">Dec 13, 2013</time> <span class="readtime">&middot; 2 min read</span>
+  </div>
+
+  <div>
+  <p><!-- raw HTML omitted -->@nqounet<!-- raw HTML omitted -->です．</p>
+<p>ここのところ，MacでもリロードするのにF5を押したり（もちろん動きません）しています．</p>
+<!-- raw HTML omitted -->
+<p>変更したのは<!-- raw HTML omitted -->print<!-- raw HTML omitted -->の部分で，encodeの処理を加えただけです．</p>
+<pre tabindex="0"><code class="language-default" data-lang="default">use utf8;
+use strict;
+use warnings;
+use Test::More;
+use Encode;
+use Term::Encoding qw(term_encoding);
+my $charset = term_encoding;
+
+{
+  no warnings 'redefine';
+  sub Test::Builder::_print_to_fh {
+      my( $self, $fh, @msgs ) = @_;
+
+      # Prevent printing headers when only compiling.  Mostly for when
+      # tests are deparsed with B::Deparse
+      return if $^C;
+
+      my $msg = join '', @msgs;
+      my $indent = $self-&gt;_indent;
+
+      local( $\, $&quot;, $, ) = ( undef, ' ', '' );
+
+      # Escape each line after the first with a # so we don't
+      # confuse Test::Harness.
+      $msg =~ s{\n(?!\z)}{\n$indent# }sg;
+
+      # Stick a newline on the end if it needs it.
+      $msg .= &quot;\n&quot; unless $msg =~ /\n\z/;
+
+      return print $fh $indent, encode($charset, $msg);
+  }
+}
+
+... # テストを書く
+</code></pre><p>いろいろ試しているうちに<!-- raw HTML omitted -->find_encoding<!-- raw HTML omitted -->を消してしまったのすが，これだったら<!-- raw HTML omitted -->find_encoding<!-- raw HTML omitted -->を使ったほうが速そうです．</p>
+<p>実際のスクリプトは，Test::Mojoを継承してゴニョゴニョしているものなので，この状態で動くかどうかはわかりません．</p>
+<p>いずれにしろ，プライベートな関数を再定義しているので行儀が良いわけではありません．</p>
+<!-- raw HTML omitted -->
+<p>意図的に出力する分については，<!-- raw HTML omitted -->以前の記事<!-- raw HTML omitted -->で文字化けを解消できたのですが，テストが失敗した時に自動的に出してくれる出力が文字化けのままでした．</p>
+<p>どうにかしたいな〜と思いながらTest::Moreのドキュメントを読んでいて，今更ですが<!-- raw HTML omitted -->Wide character in print<!-- raw HTML omitted -->について書いてあるのを発見しました．</p>
+<!-- raw HTML omitted -->
+<p>これは良さそうです，ということで試したのですが，どうもうまく行きませんでした．</p>
+<pre tabindex="0"><code class="language-default" data-lang="default">my $builder = Test::More-&gt;builder;
+binmode $builder-&gt;output,         &quot;:encoding($charset)&quot;;
+binmode $builder-&gt;failure_output, &quot;:encoding($charset)&quot;;
+binmode $builder-&gt;todo_output,    &quot;:encoding($charset)&quot;;
+</code></pre><p>どこかで変なミスをしたのかもしれないのですが，cp932にマッピングされていない文字がある！，というふうに文字ごとに警告がでました．</p>
+<p>正確な文字コードは忘れましたが，すべての文字に何かがくっついていた感じです．</p>
+<p>もしかすると，変数をやめて<!-- raw HTML omitted -->cp932<!-- raw HTML omitted -->を直打ちしたかもしれませんが，結果は同じだったと思います．</p>
+<p>メモってなくて記憶で書いているのでアレですが．</p>
+<!-- raw HTML omitted -->
+<p>念のため<!-- raw HTML omitted -->BEGIN<!-- raw HTML omitted -->を使ってみましたが，同じだったような気がします．</p>
+<p>メモってなくて（以下略</p>
+<!-- raw HTML omitted -->
+<p>そこにあったのが，<!-- raw HTML omitted -->Test::Builder::_print_to_fh<!-- raw HTML omitted -->でした．</p>
+<p>前後を見てみましたが，printしているのはここだけっぽいので，それじゃあって感じでencodeして出力するように再定義してみました．</p>
+<p>嫌なエラーも消え，文字化けも解消されました．</p>
+<p>めでたしめでたし．</p>
+<!-- raw HTML omitted -->
+<p>Windowsも内部的にはUTF-8を使ってるんじゃないんですかね？</p>
+
+  </div>
+
+  
+<div>
+  <ul class="tags">
+  <li>
+    <a href="https://www.nqou.net/tags/undef/" class="tag-link">undef</a>
+  </li>
+  </ul>
+</div>
+
+
+
+  <div class="share-buttons">
+  <a class="twitter-share-button"
+     href="#"
+     title="Share on Twitter"
+     data-url="https://www.nqou.net/2013/12/13/010200/"
+     data-text="WindowsPowerShell&#43;Test::Moreでテストの時の文字化けを解消する方法"><i class="fab fa-twitter"></i></a>
+
+  <a class="linkedin-share-button"
+     href="#"
+     title="Share on LinkedIn"
+     data-url="https://www.nqou.net/2013/12/13/010200/"
+     data-text="WindowsPowerShell&#43;Test::Moreでテストの時の文字化けを解消する方法"><i class="fab fa-linkedin-in"></i></a>
+
+  <a class="facebook-share-button"
+     href="#"
+     title="Share on Facebook"
+     data-url="https://www.nqou.net/2013/12/13/010200/"
+     data-text="WindowsPowerShell&#43;Test::Moreでテストの時の文字化けを解消する方法"><i class="fab fa-facebook"></i></a>
+
+  <a class="telegram-share-button"
+     href="#"
+     title="Share on Telegram"
+     data-url="https://www.nqou.net/2013/12/13/010200/"
+     data-text="WindowsPowerShell&#43;Test::Moreでテストの時の文字化けを解消する方法"><i class="fab fa-telegram"></i></a>
+
+  <a class="pinterest-share-button"
+     href="#"
+     title="Share on Pinterest"
+     data-url="https://www.nqou.net/2013/12/13/010200/"
+     data-text="WindowsPowerShell&#43;Test::Moreでテストの時の文字化けを解消する方法"><i class="fab fa-pinterest"></i></a>
+</div>
+
+
+  <div class="comments">
+    <h2>Comments</h2>
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "nqounet" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+</div>
+  </main>
+
+  <footer>
+  <div>
+    <p>
+      &copy; nqounet 2021
+
+      &middot; <a href="https://creativecommons.org/licenses/by/4.0" target="_blank">CC BY 4.0</a>
+
+      
+    </p>
+  </div>
+</footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
+          integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
+          crossorigin="anonymous"></script>
+
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/soho.js"></script>
+
+  
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-E50H9ESN7E', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

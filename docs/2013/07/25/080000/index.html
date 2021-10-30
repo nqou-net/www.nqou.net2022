@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.88.1" />
+
+  <title>vagrantで開発環境を自動的に作成する &middot; nqou.net</title>
+
+  <meta name="description" content="" />
+
+  
+
+<meta itemprop="name" content="vagrantで開発環境を自動的に作成する">
+<meta itemprop="description" content="@nqounetです。 結構前に@papixさんから教えてもら"><meta itemprop="datePublished" content="2013-07-25T08:00:00+09:00" />
+<meta itemprop="dateModified" content="2013-07-25T08:00:00+09:00" />
+<meta itemprop="wordCount" content="1132">
+<meta itemprop="keywords" content="git,linux,perl," />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="vagrantで開発環境を自動的に作成する"/>
+<meta name="twitter:description" content="@nqounetです。 結構前に@papixさんから教えてもら"/>
+
+
+<meta property="og:title" content="vagrantで開発環境を自動的に作成する" />
+<meta property="og:description" content="@nqounetです。 結構前に@papixさんから教えてもら" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.nqou.net/2013/07/25/080000/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2013-07-25T08:00:00+09:00" />
+<meta property="article:modified_time" content="2013-07-25T08:00:00+09:00" /><meta property="og:site_name" content="nqou.net" />
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type":"Person",
+      "@id": "https://www.nqou.net/#author",
+      "name":  null ,
+      "image": {
+        "@type":"ImageObject",
+        "url": "https://www.gravatar.com/avatar/96267d00f89345335b76d21e0417ae39?s=400&d=mp"
+      },
+      "description": "Whisky, Perl, Kansai.pm"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.nqou.net/#website",
+      "url": "https://www.nqou.net/",
+      "name": "nqou.net",
+      "description": "Whisky, Perl, Kansai.pm",
+      "publisher": {
+        "@id": "https://www.nqou.net/#author"
+      },
+      "inLanguage": "ja"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.nqou.net/2013/07/25/080000/#webpage",
+      "url": "https://www.nqou.net/2013/07/25/080000/",
+      "name": "vagrantで開発環境を自動的に作成する",
+      "isPartOf": {
+        "@id": "https://www.nqou.net/#website"
+      },
+      "about": {
+         "@id": "https://www.nqou.net/#author"
+      },
+      "datePublished": "2013-07-25T08:00:00+09:00",
+      "dateModified": "2013-07-25T08:00:00+09:00",
+      "description": "@nqounetです。 結構前に@papixさんから教えてもら",
+      "inLanguage": "ja",
+      "potentialAction": [
+        {
+          "@type": "ReadAction",
+          "target": [
+            "https://www.nqou.net/2013/07/25/080000/"
+          ]
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "isPartOf": {
+        "@id": "https://www.nqou.net/2013/07/25/080000/#webpage"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://www.nqou.net/2013/07/25/080000/#webpage"
+      },
+      "headline": "vagrantで開発環境を自動的に作成する",
+      "datePublished": "2013-07-25T08:00:00+09:00",
+      "dateModified": "2013-07-25T08:00:00+09:00",
+      "publisher": {
+        "@id": "https://www.nqou.net/#author"
+      },
+      "keywords": [
+        "git",
+        "linux",
+        "perl"
+      ],
+      "articleSection": [
+      ],
+      "inLanguage": "ja",
+      "author": {
+        "@type": "Person",
+        "name":  null 
+      },
+      "potentialAction": [
+        {
+          "@type": "CommentAction",
+          "name": "Comment",
+          "target": [
+            "https://www.nqou.net/2013/07/25/080000/#comments"
+          ]
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/print.css"
+        media="print">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/poole.css">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/hyde.css">
+
+  
+
+
+  
+
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+        crossorigin="anonymous" />
+
+  <link rel="apple-touch-icon-precomposed"
+        sizes="144x144"
+        href="/apple-touch-icon-144-precomposed.png">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  </head>
+<body>
+  <aside class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      
+      <div class="author-image">
+        <a href="https://www.nqou.net/">
+          <img src="https://www.gravatar.com/avatar/96267d00f89345335b76d21e0417ae39?s=200&d=mp" class="img-circle img-headshot center" alt="Gravatar">
+        </a>
+      </div>
+      
+
+      <h1>nqou.net</h1>
+
+      
+      <p class="lead">Whisky, Perl, Kansai.pm</p>
+      
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li>
+          <a href="https://www.nqou.net/">Home</a>
+        </li>
+        <li>
+          <a href="/about/">About</a>
+        </li><li>
+          <a href="/post/">Posts</a>
+        </li><li>
+          <a href="/tags/">Tags</a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="social-icons">
+      
+      <a href="https://github.com/nqounet" rel="me" title="GitHub" target="_blank">
+        <i class="fab fa-github" aria-hidden="true"></i>
+      </a>
+      
+      <a href="https://twitter.com/nqounet" rel="me" title="Twitter" target="_blank">
+        <i class="fab fa-twitter" aria-hidden="true"></i>
+      </a>
+      
+    </section>
+  </div>
+</aside>
+
+
+  <main class="content container">
+  <div class="post">
+  <h1 class="title">vagrantで開発環境を自動的に作成する</h1>
+  
+
+  <div class="post-date">
+    <time datetime="2013-07-25T08:00:00&#43;0900">Jul 25, 2013</time> <span class="readtime">&middot; 3 min read</span>
+  </div>
+
+  <div>
+  <p><!-- raw HTML omitted -->@nqounet<!-- raw HTML omitted -->です。</p>
+<p>結構前に<!-- raw HTML omitted -->@<strong>papix</strong><!-- raw HTML omitted -->さんから教えてもらったvagrantですが、ふとした切っ掛けで、もう少し本格的に使いたいと思いはじめました。</p>
+<p>ちなみに、「ベイグラント」と聞いて<!-- raw HTML omitted -->これ<!-- raw HTML omitted -->を思い出しました。</p>
+<p>まあ、それは置いておいて。</p>
+<p>vagrantで開発環境の自動構築というと、chef-soloの情報が多いと思う（というか、chefだけだと思っていました）のですが、今回はshellでやってみた事を書いてみます。</p>
+<!-- raw HTML omitted -->
+<p>OSXならdmgファイルを、Windowsならmsiファイルを選びます。</p>
+<!-- raw HTML omitted -->
+<p>今回調べていて知ったのですが、private_networkではこの例のようにDHCPを使って自動的にIPアドレスを割り当てるようにする事ができます。</p>
+<p>これまではいちいちIPアドレスを重ならないように設定（重なると起動できない）していたのですが、これで変更する箇所が減って大分楽になりました。</p>
+<!-- raw HTML omitted -->
+<h1 id="run-once">run once</h1>
+<p>if ! [ -f &ldquo;$HOME/perl5/perlbrew/etc/bashrc&rdquo; ]; then</p>
+<h1 id="install-perlbrew">install Perlbrew</h1>
+<p>curl -L <a href="http://install.perlbrew.pl">http://install.perlbrew.pl</a> | bash
+echo &lsquo;source ~/perl5/perlbrew/etc/bashrc&rsquo; &raquo; ~/.bashrc
+source ~/.bashrc</p>
+<h1 id="install-perl">install Perl</h1>
+<p>perlbrew install 5.16.3</p>
+<p>perlbrew switch 5.16.3</p>
+<h1 id="install-appcpanminus-cpanm">install App::cpanminus (cpanm)</h1>
+<p>curl -L <a href="http://cpanmin.us">http://cpanmin.us</a> | perl - App::cpanminus
+fi</p>
+<p>yum install -y git mysql-devel</p>
+<p>cpanm DBD::mysql Data::Model</p>
+<pre tabindex="0"><code>あちこちのブログでは、yumなどにsudoを付けて実行していましたが、そのような必要はありませんでした。
+
+少なくとも「Vagrant version 1.2.2」では、rootとして実行されています。
+
+で、これら2つのファイルを同じディレクトリに置いて、そのディレクトリで以下のようにコマンドを入力します。
+```default
+vagrant up
+</code></pre><p>上手く行けばPerlのビルドまで実行されるので、結構時間がかかります。</p>
+<p>構築が終わったら、仮想マシンにログインします。</p>
+<pre tabindex="0"><code class="language-default" data-lang="default">vagrant ssh
+</code></pre><p>これで、先ほど作成したマシンにログインできます。</p>
+<p>初期ユーザーはvagrantです。</p>
+<p>で、先ほどのスクリプトはroot権限なので、rootに変わってからPerlがインストール出来ているか確認してみます。</p>
+<pre tabindex="0"><code class="language-default" data-lang="default">sudo su -
+</code></pre><p>これでrootになれましたので、続けてPerlのバージョンを見てみます。</p>
+<pre tabindex="0"><code class="language-default" data-lang="default">perl -V
+</code></pre><p>結果は以下のとおり、上手くいっています。</p>
+<pre tabindex="0"><code class="language-default" data-lang="default">Summary of my perl5 (revision 5 version 16 subversion 3) configuration:
+
+  Platform:
+    osname=linux, osvers=2.6.32-358.el6.x86_64, archname=x86_64-linux
+    uname='linux vm-perlbrew 2.6.32-358.el6.x86_64 #1 smp fri feb 22 00:31:26 utc 2013 x86_64 x86_64 x86_64 gnulinux '
+    config_args='-de -Dprefix=/root/perl5/perlbrew/perls/perl-5.16.3 -Aeval:scriptdir=/root/perl5/perlbrew/perls/perl-5.16.3/bin'
+    hint=recommended, useposix=true, d_sigaction=define
+    useithreads=undef, usemultiplicity=undef
+    useperlio=define, d_sfio=undef, uselargefiles=define, usesocks=undef
+    use64bitint=define, use64bitall=define, uselongdouble=undef
+    usemymalloc=n, bincompat5005=undef
+  Compiler:
+    cc='cc', ccflags ='-fno-strict-aliasing -pipe -fstack-protector -I/usr/local/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64',
+    optimize='-O2',
+    cppflags='-fno-strict-aliasing -pipe -fstack-protector -I/usr/local/include'
+    ccversion='', gccversion='4.4.7 20120313 (Red Hat 4.4.7-3)', gccosandvers=''
+    intsize=4, longsize=8, ptrsize=8, doublesize=8, byteorder=12345678
+    d_longlong=define, longlongsize=8, d_longdbl=define, longdblsize=16
+    ivtype='long', ivsize=8, nvtype='double', nvsize=8, Off_t='off_t', lseeksize=8
+    alignbytes=8, prototype=define
+  Linker and Libraries:
+    ld='cc', ldflags =' -fstack-protector -L/usr/local/lib'
+    libpth=/usr/local/lib /lib/../lib64 /usr/lib/../lib64 /lib /usr/lib /lib64 /usr/lib64 /usr/local/lib64
+    libs=-lnsl -ldl -lm -lcrypt -lutil -lc
+    perllibs=-lnsl -ldl -lm -lcrypt -lutil -lc
+    libc=, so=so, useshrplib=false, libperl=libperl.a
+    gnulibc_version='2.12'
+  Dynamic Linking:
+    dlsrc=dl_dlopen.xs, dlext=so, d_dlsymun=undef, ccdlflags='-Wl,-E'
+    cccdlflags='-fPIC', lddlflags='-shared -O2 -L/usr/local/lib -fstack-protector'
+
+
+Characteristics of this binary (from libperl): 
+  Compile-time options: HAS_TIMES PERLIO_LAYERS PERL_DONT_CREATE_GVSV
+                        PERL_MALLOC_WRAP PERL_PRESERVE_IVUV USE_64_BIT_ALL
+                        USE_64_BIT_INT USE_LARGE_FILES USE_LOCALE
+                        USE_LOCALE_COLLATE USE_LOCALE_CTYPE
+                        USE_LOCALE_NUMERIC USE_PERLIO USE_PERL_ATOF
+  Built under linux
+  Compiled at Jul 24 2013 17:17:04
+  %ENV:
+    PERLBREW_BASHRC_VERSION=&quot;0.64&quot;
+    PERLBREW_HOME=&quot;/root/.perlbrew&quot;
+    PERLBREW_MANPATH=&quot;/root/perl5/perlbrew/perls/perl-5.16.3/man&quot;
+    PERLBREW_PATH=&quot;/root/perl5/perlbrew/bin:/root/perl5/perlbrew/perls/perl-5.16.3/bin&quot;
+    PERLBREW_PERL=&quot;perl-5.16.3&quot;
+    PERLBREW_ROOT=&quot;/root/perl5/perlbrew&quot;
+    PERLBREW_VERSION=&quot;0.64&quot;
+  @INC:
+    /root/perl5/perlbrew/perls/perl-5.16.3/lib/site_perl/5.16.3/x86_64-linux
+    /root/perl5/perlbrew/perls/perl-5.16.3/lib/site_perl/5.16.3
+    /root/perl5/perlbrew/perls/perl-5.16.3/lib/5.16.3/x86_64-linux
+    /root/perl5/perlbrew/perls/perl-5.16.3/lib/5.16.3
+    .
+</code></pre><!-- raw HTML omitted -->
+<p>ちなみに、DBD::mysqlを指定しているのは、MAMPが稼働中のOSXにこれがインストールできなくて泣いたからです。</p>
+<p>とりあえず、DBD::mysqlがインストールできるかどうかを一つの指標にしていましたので、この結果は満足の行くものでした。</p>
+<p>この調子で、今度はchef-soloで色々とやってみたいですね。</p>
+<!-- raw HTML omitted -->
+
+  </div>
+
+  
+<div>
+  <ul class="tags">
+  <li>
+    <a href="https://www.nqou.net/tags/git/" class="tag-link">git</a>
+  </li>
+  
+  <li>
+    <a href="https://www.nqou.net/tags/linux/" class="tag-link">linux</a>
+  </li>
+  
+  <li>
+    <a href="https://www.nqou.net/tags/perl/" class="tag-link">perl</a>
+  </li>
+  </ul>
+</div>
+
+
+
+  <div class="share-buttons">
+  <a class="twitter-share-button"
+     href="#"
+     title="Share on Twitter"
+     data-url="https://www.nqou.net/2013/07/25/080000/"
+     data-text="vagrantで開発環境を自動的に作成する"><i class="fab fa-twitter"></i></a>
+
+  <a class="linkedin-share-button"
+     href="#"
+     title="Share on LinkedIn"
+     data-url="https://www.nqou.net/2013/07/25/080000/"
+     data-text="vagrantで開発環境を自動的に作成する"><i class="fab fa-linkedin-in"></i></a>
+
+  <a class="facebook-share-button"
+     href="#"
+     title="Share on Facebook"
+     data-url="https://www.nqou.net/2013/07/25/080000/"
+     data-text="vagrantで開発環境を自動的に作成する"><i class="fab fa-facebook"></i></a>
+
+  <a class="telegram-share-button"
+     href="#"
+     title="Share on Telegram"
+     data-url="https://www.nqou.net/2013/07/25/080000/"
+     data-text="vagrantで開発環境を自動的に作成する"><i class="fab fa-telegram"></i></a>
+
+  <a class="pinterest-share-button"
+     href="#"
+     title="Share on Pinterest"
+     data-url="https://www.nqou.net/2013/07/25/080000/"
+     data-text="vagrantで開発環境を自動的に作成する"><i class="fab fa-pinterest"></i></a>
+</div>
+
+
+  <div class="comments">
+    <h2>Comments</h2>
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "nqounet" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+</div>
+  </main>
+
+  <footer>
+  <div>
+    <p>
+      &copy; nqounet 2021
+
+      &middot; <a href="https://creativecommons.org/licenses/by/4.0" target="_blank">CC BY 4.0</a>
+
+      
+    </p>
+  </div>
+</footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
+          integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
+          crossorigin="anonymous"></script>
+
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/soho.js"></script>
+
+  
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-E50H9ESN7E', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

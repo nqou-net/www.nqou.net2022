@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.88.1" />
+
+  <title>JSON::RPC::Spec v1.0.5 をリリースしました &middot; nqou.net</title>
+
+  <meta name="description" content="" />
+
+  
+
+<meta itemprop="name" content="JSON::RPC::Spec v1.0.5 をリリースしました">
+<meta itemprop="description" content="おはようございます。 若林（@nqounet）です。 JSON:"><meta itemprop="datePublished" content="2015-11-16T08:36:46+09:00" />
+<meta itemprop="dateModified" content="2015-11-16T08:36:46+09:00" />
+<meta itemprop="wordCount" content="1779">
+<meta itemprop="keywords" content="mojolicious,perl," />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="JSON::RPC::Spec v1.0.5 をリリースしました"/>
+<meta name="twitter:description" content="おはようございます。 若林（@nqounet）です。 JSON:"/>
+
+
+<meta property="og:title" content="JSON::RPC::Spec v1.0.5 をリリースしました" />
+<meta property="og:description" content="おはようございます。 若林（@nqounet）です。 JSON:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.nqou.net/2015/11/16/083646/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2015-11-16T08:36:46+09:00" />
+<meta property="article:modified_time" content="2015-11-16T08:36:46+09:00" /><meta property="og:site_name" content="nqou.net" />
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type":"Person",
+      "@id": "https://www.nqou.net/#author",
+      "name":  null ,
+      "image": {
+        "@type":"ImageObject",
+        "url": "https://www.gravatar.com/avatar/96267d00f89345335b76d21e0417ae39?s=400&d=mp"
+      },
+      "description": "Whisky, Perl, Kansai.pm"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.nqou.net/#website",
+      "url": "https://www.nqou.net/",
+      "name": "nqou.net",
+      "description": "Whisky, Perl, Kansai.pm",
+      "publisher": {
+        "@id": "https://www.nqou.net/#author"
+      },
+      "inLanguage": "ja"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.nqou.net/2015/11/16/083646/#webpage",
+      "url": "https://www.nqou.net/2015/11/16/083646/",
+      "name": "JSON::RPC::Spec v1.0.5 をリリースしました",
+      "isPartOf": {
+        "@id": "https://www.nqou.net/#website"
+      },
+      "about": {
+         "@id": "https://www.nqou.net/#author"
+      },
+      "datePublished": "2015-11-16T08:36:46+09:00",
+      "dateModified": "2015-11-16T08:36:46+09:00",
+      "description": "おはようございます。 若林（@nqounet）です。 JSON:",
+      "inLanguage": "ja",
+      "potentialAction": [
+        {
+          "@type": "ReadAction",
+          "target": [
+            "https://www.nqou.net/2015/11/16/083646/"
+          ]
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "isPartOf": {
+        "@id": "https://www.nqou.net/2015/11/16/083646/#webpage"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://www.nqou.net/2015/11/16/083646/#webpage"
+      },
+      "headline": "JSON::RPC::Spec v1.0.5 をリリースしました",
+      "datePublished": "2015-11-16T08:36:46+09:00",
+      "dateModified": "2015-11-16T08:36:46+09:00",
+      "publisher": {
+        "@id": "https://www.nqou.net/#author"
+      },
+      "keywords": [
+        "mojolicious",
+        "perl"
+      ],
+      "articleSection": [
+      ],
+      "inLanguage": "ja",
+      "author": {
+        "@type": "Person",
+        "name":  null 
+      },
+      "potentialAction": [
+        {
+          "@type": "CommentAction",
+          "name": "Comment",
+          "target": [
+            "https://www.nqou.net/2015/11/16/083646/#comments"
+          ]
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/print.css"
+        media="print">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/poole.css">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/hyde.css">
+
+  
+
+
+  
+
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+        crossorigin="anonymous" />
+
+  <link rel="apple-touch-icon-precomposed"
+        sizes="144x144"
+        href="/apple-touch-icon-144-precomposed.png">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  </head>
+<body>
+  <aside class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      
+      <div class="author-image">
+        <a href="https://www.nqou.net/">
+          <img src="https://www.gravatar.com/avatar/96267d00f89345335b76d21e0417ae39?s=200&d=mp" class="img-circle img-headshot center" alt="Gravatar">
+        </a>
+      </div>
+      
+
+      <h1>nqou.net</h1>
+
+      
+      <p class="lead">Whisky, Perl, Kansai.pm</p>
+      
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li>
+          <a href="https://www.nqou.net/">Home</a>
+        </li>
+        <li>
+          <a href="/about/">About</a>
+        </li><li>
+          <a href="/post/">Posts</a>
+        </li><li>
+          <a href="/tags/">Tags</a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="social-icons">
+      
+      <a href="https://github.com/nqounet" rel="me" title="GitHub" target="_blank">
+        <i class="fab fa-github" aria-hidden="true"></i>
+      </a>
+      
+      <a href="https://twitter.com/nqounet" rel="me" title="Twitter" target="_blank">
+        <i class="fab fa-twitter" aria-hidden="true"></i>
+      </a>
+      
+    </section>
+  </div>
+</aside>
+
+
+  <main class="content container">
+  <div class="post">
+  <h1 class="title">JSON::RPC::Spec v1.0.5 をリリースしました</h1>
+  
+
+  <div class="post-date">
+    <time datetime="2015-11-16T08:36:46&#43;0900">Nov 16, 2015</time> <span class="readtime">&middot; 4 min read</span>
+  </div>
+
+  <div>
+  <p>おはようございます。
+若林（<a href="https://twitter.com/nqounet">@nqounet</a>）です。</p>
+<p>JSON::RPC::Specをアップデートしましたのでお知らせいたします。</p>
+<!-- raw HTML omitted -->
+<h2 id="jsonrpcspecとは">JSON::RPC::Specとは</h2>
+<p>ひとことで言うと、JSON-RPCの仕様のJSON文字列を解釈して結果を返すモジュールです。</p>
+<p>詳しくは過去のリリースの時に書いたエントリーをご覧ください。</p>
+<!-- raw HTML omitted -->
+<p>全くの偶然なのですが、仕事でJSON-RPCの仕様で通信を行う機会がありました。</p>
+<p>ただし、通信を暗号化する必要があったり、既存のアプリが持っているデータも使いたいので、アプリの中に組み込めるこのモジュールを使っています。</p>
+<p>ただ、実際に使ってみると、要求された仕様で動くように書いていくのは結構大変でした。</p>
+<p>特に、任意のエラーを出すことを想定していなかったので、微妙なハックで対応したのですが、とりあえず喉元過ぎれば熱さを忘れるとかいうやつです。</p>
+<p>で、それ以外に、どう頑張っても無理そうな事があったので、今回はそれを実現するためにアップデートしました。</p>
+<h2 id="アップデート内容の概要">アップデート内容の概要</h2>
+<p>JSON文字列を解釈（parse または parse_without_encode）するとき、その文字列以外にも変数を渡せるようにしました。</p>
+<p>その変数は、ディスパッチャを定義（register）で定義する関数で受け取ることができます。</p>
+<h2 id="詳細">詳細</h2>
+<p>このモジュールは使うタイミングによってメソッドが分かれています。</p>
+<p>ひとつ目はディスパッチャの定義（register）、ふたつ目がJSON文字列を解釈する関数（parse または parse_without_encode）です。</p>
+<p>ひとつ目のregisterは、methodによって動作を変えることを想定していて、Router::Simpleの機能を使って各クラス、あるいは関数へ処理を振り分ける定義をします。</p>
+<pre tabindex="0"><code># method matching via Router::Simple
+$rpc-&gt;register('myapp.{action}' =&gt; sub {
+    my ($params, $match) = @_;
+    my $action = $match-&gt;{action};
+    return MyApp-&gt;new-&gt;$action($params);
+});
+</code></pre><p>モジュールのregisterの説明部分にはこういう書き方をしています。</p>
+<p>こうした場合に以下のようなJSON文字列をparseすると、</p>
+<pre tabindex="0"><code>{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;myapp.foo&quot;,&quot;params&quot;:{&quot;key&quot;:&quot;value&quot;},&quot;id&quot;:&quot;1&quot;}
+</code></pre><p>MyApp.pmに書いてある foo 関数に対して　+{key =&gt; &lsquo;value&rsquo;} というハッシュを渡す、というふうになります。</p>
+<p>registerの第一引数にマッチした内容が $match に渡されるので、methodが「myapp.bar」であれば bar 関数に渡す、という感じです。</p>
+<p>そして、ふたつ目のparseは実際のJSON文字列を渡すことで、実際に定義通りに動作する部分です。</p>
+<p>この時に渡したい変数があっても、うまく渡す方法が思いつきませんでした。</p>
+<p>なので、無理矢理押し込めました。</p>
+<h2 id="サンプル">サンプル</h2>
+<p>少ししっかり目のサンプルを書いてみました。</p>
+<p><!-- raw HTML omitted --><a href="https://github.com/nqounet/p5-json-rpc-spec/tree/master/examples/extra_args">https://github.com/nqounet/p5-json-rpc-spec/tree/master/examples/extra_args</a><!-- raw HTML omitted --></p>
+<p>main.plを実行した時、parseの時に、以下のようにして変数を渡すと、</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#75715e"># https://github.com/nqounet/p5-json-rpc-spec/blob/657ede22dd44be863281e8775602ce7c1e8d20c2/examples/extra_args/main.pl#L25</span>
+<span style="color:#66d9ef">my</span> $result <span style="color:#f92672">=</span> $app<span style="color:#f92672">-&gt;</span>jsonrpc<span style="color:#f92672">-&gt;</span>parse($json, $extra_args);
+</code></pre></div><p>ディスパッチ先（例としては、MyApp::Fooのbar関数）で受け取ることができます。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#75715e"># https://github.com/nqounet/p5-json-rpc-spec/blob/657ede22dd44be863281e8775602ce7c1e8d20c2/examples/extra_args/lib/MyApp/Foo.pm#L10-L22</span>
+<span style="color:#66d9ef">sub</span> <span style="color:#a6e22e">bar</span> {
+    <span style="color:#66d9ef">my</span> $self <span style="color:#f92672">=</span> shift;
+
+    <span style="color:#66d9ef">my</span> $params     <span style="color:#f92672">=</span> shift;
+    <span style="color:#66d9ef">my</span> $extra_args <span style="color:#f92672">=</span> <span style="color:#f92672">+</span>[@_];
+
+    <span style="color:#f92672">+</span>{
+        controller <span style="color:#f92672">=&gt;</span> $self<span style="color:#f92672">-&gt;</span>controller,
+        action     <span style="color:#f92672">=&gt;</span> $self<span style="color:#f92672">-&gt;</span>action,
+        params     <span style="color:#f92672">=&gt;</span> $params,
+        extra_args <span style="color:#f92672">=&gt;</span> $extra_args,
+    };
+}
+</code></pre></div><p>Mojolicious::Lite のように1枚のファイルに書く場合は不要なのですが、ちゃんとクラスに分けて書こうとすると変数がなかなか渡しづらいので、こういう場面で使えるように考えました。</p>
+<h2 id="実際に使おうとしている場面">実際に使おうとしている場面</h2>
+<p>Mojolicious でシステムを作っているのですが、そのシステムにJSON-RPCの方式で外部からアクセスできるようにしていたのです。</p>
+<p>register は アプリ（Mojoliciousを継承しているモジュール） の startup のタイミングで定義しており、実際に処理したいJSON文字列は、コントローラー（Mojolicious::Controllerを継承しているモジュール）に実装しています。</p>
+<p>この時、ディスパッチ先でコントローラーが持っているデータを使いたいと思ったら、なかなか難しいことに気づきました。</p>
+<p>parseする時にコントローラーを渡すのが最も簡単だったので、今回は素直にこういう実装にしました。</p>
+<h2 id="json-rpcをアプリに組み込むならjsonrpcspec">JSON-RPCをアプリに組み込むならJSON::RPC::Spec</h2>
+<p>JSON::RPC::Specは、バッチについても対応しています。</p>
+<p>つまり、完全にJSON-RPCに対応していますので、アプリでJSON-RPCをやるならJSON::RPC::Specが良いと思います。</p>
+
+  </div>
+
+  
+<div>
+  <ul class="tags">
+  <li>
+    <a href="https://www.nqou.net/tags/mojolicious/" class="tag-link">mojolicious</a>
+  </li>
+  
+  <li>
+    <a href="https://www.nqou.net/tags/perl/" class="tag-link">perl</a>
+  </li>
+  </ul>
+</div>
+
+
+
+  <div class="share-buttons">
+  <a class="twitter-share-button"
+     href="#"
+     title="Share on Twitter"
+     data-url="https://www.nqou.net/2015/11/16/083646/"
+     data-text="JSON::RPC::Spec v1.0.5 をリリースしました"><i class="fab fa-twitter"></i></a>
+
+  <a class="linkedin-share-button"
+     href="#"
+     title="Share on LinkedIn"
+     data-url="https://www.nqou.net/2015/11/16/083646/"
+     data-text="JSON::RPC::Spec v1.0.5 をリリースしました"><i class="fab fa-linkedin-in"></i></a>
+
+  <a class="facebook-share-button"
+     href="#"
+     title="Share on Facebook"
+     data-url="https://www.nqou.net/2015/11/16/083646/"
+     data-text="JSON::RPC::Spec v1.0.5 をリリースしました"><i class="fab fa-facebook"></i></a>
+
+  <a class="telegram-share-button"
+     href="#"
+     title="Share on Telegram"
+     data-url="https://www.nqou.net/2015/11/16/083646/"
+     data-text="JSON::RPC::Spec v1.0.5 をリリースしました"><i class="fab fa-telegram"></i></a>
+
+  <a class="pinterest-share-button"
+     href="#"
+     title="Share on Pinterest"
+     data-url="https://www.nqou.net/2015/11/16/083646/"
+     data-text="JSON::RPC::Spec v1.0.5 をリリースしました"><i class="fab fa-pinterest"></i></a>
+</div>
+
+
+  <div class="comments">
+    <h2>Comments</h2>
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "nqounet" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+</div>
+  </main>
+
+  <footer>
+  <div>
+    <p>
+      &copy; nqounet 2021
+
+      &middot; <a href="https://creativecommons.org/licenses/by/4.0" target="_blank">CC BY 4.0</a>
+
+      
+    </p>
+  </div>
+</footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
+          integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
+          crossorigin="anonymous"></script>
+
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/soho.js"></script>
+
+  
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-E50H9ESN7E', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

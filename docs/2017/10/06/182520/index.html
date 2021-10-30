@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.88.1" />
+
+  <title>タイムゾーンの憂鬱 &middot; nqou.net</title>
+
+  <meta name="description" content="" />
+
+  
+
+<meta itemprop="name" content="タイムゾーンの憂鬱">
+<meta itemprop="description" content="Hexoの時間の扱いについてわかったこと 納得がいかなくて色々"><meta itemprop="datePublished" content="2017-10-06T18:25:20+09:00" />
+<meta itemprop="dateModified" content="2017-10-06T18:25:20+09:00" />
+<meta itemprop="wordCount" content="863">
+<meta itemprop="keywords" content="hexo," />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="タイムゾーンの憂鬱"/>
+<meta name="twitter:description" content="Hexoの時間の扱いについてわかったこと 納得がいかなくて色々"/>
+
+
+<meta property="og:title" content="タイムゾーンの憂鬱" />
+<meta property="og:description" content="Hexoの時間の扱いについてわかったこと 納得がいかなくて色々" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.nqou.net/2017/10/06/182520/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2017-10-06T18:25:20+09:00" />
+<meta property="article:modified_time" content="2017-10-06T18:25:20+09:00" /><meta property="og:site_name" content="nqou.net" />
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type":"Person",
+      "@id": "https://www.nqou.net/#author",
+      "name":  null ,
+      "image": {
+        "@type":"ImageObject",
+        "url": "https://www.gravatar.com/avatar/96267d00f89345335b76d21e0417ae39?s=400&d=mp"
+      },
+      "description": "Whisky, Perl, Kansai.pm"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.nqou.net/#website",
+      "url": "https://www.nqou.net/",
+      "name": "nqou.net",
+      "description": "Whisky, Perl, Kansai.pm",
+      "publisher": {
+        "@id": "https://www.nqou.net/#author"
+      },
+      "inLanguage": "ja"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.nqou.net/2017/10/06/182520/#webpage",
+      "url": "https://www.nqou.net/2017/10/06/182520/",
+      "name": "タイムゾーンの憂鬱",
+      "isPartOf": {
+        "@id": "https://www.nqou.net/#website"
+      },
+      "about": {
+         "@id": "https://www.nqou.net/#author"
+      },
+      "datePublished": "2017-10-06T18:25:20+09:00",
+      "dateModified": "2017-10-06T18:25:20+09:00",
+      "description": "Hexoの時間の扱いについてわかったこと 納得がいかなくて色々",
+      "inLanguage": "ja",
+      "potentialAction": [
+        {
+          "@type": "ReadAction",
+          "target": [
+            "https://www.nqou.net/2017/10/06/182520/"
+          ]
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "isPartOf": {
+        "@id": "https://www.nqou.net/2017/10/06/182520/#webpage"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://www.nqou.net/2017/10/06/182520/#webpage"
+      },
+      "headline": "タイムゾーンの憂鬱",
+      "datePublished": "2017-10-06T18:25:20+09:00",
+      "dateModified": "2017-10-06T18:25:20+09:00",
+      "publisher": {
+        "@id": "https://www.nqou.net/#author"
+      },
+      "keywords": [
+        "hexo"
+      ],
+      "articleSection": [
+      ],
+      "inLanguage": "ja",
+      "author": {
+        "@type": "Person",
+        "name":  null 
+      },
+      "potentialAction": [
+        {
+          "@type": "CommentAction",
+          "name": "Comment",
+          "target": [
+            "https://www.nqou.net/2017/10/06/182520/#comments"
+          ]
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/print.css"
+        media="print">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/poole.css">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/hyde.css">
+
+  
+
+
+  
+
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+        crossorigin="anonymous" />
+
+  <link rel="apple-touch-icon-precomposed"
+        sizes="144x144"
+        href="/apple-touch-icon-144-precomposed.png">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  </head>
+<body>
+  <aside class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      
+      <div class="author-image">
+        <a href="https://www.nqou.net/">
+          <img src="https://www.gravatar.com/avatar/96267d00f89345335b76d21e0417ae39?s=200&d=mp" class="img-circle img-headshot center" alt="Gravatar">
+        </a>
+      </div>
+      
+
+      <h1>nqou.net</h1>
+
+      
+      <p class="lead">Whisky, Perl, Kansai.pm</p>
+      
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li>
+          <a href="https://www.nqou.net/">Home</a>
+        </li>
+        <li>
+          <a href="/about/">About</a>
+        </li><li>
+          <a href="/post/">Posts</a>
+        </li><li>
+          <a href="/tags/">Tags</a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="social-icons">
+      
+      <a href="https://github.com/nqounet" rel="me" title="GitHub" target="_blank">
+        <i class="fab fa-github" aria-hidden="true"></i>
+      </a>
+      
+      <a href="https://twitter.com/nqounet" rel="me" title="Twitter" target="_blank">
+        <i class="fab fa-twitter" aria-hidden="true"></i>
+      </a>
+      
+    </section>
+  </div>
+</aside>
+
+
+  <main class="content container">
+  <div class="post">
+  <h1 class="title">タイムゾーンの憂鬱</h1>
+  
+
+  <div class="post-date">
+    <time datetime="2017-10-06T18:25:20&#43;0900">Oct 6, 2017</time> <span class="readtime">&middot; 2 min read</span>
+  </div>
+
+  <div>
+  <h2 id="hexoの時間の扱いについてわかったこと">Hexoの時間の扱いについてわかったこと</h2>
+<p>納得がいかなくて色々と調べてみたところ、とても不思議な現象が起きていることがわかった。</p>
+<p><code>date</code> の読み込みは正しいのだが、UTCの時間のまま <code>_config.yml</code> に書いてある <code>timezone</code> の時間として時差が付加される。</p>
+<p>具体的に <a href="/2017/09/27/161803/">Hexoの日付処理の挙動が意味不明</a> という記事は <code>date</code> の値として <code>2017-09-27T00:18:03-07:00</code> を指定しているが、出力時に日付を詳細に表示してみると <code>2017-09-27T07:18:03+09:00</code> となる。</p>
+<p>時間としては <code>2017-09-27T07:18:03+00:00</code> となるのが正しい。</p>
+<p>ただ、何故かURLの日付は「26」を示していた。</p>
+<p>これは、ファイルを生成する時に、26日として認識している、ということだ。</p>
+<p>つまり、表示に使用している時間を元にしてファイルを生成しているのだろう。</p>
+<p><code>Hexo</code> のソースコードを見ていると気になったコードがあった。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">exports</span>.<span style="color:#a6e22e">timezone</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">date</span>, <span style="color:#a6e22e">timezone</span>) {
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">moment</span>.<span style="color:#a6e22e">isMoment</span>(<span style="color:#a6e22e">date</span>)) <span style="color:#a6e22e">date</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">toDate</span>();
+
+  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">offset</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getTimezoneOffset</span>();
+  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">ms</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getTime</span>();
+  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">target</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">moment</span>.<span style="color:#a6e22e">tz</span>.<span style="color:#a6e22e">zone</span>(<span style="color:#a6e22e">timezone</span>).<span style="color:#a6e22e">offset</span>(<span style="color:#a6e22e">ms</span>);
+  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">diff</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">offset</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">target</span>) <span style="color:#f92672">*</span> <span style="color:#a6e22e">DURATION_MINUTE</span>;
+
+  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> Date(<span style="color:#a6e22e">ms</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">diff</span>);
+};
+</code></pre></div><p>せっかくの <code>momentjs</code> のオブジェクトを JS の Date オブジェクトに変えている？
+ここは普通に考えて <code>momentjs</code> の方へ処理をまとめるべきでは？</p>
+<h2 id="中国はタイムゾーンが一つだった">中国はタイムゾーンが一つだった</h2>
+<p><code>Hexo</code> は中国発のソフトウェアということだ。</p>
+<p>中国はあれだけ広いので、複数のタイムゾーンがあるだろう、と勝手に思っていた。</p>
+<p>つまり、 <code>Hexo</code> はタイムゾーンについての考慮がされていると思っていた。</p>
+<p>これはちゃんと調べてなかったのも悪かったけど、中国はあれだけ広いのにタイムゾーンが一つしかないようだ。</p>
+<p>色々と衝撃だ。</p>
+<h2 id="タイムゾーンの処理を任せてみる">タイムゾーンの処理を任せてみる</h2>
+<p>上記の <code>timezone</code> は、調べた範囲では、設定で指定している時だけに実行されている。</p>
+<p>それならば、ということで、 <code>timezone</code> の指定をやめてみた。</p>
+<p>すると、これまでよりはマシになった。</p>
+<p>まず、パーマリンクが <code>UTC</code> の日付になった。ファイルとURLが一致するようになった。</p>
+<p>これまで、23日なのに22日扱いになっていたりしたファイルなどが思っている日付になるようになった。</p>
+<p>しかし、表示に使う時間はやはりおかしい。</p>
+<p>具体的には <code>2017-09-27T00:18:03-07:00</code> という指定が <code>2017-09-27T07:18:03-07:00</code> のようになる。</p>
+<p>やはりこういう場合は、正しく <code>2017-09-27T07:18:03-00:00</code> として認識されて欲しい。</p>
+<p>ただ、元々詳細な時間までは表示されていないし、URLの問題は解決したので、ひとまずはこれで良さそう。</p>
+
+  </div>
+
+  
+<div>
+  <ul class="tags">
+  <li>
+    <a href="https://www.nqou.net/tags/hexo/" class="tag-link">hexo</a>
+  </li>
+  </ul>
+</div>
+
+
+
+  <div class="share-buttons">
+  <a class="twitter-share-button"
+     href="#"
+     title="Share on Twitter"
+     data-url="https://www.nqou.net/2017/10/06/182520/"
+     data-text="タイムゾーンの憂鬱"><i class="fab fa-twitter"></i></a>
+
+  <a class="linkedin-share-button"
+     href="#"
+     title="Share on LinkedIn"
+     data-url="https://www.nqou.net/2017/10/06/182520/"
+     data-text="タイムゾーンの憂鬱"><i class="fab fa-linkedin-in"></i></a>
+
+  <a class="facebook-share-button"
+     href="#"
+     title="Share on Facebook"
+     data-url="https://www.nqou.net/2017/10/06/182520/"
+     data-text="タイムゾーンの憂鬱"><i class="fab fa-facebook"></i></a>
+
+  <a class="telegram-share-button"
+     href="#"
+     title="Share on Telegram"
+     data-url="https://www.nqou.net/2017/10/06/182520/"
+     data-text="タイムゾーンの憂鬱"><i class="fab fa-telegram"></i></a>
+
+  <a class="pinterest-share-button"
+     href="#"
+     title="Share on Pinterest"
+     data-url="https://www.nqou.net/2017/10/06/182520/"
+     data-text="タイムゾーンの憂鬱"><i class="fab fa-pinterest"></i></a>
+</div>
+
+
+  <div class="comments">
+    <h2>Comments</h2>
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "nqounet" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+</div>
+  </main>
+
+  <footer>
+  <div>
+    <p>
+      &copy; nqounet 2021
+
+      &middot; <a href="https://creativecommons.org/licenses/by/4.0" target="_blank">CC BY 4.0</a>
+
+      
+    </p>
+  </div>
+</footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
+          integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
+          crossorigin="anonymous"></script>
+
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/soho.js"></script>
+
+  
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-E50H9ESN7E', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

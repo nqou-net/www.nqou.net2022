@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.88.1" />
+
+  <title>省略可能な引数の配置について &middot; nqou.net</title>
+
+  <meta name="description" content="" />
+
+  
+
+<meta itemprop="name" content="省略可能な引数の配置について">
+<meta itemprop="description" content="hexo new [layout] &lt;title&gt; テーマを色々と見ていて、ふと気がついた。 hexo new post とした"><meta itemprop="datePublished" content="2017-09-24T10:21:32+09:00" />
+<meta itemprop="dateModified" content="2017-09-24T10:21:32+09:00" />
+<meta itemprop="wordCount" content="943">
+<meta itemprop="keywords" content="hexo,perl," />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="省略可能な引数の配置について"/>
+<meta name="twitter:description" content="hexo new [layout] &lt;title&gt; テーマを色々と見ていて、ふと気がついた。 hexo new post とした"/>
+
+
+<meta property="og:title" content="省略可能な引数の配置について" />
+<meta property="og:description" content="hexo new [layout] &lt;title&gt; テーマを色々と見ていて、ふと気がついた。 hexo new post とした" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.nqou.net/2017/09/24/102132/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2017-09-24T10:21:32+09:00" />
+<meta property="article:modified_time" content="2017-09-24T10:21:32+09:00" /><meta property="og:site_name" content="nqou.net" />
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type":"Person",
+      "@id": "https://www.nqou.net/#author",
+      "name":  null ,
+      "image": {
+        "@type":"ImageObject",
+        "url": "https://www.gravatar.com/avatar/96267d00f89345335b76d21e0417ae39?s=400&d=mp"
+      },
+      "description": "Whisky, Perl, Kansai.pm"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.nqou.net/#website",
+      "url": "https://www.nqou.net/",
+      "name": "nqou.net",
+      "description": "Whisky, Perl, Kansai.pm",
+      "publisher": {
+        "@id": "https://www.nqou.net/#author"
+      },
+      "inLanguage": "ja"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.nqou.net/2017/09/24/102132/#webpage",
+      "url": "https://www.nqou.net/2017/09/24/102132/",
+      "name": "省略可能な引数の配置について",
+      "isPartOf": {
+        "@id": "https://www.nqou.net/#website"
+      },
+      "about": {
+         "@id": "https://www.nqou.net/#author"
+      },
+      "datePublished": "2017-09-24T10:21:32+09:00",
+      "dateModified": "2017-09-24T10:21:32+09:00",
+      "description": "hexo new [layout] \u0026lt;title\u0026gt; テーマを色々と見ていて、ふと気がついた。 hexo new post とした",
+      "inLanguage": "ja",
+      "potentialAction": [
+        {
+          "@type": "ReadAction",
+          "target": [
+            "https://www.nqou.net/2017/09/24/102132/"
+          ]
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "isPartOf": {
+        "@id": "https://www.nqou.net/2017/09/24/102132/#webpage"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://www.nqou.net/2017/09/24/102132/#webpage"
+      },
+      "headline": "省略可能な引数の配置について",
+      "datePublished": "2017-09-24T10:21:32+09:00",
+      "dateModified": "2017-09-24T10:21:32+09:00",
+      "publisher": {
+        "@id": "https://www.nqou.net/#author"
+      },
+      "keywords": [
+        "hexo",
+        "perl"
+      ],
+      "articleSection": [
+      ],
+      "inLanguage": "ja",
+      "author": {
+        "@type": "Person",
+        "name":  null 
+      },
+      "potentialAction": [
+        {
+          "@type": "CommentAction",
+          "name": "Comment",
+          "target": [
+            "https://www.nqou.net/2017/09/24/102132/#comments"
+          ]
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/print.css"
+        media="print">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/poole.css">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/hyde.css">
+
+  
+
+
+  
+
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+        crossorigin="anonymous" />
+
+  <link rel="apple-touch-icon-precomposed"
+        sizes="144x144"
+        href="/apple-touch-icon-144-precomposed.png">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  </head>
+<body>
+  <aside class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      
+      <div class="author-image">
+        <a href="https://www.nqou.net/">
+          <img src="https://www.gravatar.com/avatar/96267d00f89345335b76d21e0417ae39?s=200&d=mp" class="img-circle img-headshot center" alt="Gravatar">
+        </a>
+      </div>
+      
+
+      <h1>nqou.net</h1>
+
+      
+      <p class="lead">Whisky, Perl, Kansai.pm</p>
+      
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li>
+          <a href="https://www.nqou.net/">Home</a>
+        </li>
+        <li>
+          <a href="/about/">About</a>
+        </li><li>
+          <a href="/post/">Posts</a>
+        </li><li>
+          <a href="/tags/">Tags</a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="social-icons">
+      
+      <a href="https://github.com/nqounet" rel="me" title="GitHub" target="_blank">
+        <i class="fab fa-github" aria-hidden="true"></i>
+      </a>
+      
+      <a href="https://twitter.com/nqounet" rel="me" title="Twitter" target="_blank">
+        <i class="fab fa-twitter" aria-hidden="true"></i>
+      </a>
+      
+    </section>
+  </div>
+</aside>
+
+
+  <main class="content container">
+  <div class="post">
+  <h1 class="title">省略可能な引数の配置について</h1>
+  
+
+  <div class="post-date">
+    <time datetime="2017-09-24T10:21:32&#43;0900">Sep 24, 2017</time> <span class="readtime">&middot; 2 min read</span>
+  </div>
+
+  <div>
+  <h2 id="hexo-new-layout-lttitlegt">hexo new [layout] &lt;title&gt;</h2>
+<p>テーマを色々と見ていて、ふと気がついた。
+<code>hexo new post</code> とした時にタイトルが <code>post</code> になっていた理由に。</p>
+<p><code>new</code> の <code>help</code> を改めてみてみる。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ hexo help new
+Usage: hexo new <span style="color:#f92672">[</span>layout<span style="color:#f92672">]</span> &lt;title&gt;
+
+Description:
+Create a new post.
+
+Arguments:
+  layout  Post layout. Use post, page, draft or whatever you want.
+  title   Post title. Wrap it with quotations to escape.
+
+Options:
+  -p, --path     Post path. Customize the path of the post.
+  -r, --replace  Replace the current post <span style="color:#66d9ef">if</span> existed.
+  -s, --slug     Post slug. Customize the URL of the post.
+
+</code></pre></div><p>あー、なるほど。</p>
+<p><code>layout</code> が省略可能扱いなので、 <code>hexo new post</code> とした場合、 <code>post</code> は <code>layout</code> ではなく <code>title</code> として入力されていた、という話だった。</p>
+<h2 id="ふと気がついたわけではない">ふと気がついた、わけではない</h2>
+<p>実際には、テーマの使い方の説明のところに <code>hexo new &lt;title&gt;</code> と書いてあったのを見て、もしかして、と思った。
+で、調べてみたところ案の定、って感じ。</p>
+<h2 id="コマンド体系">コマンド体系</h2>
+<p>ところで、最近のコマンドはサブコマンド形式が多い。</p>
+<p>普段お世話になっている <code>brew</code> もそうだし、この <code>hexo</code> もそう。</p>
+<p>また、サブコマンドを入力しなかった時に使い方がでる、というスタイルや、 <code>コマンド help サブコマンド</code> のようにしてサブコマンドのヘルプを呼び出す、というのもだいたい共通している。</p>
+<p>また、上の方では <code>hexo help new</code> として結果を書いているが、 <code>hexo new</code> でも同じ内容のヘルプが出る。</p>
+<p>ターミナル上で操作をしていると、新しいコマンドもとりあえず同じように使ってみる、ということがあると思う。</p>
+<p>取扱説明書を熟読してから家電を使う人はいない。</p>
+<p>コマンドもそうだと思う。</p>
+<p>ヘルプを見なくても使えるコマンドは素晴らしいコマンドだ。</p>
+<p><code>plenv</code> のような、 <code>**env</code> は沢山ある。</p>
+<p><code>anyenv</code> を使うと、そのような <code>**env</code> が気軽に使えるようになる。</p>
+<p>しかし、時々コマンド体系が違うものがあって嫌な感じになる。</p>
+<p>例えば <code>goenv</code> に関しては、インストール可能なバージョンを確認しようとして <code>goenv install -l</code> とするとエラーになる。</p>
+<p>で、 <code>goenv install</code> ではどうかというと、以下のようになる。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ goenv install
+/Users/nobu/.anyenv/envs/goenv/libexec/goenv-install: line 18: <span style="color:#f92672">[</span>: <span style="color:#f92672">=</span>: unary operator expected
+Not found:
+</code></pre></div><p>ちなみに、 <code>plenv</code> ではどうかというと。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ plenv install
+
+Summary: Install a Perl version using the perl-build plugin
+
+Usage: plenv install <span style="color:#f92672">[</span>-v|--verbose<span style="color:#f92672">]</span> &lt;version&gt;
+       plenv install <span style="color:#f92672">[</span>-v|--verbose<span style="color:#f92672">]</span> /path/to/definition
+       plenv install -l|--list
+
+  -l/--list        List all available versions
+  -v/--verbose     Verbose mode: print compilation status to stdout
+  --as<span style="color:#f92672">=</span>&lt;NAME&gt;      Install the definition as &lt;NAME&gt;
+  --test           Run test cases
+  --noman          Skip installation of manpages
+  -D, -A, -U, -j   perl configure options via perl-build
+
+Example:
+  plenv install 5.20.2 -j <span style="color:#ae81ff">8</span> -Dcc<span style="color:#f92672">=</span>gcc -UDEBUGGING -Accflags<span style="color:#f92672">=</span>...
+
+For more options that are passed through perl-build, run <span style="color:#e6db74">`</span>perl-build --help<span style="color:#e6db74">`</span>
+or see: https://metacpan.org/pod/distribution/Perl-Build/script/perl-build#OPTIONS
+</code></pre></div><p>なお、 <code>goenv</code> でインストール可能なバージョンの一覧は <code>goenv install --list</code> で見ることができるのだが、ヘルプにも書いていない…。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ goenv help install
+Usage: goenv install &lt;version&gt;
+
+Versions should be in the form of N.N.N
+
+</code></pre></div><p>とはいえ、実際のところ、golangの場合は実行形式で配布できるので、言語自体のバージョンを固定したり切り替えたりする意味もなさそうではある。</p>
+
+  </div>
+
+  
+<div>
+  <ul class="tags">
+  <li>
+    <a href="https://www.nqou.net/tags/hexo/" class="tag-link">hexo</a>
+  </li>
+  
+  <li>
+    <a href="https://www.nqou.net/tags/perl/" class="tag-link">perl</a>
+  </li>
+  </ul>
+</div>
+
+
+
+  <div class="share-buttons">
+  <a class="twitter-share-button"
+     href="#"
+     title="Share on Twitter"
+     data-url="https://www.nqou.net/2017/09/24/102132/"
+     data-text="省略可能な引数の配置について"><i class="fab fa-twitter"></i></a>
+
+  <a class="linkedin-share-button"
+     href="#"
+     title="Share on LinkedIn"
+     data-url="https://www.nqou.net/2017/09/24/102132/"
+     data-text="省略可能な引数の配置について"><i class="fab fa-linkedin-in"></i></a>
+
+  <a class="facebook-share-button"
+     href="#"
+     title="Share on Facebook"
+     data-url="https://www.nqou.net/2017/09/24/102132/"
+     data-text="省略可能な引数の配置について"><i class="fab fa-facebook"></i></a>
+
+  <a class="telegram-share-button"
+     href="#"
+     title="Share on Telegram"
+     data-url="https://www.nqou.net/2017/09/24/102132/"
+     data-text="省略可能な引数の配置について"><i class="fab fa-telegram"></i></a>
+
+  <a class="pinterest-share-button"
+     href="#"
+     title="Share on Pinterest"
+     data-url="https://www.nqou.net/2017/09/24/102132/"
+     data-text="省略可能な引数の配置について"><i class="fab fa-pinterest"></i></a>
+</div>
+
+
+  <div class="comments">
+    <h2>Comments</h2>
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "nqounet" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+</div>
+  </main>
+
+  <footer>
+  <div>
+    <p>
+      &copy; nqounet 2021
+
+      &middot; <a href="https://creativecommons.org/licenses/by/4.0" target="_blank">CC BY 4.0</a>
+
+      
+    </p>
+  </div>
+</footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
+          integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
+          crossorigin="anonymous"></script>
+
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/soho.js"></script>
+
+  
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-E50H9ESN7E', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.88.1" />
+
+  <title>DockerでHerokuでMojoliciousが動いたぞ!!!（改定版） &middot; nqou.net</title>
+
+  <meta name="description" content="" />
+
+  
+
+<meta itemprop="name" content="DockerでHerokuでMojoliciousが動いたぞ!!!（改定版）">
+<meta itemprop="description" content="（追記） この記事で書いていた Dockerfile が動かなくなっていたので動くよ"><meta itemprop="datePublished" content="2017-12-13T10:33:56+09:00" />
+<meta itemprop="dateModified" content="2017-12-13T10:33:56+09:00" />
+<meta itemprop="wordCount" content="3342">
+<meta itemprop="keywords" content="docker,heroku,mojolicious,perl," />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="DockerでHerokuでMojoliciousが動いたぞ!!!（改定版）"/>
+<meta name="twitter:description" content="（追記） この記事で書いていた Dockerfile が動かなくなっていたので動くよ"/>
+
+
+<meta property="og:title" content="DockerでHerokuでMojoliciousが動いたぞ!!!（改定版）" />
+<meta property="og:description" content="（追記） この記事で書いていた Dockerfile が動かなくなっていたので動くよ" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.nqou.net/2017/12/13/103356/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2017-12-13T10:33:56+09:00" />
+<meta property="article:modified_time" content="2017-12-13T10:33:56+09:00" /><meta property="og:site_name" content="nqou.net" />
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type":"Person",
+      "@id": "https://www.nqou.net/#author",
+      "name":  null ,
+      "image": {
+        "@type":"ImageObject",
+        "url": "https://www.gravatar.com/avatar/96267d00f89345335b76d21e0417ae39?s=400&d=mp"
+      },
+      "description": "Whisky, Perl, Kansai.pm"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.nqou.net/#website",
+      "url": "https://www.nqou.net/",
+      "name": "nqou.net",
+      "description": "Whisky, Perl, Kansai.pm",
+      "publisher": {
+        "@id": "https://www.nqou.net/#author"
+      },
+      "inLanguage": "ja"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.nqou.net/2017/12/13/103356/#webpage",
+      "url": "https://www.nqou.net/2017/12/13/103356/",
+      "name": "DockerでHerokuでMojoliciousが動いたぞ!!!（改定版）",
+      "isPartOf": {
+        "@id": "https://www.nqou.net/#website"
+      },
+      "about": {
+         "@id": "https://www.nqou.net/#author"
+      },
+      "datePublished": "2017-12-13T10:33:56+09:00",
+      "dateModified": "2017-12-13T10:33:56+09:00",
+      "description": "（追記） この記事で書いていた Dockerfile が動かなくなっていたので動くよ",
+      "inLanguage": "ja",
+      "potentialAction": [
+        {
+          "@type": "ReadAction",
+          "target": [
+            "https://www.nqou.net/2017/12/13/103356/"
+          ]
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "isPartOf": {
+        "@id": "https://www.nqou.net/2017/12/13/103356/#webpage"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://www.nqou.net/2017/12/13/103356/#webpage"
+      },
+      "headline": "DockerでHerokuでMojoliciousが動いたぞ!!!（改定版）",
+      "datePublished": "2017-12-13T10:33:56+09:00",
+      "dateModified": "2017-12-13T10:33:56+09:00",
+      "publisher": {
+        "@id": "https://www.nqou.net/#author"
+      },
+      "keywords": [
+        "docker",
+        "heroku",
+        "mojolicious",
+        "perl"
+      ],
+      "articleSection": [
+      ],
+      "inLanguage": "ja",
+      "author": {
+        "@type": "Person",
+        "name":  null 
+      },
+      "potentialAction": [
+        {
+          "@type": "CommentAction",
+          "name": "Comment",
+          "target": [
+            "https://www.nqou.net/2017/12/13/103356/#comments"
+          ]
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/print.css"
+        media="print">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/poole.css">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/hyde.css">
+
+  
+
+
+  
+
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+        crossorigin="anonymous" />
+
+  <link rel="apple-touch-icon-precomposed"
+        sizes="144x144"
+        href="/apple-touch-icon-144-precomposed.png">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  </head>
+<body>
+  <aside class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      
+      <div class="author-image">
+        <a href="https://www.nqou.net/">
+          <img src="https://www.gravatar.com/avatar/96267d00f89345335b76d21e0417ae39?s=200&d=mp" class="img-circle img-headshot center" alt="Gravatar">
+        </a>
+      </div>
+      
+
+      <h1>nqou.net</h1>
+
+      
+      <p class="lead">Whisky, Perl, Kansai.pm</p>
+      
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li>
+          <a href="https://www.nqou.net/">Home</a>
+        </li>
+        <li>
+          <a href="/about/">About</a>
+        </li><li>
+          <a href="/post/">Posts</a>
+        </li><li>
+          <a href="/tags/">Tags</a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="social-icons">
+      
+      <a href="https://github.com/nqounet" rel="me" title="GitHub" target="_blank">
+        <i class="fab fa-github" aria-hidden="true"></i>
+      </a>
+      
+      <a href="https://twitter.com/nqounet" rel="me" title="Twitter" target="_blank">
+        <i class="fab fa-twitter" aria-hidden="true"></i>
+      </a>
+      
+    </section>
+  </div>
+</aside>
+
+
+  <main class="content container">
+  <div class="post">
+  <h1 class="title">DockerでHerokuでMojoliciousが動いたぞ!!!（改定版）</h1>
+  
+
+  <div class="post-date">
+    <time datetime="2017-12-13T10:33:56&#43;0900">Dec 13, 2017</time> <span class="readtime">&middot; 7 min read</span>
+  </div>
+
+  <div>
+  <p>（追記）</p>
+<p>この記事で書いていた Dockerfile が動かなくなっていたので動くように修正した記事を書きました。</p>
+<ul>
+<li><a href="https://www.nqou.net/2018/06/12/110204/">以前は動いていた Dockerfile で permission denied が出るようになった話 | nqou.net</a></li>
+</ul>
+<p>（追記ここまで）</p>
+<p>この記事は、 <a href="https://qiita.com/advent-calendar/2017/perl">Perl Advent Calendar 2017</a> の 13 日目の記事です。</p>
+<p>昨日は <a href="https://qiita.com/sago35">sago35</a> さんの 「<a href="https://qiita.com/sago35/items/9479ef482880fab4ee7c">Strawberry Perl に Minilla をインストールする</a>」でした。</p>
+<p>この記事のパッチがあたって、 CPAN からインストールできるようになったようです。</p>
+<p>これで、 Windows + Strawberry Perl な方も安心して使えますね。</p>
+<ul>
+<li><a href="https://metacpan.org/pod/Minilla">Minilla - CPAN module authoring tool - metacpan.org</a></li>
+</ul>
+<p>ちょっとしたものを作り始める時でも Minilla で雛形を作ってから始めると色々と便利ですよね。</p>
+<p>最近はあまり使っていなかったので、この機会にまた使い始めようと思います。</p>
+<h2 id="docker-で動いている-perl-で作ったアプリを-heroku-で公開する">Docker で動いている Perl で作ったアプリを Heroku で公開する</h2>
+<p>実は少し前に「<a href="/2017/12/03/012037">DockerでHerokuでMojoliciousが動いたぞ!!!</a>」というのを書いてしまっていて、これを少し改善してアドベントカレンダーのネタにしようと思います。</p>
+<p>Heroku で Perl のプログラムを動かすには buildpack を使えばよいのですが、<a href="/2017/12/02/170342">少しコツがいる</a>のです。</p>
+<p>しかし、2年ほど前から Heroku でもコンテナを動かすことができるようになっており、最近ではインターフェイスも改善されていて、比較的簡単に公開できるようになっています。</p>
+<p>なので、コンテナを使って Perl のアプリを作って、それを Heroku で公開する、というのが今後しばらくは良さそうかなと思います。</p>
+<h2 id="heroku-をコマンドラインインターフェイスで操作する">Heroku をコマンドラインインターフェイスで操作する</h2>
+<p>さて、 heroku を使う時はコマンドラインツールを使うと便利です。</p>
+<p>Mac な方は <a href="https://brew.sh/index_ja.html">Homebrew</a> を使って <code>brew install heroku</code> が手軽だと思います。</p>
+<p>Windows な方にも用意されているようなので使ってみてください。私は使ったことがないので使用感についてはわかりません。</p>
+<ul>
+<li><a href="https://devcenter.heroku.com/articles/heroku-cli#windows">https://devcenter.heroku.com/articles/heroku-cli#windows</a></li>
+</ul>
+<p>基本的な使い方はググれば色々と出てくると思いますので省略します。幾つか丁寧そうな記事を貼っておきます。</p>
+<ul>
+<li><a href="https://qiita.com/Arashi/items/b2f2e01259238235e187">Heroku初心者がHello, Herokuをしてみる - Qiita</a></li>
+<li><a href="http://blog.w-hippo.com/entry/2017/01/29/143550">コマンドでHerokuを操作する Heroku CLI のインストール - ゼロからはじめるWEBプログラミング入門</a></li>
+</ul>
+<h2 id="事前の準備">事前の準備</h2>
+<p>一つのプロジェクトを作るところをイメージしながら進めていきます。</p>
+<p>ソースコードは git で管理することにします。</p>
+<p>まずは、プロジェクトのディレクトリを作成しましょう。</p>
+<p>また、 Heroku では現在は Volume をマウントする方式には対応していないので、 COPY コマンドを使います。細かい説明は省きますが、 COPY する必要があるファイルだけをまとめておくと便利だと思います。</p>
+<p>ここでは、 COPY するファイル群を webapp というディレクトリに入れておくことにします。</p>
+<p>では、ターミナルを操作していきます。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ mkdir myproject <span style="color:#f92672">&amp;&amp;</span> cd myproject
+$ git init
+$ mkdir webapp <span style="color:#f92672">&amp;&amp;</span> cd webapp
+</code></pre></div><p>ひとまずコレで準備は完了です。</p>
+<h2 id="mojolicious">Mojolicious</h2>
+<p>さて、次は Perl のアプリを書いていきます。</p>
+<p>特にこだわりがなければ、 Mojolicious を使っていくと良いと思います。</p>
+<p>必要に応じて Perl や Mojolicious をインストールしておいてください。</p>
+<p>資料としてはPerl入学式の資料が秀逸です。 Mojolicious については第5回に掲載されています。</p>
+<ul>
+<li><a href="https://github.com/perl-entrance-org/workshop-2017">https://github.com/perl-entrance-org/workshop-2017</a></li>
+</ul>
+<p>Mojolicious のバージョンについては以下のもので動作を確認しています。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ mojo version
+CORE
+  Perl        <span style="color:#f92672">(</span>v5.26.1, darwin<span style="color:#f92672">)</span>
+  Mojolicious <span style="color:#f92672">(</span>7.58, Doughnut<span style="color:#f92672">)</span>
+
+OPTIONAL
+  EV 4.0+                 <span style="color:#f92672">(</span>4.22<span style="color:#f92672">)</span>
+  IO::Socket::Socks 0.64+ <span style="color:#f92672">(</span>0.74<span style="color:#f92672">)</span>
+  IO::Socket::SSL 1.94+   <span style="color:#f92672">(</span>2.052<span style="color:#f92672">)</span>
+  Net::DNS::Native 0.15+  <span style="color:#f92672">(</span>0.15<span style="color:#f92672">)</span>
+  Role::Tiny 2.000001+    <span style="color:#f92672">(</span>2.000006<span style="color:#f92672">)</span>
+</code></pre></div><p>説明を簡単にするためにここでは Mojolicious::Lite の方を使っていきます。</p>
+<p>コマンドを使って雛形を作っておきます。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ mojo generate lite_app myapp.pl
+</code></pre></div><p>とりあえず、これでアプリを書いたことにします。</p>
+<p>動作するか確認してみましょう。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ morbo myapp.pl
+Server available at http://127.0.0.1:3000
+</code></pre></div><p>この状態でブラウザで <code>http://127.0.0.1:3000</code> にアクセスして <code>Welcome to the Mojolicious real-time web framework!</code> という画面が表示されれば成功です。</p>
+<p>ターミナルに戻って、 <code>ctrl + c</code> でアプリを止めておきます。</p>
+<p>手元では Mojolicious が入っているので動作しますが、コンテナには入っていません。</p>
+<p>動作に必要な Module は cpanfile に記述しておくことで、コンテナを作成する時に自動的にインストールされるような仕組みをあとで作成します。</p>
+<p>なので、 cpanfile という名前のファイルを作成し、必要なモジュールを書いておきます。</p>
+<p>今回は簡素化のためコマンドで作ります。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ echo <span style="color:#e6db74">&#34;requires &#39;Mojolicious&#39;;&#34;</span> &gt; cpanfile
+</code></pre></div><p>一旦、プロジェクトのディレクトリに戻って現在の状態を確認します。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cd ..
+$ tree .
+.
+└── webapp
+    ├── cpanfile
+    └── myapp.pl
+</code></pre></div><h2 id="docker">Docker</h2>
+<p>次は Docker で動かせるように Dockerfile を作っていきます。</p>
+<p>Docker のインストールなどは完了しているものとします。</p>
+<p>資料としては、公式の日本語サイトがあるのでそちらをご覧ください。</p>
+<ul>
+<li><a href="http://docs.docker.jp/engine/installation/toc.html">Get Docker - Docker を手に入れる — Docker-docs-ja 17.06.Beta ドキュメント</a></li>
+</ul>
+<p>Docker のバージョンについては以下のもので動作を確認しています。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker version
+Client:
+ Version:      17.09.1-ce
+ API version:  1.32
+ Go version:   go1.8.3
+ Git commit:   19e2cf6
+ Built:        Thu Dec  <span style="color:#ae81ff">7</span> 22:22:25 <span style="color:#ae81ff">2017</span>
+ OS/Arch:      darwin/amd64
+
+Server:
+ Version:      17.09.1-ce
+ API version:  1.32 <span style="color:#f92672">(</span>minimum version 1.12<span style="color:#f92672">)</span>
+ Go version:   go1.8.3
+ Git commit:   19e2cf6
+ Built:        Thu Dec  <span style="color:#ae81ff">7</span> 22:28:28 <span style="color:#ae81ff">2017</span>
+ OS/Arch:      linux/amd64
+ Experimental: true
+</code></pre></div><p>元になるイメージですが、特にこだわりがなければ公式の Perl のイメージを使うと良いと思います。</p>
+<p>タグを指定すると、特定のバージョンの Perl が使用できるのでバージョンを固定するのも簡単です。</p>
+<ul>
+<li><a href="https://hub.docker.com/r/library/perl/tags/">https://hub.docker.com/r/library/perl/tags/</a></li>
+</ul>
+<p>ここでは、現在の最新の安定版である 5.26.1 のイメージを使用します。</p>
+<p>プロジェクトのルートディレクトリに、以下のような <code>Dockerfile</code> を作成します。</p>
+<p>基本的な方針としては、 Carmel を使用してモジュールのインストールを行い、 Mojolicious の機能でアプリサーバーを起動します。</p>
+<pre tabindex="0"><code class="language-default" data-lang="default">FROM perl:5.26.1
+
+RUN useradd -m -s /bin/bash appuser \
+    &amp;&amp; cpanm Carmel --notest
+
+USER appuser
+RUN mkdir -p /home/appuser/webapp
+WORKDIR /home/appuser/webapp
+
+COPY --chown=appuser:appuser webapp/cpanfile .
+RUN carmel install
+
+COPY --chown=appuser:appuser webapp .
+
+CMD carmel exec -- ./myapp.pl daemon -l http://0.0.0.0:$PORT
+</code></pre><p><code>WORKDIR</code> の前に <code>RUN mkdir</code> しているのは、 <code>WORKDIR</code> の場合、 root ユーザーで webapp ディレクトリが作成されてしまい、その後の <code>RUN carmel install</code> が失敗してしまうためです。なので、事前に <code>appuser</code> でディレクトリを作成し、そのディレクトリを作業ディレクトリに指定しています。</p>
+<p>なお、 root ユーザーで実行しないのはセキュリティの観点からです。やっておいて損はないと思います。</p>
+<ul>
+<li><a href="https://qiita.com/muff1225/items/4edea7b039dd9f26098f">Dockerコンテナを本番環境で使うためのセキュリティ設定 - Qiita</a></li>
+</ul>
+<p>最後の <code>CMD</code> は、 Heroku で動かすための設定です。この挙動は省略時に使用されるので、 <code>docker run</code> の時に実行するコマンドを指定すれば、この行は使用されません。</p>
+<p>とはいえ、毎回書くのはだるいので、 <code>docker-compose</code> を使用して手軽に起動できるようにしておくと便利だと思います。</p>
+<p>使用するコンテナが一つでも起動が簡単になるので、使えるものは使っていくのが良いと思います。</p>
+<p>では、 <code>docker-compose</code> を使用するため、プロジェクトのルートディレクトリに <code>docker-compose.yml</code> を作成します。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#34;3&#34;</span>
+<span style="color:#f92672">services</span>:
+    <span style="color:#f92672">webapp</span>:
+        <span style="color:#f92672">build</span>: <span style="color:#ae81ff">.</span>
+        <span style="color:#f92672">command</span>: <span style="color:#ae81ff">carmel exec -- morbo myapp.pl</span>
+        <span style="color:#f92672">ports</span>:
+            - <span style="color:#ae81ff">3000</span>:<span style="color:#ae81ff">3000</span>
+</code></pre></div><p>動作するか確認してみましょう。</p>
+<p>プロジェクトのルートディレクトリにいることを確認して、以下のように実行してください。</p>
+<p>なお、実行すると 300MB 以上あるイメージファイルをダウンロードしてくるので、ちゃんとしたネットワーク環境で実行することをオススメします。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker-compose up --build
+</code></pre></div><p>しばらく待っていると以下のような表示が出て画面の動きが止まります。</p>
+<pre tabindex="0"><code>Attaching to myproject_webapp_1
+webapp_1  | Server available at http://127.0.0.1:3000
+</code></pre><p><code>Server available at http://127.0.0.1:3000</code> というのが目印です。</p>
+<p>この表示が出たら、またブラウザで <code>http://127.0.0.1:3000</code> にアクセスしてみてください。</p>
+<p>先ほどと同じような画面が出たら成功です。</p>
+<p>これで、 Perl の（ Mojolicious::Lite で書いた）プログラムが Docker で動作しました。</p>
+<p>動作が確認できたら、ターミナルに戻って <code>ctrl + c</code> で Docker を終了しておきましょう。</p>
+<h2 id="heroku">Heroku</h2>
+<p>さて、お待たせしました。</p>
+<p>いよいよ、 Docker で動いている Perl のプログラムを Heroku で公開しましょう。</p>
+<p>まずは、コマンドラインツール（ <code>Heroku Toolbelt</code> と呼ばれています）でログインします。</p>
+<p>すでにログインしている方は不要です。</p>
+<p><code>Email</code>, <code>Password</code>, （設定している方は）<code>Two-factor code</code> を訊かれるので入力します。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ heroku login
+</code></pre></div><p>ログインできたら、次はアプリを登録します。</p>
+<p>新しく登録するのは簡単です。以下のようにコマンドを入力するだけです。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ heroku create
+</code></pre></div><p>指定すればアプリの名称も決められますが、後でも変更できるので、まずは確実に作っておくほうが良いと思います。</p>
+<p>さて、コンテナを使用する場合、 Container Registry にログインする必要があるようですのでログインします。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ heroku container:login
+</code></pre></div><p>ログインが出来たら、いよいよデプロイです。</p>
+<p>デプロイということは、つまり、コンテナをアップロードするということなので、大きなファイルを送信することになります。くれぐれもネットワーク環境に注意してください。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ heroku container:push web
+</code></pre></div><p>デプロイが終わったら動作確認をしてみましょう。</p>
+<p>コマンドを使用して、アプリの URL をブラウザで開くことが出来ます。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ heroku open
+</code></pre></div><p>先ほどと同じような画面が出たら成功です。</p>
+<p>Perl で作成したアプリを Heroku で公開することが出来ました。</p>
+<h2 id="まとめ">まとめ</h2>
+<p>Perl でアプリを作って、 Docker で動かしたら Heroku で公開しましょう！</p>
+<p>Docker や Heroku はまだまだ進化しています。</p>
+<p>仕様がいつ変わるかわかりません。</p>
+<p>今のうちに是非お試しください。</p>
+<h2 id="明日は">明日は</h2>
+<p>明日は <a href="https://qiita.com/Morichan">@Morichan</a> さんで「Bio::Perlを使いこなせずに挫折した話」のようです。</p>
+<p>明日もお楽しみに！</p>
+
+  </div>
+
+  
+<div>
+  <ul class="tags">
+  <li>
+    <a href="https://www.nqou.net/tags/docker/" class="tag-link">docker</a>
+  </li>
+  
+  <li>
+    <a href="https://www.nqou.net/tags/heroku/" class="tag-link">heroku</a>
+  </li>
+  
+  <li>
+    <a href="https://www.nqou.net/tags/mojolicious/" class="tag-link">mojolicious</a>
+  </li>
+  
+  <li>
+    <a href="https://www.nqou.net/tags/perl/" class="tag-link">perl</a>
+  </li>
+  </ul>
+</div>
+
+
+
+  <div class="share-buttons">
+  <a class="twitter-share-button"
+     href="#"
+     title="Share on Twitter"
+     data-url="https://www.nqou.net/2017/12/13/103356/"
+     data-text="DockerでHerokuでMojoliciousが動いたぞ!!!（改定版）"><i class="fab fa-twitter"></i></a>
+
+  <a class="linkedin-share-button"
+     href="#"
+     title="Share on LinkedIn"
+     data-url="https://www.nqou.net/2017/12/13/103356/"
+     data-text="DockerでHerokuでMojoliciousが動いたぞ!!!（改定版）"><i class="fab fa-linkedin-in"></i></a>
+
+  <a class="facebook-share-button"
+     href="#"
+     title="Share on Facebook"
+     data-url="https://www.nqou.net/2017/12/13/103356/"
+     data-text="DockerでHerokuでMojoliciousが動いたぞ!!!（改定版）"><i class="fab fa-facebook"></i></a>
+
+  <a class="telegram-share-button"
+     href="#"
+     title="Share on Telegram"
+     data-url="https://www.nqou.net/2017/12/13/103356/"
+     data-text="DockerでHerokuでMojoliciousが動いたぞ!!!（改定版）"><i class="fab fa-telegram"></i></a>
+
+  <a class="pinterest-share-button"
+     href="#"
+     title="Share on Pinterest"
+     data-url="https://www.nqou.net/2017/12/13/103356/"
+     data-text="DockerでHerokuでMojoliciousが動いたぞ!!!（改定版）"><i class="fab fa-pinterest"></i></a>
+</div>
+
+
+  <div class="comments">
+    <h2>Comments</h2>
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "nqounet" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+</div>
+  </main>
+
+  <footer>
+  <div>
+    <p>
+      &copy; nqounet 2021
+
+      &middot; <a href="https://creativecommons.org/licenses/by/4.0" target="_blank">CC BY 4.0</a>
+
+      
+    </p>
+  </div>
+</footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
+          integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
+          crossorigin="anonymous"></script>
+
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/soho.js"></script>
+
+  
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-E50H9ESN7E', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

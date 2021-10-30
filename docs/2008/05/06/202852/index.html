@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.88.1" />
+
+  <title>ActivePerl(5.10.0 Build 1002)でcpanを本気で使いたかった &middot; nqou.net</title>
+
+  <meta name="description" content="" />
+
+  
+
+<meta itemprop="name" content="ActivePerl(5.10.0 Build 1002)でcpanを本気で使いたかった">
+<meta itemprop="description" content="Setting environment for using Microsoft Visual Studio 2008 x86 tools. C:\Program Files\Microsoft Visual Studio 9.0\VC&gt; C:\Program Files\Microsoft Visual Studio 9.0\VC&gt;d: D:\&gt;cd usr\bin D:\usr\bin&gt;cpan cpan shell -- CPAN exploration and modules"><meta itemprop="datePublished" content="2008-05-06T20:28:52+09:00" />
+<meta itemprop="dateModified" content="2008-05-06T20:28:52+09:00" />
+<meta itemprop="wordCount" content="709">
+<meta itemprop="keywords" content="git,perl," />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="ActivePerl(5.10.0 Build 1002)でcpanを本気で使いたかった"/>
+<meta name="twitter:description" content="Setting environment for using Microsoft Visual Studio 2008 x86 tools. C:\Program Files\Microsoft Visual Studio 9.0\VC&gt; C:\Program Files\Microsoft Visual Studio 9.0\VC&gt;d: D:\&gt;cd usr\bin D:\usr\bin&gt;cpan cpan shell -- CPAN exploration and modules"/>
+
+
+<meta property="og:title" content="ActivePerl(5.10.0 Build 1002)でcpanを本気で使いたかった" />
+<meta property="og:description" content="Setting environment for using Microsoft Visual Studio 2008 x86 tools. C:\Program Files\Microsoft Visual Studio 9.0\VC&gt; C:\Program Files\Microsoft Visual Studio 9.0\VC&gt;d: D:\&gt;cd usr\bin D:\usr\bin&gt;cpan cpan shell -- CPAN exploration and modules" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.nqou.net/2008/05/06/202852/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2008-05-06T20:28:52+09:00" />
+<meta property="article:modified_time" content="2008-05-06T20:28:52+09:00" /><meta property="og:site_name" content="nqou.net" />
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type":"Person",
+      "@id": "https://www.nqou.net/#author",
+      "name":  null ,
+      "image": {
+        "@type":"ImageObject",
+        "url": "https://www.gravatar.com/avatar/96267d00f89345335b76d21e0417ae39?s=400&d=mp"
+      },
+      "description": "Whisky, Perl, Kansai.pm"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.nqou.net/#website",
+      "url": "https://www.nqou.net/",
+      "name": "nqou.net",
+      "description": "Whisky, Perl, Kansai.pm",
+      "publisher": {
+        "@id": "https://www.nqou.net/#author"
+      },
+      "inLanguage": "ja"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.nqou.net/2008/05/06/202852/#webpage",
+      "url": "https://www.nqou.net/2008/05/06/202852/",
+      "name": "ActivePerl(5.10.0 Build 1002)でcpanを本気で使いたかった",
+      "isPartOf": {
+        "@id": "https://www.nqou.net/#website"
+      },
+      "about": {
+         "@id": "https://www.nqou.net/#author"
+      },
+      "datePublished": "2008-05-06T20:28:52+09:00",
+      "dateModified": "2008-05-06T20:28:52+09:00",
+      "description": "Setting environment for using Microsoft Visual Studio 2008 x86 tools. C:\\Program Files\\Microsoft Visual Studio 9.0\\VC\u0026gt; C:\\Program Files\\Microsoft Visual Studio 9.0\\VC\u0026gt;d: D:\\\u0026gt;cd usr\\bin D:\\usr\\bin\u0026gt;cpan cpan shell -- CPAN exploration and modules",
+      "inLanguage": "ja",
+      "potentialAction": [
+        {
+          "@type": "ReadAction",
+          "target": [
+            "https://www.nqou.net/2008/05/06/202852/"
+          ]
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "isPartOf": {
+        "@id": "https://www.nqou.net/2008/05/06/202852/#webpage"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://www.nqou.net/2008/05/06/202852/#webpage"
+      },
+      "headline": "ActivePerl(5.10.0 Build 1002)でcpanを本気で使いたかった",
+      "datePublished": "2008-05-06T20:28:52+09:00",
+      "dateModified": "2008-05-06T20:28:52+09:00",
+      "publisher": {
+        "@id": "https://www.nqou.net/#author"
+      },
+      "keywords": [
+        "git",
+        "perl"
+      ],
+      "articleSection": [
+      ],
+      "inLanguage": "ja",
+      "author": {
+        "@type": "Person",
+        "name":  null 
+      },
+      "potentialAction": [
+        {
+          "@type": "CommentAction",
+          "name": "Comment",
+          "target": [
+            "https://www.nqou.net/2008/05/06/202852/#comments"
+          ]
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/print.css"
+        media="print">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/poole.css">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/hyde.css">
+
+  
+
+
+  
+
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+        crossorigin="anonymous" />
+
+  <link rel="apple-touch-icon-precomposed"
+        sizes="144x144"
+        href="/apple-touch-icon-144-precomposed.png">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  </head>
+<body>
+  <aside class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      
+      <div class="author-image">
+        <a href="https://www.nqou.net/">
+          <img src="https://www.gravatar.com/avatar/96267d00f89345335b76d21e0417ae39?s=200&d=mp" class="img-circle img-headshot center" alt="Gravatar">
+        </a>
+      </div>
+      
+
+      <h1>nqou.net</h1>
+
+      
+      <p class="lead">Whisky, Perl, Kansai.pm</p>
+      
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li>
+          <a href="https://www.nqou.net/">Home</a>
+        </li>
+        <li>
+          <a href="/about/">About</a>
+        </li><li>
+          <a href="/post/">Posts</a>
+        </li><li>
+          <a href="/tags/">Tags</a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="social-icons">
+      
+      <a href="https://github.com/nqounet" rel="me" title="GitHub" target="_blank">
+        <i class="fab fa-github" aria-hidden="true"></i>
+      </a>
+      
+      <a href="https://twitter.com/nqounet" rel="me" title="Twitter" target="_blank">
+        <i class="fab fa-twitter" aria-hidden="true"></i>
+      </a>
+      
+    </section>
+  </div>
+</aside>
+
+
+  <main class="content container">
+  <div class="post">
+  <h1 class="title">ActivePerl(5.10.0 Build 1002)でcpanを本気で使いたかった</h1>
+  
+
+  <div class="post-date">
+    <time datetime="2008-05-06T20:28:52&#43;0900">May 6, 2008</time> <span class="readtime">&middot; 2 min read</span>
+  </div>
+
+  <div>
+  <!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<pre tabindex="0"><code class="language-default" data-lang="default">Setting environment for using Microsoft Visual Studio 2008 x86 tools.
+C:\Program Files\Microsoft Visual Studio 9.0\VC&gt;
+</code></pre><!-- raw HTML omitted -->
+<pre tabindex="0"><code class="language-default" data-lang="default">C:\Program Files\Microsoft Visual Studio 9.0\VC&gt;d:
+D:\&gt;cd usr\bin
+D:\usr\bin&gt;cpan
+cpan shell -- CPAN exploration and modules installation (v1.9205)
+ReadLine support enabled
+cpan[1]&gt;
+</code></pre><!-- raw HTML omitted -->
+<pre tabindex="0"><code class="language-default" data-lang="default">cpan[1]&gt; o conf init
+Use of uninitialized value $_ in transliteration (tr///) at D:/usr/lib/File/Spec
+/Win32.pm line 141.
+Use of uninitialized value $_ in pattern match (m//) at D:/usr/lib/File/Spec/Win
+32.pm line 143.
+Use of uninitialized value $_ in transliteration (tr///) at D:/usr/lib/File/Spec
+/Win32.pm line 141.
+Use of uninitialized value $_ in pattern match (m//) at D:/usr/lib/File/Spec/Win
+32.pm line 143.
+CPAN is the world-wide archive of perl resources. It consists of about
+300 sites that all replicate the same contents around the globe. Many
+countries have at least one CPAN site already. The resources found on
+CPAN are easily accessible with the CPAN.pm module. If you want to use
+CPAN.pm, lots of things have to be configured. Fortunately, most of
+them can be determined automatically. If you prefer the automatic
+configuration, answer 'yes' below.
+If you prefer to enter a dialog instead, you can answer 'no' to this
+question and I'll let you configure in small steps one thing after the
+other. (Note: you can revisit this dialog anytime later by typing 'o
+conf init' at the cpan prompt.)
+Would you like me to configure as much as possible automatically? [yes]
+</code></pre><!-- raw HTML omitted -->
+<pre tabindex="0"><code class="language-default" data-lang="default">Autoconfigured everything but 'urllist'.
+Please call 'o conf init urllist' to configure your CPAN server(s) now!
+commit: wrote 'D:\usr\lib/CPAN/Config.pm'
+cpan[2]&gt;
+</code></pre><!-- raw HTML omitted -->
+<pre tabindex="0"><code class="language-default" data-lang="default">cpan[2]&gt; o conf init urllist
+Use of uninitialized value $_ in transliteration (tr///) at D:/usr/lib/File/Spec
+/Win32.pm line 141.
+Use of uninitialized value $_ in pattern match (m//) at D:/usr/lib/File/Spec/Win
+32.pm line 143.
+Use of uninitialized value $_ in transliteration (tr///) at D:/usr/lib/File/Spec
+/Win32.pm line 141.
+Use of uninitialized value $_ in pattern match (m//) at D:/usr/lib/File/Spec/Win
+32.pm line 143.
+Found D:\usr\cpan\sources\MIRRORED.BY as of Tue May  6 10:14:04 2008
+I'd use that as a database of CPAN sites. If that is OK for you,
+please answer 'y', but if you want me to get a new database now,
+please answer 'n' to the following question.
+Shall I use the local database in D:\usr\cpan\sources\MIRRORED.BY? [y]
+Now we need to know where your favorite CPAN sites are located. Push
+a few sites onto the array (just in case the first on the array won't
+work). If you are mirroring CPAN to your local workstation, specify a
+file: URL.
+First, pick a nearby continent and country by typing in the number(s)
+in front of the item(s) you want to select. You can pick several of
+each, separated by spaces. Then, you will be presented with a list of
+URLs of CPAN mirrors in the countries you selected, along with
+previously selected URLs. Select some of those URLs, or just keep the
+old list. Finally, you will be prompted for any extra URLs -- file:,
+ftp:, or http: -- that host a CPAN mirror.
+(1) Africa
+(2) Asia
+(3) Central America
+(4) Europe
+(5) North America
+(6) Oceania
+(7) South America
+(8) (edit previous picks)
+Select your continent (or several nearby continents) [8] 2
+(1) China
+(2) Hong Kong
+(3) Indonesia
+(4) Israel
+(5) Japan
+(6) Korea
+(7) Pakistan
+(8) Republic of Korea
+(9) Russia
+(10) Saudi Arabia
+(11) Singapore
+(12) Taiwan
+(13) Thailand
+(14) Turkey
+(15) (edit previous picks)
+Select your country (or several nearby countries) [15] 5
+(1) ftp://ftp.dti.ad.jp/pub/lang/CPAN/ (previous pick)
+(2) ftp://ftp.jaist.ac.jp/pub/CPAN/ (previous pick)
+(3) ftp://ftp.kddilabs.jp/CPAN/ (previous pick)
+(4) ftp://ftp.nara.wide.ad.jp/pub/CPAN/ (previous pick)
+(5) ftp://ftp.ring.gr.jp/pub/lang/perl/CPAN/ (previous pick)
+(6) ftp://ftp.u-aizu.ac.jp/pub/CPAN (previous pick)
+(7) ftp://ftp.yz.yamagata-u.ac.jp/pub/lang/cpan/ (previous pick)
+(8) http://ppm.activestate.com/CPAN (previous pick)
+(9) http://cpan.perl.org (previous pick)
+Select as many URLs as you like (by number),
+put them on one line, separated by blanks, hyphenated ranges allowed
+e.g. '1 4 5' or '7 1-4 8'
+(or just hit RETURN to keep your previous picks) [1 2 3 4 5 6 7 8 9] 1-9
+Enter another URL or RETURN to quit: []
+New set of picks:
+ftp://ftp.dti.ad.jp/pub/lang/CPAN/
+ftp://ftp.jaist.ac.jp/pub/CPAN/
+ftp://ftp.kddilabs.jp/CPAN/
+ftp://ftp.nara.wide.ad.jp/pub/CPAN/
+ftp://ftp.ring.gr.jp/pub/lang/perl/CPAN/
+ftp://ftp.u-aizu.ac.jp/pub/CPAN
+ftp://ftp.yz.yamagata-u.ac.jp/pub/lang/cpan/
+http://ppm.activestate.com/CPAN
+http://cpan.perl.org
+Please remember to call 'o conf commit' to make the config permanent!
+cpan[3]&gt;
+</code></pre><!-- raw HTML omitted -->
+<pre tabindex="0"><code class="language-default" data-lang="default">cpan[3]&gt; o conf commit
+commit: wrote 'D:\usr\lib/CPAN/Config.pm'
+cpan[4]&gt;
+</code></pre><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<pre tabindex="0"><code class="language-default" data-lang="default">#     if ($Config{ivsize} == 4 &amp;&amp; $Config{cc} eq 'cl' and $Config{ccversion} =~ /^(\d+)/ and $1 &gt;= 14)
+if ($Config{ivsize} == 4 &amp;&amp; $Config{cc} eq 'cl')
+</code></pre><!-- raw HTML omitted -->
+
+  </div>
+
+  
+<div>
+  <ul class="tags">
+  <li>
+    <a href="https://www.nqou.net/tags/git/" class="tag-link">git</a>
+  </li>
+  
+  <li>
+    <a href="https://www.nqou.net/tags/perl/" class="tag-link">perl</a>
+  </li>
+  </ul>
+</div>
+
+
+
+  <div class="share-buttons">
+  <a class="twitter-share-button"
+     href="#"
+     title="Share on Twitter"
+     data-url="https://www.nqou.net/2008/05/06/202852/"
+     data-text="ActivePerl(5.10.0 Build 1002)でcpanを本気で使いたかった"><i class="fab fa-twitter"></i></a>
+
+  <a class="linkedin-share-button"
+     href="#"
+     title="Share on LinkedIn"
+     data-url="https://www.nqou.net/2008/05/06/202852/"
+     data-text="ActivePerl(5.10.0 Build 1002)でcpanを本気で使いたかった"><i class="fab fa-linkedin-in"></i></a>
+
+  <a class="facebook-share-button"
+     href="#"
+     title="Share on Facebook"
+     data-url="https://www.nqou.net/2008/05/06/202852/"
+     data-text="ActivePerl(5.10.0 Build 1002)でcpanを本気で使いたかった"><i class="fab fa-facebook"></i></a>
+
+  <a class="telegram-share-button"
+     href="#"
+     title="Share on Telegram"
+     data-url="https://www.nqou.net/2008/05/06/202852/"
+     data-text="ActivePerl(5.10.0 Build 1002)でcpanを本気で使いたかった"><i class="fab fa-telegram"></i></a>
+
+  <a class="pinterest-share-button"
+     href="#"
+     title="Share on Pinterest"
+     data-url="https://www.nqou.net/2008/05/06/202852/"
+     data-text="ActivePerl(5.10.0 Build 1002)でcpanを本気で使いたかった"><i class="fab fa-pinterest"></i></a>
+</div>
+
+
+  <div class="comments">
+    <h2>Comments</h2>
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "nqounet" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+</div>
+  </main>
+
+  <footer>
+  <div>
+    <p>
+      &copy; nqounet 2021
+
+      &middot; <a href="https://creativecommons.org/licenses/by/4.0" target="_blank">CC BY 4.0</a>
+
+      
+    </p>
+  </div>
+</footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
+          integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
+          crossorigin="anonymous"></script>
+
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/soho.js"></script>
+
+  
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-E50H9ESN7E', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

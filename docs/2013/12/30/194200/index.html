@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.88.1" />
+
+  <title>HTMLの正当性を検査するのにHTML::Tidyを使ってみた &middot; nqou.net</title>
+
+  <meta name="description" content="" />
+
+  
+
+<meta itemprop="name" content="HTMLの正当性を検査するのにHTML::Tidyを使ってみた">
+<meta itemprop="description" content="@nqounetです． PerlでHTMLの正当性（valid"><meta itemprop="datePublished" content="2013-12-30T19:42:00+09:00" />
+<meta itemprop="dateModified" content="2013-12-30T19:42:00+09:00" />
+<meta itemprop="wordCount" content="1194">
+<meta itemprop="keywords" content="jquery,perl," />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="HTMLの正当性を検査するのにHTML::Tidyを使ってみた"/>
+<meta name="twitter:description" content="@nqounetです． PerlでHTMLの正当性（valid"/>
+
+
+<meta property="og:title" content="HTMLの正当性を検査するのにHTML::Tidyを使ってみた" />
+<meta property="og:description" content="@nqounetです． PerlでHTMLの正当性（valid" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.nqou.net/2013/12/30/194200/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2013-12-30T19:42:00+09:00" />
+<meta property="article:modified_time" content="2013-12-30T19:42:00+09:00" /><meta property="og:site_name" content="nqou.net" />
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type":"Person",
+      "@id": "https://www.nqou.net/#author",
+      "name":  null ,
+      "image": {
+        "@type":"ImageObject",
+        "url": "https://www.gravatar.com/avatar/96267d00f89345335b76d21e0417ae39?s=400&d=mp"
+      },
+      "description": "Whisky, Perl, Kansai.pm"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.nqou.net/#website",
+      "url": "https://www.nqou.net/",
+      "name": "nqou.net",
+      "description": "Whisky, Perl, Kansai.pm",
+      "publisher": {
+        "@id": "https://www.nqou.net/#author"
+      },
+      "inLanguage": "ja"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.nqou.net/2013/12/30/194200/#webpage",
+      "url": "https://www.nqou.net/2013/12/30/194200/",
+      "name": "HTMLの正当性を検査するのにHTML::Tidyを使ってみた",
+      "isPartOf": {
+        "@id": "https://www.nqou.net/#website"
+      },
+      "about": {
+         "@id": "https://www.nqou.net/#author"
+      },
+      "datePublished": "2013-12-30T19:42:00+09:00",
+      "dateModified": "2013-12-30T19:42:00+09:00",
+      "description": "@nqounetです． PerlでHTMLの正当性（valid",
+      "inLanguage": "ja",
+      "potentialAction": [
+        {
+          "@type": "ReadAction",
+          "target": [
+            "https://www.nqou.net/2013/12/30/194200/"
+          ]
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "isPartOf": {
+        "@id": "https://www.nqou.net/2013/12/30/194200/#webpage"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://www.nqou.net/2013/12/30/194200/#webpage"
+      },
+      "headline": "HTMLの正当性を検査するのにHTML::Tidyを使ってみた",
+      "datePublished": "2013-12-30T19:42:00+09:00",
+      "dateModified": "2013-12-30T19:42:00+09:00",
+      "publisher": {
+        "@id": "https://www.nqou.net/#author"
+      },
+      "keywords": [
+        "jquery",
+        "perl"
+      ],
+      "articleSection": [
+      ],
+      "inLanguage": "ja",
+      "author": {
+        "@type": "Person",
+        "name":  null 
+      },
+      "potentialAction": [
+        {
+          "@type": "CommentAction",
+          "name": "Comment",
+          "target": [
+            "https://www.nqou.net/2013/12/30/194200/#comments"
+          ]
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/print.css"
+        media="print">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/poole.css">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/hyde.css">
+
+  
+
+
+  
+
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+        crossorigin="anonymous" />
+
+  <link rel="apple-touch-icon-precomposed"
+        sizes="144x144"
+        href="/apple-touch-icon-144-precomposed.png">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  </head>
+<body>
+  <aside class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      
+      <div class="author-image">
+        <a href="https://www.nqou.net/">
+          <img src="https://www.gravatar.com/avatar/96267d00f89345335b76d21e0417ae39?s=200&d=mp" class="img-circle img-headshot center" alt="Gravatar">
+        </a>
+      </div>
+      
+
+      <h1>nqou.net</h1>
+
+      
+      <p class="lead">Whisky, Perl, Kansai.pm</p>
+      
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li>
+          <a href="https://www.nqou.net/">Home</a>
+        </li>
+        <li>
+          <a href="/about/">About</a>
+        </li><li>
+          <a href="/post/">Posts</a>
+        </li><li>
+          <a href="/tags/">Tags</a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="social-icons">
+      
+      <a href="https://github.com/nqounet" rel="me" title="GitHub" target="_blank">
+        <i class="fab fa-github" aria-hidden="true"></i>
+      </a>
+      
+      <a href="https://twitter.com/nqounet" rel="me" title="Twitter" target="_blank">
+        <i class="fab fa-twitter" aria-hidden="true"></i>
+      </a>
+      
+    </section>
+  </div>
+</aside>
+
+
+  <main class="content container">
+  <div class="post">
+  <h1 class="title">HTMLの正当性を検査するのにHTML::Tidyを使ってみた</h1>
+  
+
+  <div class="post-date">
+    <time datetime="2013-12-30T19:42:00&#43;0900">Dec 30, 2013</time> <span class="readtime">&middot; 3 min read</span>
+  </div>
+
+  <div>
+  <p><!-- raw HTML omitted -->@nqounet<!-- raw HTML omitted -->です．</p>
+<p>PerlでHTMLの正当性（validかどうか）を確認するのにHTML::Tidyを使ってみたという話をします．</p>
+<!-- raw HTML omitted -->
+<p>少なくとも今一番新しいバージョンでは，<!-- raw HTML omitted -->Alien::Tidyp<!-- raw HTML omitted -->をいうモジュールを予めインストールしておくことで使えるようになります．</p>
+<p>依存情報が書かれていないため<!-- raw HTML omitted -->HTML::Tidy<!-- raw HTML omitted -->をインストールしても自動的にはインストールされません．</p>
+<p>試してみる方は以下の様な感じでインストールしてみてください．</p>
+<pre tabindex="0"><code class="language-default" data-lang="default">cpanm Alien::Tidyp
+cpanm HTML::Tidy
+</code></pre><p>使い方は極々簡単．</p>
+<pre tabindex="0"><code class="language-default" data-lang="default">#!/usr/bin/env perl
+use v5.12;
+use HTML::Tidy;
+
+my $tidy = HTML::Tidy-&gt;new;
+$tidy-&gt;parse( 'hoge.html', 'hoge' );
+
+foreach my $message ( $tidy-&gt;messages ) {
+  print $message-&gt;as_string, &quot;\n&quot;;
+}
+</code></pre><p>結果はこんな感じになります．</p>
+<pre tabindex="0"><code class="language-default" data-lang="default">hoge.html (1:22) Warning: discarding unexpectedhoge.html (1:16) Warning: inserting missing 'title' element
+</code></pre><!-- raw HTML omitted -->
+<p>HTMLの構造体を簡単にチェックできると良かったんですが…．</p>
+<p>実際にjQuery Mobileで作ったページを通してみると，<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p>のまえにがありません的なWarningが沢山あって戦々恐々としています．</p>
+<p>listviewを作る時に，a要素の中にp要素を含んでいるのですが，その部分のことを警告されているようです．</p>
+<p>HTML5的にはa要素の中にp要素があっても問題ないのですが，以前はそうではなかったということで，その名残でしょうか．</p>
+<!-- raw HTML omitted -->
+<p>…とは言っても，Changesを見る限り，大きな変更点はなかったように思います．</p>
+<p>Webアプリを作る時に，それほどまじめにやらないのはHTMLのvalidationじゃないかなと思います．</p>
+<p>私は今までほとんどやったことがありませんでした．</p>
+<p>staticなものであれば，W3Cの<!-- raw HTML omitted -->HTML Validator<!-- raw HTML omitted -->が使えますが，ログインしたり色々するのはこいつでは検証できません．</p>
+<!-- raw HTML omitted -->
+<p>便利なモジュールもあるんですけどね．</p>
+<!-- raw HTML omitted -->
+<p>…いや，すぐに分からなくても，少し調べればわかるのでHTMLのテストは必要性を感じなかったのです．</p>
+<p>というのも，昔はheaderファイルに開始タグを書いてfooterファイルに終了タグを書く，というような書き方もしていたのですが，いつの頃からかincludeするファイルごとにHTMLの構造を完結させるようになっていました．</p>
+<p>そのため，HTMLの構造が壊れても簡単に発見できました．</p>
+<p>しかし，過去の遺産というか負債というか，ちゃんとHTMLの構造を意識していないコードもあります．</p>
+<p>この場合は，includeしているファイルを全部見ていく必要があるので面倒です．</p>
+<p>しかも，if文で，classやonclickの指定が違う部分を開始タグごと書いてあったり，条件によって開始タグがなくなるように書いていることもありました．</p>
+<p>我ながら酷いと思います．</p>
+<p>閉じタグを書くためのif文を見て泣けてきました．</p>
+<p>こういう部分は，後々を考えて書き直していきたいのですが，HTMLの構造体がどこでどう変わっているのかをソースレベルで追いかけるのは大変です．</p>
+<p>そこで，HTMLの構造のテストを追加することにしました．</p>
+<p>もう少しカジュアルにテストしたいですね…．</p>
+
+  </div>
+
+  
+<div>
+  <ul class="tags">
+  <li>
+    <a href="https://www.nqou.net/tags/jquery/" class="tag-link">jquery</a>
+  </li>
+  
+  <li>
+    <a href="https://www.nqou.net/tags/perl/" class="tag-link">perl</a>
+  </li>
+  </ul>
+</div>
+
+
+
+  <div class="share-buttons">
+  <a class="twitter-share-button"
+     href="#"
+     title="Share on Twitter"
+     data-url="https://www.nqou.net/2013/12/30/194200/"
+     data-text="HTMLの正当性を検査するのにHTML::Tidyを使ってみた"><i class="fab fa-twitter"></i></a>
+
+  <a class="linkedin-share-button"
+     href="#"
+     title="Share on LinkedIn"
+     data-url="https://www.nqou.net/2013/12/30/194200/"
+     data-text="HTMLの正当性を検査するのにHTML::Tidyを使ってみた"><i class="fab fa-linkedin-in"></i></a>
+
+  <a class="facebook-share-button"
+     href="#"
+     title="Share on Facebook"
+     data-url="https://www.nqou.net/2013/12/30/194200/"
+     data-text="HTMLの正当性を検査するのにHTML::Tidyを使ってみた"><i class="fab fa-facebook"></i></a>
+
+  <a class="telegram-share-button"
+     href="#"
+     title="Share on Telegram"
+     data-url="https://www.nqou.net/2013/12/30/194200/"
+     data-text="HTMLの正当性を検査するのにHTML::Tidyを使ってみた"><i class="fab fa-telegram"></i></a>
+
+  <a class="pinterest-share-button"
+     href="#"
+     title="Share on Pinterest"
+     data-url="https://www.nqou.net/2013/12/30/194200/"
+     data-text="HTMLの正当性を検査するのにHTML::Tidyを使ってみた"><i class="fab fa-pinterest"></i></a>
+</div>
+
+
+  <div class="comments">
+    <h2>Comments</h2>
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "nqounet" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+</div>
+  </main>
+
+  <footer>
+  <div>
+    <p>
+      &copy; nqounet 2021
+
+      &middot; <a href="https://creativecommons.org/licenses/by/4.0" target="_blank">CC BY 4.0</a>
+
+      
+    </p>
+  </div>
+</footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
+          integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
+          crossorigin="anonymous"></script>
+
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/soho.js"></script>
+
+  
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-E50H9ESN7E', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

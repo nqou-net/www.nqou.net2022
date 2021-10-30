@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.88.1" />
+
+  <title>CPAN よく使われるネーム王選手権 &middot; nqou.net</title>
+
+  <meta name="description" content="" />
+
+  
+
+<meta itemprop="name" content="CPAN よく使われるネーム王選手権">
+<meta itemprop="description" content="名前付けに困っていたところに、CPAN 長いネームスペース大会"><meta itemprop="datePublished" content="2009-02-22T00:11:27+09:00" />
+<meta itemprop="dateModified" content="2009-02-22T00:11:27+09:00" />
+<meta itemprop="wordCount" content="874">
+<meta itemprop="keywords" content="perl," />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="CPAN よく使われるネーム王選手権"/>
+<meta name="twitter:description" content="名前付けに困っていたところに、CPAN 長いネームスペース大会"/>
+
+
+<meta property="og:title" content="CPAN よく使われるネーム王選手権" />
+<meta property="og:description" content="名前付けに困っていたところに、CPAN 長いネームスペース大会" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.nqou.net/2009/02/22/001127/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2009-02-22T00:11:27+09:00" />
+<meta property="article:modified_time" content="2009-02-22T00:11:27+09:00" /><meta property="og:site_name" content="nqou.net" />
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type":"Person",
+      "@id": "https://www.nqou.net/#author",
+      "name":  null ,
+      "image": {
+        "@type":"ImageObject",
+        "url": "https://www.gravatar.com/avatar/96267d00f89345335b76d21e0417ae39?s=400&d=mp"
+      },
+      "description": "Whisky, Perl, Kansai.pm"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.nqou.net/#website",
+      "url": "https://www.nqou.net/",
+      "name": "nqou.net",
+      "description": "Whisky, Perl, Kansai.pm",
+      "publisher": {
+        "@id": "https://www.nqou.net/#author"
+      },
+      "inLanguage": "ja"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.nqou.net/2009/02/22/001127/#webpage",
+      "url": "https://www.nqou.net/2009/02/22/001127/",
+      "name": "CPAN よく使われるネーム王選手権",
+      "isPartOf": {
+        "@id": "https://www.nqou.net/#website"
+      },
+      "about": {
+         "@id": "https://www.nqou.net/#author"
+      },
+      "datePublished": "2009-02-22T00:11:27+09:00",
+      "dateModified": "2009-02-22T00:11:27+09:00",
+      "description": "名前付けに困っていたところに、CPAN 長いネームスペース大会",
+      "inLanguage": "ja",
+      "potentialAction": [
+        {
+          "@type": "ReadAction",
+          "target": [
+            "https://www.nqou.net/2009/02/22/001127/"
+          ]
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "isPartOf": {
+        "@id": "https://www.nqou.net/2009/02/22/001127/#webpage"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://www.nqou.net/2009/02/22/001127/#webpage"
+      },
+      "headline": "CPAN よく使われるネーム王選手権",
+      "datePublished": "2009-02-22T00:11:27+09:00",
+      "dateModified": "2009-02-22T00:11:27+09:00",
+      "publisher": {
+        "@id": "https://www.nqou.net/#author"
+      },
+      "keywords": [
+        "perl"
+      ],
+      "articleSection": [
+      ],
+      "inLanguage": "ja",
+      "author": {
+        "@type": "Person",
+        "name":  null 
+      },
+      "potentialAction": [
+        {
+          "@type": "CommentAction",
+          "name": "Comment",
+          "target": [
+            "https://www.nqou.net/2009/02/22/001127/#comments"
+          ]
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/print.css"
+        media="print">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/poole.css">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/hyde.css">
+
+  
+
+
+  
+
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+        crossorigin="anonymous" />
+
+  <link rel="apple-touch-icon-precomposed"
+        sizes="144x144"
+        href="/apple-touch-icon-144-precomposed.png">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  </head>
+<body>
+  <aside class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      
+      <div class="author-image">
+        <a href="https://www.nqou.net/">
+          <img src="https://www.gravatar.com/avatar/96267d00f89345335b76d21e0417ae39?s=200&d=mp" class="img-circle img-headshot center" alt="Gravatar">
+        </a>
+      </div>
+      
+
+      <h1>nqou.net</h1>
+
+      
+      <p class="lead">Whisky, Perl, Kansai.pm</p>
+      
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li>
+          <a href="https://www.nqou.net/">Home</a>
+        </li>
+        <li>
+          <a href="/about/">About</a>
+        </li><li>
+          <a href="/post/">Posts</a>
+        </li><li>
+          <a href="/tags/">Tags</a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="social-icons">
+      
+      <a href="https://github.com/nqounet" rel="me" title="GitHub" target="_blank">
+        <i class="fab fa-github" aria-hidden="true"></i>
+      </a>
+      
+      <a href="https://twitter.com/nqounet" rel="me" title="Twitter" target="_blank">
+        <i class="fab fa-twitter" aria-hidden="true"></i>
+      </a>
+      
+    </section>
+  </div>
+</aside>
+
+
+  <main class="content container">
+  <div class="post">
+  <h1 class="title">CPAN よく使われるネーム王選手権</h1>
+  
+
+  <div class="post-date">
+    <time datetime="2009-02-22T00:11:27&#43;0900">Feb 22, 2009</time> <span class="readtime">&middot; 2 min read</span>
+  </div>
+
+  <div>
+  <p>名前付けに困っていたところに、<!-- raw HTML omitted -->CPAN 長いネームスペース大会 - にぽたん研究所<!-- raw HTML omitted -->や<!-- raw HTML omitted -->CPAN 階層の深いモジュール王選手権 - id:kazuhookuのメモ置き場<!-- raw HTML omitted -->をみて、CPANモジュールからアイデアをもらおうと思ってやってみた。
+とりあえず1000回以上使われていたのは以下の名前。
+（2009/02/20時点）</p>
+<pre tabindex="0"><code class="language-default" data-lang="default"> 3060 times: Net
+2581 times: XML
+2287 times: Plugin
+1964 times: Bio
+1743 times: Data
+1696 times: HTML
+1427 times: API
+1346 times: WWW
+1310 times: Test
+1296 times: Class
+1176 times: eBay
+1140 times: Apache
+1105 times: DateTime
+1083 times: Text
+</code></pre><p>さすがに、Net,XML,HTML,WWWなど、ウェブ関係が多いようです。
+あと、Textが多いのはPerlの面目躍如でしょうか。テキスト処理は十八番ですからね。
+ちなみに、200回以上使われている名前は、138個。
+100回以上200回未満は、171個。
+10回以上100回未満は、2109個。
+5回以上10回未満は、1686個。
+2回以上5回未満は、5803個。
+1回だけは、21289個でした。</p>
+<p>ソースコード</p>
+<pre tabindex="0"><code class="language-default" data-lang="default">#!/usr/bin/perl
+use strict;
+use warnings;
+use CPAN::Config;
+use IO::Uncompress::Gunzip qw($GunzipError);
+use constant PRINT_TIMES =&gt; 1000;
+my $package_file =
+sprintf &quot;%s/modules/02packages.details.txt.gz&quot;,
+$CPAN::Config-&gt;{keep_source_where};
+my %ranking = ();
+my $z = IO::Uncompress::Gunzip-&gt;new($package_file) or die &quot;$GunzipError\n&quot;;
+while (my $line = $z-&gt;getline) {
+my($package) = split /\s+/, $line, 2;
+my @names = split /::/, $package;
+foreach my $name (@names) {
+$ranking{$name}++;
+}
+}
+$z-&gt;close;
+my $number = 1;
+for my $name (sort { $ranking{$b} &lt;=&gt; $ranking{$a} } keys %ranking) {
+last if $ranking{$name} &lt; PRINT_TIMES();
+printf &quot;%5d times: %s\n&quot;, $ranking{$name}, $name;
+}
+</code></pre><p>200回以上1000回未満の名前は以下のとおり。</p>
+<pre tabindex="0"><code class="language-default" data-lang="default">  988 times: File
+956 times: DBIx
+943 times: Object
+927 times: CGI
+861 times: Template
+850 times: POE
+820 times: Mail
+818 times: TimeZone
+763 times: App
+746 times: DataType
+742 times: Catalyst
+732 times: Locale
+702 times: Config
+700 times: Component
+658 times: Meta
+635 times: Simple
+620 times: Perl
+611 times: Filter
+609 times: DBI
+599 times: Server
+593 times: DB
+591 times: Search
+582 times: HTTP
+573 times: Base
+561 times: Tools
+545 times: Devel
+544 times: Parse
+530 times: Model
+524 times: Parser
+513 times: Games
+507 times: Acme
+500 times: Lingua
+498 times: Math
+489 times: Tk
+489 times: Module
+469 times: Engine
+465 times: Amazon
+462 times: Util
+458 times: Win32
+453 times: Client
+452 times: Image
+450 times: ICal
+442 times: WebService
+441 times: Session
+439 times: UMMF
+434 times: Call
+432 times: Yahoo
+428 times: Run
+426 times: IO
+409 times: Schema
+381 times: Log
+365 times: Jifty
+357 times: SQL
+355 times: Tie
+353 times: Wx
+348 times: View
+333 times: Google
+333 times: Command
+330 times: Pod
+324 times: Business
+320 times: Response
+315 times: PDF
+315 times: Marketing
+312 times: Cache
+311 times: Graph
+307 times: Request
+306 times: Crypt
+306 times: Apache2
+305 times: Widget
+305 times: Message
+304 times: Driver
+304 times: Backend
+292 times: Paper
+291 times: Specs
+291 times: Utils
+288 times: Element
+284 times: Node
+281 times: Protocol
+281 times: Web
+281 times: PiseApplication
+278 times: Geo
+278 times: MooseX
+274 times: Tree
+274 times: Graphics
+273 times: DRI
+273 times: SOAP
+272 times: Audio
+270 times: RDF
+268 times: Email
+268 times: America
+268 times: Validate
+267 times: Field
+267 times: Date
+264 times: Application
+263 times: Kwiki
+263 times: Query
+260 times: Controller
+260 times: Enum
+258 times: Info
+256 times: Language
+255 times: Form
+255 times: Exception
+251 times: Algorithm
+250 times: Encode
+249 times: Critic
+245 times: Action
+243 times: Plagger
+236 times: Agent
+235 times: Bundle
+232 times: Rose
+223 times: Store
+222 times: Finance
+219 times: Type
+218 times: Chart
+218 times: Storage
+217 times: String
+217 times: Value
+217 times: UI
+215 times: Core
+207 times: AFP
+206 times: Handler
+206 times: Error
+204 times: Gtk2
+200 times: Policy
+</code></pre>
+  </div>
+
+  
+<div>
+  <ul class="tags">
+  <li>
+    <a href="https://www.nqou.net/tags/perl/" class="tag-link">perl</a>
+  </li>
+  </ul>
+</div>
+
+
+
+  <div class="share-buttons">
+  <a class="twitter-share-button"
+     href="#"
+     title="Share on Twitter"
+     data-url="https://www.nqou.net/2009/02/22/001127/"
+     data-text="CPAN よく使われるネーム王選手権"><i class="fab fa-twitter"></i></a>
+
+  <a class="linkedin-share-button"
+     href="#"
+     title="Share on LinkedIn"
+     data-url="https://www.nqou.net/2009/02/22/001127/"
+     data-text="CPAN よく使われるネーム王選手権"><i class="fab fa-linkedin-in"></i></a>
+
+  <a class="facebook-share-button"
+     href="#"
+     title="Share on Facebook"
+     data-url="https://www.nqou.net/2009/02/22/001127/"
+     data-text="CPAN よく使われるネーム王選手権"><i class="fab fa-facebook"></i></a>
+
+  <a class="telegram-share-button"
+     href="#"
+     title="Share on Telegram"
+     data-url="https://www.nqou.net/2009/02/22/001127/"
+     data-text="CPAN よく使われるネーム王選手権"><i class="fab fa-telegram"></i></a>
+
+  <a class="pinterest-share-button"
+     href="#"
+     title="Share on Pinterest"
+     data-url="https://www.nqou.net/2009/02/22/001127/"
+     data-text="CPAN よく使われるネーム王選手権"><i class="fab fa-pinterest"></i></a>
+</div>
+
+
+  <div class="comments">
+    <h2>Comments</h2>
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "nqounet" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+</div>
+  </main>
+
+  <footer>
+  <div>
+    <p>
+      &copy; nqounet 2021
+
+      &middot; <a href="https://creativecommons.org/licenses/by/4.0" target="_blank">CC BY 4.0</a>
+
+      
+    </p>
+  </div>
+</footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
+          integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
+          crossorigin="anonymous"></script>
+
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/soho.js"></script>
+
+  
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-E50H9ESN7E', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

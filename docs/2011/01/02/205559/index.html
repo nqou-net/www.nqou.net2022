@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.88.1" />
+
+  <title>Mojolicious::LiteでData::Modelを使ってみた &middot; nqou.net</title>
+
+  <meta name="description" content="" />
+
+  
+
+<meta itemprop="name" content="Mojolicious::LiteでData::Modelを使ってみた">
+<meta itemprop="description" content="先日1.0にバージョンアップしたMojolicious（::"><meta itemprop="datePublished" content="2011-01-02T20:55:59+09:00" />
+<meta itemprop="dateModified" content="2011-01-02T20:55:59+09:00" />
+<meta itemprop="wordCount" content="515">
+<meta itemprop="keywords" content="mojolicious,perl," />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Mojolicious::LiteでData::Modelを使ってみた"/>
+<meta name="twitter:description" content="先日1.0にバージョンアップしたMojolicious（::"/>
+
+
+<meta property="og:title" content="Mojolicious::LiteでData::Modelを使ってみた" />
+<meta property="og:description" content="先日1.0にバージョンアップしたMojolicious（::" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.nqou.net/2011/01/02/205559/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2011-01-02T20:55:59+09:00" />
+<meta property="article:modified_time" content="2011-01-02T20:55:59+09:00" /><meta property="og:site_name" content="nqou.net" />
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type":"Person",
+      "@id": "https://www.nqou.net/#author",
+      "name":  null ,
+      "image": {
+        "@type":"ImageObject",
+        "url": "https://www.gravatar.com/avatar/96267d00f89345335b76d21e0417ae39?s=400&d=mp"
+      },
+      "description": "Whisky, Perl, Kansai.pm"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.nqou.net/#website",
+      "url": "https://www.nqou.net/",
+      "name": "nqou.net",
+      "description": "Whisky, Perl, Kansai.pm",
+      "publisher": {
+        "@id": "https://www.nqou.net/#author"
+      },
+      "inLanguage": "ja"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.nqou.net/2011/01/02/205559/#webpage",
+      "url": "https://www.nqou.net/2011/01/02/205559/",
+      "name": "Mojolicious::LiteでData::Modelを使ってみた",
+      "isPartOf": {
+        "@id": "https://www.nqou.net/#website"
+      },
+      "about": {
+         "@id": "https://www.nqou.net/#author"
+      },
+      "datePublished": "2011-01-02T20:55:59+09:00",
+      "dateModified": "2011-01-02T20:55:59+09:00",
+      "description": "先日1.0にバージョンアップしたMojolicious（::",
+      "inLanguage": "ja",
+      "potentialAction": [
+        {
+          "@type": "ReadAction",
+          "target": [
+            "https://www.nqou.net/2011/01/02/205559/"
+          ]
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "isPartOf": {
+        "@id": "https://www.nqou.net/2011/01/02/205559/#webpage"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://www.nqou.net/2011/01/02/205559/#webpage"
+      },
+      "headline": "Mojolicious::LiteでData::Modelを使ってみた",
+      "datePublished": "2011-01-02T20:55:59+09:00",
+      "dateModified": "2011-01-02T20:55:59+09:00",
+      "publisher": {
+        "@id": "https://www.nqou.net/#author"
+      },
+      "keywords": [
+        "mojolicious",
+        "perl"
+      ],
+      "articleSection": [
+      ],
+      "inLanguage": "ja",
+      "author": {
+        "@type": "Person",
+        "name":  null 
+      },
+      "potentialAction": [
+        {
+          "@type": "CommentAction",
+          "name": "Comment",
+          "target": [
+            "https://www.nqou.net/2011/01/02/205559/#comments"
+          ]
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/print.css"
+        media="print">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/poole.css">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/hyde.css">
+
+  
+
+
+  
+
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+        crossorigin="anonymous" />
+
+  <link rel="apple-touch-icon-precomposed"
+        sizes="144x144"
+        href="/apple-touch-icon-144-precomposed.png">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  </head>
+<body>
+  <aside class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      
+      <div class="author-image">
+        <a href="https://www.nqou.net/">
+          <img src="https://www.gravatar.com/avatar/96267d00f89345335b76d21e0417ae39?s=200&d=mp" class="img-circle img-headshot center" alt="Gravatar">
+        </a>
+      </div>
+      
+
+      <h1>nqou.net</h1>
+
+      
+      <p class="lead">Whisky, Perl, Kansai.pm</p>
+      
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li>
+          <a href="https://www.nqou.net/">Home</a>
+        </li>
+        <li>
+          <a href="/about/">About</a>
+        </li><li>
+          <a href="/post/">Posts</a>
+        </li><li>
+          <a href="/tags/">Tags</a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="social-icons">
+      
+      <a href="https://github.com/nqounet" rel="me" title="GitHub" target="_blank">
+        <i class="fab fa-github" aria-hidden="true"></i>
+      </a>
+      
+      <a href="https://twitter.com/nqounet" rel="me" title="Twitter" target="_blank">
+        <i class="fab fa-twitter" aria-hidden="true"></i>
+      </a>
+      
+    </section>
+  </div>
+</aside>
+
+
+  <main class="content container">
+  <div class="post">
+  <h1 class="title">Mojolicious::LiteでData::Modelを使ってみた</h1>
+  
+
+  <div class="post-date">
+    <time datetime="2011-01-02T20:55:59&#43;0900">Jan 2, 2011</time> <span class="readtime">&middot; 2 min read</span>
+  </div>
+
+  <div>
+  <p>先日1.0にバージョンアップしたMojolicious（::Lite）を本格的に触ってみようとアレコレやってみた。
+MojoliciousのWikiにORLiteを使ったサンプルがあったのですが、残念ながらそのままでは日本語には対応していないので、他のORMを使ってみようという、そんな感じです。</p>
+<h2 id="see-also">SEE ALSO</h2>
+<ul>
+<li><a href="https://metacpan.org/pod/Data::Model">Data::Model - model interface which had more data sources unified, a.k.a data/object mapper - metacpan.org</a></li>
+<li><a href="http://perl-users.jp/articles/advent-calendar/2009/data-model/">Data::Model Track - JPerl Advent Calendar 2009</a></li>
+<li><a href="https://metacpan.org/pod/Mojolicious::Lite">Mojolicious::Lite - Micro real-time web framework - metacpan.org</a></li>
+<li><a href="https://github.com/mojolicious/mojo/wiki">Home · mojolicious/mojo Wiki</a></li>
+</ul>
+<p>ほとんどが元ネタのパクリですが。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#75715e">#!/usr/bin/env perl</span>
+<span style="color:#75715e">#ｕｔｆ８</span>
+<span style="color:#75715e"># use Acme::PerlTidy;</span>
+<span style="color:#66d9ef">package</span> DataModel;
+<span style="color:#66d9ef">use</span> utf8;
+<span style="color:#66d9ef">use</span> base <span style="color:#e6db74">&#39;Data::Model&#39;</span>;
+<span style="color:#66d9ef">use</span> Data::Model::Schema;
+<span style="color:#66d9ef">use</span> Data::Model::Driver::DBI;
+<span style="color:#66d9ef">my</span> $dbfile <span style="color:#f92672">=</span> <span style="color:#e6db74">qq{$0.db}</span>;
+<span style="color:#66d9ef">my</span> $dsn    <span style="color:#f92672">=</span> <span style="color:#e6db74">qq{dbi:SQLite:dbname=$dbfile}</span>;
+<span style="color:#66d9ef">my</span> $driver <span style="color:#f92672">=</span> Data::Model::Driver::DBI<span style="color:#f92672">-&gt;</span><span style="color:#66d9ef">new</span>(
+    dsn             <span style="color:#f92672">=&gt;</span> $dsn,
+    connect_options <span style="color:#f92672">=&gt;</span> {sqlite_unicode <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">1</span>,},
+);
+base_driver($driver);
+install_model motorcycles <span style="color:#f92672">=&gt;</span> schema {
+    key <span style="color:#e6db74">&#39;id&#39;</span>;
+    column id    <span style="color:#f92672">=&gt;</span> int  <span style="color:#f92672">=&gt;</span> {auto_increment <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">1</span>};
+    column type  <span style="color:#f92672">=&gt;</span> char <span style="color:#f92672">=&gt;</span> {required       <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">1</span>};
+    column brand <span style="color:#f92672">=&gt;</span> char <span style="color:#f92672">=&gt;</span> {required       <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">1</span>};
+    column color <span style="color:#f92672">=&gt;</span> char <span style="color:#f92672">=&gt;</span> {required       <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">0</span>};
+};
+<span style="color:#66d9ef">unless</span> (<span style="color:#f92672">-</span>f $dbfile) {
+    <span style="color:#66d9ef">my</span> $dbh <span style="color:#f92672">=</span> DBI<span style="color:#f92672">-&gt;</span>connect($dsn, <span style="color:#e6db74">&#39;&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>, {RaiseError <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">1</span>, PrintError <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">0</span>})
+        <span style="color:#f92672">or</span> DBI<span style="color:#f92672">-&gt;</span>errstr;
+    <span style="color:#66d9ef">for</span> <span style="color:#66d9ef">my</span> $sql (__PACKAGE__<span style="color:#f92672">-&gt;</span>as_sqls) {
+        $dbh<span style="color:#f92672">-&gt;</span><span style="color:#66d9ef">do</span>($sql) <span style="color:#f92672">or</span> die $dbh<span style="color:#f92672">-&gt;</span>errstr;
+    }
+    $dbh<span style="color:#f92672">-&gt;</span>disconnect;
+}
+
+<span style="color:#66d9ef">package</span> main;
+<span style="color:#66d9ef">use</span> utf8;
+<span style="color:#66d9ef">use</span> Mojolicious::Lite;
+<span style="color:#66d9ef">use</span> Mojo::Util <span style="color:#e6db74">qw/md5_sum/</span>;
+app<span style="color:#f92672">-&gt;</span>log<span style="color:#f92672">-&gt;</span>level(<span style="color:#e6db74">&#39;debug&#39;</span>)<span style="color:#f92672">-&gt;</span>path(<span style="color:#e6db74">qq{$0.log}</span>);
+app<span style="color:#f92672">-&gt;</span>secret(md5_sum $0 )<span style="color:#f92672">-&gt;</span>log<span style="color:#f92672">-&gt;</span>debug(app<span style="color:#f92672">-&gt;</span>secret);
+app<span style="color:#f92672">-&gt;</span>helper(model <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">sub</span> { <span style="color:#66d9ef">my</span> $dbh <span style="color:#f92672">=</span> DataModel<span style="color:#f92672">-&gt;</span><span style="color:#66d9ef">new</span> });
+get <span style="color:#e6db74">&#39;/&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">sub</span> {
+    <span style="color:#66d9ef">my</span> $self       <span style="color:#f92672">=</span> shift;
+    <span style="color:#66d9ef">my</span> $model      <span style="color:#f92672">=</span> $self<span style="color:#f92672">-&gt;</span>model;
+    <span style="color:#66d9ef">my</span> $motorbikes <span style="color:#f92672">=</span> [$model<span style="color:#f92672">-&gt;</span>get(<span style="color:#e6db74">&#39;motorcycles&#39;</span> <span style="color:#f92672">=&gt;</span> {order <span style="color:#f92672">=&gt;</span> [{type <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;ASC&#39;</span>}],})];
+    $self<span style="color:#f92672">-&gt;</span>stash(
+        motorbikes <span style="color:#f92672">=&gt;</span> $motorbikes,
+        debug      <span style="color:#f92672">=&gt;</span> $self<span style="color:#f92672">-&gt;</span>dumper([$self, $model]),
+    );
+}        <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;index&#39;</span>;
+post <span style="color:#e6db74">&#39;/&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">sub</span> {
+    <span style="color:#66d9ef">my</span> $self  <span style="color:#f92672">=</span> shift;
+    <span style="color:#66d9ef">my</span> $model <span style="color:#f92672">=</span> $self<span style="color:#f92672">-&gt;</span>model;
+    $model<span style="color:#f92672">-&gt;</span>set(
+        <span style="color:#e6db74">&#39;motorcycles&#39;</span> <span style="color:#f92672">=&gt;</span> {
+            type  <span style="color:#f92672">=&gt;</span> $self<span style="color:#f92672">-&gt;</span>param(<span style="color:#e6db74">&#39;type&#39;</span>),
+            brand <span style="color:#f92672">=&gt;</span> $self<span style="color:#f92672">-&gt;</span>param(<span style="color:#e6db74">&#39;brand&#39;</span>),
+            color <span style="color:#f92672">=&gt;</span> $self<span style="color:#f92672">-&gt;</span>param(<span style="color:#e6db74">&#39;color&#39;</span>),
+        }
+    );
+    $self<span style="color:#f92672">-&gt;</span>redirect_to(<span style="color:#e6db74">&#39;/&#39;</span>);
+};
+app<span style="color:#f92672">-&gt;</span>start;
+__DATA__
+@@ index<span style="color:#f92672">.</span>html<span style="color:#f92672">.</span>ep
+<span style="color:#f92672">&lt;!</span>DOCTYPE html<span style="color:#f92672">&gt;</span>
+<span style="color:#e6db74">&lt;html&gt;</span>
+<span style="color:#e6db74">&lt;head&gt;</span>
+<span style="color:#f92672">&lt;</span>meta charset<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&lt;%= app-&gt;renderer-&gt;encoding %&gt;&#34;</span><span style="color:#f92672">&gt;</span>
+<span style="color:#e6db74">&lt;title&gt;</span>Motorcycles<span style="color:#e6db74">&lt;/title&gt;</span>
+<span style="color:#e6db74">&lt;/head&gt;</span>
+<span style="color:#e6db74">&lt;body&gt;</span>
+<span style="color:#e6db74">&lt;table&gt;</span>
+% foreach <span style="color:#66d9ef">my</span> $cycle (@{$motorbikes} ) {
+<span style="color:#e6db74">&lt;tr&gt;</span>
+<span style="color:#e6db74">&lt;td&gt;</span><span style="color:#f92672">&lt;</span>%<span style="color:#960050;background-color:#1e0010">=</span> <span style="color:#960050;background-color:#1e0010">$</span>cycle<span style="color:#f92672">-&gt;</span>id %<span style="color:#960050;background-color:#1e0010">&gt;&lt;/</span>td<span style="color:#f92672">&gt;</span>
+<span style="color:#e6db74">&lt;td&gt;</span><span style="color:#f92672">&lt;</span>%<span style="color:#960050;background-color:#1e0010">=</span> <span style="color:#960050;background-color:#1e0010">$</span>cycle<span style="color:#f92672">-&gt;</span>type %<span style="color:#960050;background-color:#1e0010">&gt;&lt;/</span>td<span style="color:#f92672">&gt;</span>
+<span style="color:#e6db74">&lt;td&gt;</span><span style="color:#f92672">&lt;</span>%<span style="color:#960050;background-color:#1e0010">=</span> <span style="color:#960050;background-color:#1e0010">$</span>cycle<span style="color:#f92672">-&gt;</span>brand %<span style="color:#960050;background-color:#1e0010">&gt;&lt;/</span>td<span style="color:#f92672">&gt;</span>
+<span style="color:#e6db74">&lt;td&gt;</span><span style="color:#f92672">&lt;</span>%<span style="color:#960050;background-color:#1e0010">=</span> <span style="color:#960050;background-color:#1e0010">$</span>cycle<span style="color:#f92672">-&gt;</span>color %<span style="color:#960050;background-color:#1e0010">&gt;&lt;/</span>td<span style="color:#f92672">&gt;</span>
+<span style="color:#e6db74">&lt;/tr&gt;</span>
+% <span style="color:#960050;background-color:#1e0010">}</span>
+<span style="color:#960050;background-color:#1e0010">&lt;/</span>table<span style="color:#f92672">&gt;</span>
+<span style="color:#e6db74">&lt;p&gt;</span>バイクを登録してください<span style="color:#960050;background-color:#1e0010">。</span><span style="color:#e6db74">&lt;/p&gt;</span>
+<span style="color:#e6db74">&lt;p&gt;</span>
+<span style="color:#f92672">&lt;</span>%<span style="color:#960050;background-color:#1e0010">=</span> form_for <span style="color:#e6db74">&#39;/&#39;</span> <span style="color:#f92672">=&gt;</span> (method <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;post&#39;</span>) <span style="color:#f92672">=&gt;</span> begin %<span style="color:#960050;background-color:#1e0010">&gt;</span>
+<span style="color:#960050;background-color:#1e0010">%</span> foreach (<span style="color:#e6db74">qw/type brand color/</span>) {
+<span style="color:#f92672">&lt;</span>%<span style="color:#960050;background-color:#1e0010">=</span> uc($_) %<span style="color:#960050;background-color:#1e0010">&gt;</span>: <span style="color:#f92672">&lt;</span>%<span style="color:#960050;background-color:#1e0010">=</span> input_tag $_, <span style="color:#e6db74">&#39;type&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;text&#39;</span> %<span style="color:#960050;background-color:#1e0010">&gt;&lt;</span>br <span style="color:#f92672">/&gt;</span>
+% <span style="color:#960050;background-color:#1e0010">}</span>
+<span style="color:#960050;background-color:#1e0010">&lt;%=</span> submit_button <span style="color:#e6db74">&#39;Submit motorcycle&#39;</span> %<span style="color:#960050;background-color:#1e0010">&gt;</span>
+<span style="color:#960050;background-color:#1e0010">&lt;%</span> end %<span style="color:#960050;background-color:#1e0010">&gt;</span>
+<span style="color:#960050;background-color:#1e0010">&lt;/</span>p<span style="color:#f92672">&gt;</span>
+<span style="color:#e6db74">&lt;pre&gt;</span><span style="color:#f92672">&lt;</span>%<span style="color:#960050;background-color:#1e0010">=</span> <span style="color:#960050;background-color:#1e0010">$</span>debug %<span style="color:#960050;background-color:#1e0010">&gt;&lt;/</span>pre<span style="color:#f92672">&gt;</span>
+<span style="color:#e6db74">&lt;/body&gt;</span>
+<span style="color:#e6db74">&lt;/html&gt;</span>
+</code></pre></div>
+  </div>
+
+  
+<div>
+  <ul class="tags">
+  <li>
+    <a href="https://www.nqou.net/tags/mojolicious/" class="tag-link">mojolicious</a>
+  </li>
+  
+  <li>
+    <a href="https://www.nqou.net/tags/perl/" class="tag-link">perl</a>
+  </li>
+  </ul>
+</div>
+
+
+
+  <div class="share-buttons">
+  <a class="twitter-share-button"
+     href="#"
+     title="Share on Twitter"
+     data-url="https://www.nqou.net/2011/01/02/205559/"
+     data-text="Mojolicious::LiteでData::Modelを使ってみた"><i class="fab fa-twitter"></i></a>
+
+  <a class="linkedin-share-button"
+     href="#"
+     title="Share on LinkedIn"
+     data-url="https://www.nqou.net/2011/01/02/205559/"
+     data-text="Mojolicious::LiteでData::Modelを使ってみた"><i class="fab fa-linkedin-in"></i></a>
+
+  <a class="facebook-share-button"
+     href="#"
+     title="Share on Facebook"
+     data-url="https://www.nqou.net/2011/01/02/205559/"
+     data-text="Mojolicious::LiteでData::Modelを使ってみた"><i class="fab fa-facebook"></i></a>
+
+  <a class="telegram-share-button"
+     href="#"
+     title="Share on Telegram"
+     data-url="https://www.nqou.net/2011/01/02/205559/"
+     data-text="Mojolicious::LiteでData::Modelを使ってみた"><i class="fab fa-telegram"></i></a>
+
+  <a class="pinterest-share-button"
+     href="#"
+     title="Share on Pinterest"
+     data-url="https://www.nqou.net/2011/01/02/205559/"
+     data-text="Mojolicious::LiteでData::Modelを使ってみた"><i class="fab fa-pinterest"></i></a>
+</div>
+
+
+  <div class="comments">
+    <h2>Comments</h2>
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "nqounet" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+</div>
+  </main>
+
+  <footer>
+  <div>
+    <p>
+      &copy; nqounet 2021
+
+      &middot; <a href="https://creativecommons.org/licenses/by/4.0" target="_blank">CC BY 4.0</a>
+
+      
+    </p>
+  </div>
+</footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
+          integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
+          crossorigin="anonymous"></script>
+
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/soho.js"></script>
+
+  
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-E50H9ESN7E', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

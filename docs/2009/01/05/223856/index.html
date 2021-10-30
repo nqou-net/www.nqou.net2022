@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.88.1" />
+
+  <title>「flickr_fetcher.pl」を勝手に改造して活用してみた &middot; nqou.net</title>
+
+  <meta name="description" content="" />
+
+  
+
+<meta itemprop="name" content="「flickr_fetcher.pl」を勝手に改造して活用してみた">
+<meta itemprop="description" content="sub BUILD { my ( $self, $args ) = @_; unless ( $self-&gt;api_key ) { if ( my $api_key = $ENV{FLICKR_API_KEY} ) { $self-&gt;api_key($api_key); } else { die &quot;api_key is"><meta itemprop="datePublished" content="2009-01-05T22:38:56+09:00" />
+<meta itemprop="dateModified" content="2009-01-05T22:38:56+09:00" />
+<meta itemprop="wordCount" content="159">
+<meta itemprop="keywords" content="perl," />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="「flickr_fetcher.pl」を勝手に改造して活用してみた"/>
+<meta name="twitter:description" content="sub BUILD { my ( $self, $args ) = @_; unless ( $self-&gt;api_key ) { if ( my $api_key = $ENV{FLICKR_API_KEY} ) { $self-&gt;api_key($api_key); } else { die &quot;api_key is"/>
+
+
+<meta property="og:title" content="「flickr_fetcher.pl」を勝手に改造して活用してみた" />
+<meta property="og:description" content="sub BUILD { my ( $self, $args ) = @_; unless ( $self-&gt;api_key ) { if ( my $api_key = $ENV{FLICKR_API_KEY} ) { $self-&gt;api_key($api_key); } else { die &quot;api_key is" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.nqou.net/2009/01/05/223856/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2009-01-05T22:38:56+09:00" />
+<meta property="article:modified_time" content="2009-01-05T22:38:56+09:00" /><meta property="og:site_name" content="nqou.net" />
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type":"Person",
+      "@id": "https://www.nqou.net/#author",
+      "name":  null ,
+      "image": {
+        "@type":"ImageObject",
+        "url": "https://www.gravatar.com/avatar/96267d00f89345335b76d21e0417ae39?s=400&d=mp"
+      },
+      "description": "Whisky, Perl, Kansai.pm"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.nqou.net/#website",
+      "url": "https://www.nqou.net/",
+      "name": "nqou.net",
+      "description": "Whisky, Perl, Kansai.pm",
+      "publisher": {
+        "@id": "https://www.nqou.net/#author"
+      },
+      "inLanguage": "ja"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.nqou.net/2009/01/05/223856/#webpage",
+      "url": "https://www.nqou.net/2009/01/05/223856/",
+      "name": "「flickr_fetcher.pl」を勝手に改造して活用してみた",
+      "isPartOf": {
+        "@id": "https://www.nqou.net/#website"
+      },
+      "about": {
+         "@id": "https://www.nqou.net/#author"
+      },
+      "datePublished": "2009-01-05T22:38:56+09:00",
+      "dateModified": "2009-01-05T22:38:56+09:00",
+      "description": "sub BUILD { my ( $self, $args ) = @_; unless ( $self-\u0026gt;api_key ) { if ( my $api_key = $ENV{FLICKR_API_KEY} ) { $self-\u0026gt;api_key($api_key); } else { die \u0026quot;api_key is",
+      "inLanguage": "ja",
+      "potentialAction": [
+        {
+          "@type": "ReadAction",
+          "target": [
+            "https://www.nqou.net/2009/01/05/223856/"
+          ]
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "isPartOf": {
+        "@id": "https://www.nqou.net/2009/01/05/223856/#webpage"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://www.nqou.net/2009/01/05/223856/#webpage"
+      },
+      "headline": "「flickr_fetcher.pl」を勝手に改造して活用してみた",
+      "datePublished": "2009-01-05T22:38:56+09:00",
+      "dateModified": "2009-01-05T22:38:56+09:00",
+      "publisher": {
+        "@id": "https://www.nqou.net/#author"
+      },
+      "keywords": [
+        "perl"
+      ],
+      "articleSection": [
+      ],
+      "inLanguage": "ja",
+      "author": {
+        "@type": "Person",
+        "name":  null 
+      },
+      "potentialAction": [
+        {
+          "@type": "CommentAction",
+          "name": "Comment",
+          "target": [
+            "https://www.nqou.net/2009/01/05/223856/#comments"
+          ]
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/print.css"
+        media="print">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/poole.css">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/hyde.css">
+
+  
+
+
+  
+
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+        crossorigin="anonymous" />
+
+  <link rel="apple-touch-icon-precomposed"
+        sizes="144x144"
+        href="/apple-touch-icon-144-precomposed.png">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  </head>
+<body>
+  <aside class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      
+      <div class="author-image">
+        <a href="https://www.nqou.net/">
+          <img src="https://www.gravatar.com/avatar/96267d00f89345335b76d21e0417ae39?s=200&d=mp" class="img-circle img-headshot center" alt="Gravatar">
+        </a>
+      </div>
+      
+
+      <h1>nqou.net</h1>
+
+      
+      <p class="lead">Whisky, Perl, Kansai.pm</p>
+      
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li>
+          <a href="https://www.nqou.net/">Home</a>
+        </li>
+        <li>
+          <a href="/about/">About</a>
+        </li><li>
+          <a href="/post/">Posts</a>
+        </li><li>
+          <a href="/tags/">Tags</a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="social-icons">
+      
+      <a href="https://github.com/nqounet" rel="me" title="GitHub" target="_blank">
+        <i class="fab fa-github" aria-hidden="true"></i>
+      </a>
+      
+      <a href="https://twitter.com/nqounet" rel="me" title="Twitter" target="_blank">
+        <i class="fab fa-twitter" aria-hidden="true"></i>
+      </a>
+      
+    </section>
+  </div>
+</aside>
+
+
+  <main class="content container">
+  <div class="post">
+  <h1 class="title">「flickr_fetcher.pl」を勝手に改造して活用してみた</h1>
+  
+
+  <div class="post-date">
+    <time datetime="2009-01-05T22:38:56&#43;0900">Jan 5, 2009</time> <span class="readtime">&middot; 1 min read</span>
+  </div>
+
+  <div>
+  <!-- raw HTML omitted -->
+<pre tabindex="0"><code class="language-default" data-lang="default">sub BUILD {
+my ( $self, $args ) = @_;
+unless ( $self-&gt;api_key ) {
+if ( my $api_key = $ENV{FLICKR_API_KEY} ) {
+$self-&gt;api_key($api_key);
+}
+else {
+die &quot;api_key is required\n&quot;;
+}
+}
+unless ( $self-&gt;keyword ) {
+$self-&gt;keyword('石原さとみ');
+}
+unless ( $self-&gt;dir ) {
+$self-&gt;dir('satomi_ishihara');
+}
+my $xs = XML::Simple-&gt;new( KeepRoot =&gt; 1, keyattr =&gt; [] );
+my $parser = WebService::Simple::Parser::XML::Simple-&gt;new( xs =&gt; $xs );
+my $flickr = WebService::Simple-&gt;new(
+base_url        =&gt; &quot;http://api.flickr.com/services/rest/&quot;,
+param           =&gt; { api_key =&gt; $self-&gt;api_key },
+response_parser =&gt; $parser,
+);
+$self-&gt;_flickr($flickr);
+}
+</code></pre><!-- raw HTML omitted -->
+<pre tabindex="0"><code class="language-default" data-lang="default">has 'keyword' =&gt; ( is =&gt; 'rw', isa =&gt; 'Str' );
+has 'dir'     =&gt; ( is =&gt; 'rw', isa =&gt; 'Dir', coerce =&gt; 1 );
+has 'api_key' =&gt; ( is =&gt; 'rw', isa =&gt; 'Str' );
+has 'license' =&gt; ( is =&gt; 'rw', isa =&gt; 'Int' );
+</code></pre><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+
+  </div>
+
+  
+<div>
+  <ul class="tags">
+  <li>
+    <a href="https://www.nqou.net/tags/perl/" class="tag-link">perl</a>
+  </li>
+  </ul>
+</div>
+
+
+
+  <div class="share-buttons">
+  <a class="twitter-share-button"
+     href="#"
+     title="Share on Twitter"
+     data-url="https://www.nqou.net/2009/01/05/223856/"
+     data-text="「flickr_fetcher.pl」を勝手に改造して活用してみた"><i class="fab fa-twitter"></i></a>
+
+  <a class="linkedin-share-button"
+     href="#"
+     title="Share on LinkedIn"
+     data-url="https://www.nqou.net/2009/01/05/223856/"
+     data-text="「flickr_fetcher.pl」を勝手に改造して活用してみた"><i class="fab fa-linkedin-in"></i></a>
+
+  <a class="facebook-share-button"
+     href="#"
+     title="Share on Facebook"
+     data-url="https://www.nqou.net/2009/01/05/223856/"
+     data-text="「flickr_fetcher.pl」を勝手に改造して活用してみた"><i class="fab fa-facebook"></i></a>
+
+  <a class="telegram-share-button"
+     href="#"
+     title="Share on Telegram"
+     data-url="https://www.nqou.net/2009/01/05/223856/"
+     data-text="「flickr_fetcher.pl」を勝手に改造して活用してみた"><i class="fab fa-telegram"></i></a>
+
+  <a class="pinterest-share-button"
+     href="#"
+     title="Share on Pinterest"
+     data-url="https://www.nqou.net/2009/01/05/223856/"
+     data-text="「flickr_fetcher.pl」を勝手に改造して活用してみた"><i class="fab fa-pinterest"></i></a>
+</div>
+
+
+  <div class="comments">
+    <h2>Comments</h2>
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "nqounet" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+</div>
+  </main>
+
+  <footer>
+  <div>
+    <p>
+      &copy; nqounet 2021
+
+      &middot; <a href="https://creativecommons.org/licenses/by/4.0" target="_blank">CC BY 4.0</a>
+
+      
+    </p>
+  </div>
+</footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
+          integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
+          crossorigin="anonymous"></script>
+
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/soho.js"></script>
+
+  
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-E50H9ESN7E', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

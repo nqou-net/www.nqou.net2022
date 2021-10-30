@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.88.1" />
+
+  <title>CORESERVERでconcrete5を動かしてみた &middot; nqou.net</title>
+
+  <meta name="description" content="" />
+
+  
+
+<meta itemprop="name" content="CORESERVERでconcrete5を動かしてみた">
+<meta itemprop="description" content="「concrete5」というCMSをOSC2011Kobeで"><meta itemprop="datePublished" content="2011-04-17T11:26:50+09:00" />
+<meta itemprop="dateModified" content="2011-04-17T11:26:50+09:00" />
+<meta itemprop="wordCount" content="1143">
+<meta itemprop="keywords" content="undef," />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="CORESERVERでconcrete5を動かしてみた"/>
+<meta name="twitter:description" content="「concrete5」というCMSをOSC2011Kobeで"/>
+
+
+<meta property="og:title" content="CORESERVERでconcrete5を動かしてみた" />
+<meta property="og:description" content="「concrete5」というCMSをOSC2011Kobeで" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.nqou.net/2011/04/17/112650/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2011-04-17T11:26:50+09:00" />
+<meta property="article:modified_time" content="2011-04-17T11:26:50+09:00" /><meta property="og:site_name" content="nqou.net" />
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type":"Person",
+      "@id": "https://www.nqou.net/#author",
+      "name":  null ,
+      "image": {
+        "@type":"ImageObject",
+        "url": "https://www.gravatar.com/avatar/96267d00f89345335b76d21e0417ae39?s=400&d=mp"
+      },
+      "description": "Whisky, Perl, Kansai.pm"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.nqou.net/#website",
+      "url": "https://www.nqou.net/",
+      "name": "nqou.net",
+      "description": "Whisky, Perl, Kansai.pm",
+      "publisher": {
+        "@id": "https://www.nqou.net/#author"
+      },
+      "inLanguage": "ja"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.nqou.net/2011/04/17/112650/#webpage",
+      "url": "https://www.nqou.net/2011/04/17/112650/",
+      "name": "CORESERVERでconcrete5を動かしてみた",
+      "isPartOf": {
+        "@id": "https://www.nqou.net/#website"
+      },
+      "about": {
+         "@id": "https://www.nqou.net/#author"
+      },
+      "datePublished": "2011-04-17T11:26:50+09:00",
+      "dateModified": "2011-04-17T11:26:50+09:00",
+      "description": "「concrete5」というCMSをOSC2011Kobeで",
+      "inLanguage": "ja",
+      "potentialAction": [
+        {
+          "@type": "ReadAction",
+          "target": [
+            "https://www.nqou.net/2011/04/17/112650/"
+          ]
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "isPartOf": {
+        "@id": "https://www.nqou.net/2011/04/17/112650/#webpage"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://www.nqou.net/2011/04/17/112650/#webpage"
+      },
+      "headline": "CORESERVERでconcrete5を動かしてみた",
+      "datePublished": "2011-04-17T11:26:50+09:00",
+      "dateModified": "2011-04-17T11:26:50+09:00",
+      "publisher": {
+        "@id": "https://www.nqou.net/#author"
+      },
+      "keywords": [
+        "undef"
+      ],
+      "articleSection": [
+      ],
+      "inLanguage": "ja",
+      "author": {
+        "@type": "Person",
+        "name":  null 
+      },
+      "potentialAction": [
+        {
+          "@type": "CommentAction",
+          "name": "Comment",
+          "target": [
+            "https://www.nqou.net/2011/04/17/112650/#comments"
+          ]
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/print.css"
+        media="print">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/poole.css">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/hyde.css">
+
+  
+
+
+  
+
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+        crossorigin="anonymous" />
+
+  <link rel="apple-touch-icon-precomposed"
+        sizes="144x144"
+        href="/apple-touch-icon-144-precomposed.png">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  </head>
+<body>
+  <aside class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      
+      <div class="author-image">
+        <a href="https://www.nqou.net/">
+          <img src="https://www.gravatar.com/avatar/96267d00f89345335b76d21e0417ae39?s=200&d=mp" class="img-circle img-headshot center" alt="Gravatar">
+        </a>
+      </div>
+      
+
+      <h1>nqou.net</h1>
+
+      
+      <p class="lead">Whisky, Perl, Kansai.pm</p>
+      
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li>
+          <a href="https://www.nqou.net/">Home</a>
+        </li>
+        <li>
+          <a href="/about/">About</a>
+        </li><li>
+          <a href="/post/">Posts</a>
+        </li><li>
+          <a href="/tags/">Tags</a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="social-icons">
+      
+      <a href="https://github.com/nqounet" rel="me" title="GitHub" target="_blank">
+        <i class="fab fa-github" aria-hidden="true"></i>
+      </a>
+      
+      <a href="https://twitter.com/nqounet" rel="me" title="Twitter" target="_blank">
+        <i class="fab fa-twitter" aria-hidden="true"></i>
+      </a>
+      
+    </section>
+  </div>
+</aside>
+
+
+  <main class="content container">
+  <div class="post">
+  <h1 class="title">CORESERVERでconcrete5を動かしてみた</h1>
+  
+
+  <div class="post-date">
+    <time datetime="2011-04-17T11:26:50&#43;0900">Apr 17, 2011</time> <span class="readtime">&middot; 3 min read</span>
+  </div>
+
+  <div>
+  <p>「concrete5」というCMSをOSC2011Kobeで知って、面白そうだったので、インストールしてみた。</p>
+<!-- raw HTML omitted -->
+<p>ありがたい事に「<!-- raw HTML omitted -->Xrea/Coreserver インストールガイド :: concrete5日本語公式サイト<!-- raw HTML omitted -->」というページがあるので、そちらを参考にしながらインストールします。
+ポイントになるのは「5. 「.htaccess」と「php.ini」ファイルの設置」でしょう。
+PHPをCGIとして動かす設定がないと、セーフモードで動くらしいので。
+で、ちゃんとtmpディレクトリも作成します。
+使ったバージョンは「concrete5.4.1.1.1.ja」です。
+ディレクトリも同じ名前になりますので、とりあえず名前を変えておきたいところですが、なんとなくシンボリックリンクにしておきます。</p>
+<pre tabindex="0"><code class="language-default" data-lang="default">$ ln -s concrete5.4.1.1.1.ja c5
+</code></pre><p>とりあえず「c5」という名前にしておきます。
+さて、ここまで来たら今度はブラウザの出番です。
+アップロードした先にアクセスしてみます。
+今回は、「devel.nqou.net」の中に作ったので、「http://devel.nqou.net/c5/」にアクセスします。
+オールグリーンになっていました。
+好調ですね。
+さて、フォームを入力していきます。
+サイト名とメールアドレスは適切に、サーバーの欄については「localhost」、DB名欄とユーザー名欄はメモしている「DB/ユーザー名」を、パスワード欄にはパスワードを入力します。
+全て入力したら、いよいよインストールです。
+しばらく待つと、無事インストール終了のようです。
+管理IDとパスワードが画面上にでました。
+そのまま、ホームを表示すると管理モードになっています。
+ついでなので、管理画面→ユーザー・グループ管理→admin→ユーザー編集、と画面を推移させて、すぐにパスワードを変更しました。
+また、これは既知の問題らしいですが、スタイルシートがうまく反映されていません。
+「10. スタイルシート非表示問題の応急処置法」に書いてあるようにしても良いのですが、この場合テーマを変えるたびに対応する必要がありそうなので、スクリプトの方を直しましょう。
+httpヘッダを見てみると、「Expires」が「Date」と同じ時間になっているのが原因らしいのがわかります。
+本来なら、ココを適切に直したいところですが、そこはよく分からないので消してしまいましょう。
+「/concrete/tools/css.php」を開いて、29行目の</p>
+<pre tabindex="0"><code class="language-default" data-lang="default">header(&quot;Expires: &quot;. gmdate(&quot;D, j M Y H:i:s&quot;, time() + DAY) .&quot; GMT&quot;);
+</code></pre><p>の行をコメントにしていまいます。
+ブラウザをリロードすると、スタイルシートが反映されていました。
+テーマを変えても問題ありません。
+さて、これでとりあえずはうまく動いています。
+しばらく弄ってみることにします。
+↓これです。
+<!-- raw HTML omitted -->concrete5.nqou.net :: ホーム<!-- raw HTML omitted --></p>
+
+  </div>
+
+  
+<div>
+  <ul class="tags">
+  <li>
+    <a href="https://www.nqou.net/tags/undef/" class="tag-link">undef</a>
+  </li>
+  </ul>
+</div>
+
+
+
+  <div class="share-buttons">
+  <a class="twitter-share-button"
+     href="#"
+     title="Share on Twitter"
+     data-url="https://www.nqou.net/2011/04/17/112650/"
+     data-text="CORESERVERでconcrete5を動かしてみた"><i class="fab fa-twitter"></i></a>
+
+  <a class="linkedin-share-button"
+     href="#"
+     title="Share on LinkedIn"
+     data-url="https://www.nqou.net/2011/04/17/112650/"
+     data-text="CORESERVERでconcrete5を動かしてみた"><i class="fab fa-linkedin-in"></i></a>
+
+  <a class="facebook-share-button"
+     href="#"
+     title="Share on Facebook"
+     data-url="https://www.nqou.net/2011/04/17/112650/"
+     data-text="CORESERVERでconcrete5を動かしてみた"><i class="fab fa-facebook"></i></a>
+
+  <a class="telegram-share-button"
+     href="#"
+     title="Share on Telegram"
+     data-url="https://www.nqou.net/2011/04/17/112650/"
+     data-text="CORESERVERでconcrete5を動かしてみた"><i class="fab fa-telegram"></i></a>
+
+  <a class="pinterest-share-button"
+     href="#"
+     title="Share on Pinterest"
+     data-url="https://www.nqou.net/2011/04/17/112650/"
+     data-text="CORESERVERでconcrete5を動かしてみた"><i class="fab fa-pinterest"></i></a>
+</div>
+
+
+  <div class="comments">
+    <h2>Comments</h2>
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "nqounet" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+</div>
+  </main>
+
+  <footer>
+  <div>
+    <p>
+      &copy; nqounet 2021
+
+      &middot; <a href="https://creativecommons.org/licenses/by/4.0" target="_blank">CC BY 4.0</a>
+
+      
+    </p>
+  </div>
+</footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
+          integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
+          crossorigin="anonymous"></script>
+
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/soho.js"></script>
+
+  
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-E50H9ESN7E', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

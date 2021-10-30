@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.88.1" />
+
+  <title>Wordpress から Hexo に乗り換えた（ついでにドメイン移転） &middot; nqou.net</title>
+
+  <meta name="description" content="" />
+
+  
+
+<meta itemprop="name" content="Wordpress から Hexo に乗り換えた（ついでにドメイン移転）">
+<meta itemprop="description" content="TL;DR migration 時に気をつけること hexo-migrator-wordpress を修正し、 HTML を無理に markdown に変換しないよ"><meta itemprop="datePublished" content="2017-12-03T15:48:42+09:00" />
+<meta itemprop="dateModified" content="2017-12-03T15:48:42+09:00" />
+<meta itemprop="wordCount" content="752">
+<meta itemprop="keywords" content="hexo,information,wordpress," />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Wordpress から Hexo に乗り換えた（ついでにドメイン移転）"/>
+<meta name="twitter:description" content="TL;DR migration 時に気をつけること hexo-migrator-wordpress を修正し、 HTML を無理に markdown に変換しないよ"/>
+
+
+<meta property="og:title" content="Wordpress から Hexo に乗り換えた（ついでにドメイン移転）" />
+<meta property="og:description" content="TL;DR migration 時に気をつけること hexo-migrator-wordpress を修正し、 HTML を無理に markdown に変換しないよ" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.nqou.net/2017/12/03/154842/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2017-12-03T15:48:42+09:00" />
+<meta property="article:modified_time" content="2017-12-03T15:48:42+09:00" /><meta property="og:site_name" content="nqou.net" />
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type":"Person",
+      "@id": "https://www.nqou.net/#author",
+      "name":  null ,
+      "image": {
+        "@type":"ImageObject",
+        "url": "https://www.gravatar.com/avatar/96267d00f89345335b76d21e0417ae39?s=400&d=mp"
+      },
+      "description": "Whisky, Perl, Kansai.pm"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.nqou.net/#website",
+      "url": "https://www.nqou.net/",
+      "name": "nqou.net",
+      "description": "Whisky, Perl, Kansai.pm",
+      "publisher": {
+        "@id": "https://www.nqou.net/#author"
+      },
+      "inLanguage": "ja"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.nqou.net/2017/12/03/154842/#webpage",
+      "url": "https://www.nqou.net/2017/12/03/154842/",
+      "name": "Wordpress から Hexo に乗り換えた（ついでにドメイン移転）",
+      "isPartOf": {
+        "@id": "https://www.nqou.net/#website"
+      },
+      "about": {
+         "@id": "https://www.nqou.net/#author"
+      },
+      "datePublished": "2017-12-03T15:48:42+09:00",
+      "dateModified": "2017-12-03T15:48:42+09:00",
+      "description": "TL;DR migration 時に気をつけること hexo-migrator-wordpress を修正し、 HTML を無理に markdown に変換しないよ",
+      "inLanguage": "ja",
+      "potentialAction": [
+        {
+          "@type": "ReadAction",
+          "target": [
+            "https://www.nqou.net/2017/12/03/154842/"
+          ]
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "isPartOf": {
+        "@id": "https://www.nqou.net/2017/12/03/154842/#webpage"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://www.nqou.net/2017/12/03/154842/#webpage"
+      },
+      "headline": "Wordpress から Hexo に乗り換えた（ついでにドメイン移転）",
+      "datePublished": "2017-12-03T15:48:42+09:00",
+      "dateModified": "2017-12-03T15:48:42+09:00",
+      "publisher": {
+        "@id": "https://www.nqou.net/#author"
+      },
+      "keywords": [
+        "hexo",
+        "information",
+        "wordpress"
+      ],
+      "articleSection": [
+      ],
+      "inLanguage": "ja",
+      "author": {
+        "@type": "Person",
+        "name":  null 
+      },
+      "potentialAction": [
+        {
+          "@type": "CommentAction",
+          "name": "Comment",
+          "target": [
+            "https://www.nqou.net/2017/12/03/154842/#comments"
+          ]
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/print.css"
+        media="print">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/poole.css">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/hyde.css">
+
+  
+
+
+  
+
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+        crossorigin="anonymous" />
+
+  <link rel="apple-touch-icon-precomposed"
+        sizes="144x144"
+        href="/apple-touch-icon-144-precomposed.png">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  </head>
+<body>
+  <aside class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      
+      <div class="author-image">
+        <a href="https://www.nqou.net/">
+          <img src="https://www.gravatar.com/avatar/96267d00f89345335b76d21e0417ae39?s=200&d=mp" class="img-circle img-headshot center" alt="Gravatar">
+        </a>
+      </div>
+      
+
+      <h1>nqou.net</h1>
+
+      
+      <p class="lead">Whisky, Perl, Kansai.pm</p>
+      
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li>
+          <a href="https://www.nqou.net/">Home</a>
+        </li>
+        <li>
+          <a href="/about/">About</a>
+        </li><li>
+          <a href="/post/">Posts</a>
+        </li><li>
+          <a href="/tags/">Tags</a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="social-icons">
+      
+      <a href="https://github.com/nqounet" rel="me" title="GitHub" target="_blank">
+        <i class="fab fa-github" aria-hidden="true"></i>
+      </a>
+      
+      <a href="https://twitter.com/nqounet" rel="me" title="Twitter" target="_blank">
+        <i class="fab fa-twitter" aria-hidden="true"></i>
+      </a>
+      
+    </section>
+  </div>
+</aside>
+
+
+  <main class="content container">
+  <div class="post">
+  <h1 class="title">Wordpress から Hexo に乗り換えた（ついでにドメイン移転）</h1>
+  
+
+  <div class="post-date">
+    <time datetime="2017-12-03T15:48:42&#43;0900">Dec 3, 2017</time> <span class="readtime">&middot; 2 min read</span>
+  </div>
+
+  <div>
+  <h2 id="tldr">TL;DR</h2>
+<p>migration 時に気をつけること</p>
+<ul>
+<li><code>hexo-migrator-wordpress</code> を修正し、 HTML を無理に markdown に変換しないようにする</li>
+<li><code>{{</code> は <code>{{</code> に変換する</li>
+</ul>
+<h2 id="お知らせ">お知らせ</h2>
+<p>Wordpress で書いていた <a href="http://www.nishimiyahara.net">www.nishimiyahara.net</a> から、すべての記事を引っ越しました。</p>
+<p>hexo も色々難点はあるけど、そこを理解して付き合っていけば何とかなりそうな気がしてきた。</p>
+<p>まあ、そう思えるのは、結果的に記事のインポートが（かなり躓いたけど）うまくいった（少なくとも構築できる状態になった）からだと思う。</p>
+<h2 id="元凶は-migrator-だった">元凶は migrator だった</h2>
+<p>色々見ていくうちに、ソースコードとして書いている部分が妙な markdown になっていることに気づいた。
+これは、と思って <code>hexo-migrator-wordpress</code> のソースコードを見ると、 HTML を markdown に変換しているところがあった。</p>
+<p>過去記事は無理に markdown にする必要はないので、変換部分を削除して実行してみた。
+すると、これまでと違って <code>hexo generate --debug</code> のエラーがわかりやすいものに変わった。</p>
+<p>あとは、 <code>{{</code> を <code>{{</code> に変換するくらいで、エラーがなくなった。</p>
+<p>結構苦労したけど、結果的にやることがすごく少なくて拍子抜けと言うか。</p>
+<p>記号の扱いは、昔から困ることが当然なので、この程度で済んだのなら御の字というか。</p>
+<h2 id="url-と時間の扱い">URL と時間の扱い</h2>
+<p>そして問題は時間の扱いに戻った。</p>
+<p>これまで色々と考えて時間を扱ってきたけど、移転に際してまた困ることになった。</p>
+<p>この辺は諦めて、時差を含めた時間は別のメタ情報として保存するようにして、 <code>date</code> の値は、常に日本時間にすることで解決することにした。</p>
+<p>時差を含めた情報は個人的なこだわりではあるけど、記事をインポートしてみると、使っていないメタ情報がたくさんあることに気づいた。</p>
+<p>しかも、特に捨てられるわけではないので、それなら時差を含めた時間の情報を持っておいて、ファイルを変換する時に URL の元になる <code>date</code> を生成すれば良い。</p>
+<p>インポートする前に書いていた記事は URL が変わってしまうことになるけど、それはそれ。</p>
+<p>とりあえず色々とスッキリした。</p>
+
+  </div>
+
+  
+<div>
+  <ul class="tags">
+  <li>
+    <a href="https://www.nqou.net/tags/hexo/" class="tag-link">hexo</a>
+  </li>
+  
+  <li>
+    <a href="https://www.nqou.net/tags/information/" class="tag-link">information</a>
+  </li>
+  
+  <li>
+    <a href="https://www.nqou.net/tags/wordpress/" class="tag-link">wordpress</a>
+  </li>
+  </ul>
+</div>
+
+
+
+  <div class="share-buttons">
+  <a class="twitter-share-button"
+     href="#"
+     title="Share on Twitter"
+     data-url="https://www.nqou.net/2017/12/03/154842/"
+     data-text="Wordpress から Hexo に乗り換えた（ついでにドメイン移転）"><i class="fab fa-twitter"></i></a>
+
+  <a class="linkedin-share-button"
+     href="#"
+     title="Share on LinkedIn"
+     data-url="https://www.nqou.net/2017/12/03/154842/"
+     data-text="Wordpress から Hexo に乗り換えた（ついでにドメイン移転）"><i class="fab fa-linkedin-in"></i></a>
+
+  <a class="facebook-share-button"
+     href="#"
+     title="Share on Facebook"
+     data-url="https://www.nqou.net/2017/12/03/154842/"
+     data-text="Wordpress から Hexo に乗り換えた（ついでにドメイン移転）"><i class="fab fa-facebook"></i></a>
+
+  <a class="telegram-share-button"
+     href="#"
+     title="Share on Telegram"
+     data-url="https://www.nqou.net/2017/12/03/154842/"
+     data-text="Wordpress から Hexo に乗り換えた（ついでにドメイン移転）"><i class="fab fa-telegram"></i></a>
+
+  <a class="pinterest-share-button"
+     href="#"
+     title="Share on Pinterest"
+     data-url="https://www.nqou.net/2017/12/03/154842/"
+     data-text="Wordpress から Hexo に乗り換えた（ついでにドメイン移転）"><i class="fab fa-pinterest"></i></a>
+</div>
+
+
+  <div class="comments">
+    <h2>Comments</h2>
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "nqounet" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+</div>
+  </main>
+
+  <footer>
+  <div>
+    <p>
+      &copy; nqounet 2021
+
+      &middot; <a href="https://creativecommons.org/licenses/by/4.0" target="_blank">CC BY 4.0</a>
+
+      
+    </p>
+  </div>
+</footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
+          integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
+          crossorigin="anonymous"></script>
+
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/soho.js"></script>
+
+  
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-E50H9ESN7E', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

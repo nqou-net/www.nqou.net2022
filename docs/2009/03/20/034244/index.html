@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.88.1" />
+
+  <title>CodeRepos版NanoAをWindowsで動かす方法 &middot; nqou.net</title>
+
+  <meta name="description" content="" />
+
+  
+
+<meta itemprop="name" content="CodeRepos版NanoAをWindowsで動かす方法">
+<meta itemprop="description" content="前回は失敗したが、CodeReposにあるNanoAで再挑戦"><meta itemprop="datePublished" content="2009-03-20T03:42:44+09:00" />
+<meta itemprop="dateModified" content="2009-03-20T03:42:44+09:00" />
+<meta itemprop="wordCount" content="1015">
+<meta itemprop="keywords" content="perl," />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="CodeRepos版NanoAをWindowsで動かす方法"/>
+<meta name="twitter:description" content="前回は失敗したが、CodeReposにあるNanoAで再挑戦"/>
+
+
+<meta property="og:title" content="CodeRepos版NanoAをWindowsで動かす方法" />
+<meta property="og:description" content="前回は失敗したが、CodeReposにあるNanoAで再挑戦" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.nqou.net/2009/03/20/034244/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2009-03-20T03:42:44+09:00" />
+<meta property="article:modified_time" content="2009-03-20T03:42:44+09:00" /><meta property="og:site_name" content="nqou.net" />
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type":"Person",
+      "@id": "https://www.nqou.net/#author",
+      "name":  null ,
+      "image": {
+        "@type":"ImageObject",
+        "url": "https://www.gravatar.com/avatar/96267d00f89345335b76d21e0417ae39?s=400&d=mp"
+      },
+      "description": "Whisky, Perl, Kansai.pm"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.nqou.net/#website",
+      "url": "https://www.nqou.net/",
+      "name": "nqou.net",
+      "description": "Whisky, Perl, Kansai.pm",
+      "publisher": {
+        "@id": "https://www.nqou.net/#author"
+      },
+      "inLanguage": "ja"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.nqou.net/2009/03/20/034244/#webpage",
+      "url": "https://www.nqou.net/2009/03/20/034244/",
+      "name": "CodeRepos版NanoAをWindowsで動かす方法",
+      "isPartOf": {
+        "@id": "https://www.nqou.net/#website"
+      },
+      "about": {
+         "@id": "https://www.nqou.net/#author"
+      },
+      "datePublished": "2009-03-20T03:42:44+09:00",
+      "dateModified": "2009-03-20T03:42:44+09:00",
+      "description": "前回は失敗したが、CodeReposにあるNanoAで再挑戦",
+      "inLanguage": "ja",
+      "potentialAction": [
+        {
+          "@type": "ReadAction",
+          "target": [
+            "https://www.nqou.net/2009/03/20/034244/"
+          ]
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "isPartOf": {
+        "@id": "https://www.nqou.net/2009/03/20/034244/#webpage"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://www.nqou.net/2009/03/20/034244/#webpage"
+      },
+      "headline": "CodeRepos版NanoAをWindowsで動かす方法",
+      "datePublished": "2009-03-20T03:42:44+09:00",
+      "dateModified": "2009-03-20T03:42:44+09:00",
+      "publisher": {
+        "@id": "https://www.nqou.net/#author"
+      },
+      "keywords": [
+        "perl"
+      ],
+      "articleSection": [
+      ],
+      "inLanguage": "ja",
+      "author": {
+        "@type": "Person",
+        "name":  null 
+      },
+      "potentialAction": [
+        {
+          "@type": "CommentAction",
+          "name": "Comment",
+          "target": [
+            "https://www.nqou.net/2009/03/20/034244/#comments"
+          ]
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/print.css"
+        media="print">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/poole.css">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/hyde.css">
+
+  
+
+
+  
+
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+        crossorigin="anonymous" />
+
+  <link rel="apple-touch-icon-precomposed"
+        sizes="144x144"
+        href="/apple-touch-icon-144-precomposed.png">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  </head>
+<body>
+  <aside class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      
+      <div class="author-image">
+        <a href="https://www.nqou.net/">
+          <img src="https://www.gravatar.com/avatar/96267d00f89345335b76d21e0417ae39?s=200&d=mp" class="img-circle img-headshot center" alt="Gravatar">
+        </a>
+      </div>
+      
+
+      <h1>nqou.net</h1>
+
+      
+      <p class="lead">Whisky, Perl, Kansai.pm</p>
+      
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li>
+          <a href="https://www.nqou.net/">Home</a>
+        </li>
+        <li>
+          <a href="/about/">About</a>
+        </li><li>
+          <a href="/post/">Posts</a>
+        </li><li>
+          <a href="/tags/">Tags</a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="social-icons">
+      
+      <a href="https://github.com/nqounet" rel="me" title="GitHub" target="_blank">
+        <i class="fab fa-github" aria-hidden="true"></i>
+      </a>
+      
+      <a href="https://twitter.com/nqounet" rel="me" title="Twitter" target="_blank">
+        <i class="fab fa-twitter" aria-hidden="true"></i>
+      </a>
+      
+    </section>
+  </div>
+</aside>
+
+
+  <main class="content container">
+  <div class="post">
+  <h1 class="title">CodeRepos版NanoAをWindowsで動かす方法</h1>
+  
+
+  <div class="post-date">
+    <time datetime="2009-03-20T03:42:44&#43;0900">Mar 20, 2009</time> <span class="readtime">&middot; 3 min read</span>
+  </div>
+
+  <div>
+  <p><!-- raw HTML omitted -->前回は失敗した<!-- raw HTML omitted -->が、<!-- raw HTML omitted -->CodeRepos<!-- raw HTML omitted -->にあるNanoAで再挑戦してみる。</p>
+<p>NanoAの配布元は0.16が最新だったが、CodeReposの最新版は、バージョンが0.17であった。</p>
+<p>CodeRepos版は開発版ということで、そのまま使えるはずだったのだが、Windows上で使うには少し工夫が必要だった（詳しい説明は「lib/NanoA/Config.pm」に書いてあるので、そちらを読もう）ので、将来のため（？）に手順をメモしておく。
+まず、CodeReposからsvnで外部参照ごとチェックアウトする。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">svn co http://svn.coderepos.org/share/lang/perl/NanoA/trunk NanoA
+</code></pre></div><p>次に「nanoa.cgi」と同じフォルダに「nanoa-conf.cgi」という名前のファイルを作成する。その中身はとりあえず以下のとおりにしておく。</p>
+<pre tabindex="0"><code class="language-default" data-lang="default">data_dir = var
+</code></pre><p>ついでに、同じフォルダに新しく「var」というフォルダを作っておく。</p>
+<p>ここまでやってから、nanoa.cgiにブラウザでアクセスすると、管理用パスワードの設定画面になる（はず）。</p>
+<p>開発版のまま使うのならこれでOK。</p>
+<p>NanoAには、配布版を作成する機能があるのだが、Windows上では簡単には動かない。</p>
+<p>が、とりあえず、nanoa.cgiを作ればあとは何とかなるので、それもついでにメモしておく。</p>
+<p>nanoa.cgiと同じフォルダの「Makefile.PL」を少し変更する。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">Index: Makefile.PL
+===================================================================
+<span style="color:#f92672">--- Makefile.PL    (リビジョン 31380)
+</span><span style="color:#f92672"></span><span style="color:#a6e22e">+++ Makefile.PL    (作業コピー)
+</span><span style="color:#a6e22e"></span><span style="color:#75715e">@@ -38,8 +38,8 @@
+</span><span style="color:#75715e"></span>NANOA_CGI_FILES = MENTA/extlib/Class/Accessor/Lite.pm MENTA/extlib/CGI/ExceptionManager.pm lib/NanoA/Config.pm lib/NanoA/Dispatch.pm lib/NanoA/Plugin.pm lib/NanoA/TemplateLoader.pm lib/NanoA.pm nanoa.pl
+nanoadir:
+<span style="color:#f92672">-    $(NOECHO)$(RM_RF) $(NANOADIR);
+</span><span style="color:#f92672">-    $(NOECHO)$(MKPATH) $(NANOADIR);
+</span><span style="color:#f92672"></span><span style="color:#a6e22e">+    $(NOECHO)$(RM_RF) $(NANOADIR)
+</span><span style="color:#a6e22e">+    $(NOECHO)$(MKPATH) $(NANOADIR)
+</span><span style="color:#a6e22e"></span>nanoacgi: $(NANOA_CGI_FILES)
+$(FULLPERLRUN) tools/concat.pl -s -n strict,warnings $(NANOA_CGI_FILES) &gt; $(NANOADIR)/nanoa.cgi
+</code></pre></div><p>この状態で、いつものように「perl Makefile.PL」→「dmake」としたあと「dmake nanoa」とする。</p>
+<p>途中で「tar」がない、あるいは、tarコマンドに失敗した、とか言われるが、「dist-cgi」の中にバージョン名（今回は「0.17」）のフォルダがあり、さらにその中に配布版「nanoa.cgi」ができています。</p>
+<p>あとは、その新しくできた「nanoa.cgi」と同じフォルダに「appフォルダ」と、MENTAから「extlibフォルダ」をコピーしてやれば、ほぼ配布版ができあがり。</p>
+<p>必要なら「.htaccess」や「nanoa-conf.cgi」、「varフォルダ」もコピーすれば使える。</p>
+<p>ちなみに、現在のCodeRepos版は、extlibをMENTAと共有して使えるので、<!-- raw HTML omitted -->devel.nqou.net<!-- raw HTML omitted -->ではextlibをルートにおいてNanoAとMENTAで共有しています。</p>
+
+  </div>
+
+  
+<div>
+  <ul class="tags">
+  <li>
+    <a href="https://www.nqou.net/tags/perl/" class="tag-link">perl</a>
+  </li>
+  </ul>
+</div>
+
+
+
+  <div class="share-buttons">
+  <a class="twitter-share-button"
+     href="#"
+     title="Share on Twitter"
+     data-url="https://www.nqou.net/2009/03/20/034244/"
+     data-text="CodeRepos版NanoAをWindowsで動かす方法"><i class="fab fa-twitter"></i></a>
+
+  <a class="linkedin-share-button"
+     href="#"
+     title="Share on LinkedIn"
+     data-url="https://www.nqou.net/2009/03/20/034244/"
+     data-text="CodeRepos版NanoAをWindowsで動かす方法"><i class="fab fa-linkedin-in"></i></a>
+
+  <a class="facebook-share-button"
+     href="#"
+     title="Share on Facebook"
+     data-url="https://www.nqou.net/2009/03/20/034244/"
+     data-text="CodeRepos版NanoAをWindowsで動かす方法"><i class="fab fa-facebook"></i></a>
+
+  <a class="telegram-share-button"
+     href="#"
+     title="Share on Telegram"
+     data-url="https://www.nqou.net/2009/03/20/034244/"
+     data-text="CodeRepos版NanoAをWindowsで動かす方法"><i class="fab fa-telegram"></i></a>
+
+  <a class="pinterest-share-button"
+     href="#"
+     title="Share on Pinterest"
+     data-url="https://www.nqou.net/2009/03/20/034244/"
+     data-text="CodeRepos版NanoAをWindowsで動かす方法"><i class="fab fa-pinterest"></i></a>
+</div>
+
+
+  <div class="comments">
+    <h2>Comments</h2>
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "nqounet" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+</div>
+  </main>
+
+  <footer>
+  <div>
+    <p>
+      &copy; nqounet 2021
+
+      &middot; <a href="https://creativecommons.org/licenses/by/4.0" target="_blank">CC BY 4.0</a>
+
+      
+    </p>
+  </div>
+</footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
+          integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
+          crossorigin="anonymous"></script>
+
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/soho.js"></script>
+
+  
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-E50H9ESN7E', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

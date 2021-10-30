@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.88.1" />
+
+  <title>POSIXのstrftimeが生perlcodeよりも速い件について &middot; nqou.net</title>
+
+  <meta name="description" content="" />
+
+  
+
+<meta itemprop="name" content="POSIXのstrftimeが生perlcodeよりも速い件について">
+<meta itemprop="description" content="しばらく前に、POSIXにstrftimeという便利なコマン"><meta itemprop="datePublished" content="2010-08-17T00:05:31+09:00" />
+<meta itemprop="dateModified" content="2010-08-17T00:05:31+09:00" />
+<meta itemprop="wordCount" content="562">
+<meta itemprop="keywords" content="perl," />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="POSIXのstrftimeが生perlcodeよりも速い件について"/>
+<meta name="twitter:description" content="しばらく前に、POSIXにstrftimeという便利なコマン"/>
+
+
+<meta property="og:title" content="POSIXのstrftimeが生perlcodeよりも速い件について" />
+<meta property="og:description" content="しばらく前に、POSIXにstrftimeという便利なコマン" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.nqou.net/2010/08/17/000531/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2010-08-17T00:05:31+09:00" />
+<meta property="article:modified_time" content="2010-08-17T00:05:31+09:00" /><meta property="og:site_name" content="nqou.net" />
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type":"Person",
+      "@id": "https://www.nqou.net/#author",
+      "name":  null ,
+      "image": {
+        "@type":"ImageObject",
+        "url": "https://www.gravatar.com/avatar/96267d00f89345335b76d21e0417ae39?s=400&d=mp"
+      },
+      "description": "Whisky, Perl, Kansai.pm"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.nqou.net/#website",
+      "url": "https://www.nqou.net/",
+      "name": "nqou.net",
+      "description": "Whisky, Perl, Kansai.pm",
+      "publisher": {
+        "@id": "https://www.nqou.net/#author"
+      },
+      "inLanguage": "ja"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.nqou.net/2010/08/17/000531/#webpage",
+      "url": "https://www.nqou.net/2010/08/17/000531/",
+      "name": "POSIXのstrftimeが生perlcodeよりも速い件について",
+      "isPartOf": {
+        "@id": "https://www.nqou.net/#website"
+      },
+      "about": {
+         "@id": "https://www.nqou.net/#author"
+      },
+      "datePublished": "2010-08-17T00:05:31+09:00",
+      "dateModified": "2010-08-17T00:05:31+09:00",
+      "description": "しばらく前に、POSIXにstrftimeという便利なコマン",
+      "inLanguage": "ja",
+      "potentialAction": [
+        {
+          "@type": "ReadAction",
+          "target": [
+            "https://www.nqou.net/2010/08/17/000531/"
+          ]
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "isPartOf": {
+        "@id": "https://www.nqou.net/2010/08/17/000531/#webpage"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://www.nqou.net/2010/08/17/000531/#webpage"
+      },
+      "headline": "POSIXのstrftimeが生perlcodeよりも速い件について",
+      "datePublished": "2010-08-17T00:05:31+09:00",
+      "dateModified": "2010-08-17T00:05:31+09:00",
+      "publisher": {
+        "@id": "https://www.nqou.net/#author"
+      },
+      "keywords": [
+        "perl"
+      ],
+      "articleSection": [
+      ],
+      "inLanguage": "ja",
+      "author": {
+        "@type": "Person",
+        "name":  null 
+      },
+      "potentialAction": [
+        {
+          "@type": "CommentAction",
+          "name": "Comment",
+          "target": [
+            "https://www.nqou.net/2010/08/17/000531/#comments"
+          ]
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/print.css"
+        media="print">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/poole.css">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/hyde.css">
+
+  
+
+
+  
+
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+        crossorigin="anonymous" />
+
+  <link rel="apple-touch-icon-precomposed"
+        sizes="144x144"
+        href="/apple-touch-icon-144-precomposed.png">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  </head>
+<body>
+  <aside class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      
+      <div class="author-image">
+        <a href="https://www.nqou.net/">
+          <img src="https://www.gravatar.com/avatar/96267d00f89345335b76d21e0417ae39?s=200&d=mp" class="img-circle img-headshot center" alt="Gravatar">
+        </a>
+      </div>
+      
+
+      <h1>nqou.net</h1>
+
+      
+      <p class="lead">Whisky, Perl, Kansai.pm</p>
+      
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li>
+          <a href="https://www.nqou.net/">Home</a>
+        </li>
+        <li>
+          <a href="/about/">About</a>
+        </li><li>
+          <a href="/post/">Posts</a>
+        </li><li>
+          <a href="/tags/">Tags</a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="social-icons">
+      
+      <a href="https://github.com/nqounet" rel="me" title="GitHub" target="_blank">
+        <i class="fab fa-github" aria-hidden="true"></i>
+      </a>
+      
+      <a href="https://twitter.com/nqounet" rel="me" title="Twitter" target="_blank">
+        <i class="fab fa-twitter" aria-hidden="true"></i>
+      </a>
+      
+    </section>
+  </div>
+</aside>
+
+
+  <main class="content container">
+  <div class="post">
+  <h1 class="title">POSIXのstrftimeが生perlcodeよりも速い件について</h1>
+  
+
+  <div class="post-date">
+    <time datetime="2010-08-17T00:05:31&#43;0900">Aug 17, 2010</time> <span class="readtime">&middot; 2 min read</span>
+  </div>
+
+  <div>
+  <p>しばらく前に、POSIXにstrftimeという便利なコマンドがあるのを発見した。
+DateTime等とのベンチマークだったと思う。
+はてブしたハズなのだが、見つからず。
+タグのつけ方が安定しない。
+ともかく。
+日付時刻を表示するときは、localtimeをスカラーコンテキストで表示することが多いのだが、日本風に表示しようとすると、それなりに面倒。</p>
+<pre tabindex="0"><code class="language-default" data-lang="default">my @now = localtime;
+$now[5] += 1900;
+$now[4]++;
+printf qq{%04d/%02d/%02d %02d:%02d:%02d}, reverse(@now[0..5]);
+</code></pre><p>そこで便利なのが、POSIXのstrftimeですよ。</p>
+<pre tabindex="0"><code class="language-default" data-lang="default">use POSIX;
+print POSIX::strftime '%Y/%m/%d %H:%M:%S', localtime;
+</code></pre><p>これで同じ出力を得ることが出来る。
+しかも、手元の環境では、strftimeを使ったほうが速い。</p>
+<p>生のコードは2種類。
+先ほどのスライスを使ったものと、配列を展開したもの。
+それらとstrftimeを比較してみた。
+結果は以下のとおり、POSIXを使ったほうが2割程度速かった。</p>
+<pre tabindex="0"><code class="language-default" data-lang="default">Benchmark: running coding1, coding2, posix for at least 3 CPU seconds...
+coding1:  4 wallclock secs ( 3.10 usr +  0.00 sys =  3.10 CPU) @ 75042.20/s (n=232931)
+coding2:  4 wallclock secs ( 3.15 usr +  0.00 sys =  3.15 CPU) @ 84113.30/s (n=265041)
+posix:  4 wallclock secs ( 3.14 usr +  0.00 sys =  3.14 CPU) @ 103140.63/s (n=323449)
+Rate coding1 coding2   posix
+coding1  75042/s      --    -11%    -27%
+coding2  84113/s     12%      --    -18%
+posix   103141/s     37%     23%      --
+</code></pre><p>ソースコードも見た目にわかりやすいので、今後は重宝しそうです。
+ベンチマークに使ったソースは以下のとおり。</p>
+<pre tabindex="0"><code class="language-default" data-lang="default">#ｕｔｆ８
+use strict;
+use warnings;
+use utf8;
+use Benchmark ':all';
+use POSIX;
+use Perl6::Say;
+say posix();
+say coding();
+say coding2();
+cmpthese(timethese( -3, {
+'posix'   =&gt; \&amp;posix,
+'coding1' =&gt; \&amp;coding,
+'coding2' =&gt; \&amp;coding2,
+}));
+sub posix {
+POSIX::strftime '%Y/%m/%d %H:%M:%S', localtime;
+}
+sub coding {
+my @now = localtime;
+$now[5] += 1900;
+$now[4]++;
+sprintf qq{%04d/%02d/%02d %02d:%02d:%02d}, reverse(@now[0..5]);
+}
+sub coding2 {
+my @now = localtime;
+sprintf qq{%04d/%02d/%02d %02d:%02d:%02d},
+$now[5] + 1900, $now[4] + 1, $now[3], $now[2], $now[1], $now[0];
+}
+</code></pre>
+  </div>
+
+  
+<div>
+  <ul class="tags">
+  <li>
+    <a href="https://www.nqou.net/tags/perl/" class="tag-link">perl</a>
+  </li>
+  </ul>
+</div>
+
+
+
+  <div class="share-buttons">
+  <a class="twitter-share-button"
+     href="#"
+     title="Share on Twitter"
+     data-url="https://www.nqou.net/2010/08/17/000531/"
+     data-text="POSIXのstrftimeが生perlcodeよりも速い件について"><i class="fab fa-twitter"></i></a>
+
+  <a class="linkedin-share-button"
+     href="#"
+     title="Share on LinkedIn"
+     data-url="https://www.nqou.net/2010/08/17/000531/"
+     data-text="POSIXのstrftimeが生perlcodeよりも速い件について"><i class="fab fa-linkedin-in"></i></a>
+
+  <a class="facebook-share-button"
+     href="#"
+     title="Share on Facebook"
+     data-url="https://www.nqou.net/2010/08/17/000531/"
+     data-text="POSIXのstrftimeが生perlcodeよりも速い件について"><i class="fab fa-facebook"></i></a>
+
+  <a class="telegram-share-button"
+     href="#"
+     title="Share on Telegram"
+     data-url="https://www.nqou.net/2010/08/17/000531/"
+     data-text="POSIXのstrftimeが生perlcodeよりも速い件について"><i class="fab fa-telegram"></i></a>
+
+  <a class="pinterest-share-button"
+     href="#"
+     title="Share on Pinterest"
+     data-url="https://www.nqou.net/2010/08/17/000531/"
+     data-text="POSIXのstrftimeが生perlcodeよりも速い件について"><i class="fab fa-pinterest"></i></a>
+</div>
+
+
+  <div class="comments">
+    <h2>Comments</h2>
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "nqounet" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+</div>
+  </main>
+
+  <footer>
+  <div>
+    <p>
+      &copy; nqounet 2021
+
+      &middot; <a href="https://creativecommons.org/licenses/by/4.0" target="_blank">CC BY 4.0</a>
+
+      
+    </p>
+  </div>
+</footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
+          integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
+          crossorigin="anonymous"></script>
+
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/soho.js"></script>
+
+  
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-E50H9ESN7E', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

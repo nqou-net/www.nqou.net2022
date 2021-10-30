@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.88.1" />
+
+  <title>Perl入学式に関するツイートをIdobataに通知するボットを作った &middot; nqou.net</title>
+
+  <meta name="description" content="" />
+
+  
+
+<meta itemprop="name" content="Perl入学式に関するツイートをIdobataに通知するボットを作った">
+<meta itemprop="description" content="#!/usr/bin/env perl use utf8; use v5.12; use AnyEvent::Twitter::Stream; use Encode; use Furl; use Config::Pit; my $config = pit_get( &#39;nqounet@twitter.com&#39;, require =&gt; { consumer_key =&gt; &#39;consumer_key&#39;, consumer_secret =&gt; &#39;consumer_secret&#39;, token =&gt;"><meta itemprop="datePublished" content="2014-09-15T22:48:26+09:00" />
+<meta itemprop="dateModified" content="2014-09-15T22:48:26+09:00" />
+<meta itemprop="wordCount" content="188">
+<meta itemprop="keywords" content="perl,perl-entrance," />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Perl入学式に関するツイートをIdobataに通知するボットを作った"/>
+<meta name="twitter:description" content="#!/usr/bin/env perl use utf8; use v5.12; use AnyEvent::Twitter::Stream; use Encode; use Furl; use Config::Pit; my $config = pit_get( &#39;nqounet@twitter.com&#39;, require =&gt; { consumer_key =&gt; &#39;consumer_key&#39;, consumer_secret =&gt; &#39;consumer_secret&#39;, token =&gt;"/>
+
+
+<meta property="og:title" content="Perl入学式に関するツイートをIdobataに通知するボットを作った" />
+<meta property="og:description" content="#!/usr/bin/env perl use utf8; use v5.12; use AnyEvent::Twitter::Stream; use Encode; use Furl; use Config::Pit; my $config = pit_get( &#39;nqounet@twitter.com&#39;, require =&gt; { consumer_key =&gt; &#39;consumer_key&#39;, consumer_secret =&gt; &#39;consumer_secret&#39;, token =&gt;" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.nqou.net/2014/09/15/224826/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2014-09-15T22:48:26+09:00" />
+<meta property="article:modified_time" content="2014-09-15T22:48:26+09:00" /><meta property="og:site_name" content="nqou.net" />
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type":"Person",
+      "@id": "https://www.nqou.net/#author",
+      "name":  null ,
+      "image": {
+        "@type":"ImageObject",
+        "url": "https://www.gravatar.com/avatar/96267d00f89345335b76d21e0417ae39?s=400&d=mp"
+      },
+      "description": "Whisky, Perl, Kansai.pm"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.nqou.net/#website",
+      "url": "https://www.nqou.net/",
+      "name": "nqou.net",
+      "description": "Whisky, Perl, Kansai.pm",
+      "publisher": {
+        "@id": "https://www.nqou.net/#author"
+      },
+      "inLanguage": "ja"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.nqou.net/2014/09/15/224826/#webpage",
+      "url": "https://www.nqou.net/2014/09/15/224826/",
+      "name": "Perl入学式に関するツイートをIdobataに通知するボットを作った",
+      "isPartOf": {
+        "@id": "https://www.nqou.net/#website"
+      },
+      "about": {
+         "@id": "https://www.nqou.net/#author"
+      },
+      "datePublished": "2014-09-15T22:48:26+09:00",
+      "dateModified": "2014-09-15T22:48:26+09:00",
+      "description": "#!/usr/bin/env perl use utf8; use v5.12; use AnyEvent::Twitter::Stream; use Encode; use Furl; use Config::Pit; my $config = pit_get( \u0026#39;nqounet@twitter.com\u0026#39;, require =\u0026gt; { consumer_key =\u0026gt; \u0026#39;consumer_key\u0026#39;, consumer_secret =\u0026gt; \u0026#39;consumer_secret\u0026#39;, token =\u0026gt;",
+      "inLanguage": "ja",
+      "potentialAction": [
+        {
+          "@type": "ReadAction",
+          "target": [
+            "https://www.nqou.net/2014/09/15/224826/"
+          ]
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "isPartOf": {
+        "@id": "https://www.nqou.net/2014/09/15/224826/#webpage"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://www.nqou.net/2014/09/15/224826/#webpage"
+      },
+      "headline": "Perl入学式に関するツイートをIdobataに通知するボットを作った",
+      "datePublished": "2014-09-15T22:48:26+09:00",
+      "dateModified": "2014-09-15T22:48:26+09:00",
+      "publisher": {
+        "@id": "https://www.nqou.net/#author"
+      },
+      "keywords": [
+        "perl",
+        "perl-entrance"
+      ],
+      "articleSection": [
+      ],
+      "inLanguage": "ja",
+      "author": {
+        "@type": "Person",
+        "name":  null 
+      },
+      "potentialAction": [
+        {
+          "@type": "CommentAction",
+          "name": "Comment",
+          "target": [
+            "https://www.nqou.net/2014/09/15/224826/#comments"
+          ]
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/print.css"
+        media="print">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/poole.css">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/hyde.css">
+
+  
+
+
+  
+
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+        crossorigin="anonymous" />
+
+  <link rel="apple-touch-icon-precomposed"
+        sizes="144x144"
+        href="/apple-touch-icon-144-precomposed.png">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  </head>
+<body>
+  <aside class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      
+      <div class="author-image">
+        <a href="https://www.nqou.net/">
+          <img src="https://www.gravatar.com/avatar/96267d00f89345335b76d21e0417ae39?s=200&d=mp" class="img-circle img-headshot center" alt="Gravatar">
+        </a>
+      </div>
+      
+
+      <h1>nqou.net</h1>
+
+      
+      <p class="lead">Whisky, Perl, Kansai.pm</p>
+      
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li>
+          <a href="https://www.nqou.net/">Home</a>
+        </li>
+        <li>
+          <a href="/about/">About</a>
+        </li><li>
+          <a href="/post/">Posts</a>
+        </li><li>
+          <a href="/tags/">Tags</a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="social-icons">
+      
+      <a href="https://github.com/nqounet" rel="me" title="GitHub" target="_blank">
+        <i class="fab fa-github" aria-hidden="true"></i>
+      </a>
+      
+      <a href="https://twitter.com/nqounet" rel="me" title="Twitter" target="_blank">
+        <i class="fab fa-twitter" aria-hidden="true"></i>
+      </a>
+      
+    </section>
+  </div>
+</aside>
+
+
+  <main class="content container">
+  <div class="post">
+  <h1 class="title">Perl入学式に関するツイートをIdobataに通知するボットを作った</h1>
+  
+
+  <div class="post-date">
+    <time datetime="2014-09-15T22:48:26&#43;0900">Sep 15, 2014</time> <span class="readtime">&middot; 1 min read</span>
+  </div>
+
+  <div>
+  <!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#75715e">#!/usr/bin/env perl</span>
+<span style="color:#66d9ef">use</span> utf8;
+<span style="color:#66d9ef">use</span> v5<span style="color:#ae81ff">.12</span>;
+
+<span style="color:#66d9ef">use</span> AnyEvent::Twitter::Stream;
+<span style="color:#66d9ef">use</span> Encode;
+<span style="color:#66d9ef">use</span> Furl;
+
+<span style="color:#66d9ef">use</span> Config::Pit;
+<span style="color:#66d9ef">my</span> $config <span style="color:#f92672">=</span> pit_get(
+    <span style="color:#e6db74">&#39;nqounet@twitter.com&#39;</span>,
+    <span style="color:#66d9ef">require</span> <span style="color:#f92672">=&gt;</span> {
+        consumer_key        <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;consumer_key&#39;</span>,
+        consumer_secret     <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;consumer_secret&#39;</span>,
+        token        <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;access_token&#39;</span>,
+        token_secret <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;access_token_secret&#39;</span>,
+    }
+);
+
+<span style="color:#66d9ef">my</span> $furl <span style="color:#f92672">=</span> Furl<span style="color:#f92672">-&gt;</span><span style="color:#66d9ef">new</span>;
+<span style="color:#66d9ef">my</span> $done <span style="color:#f92672">=</span> AE::cv;
+
+<span style="color:#66d9ef">my</span> $listener <span style="color:#f92672">=</span> AnyEvent::Twitter::Stream<span style="color:#f92672">-&gt;</span><span style="color:#66d9ef">new</span>(
+    method   <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;filter&#39;</span>,
+    track    <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;Perl入学式&#39;</span>,
+    on_tweet <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">sub</span> {
+        <span style="color:#66d9ef">my</span> $tweet <span style="color:#f92672">=</span> shift;
+        $furl<span style="color:#f92672">-&gt;</span>post(
+            <span style="color:#e6db74">&#39;https://idobata.io/hook/generic/xxxxxxxxxxxxxxx&#39;</span>,
+            [<span style="color:#e6db74">&#39;Content-Type&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;application/x-www-form-urlencoded&#39;</span>],
+            [source         <span style="color:#f92672">=&gt;</span> encode_utf8(<span style="color:#e6db74">qq{$tweet-&gt;{user}{name} : $tweet-&gt;{text}}</span>)]
+        );
+    },
+    %{$config}
+);
+
+$done<span style="color:#f92672">-&gt;</span>recv;
+</code></pre></div><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<pre tabindex="0"><code>use App::Daemon qw(daemonize);
+daemonize();
+</code></pre><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#75715e">#!/usr/bin/env perl</span>
+<span style="color:#66d9ef">use</span> utf8;
+<span style="color:#66d9ef">use</span> v5<span style="color:#ae81ff">.12</span>;
+
+<span style="color:#66d9ef">use</span> Proclet;
+<span style="color:#66d9ef">use</span> Path::Tiny <span style="color:#e6db74">qw(path cwd)</span>;
+<span style="color:#66d9ef">use</span> File::RotateLogs;
+
+<span style="color:#66d9ef">use</span> App::Daemon <span style="color:#e6db74">qw(daemonize)</span>;
+daemonize();
+
+<span style="color:#66d9ef">my</span> $logfile <span style="color:#f92672">=</span> join <span style="color:#e6db74">&#39;/&#39;</span>, cwd<span style="color:#f92672">-&gt;</span>absolute, <span style="color:#e6db74">&#39;log&#39;</span>, <span style="color:#e6db74">&#39;app.log&#39;</span>;
+path($logfile)<span style="color:#f92672">-&gt;</span>parent<span style="color:#f92672">-&gt;</span>mkpath;
+
+<span style="color:#66d9ef">my</span> $logger <span style="color:#f92672">=</span> File::RotateLogs<span style="color:#f92672">-&gt;</span><span style="color:#66d9ef">new</span>(
+    logfile      <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">qq{$logfile-%Y%m%d}</span>,
+    linkname     <span style="color:#f92672">=&gt;</span> $logfile,
+    rotationtime <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">86400</span>,
+    maxage       <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">86400</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">14</span>,
+);
+
+<span style="color:#66d9ef">my</span> $proclet <span style="color:#f92672">=</span> Proclet<span style="color:#f92672">-&gt;</span><span style="color:#66d9ef">new</span>(logger <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">sub</span> { $logger<span style="color:#f92672">-&gt;</span><span style="color:#66d9ef">print</span>(@_); });
+$proclet<span style="color:#f92672">-&gt;</span>service(
+    code <span style="color:#f92672">=&gt;</span> [<span style="color:#e6db74">qw(perl main.pl)</span>],
+    tag  <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;bot&#39;</span>,
+);
+$proclet<span style="color:#f92672">-&gt;</span>run;
+</code></pre></div><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<pre tabindex="0"><code>requires 'perl', '5.012001';
+requires 'AnyEvent::Twitter::Stream';
+requires 'Furl';
+requires 'Config::Pit';
+requires 'Net::OAuth';
+requires 'Net::SSLeay';
+requires 'IO::Socket::SSL';
+requires 'App::Daemon';
+requires 'Proclet';
+requires 'Path::Tiny';
+requires 'File::RotateLogs';
+requires 'Data::Printer';
+</code></pre><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+
+  </div>
+
+  
+<div>
+  <ul class="tags">
+  <li>
+    <a href="https://www.nqou.net/tags/perl/" class="tag-link">perl</a>
+  </li>
+  
+  <li>
+    <a href="https://www.nqou.net/tags/perl-entrance/" class="tag-link">perl-entrance</a>
+  </li>
+  </ul>
+</div>
+
+
+
+  <div class="share-buttons">
+  <a class="twitter-share-button"
+     href="#"
+     title="Share on Twitter"
+     data-url="https://www.nqou.net/2014/09/15/224826/"
+     data-text="Perl入学式に関するツイートをIdobataに通知するボットを作った"><i class="fab fa-twitter"></i></a>
+
+  <a class="linkedin-share-button"
+     href="#"
+     title="Share on LinkedIn"
+     data-url="https://www.nqou.net/2014/09/15/224826/"
+     data-text="Perl入学式に関するツイートをIdobataに通知するボットを作った"><i class="fab fa-linkedin-in"></i></a>
+
+  <a class="facebook-share-button"
+     href="#"
+     title="Share on Facebook"
+     data-url="https://www.nqou.net/2014/09/15/224826/"
+     data-text="Perl入学式に関するツイートをIdobataに通知するボットを作った"><i class="fab fa-facebook"></i></a>
+
+  <a class="telegram-share-button"
+     href="#"
+     title="Share on Telegram"
+     data-url="https://www.nqou.net/2014/09/15/224826/"
+     data-text="Perl入学式に関するツイートをIdobataに通知するボットを作った"><i class="fab fa-telegram"></i></a>
+
+  <a class="pinterest-share-button"
+     href="#"
+     title="Share on Pinterest"
+     data-url="https://www.nqou.net/2014/09/15/224826/"
+     data-text="Perl入学式に関するツイートをIdobataに通知するボットを作った"><i class="fab fa-pinterest"></i></a>
+</div>
+
+
+  <div class="comments">
+    <h2>Comments</h2>
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "nqounet" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+</div>
+  </main>
+
+  <footer>
+  <div>
+    <p>
+      &copy; nqounet 2021
+
+      &middot; <a href="https://creativecommons.org/licenses/by/4.0" target="_blank">CC BY 4.0</a>
+
+      
+    </p>
+  </div>
+</footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
+          integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
+          crossorigin="anonymous"></script>
+
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/soho.js"></script>
+
+  
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-E50H9ESN7E', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>
