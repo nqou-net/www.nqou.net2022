@@ -63,7 +63,7 @@
       "about": {
          "@id": "https://www.nqou.net/#author"
       },
-      "dateModified": "2021-10-29T09:28:26+09:00",
+      "dateModified": "2021-10-30T21:29:34+09:00",
       "description": "Whisky, Perl, Kansai.pm",
       "inLanguage": "ja",
       "potentialAction": [
@@ -167,6 +167,23 @@
 
   <main class="content container">
   <div class="posts">
+      <article class="post">
+        <h1 class="post-title">
+          <a href="https://www.nqou.net/2010/07/23/032243/">今さらだけどCGI::Carp::DebugScreenを覚えた</a>
+        </h1>
+
+        <div class="post-date">
+          <time datetime="2010-07-23T03:22:43&#43;0900">Jul 23, 2010</time> &middot; 1 min read
+        </div>
+
+        <div>
+          #!/usr/bin/perl use strict; use CGI::Carp qw/fatalsToBrowser/; die; #!/usr/bin/perl use strict; use CGI::Carp::DebugScreen ( debug =&gt; 1 ); die;
+        </div>
+
+        <div class="read-more-link">
+          <a href="https://www.nqou.net/2010/07/23/032243/">Read More</a>
+        </div>
+      </article>
       <article class="post">
         <h1 class="post-title">
           <a href="https://www.nqou.net/2010/06/18/230449/">XML::Simpleで文字化けしない方法</a>
@@ -320,23 +337,6 @@
           <a href="https://www.nqou.net/2010/05/20/071210/">Read More</a>
         </div>
       </article>
-      <article class="post">
-        <h1 class="post-title">
-          <a href="https://www.nqou.net/2010/05/19/072906/">cpan-outdatedも使ってみた（続き2）</a>
-        </h1>
-
-        <div class="post-date">
-          <time datetime="2010-05-19T07:29:06&#43;0900">May 19, 2010</time> &middot; 1 min read
-        </div>
-
-        <div>
-          cpan-outdated --mirror file:///strawberry/minicpan | cpanm --mirror file:///stwawberry/minicpan
-        </div>
-
-        <div class="read-more-link">
-          <a href="https://www.nqou.net/2010/05/19/072906/">Read More</a>
-        </div>
-      </article>
   </div>
 
   
@@ -366,7 +366,7 @@
         <a href="/page/34/" aria-label="Next" class="page-link" role="button"><span aria-hidden="true">&raquo;</span></a>
       </li>
       <li class="page-item">
-        <a href="/page/86/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
+        <a href="/page/87/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
       </li>
     </ul>
   </main>
