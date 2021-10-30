@@ -1,8 +1,7 @@
-desc 'deploy';
-task deploy => sub {
-#    sh qw{hugo clean};
+desc 'build';
+task build => sub {
     sh qw{tools/rename_posts.pl};
-#    sh qw{hugo deploy};
+    sh qw{hugo -v};
 };
 
 desc 'new post';
