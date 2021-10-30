@@ -7,7 +7,13 @@ task deploy => sub {
 
 desc 'new post';
 task new => sub {
-    sh qw{hugo new post/new.md};
+    my $time = time;
+    sh qw{hugo new}, "post/$time.md";
+};
+
+desc 'show drafts';
+task drafts => sub {
+    sh qw{hugo list drafts};
 };
 
 task default => sub { sh q{daiku -T} };
