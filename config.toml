@@ -13,6 +13,7 @@ paginate = 10
 summarylength = 30
 theme = "soho"
 title = "nqou.net"
+publishDir = "docs"
 
 [permalinks]
 post = "/:year/:month/:day/:filename/"
