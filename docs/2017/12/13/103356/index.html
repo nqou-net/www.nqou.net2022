@@ -14,7 +14,7 @@
 <meta itemprop="name" content="DockerでHerokuでMojoliciousが動いたぞ!!!（改定版）">
 <meta itemprop="description" content="（追記） この記事で書いていた Dockerfile が動かなくなっていたので動くよ"><meta itemprop="datePublished" content="2017-12-13T10:33:56+09:00" />
 <meta itemprop="dateModified" content="2017-12-13T10:33:56+09:00" />
-<meta itemprop="wordCount" content="3342">
+<meta itemprop="wordCount" content="3302">
 <meta itemprop="keywords" content="docker,heroku,mojolicious,perl," />
 
 <meta name="twitter:card" content="summary"/>
@@ -334,22 +334,9 @@ Server:
 <p>ここでは、現在の最新の安定版である 5.26.1 のイメージを使用します。</p>
 <p>プロジェクトのルートディレクトリに、以下のような <code>Dockerfile</code> を作成します。</p>
 <p>基本的な方針としては、 Carmel を使用してモジュールのインストールを行い、 Mojolicious の機能でアプリサーバーを起動します。</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">FROM perl:5.26.1
+<script type="application/javascript" src="https://gist.github.com/nqounet/385bc8c8475d043645418e03b98ce70f.js"></script>
 
-RUN useradd -m -s /bin/bash appuser \
-    &amp;&amp; cpanm Carmel --notest
-
-USER appuser
-RUN mkdir -p /home/appuser/webapp
-WORKDIR /home/appuser/webapp
-
-COPY --chown=appuser:appuser webapp/cpanfile .
-RUN carmel install
-
-COPY --chown=appuser:appuser webapp .
-
-CMD carmel exec -- ./myapp.pl daemon -l http://0.0.0.0:$PORT
-</code></pre><p><code>WORKDIR</code> の前に <code>RUN mkdir</code> しているのは、 <code>WORKDIR</code> の場合、 root ユーザーで webapp ディレクトリが作成されてしまい、その後の <code>RUN carmel install</code> が失敗してしまうためです。なので、事前に <code>appuser</code> でディレクトリを作成し、そのディレクトリを作業ディレクトリに指定しています。</p>
+<p><code>WORKDIR</code> の前に <code>RUN mkdir</code> しているのは、 <code>WORKDIR</code> の場合、 root ユーザーで webapp ディレクトリが作成されてしまい、その後の <code>RUN carmel install</code> が失敗してしまうためです。なので、事前に <code>appuser</code> でディレクトリを作成し、そのディレクトリを作業ディレクトリに指定しています。</p>
 <p>なお、 root ユーザーで実行しないのはセキュリティの観点からです。やっておいて損はないと思います。</p>
 <ul>
 <li><a href="https://qiita.com/muff1225/items/4edea7b039dd9f26098f">Dockerコンテナを本番環境で使うためのセキュリティ設定 - Qiita</a></li>
@@ -370,9 +357,9 @@ CMD carmel exec -- ./myapp.pl daemon -l http://0.0.0.0:$PORT
 <p>なお、実行すると 300MB 以上あるイメージファイルをダウンロードしてくるので、ちゃんとしたネットワーク環境で実行することをオススメします。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker-compose up --build
 </code></pre></div><p>しばらく待っていると以下のような表示が出て画面の動きが止まります。</p>
-<pre tabindex="0"><code>Attaching to myproject_webapp_1
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Attaching to myproject_webapp_1
 webapp_1  | Server available at http://127.0.0.1:3000
-</code></pre><p><code>Server available at http://127.0.0.1:3000</code> というのが目印です。</p>
+</code></pre></div><p><code>Server available at http://127.0.0.1:3000</code> というのが目印です。</p>
 <p>この表示が出たら、またブラウザで <code>http://127.0.0.1:3000</code> にアクセスしてみてください。</p>
 <p>先ほどと同じような画面が出たら成功です。</p>
 <p>これで、 Perl の（ Mojolicious::Lite で書いた）プログラムが Docker で動作しました。</p>

@@ -218,36 +218,36 @@
 なかなか刺激になったので、久しぶりに何か書こうと思ったら、 2020-03-18 くらいに何かを書こうとしていたらしい。</p>
 <p>新型コロナの影響で出張もできなかったので、暇つぶし的に heroku を使っていたら何か思ったのでしょう。
 なにかに使えるかもしれないのでそのまま残しておきます。</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">→ mojo version
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">→ mojo version
 CORE
-  Perl        (v5.30.2, darwin)
-  Mojolicious (8.34, Supervillain)
+  Perl        <span style="color:#f92672">(</span>v5.30.2, darwin<span style="color:#f92672">)</span>
+  Mojolicious <span style="color:#f92672">(</span>8.34, Supervillain<span style="color:#f92672">)</span>
 
 OPTIONAL
-  Cpanel::JSON::XS 4.09+   (4.19)
-  EV 4.0+                  (4.32)
-  IO::Socket::Socks 0.64+  (0.74)
-  IO::Socket::SSL 2.009+   (2.067)
-  Net::DNS::Native 0.15+   (0.22)
-  Role::Tiny 2.000001+     (2.001004)
-  Future::AsyncAwait 0.36+ (0.37)
-</code></pre><pre tabindex="0"><code class="language-default" data-lang="default">→ docker version
+  Cpanel::JSON::XS 4.09+   <span style="color:#f92672">(</span>4.19<span style="color:#f92672">)</span>
+  EV 4.0+                  <span style="color:#f92672">(</span>4.32<span style="color:#f92672">)</span>
+  IO::Socket::Socks 0.64+  <span style="color:#f92672">(</span>0.74<span style="color:#f92672">)</span>
+  IO::Socket::SSL 2.009+   <span style="color:#f92672">(</span>2.067<span style="color:#f92672">)</span>
+  Net::DNS::Native 0.15+   <span style="color:#f92672">(</span>0.22<span style="color:#f92672">)</span>
+  Role::Tiny 2.000001+     <span style="color:#f92672">(</span>2.001004<span style="color:#f92672">)</span>
+  Future::AsyncAwait 0.36+ <span style="color:#f92672">(</span>0.37<span style="color:#f92672">)</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">→ docker version
 Client: Docker Engine - Community
  Version:           19.03.5
  API version:       1.40
  Go version:        go1.12.12
  Git commit:        633a0ea
- Built:             Wed Nov 13 07:22:34 2019
+ Built:             Wed Nov <span style="color:#ae81ff">13</span> 07:22:34 <span style="color:#ae81ff">2019</span>
  OS/Arch:           darwin/amd64
  Experimental:      false
 
 Server: Docker Engine - Community
  Engine:
   Version:          19.03.5
-  API version:      1.40 (minimum version 1.12)
+  API version:      1.40 <span style="color:#f92672">(</span>minimum version 1.12<span style="color:#f92672">)</span>
   Go version:       go1.12.12
   Git commit:       633a0ea
-  Built:            Wed Nov 13 07:29:19 2019
+  Built:            Wed Nov <span style="color:#ae81ff">13</span> 07:29:19 <span style="color:#ae81ff">2019</span>
   OS/Arch:          linux/amd64
   Experimental:     false
  containerd:
@@ -259,14 +259,14 @@ Server: Docker Engine - Community
  docker-init:
   Version:          0.18.0
   GitCommit:        fec3683
-</code></pre><pre tabindex="0"><code class="language-default" data-lang="default">→ heroku version
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">→ heroku version
 heroku/7.39.0 darwin-x64 node-v12.13.0
-</code></pre><pre tabindex="0"><code class="language-default" data-lang="default">→ heroku login
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">→ heroku login
 heroku: Press any key to open up the browser to login or q to exit:
 Opening browser to https://cli-auth.heroku.com/auth/...
-Logging in... done
+Logging in... <span style="color:#66d9ef">done</span>
 Logged in as nobu@nishimiyahara.net
-</code></pre><pre tabindex="0"><code class="language-default" data-lang="default">→ heroku help container
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">→ heroku help container
 Use containers to build and deploy Heroku apps
 
 USAGE
@@ -275,12 +275,12 @@ USAGE
 COMMANDS
   container:login    log in to Heroku Container Registry
   container:logout   log out from Heroku Container Registry
-  container:pull     pulls an image from an app's process type
-  container:push     builds, then pushes Docker images to deploy your Heroku app
+  container:pull     pulls an image from an app<span style="color:#960050;background-color:#1e0010">&#39;</span>s process type
+  container:push     builds, <span style="color:#66d9ef">then</span> pushes Docker images to deploy your Heroku app
   container:release  Releases previously pushed Docker images to your Heroku app
   container:rm       remove the process type from your app
-  container:run      builds, then runs the docker image locally
-</code></pre>
+  container:run      builds, <span style="color:#66d9ef">then</span> runs the docker image locally
+</code></pre></div>
   </div>
 
   

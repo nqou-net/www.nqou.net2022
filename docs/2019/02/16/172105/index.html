@@ -14,7 +14,7 @@
 <meta itemprop="name" content="キッカソン #3 に参加してきました">
 <meta itemprop="description" content="先週土曜日（もう一週間も経ってしまった。。。）から一泊二日で"><meta itemprop="datePublished" content="2019-02-16T17:21:05+09:00" />
 <meta itemprop="dateModified" content="2019-02-16T17:21:05+09:00" />
-<meta itemprop="wordCount" content="1470">
+<meta itemprop="wordCount" content="1697">
 <meta itemprop="keywords" content="perl,kikkason,docker,perl-entrance," />
 
 <meta name="twitter:card" content="summary"/>
@@ -213,17 +213,21 @@
   
 
   <div class="post-date">
-    <time datetime="2019-02-16T17:21:05&#43;0900">Feb 16, 2019</time> <span class="readtime">&middot; 3 min read</span>
+    <time datetime="2019-02-16T17:21:05&#43;0900">Feb 16, 2019</time> <span class="readtime">&middot; 4 min read</span>
   </div>
 
   <div>
   <p>先週土曜日（もう一週間も経ってしまった。。。）から一泊二日で「Perl入学式の修学旅行」という別名を持つ「キッカソン」へ行ってきました。</p>
 <p>イベント自体は第3回ということですが、私は今回が初参加です。</p>
-<!-- raw HTML omitted -->
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">初菊香荘 <a href="https://twitter.com/hashtag/%E3%82%AD%E3%83%83%E3%82%AB%E3%82%BD%E3%83%B3?src=hash&amp;ref_src=twsrc%5Etfw">#キッカソン</a> <a href="https://t.co/sw4OIUHdVI">pic.twitter.com/sw4OIUHdVI</a></p>&mdash; Nobutaka Wakabayashi (@nqounet) <a href="https://twitter.com/nqounet/status/1094094702880542722?ref_src=twsrc%5Etfw">February 9, 2019</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 <p>じわじわ集まるのかと思っていたら、皆さん意外と到着していて驚きました（失礼）</p>
 <p>ハッカソンは、広間でワイワイとやってました。
 あっちこっちで色んな話が飛び交っているのをなんとなく聞いていると、時々興味ある話が出ていたりするのでちゃっかりメモしたりしました。</p>
-<!-- raw HTML omitted -->
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr"><a href="https://t.co/lPpsyXOSxq">https://t.co/lPpsyXOSxq</a><br>軽くて良さそう。こういう情報が耳に入ってくるのがハッカソンの有意義なところですね <a href="https://twitter.com/hashtag/%E3%82%AD%E3%83%83%E3%82%AB%E3%82%BD%E3%83%B3?src=hash&amp;ref_src=twsrc%5Etfw">#キッカソン</a></p>&mdash; Nobutaka Wakabayashi (@nqounet) <a href="https://twitter.com/nqounet/status/1094438379112919041?ref_src=twsrc%5Etfw">February 10, 2019</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 <p>私はというと、数年前に Resque というモジュールを使って書いたジョブキューのサンプルプログラムがあったのですが、これを Docker を使った実装に変更するのをやってました。
 数年前のプログラムでは、 Proclet と Test::RedisServer を使って動かしていたのですが、コンテナを使った実装に変更したいなと。</p>
 <p>本当のことを言うと、 Perl の自動テストで Test::Mysqld を使用しているのをコンテナを使ったテストに書き換えたい、と思っていたのです。
@@ -245,24 +249,30 @@
 <li><a href="https://docs.docker.com/engine/reference/commandline/stack_deploy/">https://docs.docker.com/engine/reference/commandline/stack_deploy/</a></li>
 </ul>
 <p>手軽さを求めて <code>docker-compose</code> を使っているのもあって、今のところはミスマッチ感があるな。。。ということで、起動時にコンテナの数をオプションとして指定するようにしました。</p>
-<pre tabindex="0"><code>$ docker-compose up --build --scale worker=4
-</code></pre><p>なお、 nginx の設定も書いていますが、今回は無関係です。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ docker-compose up --build --scale worker<span style="color:#f92672">=</span><span style="color:#ae81ff">4</span>
+</code></pre></div><p>なお、 nginx の設定も書いていますが、今回は無関係です。</p>
 <p>気がつけば晩ごはん。</p>
-<!-- raw HTML omitted -->
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">コードを書いた後は晩御飯タイム！ <a href="https://twitter.com/hashtag/%E3%82%AD%E3%83%83%E3%82%AB%E3%82%BD%E3%83%B3?src=hash&amp;ref_src=twsrc%5Etfw">#キッカソン</a> <a href="https://t.co/2likAeANwy">pic.twitter.com/2likAeANwy</a></p>&mdash; Nobutaka Wakabayashi (@nqounet) <a href="https://twitter.com/nqounet/status/1094174624982622208?ref_src=twsrc%5Etfw">February 9, 2019</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 <p>広い場所で贅沢な晩ごはんでした。</p>
 <p>それから夜遅くまで雑談からPerl入学式の運営から技術的な話まで、いろいろと話しました。
 ここから寝るまでコードは一切書いていません。
 ハッカソンというだけでなく、Perl入学式のサポーターが集まっている場でもあるので、今後の方針や地域ごとの問題などについても話し合い、より良い運営を目指して議論しました。</p>
 <p>私は残念ながら途中で退席しました。</p>
 <p>気がつけば朝ごはん。</p>
-<!-- raw HTML omitted -->
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">朝ご飯！ <a href="https://twitter.com/hashtag/%E3%82%AD%E3%83%83%E3%82%AB%E3%82%BD%E3%83%B3?src=hash&amp;ref_src=twsrc%5Etfw">#キッカソン</a> <a href="https://t.co/TrJIZENATI">pic.twitter.com/TrJIZENATI</a></p>&mdash; Nobutaka Wakabayashi (@nqounet) <a href="https://twitter.com/nqounet/status/1094380561785712641?ref_src=twsrc%5Etfw">February 9, 2019</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 <p>朝ごはんが終わったあと、部屋に戻って帰り支度というか、荷物を持って広間へ。
 2日目開始です。</p>
 <p>この時に <a href="https://twitter.com/tomcha_">@tomcha_</a> さんに Kansai.pm を託しました。
 Kansai.pm はメーリングリストが主体のゆるいコミュニティでしたが、いざ中心になって活動しようとするといろいろとわからないことが多くて大変でした。
 今後はそうならないように、と思っていろいろと画策していましたが、それでも引き継ぐ内容は多くてやっぱり大変でした。</p>
 <p>引き継いだその場で、早速 connpass のページを作ってました。</p>
-<!-- raw HTML omitted -->
+<blockquote class="twitter-tweet"><p lang="und" dir="ltr"><a href="https://t.co/zDISXiXX2w">https://t.co/zDISXiXX2w</a>のコンパスページを作成しました。今後、イベントなどはこちらで募集しますのでメンバー登録などよろしくお願いします。 <a href="https://twitter.com/hashtag/Kansaipm?src=hash&amp;ref_src=twsrc%5Etfw">#Kansaipm</a> <a href="https://twitter.com/hashtag/Perl?src=hash&amp;ref_src=twsrc%5Etfw">#Perl</a> <a href="https://twitter.com/hashtag/Perl%E5%85%A5%E5%AD%A6%E5%BC%8F?src=hash&amp;ref_src=twsrc%5Etfw">#Perl入学式</a> <a href="https://t.co/YDOB2DYryh">https://t.co/YDOB2DYryh</a></p>&mdash; tomcha@転職検討中 (@tomcha_) <a href="https://twitter.com/tomcha_/status/1094479745746558976?ref_src=twsrc%5Etfw">February 10, 2019</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 <ul>
 <li><a href="https://kansaipm.connpass.com/">Kansai Perl Mongers - connpass</a></li>
 </ul>
