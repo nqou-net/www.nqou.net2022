@@ -1,3 +1,63 @@
-baseURL = 'http://example.org/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
+author = "Nobutaka WAKABAYASHI"
+baseURL = "https://www.nqou.net/"
+DefaultContentLanguage = "ja"
+disqusShortname = "nqounet"
+enableEmoji = true
+enableInlineShortcodes = true
+footnoteReturnLinkContents = "^"
+googleAnalytics = "G-E50H9ESN7E"
+hasCJKLanguage = true
+ignoreErrors = ["error-remote-getjson"]
+languageCode = "ja"
+paginate = 10
+summarylength = 30
+theme = "soho"
+title = "nqou.net"
+
+[permalinks]
+post = "/:year/:month/:day/:filename/"
+
+[params]
+copyright = "nqounet"
+title = "nqou.net"
+description = "Whisky, Perl, Kansai.pm"
+gravatar = "mail@nqou.net"
+license = "CC BY 4.0"
+licenseURL = "https://creativecommons.org/licenses/by/4.0"
+# images = ["images/profile.png"]
+# profilePicture = "images/profile.png"
+# builtWith = true
+# mainSections = ["post"]
+
+  [[params.socialIcons]]
+  icon = "fa-github"
+  title = "GitHub"
+  url = "https://github.com/nqounet"
+
+  [[params.socialIcons]]
+  icon = "fa-twitter"
+  title = "Twitter"
+  url = "https://twitter.com/nqounet"
+
+[menu]
+
+  [[menu.main]]
+  name = "Posts"
+  weight = 100
+  identifier = "post"
+  url = "/post/"
+
+  [[menu.main]]
+  name = "Tags"
+  weight = 200
+  identifier = "tags"
+  url = "/tags/"
+
+  [[menu.main]]
+  name = "About"
+  identifier = "about"
+  weight = 10
+  url = "/about/"
+
+[taxonomies]
+tag = "tags"
