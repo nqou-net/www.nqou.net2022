@@ -166,7 +166,7 @@
       <pubDate>Mon, 27 Feb 2012 03:00:00 +0900</pubDate>
       
       <guid>https://www.nqou.net/2012/02/27/030000/</guid>
-      <description>#! /usr/bin/env perl use strict; use warnings; print &amp;quot;Hello, world!\n&amp;quot;; #! /usr/bin/env perl use strict; use warnings; use utf8; =pod # binmode STDOUT, &amp;quot;:encoding(utf8)&amp;quot;; binmode STDOUT, &amp;quot;:utf8&amp;quot;; my $greeting =</description>
+      <description>1 2 3 4 5 #! /usr/bin/env perl use strict; use warnings; print &amp;#34;Hello, world!\n&amp;#34;; 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15</description>
     </item>
     
     <item>
@@ -184,7 +184,7 @@
       <pubDate>Sat, 06 Feb 2010 00:06:12 +0900</pubDate>
       
       <guid>https://www.nqou.net/2010/02/06/000612/</guid>
-      <description>? use plugin::mobile;</description>
+      <description>1 ? use plugin::mobile;</description>
     </item>
     
     <item>

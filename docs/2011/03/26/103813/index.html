@@ -14,7 +14,7 @@
 <meta itemprop="name" content="AutoInstall.pmとlib::xiとWindows">
 <meta itemprop="description" content="AutoInstall.pmはそのままでは動きません。 lib"><meta itemprop="datePublished" content="2011-03-26T10:38:13+09:00" />
 <meta itemprop="dateModified" content="2011-03-26T10:38:13+09:00" />
-<meta itemprop="wordCount" content="710">
+<meta itemprop="wordCount" content="742">
 <meta itemprop="keywords" content="perl," />
 
 <meta name="twitter:card" content="summary"/>
@@ -221,7 +221,39 @@ lib::xiの方は、cpanmではインストール出来ません。
 なんとかしようではありませんか。
 AutoInstallが動かないのは、Windowsに「/usr/bin/env」が無いだけなので、ちょっと書き換えれば普通に使えます。
 重宝していました。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#66d9ef">package</span> AutoInstall;
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#66d9ef">package</span> AutoInstall;
 
 <span style="color:#75715e"># perl -MAutoInstall pl.pl</span>
 <span style="color:#66d9ef">use</span> strict;
@@ -249,16 +281,34 @@ AutoInstallが動かないのは、Windowsに「/usr/bin/env」が無いだけ�
 }
 
 <span style="color:#ae81ff">1</span>;
-</code></pre></div><p>一方、lib::xiの方は、<!-- raw HTML omitted -->生のファイル<!-- raw HTML omitted -->をそのまま使えば動きます。
+</code></pre></td></tr></table>
+</div>
+</div><p>一方、lib::xiの方は、<!-- raw HTML omitted -->生のファイル<!-- raw HTML omitted -->をそのまま使えば動きます。
 <!-- raw HTML omitted -->生のファイル<!-- raw HTML omitted -->を「xi.pm」という「名前を付けて保存」して、script.plと同じフォルダにある「lib」という名前のフォルダの中にコピーします。</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">- script.pl
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">- script.pl
 - lib
 - xi.pm
-</code></pre><p>lib::xiはcpanmに対してオプションを設定できるのがいいですね。
+</code></pre></td></tr></table>
+</div>
+</div><p>lib::xiはcpanmに対してオプションを設定できるのがいいですね。
 最初にフォルダ名を書くと、自動的に「&ndash;local-lib」オプションのフォルダ名として認識してくれます。
 なので、スクリプトに以下のように書いておくと、</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">use lib::xi qw/extlib/;
-</code></pre><p>そのスクリプトを実行するごとに、足りないモジュールがあれば、スクリプトと同じフォルダにある「extlib」というフォルダの中にインストールされていきます。
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">use lib::xi qw/extlib/;
+</code></pre></td></tr></table>
+</div>
+</div><p>そのスクリプトを実行するごとに、足りないモジュールがあれば、スクリプトと同じフォルダにある「extlib」というフォルダの中にインストールされていきます。
 しかも、別途「use lib」しなくても良いので、スクリプトもすっきりです。
 ただし、この場合に注意が必要なのは、「extlib」をあらかじめ作っておく必要がある、ということです。
 「extlib」以下のフォルダは自動的に作ってくれますので、「extlib」という名前のフォルダだけは作っておきましょう。</p>

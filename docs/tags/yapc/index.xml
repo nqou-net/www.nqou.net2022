@@ -67,7 +67,7 @@
       <pubDate>Tue, 09 Sep 2014 08:42:02 +0900</pubDate>
       
       <guid>https://www.nqou.net/2014/09/09/084202/</guid>
-      <description>use Mojolicious::Lite; get &amp;#39;/&amp;#39; =&amp;gt; {text =&amp;gt; &amp;#39;Hello World!&amp;#39;}; app-&amp;gt;start; #!/usr/bin/env perl use strict; use warnings; print &amp;#34;Content-Type: text/plain\n\n&amp;#34;; print &amp;#39;Hello World!&amp;#39;;</description>
+      <description>1 2 3 use Mojolicious::Lite; get &amp;#39;/&amp;#39; =&amp;gt; {text =&amp;gt; &amp;#39;Hello World!&amp;#39;}; app-&amp;gt;start; 1 2 3 4 5 #!/usr/bin/env perl use strict; use warnings; print &amp;#34;Content-Type: text/plain\n\n&amp;#34;; print &amp;#39;Hello World!&amp;#39;;</description>
     </item>
     
     <item>
@@ -94,7 +94,7 @@
       <pubDate>Sat, 30 Aug 2014 02:21:46 +0900</pubDate>
       
       <guid>https://www.nqou.net/2014/08/30/022146/</guid>
-      <description>$ say Ya -o ya</description>
+      <description>1 $ say Ya -o ya</description>
     </item>
     
     <item>
@@ -112,7 +112,7 @@
       <pubDate>Thu, 28 Aug 2014 16:34:44 +0900</pubDate>
       
       <guid>https://www.nqou.net/2014/08/28/163444/</guid>
-      <description>$ cpanm Alien::ZMQ $ cpanm ZMQ::LibZMQ3 $ PERL_ZMQ_BACKEND=ZMQ::LibZMQ3 cpanm ZMQ $ PERL_ZMQ_BACKEND=ZMQ::LibZMQ3 cpanm Alien::ZMQ ZMQ::LibZMQ3 ZMQ # sub.pl 16行目付近 recv() -&amp;gt; recvmsg() my $msg =</description>
+      <description>1 $ cpanm Alien::ZMQ 1 $ cpanm ZMQ::LibZMQ3 1 $ PERL_ZMQ_BACKEND=ZMQ::LibZMQ3 cpanm ZMQ 1 $ PERL_ZMQ_BACKEND=ZMQ::LibZMQ3 cpanm Alien::ZMQ ZMQ::LibZMQ3 ZMQ 1 2 3 4 5 # sub.pl 16行</description>
     </item>
     
     <item>
@@ -175,7 +175,7 @@
       <pubDate>Tue, 03 Sep 2013 19:42:00 +0900</pubDate>
       
       <guid>https://www.nqou.net/2013/09/03/194200/</guid>
-      <description>mkdir ~/src cd ~/src git clone git://github.com/joelthelion/autojump.git cd autojump sudo ./install.sh [[ -s /etc/profile.d/autojump.zsh ]] &amp;amp;amp;&amp;amp;amp; . /etc/profile.d/autojump.zsh autoload -U compinit &amp;amp;amp;&amp;amp;amp; compinit -u</description>
+      <description>1 2 3 4 5 mkdir ~/src cd ~/src git clone git://github.com/joelthelion/autojump.git cd autojump sudo ./install.sh 1 [[ -s /etc/profile.d/autojump.zsh ]] &amp;amp;amp;&amp;amp;amp; . /etc/profile.d/autojump.zsh 1 autoload -U compinit &amp;amp;amp;&amp;amp;amp; compinit</description>
     </item>
     
     <item>
@@ -238,7 +238,7 @@
       <pubDate>Mon, 27 Feb 2012 03:00:00 +0900</pubDate>
       
       <guid>https://www.nqou.net/2012/02/27/030000/</guid>
-      <description>#! /usr/bin/env perl use strict; use warnings; print &amp;quot;Hello, world!\n&amp;quot;; #! /usr/bin/env perl use strict; use warnings; use utf8; =pod # binmode STDOUT, &amp;quot;:encoding(utf8)&amp;quot;; binmode STDOUT, &amp;quot;:utf8&amp;quot;; my $greeting =</description>
+      <description>1 2 3 4 5 #! /usr/bin/env perl use strict; use warnings; print &amp;#34;Hello, world!\n&amp;#34;; 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15</description>
     </item>
     
   </channel>

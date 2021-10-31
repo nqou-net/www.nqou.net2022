@@ -14,7 +14,7 @@
 <meta itemprop="name" content="CGI::Sessionを使ってみる">
 <meta itemprop="description" content="&lt;p&gt;CGIでセッション管理を行うのは少々面倒く"><meta itemprop="datePublished" content="2004-09-28T10:16:17+09:00" />
 <meta itemprop="dateModified" content="2004-09-28T10:16:17+09:00" />
-<meta itemprop="wordCount" content="152">
+<meta itemprop="wordCount" content="167">
 <meta itemprop="keywords" content="perl," />
 
 <meta name="twitter:card" content="summary"/>
@@ -218,27 +218,67 @@
 <pre><code>                             &lt;p&gt;CGIでセッション管理を行うのは少々面倒くさいので、CGI::Sessionモジュールを使ってやる。&lt;br /&gt;
 </code></pre>
 <p>セッションを読み込むのは、CGIオブジェクトをCGI::Sessionに渡してやるだけ。<!-- raw HTML omitted --></p>
-<pre tabindex="0"><code class="language-default" data-lang="default">my $cgi  = CGI-&gt;new;
-my $session = CGI::Session-&gt;new(&quot;dr:MySQL&quot;, $cgi, {Handle =&gt; $dbh});
-</code></pre><!-- raw HTML omitted -->
-<pre tabindex="0"><code class="language-default" data-lang="default">$cgi-&gt;append(
-    -name =&gt; 'new_cookie',
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">my $cgi  = CGI-&gt;new;
+my $session = CGI::Session-&gt;new(&#34;dr:MySQL&#34;, $cgi, {Handle =&gt; $dbh});
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">$cgi-&gt;append(
+    -name =&gt; &#39;new_cookie&#39;,
     -value =&gt; [
         $cgi-&gt;cookie(
                 -name  =&gt; $session-&gt;name,
                 -value =&gt; $session-&gt;id,
-                -expires =&gt; '+28d',
+                -expires =&gt; &#39;+28d&#39;,
         ),
     ],
 );
-</code></pre><!-- raw HTML omitted -->
-<pre tabindex="0"><code class="language-default" data-lang="default">print $cgi-&gt;header(
-    -cookie           =&gt; [$cgi-&gt;param(&quot;new_cookie&quot;)],
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">print $cgi-&gt;header(
+    -cookie           =&gt; [$cgi-&gt;param(&#34;new_cookie&#34;)],
 );
-</code></pre><!-- raw HTML omitted -->
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
-<pre tabindex="0"><code class="language-default" data-lang="default">use CGI::Session qw(-ip_match);
-</code></pre><!-- raw HTML omitted -->
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">use CGI::Session qw(-ip_match);
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 
   </div>

@@ -14,7 +14,7 @@
 <meta itemprop="name" content="StrawberryPerlにNet-SSLeayをインストールする">
 <meta itemprop="description" content="先日、結果的にクリーンインストールしてしまったPerlに、モ"><meta itemprop="datePublished" content="2009-03-15T04:12:24+09:00" />
 <meta itemprop="dateModified" content="2009-03-15T04:12:24+09:00" />
-<meta itemprop="wordCount" content="1159">
+<meta itemprop="wordCount" content="1186">
 <meta itemprop="keywords" content="perl," />
 
 <meta name="twitter:card" content="summary"/>
@@ -216,43 +216,130 @@
   <div>
   <p>先日、結果的にクリーンインストールしてしまったPerlに、モジュール群を入れているのだが、Plaggerをインストールする際に必要な「Net-SSLeay」のインストール記事が我ながらわかりにくかったので、もう一度今後のために書いてみる。</p>
 <p>Net-SSLeayの前にOpenSSLをインストールします。 まずはOpenSSLのソースを手に入れる。（<a href="http://www.openssl.org/source/">OpenSSL: Source, Tarballs</a>） そのソースを解凍する。 コマンドプロンプトを起動して解凍したフォルダ（ここでは仮に「D:\Downloads\openssl-0.9.8j」としておく）へ移動し、そのディレクトリで以下のように実行する。</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">D:\Downloads\openssl-0.9.8j&gt; ms\mingw32
-</code></pre><p>すると、コンパイルが始まるのでしばらく待つ。 コンパイルが終了したら、今度は「out」というフォルダに移り、テストを実行する。</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">D:\Downloads\openssl-0.9.8j&gt;cd out
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">D:\Downloads\openssl-0.9.8j&gt; ms\mingw32
+</code></pre></td></tr></table>
+</div>
+</div><p>すると、コンパイルが始まるのでしばらく待つ。 コンパイルが終了したら、今度は「out」というフォルダに移り、テストを実行する。</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">D:\Downloads\openssl-0.9.8j&gt;cd out
 D:\Downloads\openssl-0.9.8j\out&gt;..\ms\test
-</code></pre><p>すると、テストが始まるのでしばらく待つ。 テストが終わって、エラーがなさそうなら各種フォルダを作る。</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">D:\Downloads\openssl-0.9.8j\out&gt;md c:\openssl
+</code></pre></td></tr></table>
+</div>
+</div><p>すると、テストが始まるのでしばらく待つ。 テストが終わって、エラーがなさそうなら各種フォルダを作る。</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">D:\Downloads\openssl-0.9.8j\out&gt;md c:\openssl
 D:\Downloads\openssl-0.9.8j\out&gt;md c:\openssl\bin
 D:\Downloads\openssl-0.9.8j\out&gt;md c:\openssl\lib
 D:\Downloads\openssl-0.9.8j\out&gt;md c:\openssl\include
 D:\Downloads\openssl-0.9.8j\out&gt;md c:\openssl\include\openssl
-</code></pre><p>フォルダができたら、ファイル群をコピーする。</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">D:\Downloads\openssl-0.9.8j\out&gt;cd ..
+</code></pre></td></tr></table>
+</div>
+</div><p>フォルダができたら、ファイル群をコピーする。</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">D:\Downloads\openssl-0.9.8j\out&gt;cd ..
 D:\Downloads\openssl-0.9.8j&gt;copy /b outinc\openssl\* c:\openssl\include\openssl
 D:\Downloads\openssl-0.9.8j&gt;copy /b out\libssl32.a c:\openssl\lib
 D:\Downloads\openssl-0.9.8j&gt;copy /b out\libeay32.a c:\openssl\lib
 D:\Downloads\openssl-0.9.8j&gt;copy /b libssl32.dll c:\openssl\bin
 D:\Downloads\openssl-0.9.8j&gt;copy /b libeay32.dll c:\openssl\bin
 D:\Downloads\openssl-0.9.8j&gt;copy /b out\openssl.exe c:\openssl\bin
-</code></pre><p>とりあえずopensslについての操作は以上です。ひとまずコマンドプロンプトは閉じます。 次に、Net-SSLeayです。 cpanからNet-SSLeayの最新版を取ってくる。 <a href="http://search.cpan.org/dist/Net-SSLeay/">Florian Ragwitz / Net-SSLeay - search.cpan.org</a> それを解凍して、コマンドプロンプトを起動し、そのフォルダ（今回は「D:\Downloads\Net-SSLeay-1.35」としておく）へ移動する。 そして、以下のように実行する。</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">D:\Downloads\Net-SSLeay-1.35&gt;perl Makefile.PL
-</code></pre><p>perl.exeにパスが通っていない場合は、perl.exeへのフルパスで実行してやる必要があります。 ともかく、perl.exeでMakefile.PLを実行してやるということです。 手元の環境では以下のようなメッセージが出ました。</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">Cannot determine perl version info from lib/Net/SSLeay.pm
+</code></pre></td></tr></table>
+</div>
+</div><p>とりあえずopensslについての操作は以上です。ひとまずコマンドプロンプトは閉じます。 次に、Net-SSLeayです。 cpanからNet-SSLeayの最新版を取ってくる。 <a href="http://search.cpan.org/dist/Net-SSLeay/">Florian Ragwitz / Net-SSLeay - search.cpan.org</a> それを解凍して、コマンドプロンプトを起動し、そのフォルダ（今回は「D:\Downloads\Net-SSLeay-1.35」としておく）へ移動する。 そして、以下のように実行する。</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">D:\Downloads\Net-SSLeay-1.35&gt;perl Makefile.PL
+</code></pre></td></tr></table>
+</div>
+</div><p>perl.exeにパスが通っていない場合は、perl.exeへのフルパスで実行してやる必要があります。 ともかく、perl.exeでMakefile.PLを実行してやるということです。 手元の環境では以下のようなメッセージが出ました。</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Cannot determine perl version info from lib/Net/SSLeay.pm
 Cannot determine license info from lib/Net/SSLeay.pm
 *** Found OpenSSL-0.9.8j installed in C:\OpenSSL
 *** Be sure to use the same compiler and options to compile your OpenSSL, perl,
 and Net::SSLeay. Mixing and matching compilers is not supported.
 Do you want to run external tests?
 These tests *will* *fail* if you do not have network connectivity. [n]
-</code></pre><p>「C:\OpenSSLになにかインストールされてますよ。同じコンパイラやオプションでNet-SSLeayをコンパイルしてください。」的な意味です。 あと、接続テストをするかどうかを訊かれていますが、ここではテストを飛ばします。 その後、いくつかライブラリが見つからない、というメッセージが出ますが、Makefileが作成されますので、makeします。</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">D:\Downloads\Net-SSLeay-1.35&gt;dmake
-</code></pre><p>実行が終わるまでしばらく待ちます。 終わったら、opensslでコンパイルしたDLLを作業フォルダにコピーします。</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">D:\Downloads\Net-SSLeay-1.35&gt;copy /b c:\openssl\bin\*.dll blib\arch\auto\Net\SSLeay
-</code></pre><p>おそらく2個のファイルがコピーされると思います。 あとは、インストールです。</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">D:\Downloads\Net-SSLeay-1.35&gt;dmake install
-</code></pre><p>念のためperldocでインストールできているか確認します。</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">D:\Downloads\Net-SSLeay-1.35&gt;perldoc Net::SSLeay
-</code></pre><p>エラーが出なければインストール完了です。 お疲れさまでした。</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>「C:\OpenSSLになにかインストールされてますよ。同じコンパイラやオプションでNet-SSLeayをコンパイルしてください。」的な意味です。 あと、接続テストをするかどうかを訊かれていますが、ここではテストを飛ばします。 その後、いくつかライブラリが見つからない、というメッセージが出ますが、Makefileが作成されますので、makeします。</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">D:\Downloads\Net-SSLeay-1.35&gt;dmake
+</code></pre></td></tr></table>
+</div>
+</div><p>実行が終わるまでしばらく待ちます。 終わったら、opensslでコンパイルしたDLLを作業フォルダにコピーします。</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">D:\Downloads\Net-SSLeay-1.35&gt;copy /b c:\openssl\bin\*.dll blib\arch\auto\Net\SSLeay
+</code></pre></td></tr></table>
+</div>
+</div><p>おそらく2個のファイルがコピーされると思います。 あとは、インストールです。</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">D:\Downloads\Net-SSLeay-1.35&gt;dmake install
+</code></pre></td></tr></table>
+</div>
+</div><p>念のためperldocでインストールできているか確認します。</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">D:\Downloads\Net-SSLeay-1.35&gt;perldoc Net::SSLeay
+</code></pre></td></tr></table>
+</div>
+</div><p>エラーが出なければインストール完了です。 お疲れさまでした。</p>
 
   </div>
 

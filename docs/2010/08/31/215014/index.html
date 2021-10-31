@@ -14,7 +14,7 @@
 <meta itemprop="name" content="昔書いたスクリプトをグレードアップした">
 <meta itemprop="description" content="WWW::MechanizeとWeb::ScraperでLa"><meta itemprop="datePublished" content="2010-08-31T21:50:14+09:00" />
 <meta itemprop="dateModified" content="2010-08-31T21:50:14+09:00" />
-<meta itemprop="wordCount" content="1157">
+<meta itemprop="wordCount" content="1247">
 <meta itemprop="keywords" content="perl," />
 
 <meta name="twitter:card" content="summary"/>
@@ -223,33 +223,70 @@ Config::PitはWindowsでは使えないと勝手に思い込んでいたけど�
 スクリプトにアカウント情報を入れなくても済むので、ブログで公開するときにも気を使わなくて済むのが良いです。
 Config::Pitは、getとsetが組になっていて、まずはsetでアカウント情報を記録しておきます。
 やり方は幾つかあるのですが、とりあえず今回のスクリプトに合わせて作ったスクリプトを晒しておきます。</p>
-<pre tabindex="0"><code class="language-default" data-lang="default"># ｕｔｆ８
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text"># ｕｔｆ８
 # use Acme::PerlTidy;
 use strict;
 use warnings;
 use Config::Pit;
 # 設定
 Config::Pit::set(
-&quot;last.fm&quot;,
+&#34;last.fm&#34;,
 data =&gt; {
-username =&gt; &quot;username&quot;,
-password =&gt; &quot;password&quot;,
+username =&gt; &#34;username&#34;,
+password =&gt; &#34;password&#34;,
 }
 );
-</code></pre><p>usernameとpasswordの値を、実際のアカウント情報に変更してから実行すると、私の環境では</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">C:\Users\&lt;username&gt;\.pit
-</code></pre><p>の中に、YAMLファイルで入力した情報が保管されていました。
+</code></pre></td></tr></table>
+</div>
+</div><p>usernameとpasswordの値を、実際のアカウント情報に変更してから実行すると、私の環境では</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">C:\Users\&lt;username&gt;\.pit
+</code></pre></td></tr></table>
+</div>
+</div><p>の中に、YAMLファイルで入力した情報が保管されていました。
 あとは使うときにsetで使ったキー（今の場合は「last.fm」）で引いてやると、このアカウント情報がちゃんと使えます。
 便利ですね。
 autodieは、Fatalの自動版という感じでしょうか。
 use autodieとしておくだけで、色々なエラーを捕まえてdieしてくれます。
 例えば以下のようなスクリプトでは、ファイルがなかった時にはdieします。</p>
-<pre tabindex="0"><code class="language-default" data-lang="default"># ｕｔｆ８
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text"># ｕｔｆ８
 use strict;
 use autodie;
-open my $fh, '&lt;:utf8', 'autodie.dat';
+open my $fh, &#39;&lt;:utf8&#39;, &#39;autodie.dat&#39;;
 close $fh;
-</code></pre><p>便利ですね。</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>便利ですね。</p>
 <!-- raw HTML omitted -->
 <p>ということで、本題。
 Web::ScraperとWWW::Mechanizeの合わせ技です。
@@ -257,7 +294,82 @@ Web::ScraperとWWW::Mechanizeの合わせ技です。
 mechでリンクをたどっていく場合もそうですが、HTMLのソースを確認したいので、都度保存して解析に使っていました。
 そのへんの名残もそのまま置いてあります。
 ひょっとすると、将来の自分のためかもしれませんが。</p>
-<pre tabindex="0"><code class="language-default" data-lang="default"># ｕｔｆ８
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">66
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">67
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">68
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">69
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">70
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">71
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text"># ｕｔｆ８
 # use Acme::PerlTidy;
 use strict;
 use warnings;
@@ -268,10 +380,10 @@ use FindBin;
 use Encode;
 use Config::Pit;
 my $config = pit_get(
-&quot;last.fm&quot;,
+&#34;last.fm&#34;,
 require =&gt; {
-username =&gt; &quot;username&quot;,
-password =&gt; &quot;password&quot;,
+username =&gt; &#34;username&#34;,
+password =&gt; &#34;password&#34;,
 }
 );
 use Web::Scraper;
@@ -286,10 +398,10 @@ $mech-&gt;get($uri);
 say $mech-&gt;uri;
 # ログイン画面へ
 sleep 1;
-$mech-&gt;follow_link( id =&gt; 'loginBtn' );
+$mech-&gt;follow_link( id =&gt; &#39;loginBtn&#39; );
 my $fh;
 say $mech-&gt;uri;
-# open $fh, '&gt;:utf8', $history_dir . q{/get1.html};
+# open $fh, &#39;&gt;:utf8&#39;, $history_dir . q{/get1.html};
 # print $fh $mech-&gt;content;
 # $mech-&gt;dump_all($fh);
 # close $fh;
@@ -303,32 +415,34 @@ password =&gt; $config-&gt;{password},
 },
 );
 say $mech-&gt;uri;
-# open $fh, '&gt;:utf8', $history_dir . q{/logined.html};
+# open $fh, &#39;&gt;:utf8&#39;, $history_dir . q{/logined.html};
 # print $fh $mech-&gt;content;
 # close $fh;
 # フリーMP3のページ
 sleep 1;
 $mech-&gt;follow_link( url_regex =&gt; qr/freemp3s/ );
-# open $fh, '&gt;:utf8', $history_dir . q{/freemp3s.html};
+# open $fh, &#39;&gt;:utf8&#39;, $history_dir . q{/freemp3s.html};
 # print $fh $mech-&gt;content;
 # close $fh;
 # MP3リンクを取得
 sleep 1;
 my ( $scraper, $result );
 $scraper = scraper {
-process 'a[href=~/\.mp3$/]', 'hrefs[]' =&gt; '@href';
-result 'hrefs';
+process &#39;a[href=~/\.mp3$/]&#39;, &#39;hrefs[]&#39; =&gt; &#39;@href&#39;;
+result &#39;hrefs&#39;;
 };
 $result = $scraper-&gt;scrape( $mech-&gt;content, $mech-&gt;uri );
 # mp3ファイルを取得
 foreach my $mp3 ( uniq @{$result} ) {
 my $filename = basename($mp3);
-print &quot;try fetch : $mp3 : &quot;;
-say $mech-&gt;mirror( $mp3, sprintf( &quot;%s/%s&quot;, 'DownloadFiles', $filename ) )
+print &#34;try fetch : $mp3 : &#34;;
+say $mech-&gt;mirror( $mp3, sprintf( &#34;%s/%s&#34;, &#39;DownloadFiles&#39;, $filename ) )
 -&gt;message;
 sleep 1;
 }
-</code></pre>
+</code></pre></td></tr></table>
+</div>
+</div>
   </div>
 
   

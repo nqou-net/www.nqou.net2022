@@ -12,18 +12,18 @@
   
 
 <meta itemprop="name" content="お手軽暗号化">
-<meta itemprop="description" content="&lt;p&gt;ソースコード&lt;/p&gt; #!/usr/bin/perl #BEGIN{ # print &quot;Content-type:"><meta itemprop="datePublished" content="2000-10-07T13:57:07+09:00" />
+<meta itemprop="description" content="&lt;p&gt;ソースコード&lt;/p&gt; 1 2 3 4 5"><meta itemprop="datePublished" content="2000-10-07T13:57:07+09:00" />
 <meta itemprop="dateModified" content="2000-10-07T13:57:07+09:00" />
-<meta itemprop="wordCount" content="743">
+<meta itemprop="wordCount" content="871">
 <meta itemprop="keywords" content="perl," />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="お手軽暗号化"/>
-<meta name="twitter:description" content="&lt;p&gt;ソースコード&lt;/p&gt; #!/usr/bin/perl #BEGIN{ # print &quot;Content-type:"/>
+<meta name="twitter:description" content="&lt;p&gt;ソースコード&lt;/p&gt; 1 2 3 4 5"/>
 
 
 <meta property="og:title" content="お手軽暗号化" />
-<meta property="og:description" content="&lt;p&gt;ソースコード&lt;/p&gt; #!/usr/bin/perl #BEGIN{ # print &quot;Content-type:" />
+<meta property="og:description" content="&lt;p&gt;ソースコード&lt;/p&gt; 1 2 3 4 5" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.nqou.net/2000/10/07/135707/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2000-10-07T13:57:07+09:00" />
@@ -70,7 +70,7 @@
       },
       "datePublished": "2000-10-07T13:57:07+09:00",
       "dateModified": "2000-10-07T13:57:07+09:00",
-      "description": "\u0026lt;p\u0026gt;ソースコード\u0026lt;/p\u0026gt; #!/usr/bin/perl #BEGIN{ # print \u0026quot;Content-type:",
+      "description": "\u0026lt;p\u0026gt;ソースコード\u0026lt;/p\u0026gt; 1 2 3 4 5",
       "inLanguage": "ja",
       "potentialAction": [
         {
@@ -245,69 +245,207 @@
 <!-- raw HTML omitted -->
 <pre><code>                             &lt;p&gt;ソースコード&lt;/p&gt;
 </code></pre>
-<pre tabindex="0"><code class="language-default" data-lang="default">#!/usr/bin/perl
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 62
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 63
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 64
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 65
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 66
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 67
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 68
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 69
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 70
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 71
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 72
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 73
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 74
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 75
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 76
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 77
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 78
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 79
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 80
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 81
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 82
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 83
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 84
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 85
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 86
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 87
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 88
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 89
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 90
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 91
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 92
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 93
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 94
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 95
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 96
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 97
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 98
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 99
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">100
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">101
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">102
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">103
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">104
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">105
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">106
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">107
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">108
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">109
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">110
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">111
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">112
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">113
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">114
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">115
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">116
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">117
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">118
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">119
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">120
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">121
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">122
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">123
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">124
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">125
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">126
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">127
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">128
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">129
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">130
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">131
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">132
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">133
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">134
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">#!/usr/bin/perl
 
 #BEGIN{
-#   print &quot;Content-type: text/plainnn&quot;;
-#   open(STDERR, &quot;&gt;&amp;amp;STDOUT&quot;);
+#   print &#34;Content-type: text/plainnn&#34;;
+#   open(STDERR, &#34;&gt;&amp;amp;STDOUT&#34;);
 #   $|=1;
 #}
 
-$usr_title = 'テスト３０';
+$usr_title = &#39;テスト３０&#39;;
 
-require &quot;tsenv.pl&quot;;
+require &#34;tsenv.pl&#34;;
 
 {
     printHeader($usr_title);
-    printBodyHeader('&lt;font face=times&gt;Crypt Test&lt;/font&gt;');
+    printBodyHeader(&#39;&lt;font face=times&gt;Crypt Test&lt;/font&gt;&#39;);
 
 # 乱数初期化
     srand;
-    crypt_test('12345678', '12345678');
-    crypt_test('987654321', '987654320');
-    crypt_test('abcdefgh', 'abcdefgi');
+    crypt_test(&#39;12345678&#39;, &#39;12345678&#39;);
+    crypt_test(&#39;987654321&#39;, &#39;987654320&#39;);
+    crypt_test(&#39;abcdefgh&#39;, &#39;abcdefgi&#39;);
 
-    new_crypt_test('12345678', '12345678');
-    new_crypt_test('987654321', '987654320');
-    new_crypt_test('abcdefgh', 'abcdefgi');
+    new_crypt_test(&#39;12345678&#39;, &#39;12345678&#39;);
+    new_crypt_test(&#39;987654321&#39;, &#39;987654320&#39;);
+    new_crypt_test(&#39;abcdefgh&#39;, &#39;abcdefgi&#39;);
 
-    print &quot;&lt;pre&gt;&quot;;
+    print &#34;&lt;pre&gt;&#34;;
 
-    print &quot;Normal localtime : &quot;;
+    print &#34;Normal localtime : &#34;;
     print localtime();
-    print &quot;n&quot;;
+    print &#34;n&#34;;
 
-    print &quot;Scalar localtime : &quot;;
+    print &#34;Scalar localtime : &#34;;
     print scalar(localtime());
-    print &quot;n&quot;;
+    print &#34;n&#34;;
 
-    print &quot;Expand localtime : &quot;;
-    print join(&quot;, &quot;, localtime());
-    print &quot;n&quot;;
+    print &#34;Expand localtime : &#34;;
+    print join(&#34;, &#34;, localtime());
+    print &#34;n&#34;;
 
-    print &quot;n&quot;;
+    print &#34;n&#34;;
 
-    print &quot;int(1.5) = &quot;;
+    print &#34;int(1.5) = &#34;;
     print int(1.5);
-    print &quot;n&quot;;
+    print &#34;n&#34;;
 
-    print &quot;int(2.9) = &quot;;
+    print &#34;int(2.9) = &#34;;
     print int(2.9);
-    print &quot;n&quot;;
+    print &#34;n&#34;;
 
-    print &quot;int(-2.5) = &quot;;
+    print &#34;int(-2.5) = &#34;;
     print int(-2.5);
-    print &quot;n&quot;;
+    print &#34;n&#34;;
 
-    print &quot;int(-2.9) = &quot;;
+    print &#34;int(-2.9) = &#34;;
     print int(-2.9);
-    print &quot;n&quot;;
+    print &#34;n&#34;;
 
-    print &quot;int(-1.1) = &quot;;
+    print &#34;int(-1.1) = &#34;;
     print int(-1.1);
-    print &quot;n&quot;;
+    print &#34;n&#34;;
 
-    print &quot;&lt;/pre&gt;&quot;;
+    print &#34;&lt;/pre&gt;&#34;;
 
     printFooter();
 
@@ -317,23 +455,23 @@ require &quot;tsenv.pl&quot;;
 sub crypt_test{
     my($setpass, $authpass) = @_;
 # 設定パスワード確認
-    print qq(&lt;table border=1 width=&quot;80%&quot;&gt;n&lt;tr&gt;n&lt;td width=&quot;40%&quot;&gt;n);
-    Jprint(&quot;設定パスワード：$setpass&lt;br&gt;n&quot;);
+    print qq(&lt;table border=1 width=&#34;80%&#34;&gt;n&lt;tr&gt;n&lt;td width=&#34;40%&#34;&gt;n);
+    Jprint(&#34;設定パスワード：$setpass&lt;br&gt;n&#34;);
 # salt値作成
-    my @char = (&quot;.&quot;, &quot;/&quot;, &quot;0&quot;..&quot;9&quot;, &quot;a&quot;..&quot;z&quot;, &quot;A&quot;..&quot;Z&quot;);
-    my $salt = '';
+    my @char = (&#34;.&#34;, &#34;/&#34;, &#34;0&#34;..&#34;9&#34;, &#34;a&#34;..&#34;z&#34;, &#34;A&#34;..&#34;Z&#34;);
+    my $salt = &#39;&#39;;
     for(0,1){
         $salt .= $char[int(rand(scalar(@char)))];
     }
 # salt値の確認
-    Jprint(&quot;Salt値：$salt&lt;br&gt;n&quot;);
+    Jprint(&#34;Salt値：$salt&lt;br&gt;n&#34;);
 # cryptする
     $sp = crypt($setpass, $salt);
-    Jprint(&quot;crypt結果：$sp&lt;br&gt;n&quot;);
+    Jprint(&#34;crypt結果：$sp&lt;br&gt;n&#34;);
 
 # 認証パスワード確認
-    print qq(&lt;td width=&quot;40%&quot;&gt;n);
-    Jprint(&quot;認証パスワード：$authpass&lt;br&gt;n&quot;);
+    print qq(&lt;td width=&#34;40%&#34;&gt;n);
+    Jprint(&#34;認証パスワード：$authpass&lt;br&gt;n&#34;);
 # 作成したパスワードから「salt値」を取得
     if($sp =~ /^$1$/){
         $offset = 3;
@@ -342,33 +480,33 @@ sub crypt_test{
     }
     $salt = substr($sp, $offset, 2);
 # salt値の確認
-    Jprint(&quot;Salt値：$salt&lt;br&gt;n&quot;);
+    Jprint(&#34;Salt値：$salt&lt;br&gt;n&#34;);
 # cryptする
     $ap = crypt($authpass, $salt);
-    Jprint(&quot;crypt結果：$ap&lt;br&gt;n&quot;);
+    Jprint(&#34;crypt結果：$ap&lt;br&gt;n&#34;);
 
 # 結果は同じ？
     if($sp eq $ap){
-        $result = 'OK';
+        $result = &#39;OK&#39;;
     }else{
-        $result = 'NG';
+        $result = &#39;NG&#39;;
     }
-    print &quot;&lt;tr&gt;n&lt;td colspan=2 align=center&gt;n&quot;;
-    Jprint(&quot;認証結果：$result&lt;br&gt;n&quot;);
-    print &quot;&lt;/table&gt;&lt;br&gt;nn&quot;;
+    print &#34;&lt;tr&gt;n&lt;td colspan=2 align=center&gt;n&#34;;
+    Jprint(&#34;認証結果：$result&lt;br&gt;n&#34;);
+    print &#34;&lt;/table&gt;&lt;br&gt;nn&#34;;
 }
 
 # 新しい（というか、正しい）cryptの使い方
 # 中身は手抜き・・・(^^;;;
 sub new_crypt_test{
     my($PW, $enterPW) = @_;
-    my $salt = './'; # salt値作成、手抜き
+    my $salt = &#39;./&#39;; # salt値作成、手抜き
     my $cryptedPW = crypt($PW, $salt);
-    my $result = '';
+    my $result = &#39;&#39;;
     if( crypt($enterPW, $cryptedPW) eq $cryptedPW ){
-        $result = 'OK';
+        $result = &#39;OK&#39;;
     }else{
-        $result = 'NG';
+        $result = &#39;NG&#39;;
     }
     print &lt;&lt;EOM;
 
@@ -379,7 +517,9 @@ sub new_crypt_test{
 &lt;/pre&gt;
 EOM
 }
-</code></pre><pre><code>                          &lt;/div&gt;
+</code></pre></td></tr></table>
+</div>
+</div><pre><code>                          &lt;/div&gt;
 </code></pre>
 
   </div>

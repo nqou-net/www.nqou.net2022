@@ -12,18 +12,18 @@
   
 
 <meta itemprop="name" content="実験スクリプトの移植">
-<meta itemprop="description" content="// for menu $(&quot;#menu ul.list-item-list&quot;).css({ display:&quot;none&quot; }); var effect_speed = &#39;fast&#39;; $(&quot;#menu ul.list li.list-item&quot;).hover( function () { $(this).children(&quot;ul.list-item-list&quot;).slideDown(effect_speed); }, function () { $(this).children(&quot;ul.list-item-list&quot;).slideUp(effect_speed); }); /* for menu */ #menu, #menu"><meta itemprop="datePublished" content="2009-02-02T01:20:00+09:00" />
+<meta itemprop="description" content="1 2 3 4 5 6 7 8 // for menu $(&#34;#menu ul.list-item-list&#34;).css({ display:&#34;none&#34; }); var effect_speed = &#39;fast&#39;; $(&#34;#menu ul.list li.list-item&#34;).hover( function () { $(this).children(&#34;ul.list-item-list&#34;).slideDown(effect_speed); }, function () {"><meta itemprop="datePublished" content="2009-02-02T01:20:00+09:00" />
 <meta itemprop="dateModified" content="2009-02-02T01:20:00+09:00" />
-<meta itemprop="wordCount" content="143">
+<meta itemprop="wordCount" content="200">
 <meta itemprop="keywords" content="undef," />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="実験スクリプトの移植"/>
-<meta name="twitter:description" content="// for menu $(&quot;#menu ul.list-item-list&quot;).css({ display:&quot;none&quot; }); var effect_speed = &#39;fast&#39;; $(&quot;#menu ul.list li.list-item&quot;).hover( function () { $(this).children(&quot;ul.list-item-list&quot;).slideDown(effect_speed); }, function () { $(this).children(&quot;ul.list-item-list&quot;).slideUp(effect_speed); }); /* for menu */ #menu, #menu"/>
+<meta name="twitter:description" content="1 2 3 4 5 6 7 8 // for menu $(&#34;#menu ul.list-item-list&#34;).css({ display:&#34;none&#34; }); var effect_speed = &#39;fast&#39;; $(&#34;#menu ul.list li.list-item&#34;).hover( function () { $(this).children(&#34;ul.list-item-list&#34;).slideDown(effect_speed); }, function () {"/>
 
 
 <meta property="og:title" content="実験スクリプトの移植" />
-<meta property="og:description" content="// for menu $(&quot;#menu ul.list-item-list&quot;).css({ display:&quot;none&quot; }); var effect_speed = &#39;fast&#39;; $(&quot;#menu ul.list li.list-item&quot;).hover( function () { $(this).children(&quot;ul.list-item-list&quot;).slideDown(effect_speed); }, function () { $(this).children(&quot;ul.list-item-list&quot;).slideUp(effect_speed); }); /* for menu */ #menu, #menu" />
+<meta property="og:description" content="1 2 3 4 5 6 7 8 // for menu $(&#34;#menu ul.list-item-list&#34;).css({ display:&#34;none&#34; }); var effect_speed = &#39;fast&#39;; $(&#34;#menu ul.list li.list-item&#34;).hover( function () { $(this).children(&#34;ul.list-item-list&#34;).slideDown(effect_speed); }, function () {" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.nqou.net/2009/02/02/012000/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2009-02-02T01:20:00+09:00" />
@@ -70,7 +70,7 @@
       },
       "datePublished": "2009-02-02T01:20:00+09:00",
       "dateModified": "2009-02-02T01:20:00+09:00",
-      "description": "// for menu $(\u0026quot;#menu ul.list-item-list\u0026quot;).css({ display:\u0026quot;none\u0026quot; }); var effect_speed = 'fast'; $(\u0026quot;#menu ul.list li.list-item\u0026quot;).hover( function () { $(this).children(\u0026quot;ul.list-item-list\u0026quot;).slideDown(effect_speed); }, function () { $(this).children(\u0026quot;ul.list-item-list\u0026quot;).slideUp(effect_speed); }); /* for menu */ #menu, #menu",
+      "description": "1 2 3 4 5 6 7 8 // for menu $(\u0026#34;#menu ul.list-item-list\u0026#34;).css({ display:\u0026#34;none\u0026#34; }); var effect_speed = \u0026#39;fast\u0026#39;; $(\u0026#34;#menu ul.list li.list-item\u0026#34;).hover( function () { $(this).children(\u0026#34;ul.list-item-list\u0026#34;).slideDown(effect_speed); }, function () {",
       "inLanguage": "ja",
       "potentialAction": [
         {
@@ -217,16 +217,83 @@
   <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
-<pre tabindex="0"><code class="language-default" data-lang="default">    // for menu
-$(&quot;#menu ul.list-item-list&quot;).css({ display:&quot;none&quot; });
-var effect_speed = 'fast';
-$(&quot;#menu ul.list li.list-item&quot;).hover( function () {
-$(this).children(&quot;ul.list-item-list&quot;).slideDown(effect_speed);
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">    // for menu
+$(&#34;#menu ul.list-item-list&#34;).css({ display:&#34;none&#34; });
+var effect_speed = &#39;fast&#39;;
+$(&#34;#menu ul.list li.list-item&#34;).hover( function () {
+$(this).children(&#34;ul.list-item-list&#34;).slideDown(effect_speed);
 }, function () {
-$(this).children(&quot;ul.list-item-list&quot;).slideUp(effect_speed);
+$(this).children(&#34;ul.list-item-list&#34;).slideUp(effect_speed);
 });
-</code></pre><!-- raw HTML omitted -->
-<pre tabindex="0"><code class="language-default" data-lang="default">/* for menu */
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">/* for menu */
 #menu, #menu ul, #menu ul li
 {
 margin: 0;
@@ -275,7 +342,9 @@ background-color: #665f57;/* HSV 34 15 40 */
 color: #192a33;/* HSV 201 50 20 */
 background-color: #e6d7c3;/* HSV 34 15 90 */
 }
-</code></pre>
+</code></pre></td></tr></table>
+</div>
+</div>
   </div>
 
   

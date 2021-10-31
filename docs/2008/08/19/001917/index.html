@@ -14,7 +14,7 @@
 <meta itemprop="name" content="MTOS4.2をインストール（にアップグレード）した">
 <meta itemprop="description" content="毎度の事ながら、シンボリックリンクを使ったアップデートの仕方"><meta itemprop="datePublished" content="2008-08-19T00:19:17+09:00" />
 <meta itemprop="dateModified" content="2008-08-19T00:19:17+09:00" />
-<meta itemprop="wordCount" content="1004">
+<meta itemprop="wordCount" content="1007">
 <meta itemprop="keywords" content="movabletype," />
 
 <meta name="twitter:card" content="summary"/>
@@ -222,18 +222,39 @@
 xreaは、SSHが使えるのでとりあえずSSHでログイン。
 telnetでも問題ないはず。
 で、zipファイルをそのまま解凍（展開）します。</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">$ unzip MTOS-4.2-ja.zip
-</code></pre><p>ディレクトリ付になっているはずなので、中身はすべて「MTOS-4.2-ja」というディレクトリに展開されるはず。
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">$ unzip MTOS-4.2-ja.zip
+</code></pre></td></tr></table>
+</div>
+</div><p>ディレクトリ付になっているはずなので、中身はすべて「MTOS-4.2-ja」というディレクトリに展開されるはず。
 手元で解凍してからアップロードするととてつもなく時間がかかります。
 なので、サーバ上でunzipできる場合は、サーバには圧縮したままアップロードしたほうがいいでしょう。
 で、現在のシンボリックリンクを削除する。
 仮にシンボリックリンクが「mt」だとすると、以下のコマンドで削除できる。</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">$ rm mt
-</code></pre><p>もちろんだが、その「mt」が置いてあるディレクトリに行ってから実行する必要がある。
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">$ rm mt
+</code></pre></td></tr></table>
+</div>
+</div><p>もちろんだが、その「mt」が置いてあるディレクトリに行ってから実行する必要がある。
 で、新しくシンボリックリンクを作成する。
 今回は「MTOS-4.2-ja」というディレクトリにインストールしているので、以前と同じく「mt」という名前でシンボリックリンクを作成する。</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">$ ln -s MTOS-4.2-ja mt
-</code></pre><p>とりあえず、ここまでできたところでmt.cgiにアクセスして、mt-upgradeからアップグレードする。
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">$ ln -s MTOS-4.2-ja mt
+</code></pre></td></tr></table>
+</div>
+</div><p>とりあえず、ここまでできたところでmt.cgiにアクセスして、mt-upgradeからアップグレードする。
 それが完了したら再構築してみる。
 いきなりエラーだったが、よく考えてみるとプラグインを全然入れていなかった。
 今まで使っていたプラグインは、あえて手元でバックアップしてあるので、それを丸ごとアップロードする。

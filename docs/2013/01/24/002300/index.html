@@ -14,7 +14,7 @@
 <meta itemprop="name" content="Mojoliciousをどうしてもindex.cgiとして動かしたい">
 <meta itemprop="description" content="@nqounetです。 Mojoliciousで作っているアプ"><meta itemprop="datePublished" content="2013-01-24T00:23:00+09:00" />
 <meta itemprop="dateModified" content="2013-01-24T00:23:00+09:00" />
-<meta itemprop="wordCount" content="388">
+<meta itemprop="wordCount" content="407">
 <meta itemprop="keywords" content="mojolicious,perl," />
 
 <meta name="twitter:card" content="summary"/>
@@ -219,31 +219,62 @@
 <p><!-- raw HTML omitted -->Mojolicious<!-- raw HTML omitted -->で作っているアプリを、どうしても<!-- raw HTML omitted -->index.cgi<!-- raw HTML omitted -->で動かす必要があって、とりあえず、動くようになったのでメモしておきます。</p>
 <!-- raw HTML omitted -->
 <p>index.cgi（昔は動いていた版）</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">#!/user/hoge/perl5/perlbrew/perls/perl-5.14.2/bin/perl
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">#!/user/hoge/perl5/perlbrew/perls/perl-5.14.2/bin/perl
 use utf8;
 
-use lib 'lib';
+use lib &#39;lib&#39;;
 use Mojo::Server::CGI;
 
-$ENV{MOJO_APP}  = 'MyApp';
-$ENV{MOJO_MODE} = 'production';
+$ENV{MOJO_APP}  = &#39;MyApp&#39;;
+$ENV{MOJO_MODE} = &#39;production&#39;;
 
 Mojo::Server::CGI-&gt;new-&gt;run;
-</code></pre><p>1行目は、環境によって違いますが、Perlbrewを使っている場合はこんな感じだと思います。</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>1行目は、環境によって違いますが、Perlbrewを使っている場合はこんな感じだと思います。</p>
 <p>で、久しぶりに動かしてみると、<!-- raw HTML omitted -->Your Mojo is working!<!-- raw HTML omitted -->としか出ないようになっていました。</p>
 <p>どうしても、<!-- raw HTML omitted -->index.cgi<!-- raw HTML omitted -->として動かしたかったのですが、どうも情報が少なくて調べてもよくわかりませんでした。</p>
 <!-- raw HTML omitted -->
 <p>index.cgi（動いた版）</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">#!/user/hoge/perl5/perlbrew/perls/perl-5.14.2/bin/perl
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">#!/user/hoge/perl5/perlbrew/perls/perl-5.14.2/bin/perl
 use utf8;
 
-use lib 'lib';
+use lib &#39;lib&#39;;
 
-$ENV{MOJO_MODE} = 'production';
+$ENV{MOJO_MODE} = &#39;production&#39;;
 
 require Mojolicious::Commands;
-Mojolicious::Commands-&gt;start_app('MyApp');
-</code></pre><p>結果だけを見れば、シンプルになりました。 <!-- raw HTML omitted -->Mojolicious::Commands<!-- raw HTML omitted -->が万能になって、起動スクリプトと同じように書けるようになったようです。</p>
+Mojolicious::Commands-&gt;start_app(&#39;MyApp&#39;);
+</code></pre></td></tr></table>
+</div>
+</div><p>結果だけを見れば、シンプルになりました。 <!-- raw HTML omitted -->Mojolicious::Commands<!-- raw HTML omitted -->が万能になって、起動スクリプトと同じように書けるようになったようです。</p>
 <p>Perl鍋の報告も近々書きます。たぶん。</p>
 
   </div>

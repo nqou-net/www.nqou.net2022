@@ -14,7 +14,7 @@
 <meta itemprop="name" content="タイムゾーンの憂鬱">
 <meta itemprop="description" content="Hexoの時間の扱いについてわかったこと 納得がいかなくて色々"><meta itemprop="datePublished" content="2017-10-06T18:25:20+09:00" />
 <meta itemprop="dateModified" content="2017-10-06T18:25:20+09:00" />
-<meta itemprop="wordCount" content="863">
+<meta itemprop="wordCount" content="873">
 <meta itemprop="keywords" content="hexo," />
 
 <meta name="twitter:card" content="summary"/>
@@ -223,7 +223,21 @@
 <p>これは、ファイルを生成する時に、26日として認識している、ということだ。</p>
 <p>つまり、表示に使用している時間を元にしてファイルを生成しているのだろう。</p>
 <p><code>Hexo</code> のソースコードを見ていると気になったコードがあった。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">exports</span>.<span style="color:#a6e22e">timezone</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">date</span>, <span style="color:#a6e22e">timezone</span>) {
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">exports</span>.<span style="color:#a6e22e">timezone</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">date</span>, <span style="color:#a6e22e">timezone</span>) {
   <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">moment</span>.<span style="color:#a6e22e">isMoment</span>(<span style="color:#a6e22e">date</span>)) <span style="color:#a6e22e">date</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">toDate</span>();
 
   <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">offset</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getTimezoneOffset</span>();
@@ -233,7 +247,9 @@
 
   <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> Date(<span style="color:#a6e22e">ms</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">diff</span>);
 };
-</code></pre></div><p>せっかくの <code>momentjs</code> のオブジェクトを JS の Date オブジェクトに変えている？
+</code></pre></td></tr></table>
+</div>
+</div><p>せっかくの <code>momentjs</code> のオブジェクトを JS の Date オブジェクトに変えている？
 ここは普通に考えて <code>momentjs</code> の方へ処理をまとめるべきでは？</p>
 <h2 id="中国はタイムゾーンが一つだった">中国はタイムゾーンが一つだった</h2>
 <p><code>Hexo</code> は中国発のソフトウェアということだ。</p>

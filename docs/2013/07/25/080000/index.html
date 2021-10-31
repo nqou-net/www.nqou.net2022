@@ -14,7 +14,7 @@
 <meta itemprop="name" content="vagrantで開発環境を自動的に作成する">
 <meta itemprop="description" content="@nqounetです。 結構前に@papixさんから教えてもら"><meta itemprop="datePublished" content="2013-07-25T08:00:00+09:00" />
 <meta itemprop="dateModified" content="2013-07-25T08:00:00+09:00" />
-<meta itemprop="wordCount" content="1132">
+<meta itemprop="wordCount" content="1189">
 <meta itemprop="keywords" content="bootstrap,git,linux,perl," />
 
 <meta name="twitter:card" content="summary"/>
@@ -247,48 +247,127 @@ fi</p>
 少なくとも「Vagrant version 1.2.2」では、rootとして実行されています。
 
 で、これら2つのファイルを同じディレクトリに置いて、そのディレクトリで以下のようにコマンドを入力します。
-```default
+```text
 vagrant up
 </code></pre><p>上手く行けばPerlのビルドまで実行されるので、結構時間がかかります。</p>
 <p>構築が終わったら、仮想マシンにログインします。</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">vagrant ssh
-</code></pre><p>これで、先ほど作成したマシンにログインできます。</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">vagrant ssh
+</code></pre></td></tr></table>
+</div>
+</div><p>これで、先ほど作成したマシンにログインできます。</p>
 <p>初期ユーザーはvagrantです。</p>
 <p>で、先ほどのスクリプトはroot権限なので、rootに変わってからPerlがインストール出来ているか確認してみます。</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">sudo su -
-</code></pre><p>これでrootになれましたので、続けてPerlのバージョンを見てみます。</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">perl -V
-</code></pre><p>結果は以下のとおり、上手くいっています。</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">Summary of my perl5 (revision 5 version 16 subversion 3) configuration:
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">sudo su -
+</code></pre></td></tr></table>
+</div>
+</div><p>これでrootになれましたので、続けてPerlのバージョンを見てみます。</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">perl -V
+</code></pre></td></tr></table>
+</div>
+</div><p>結果は以下のとおり、上手くいっています。</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Summary of my perl5 (revision 5 version 16 subversion 3) configuration:
 
   Platform:
     osname=linux, osvers=2.6.32-358.el6.x86_64, archname=x86_64-linux
-    uname='linux vm-perlbrew 2.6.32-358.el6.x86_64 #1 smp fri feb 22 00:31:26 utc 2013 x86_64 x86_64 x86_64 gnulinux '
-    config_args='-de -Dprefix=/root/perl5/perlbrew/perls/perl-5.16.3 -Aeval:scriptdir=/root/perl5/perlbrew/perls/perl-5.16.3/bin'
+    uname=&#39;linux vm-perlbrew 2.6.32-358.el6.x86_64 #1 smp fri feb 22 00:31:26 utc 2013 x86_64 x86_64 x86_64 gnulinux &#39;
+    config_args=&#39;-de -Dprefix=/root/perl5/perlbrew/perls/perl-5.16.3 -Aeval:scriptdir=/root/perl5/perlbrew/perls/perl-5.16.3/bin&#39;
     hint=recommended, useposix=true, d_sigaction=define
     useithreads=undef, usemultiplicity=undef
     useperlio=define, d_sfio=undef, uselargefiles=define, usesocks=undef
     use64bitint=define, use64bitall=define, uselongdouble=undef
     usemymalloc=n, bincompat5005=undef
   Compiler:
-    cc='cc', ccflags ='-fno-strict-aliasing -pipe -fstack-protector -I/usr/local/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64',
-    optimize='-O2',
-    cppflags='-fno-strict-aliasing -pipe -fstack-protector -I/usr/local/include'
-    ccversion='', gccversion='4.4.7 20120313 (Red Hat 4.4.7-3)', gccosandvers=''
+    cc=&#39;cc&#39;, ccflags =&#39;-fno-strict-aliasing -pipe -fstack-protector -I/usr/local/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64&#39;,
+    optimize=&#39;-O2&#39;,
+    cppflags=&#39;-fno-strict-aliasing -pipe -fstack-protector -I/usr/local/include&#39;
+    ccversion=&#39;&#39;, gccversion=&#39;4.4.7 20120313 (Red Hat 4.4.7-3)&#39;, gccosandvers=&#39;&#39;
     intsize=4, longsize=8, ptrsize=8, doublesize=8, byteorder=12345678
     d_longlong=define, longlongsize=8, d_longdbl=define, longdblsize=16
-    ivtype='long', ivsize=8, nvtype='double', nvsize=8, Off_t='off_t', lseeksize=8
+    ivtype=&#39;long&#39;, ivsize=8, nvtype=&#39;double&#39;, nvsize=8, Off_t=&#39;off_t&#39;, lseeksize=8
     alignbytes=8, prototype=define
   Linker and Libraries:
-    ld='cc', ldflags =' -fstack-protector -L/usr/local/lib'
+    ld=&#39;cc&#39;, ldflags =&#39; -fstack-protector -L/usr/local/lib&#39;
     libpth=/usr/local/lib /lib/../lib64 /usr/lib/../lib64 /lib /usr/lib /lib64 /usr/lib64 /usr/local/lib64
     libs=-lnsl -ldl -lm -lcrypt -lutil -lc
     perllibs=-lnsl -ldl -lm -lcrypt -lutil -lc
     libc=, so=so, useshrplib=false, libperl=libperl.a
-    gnulibc_version='2.12'
+    gnulibc_version=&#39;2.12&#39;
   Dynamic Linking:
-    dlsrc=dl_dlopen.xs, dlext=so, d_dlsymun=undef, ccdlflags='-Wl,-E'
-    cccdlflags='-fPIC', lddlflags='-shared -O2 -L/usr/local/lib -fstack-protector'
+    dlsrc=dl_dlopen.xs, dlext=so, d_dlsymun=undef, ccdlflags=&#39;-Wl,-E&#39;
+    cccdlflags=&#39;-fPIC&#39;, lddlflags=&#39;-shared -O2 -L/usr/local/lib -fstack-protector&#39;
 
 
 Characteristics of this binary (from libperl): 
@@ -300,20 +379,22 @@ Characteristics of this binary (from libperl):
   Built under linux
   Compiled at Jul 24 2013 17:17:04
   %ENV:
-    PERLBREW_BASHRC_VERSION=&quot;0.64&quot;
-    PERLBREW_HOME=&quot;/root/.perlbrew&quot;
-    PERLBREW_MANPATH=&quot;/root/perl5/perlbrew/perls/perl-5.16.3/man&quot;
-    PERLBREW_PATH=&quot;/root/perl5/perlbrew/bin:/root/perl5/perlbrew/perls/perl-5.16.3/bin&quot;
-    PERLBREW_PERL=&quot;perl-5.16.3&quot;
-    PERLBREW_ROOT=&quot;/root/perl5/perlbrew&quot;
-    PERLBREW_VERSION=&quot;0.64&quot;
+    PERLBREW_BASHRC_VERSION=&#34;0.64&#34;
+    PERLBREW_HOME=&#34;/root/.perlbrew&#34;
+    PERLBREW_MANPATH=&#34;/root/perl5/perlbrew/perls/perl-5.16.3/man&#34;
+    PERLBREW_PATH=&#34;/root/perl5/perlbrew/bin:/root/perl5/perlbrew/perls/perl-5.16.3/bin&#34;
+    PERLBREW_PERL=&#34;perl-5.16.3&#34;
+    PERLBREW_ROOT=&#34;/root/perl5/perlbrew&#34;
+    PERLBREW_VERSION=&#34;0.64&#34;
   @INC:
     /root/perl5/perlbrew/perls/perl-5.16.3/lib/site_perl/5.16.3/x86_64-linux
     /root/perl5/perlbrew/perls/perl-5.16.3/lib/site_perl/5.16.3
     /root/perl5/perlbrew/perls/perl-5.16.3/lib/5.16.3/x86_64-linux
     /root/perl5/perlbrew/perls/perl-5.16.3/lib/5.16.3
     .
-</code></pre><!-- raw HTML omitted -->
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
 <p>ちなみに、DBD::mysqlを指定しているのは、MAMPが稼働中のOSXにこれがインストールできなくて泣いたからです。</p>
 <p>とりあえず、DBD::mysqlがインストールできるかどうかを一つの指標にしていましたので、この結果は満足の行くものでした。</p>
 <p>この調子で、今度はchef-soloで色々とやってみたいですね。</p>

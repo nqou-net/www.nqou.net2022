@@ -12,18 +12,18 @@
   
 
 <meta itemprop="name" content="サブディレクトリ内も一覧（その３）">
-<meta itemprop="description" content="&lt;p&gt;ソースコード&lt;/p&gt; #!/usr/bin/perl #BEGIN{ # print &quot;Content-type:"><meta itemprop="datePublished" content="2000-10-07T13:43:40+09:00" />
+<meta itemprop="description" content="&lt;p&gt;ソースコード&lt;/p&gt; 1 2 3 4 5"><meta itemprop="datePublished" content="2000-10-07T13:43:40+09:00" />
 <meta itemprop="dateModified" content="2000-10-07T13:43:40+09:00" />
-<meta itemprop="wordCount" content="759">
+<meta itemprop="wordCount" content="972">
 <meta itemprop="keywords" content="perl," />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="サブディレクトリ内も一覧（その３）"/>
-<meta name="twitter:description" content="&lt;p&gt;ソースコード&lt;/p&gt; #!/usr/bin/perl #BEGIN{ # print &quot;Content-type:"/>
+<meta name="twitter:description" content="&lt;p&gt;ソースコード&lt;/p&gt; 1 2 3 4 5"/>
 
 
 <meta property="og:title" content="サブディレクトリ内も一覧（その３）" />
-<meta property="og:description" content="&lt;p&gt;ソースコード&lt;/p&gt; #!/usr/bin/perl #BEGIN{ # print &quot;Content-type:" />
+<meta property="og:description" content="&lt;p&gt;ソースコード&lt;/p&gt; 1 2 3 4 5" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.nqou.net/2000/10/07/134340/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2000-10-07T13:43:40+09:00" />
@@ -70,7 +70,7 @@
       },
       "datePublished": "2000-10-07T13:43:40+09:00",
       "dateModified": "2000-10-07T13:43:40+09:00",
-      "description": "\u0026lt;p\u0026gt;ソースコード\u0026lt;/p\u0026gt; #!/usr/bin/perl #BEGIN{ # print \u0026quot;Content-type:",
+      "description": "\u0026lt;p\u0026gt;ソースコード\u0026lt;/p\u0026gt; 1 2 3 4 5",
       "inLanguage": "ja",
       "potentialAction": [
         {
@@ -234,48 +234,225 @@
 <!-- raw HTML omitted -->
 <pre><code>                             &lt;p&gt;ソースコード&lt;/p&gt;
 </code></pre>
-<pre tabindex="0"><code class="language-default" data-lang="default">#!/usr/bin/perl
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 62
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 63
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 64
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 65
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 66
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 67
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 68
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 69
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 70
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 71
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 72
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 73
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 74
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 75
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 76
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 77
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 78
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 79
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 80
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 81
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 82
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 83
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 84
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 85
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 86
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 87
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 88
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 89
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 90
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 91
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 92
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 93
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 94
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 95
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 96
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 97
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 98
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 99
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">100
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">101
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">102
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">103
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">104
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">105
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">106
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">107
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">108
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">109
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">110
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">111
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">112
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">113
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">114
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">115
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">116
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">117
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">118
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">119
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">120
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">121
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">122
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">123
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">124
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">125
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">126
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">127
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">128
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">129
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">130
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">131
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">132
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">133
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">134
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">135
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">136
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">137
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">138
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">139
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">140
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">141
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">142
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">143
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">144
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">145
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">146
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">147
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">148
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">149
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">150
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">151
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">152
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">153
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">154
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">155
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">156
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">157
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">158
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">159
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">160
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">161
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">162
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">163
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">164
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">165
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">166
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">167
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">168
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">169
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">170
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">171
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">172
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">173
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">#!/usr/bin/perl
 
 #BEGIN{
-#   print &quot;Content-type: text/plainnn&quot;;
-#   open(STDERR, &quot;&gt;&amp;amp;STDOUT&quot;);
+#   print &#34;Content-type: text/plainnn&#34;;
+#   open(STDERR, &#34;&gt;&amp;amp;STDOUT&#34;);
 #   $|=1;
 #}
 
 $timeBegin = times;
 
 # use Jcode;
-require '../../../cgi-bin/jcode.pl';
+require &#39;../../../cgi-bin/jcode.pl&#39;;
 
-$info_mailName = 'Nobu3';
-$info_mailAddr = 'nobu3@x.age.ne.jp';
-$info_uriName = 'Incomprehensible Perl Project';
-$info_uriAddr = 'http://www.age.ne.jp/x/nobu3/perl/';
+$info_mailName = &#39;Nobu3&#39;;
+$info_mailAddr = &#39;nobu3@x.age.ne.jp&#39;;
+$info_uriName = &#39;Incomprehensible Perl Project&#39;;
+$info_uriAddr = &#39;http://www.age.ne.jp/x/nobu3/perl/&#39;;
 
-$info_uri = qq(&lt;a href=&quot;$info_uriAddr&quot;&gt;$info_uriName&lt;/a&gt;.);
-$info_mail = qq((C)1999 &lt;a href=&quot;mailto:$info_mailAddr&quot;&gt;$info_mailName&lt;/a&gt;. All rights reserved.);
+$info_uri = qq(&lt;a href=&#34;$info_uriAddr&#34;&gt;$info_uriName&lt;/a&gt;.);
+$info_mail = qq((C)1999 &lt;a href=&#34;mailto:$info_mailAddr&#34;&gt;$info_mailName&lt;/a&gt;. All rights reserved.);
 
-$info_copyright = &quot;&lt;address&gt;n&lt;font face=times&gt;$info_uri&lt;br&gt;n$info_mail&lt;/font&gt;&lt;br&gt;n&lt;/address&gt;n&quot;;
+$info_copyright = &#34;&lt;address&gt;n&lt;font face=times&gt;$info_uri&lt;br&gt;n$info_mail&lt;/font&gt;&lt;br&gt;n&lt;/address&gt;n&#34;;
 
-# @usr_stylesheet = ('/Nobu3/ipp.css','../test.css');# できあがりからのURIパス
-@usr_stylesheet = ('../../ipp.css', '../test.css');
-$usr_outcode = 'jis';
-$usr_outCharset = 'iso-2022-jp';
-$usr_title = 'テスト２５';
+# @usr_stylesheet = (&#39;/Nobu3/ipp.css&#39;,&#39;../test.css&#39;);# できあがりからのURIパス
+@usr_stylesheet = (&#39;../../ipp.css&#39;, &#39;../test.css&#39;);
+$usr_outcode = &#39;jis&#39;;
+$usr_outCharset = &#39;iso-2022-jp&#39;;
+$usr_title = &#39;テスト２５&#39;;
 
 $explain = $ENV{SCRIPT_NAME};
 $explain =~ s|cgi/(ts[0-9]{4})(_[12u])?.cgi$|$1.htm|;
-$explain_title = $usr_title . 'の解説';
+$explain_title = $usr_title . &#39;の解説&#39;;
 
-%usr_links =    (   'Home'            =&gt;   '../../../index.htm'
-                ,   'Perl'            =&gt;   '../../'
-                ,   'TestCGI Index'   =&gt;   '../'
+%usr_links =    (   &#39;Home&#39;            =&gt;   &#39;../../../index.htm&#39;
+                ,   &#39;Perl&#39;            =&gt;   &#39;../../&#39;
+                ,   &#39;TestCGI Index&#39;   =&gt;   &#39;../&#39;
                 ,   $explain_title  =&gt;   $explain
                 );
 
-$searchDir = '..';
-$searchReg = '.(html?|[sp]ht(ml)?)$';
-$indexReg = &quot;index$searchReg&quot;;
+$searchDir = &#39;..&#39;;
+$searchReg = &#39;.(html?|[sp]ht(ml)?)$&#39;;
+$indexReg = &#34;index$searchReg&#34;;
 
 {
     $ra_dir = dirSearch($searchDir);
@@ -283,14 +460,14 @@ $indexReg = &quot;index$searchReg&quot;;
     printHeader($usr_title);
     printBodyHeader($usr_title);
 
-    print &quot;&lt;div class=test&gt;n&quot;;
-    Jprint('&lt;p&gt;親ディレクトリ以下にあるファイルの一覧（HTMLファイルのみ）&lt;/p&gt;'.&quot;n&quot;);
-    print &quot;&lt;ul&gt;n&quot;;
+    print &#34;&lt;div class=test&gt;n&#34;;
+    Jprint(&#39;&lt;p&gt;親ディレクトリ以下にあるファイルの一覧（HTMLファイルのみ）&lt;/p&gt;&#39;.&#34;n&#34;);
+    print &#34;&lt;ul&gt;n&#34;;
 
-#   require &quot;dumpvar.pl&quot;;   dumpValue($ra_dir);
+#   require &#34;dumpvar.pl&#34;;   dumpValue($ra_dir);
     printRefArray($ra_dir);
 
-    print &quot;&lt;/ul&gt;n&lt;/div&gt;n&quot;;
+    print &#34;&lt;/ul&gt;n&lt;/div&gt;n&#34;;
 
     printFooter();
 
@@ -299,11 +476,11 @@ $indexReg = &quot;index$searchReg&quot;;
 
 sub searchTitle{
     my($file)= @_;
-    my $title = 'タイトル無し';
+    my $title = &#39;タイトル無し&#39;;
     open(IN, $file);
     while(&lt;IN&gt;){
         if(m|&lt;title&gt;(.*?)&lt;/title&gt;|i){
-            $title = ($1 !~ /^s*$/) ? $1:'不正なタイトル';
+            $title = ($1 !~ /^s*$/) ? $1:&#39;不正なタイトル&#39;;
             last;
         }
         last if m|&lt;/head&gt;|i;
@@ -314,14 +491,14 @@ sub searchTitle{
 
 sub printRefArray{
     my($ra_dir) = @_;
-    my $indexfile = (grep(/$indexReg/, @$ra_dir))[0] || '';
+    my $indexfile = (grep(/$indexReg/, @$ra_dir))[0] || &#39;&#39;;
     my $dir = shift(@$ra_dir);
     my($dirname) = $dir =~ m|([^/]+)/$|;
-    my $title = 'ＨＴＭＬインデックス無し';
+    my $title = &#39;ＨＴＭＬインデックス無し&#39;;
     $title = searchTitle($indexfile) if($indexfile);
-    Jprint(qq(&lt;li&gt;&lt;strong&gt;&lt;a href=&quot;$dir&quot;&gt;$dirname（$title）&lt;/a&gt;&lt;/strong&gt;n));
+    Jprint(qq(&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;$dir&#34;&gt;$dirname（$title）&lt;/a&gt;&lt;/strong&gt;n));
     return if($#$ra_dir &lt; 0);
-    print &quot;&lt;ul&gt;n&quot;;
+    print &#34;&lt;ul&gt;n&#34;;
     foreach $file(@$ra_dir){
         next if($file eq $indexfile);
         if(ref($file)){
@@ -330,21 +507,21 @@ sub printRefArray{
         }elsif(-r $file){
             my $title = searchTitle($file);
             my($filename) = $file =~ m|([^/]+)$|;
-            Jprint(qq(&lt;li&gt;&lt;a href=&quot;$file&quot;&gt;$filename（$title）&lt;/a&gt;n));
+            Jprint(qq(&lt;li&gt;&lt;a href=&#34;$file&#34;&gt;$filename（$title）&lt;/a&gt;n));
         }
     }
-    print &quot;&lt;/ul&gt;n&quot;;
+    print &#34;&lt;/ul&gt;n&#34;;
 }
 
 sub dirSearch{
     my($dir) = @_;
     my @dirs = ();
-    my @filenames = (&quot;$dir/&quot;);
+    my @filenames = (&#34;$dir/&#34;);
     opendir(DIR, $dir);
     my @files = sort grep(/^[^.]/, readdir(DIR));
     closedir(DIR);
     foreach(@files){
-        $_ = &quot;$dir/$_&quot;;
+        $_ = &#34;$dir/$_&#34;;
         if(-d $_){
             push(@dirs, dirSearch($_));
         }elsif(/$searchReg/){
@@ -358,47 +535,47 @@ sub dirSearch{
 sub printHeader{
 # 「&lt;title&gt;タグ」の文字列
     my($title) = @_;
-    print &quot;Content-type: text/html; charset=$usr_outCharsetnn&quot;;
-    print qq(&lt;!doctype html public &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot;&gt;n);
-    print &quot;&lt;html lang=ja&gt;n&lt;head&gt;n&quot;;
-    print qq(&lt;meta http-equiv=&quot;Content-type&quot; content=&quot;text/html; charset=$usr_outCharset&quot;&gt;n);
-    print qq(&lt;meta http-equiv=&quot;Content-style-type&quot; content=&quot;text/css&quot;&gt;n);
-    Jprint(&quot;&lt;title&gt;$title&lt;/title&gt;n&quot;);
-    print qq(&lt;link rev=&quot;made&quot; href=&quot;$info_mailAddr&quot;&gt;n);
-    foreach(@usr_stylesheet){ print qq(&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;$_&quot;&gt;n); }
-    print qq(&lt;meta name=&quot;ROBOTS&quot; content=&quot;NOINDEX&quot;&gt;n);
-    print &quot;&lt;/head&gt;nn&quot;;
-    print &quot;&lt;body&gt;nn&quot;;
+    print &#34;Content-type: text/html; charset=$usr_outCharsetnn&#34;;
+    print qq(&lt;!doctype html public &#34;-//W3C//DTD HTML 4.01 Transitional//EN&#34;&gt;n);
+    print &#34;&lt;html lang=ja&gt;n&lt;head&gt;n&#34;;
+    print qq(&lt;meta http-equiv=&#34;Content-type&#34; content=&#34;text/html; charset=$usr_outCharset&#34;&gt;n);
+    print qq(&lt;meta http-equiv=&#34;Content-style-type&#34; content=&#34;text/css&#34;&gt;n);
+    Jprint(&#34;&lt;title&gt;$title&lt;/title&gt;n&#34;);
+    print qq(&lt;link rev=&#34;made&#34; href=&#34;$info_mailAddr&#34;&gt;n);
+    foreach(@usr_stylesheet){ print qq(&lt;link rel=&#34;stylesheet&#34; type=&#34;text/css&#34; href=&#34;$_&#34;&gt;n); }
+    print qq(&lt;meta name=&#34;ROBOTS&#34; content=&#34;NOINDEX&#34;&gt;n);
+    print &#34;&lt;/head&gt;nn&#34;;
+    print &#34;&lt;body&gt;nn&#34;;
 }
 
 sub printBodyHeader{
-# 英字なら「printBodyHeader(&quot;&lt;font face=times&gt;Title String&lt;/font&gt;&quot;);」がいい
+# 英字なら「printBodyHeader(&#34;&lt;font face=times&gt;Title String&lt;/font&gt;&#34;);」がいい
     my($title) = @_;
-    print &quot;&lt;div align=center&gt;n&quot;;
-    Jprint(qq(&lt;h1&gt;&lt;a name=&quot;top&quot;&gt;$title&lt;/a&gt;&lt;/h1&gt;n&lt;hr&gt;n));
+    print &#34;&lt;div align=center&gt;n&#34;;
+    Jprint(qq(&lt;h1&gt;&lt;a name=&#34;top&#34;&gt;$title&lt;/a&gt;&lt;/h1&gt;n&lt;hr&gt;n));
     printLinks();
-    print &quot;&lt;/div&gt;n&quot;;
+    print &#34;&lt;/div&gt;n&#34;;
 }
 
 sub printFooter{
-    print &quot;&lt;div align=center&gt;n&quot;;
-    print qq(&lt;a href=&quot;#top&quot;&gt;Top&lt;/a&gt;n&lt;hr&gt;n);
+    print &#34;&lt;div align=center&gt;n&#34;;
+    print qq(&lt;a href=&#34;#top&#34;&gt;Top&lt;/a&gt;n&lt;hr&gt;n);
     printLinks();
-    print &quot;&lt;/div&gt;n&quot;;
-    print &quot;n&lt;div align=right&gt;n&quot;;
-    $timeEnd = sprintf(&quot;%.3f&quot;, times - $timeBegin);
-    print &quot;Cost : $timeEnd&lt;br&gt;n&quot;;
+    print &#34;&lt;/div&gt;n&#34;;
+    print &#34;n&lt;div align=right&gt;n&#34;;
+    $timeEnd = sprintf(&#34;%.3f&#34;, times - $timeBegin);
+    print &#34;Cost : $timeEnd&lt;br&gt;n&#34;;
     print $info_copyright;
-    print &quot;n&lt;/body&gt;n&lt;/html&gt;nn&quot;;
+    print &#34;n&lt;/body&gt;n&lt;/html&gt;nn&#34;;
 }
 
 sub printLinks{
     my $cnt = 0;
     foreach(keys %usr_links){
-        print &quot;/ &quot; if($cnt++);
-        Jprint(qq(&lt;a href=&quot;$usr_links{$_}&quot;&gt;$_&lt;/a&gt;n));
+        print &#34;/ &#34; if($cnt++);
+        Jprint(qq(&lt;a href=&#34;$usr_links{$_}&#34;&gt;$_&lt;/a&gt;n));
     }
-    print &quot;&lt;hr&gt;n&quot;;
+    print &#34;&lt;hr&gt;n&#34;;
 }
 
 sub Jprint{
@@ -407,7 +584,9 @@ sub Jprint{
         print jcode::to($usr_outcode, $_);
     }
 }
-</code></pre><pre><code>                          &lt;/div&gt;
+</code></pre></td></tr></table>
+</div>
+</div><pre><code>                          &lt;/div&gt;
 </code></pre>
 
   </div>

@@ -12,18 +12,18 @@
   
 
 <meta itemprop="name" content="厳密なCGIは難しいのでフレームワークを覚えましょう">
-<meta itemprop="description" content="use Mojolicious::Lite; get &#39;/&#39; =&gt; {text =&gt; &#39;Hello World!&#39;}; app-&gt;start; #!/usr/bin/env perl use strict; use warnings; if ($ENV{&#39;REQUEST_METHOD&#39;} eq &#39;GET&#39; and $ENV{&#39;PATH_INFO&#39;} eq &#39;/&#39; or $ENV{&#39;PATH_INFO&#39;} eq &#39;&#39;) { print"><meta itemprop="datePublished" content="2014-09-11T08:20:56+09:00" />
+<meta itemprop="description" content="1 2 3 use Mojolicious::Lite; get &#39;/&#39; =&gt; {text =&gt; &#39;Hello World!&#39;}; app-&gt;start; 1 2 3 4 5 6 7 #!/usr/bin/env perl use strict; use warnings; if ($ENV{&#39;REQUEST_METHOD&#39;} eq &#39;GET&#39;"><meta itemprop="datePublished" content="2014-09-11T08:20:56+09:00" />
 <meta itemprop="dateModified" content="2014-09-11T08:20:56+09:00" />
-<meta itemprop="wordCount" content="73">
+<meta itemprop="wordCount" content="94">
 <meta itemprop="keywords" content="mojolicious,perl," />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="厳密なCGIは難しいのでフレームワークを覚えましょう"/>
-<meta name="twitter:description" content="use Mojolicious::Lite; get &#39;/&#39; =&gt; {text =&gt; &#39;Hello World!&#39;}; app-&gt;start; #!/usr/bin/env perl use strict; use warnings; if ($ENV{&#39;REQUEST_METHOD&#39;} eq &#39;GET&#39; and $ENV{&#39;PATH_INFO&#39;} eq &#39;/&#39; or $ENV{&#39;PATH_INFO&#39;} eq &#39;&#39;) { print"/>
+<meta name="twitter:description" content="1 2 3 use Mojolicious::Lite; get &#39;/&#39; =&gt; {text =&gt; &#39;Hello World!&#39;}; app-&gt;start; 1 2 3 4 5 6 7 #!/usr/bin/env perl use strict; use warnings; if ($ENV{&#39;REQUEST_METHOD&#39;} eq &#39;GET&#39;"/>
 
 
 <meta property="og:title" content="厳密なCGIは難しいのでフレームワークを覚えましょう" />
-<meta property="og:description" content="use Mojolicious::Lite; get &#39;/&#39; =&gt; {text =&gt; &#39;Hello World!&#39;}; app-&gt;start; #!/usr/bin/env perl use strict; use warnings; if ($ENV{&#39;REQUEST_METHOD&#39;} eq &#39;GET&#39; and $ENV{&#39;PATH_INFO&#39;} eq &#39;/&#39; or $ENV{&#39;PATH_INFO&#39;} eq &#39;&#39;) { print" />
+<meta property="og:description" content="1 2 3 use Mojolicious::Lite; get &#39;/&#39; =&gt; {text =&gt; &#39;Hello World!&#39;}; app-&gt;start; 1 2 3 4 5 6 7 #!/usr/bin/env perl use strict; use warnings; if ($ENV{&#39;REQUEST_METHOD&#39;} eq &#39;GET&#39;" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.nqou.net/2014/09/11/082056/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2014-09-11T08:20:56+09:00" />
@@ -70,7 +70,7 @@
       },
       "datePublished": "2014-09-11T08:20:56+09:00",
       "dateModified": "2014-09-11T08:20:56+09:00",
-      "description": "use Mojolicious::Lite; get \u0026#39;/\u0026#39; =\u0026gt; {text =\u0026gt; \u0026#39;Hello World!\u0026#39;}; app-\u0026gt;start; #!/usr/bin/env perl use strict; use warnings; if ($ENV{\u0026#39;REQUEST_METHOD\u0026#39;} eq \u0026#39;GET\u0026#39; and $ENV{\u0026#39;PATH_INFO\u0026#39;} eq \u0026#39;/\u0026#39; or $ENV{\u0026#39;PATH_INFO\u0026#39;} eq \u0026#39;\u0026#39;) { print",
+      "description": "1 2 3 use Mojolicious::Lite; get \u0026#39;/\u0026#39; =\u0026gt; {text =\u0026gt; \u0026#39;Hello World!\u0026#39;}; app-\u0026gt;start; 1 2 3 4 5 6 7 #!/usr/bin/env perl use strict; use warnings; if ($ENV{\u0026#39;REQUEST_METHOD\u0026#39;} eq \u0026#39;GET\u0026#39;",
       "inLanguage": "ja",
       "potentialAction": [
         {
@@ -221,30 +221,65 @@
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#66d9ef">use</span> Mojolicious::Lite;
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#66d9ef">use</span> Mojolicious::Lite;
 get <span style="color:#e6db74">&#39;/&#39;</span> <span style="color:#f92672">=&gt;</span> {text <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;Hello World!&#39;</span>};
 app<span style="color:#f92672">-&gt;</span>start;
-</code></pre></div><!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#75715e">#!/usr/bin/env perl</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#75715e">#!/usr/bin/env perl</span>
 <span style="color:#66d9ef">use</span> strict;
 <span style="color:#66d9ef">use</span> warnings;
 <span style="color:#66d9ef">if</span> ($ENV{<span style="color:#e6db74">&#39;REQUEST_METHOD&#39;</span>} <span style="color:#f92672">eq</span> <span style="color:#e6db74">&#39;GET&#39;</span> <span style="color:#f92672">and</span> $ENV{<span style="color:#e6db74">&#39;PATH_INFO&#39;</span>} <span style="color:#f92672">eq</span> <span style="color:#e6db74">&#39;/&#39;</span> <span style="color:#f92672">or</span> $ENV{<span style="color:#e6db74">&#39;PATH_INFO&#39;</span>} <span style="color:#f92672">eq</span> <span style="color:#e6db74">&#39;&#39;</span>) {
     <span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#34;Content-Type: text/plain\n\n&#34;</span>;
     <span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#39;Hello World!&#39;</span>;
 }
-</code></pre></div><!-- raw HTML omitted -->
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#66d9ef">for</span> <span style="color:#66d9ef">my</span> $key (keys %ENV) {
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#66d9ef">for</span> <span style="color:#66d9ef">my</span> $key (keys %ENV) {
     <span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#34;$key = $ENV{$key}\n&#34;</span>;
 }
 <span style="color:#75715e"># または</span>
 <span style="color:#66d9ef">while</span> (<span style="color:#66d9ef">my</span> ($key, $value) <span style="color:#f92672">=</span> each %ENV) {
     <span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#34;$key = $value\n&#34;</span>;
 }
-</code></pre></div><!-- raw HTML omitted -->
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
@@ -257,11 +292,21 @@ app<span style="color:#f92672">-&gt;</span>start;
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#75715e">#!/usr/bin/env perl</span>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#75715e">#!/usr/bin/env perl</span>
 <span style="color:#66d9ef">use</span> utf8;
 <span style="color:#66d9ef">use</span> <span style="color:#ae81ff">5.012</span>;
 say <span style="color:#e6db74">&#39;Hello, world!&#39;</span>;
-</code></pre></div><!-- raw HTML omitted -->
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->

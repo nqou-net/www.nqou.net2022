@@ -12,18 +12,18 @@
   
 
 <meta itemprop="name" content="MacOSXにZMQをインストールしてpub/subを試してみました">
-<meta itemprop="description" content="$ cpanm Alien::ZMQ $ cpanm ZMQ::LibZMQ3 $ PERL_ZMQ_BACKEND=ZMQ::LibZMQ3 cpanm ZMQ $ PERL_ZMQ_BACKEND=ZMQ::LibZMQ3 cpanm Alien::ZMQ ZMQ::LibZMQ3 ZMQ # sub.pl 16行目付近 recv() -&gt; recvmsg() my $msg ="><meta itemprop="datePublished" content="2014-08-28T16:34:44+09:00" />
+<meta itemprop="description" content="1 $ cpanm Alien::ZMQ 1 $ cpanm ZMQ::LibZMQ3 1 $ PERL_ZMQ_BACKEND=ZMQ::LibZMQ3 cpanm ZMQ 1 $ PERL_ZMQ_BACKEND=ZMQ::LibZMQ3 cpanm Alien::ZMQ ZMQ::LibZMQ3 ZMQ 1 2 3 4 5 # sub.pl 16行"><meta itemprop="datePublished" content="2014-08-28T16:34:44+09:00" />
 <meta itemprop="dateModified" content="2014-08-28T16:34:44+09:00" />
-<meta itemprop="wordCount" content="43">
+<meta itemprop="wordCount" content="52">
 <meta itemprop="keywords" content="perl,yapc," />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="MacOSXにZMQをインストールしてpub/subを試してみました"/>
-<meta name="twitter:description" content="$ cpanm Alien::ZMQ $ cpanm ZMQ::LibZMQ3 $ PERL_ZMQ_BACKEND=ZMQ::LibZMQ3 cpanm ZMQ $ PERL_ZMQ_BACKEND=ZMQ::LibZMQ3 cpanm Alien::ZMQ ZMQ::LibZMQ3 ZMQ # sub.pl 16行目付近 recv() -&gt; recvmsg() my $msg ="/>
+<meta name="twitter:description" content="1 $ cpanm Alien::ZMQ 1 $ cpanm ZMQ::LibZMQ3 1 $ PERL_ZMQ_BACKEND=ZMQ::LibZMQ3 cpanm ZMQ 1 $ PERL_ZMQ_BACKEND=ZMQ::LibZMQ3 cpanm Alien::ZMQ ZMQ::LibZMQ3 ZMQ 1 2 3 4 5 # sub.pl 16行"/>
 
 
 <meta property="og:title" content="MacOSXにZMQをインストールしてpub/subを試してみました" />
-<meta property="og:description" content="$ cpanm Alien::ZMQ $ cpanm ZMQ::LibZMQ3 $ PERL_ZMQ_BACKEND=ZMQ::LibZMQ3 cpanm ZMQ $ PERL_ZMQ_BACKEND=ZMQ::LibZMQ3 cpanm Alien::ZMQ ZMQ::LibZMQ3 ZMQ # sub.pl 16行目付近 recv() -&gt; recvmsg() my $msg =" />
+<meta property="og:description" content="1 $ cpanm Alien::ZMQ 1 $ cpanm ZMQ::LibZMQ3 1 $ PERL_ZMQ_BACKEND=ZMQ::LibZMQ3 cpanm ZMQ 1 $ PERL_ZMQ_BACKEND=ZMQ::LibZMQ3 cpanm Alien::ZMQ ZMQ::LibZMQ3 ZMQ 1 2 3 4 5 # sub.pl 16行" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.nqou.net/2014/08/28/163444/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2014-08-28T16:34:44+09:00" />
@@ -70,7 +70,7 @@
       },
       "datePublished": "2014-08-28T16:34:44+09:00",
       "dateModified": "2014-08-28T16:34:44+09:00",
-      "description": "$ cpanm Alien::ZMQ $ cpanm ZMQ::LibZMQ3 $ PERL_ZMQ_BACKEND=ZMQ::LibZMQ3 cpanm ZMQ $ PERL_ZMQ_BACKEND=ZMQ::LibZMQ3 cpanm Alien::ZMQ ZMQ::LibZMQ3 ZMQ # sub.pl 16行目付近 recv() -\u0026gt; recvmsg() my $msg =",
+      "description": "1 $ cpanm Alien::ZMQ 1 $ cpanm ZMQ::LibZMQ3 1 $ PERL_ZMQ_BACKEND=ZMQ::LibZMQ3 cpanm ZMQ 1 $ PERL_ZMQ_BACKEND=ZMQ::LibZMQ3 cpanm Alien::ZMQ ZMQ::LibZMQ3 ZMQ 1 2 3 4 5 # sub.pl 16行",
       "inLanguage": "ja",
       "potentialAction": [
         {
@@ -229,14 +229,35 @@
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cpanm Alien::ZMQ
-</code></pre></div><!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cpanm ZMQ::LibZMQ3
-</code></pre></div><!-- raw HTML omitted -->
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ cpanm Alien::ZMQ
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ cpanm ZMQ::LibZMQ3
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ PERL_ZMQ_BACKEND<span style="color:#f92672">=</span>ZMQ::LibZMQ3 cpanm ZMQ
-</code></pre></div><!-- raw HTML omitted -->
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ PERL_ZMQ_BACKEND<span style="color:#f92672">=</span>ZMQ::LibZMQ3 cpanm ZMQ
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
@@ -248,14 +269,32 @@
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ PERL_ZMQ_BACKEND<span style="color:#f92672">=</span>ZMQ::LibZMQ3 cpanm Alien::ZMQ ZMQ::LibZMQ3 ZMQ
-</code></pre></div><!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#75715e"># sub.pl 16行目付近 recv() -&gt; recvmsg()</span>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ PERL_ZMQ_BACKEND<span style="color:#f92672">=</span>ZMQ::LibZMQ3 cpanm Alien::ZMQ ZMQ::LibZMQ3 ZMQ
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#75715e"># sub.pl 16行目付近 recv() -&gt; recvmsg()</span>
 <span style="color:#66d9ef">my</span> $msg <span style="color:#f92672">=</span> $sub<span style="color:#f92672">-&gt;</span>recvmsg();
 
 <span style="color:#75715e"># pub.pl 21行目付近 send() -&gt; sendmsg()</span>
 $pub<span style="color:#f92672">-&gt;</span>sendmsg($update);
-</code></pre></div><!-- raw HTML omitted -->
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
 
   </div>
 

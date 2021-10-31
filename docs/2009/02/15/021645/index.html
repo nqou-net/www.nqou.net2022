@@ -14,7 +14,7 @@
 <meta itemprop="name" content="「use MooseX::AttributeHelpers」が抜けているとわけがわからないエラーになる件">
 <meta itemprop="description" content="相変わらず「モダンPerl入門」を読み進めている。 「2.3 C"><meta itemprop="datePublished" content="2009-02-15T02:16:45+09:00" />
 <meta itemprop="dateModified" content="2009-02-15T02:16:45+09:00" />
-<meta itemprop="wordCount" content="590">
+<meta itemprop="wordCount" content="636">
 <meta itemprop="keywords" content="perl," />
 
 <meta name="twitter:card" content="summary"/>
@@ -220,37 +220,93 @@
 そのあたりは簡単に予想できたのだけど、大変だったのは「Shape::Composite」に
 「use MooseX::AttributeHelpers」がなかったために、わけのわからないエラーに悩まされたことだ。
 気づいてみれば、この章の始めのほうにもMooseX::AttributeHelpersを多用するとは書いてあるのだが、以下のようなエラーからはとても思いつかなかった。</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">Could not load class (Moose::Meta::Attribute::Custom::Collection::Array) because : Can't locate Moose/Meta/Attribute/Custom/Collection/Array.pm in @INC (@INC contains: lib C:/strawberry/perl/lib C:/strawberry/perl/site/lib .) at C:/strawberry/perl/site/lib/Class/MOP.pm line 153.
-Could not load class (Collection::Array) because : Can't locate Collection/Array.pm in @INC (@INC contains: lib C:/strawberry/perl/lib C:/strawberry/perl/site/lib .) at C:/strawberry/perl/site/lib/Class/MOP.pm line 153.
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Could not load class (Moose::Meta::Attribute::Custom::Collection::Array) because : Can&#39;t locate Moose/Meta/Attribute/Custom/Collection/Array.pm in @INC (@INC contains: lib C:/strawberry/perl/lib C:/strawberry/perl/site/lib .) at C:/strawberry/perl/site/lib/Class/MOP.pm line 153.
+Could not load class (Collection::Array) because : Can&#39;t locate Collection/Array.pm in @INC (@INC contains: lib C:/strawberry/perl/lib C:/strawberry/perl/site/lib .) at C:/strawberry/perl/site/lib/Class/MOP.pm line 153.
 at C:/strawberry/perl/site/lib/Class/MOP.pm line 135
-Class::MOP::load_first_existing_class('Moose::Meta::Attribute::Custom::Collection::Array', 'Collection::Array') called at C:/strawberry/perl/site/lib/Moose/Util.pm line 143
-Moose::Util::resolve_metaclass_alias('Attribute', 'Collection::Array') called at C:/strawberry/perl/site/lib/Moose/Meta/Attribute.pm line 97
-Moose::Meta::Attribute::interpolate_class('Moose::Meta::Attribute', 'provides', 'HASH(0x1160f6c)', 'metaclass', 'Collection::Array', 'isa', 'ArrayRef', 'default', 'CODE(0x1041e44)', ...) called at C:/strawberry/perl/site/lib/Moose/Meta/Attribute.pm line 86
-Moose::Meta::Attribute::interpolate_class_and_new('Moose::Meta::Attribute', 'shapes', 'provides', 'HASH(0x1160f6c)', 'metaclass', 'Collection::Array', 'isa', 'ArrayRef', 'default', ...) called at C:/strawberry/perl/site/lib/Moose/Meta/Class.pm line 510
-Moose::Meta::Class::_process_new_attribute('Moose::Meta::Class=HASH(0x104fb9c)', 'shapes', 'provides', 'HASH(0x1160f6c)', 'metaclass', 'Collection::Array', 'isa', 'ArrayRef', 'default', ...) called at C:/strawberry/perl/site/lib/Moose/Meta/Class.pm line 503
-Moose::Meta::Class::_process_attribute('Moose::Meta::Class=HASH(0x104fb9c)', 'shapes', 'provides', 'HASH(0x1160f6c)', 'metaclass', 'Collection::Array', 'isa', 'ArrayRef', 'default', ...) called at C:/strawberry/perl/site/lib/Moose/Meta/Class.pm line 202
-Moose::Meta::Class::add_attribute('Moose::Meta::Class=HASH(0x104fb9c)', 'shapes', 'provides', 'HASH(0x1160f6c)', 'metaclass', 'Collection::Array', 'isa', 'ArrayRef', 'default', ...) called at C:/strawberry/perl/site/lib/Moose.pm line 89
-Moose::has('Shape::Composite', 'shapes', 'metaclass', 'Collection::Array', 'is', 'rw', 'isa', 'ArrayRef', 'auto_deref', ...) called at C:/strawberry/perl/site/lib/Moose/Exporter.pm line 201
-Moose::Exporter::__ANON__('shapes', 'metaclass', 'Collection::Array', 'is', 'rw', 'isa', 'ArrayRef', 'auto_deref', 1, ...) called at lib/Shape/Composite.pm line 15
+Class::MOP::load_first_existing_class(&#39;Moose::Meta::Attribute::Custom::Collection::Array&#39;, &#39;Collection::Array&#39;) called at C:/strawberry/perl/site/lib/Moose/Util.pm line 143
+Moose::Util::resolve_metaclass_alias(&#39;Attribute&#39;, &#39;Collection::Array&#39;) called at C:/strawberry/perl/site/lib/Moose/Meta/Attribute.pm line 97
+Moose::Meta::Attribute::interpolate_class(&#39;Moose::Meta::Attribute&#39;, &#39;provides&#39;, &#39;HASH(0x1160f6c)&#39;, &#39;metaclass&#39;, &#39;Collection::Array&#39;, &#39;isa&#39;, &#39;ArrayRef&#39;, &#39;default&#39;, &#39;CODE(0x1041e44)&#39;, ...) called at C:/strawberry/perl/site/lib/Moose/Meta/Attribute.pm line 86
+Moose::Meta::Attribute::interpolate_class_and_new(&#39;Moose::Meta::Attribute&#39;, &#39;shapes&#39;, &#39;provides&#39;, &#39;HASH(0x1160f6c)&#39;, &#39;metaclass&#39;, &#39;Collection::Array&#39;, &#39;isa&#39;, &#39;ArrayRef&#39;, &#39;default&#39;, ...) called at C:/strawberry/perl/site/lib/Moose/Meta/Class.pm line 510
+Moose::Meta::Class::_process_new_attribute(&#39;Moose::Meta::Class=HASH(0x104fb9c)&#39;, &#39;shapes&#39;, &#39;provides&#39;, &#39;HASH(0x1160f6c)&#39;, &#39;metaclass&#39;, &#39;Collection::Array&#39;, &#39;isa&#39;, &#39;ArrayRef&#39;, &#39;default&#39;, ...) called at C:/strawberry/perl/site/lib/Moose/Meta/Class.pm line 503
+Moose::Meta::Class::_process_attribute(&#39;Moose::Meta::Class=HASH(0x104fb9c)&#39;, &#39;shapes&#39;, &#39;provides&#39;, &#39;HASH(0x1160f6c)&#39;, &#39;metaclass&#39;, &#39;Collection::Array&#39;, &#39;isa&#39;, &#39;ArrayRef&#39;, &#39;default&#39;, ...) called at C:/strawberry/perl/site/lib/Moose/Meta/Class.pm line 202
+Moose::Meta::Class::add_attribute(&#39;Moose::Meta::Class=HASH(0x104fb9c)&#39;, &#39;shapes&#39;, &#39;provides&#39;, &#39;HASH(0x1160f6c)&#39;, &#39;metaclass&#39;, &#39;Collection::Array&#39;, &#39;isa&#39;, &#39;ArrayRef&#39;, &#39;default&#39;, ...) called at C:/strawberry/perl/site/lib/Moose.pm line 89
+Moose::has(&#39;Shape::Composite&#39;, &#39;shapes&#39;, &#39;metaclass&#39;, &#39;Collection::Array&#39;, &#39;is&#39;, &#39;rw&#39;, &#39;isa&#39;, &#39;ArrayRef&#39;, &#39;auto_deref&#39;, ...) called at C:/strawberry/perl/site/lib/Moose/Exporter.pm line 201
+Moose::Exporter::__ANON__(&#39;shapes&#39;, &#39;metaclass&#39;, &#39;Collection::Array&#39;, &#39;is&#39;, &#39;rw&#39;, &#39;isa&#39;, &#39;ArrayRef&#39;, &#39;auto_deref&#39;, 1, ...) called at lib/Shape/Composite.pm line 15
 require Shape/Composite.pm called at p051.pl line 8
 main::BEGIN() called at lib/Shape/Composite.pm line 0
 eval {...} called at lib/Shape/Composite.pm line 0
 Compilation failed in require at p051.pl line 8.
 BEGIN failed--compilation aborted at p051.pl line 8.
-</code></pre><p>最終的なShape::Compositeのソースは以下のとおり。</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>最終的なShape::Compositeのソースは以下のとおり。</p>
 <p>lib/Shape/Composite.pm</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">package Shape::Composite;
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">package Shape::Composite;
 use Moose;
 use MooseX::AttributeHelpers;
-with 'Shape';
-has 'shapes' =&gt; (
-metaclass =&gt; 'Collection::Array',
-is  =&gt; 'rw',
-isa =&gt; 'ArrayRef',
+with &#39;Shape&#39;;
+has &#39;shapes&#39; =&gt; (
+metaclass =&gt; &#39;Collection::Array&#39;,
+is  =&gt; &#39;rw&#39;,
+isa =&gt; &#39;ArrayRef&#39;,
 auto_deref =&gt; 1,
 default =&gt; sub { [] },
 provides =&gt; {
-push =&gt; 'shape_add',
+push =&gt; &#39;shape_add&#39;,
 },
 );
 no Moose;
@@ -268,7 +324,9 @@ $shape-&gt;print;
 }
 }
 1;
-</code></pre>
+</code></pre></td></tr></table>
+</div>
+</div>
   </div>
 
   

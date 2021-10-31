@@ -58,7 +58,7 @@
       <pubDate>Tue, 24 Jun 2014 06:55:52 +0900</pubDate>
       
       <guid>https://www.nqou.net/2014/06/24/065552/</guid>
-      <description># ダウンロード curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar # 動作確認 php wp-cli.phar --info # 実行権限付与 chmod +x wp-cli.phar # P</description>
+      <description>1 2 3 4 5 6 7 8 # ダウンロード curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar # 動作確認 php wp-cli.phar --info # 実行権</description>
     </item>
     
     <item>
@@ -94,7 +94,7 @@
       <pubDate>Thu, 08 Nov 2012 13:50:00 +0900</pubDate>
       
       <guid>https://www.nqou.net/2012/11/08/135000/</guid>
-      <description>var $public_query_vars = array(&#39;m&#39;, &#39;p&#39;, &#39;posts&#39;, &#39;w&#39;, &#39;cat&#39;, &#39;withcomments&#39;, &#39;withoutcomments&#39;, &#39;s&#39;, &#39;search&#39;, &#39;exact&#39;, &#39;sentence&#39;, &#39;debug&#39;, &#39;calendar&#39;, &#39;page&#39;, &#39;paged&#39;, &#39;more&#39;, &#39;tb&#39;, &#39;pb&#39;, &#39;author&#39;, &#39;order&#39;, &#39;orderby&#39;, &#39;year&#39;, &#39;monthnum&#39;, &#39;day&#39;, &#39;hour&#39;, &#39;minute&#39;, &#39;second&#39;,</description>
+      <description>1 var $public_query_vars = array(&amp;#39;m&amp;#39;, &amp;#39;p&amp;#39;, &amp;#39;posts&amp;#39;, &amp;#39;w&amp;#39;, &amp;#39;cat&amp;#39;, &amp;#39;withcomments&amp;#39;, &amp;#39;withoutcomments&amp;#39;, &amp;#39;s&amp;#39;, &amp;#39;search&amp;#39;, &amp;#39;exact&amp;#39;, &amp;#39;sentence&amp;#39;, &amp;#39;debug&amp;#39;, &amp;#39;calendar&amp;#39;, &amp;#39;page&amp;#39;, &amp;#39;paged&amp;#39;, &amp;#39;more&amp;#39;, &amp;#39;tb&amp;#39;, &amp;#39;pb&amp;#39;, &amp;#39;author&amp;#39;, &amp;#39;order&amp;#39;, &amp;#39;orderby&amp;#39;, &amp;#39;year&amp;#39;, &amp;#39;monthnum&amp;#39;, &amp;#39;day&amp;#39;, &amp;#39;hour&amp;#39;, &amp;#39;minute&amp;#39;,</description>
     </item>
     
     <item>

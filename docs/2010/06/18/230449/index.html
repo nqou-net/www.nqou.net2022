@@ -14,7 +14,7 @@
 <meta itemprop="name" content="XML::Simpleで文字化けしない方法">
 <meta itemprop="description" content="普段、MovableTypeのプラグインでお世話になっている"><meta itemprop="datePublished" content="2010-06-18T23:04:49+09:00" />
 <meta itemprop="dateModified" content="2010-06-18T23:04:49+09:00" />
-<meta itemprop="wordCount" content="377">
+<meta itemprop="wordCount" content="393">
 <meta itemprop="keywords" content="perl," />
 
 <meta name="twitter:card" content="summary"/>
@@ -221,25 +221,49 @@
 そうすると、スクリプトに書かれている文字はPerlの内部空間と同じ状態（内部文字列）になります。
 で、このまま出力すると「Wide Character」の問題が出ますので、出力時にはutf8でエンコードしてやります。
 それを踏まえて書きなおすと以下のようになります。</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">#!/usr/bin/perl
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">#!/usr/bin/perl
 use strict;
 use utf8;
-binmode STDOUT =&gt; &quot;:utf8&quot;;
+binmode STDOUT =&gt; &#34;:utf8&#34;;
 use CGI;
 use XML::Simple;
 my $q = new CGI;
-print $q-&gt;header(-charset=&gt;'utf-8');
+print $q-&gt;header(-charset=&gt;&#39;utf-8&#39;);
 print $q-&gt;start_html;
-my $xml = XMLin('foo.xml');
+my $xml = XMLin(&#39;foo.xml&#39;);
 my $name = $xml-&gt;{name};
 print &lt;&lt;EOF;
-&lt;form method=&quot;post&quot; action=&quot;hoge.cgi&quot;&gt;
-名前:&lt;input type=&quot;text&quot; id=&quot;hoge&quot; name=&quot;hoge&quot; value=&quot;$name&quot; /&gt;
-&lt;input type=&quot;submit&quot; name=&quot;submit&quot; value=&quot;送信&quot; /&gt;
+&lt;form method=&#34;post&#34; action=&#34;hoge.cgi&#34;&gt;
+名前:&lt;input type=&#34;text&#34; id=&#34;hoge&#34; name=&#34;hoge&#34; value=&#34;$name&#34; /&gt;
+&lt;input type=&#34;submit&#34; name=&#34;submit&#34; value=&#34;送信&#34; /&gt;
 &lt;/form&gt;
 EOF
 print $q-&gt;end_html;
-</code></pre><p>これで文字化けはしません。</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>これで文字化けはしません。</p>
 
   </div>
 

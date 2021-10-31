@@ -58,7 +58,7 @@
       <pubDate>Wed, 08 Apr 2015 11:40:23 +0900</pubDate>
       
       <guid>https://www.nqou.net/2015/04/08/114023/</guid>
-      <description>mkdir myapp &amp;amp;&amp;amp; cd myapp git init mojo generate lite_app myapp.pl heroku create --buildpack https://github.com/pnu/heroku-buildpack-perl.git touch app.psgi echo &amp;#39;requires &amp;#34;Mojolicious&amp;#34;;&amp;#39; &amp;gt; cpanfile echo &amp;#39;web: starman --preload-app --port $PORT myapp.pl psgi&amp;#39;</description>
+      <description>@nqounetです。 Mojolicious::Liteに限</description>
     </item>
     
     <item>
@@ -85,7 +85,7 @@
       <pubDate>Wed, 25 Jun 2014 07:11:23 +0900</pubDate>
       
       <guid>https://www.nqou.net/2014/06/25/071123/</guid>
-      <description># phpenvのインストール git clone https://github.com/CHH/phpenv.git $HOME/src/phpenv PHPENV_ROOT=$HOME/.anyenv/envs/phpenv $HOME/src/phpenv/bin/phpenv-install.sh # php-build</description>
+      <description>1 2 3 4 5 6 7 # phpenvのインストール git clone https://github.com/CHH/phpenv.git $HOME/src/phpenv PHPENV_ROOT=$HOME/.anyenv/envs/phpenv $HOME/src/phpenv/bin/phpenv-install.sh # ph</description>
     </item>
     
     <item>
@@ -103,7 +103,7 @@
       <pubDate>Fri, 21 Mar 2014 17:19:31 +0900</pubDate>
       
       <guid>https://www.nqou.net/2014/03/21/171931/</guid>
-      <description># インストールできるバージョンを確認する ndenv install -l # 最新の安定版</description>
+      <description>1 2 3 4 # インストールできるバージョンを確認する ndenv install -l # 最新</description>
     </item>
     
     <item>
@@ -139,7 +139,7 @@
       <pubDate>Tue, 03 Sep 2013 19:42:00 +0900</pubDate>
       
       <guid>https://www.nqou.net/2013/09/03/194200/</guid>
-      <description>mkdir ~/src cd ~/src git clone git://github.com/joelthelion/autojump.git cd autojump sudo ./install.sh [[ -s /etc/profile.d/autojump.zsh ]] &amp;amp;amp;&amp;amp;amp; . /etc/profile.d/autojump.zsh autoload -U compinit &amp;amp;amp;&amp;amp;amp; compinit -u</description>
+      <description>1 2 3 4 5 mkdir ~/src cd ~/src git clone git://github.com/joelthelion/autojump.git cd autojump sudo ./install.sh 1 [[ -s /etc/profile.d/autojump.zsh ]] &amp;amp;amp;&amp;amp;amp; . /etc/profile.d/autojump.zsh 1 autoload -U compinit &amp;amp;amp;&amp;amp;amp; compinit</description>
     </item>
     
     <item>
@@ -166,7 +166,7 @@
       <pubDate>Sun, 23 Jun 2013 08:30:00 +0900</pubDate>
       
       <guid>https://www.nqou.net/2013/06/23/083000/</guid>
-      <description>git diff でとった差分はこちらです。 diff --git a/app/controllers/milestones_controller.rb b/app/controllers/milestones_controller.rb index 25647f9..1b3d11b 100644 --- a/app/controllers/milestones_controller.rb +++ b/app/controllers/milestones_controller.rb @@ -12,9 +12,9 @@</description>
+      <description>git diff でとった差分はこちらです。 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15</description>
     </item>
     
     <item>
@@ -202,7 +202,7 @@
       <pubDate>Sat, 09 Feb 2013 16:22:00 +0900</pubDate>
       
       <guid>https://www.nqou.net/2013/02/09/162200/</guid>
-      <description>curl -L http://cpanmin.us | perl - --self-upgrade cpanm Mojolicious Path::Class Text::Markdown git clone git://github.com/nqounet/p5-md2reveal.git cd p5-md2reveal mv md2reveal.conf.sample md2reveal.conf mv assets/example.md.sample assets/example.md mv assets/example.md.conf.sample assets/example.md.conf git submodule init git submodule</description>
+      <description>1 2 curl -L http://cpanmin.us | perl - --self-upgrade cpanm Mojolicious Path::Class Text::Markdown 1 2 3 4 5 6 7 8 git clone git://github.com/nqounet/p5-md2reveal.git cd p5-md2reveal mv md2reveal.conf.sample md2reveal.conf mv</description>
     </item>
     
     <item>
@@ -211,7 +211,7 @@
       <pubDate>Sat, 06 Feb 2010 00:06:12 +0900</pubDate>
       
       <guid>https://www.nqou.net/2010/02/06/000612/</guid>
-      <description>? use plugin::mobile;</description>
+      <description>1 ? use plugin::mobile;</description>
     </item>
     
     <item>
@@ -220,7 +220,7 @@
       <pubDate>Thu, 01 Jan 2009 22:12:52 +0900</pubDate>
       
       <guid>https://www.nqou.net/2009/01/01/221252/</guid>
-      <description>C:\&amp;gt; cpan -i Module::Setup C:\&amp;gt; cpan -f Module::Collect C:\&amp;gt; cpan -f Module::Setup C:\home\nqou&amp;gt; module-setup --init Creating *****\.module-setup\flavors\default\template\Makefile.PL Creating *****\.module-setup\flavors\default\template\t\00_compile.t Creating *****\.module-setup\flavors\default\template\xt\01_podspell.t Creating *****\.module-setup\flavors\default\template\xt\02_perlcritic.t Creating *****\.module-setup\flavors\default\template\xt\03_pod.t Creating *****\.module-setup\flavors\default\template\xt\perlcriticrc Creating *****\.module-setup\flavors\default\template\Changes Creating</description>
+      <description>1 C:\&amp;gt; cpan -i Module::Setup 1 C:\&amp;gt; cpan -f Module::Collect 1 C:\&amp;gt; cpan -f Module::Setup 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15</description>
     </item>
     
     <item>
@@ -229,7 +229,7 @@
       <pubDate>Tue, 06 May 2008 20:28:52 +0900</pubDate>
       
       <guid>https://www.nqou.net/2008/05/06/202852/</guid>
-      <description>Setting environment for using Microsoft Visual Studio 2008 x86 tools. C:\Program Files\Microsoft Visual Studio 9.0\VC&amp;gt; C:\Program Files\Microsoft Visual Studio 9.0\VC&amp;gt;d: D:\&amp;gt;cd usr\bin D:\usr\bin&amp;gt;cpan cpan shell -- CPAN exploration and modules</description>
+      <description>1 2 Setting environment for using Microsoft Visual Studio 2008 x86 tools. C:\Program Files\Microsoft Visual Studio 9.0\VC&amp;gt; 1 2 3 4 5 6 C:\Program Files\Microsoft Visual Studio 9.0\VC&amp;gt;d: D:\&amp;gt;cd usr\bin</description>
     </item>
     
     <item>

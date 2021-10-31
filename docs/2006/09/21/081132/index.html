@@ -14,7 +14,7 @@
 <meta itemprop="name" content="ファイルのコピー">
 <meta itemprop="description" content="ファイルのコピーをする場合は、File::Copyというモジ"><meta itemprop="datePublished" content="2006-09-21T08:11:32+09:00" />
 <meta itemprop="dateModified" content="2006-09-21T08:11:32+09:00" />
-<meta itemprop="wordCount" content="493">
+<meta itemprop="wordCount" content="505">
 <meta itemprop="keywords" content="perl," />
 
 <meta name="twitter:card" content="summary"/>
@@ -210,33 +210,63 @@
   
 
   <div class="post-date">
-    <time datetime="2006-09-21T08:11:32&#43;0900">Sep 21, 2006</time> <span class="readtime">&middot; 1 min read</span>
+    <time datetime="2006-09-21T08:11:32&#43;0900">Sep 21, 2006</time> <span class="readtime">&middot; 2 min read</span>
   </div>
 
   <div>
   <p>ファイルのコピーをする場合は、File::Copyというモジュールを使うのが良い。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#66d9ef">use</span> File::Copy;
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#66d9ef">use</span> File::Copy;
 <span style="color:#66d9ef">my</span> $from <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/user_dir/hoge/fuga.txt&#34;</span>;
 <span style="color:#66d9ef">my</span> $to <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/user_dir/fuga/hoge.txt&#34;</span>;
 copy($from, $to) <span style="color:#f92672">or</span> die <span style="color:#e6db74">&#34;Can not copy `$from` to `$to`.&#34;</span>;
-</code></pre></div><p>ただし、コピーするためのフォルダ（ディレクトリ）が必要。
+</code></pre></td></tr></table>
+</div>
+</div><p>ただし、コピーするためのフォルダ（ディレクトリ）が必要。
 上の例の場合は、user_dirにfugaというディレクトリがないとコピーに失敗する。</p>
 <p>Webで運用するようなCGIの場合は、あらかじめディレクトリを作成しておいて、バックアップや一時ファイルを作ったりするので機能的には十分ではある。
 ただ、ローカルでファイル管理をしようとした時などは、これだとかなり面倒だ。
 ディレクトリごとコピーする簡単な方法はないものか？
 …という需要はあると思うのだが、なかなかうまい方法が見つけられない。
 とりあえず、File::Pathというモジュールを使うとできるようだが、もっと簡単な方法もあるかもしれない。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#66d9ef">use</span> File::Copy;
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#66d9ef">use</span> File::Copy;
 <span style="color:#66d9ef">use</span> File::Path;
 <span style="color:#66d9ef">my</span> $from <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/user_dir/hoge/fuga.txt&#34;</span>;
 <span style="color:#66d9ef">my</span> $to <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/user_dir/fuga/hoge.txt&#34;</span>;
 (<span style="color:#66d9ef">my</span> $to_dir <span style="color:#f92672">=</span> $to) <span style="color:#f92672">=~</span> s<span style="color:#f92672">|</span>([<span style="color:#f92672">^/</span>]<span style="color:#f92672">*</span>?)$|<span style="color:#f92672">|</span>;
 mkpath($to_dir);
 copy($from, $to) <span style="color:#f92672">or</span> die <span style="color:#e6db74">&#34;Can not copy `$from` to `$to`.&#34;</span>;
-</code></pre></div><p>mkpathは致命的なエラーを吐いて死ぬのでエラー処理は特にしなくてもＯＫ。
+</code></pre></td></tr></table>
+</div>
+</div><p>mkpathは致命的なエラーを吐いて死ぬのでエラー処理は特にしなくてもＯＫ。
 あと、作ったディレクトリを知りたい場合は、</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#66d9ef">my</span> @dir <span style="color:#f92672">=</span> mkpath($to_dir);
-</code></pre></div><p>とすれば、@dirに作ったディレクトリのパスが入る。</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#66d9ef">my</span> @dir <span style="color:#f92672">=</span> mkpath($to_dir);
+</code></pre></td></tr></table>
+</div>
+</div><p>とすれば、@dirに作ったディレクトリのパスが入る。</p>
 <p>とにかく、これでファイルの操作も簡単だ。</p>
 
   </div>

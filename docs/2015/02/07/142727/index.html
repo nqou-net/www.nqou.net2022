@@ -12,18 +12,18 @@
   
 
 <meta itemprop="name" content="（2015年改訂版）最近使っているPerlスクリプトのひな形">
-<meta itemprop="description" content="#!/usr/bin/env perl use utf8; use strict; use warnings; use feature &#39;say&#39;; use open qw/:encoding(utf8) :std/; use Data::Printer {deparse =&gt; 1};"><meta itemprop="datePublished" content="2015-02-07T14:27:27+09:00" />
+<meta itemprop="description" content="@nqounetです。 先ほど書いていたひな形ですが、song"><meta itemprop="datePublished" content="2015-02-07T14:27:27+09:00" />
 <meta itemprop="dateModified" content="2015-02-07T14:27:27+09:00" />
-<meta itemprop="wordCount" content="20">
+<meta itemprop="wordCount" content="484">
 <meta itemprop="keywords" content="perl," />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="（2015年改訂版）最近使っているPerlスクリプトのひな形"/>
-<meta name="twitter:description" content="#!/usr/bin/env perl use utf8; use strict; use warnings; use feature &#39;say&#39;; use open qw/:encoding(utf8) :std/; use Data::Printer {deparse =&gt; 1};"/>
+<meta name="twitter:description" content="@nqounetです。 先ほど書いていたひな形ですが、song"/>
 
 
 <meta property="og:title" content="（2015年改訂版）最近使っているPerlスクリプトのひな形" />
-<meta property="og:description" content="#!/usr/bin/env perl use utf8; use strict; use warnings; use feature &#39;say&#39;; use open qw/:encoding(utf8) :std/; use Data::Printer {deparse =&gt; 1};" />
+<meta property="og:description" content="@nqounetです。 先ほど書いていたひな形ですが、song" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.nqou.net/2015/02/07/142727/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2015-02-07T14:27:27+09:00" />
@@ -70,7 +70,7 @@
       },
       "datePublished": "2015-02-07T14:27:27+09:00",
       "dateModified": "2015-02-07T14:27:27+09:00",
-      "description": "#!/usr/bin/env perl use utf8; use strict; use warnings; use feature \u0026#39;say\u0026#39;; use open qw/:encoding(utf8) :std/; use Data::Printer {deparse =\u0026gt; 1};",
+      "description": "@nqounetです。 先ほど書いていたひな形ですが、song",
       "inLanguage": "ja",
       "potentialAction": [
         {
@@ -214,23 +214,41 @@
   </div>
 
   <div>
-  <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#75715e">#!/usr/bin/env perl</span>
+  <p><a href="https://twitter.com/nqounet">@nqounet</a>です。</p>
+<p><a href="/2015/02/07/081045/" title="（2015年版）最近使っているPerlスクリプトのひな形">先ほど書いていたひな形</a>ですが、<a href="https://twitter.com/songmu">songmuさん</a>から「それだとwarningsが有効にならないyo!」という突っ込みがありまして、よく確認してみるとたしかに有効になっていませんでした。</p>
+<p>これではバグの温床になってしまいますので、いきなりですが改訂版を出します。</p>
+<h2 id="perlスクリプトのひな形2015年改訂版">Perlスクリプトのひな形（2015年改訂版）</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#75715e">#!/usr/bin/env perl</span>
 <span style="color:#66d9ef">use</span> utf8;
 <span style="color:#66d9ef">use</span> strict;
 <span style="color:#66d9ef">use</span> warnings;
 <span style="color:#66d9ef">use</span> feature <span style="color:#e6db74">&#39;say&#39;</span>;
 <span style="color:#66d9ef">use</span> open <span style="color:#e6db74">qw/:encoding(utf8) :std/</span>;
 <span style="color:#66d9ef">use</span> Data::Printer {deparse <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">1</span>};
-</code></pre></div><!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+</code></pre></td></tr></table>
+</div>
+</div><p>なんだか色々変わった気がしますが、ひな形の基本的な方針は以下のように考えていて、その点は変わっていません。</p>
+<ul>
+<li>エディタの文字コードはUTF-8しか認めない</li>
+<li>何かあったらエラーや警告を出してくれる</li>
+<li><code>say</code>が使える（<code>print &quot;\n&quot;</code>は面倒）</li>
+<li>変数の中身が簡単に確認できる</li>
+</ul>
+<p>前回のひな形に<code>use warnings;</code>を追加すれば目的は叶いますし、<code>common::sense</code>を使う方法もあります。</p>
+<p>大事なのは、<code>strict</code>、<code>warnings</code>です。</p>
+<p>プログラミングをすることは、エラーと向き合うことでもあります。</p>
+<p>文法の間違いは簡単に発見できる方が、余計な心配をしなくてすむので内容に注力できますよ。</p>
 
   </div>
 

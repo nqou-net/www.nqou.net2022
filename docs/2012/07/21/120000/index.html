@@ -12,18 +12,18 @@
   
 
 <meta itemprop="name" content="Mojoliciousのファイルアップロードではまった">
-<meta itemprop="description" content="No references other than a SCALAR reference can use a update column my $upload = $self-&gt;param(&#39;upload&#39;); if (ref $upload eq &#39;Mojo::Upload&#39;) { if ($upload-&gt;filename) { $upload-&gt;move_to(file(&#39;path&#39;, &#39;to&#39;, $upload-&gt;filename)); } $upload"><meta itemprop="datePublished" content="2012-07-21T12:00:00+09:00" />
+<meta itemprop="description" content="1 No references other than a SCALAR reference can use a update column 1 2 3 4 5 6 7 my $upload = $self-&gt;param(&#39;upload&#39;); if (ref $upload eq &#39;Mojo::Upload&#39;) {"><meta itemprop="datePublished" content="2012-07-21T12:00:00+09:00" />
 <meta itemprop="dateModified" content="2012-07-21T12:00:00+09:00" />
-<meta itemprop="wordCount" content="33">
+<meta itemprop="wordCount" content="41">
 <meta itemprop="keywords" content="undef," />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Mojoliciousのファイルアップロードではまった"/>
-<meta name="twitter:description" content="No references other than a SCALAR reference can use a update column my $upload = $self-&gt;param(&#39;upload&#39;); if (ref $upload eq &#39;Mojo::Upload&#39;) { if ($upload-&gt;filename) { $upload-&gt;move_to(file(&#39;path&#39;, &#39;to&#39;, $upload-&gt;filename)); } $upload"/>
+<meta name="twitter:description" content="1 No references other than a SCALAR reference can use a update column 1 2 3 4 5 6 7 my $upload = $self-&gt;param(&#39;upload&#39;); if (ref $upload eq &#39;Mojo::Upload&#39;) {"/>
 
 
 <meta property="og:title" content="Mojoliciousのファイルアップロードではまった" />
-<meta property="og:description" content="No references other than a SCALAR reference can use a update column my $upload = $self-&gt;param(&#39;upload&#39;); if (ref $upload eq &#39;Mojo::Upload&#39;) { if ($upload-&gt;filename) { $upload-&gt;move_to(file(&#39;path&#39;, &#39;to&#39;, $upload-&gt;filename)); } $upload" />
+<meta property="og:description" content="1 No references other than a SCALAR reference can use a update column 1 2 3 4 5 6 7 my $upload = $self-&gt;param(&#39;upload&#39;); if (ref $upload eq &#39;Mojo::Upload&#39;) {" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.nqou.net/2012/07/21/120000/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2012-07-21T12:00:00+09:00" />
@@ -70,7 +70,7 @@
       },
       "datePublished": "2012-07-21T12:00:00+09:00",
       "dateModified": "2012-07-21T12:00:00+09:00",
-      "description": "No references other than a SCALAR reference can use a update column my $upload = $self-\u0026gt;param('upload'); if (ref $upload eq 'Mojo::Upload') { if ($upload-\u0026gt;filename) { $upload-\u0026gt;move_to(file('path', 'to', $upload-\u0026gt;filename)); } $upload",
+      "description": "1 No references other than a SCALAR reference can use a update column 1 2 3 4 5 6 7 my $upload = $self-\u0026gt;param(\u0026#39;upload\u0026#39;); if (ref $upload eq \u0026#39;Mojo::Upload\u0026#39;) {",
       "inLanguage": "ja",
       "potentialAction": [
         {
@@ -219,18 +219,38 @@
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
-<pre tabindex="0"><code class="language-default" data-lang="default">No references other than a SCALAR reference can use a update column
-</code></pre><!-- raw HTML omitted -->
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">No references other than a SCALAR reference can use a update column
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
-<pre tabindex="0"><code class="language-default" data-lang="default">my $upload = $self-&gt;param('upload');
-if (ref $upload eq 'Mojo::Upload') {
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">my $upload = $self-&gt;param(&#39;upload&#39;);
+if (ref $upload eq &#39;Mojo::Upload&#39;) {
   if ($upload-&gt;filename) {
-    $upload-&gt;move_to(file('path', 'to', $upload-&gt;filename));
+    $upload-&gt;move_to(file(&#39;path&#39;, &#39;to&#39;, $upload-&gt;filename));
   }
   $upload = $upload-&gt;filename;
 }
-</code></pre><!-- raw HTML omitted -->
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 
   </div>

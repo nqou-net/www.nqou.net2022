@@ -211,7 +211,7 @@
         </div>
 
         <div>
-          use JSON::RPC::Spec; my $rpc = JSON::RPC::Spec-&gt;new; $rpc-&gt;register( &#39;echo.{action}&#39; =&gt; sub { my ($params, $matched) = @_; return $matched-&gt;{action}; } ); say $rpc-&gt;parse( &#39;{&#34;jsonrpc&#34;: &#34;2.0&#34;, &#34;method&#34;: &#34;echo.hoge&#34;, &#34;params&#34;: [1, 2, 3,
+          1 2 3 4 5 6 7 8 9 10 11 use JSON::RPC::Spec; my $rpc = JSON::RPC::Spec-&gt;new; $rpc-&gt;register( &#39;echo.{action}&#39; =&gt; sub { my ($params, $matched) = @_; return $matched-&gt;{action}; }
         </div>
 
         <div class="read-more-link">
@@ -228,7 +228,7 @@
         </div>
 
         <div>
-          use Plack::App::JSONRPC; use Plack::Builder; my $jsonrpc = Plack::App::JSONRPC-&gt;new( methods =&gt; { echo =&gt; sub { $_[0] }, empty =&gt; sub {&#39;&#39;} } ); my $app = sub { [200, [&#39;Content-Type&#39;
+          1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 use Plack::App::JSONRPC; use Plack::Builder; my $jsonrpc = Plack::App::JSONRPC-&gt;new( methods =&gt; { echo =&gt; sub
         </div>
 
         <div class="read-more-link">
@@ -245,7 +245,7 @@
         </div>
 
         <div>
-          use JSON::RPC::Lite; method &#39;echo&#39; =&gt; sub { $_[0] }; as_psgi_app;
+          1 2 3 4 5 use JSON::RPC::Lite; method &#39;echo&#39; =&gt; sub { $_[0] }; as_psgi_app;
         </div>
 
         <div class="read-more-link">
@@ -262,7 +262,7 @@
         </div>
 
         <div>
-          use JSON::RPC::Spec; my $rpc = JSON::RPC::Spec-&gt;new; $rpc-&gt;register(echo =&gt; sub { $_[0] }); print $rpc-&gt;parse( &#39;{&#34;jsonrpc&#34;: &#34;2.0&#34;, &#34;method&#34;: &#34;echo&#34;, &#34;params&#34;: &#34;Hello, World!&#34;, &#34;id&#34;: 1}&#39; ); # -&gt; {&#34;jsonrpc&#34;:&#34;2.0&#34;,&#34;result&#34;:&#34;Hello, World!&#34;,&#34;id&#34;:1}
+          1 2 3 4 5 6 7 use JSON::RPC::Spec; my $rpc = JSON::RPC::Spec-&gt;new; $rpc-&gt;register(echo =&gt; sub { $_[0] }); print $rpc-&gt;parse( &#39;{&#34;jsonrpc&#34;: &#34;2.0&#34;, &#34;method&#34;: &#34;echo&#34;, &#34;params&#34;: &#34;Hello, World!&#34;, &#34;id&#34;: 1}&#39;
         </div>
 
         <div class="read-more-link">
@@ -279,7 +279,7 @@
         </div>
 
         <div>
-          use JSON::RPC::Lite; method &#39;echo&#39; =&gt; sub { my ($param) = @_; return $param; }; as_psgi_app; $ plackup app.psgi {&#34;jsonrpc&#34;:&#34;2.0&#34;,&#34;method&#34;:&#34;echo&#34;,&#34;params&#34;:&#34;Hello!&#34;,&#34;id&#34;:1} {&#34;id&#34;:1,&#34;jsonrpc&#34;:&#34;2.0&#34;,&#34;result&#34;:&#34;Hello!&#34;}
+          1 2 3 4 5 6 7 8 use JSON::RPC::Lite; method &#39;echo&#39; =&gt; sub { my ($param) = @_; return $param; }; as_psgi_app; 1 $ plackup app.psgi 1 {&#34;jsonrpc&#34;:&#34;2.0&#34;,&#34;method&#34;:&#34;echo&#34;,&#34;params&#34;:&#34;Hello!&#34;,&#34;id&#34;:1} 1
         </div>
 
         <div class="read-more-link">
@@ -296,7 +296,7 @@
         </div>
 
         <div>
-          &lt;div style=&#34;{{style}}&#34;&gt;
+          1 &lt;div style=&#34;{{style}}&#34;&gt
         </div>
 
         <div class="read-more-link">

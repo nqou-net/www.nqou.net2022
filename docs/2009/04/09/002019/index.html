@@ -12,18 +12,18 @@
   
 
 <meta itemprop="name" content="配列Aから配列Bの要素を取り除いた配列Cを作る方法">
-<meta itemprop="description" content="面白そうなネタを見つけたので、便乗してみた。 my @update = grep { my $a ="><meta itemprop="datePublished" content="2009-04-09T00:20:19+09:00" />
+<meta itemprop="description" content="面白そうなネタを見つけたので、便乗してみた。 1 my @update = grep { my $a"><meta itemprop="datePublished" content="2009-04-09T00:20:19+09:00" />
 <meta itemprop="dateModified" content="2009-04-09T00:20:19+09:00" />
-<meta itemprop="wordCount" content="1525">
+<meta itemprop="wordCount" content="1577">
 <meta itemprop="keywords" content="perl," />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="配列Aから配列Bの要素を取り除いた配列Cを作る方法"/>
-<meta name="twitter:description" content="面白そうなネタを見つけたので、便乗してみた。 my @update = grep { my $a ="/>
+<meta name="twitter:description" content="面白そうなネタを見つけたので、便乗してみた。 1 my @update = grep { my $a"/>
 
 
 <meta property="og:title" content="配列Aから配列Bの要素を取り除いた配列Cを作る方法" />
-<meta property="og:description" content="面白そうなネタを見つけたので、便乗してみた。 my @update = grep { my $a =" />
+<meta property="og:description" content="面白そうなネタを見つけたので、便乗してみた。 1 my @update = grep { my $a" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.nqou.net/2009/04/09/002019/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2009-04-09T00:20:19+09:00" />
@@ -70,7 +70,7 @@
       },
       "datePublished": "2009-04-09T00:20:19+09:00",
       "dateModified": "2009-04-09T00:20:19+09:00",
-      "description": "面白そうなネタを見つけたので、便乗してみた。 my @update = grep { my $a =",
+      "description": "面白そうなネタを見つけたので、便乗してみた。 1 my @update = grep { my $a",
       "inLanguage": "ja",
       "potentialAction": [
         {
@@ -215,26 +215,100 @@
 
   <div>
   <p>面白そうなネタを見つけたので、便乗してみた。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#66d9ef">my</span> @update <span style="color:#f92672">=</span> grep { <span style="color:#66d9ef">my</span> $a <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; <span style="color:#66d9ef">foreach</span> <span style="color:#66d9ef">my</span> $b (@key) { $a <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span> <span style="color:#66d9ef">if</span> $_ <span style="color:#f92672">eq</span> $b; } $a; } @items;
-</code></pre></div><ul>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#66d9ef">my</span> @update <span style="color:#f92672">=</span> grep { <span style="color:#66d9ef">my</span> $a <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; <span style="color:#66d9ef">foreach</span> <span style="color:#66d9ef">my</span> $b (@key) { $a <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span> <span style="color:#66d9ef">if</span> $_ <span style="color:#f92672">eq</span> $b; } $a; } @items;
+</code></pre></td></tr></table>
+</div>
+</div><ul>
 <li><a href="https://anond.hatelabo.jp/20090408034449">Perlで配列Aから配列Bにある要素を取り除くには？</a></li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#66d9ef">my</span> %key <span style="color:#f92672">=</span> map { $_ <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">1</span> } @key;
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#66d9ef">my</span> %key <span style="color:#f92672">=</span> map { $_ <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">1</span> } @key;
 <span style="color:#66d9ef">my</span> @update <span style="color:#f92672">=</span> grep { <span style="color:#f92672">not</span> exists $key{$_} } @items;
-</code></pre></div><ul>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
 <li><a href="https://anond.hatelabo.jp/20090408100019">Re: Perlで配列Aから配列Bにある要素を取り除くには？</a></li>
 </ul>
 <p>上の二つでは、ハッシュを使うほうが段違いに速い。</p>
 <p>その傾向は大きい配列になるほど顕著になる。</p>
 <p>でも、配列が大きくなると、mapの部分が結構時間がかかるようなので、ハッシュスライスにしてみた。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#66d9ef">my</span> %hash;
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#66d9ef">my</span> %hash;
 undef @hash{@key};
 <span style="color:#66d9ef">my</span> @update <span style="color:#f92672">=</span> grep { <span style="color:#f92672">not</span> exists $hash{$_} } @items;
-</code></pre></div><p>その結果、さらに速くなった。</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>その結果、さらに速くなった。</p>
 <p>しかも、配列が大きくなればなるほど効果も上がっている。</p>
 <p>やはり、スライスは使えるテクニックだ。</p>
 <p>参考ベンチの結果とソースは以下のとおり。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#75715e">#!/usr/bin/env perl</span>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#75715e">#!/usr/bin/env perl</span>
 <span style="color:#66d9ef">use</span> strict;
 <span style="color:#66d9ef">use</span> warnings;
 <span style="color:#66d9ef">use</span> Benchmark <span style="color:#e6db74">qw(:all)</span>;
@@ -280,7 +354,9 @@ cmpthese(
         }
     )
 );
-</code></pre></div><pre tabindex="0"><code>@items = qw( b t m e d k w r c s j z n v h g l q o y a u f x i p );
+</code></pre></td></tr></table>
+</div>
+</div><pre tabindex="0"><code>@items = qw( b t m e d k w r c s j z n v h g l q o y a u f x i p );
 @key   = qw( b c d a f e );
 Benchmark: running Hash, Hash2a, Hash2b, Hash3, Linear for at least 3 CPU seconds...
 Hash:  3 wallclock secs ( 3.22 usr +  0.00 sys =  3.22 CPU) @ 30791.86/s (n=99119)

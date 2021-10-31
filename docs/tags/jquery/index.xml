@@ -13,7 +13,7 @@
       <pubDate>Sat, 06 Dec 2014 08:40:44 +0900</pubDate>
       
       <guid>https://www.nqou.net/2014/12/06/084044/</guid>
-      <description>&amp;lt;a href=&amp;#34;#/hello&amp;#34;&amp;gt;ハロー</description>
+      <description>1 2 3 4 5 6 7 &amp;lt;a href=&amp;#34;#/hello&amp;#34;</description>
     </item>
     
     <item>
@@ -22,7 +22,7 @@
       <pubDate>Sat, 31 May 2014 01:07:15 +0900</pubDate>
       
       <guid>https://www.nqou.net/2014/05/31/010715/</guid>
-      <description>(function($, window, document, undefined){ &amp;#39;use strict&amp;#39;; var console, modules, vars, setVars = function(){ console = window.console; window.modules = modules = window.modules || {}; window.vars = vars = window.vars || {};</description>
+      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30</description>
     </item>
     
     <item>
@@ -31,7 +31,7 @@
       <pubDate>Fri, 16 May 2014 23:14:31 +0900</pubDate>
       
       <guid>https://www.nqou.net/2014/05/16/231431/</guid>
-      <description>var router = { hello: function(req){ console.debug(&amp;#39;req:&amp;#39;, req); alert(&amp;#39;Hello Grapnel!&amp;#39;); } }; Grapnel.listen(router); &amp;lt;a href=&amp;#34;#hello&amp;#34;&amp;gt;Hello Grapnel!&amp;lt;/a&amp;gt;</description>
+      <description>1 2 3 4 5 6 7 var router = { hello: function(req){ console.debug(&amp;#39;req:&amp;#39;, req); alert(&amp;#39;Hello Grapnel!&amp;#39;); } }; Grapnel.listen(router); 1 &amp;lt;a href=&amp;#34;#hello&amp;#34;&amp;gt;Hello Grapnel!&amp;lt;/a&amp;gt;</description>
     </item>
     
     <item>
@@ -49,7 +49,7 @@
       <pubDate>Mon, 28 Apr 2014 03:40:22 +0900</pubDate>
       
       <guid>https://www.nqou.net/2014/04/28/034022/</guid>
-      <description>grunt release</description>
+      <description>1 grunt release</description>
     </item>
     
     <item>
@@ -58,7 +58,7 @@
       <pubDate>Sat, 26 Apr 2014 15:19:55 +0900</pubDate>
       
       <guid>https://www.nqou.net/2014/04/26/151955/</guid>
-      <description>npm install -D grunt-google-cdn google-cdn-data cdnify: { options: { cdn: require(&amp;#39;google-cdn-data&amp;#39;) }, dist: { html: [&amp;#39;app/*.html&amp;#39;] } }, grunt cdnify grunt bowerInstall</description>
+      <description>1 npm install -D grunt-google-cdn google-cdn-data 1 2 3 4 5 6 7 8 cdnify: { options: { cdn: require(&amp;#39;google-cdn-data&amp;#39;) }, dist: { html: [&amp;#39;app/*.html&amp;#39;] } }, 1 grunt cdnify</description>
     </item>
     
     <item>
@@ -76,7 +76,7 @@
       <pubDate>Fri, 25 Apr 2014 01:26:45 +0900</pubDate>
       
       <guid>https://www.nqou.net/2014/04/25/012645/</guid>
-      <description>use List::Util qw(sum); my $array = [1, 2, 3, 4, 5]; sub func { print sum(@_); } func(@$array); # ここで$arrayを展</description>
+      <description>1 2 3 4 5 use List::Util qw(sum); my $array = [1, 2, 3, 4, 5]; sub func { print sum(@_); } func(@$array); # ここで$ar</description>
     </item>
     
     <item>
@@ -85,7 +85,7 @@
       <pubDate>Wed, 09 Apr 2014 22:48:17 +0900</pubDate>
       
       <guid>https://www.nqou.net/2014/04/09/224817/</guid>
-      <description>use Mojolicious::Lite; use Text::LTSV; get &amp;#39;/&amp;#39; =&amp;gt; sub { my $self = shift; my $p = Text::LTSV-&amp;gt;new; my $datafile = &amp;#39;hoge.ltsv&amp;#39;; my $data = $p-&amp;gt;parse_file($datafile) or die; $self-&amp;gt;stash(data =&amp;gt; $data);</description>
+      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 use Mojolicious::Lite; use Text::LTSV; get &amp;#39;/&amp;#39; =&amp;gt; sub { my $self</description>
     </item>
     
     <item>
@@ -94,7 +94,7 @@
       <pubDate>Sat, 08 Mar 2014 17:09:03 +0900</pubDate>
       
       <guid>https://www.nqou.net/2014/03/08/170903/</guid>
-      <description>package Cat; use Mojo::Base &amp;#39;Mojo::EventEmitter&amp;#39;; # Emit events sub poke { my $self = shift; $self-&amp;gt;emit(roar =&amp;gt; 3); } package main; # Subscribe to events my $tiger = Cat-&amp;gt;new; $tiger-&amp;gt;on(roar</description>
+      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 package Cat; use Mojo::Base &amp;#39;Mojo::EventEmitter&amp;#39;; # Emit events sub poke { my</description>
     </item>
     
     <item>
@@ -148,7 +148,7 @@
       <pubDate>Mon, 10 Jan 2011 01:43:14 +0900</pubDate>
       
       <guid>https://www.nqou.net/2011/01/10/014314/</guid>
-      <description>#!/usr/bin/env perl #ｕｔｆ８ # use Acme::PerlTidy; use utf8; package DataModel; use base &#39;Data::Model&#39;; use Data::Model::Schema; use Data::Model::Driver::DBI; my $dbfile = qq{$0.db}; my $dsn = qq{dbi:SQLite:dbname=$dbfile}; my</description>
+      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30</description>
     </item>
     
     <item>
@@ -184,7 +184,7 @@
       <pubDate>Wed, 21 Jan 2009 02:36:39 +0900</pubDate>
       
       <guid>https://www.nqou.net/2009/01/21/023639/</guid>
-      <description>&amp;lt;a href=&amp;quot;javascript:void(0);&amp;quot; onclick=&amp;quot;$.jGrowl(&#39;これがメ</description>
+      <description>1 &amp;lt;a href=&amp;#34;javascript:void(0);&amp;#34; onclick=&amp;#34;$.jGrowl(&amp;#39;</description>
     </item>
     
     <item>
@@ -211,7 +211,7 @@
       <pubDate>Tue, 30 Dec 2008 20:29:42 +0900</pubDate>
       
       <guid>https://www.nqou.net/2008/12/30/202942/</guid>
-      <description>PHP Notice: Undefined variable: root in *****/jqueryFileTree.php on line 21 ? my $title = shift; &amp;lt;!doctype html&amp;gt; &amp;lt;html xmlns=&amp;quot;http://www.w3.org/1999/xhtml&amp;quot; xml:lang=&amp;quot;ja&amp;quot; lang=&amp;quot;ja&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta http-equiv=&amp;quot;Content-Type&amp;quot; content=&amp;quot;text/html; charset=UTF-8&amp;quot; /&amp;gt; &amp;lt;title&amp;gt;&amp;lt;? if ($title)</description>
+      <description>1 PHP Notice: Undefined variable: root in *****/jqueryFileTree.php on line 21 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19</description>
     </item>
     
     <item>
@@ -220,7 +220,7 @@
       <pubDate>Tue, 30 Dec 2008 01:42:23 +0900</pubDate>
       
       <guid>https://www.nqou.net/2008/12/30/014223/</guid>
-      <description>&amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;http://google-code-prettify.googlecode.com/svn/trunk/src/prettify.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt; $(document).ready(function(){ $(&#39;pre code&#39;).addClass(&amp;quot;prettyprint&amp;quot;); prettyPrint(); }); &amp;lt;/script&amp;gt;</description>
+      <description>1 2 3 4 5 6 7 8 &amp;lt;script type=&amp;#34;text/javascript&amp;#34; src=&amp;#34;http://google-code-prettify.googlecode.com/svn/trunk/src/prettify.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script type=&amp;#34;text/javascript&amp;#34; src=&amp;#34;http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script type=&amp;#34;text/javascript&amp;#34;&amp;gt; $(document).ready(function(){ $(&amp;#39;pre code&amp;#39;).addClass(&amp;#34;prettyprint&amp;#34;); prettyPrint(); }); &amp;lt;/script&amp;gt;</description>
     </item>
     
   </channel>

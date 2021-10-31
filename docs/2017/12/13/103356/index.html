@@ -14,7 +14,7 @@
 <meta itemprop="name" content="DockerでHerokuでMojoliciousが動いたぞ!!!（改定版）">
 <meta itemprop="description" content="（追記） この記事で書いていた Dockerfile が動かなくなっていたので動くよ"><meta itemprop="datePublished" content="2017-12-13T10:33:56+09:00" />
 <meta itemprop="dateModified" content="2017-12-13T10:33:56+09:00" />
-<meta itemprop="wordCount" content="3302">
+<meta itemprop="wordCount" content="3358">
 <meta itemprop="keywords" content="docker,heroku,mojolicious,perl," />
 
 <meta name="twitter:card" content="summary"/>
@@ -220,7 +220,7 @@
   <p>（追記）</p>
 <p>この記事で書いていた Dockerfile が動かなくなっていたので動くように修正した記事を書きました。</p>
 <ul>
-<li><a href="https://www.nqou.net/2018/06/12/110204/">以前は動いていた Dockerfile で permission denied が出るようになった話 | nqou.net</a></li>
+<li><a href="/2018/06/12/110204/">以前は動いていた Dockerfile で permission denied が出るようになった話 | nqou.net</a></li>
 </ul>
 <p>（追記ここまで）</p>
 <p>この記事は、 <a href="https://qiita.com/advent-calendar/2017/perl">Perl Advent Calendar 2017</a> の 13 日目の記事です。</p>
@@ -256,10 +256,19 @@
 <p>また、 Heroku では現在は Volume をマウントする方式には対応していないので、 COPY コマンドを使います。細かい説明は省きますが、 COPY する必要があるファイルだけをまとめておくと便利だと思います。</p>
 <p>ここでは、 COPY するファイル群を webapp というディレクトリに入れておくことにします。</p>
 <p>では、ターミナルを操作していきます。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ mkdir myproject <span style="color:#f92672">&amp;&amp;</span> cd myproject
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ mkdir myproject <span style="color:#f92672">&amp;&amp;</span> cd myproject
 $ git init
 $ mkdir webapp <span style="color:#f92672">&amp;&amp;</span> cd webapp
-</code></pre></div><p>ひとまずコレで準備は完了です。</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>ひとまずコレで準備は完了です。</p>
 <h2 id="mojolicious">Mojolicious</h2>
 <p>さて、次は Perl のアプリを書いていきます。</p>
 <p>特にこだわりがなければ、 Mojolicious を使っていくと良いと思います。</p>
@@ -269,7 +278,22 @@ $ mkdir webapp <span style="color:#f92672">&amp;&amp;</span> cd webapp
 <li><a href="https://github.com/perl-entrance-org/workshop-2017">https://github.com/perl-entrance-org/workshop-2017</a></li>
 </ul>
 <p>Mojolicious のバージョンについては以下のもので動作を確認しています。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ mojo version
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ mojo version
 CORE
   Perl        <span style="color:#f92672">(</span>v5.26.1, darwin<span style="color:#f92672">)</span>
   Mojolicious <span style="color:#f92672">(</span>7.58, Doughnut<span style="color:#f92672">)</span>
@@ -280,28 +304,64 @@ OPTIONAL
   IO::Socket::SSL 1.94+   <span style="color:#f92672">(</span>2.052<span style="color:#f92672">)</span>
   Net::DNS::Native 0.15+  <span style="color:#f92672">(</span>0.15<span style="color:#f92672">)</span>
   Role::Tiny 2.000001+    <span style="color:#f92672">(</span>2.000006<span style="color:#f92672">)</span>
-</code></pre></div><p>説明を簡単にするためにここでは Mojolicious::Lite の方を使っていきます。</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>説明を簡単にするためにここでは Mojolicious::Lite の方を使っていきます。</p>
 <p>コマンドを使って雛形を作っておきます。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ mojo generate lite_app myapp.pl
-</code></pre></div><p>とりあえず、これでアプリを書いたことにします。</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ mojo generate lite_app myapp.pl
+</code></pre></td></tr></table>
+</div>
+</div><p>とりあえず、これでアプリを書いたことにします。</p>
 <p>動作するか確認してみましょう。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ morbo myapp.pl
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ morbo myapp.pl
 Server available at http://127.0.0.1:3000
-</code></pre></div><p>この状態でブラウザで <code>http://127.0.0.1:3000</code> にアクセスして <code>Welcome to the Mojolicious real-time web framework!</code> という画面が表示されれば成功です。</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>この状態でブラウザで <code>http://127.0.0.1:3000</code> にアクセスして <code>Welcome to the Mojolicious real-time web framework!</code> という画面が表示されれば成功です。</p>
 <p>ターミナルに戻って、 <code>ctrl + c</code> でアプリを止めておきます。</p>
 <p>手元では Mojolicious が入っているので動作しますが、コンテナには入っていません。</p>
 <p>動作に必要な Module は cpanfile に記述しておくことで、コンテナを作成する時に自動的にインストールされるような仕組みをあとで作成します。</p>
 <p>なので、 cpanfile という名前のファイルを作成し、必要なモジュールを書いておきます。</p>
 <p>今回は簡素化のためコマンドで作ります。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ echo <span style="color:#e6db74">&#34;requires &#39;Mojolicious&#39;;&#34;</span> &gt; cpanfile
-</code></pre></div><p>一旦、プロジェクトのディレクトリに戻って現在の状態を確認します。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cd ..
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ echo <span style="color:#e6db74">&#34;requires &#39;Mojolicious&#39;;&#34;</span> &gt; cpanfile
+</code></pre></td></tr></table>
+</div>
+</div><p>一旦、プロジェクトのディレクトリに戻って現在の状態を確認します。</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ cd ..
 $ tree .
 .
 └── webapp
     ├── cpanfile
     └── myapp.pl
-</code></pre></div><h2 id="docker">Docker</h2>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="docker">Docker</h2>
 <p>次は Docker で動かせるように Dockerfile を作っていきます。</p>
 <p>Docker のインストールなどは完了しているものとします。</p>
 <p>資料としては、公式の日本語サイトがあるのでそちらをご覧ください。</p>
@@ -309,7 +369,28 @@ $ tree .
 <li><a href="http://docs.docker.jp/engine/installation/toc.html">Get Docker - Docker を手に入れる — Docker-docs-ja 17.06.Beta ドキュメント</a></li>
 </ul>
 <p>Docker のバージョンについては以下のもので動作を確認しています。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker version
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ docker version
 Client:
  Version:      17.09.1-ce
  API version:  1.32
@@ -326,7 +407,9 @@ Server:
  Built:        Thu Dec  <span style="color:#ae81ff">7</span> 22:28:28 <span style="color:#ae81ff">2017</span>
  OS/Arch:      linux/amd64
  Experimental: true
-</code></pre></div><p>元になるイメージですが、特にこだわりがなければ公式の Perl のイメージを使うと良いと思います。</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>元になるイメージですが、特にこだわりがなければ公式の Perl のイメージを使うと良いと思います。</p>
 <p>タグを指定すると、特定のバージョンの Perl が使用できるのでバージョンを固定するのも簡単です。</p>
 <ul>
 <li><a href="https://hub.docker.com/r/library/perl/tags/">https://hub.docker.com/r/library/perl/tags/</a></li>
@@ -345,21 +428,49 @@ Server:
 <p>とはいえ、毎回書くのはだるいので、 <code>docker-compose</code> を使用して手軽に起動できるようにしておくと便利だと思います。</p>
 <p>使用するコンテナが一つでも起動が簡単になるので、使えるものは使っていくのが良いと思います。</p>
 <p>では、 <code>docker-compose</code> を使用するため、プロジェクトのルートディレクトリに <code>docker-compose.yml</code> を作成します。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#34;3&#34;</span>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#34;3&#34;</span>
 <span style="color:#f92672">services</span>:
     <span style="color:#f92672">webapp</span>:
         <span style="color:#f92672">build</span>: <span style="color:#ae81ff">.</span>
         <span style="color:#f92672">command</span>: <span style="color:#ae81ff">carmel exec -- morbo myapp.pl</span>
         <span style="color:#f92672">ports</span>:
             - <span style="color:#ae81ff">3000</span>:<span style="color:#ae81ff">3000</span>
-</code></pre></div><p>動作するか確認してみましょう。</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>動作するか確認してみましょう。</p>
 <p>プロジェクトのルートディレクトリにいることを確認して、以下のように実行してください。</p>
 <p>なお、実行すると 300MB 以上あるイメージファイルをダウンロードしてくるので、ちゃんとしたネットワーク環境で実行することをオススメします。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker-compose up --build
-</code></pre></div><p>しばらく待っていると以下のような表示が出て画面の動きが止まります。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Attaching to myproject_webapp_1
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ docker-compose up --build
+</code></pre></td></tr></table>
+</div>
+</div><p>しばらく待っていると以下のような表示が出て画面の動きが止まります。</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">Attaching to myproject_webapp_1
 webapp_1  | Server available at http://127.0.0.1:3000
-</code></pre></div><p><code>Server available at http://127.0.0.1:3000</code> というのが目印です。</p>
+</code></pre></td></tr></table>
+</div>
+</div><p><code>Server available at http://127.0.0.1:3000</code> というのが目印です。</p>
 <p>この表示が出たら、またブラウザで <code>http://127.0.0.1:3000</code> にアクセスしてみてください。</p>
 <p>先ほどと同じような画面が出たら成功です。</p>
 <p>これで、 Perl の（ Mojolicious::Lite で書いた）プログラムが Docker で動作しました。</p>
@@ -370,20 +481,55 @@ webapp_1  | Server available at http://127.0.0.1:3000
 <p>まずは、コマンドラインツール（ <code>Heroku Toolbelt</code> と呼ばれています）でログインします。</p>
 <p>すでにログインしている方は不要です。</p>
 <p><code>Email</code>, <code>Password</code>, （設定している方は）<code>Two-factor code</code> を訊かれるので入力します。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ heroku login
-</code></pre></div><p>ログインできたら、次はアプリを登録します。</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ heroku login
+</code></pre></td></tr></table>
+</div>
+</div><p>ログインできたら、次はアプリを登録します。</p>
 <p>新しく登録するのは簡単です。以下のようにコマンドを入力するだけです。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ heroku create
-</code></pre></div><p>指定すればアプリの名称も決められますが、後でも変更できるので、まずは確実に作っておくほうが良いと思います。</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ heroku create
+</code></pre></td></tr></table>
+</div>
+</div><p>指定すればアプリの名称も決められますが、後でも変更できるので、まずは確実に作っておくほうが良いと思います。</p>
 <p>さて、コンテナを使用する場合、 Container Registry にログインする必要があるようですのでログインします。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ heroku container:login
-</code></pre></div><p>ログインが出来たら、いよいよデプロイです。</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ heroku container:login
+</code></pre></td></tr></table>
+</div>
+</div><p>ログインが出来たら、いよいよデプロイです。</p>
 <p>デプロイということは、つまり、コンテナをアップロードするということなので、大きなファイルを送信することになります。くれぐれもネットワーク環境に注意してください。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ heroku container:push web
-</code></pre></div><p>デプロイが終わったら動作確認をしてみましょう。</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ heroku container:push web
+</code></pre></td></tr></table>
+</div>
+</div><p>デプロイが終わったら動作確認をしてみましょう。</p>
 <p>コマンドを使用して、アプリの URL をブラウザで開くことが出来ます。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ heroku open
-</code></pre></div><p>先ほどと同じような画面が出たら成功です。</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ heroku open
+</code></pre></td></tr></table>
+</div>
+</div><p>先ほどと同じような画面が出たら成功です。</p>
 <p>Perl で作成したアプリを Heroku で公開することが出来ました。</p>
 <h2 id="まとめ">まとめ</h2>
 <p>Perl でアプリを作って、 Docker で動かしたら Heroku で公開しましょう！</p>

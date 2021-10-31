@@ -14,7 +14,7 @@
 <meta itemprop="name" content="Gitlabを（まずは）5.1から5.2にアップデートした愛すべき理由">
 <meta itemprop="description" content="大きな理由 「Turbolink機能」に惹かれました。 結果とし"><meta itemprop="datePublished" content="2013-06-22T08:30:00+09:00" />
 <meta itemprop="dateModified" content="2013-06-22T08:30:00+09:00" />
-<meta itemprop="wordCount" content="2226">
+<meta itemprop="wordCount" content="2241">
 <meta itemprop="keywords" content="git,perl," />
 
 <meta name="twitter:card" content="summary"/>
@@ -237,23 +237,50 @@
 <p>設定ファイルは、5.1以降で追加された部分をチェックするようにしました。</p>
 <h2 id="gitlabymlの変更">gitlab.ymlの変更</h2>
 <p>gitlab.yml 40行目あたりからの</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">## Default project features settings
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">## Default project features settings
 default_projects_features:
 issues: true
 merge_requests: true
 wiki: true
 wall: false
 snippets: false
-</code></pre><p>この部分と、同じく162行目あたりからの</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">extra: 
+</code></pre></td></tr></table>
+</div>
+</div><p>この部分と、同じく162行目あたりからの</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">extra: 
 ## Google analytics. Uncomment if you want it
-# google_analytics_id: '_your_tracking_id'
+# google_analytics_id: &#39;_your_tracking_id&#39;
 
 ## Text under sign-in page (Markdown enabled)
 # sign_in_text: | 
 # ![Company Logo](http://www.companydomain.com/logo.png)
 # [Learn more about CompanyName](http://www.companydomain.com/)
-</code></pre><p>こちらの部分が追加になっていました。</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>こちらの部分が追加になっていました。</p>
 <p>先の「default_projects_features」は、新しくリポジトリを作成した時に、SettingできるFeaturesの初期値です。</p>
 <p>ほとんどのリポジトリではこれらの機能は使わないので、全部falseにしました。</p>
 <p>後半の「extra」には、google analyticsのID指定や、サインインの画面のテキストが設定できるようですが、使っていないので詳細は不明です。</p>

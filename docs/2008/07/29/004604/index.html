@@ -12,18 +12,18 @@
   
 
 <meta itemprop="name" content="Perlで切り上げ（ceil）と切り捨て（floor）を使う">
-<meta itemprop="description" content="#!/usr/bin/perl use strict; use warnings; use POSIX; my @vars = (1, 0.999, 0.9, 0.1, -0.1, -0.9, -0.999, -1); foreach my $var (@vars) { print &quot;Target is $var\n&quot;; print &quot;ceil :"><meta itemprop="datePublished" content="2008-07-29T00:46:04+09:00" />
+<meta itemprop="description" content="1 2 3 4 5 6 7 8 9 10 11 #!/usr/bin/perl use strict; use warnings; use POSIX; my @vars = (1, 0.999, 0.9, 0.1, -0.1, -0.9, -0.999, -1); foreach"><meta itemprop="datePublished" content="2008-07-29T00:46:04+09:00" />
 <meta itemprop="dateModified" content="2008-07-29T00:46:04+09:00" />
-<meta itemprop="wordCount" content="47">
+<meta itemprop="wordCount" content="58">
 <meta itemprop="keywords" content="perl," />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Perlで切り上げ（ceil）と切り捨て（floor）を使う"/>
-<meta name="twitter:description" content="#!/usr/bin/perl use strict; use warnings; use POSIX; my @vars = (1, 0.999, 0.9, 0.1, -0.1, -0.9, -0.999, -1); foreach my $var (@vars) { print &quot;Target is $var\n&quot;; print &quot;ceil :"/>
+<meta name="twitter:description" content="1 2 3 4 5 6 7 8 9 10 11 #!/usr/bin/perl use strict; use warnings; use POSIX; my @vars = (1, 0.999, 0.9, 0.1, -0.1, -0.9, -0.999, -1); foreach"/>
 
 
 <meta property="og:title" content="Perlで切り上げ（ceil）と切り捨て（floor）を使う" />
-<meta property="og:description" content="#!/usr/bin/perl use strict; use warnings; use POSIX; my @vars = (1, 0.999, 0.9, 0.1, -0.1, -0.9, -0.999, -1); foreach my $var (@vars) { print &quot;Target is $var\n&quot;; print &quot;ceil :" />
+<meta property="og:description" content="1 2 3 4 5 6 7 8 9 10 11 #!/usr/bin/perl use strict; use warnings; use POSIX; my @vars = (1, 0.999, 0.9, 0.1, -0.1, -0.9, -0.999, -1); foreach" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.nqou.net/2008/07/29/004604/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2008-07-29T00:46:04+09:00" />
@@ -70,7 +70,7 @@
       },
       "datePublished": "2008-07-29T00:46:04+09:00",
       "dateModified": "2008-07-29T00:46:04+09:00",
-      "description": "#!/usr/bin/perl use strict; use warnings; use POSIX; my @vars = (1, 0.999, 0.9, 0.1, -0.1, -0.9, -0.999, -1); foreach my $var (@vars) { print \u0026quot;Target is $var\\n\u0026quot;; print \u0026quot;ceil :",
+      "description": "1 2 3 4 5 6 7 8 9 10 11 #!/usr/bin/perl use strict; use warnings; use POSIX; my @vars = (1, 0.999, 0.9, 0.1, -0.1, -0.9, -0.999, -1); foreach",
       "inLanguage": "ja",
       "potentialAction": [
         {
@@ -215,18 +215,35 @@
 
   <div>
   <!-- raw HTML omitted -->
-<pre tabindex="0"><code class="language-default" data-lang="default">#!/usr/bin/perl
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">#!/usr/bin/perl
 use strict;
 use warnings;
 use POSIX;
 my @vars = (1, 0.999, 0.9, 0.1, -0.1, -0.9, -0.999, -1);
 foreach my $var (@vars) {
-print &quot;Target is $var\n&quot;;
-print &quot;ceil  : &quot;, ceil($var), &quot;\n&quot;;
-print &quot;floor : &quot;, floor($var), &quot;\n&quot;;
-print &quot;int   : &quot;, int $var, &quot;\n&quot;;
+print &#34;Target is $var\n&#34;;
+print &#34;ceil  : &#34;, ceil($var), &#34;\n&#34;;
+print &#34;floor : &#34;, floor($var), &#34;\n&#34;;
+print &#34;int   : &#34;, int $var, &#34;\n&#34;;
 }
-</code></pre><!-- raw HTML omitted -->
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
 
   </div>
 

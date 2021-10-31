@@ -14,7 +14,7 @@
 <meta itemprop="name" content="Path::Tiny を使っている時にディレクトリを自動的に作る">
 <meta itemprop="description" content="Path::Tiny 祭り Path::Tiny を使い始めてから、以前 Path::Class を使って書いていたものを書き"><meta itemprop="datePublished" content="2018-05-08T02:56:36+09:00" />
 <meta itemprop="dateModified" content="2018-05-08T02:56:36+09:00" />
-<meta itemprop="wordCount" content="495">
+<meta itemprop="wordCount" content="500">
 <meta itemprop="keywords" content="perl," />
 
 <meta name="twitter:card" content="summary"/>
@@ -219,13 +219,30 @@
 <h2 id="touchpath-というのを知った">touchpath というのを知った</h2>
 <p>つい最近まで知らなかったのですが、ファイルを作る時にディレクトリがない場合に自動的に作成するメソッドがありました。
 というか、これまでは当たり前のようにディレクトリを作成してからファイルを作成していたのですが。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#66d9ef">my</span> $path <span style="color:#f92672">=</span> path(<span style="color:#e6db74">&#39;var/foo/bar.txt&#39;</span>);
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#66d9ef">my</span> $path <span style="color:#f92672">=</span> path(<span style="color:#e6db74">&#39;var/foo/bar.txt&#39;</span>);
 $path<span style="color:#f92672">-&gt;</span>parent<span style="color:#f92672">-&gt;</span>mkpath;
 $path<span style="color:#f92672">-&gt;</span>touch;
-</code></pre></div><p>実は以下のようにできるのです。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#66d9ef">my</span> $path <span style="color:#f92672">=</span> path(<span style="color:#e6db74">&#39;var/foo/bar.txt&#39;</span>);
+</code></pre></td></tr></table>
+</div>
+</div><p>実は以下のようにできるのです。</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#66d9ef">my</span> $path <span style="color:#f92672">=</span> path(<span style="color:#e6db74">&#39;var/foo/bar.txt&#39;</span>);
 $path<span style="color:#f92672">-&gt;</span>touchpath;
-</code></pre></div><p>とっても便利。</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>とっても便利。</p>
 <h2 id="プログラムが作るファイルの置き場所">プログラムが作るファイルの置き場所</h2>
 <p>さて、プログラムが作るファイルはなるべく同じところに集めておきたいので、プロジェクトルートに <code>var</code> というディレクトリを作っておいてその中で各種ファイルを作成するようにしています。</p>
 <p>予め <code>var</code> というディレクトリを作っておいて、 <code>.gitkeep</code> などのファイルを作成してリポジトリに登録しておきます。

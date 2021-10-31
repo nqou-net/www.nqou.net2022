@@ -14,7 +14,7 @@
 <meta itemprop="name" content="jqueryFileTree.plを作ってみた">
 <meta itemprop="description" content="PHPやRubyのソースを見ながら、試行錯誤で作ってみた。 P"><meta itemprop="datePublished" content="2008-12-31T01:08:56+09:00" />
 <meta itemprop="dateModified" content="2008-12-31T01:08:56+09:00" />
-<meta itemprop="wordCount" content="641">
+<meta itemprop="wordCount" content="704">
 <meta itemprop="keywords" content="jquery,perl," />
 
 <meta name="twitter:card" content="summary"/>
@@ -223,13 +223,92 @@ Perlということでplにしたけど、実際にはMENTAディレクトリ内
 しかし、セキュリティ的に微妙な気がする。
 とりあえず、「.」から始まるファイルやディレクトリは見せないようにはした。
 さりげなく使っているけど、最近覚えたData::Dumperの技。</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">use Data::Dumper;sub p { print Data::Dumper::Dumper(shift) }
-</code></pre><p>こうすることで、デバッグするときは</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">p(\@args);
-</code></pre><p>というふうに簡単に出力することができる。
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">use Data::Dumper;sub p { print Data::Dumper::Dumper(shift) }
+</code></pre></td></tr></table>
+</div>
+</div><p>こうすることで、デバッグするときは</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">p(\@args);
+</code></pre></td></tr></table>
+</div>
+</div><p>というふうに簡単に出力することができる。
 便利だね。</p>
 <p>jqueryFileTree.pl</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">#!/usr/bin/perl
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">#!/usr/bin/perl
 # jQuery File Tree Perl Connector
 # Version 0.01
 # https://www.nqou.net
@@ -239,7 +318,7 @@ use strict;
 use warnings;
 use utf8;
 # use Data::Dumper;sub p { print Data::Dumper::Dumper(shift) }
-print &quot;Content-type: text/html;\n\n&quot;;
+print &#34;Content-type: text/html;\n\n&#34;;
 my @args = &lt;&gt;;
 # p(\@args);
 my %params = (map { split /=/ } @args);
@@ -248,23 +327,23 @@ foreach my $value (values %params) {
 uri_unescape(\$value);
 }
 # p(\%params);
-my $target = $params{dir} || './';# 省略時は現在のディレクトリ（元々の仕様は最上位ディレクトリ）
-die &quot;Error!&quot; if $target =~ /\.\./;# さかのぼり禁止
-die &quot;Error!&quot; unless -d $target;# ディレクトリ以外禁止
+my $target = $params{dir} || &#39;./&#39;;# 省略時は現在のディレクトリ（元々の仕様は最上位ディレクトリ）
+die &#34;Error!&#34; if $target =~ /\.\./;# さかのぼり禁止
+die &#34;Error!&#34; unless -d $target;# ディレクトリ以外禁止
 our @files;
 search_dir($target);
 # p(\@files);
-print qq{&lt;ul class=&quot;jqueryFileTree&quot; style=&quot;display: none;&quot;&gt;};
+print qq{&lt;ul class=&#34;jqueryFileTree&#34; style=&#34;display: none;&#34;&gt;};
 foreach my $file (@files) {
 if (-d $file) {
 my ($dir) = $file =~ m!/([^/]*?)$!o;
-print qq{&lt;li class=&quot;directory collapsed&quot;&gt;&lt;a href=&quot;#&quot; rel=&quot;$file/&quot;&gt;$dir&lt;/a&gt;&lt;/li&gt;};
+print qq{&lt;li class=&#34;directory collapsed&#34;&gt;&lt;a href=&#34;#&#34; rel=&#34;$file/&#34;&gt;$dir&lt;/a&gt;&lt;/li&gt;};
 } elsif (-f _) {
 my ($ext) = $file =~ /([^\.]+)$/o;
 my ($filename) = $file =~ m!/([^/]*?)$!o;
-print qq{&lt;li class=&quot;file ext_${ext}&quot;&gt;&lt;a href=&quot;#&quot; rel=&quot;$file&quot;&gt;$filename&lt;/a&gt;&lt;/li&gt;};
+print qq{&lt;li class=&#34;file ext_${ext}&#34;&gt;&lt;a href=&#34;#&#34; rel=&#34;$file&#34;&gt;$filename&lt;/a&gt;&lt;/li&gt;};
 } else {
-print &quot;Error!&quot;;
+print &#34;Error!&#34;;
 }
 }
 print qq{&lt;/ul&gt;};
@@ -272,7 +351,7 @@ print qq{&lt;/ul&gt;};
 sub search_dir {
 my $dir = shift;
 my @f;
-opendir my $dh, $dir or die &quot;can not open `$dir`: $!&quot;;
+opendir my $dh, $dir or die &#34;can not open `$dir`: $!&#34;;
 foreach my $file (sort {$a cmp $b} readdir $dh) {
 next if $file =~ /^\./o;
 my $path = qq{$dir$file};
@@ -288,9 +367,11 @@ push @files, @f;# ディレクトリ、ファイルの順にする
 # アンエスケープ
 sub uri_unescape {
 my $str = shift;
-$$str =~ s/%([0-9a-fA-F]{2})/pack(&quot;H2&quot;, $1)/eg;
+$$str =~ s/%([0-9a-fA-F]{2})/pack(&#34;H2&#34;, $1)/eg;
 }
-</code></pre>
+</code></pre></td></tr></table>
+</div>
+</div>
   </div>
 
   

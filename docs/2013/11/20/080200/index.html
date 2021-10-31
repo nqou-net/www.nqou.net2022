@@ -14,7 +14,7 @@
 <meta itemprop="name" content="Windowsの開発環境って難しい">
 <meta itemprop="description" content="@nqounetです． 最近，Windowsで開発する（Per"><meta itemprop="datePublished" content="2013-11-20T08:02:00+09:00" />
 <meta itemprop="dateModified" content="2013-11-20T08:02:00+09:00" />
-<meta itemprop="wordCount" content="1138">
+<meta itemprop="wordCount" content="1140">
 <meta itemprop="keywords" content="git,perl," />
 
 <meta name="twitter:card" content="summary"/>
@@ -229,11 +229,25 @@
 <p>結局リポジトリをイジって使えるフォントを増やす方法があったので，それでRictyを選べるようにした．</p>
 <!-- raw HTML omitted -->
 <p>エイリアスを作成するのに<!-- raw HTML omitted -->set-alias<!-- raw HTML omitted -->というコマンドがあるのだけど，引数は設定できないので，よく使う<!-- raw HTML omitted -->gst<!-- raw HTML omitted -->（<!-- raw HTML omitted -->git status -sb<!-- raw HTML omitted -->の短縮型）は関数にしてやらなければならない．</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">function gst { git status -sb }
-</code></pre><p>そんなに難しくなかった．</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">function gst { git status -sb }
+</code></pre></td></tr></table>
+</div>
+</div><p>そんなに難しくなかった．</p>
 <p>Macでは，ターミナルから<!-- raw HTML omitted -->open .<!-- raw HTML omitted -->とする事も多かったので，<!-- raw HTML omitted -->explorer.exe<!-- raw HTML omitted -->も関数にしてやる．</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">function open($file_or_dir = &quot;.&quot;) { explorer.exe $file_or_dir }
-</code></pre><p>関数は引数も使える，かつ，初期値を入れておくこともできるので，openだけでもカレントディレクトリを開くように出来た．</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">function open($file_or_dir = &#34;.&#34;) { explorer.exe $file_or_dir }
+</code></pre></td></tr></table>
+</div>
+</div><p>関数は引数も使える，かつ，初期値を入れておくこともできるので，openだけでもカレントディレクトリを開くように出来た．</p>
 <!-- raw HTML omitted -->
 <p>ソフトによっても，<!-- raw HTML omitted -->%system_drive%<!-- raw HTML omitted -->を指定してくる奴もいてヤダ．</p>
 <p>なのに，ホームディレクトリを別のドライブにするのは結構大変．</p>

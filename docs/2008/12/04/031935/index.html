@@ -14,7 +14,7 @@
 <meta itemprop="name" content="今日のMENTA、2回目">
 <meta itemprop="description" content="zipファイルは、lang_perl_MENTA_tags_"><meta itemprop="datePublished" content="2008-12-04T03:19:35+09:00" />
 <meta itemprop="dateModified" content="2008-12-04T03:19:35+09:00" />
-<meta itemprop="wordCount" content="4582">
+<meta itemprop="wordCount" content="5141">
 <meta itemprop="keywords" content="perl," />
 
 <meta name="twitter:card" content="summary"/>
@@ -210,7 +210,7 @@
   
 
   <div class="post-date">
-    <time datetime="2008-12-04T03:19:35&#43;0900">Dec 4, 2008</time> <span class="readtime">&middot; 10 min read</span>
+    <time datetime="2008-12-04T03:19:35&#43;0900">Dec 4, 2008</time> <span class="readtime">&middot; 11 min read</span>
   </div>
 
   <div>
@@ -234,12 +234,448 @@ nanochat.css     (604) : スタイルシート
 main.logとmember.logは空ファイルでOK（のはず）。
 <!-- raw HTML omitted -->サンプル<!-- raw HTML omitted -->
 nanochat.cgi</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">#!/usr/bin/perl
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 62
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 63
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 64
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 65
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 66
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 67
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 68
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 69
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 70
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 71
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 72
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 73
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 74
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 75
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 76
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 77
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 78
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 79
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 80
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 81
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 82
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 83
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 84
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 85
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 86
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 87
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 88
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 89
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 90
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 91
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 92
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 93
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 94
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 95
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 96
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 97
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 98
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 99
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">100
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">101
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">102
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">103
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">104
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">105
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">106
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">107
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">108
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">109
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">110
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">111
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">112
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">113
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">114
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">115
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">116
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">117
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">118
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">119
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">120
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">121
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">122
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">123
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">124
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">125
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">126
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">127
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">128
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">129
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">130
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">131
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">132
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">133
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">134
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">135
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">136
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">137
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">138
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">139
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">140
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">141
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">142
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">143
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">144
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">145
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">146
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">147
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">148
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">149
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">150
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">151
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">152
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">153
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">154
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">155
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">156
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">157
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">158
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">159
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">160
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">161
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">162
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">163
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">164
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">165
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">166
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">167
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">168
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">169
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">170
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">171
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">172
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">173
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">174
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">175
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">176
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">177
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">178
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">179
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">180
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">181
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">182
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">183
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">184
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">185
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">186
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">187
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">188
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">189
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">190
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">191
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">192
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">193
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">194
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">195
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">196
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">197
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">198
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">199
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">200
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">201
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">202
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">203
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">204
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">205
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">206
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">207
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">208
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">209
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">210
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">211
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">212
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">213
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">214
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">215
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">216
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">217
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">218
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">219
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">220
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">221
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">222
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">223
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">224
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">225
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">226
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">227
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">228
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">229
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">230
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">231
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">232
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">233
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">234
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">235
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">236
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">237
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">238
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">239
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">240
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">241
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">242
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">243
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">244
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">245
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">246
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">247
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">248
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">249
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">250
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">251
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">252
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">253
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">254
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">255
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">256
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">257
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">258
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">259
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">260
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">261
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">262
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">263
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">264
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">265
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">266
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">267
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">268
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">269
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">270
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">271
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">272
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">273
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">274
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">275
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">276
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">277
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">278
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">279
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">280
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">281
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">282
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">283
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">284
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">285
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">286
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">287
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">288
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">289
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">290
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">291
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">292
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">293
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">294
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">295
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">296
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">297
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">298
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">299
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">300
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">301
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">302
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">303
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">304
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">305
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">306
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">307
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">308
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">309
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">310
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">311
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">312
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">313
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">314
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">315
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">316
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">317
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">318
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">319
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">320
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">321
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">322
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">323
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">324
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">325
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">326
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">327
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">328
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">329
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">330
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">331
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">332
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">333
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">334
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">335
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">336
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">337
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">338
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">339
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">340
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">341
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">342
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">343
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">344
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">345
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">346
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">347
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">348
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">349
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">350
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">351
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">352
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">353
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">354
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">355
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">356
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">357
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">358
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">359
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">360
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">361
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">362
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">363
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">364
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">365
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">366
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">367
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">368
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">369
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">370
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">371
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">372
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">373
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">374
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">375
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">376
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">377
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">378
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">379
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">380
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">381
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">382
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">383
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">384
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">385
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">386
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">387
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">388
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">389
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">390
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">391
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">392
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">393
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">394
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">395
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">396
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">397
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">398
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">399
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">400
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">401
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">402
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">403
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">404
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">405
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">406
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">407
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">408
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">409
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">410
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">411
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">412
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">413
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">414
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">415
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">416
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">417
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">418
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">419
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">420
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">421
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">422
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">423
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">424
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">425
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">426
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">427
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">428
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">429
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">430
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">431
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">432
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">#!/usr/bin/perl
 # ↑は「#!/usr/local/bin/perl」が一般的みたいなの。
 # 動かないときはプロバイダに訊くの。
 #BEGIN{
-#    print &quot;Content-type: text/plain\n\n&quot;;
-#    open(STDERR, &quot;&gt;&amp;STDOUT&quot;);
+#    print &#34;Content-type: text/plain\n\n&#34;;
+#    open(STDERR, &#34;&gt;&amp;STDOUT&#34;);
 #    $|=1;
 #}
 # ↑はエラーが出て困った時にコメントを外すの。
@@ -252,9 +688,9 @@ my @max_list = qw(10 20 30 40 50);
 # ここに書いたのがドロップダウンに表示されるの。
 # でも、あんまり大きい数はいやなの。
 # 数字以外も書けるけど、書いたらいやなの。
-my $return_uri = '../nanochat.htm';
+my $return_uri = &#39;../nanochat.htm&#39;;
 # 「戻るの。」でリンクする場所を決める事ができるの。
-my $ss_uri = './nanochat.css';
+my $ss_uri = &#39;./nanochat.css&#39;;
 # スタイルシートの場所なの。
 # このファイルはスクリプトと同じ場所だと効かない事があるらしいの。
 # そういう人はスタイルシートを他の場所において、ここを変えるの。
@@ -262,22 +698,22 @@ my $ss_uri = './nanochat.css';
 my $timeout = 1800;
 # 書込みしてない人はクッキーの期限が切れるの。
 # その時間を決める事ができるの。単位は秒なの。
-my $main_log = './main.log';
+my $main_log = &#39;./main.log&#39;;
 # 会話の中身を記録するファイルの名前なの。
 # 最初はこの名前だから、そのまま使うときは変えなくてもいいの。
-my $member_log = './member.log';
+my $member_log = &#39;./member.log&#39;;
 # 誰が居るかを記録するファイルの名前なの。
 # 最初はこの名前だから、そのまま使うときは変えなくてもいいの。
-my $nano = 'なの';
+my $nano = &#39;なの&#39;;
 # これを変えたらなのじゃなくなるの。でもべつにいいの。
-my $script_uri = $ENV{SCRIPT_NAME} || './nanochat.cgi';
+my $script_uri = $ENV{SCRIPT_NAME} || &#39;./nanochat.cgi&#39;;
 # このファイルの名前を変えたら、右側の方にその名前を書くの。
 # ここから・・・
 my $msg_max = ( sort { $b &lt;=&gt; $a } @max_list )[0];
 my $msg_min = ( sort { $a &lt;=&gt; $b } @max_list )[0];
-my $script_name  = 'NANOChat';
-my $print_str    = '';
-my $print_header = '';
+my $script_name  = &#39;NANOChat&#39;;
+my $print_str    = &#39;&#39;;
+my $print_header = &#39;&#39;;
 my %members      = ();
 my %ip           = ();
 my @logs         = ();
@@ -294,23 +730,23 @@ print_exit();
 sub main {
 my $cookie = get_cookie();
 # HTMLのチェック用なの。
-#    $cookie = ',10';
-#    $cookie = '61,10';
-#    $ENV{QUERY_STRING} = 'logout=1';
+#    $cookie = &#39;,10&#39;;
+#    $cookie = &#39;61,10&#39;;
+#    $ENV{QUERY_STRING} = &#39;logout=1&#39;;
 # ここまでなの。でも、下のほうにもう少しあるの。
 if ( defined $cookie ) {
 my ( $name, $tmp ) = split /,/, $cookie, 3;
 if ($name) {
-$name = pack( &quot;H*&quot;, $name );
+$name = pack( &#34;H*&#34;, $name );
 check_max($tmp);
 }
 my %form = ();    # (ua =&gt; $ENV{HTTP_USER_AGENT});
 foreach ( split /[&amp;;]/, $ENV{QUERY_STRING} ) {
 my ( $key, $value ) = split /=/, $_, 2;
 if ( $value =~ /[%\+]/ ) {
-my $space = &quot;(?:\xA1\xA1)&quot;;
+my $space = &#34;(?:\xA1\xA1)&#34;;
 $value =~ tr/+/ /;
-$value =~ s/%([0-9a-fA-F][0-9a-fA-F])/pack(&quot;H2&quot;, $1)/eg;
+$value =~ s/%([0-9a-fA-F][0-9a-fA-F])/pack(&#34;H2&#34;, $1)/eg;
 $value =~ s/&amp;/&amp;amp;/g;
 $value =~ s/&lt;/&lt;/g;
 $value =~ s/&gt;/&gt;/g;
@@ -324,41 +760,41 @@ $form{$key} = $value;
 }
 member_read();
 # HTMLチェック用なの。
-#        $members{'a'} = time; $ip{'a'} = '127.0.0.1';
+#        $members{&#39;a&#39;} = time; $ip{&#39;a&#39;} = &#39;127.0.0.1&#39;;
 # これだけなの。
 if ( exists $form{logout} ) {
 ref_logout( \%form, $name );
 print_exit();
 }
-elsif ( exists $form{login} and $name eq '' ) {
+elsif ( exists $form{login} and $name eq &#39;&#39; ) {
 ref_login( \%form );
 $name = $form{n};
 check_max( $form{max} );
 }
 log_read();
 if ($name) {
-$form{msg} ne '' and ref_make_log( \%form, $name );
-my $cname = unpack( &quot;H*&quot;, $name );
-$print_header = &quot;Set-Cookie: $script_name=$cname,$msg_max; expires=&quot;
-. gmtime( time + $timeout ) . &quot;\n&quot;;
+$form{msg} ne &#39;&#39; and ref_make_log( \%form, $name );
+my $cname = unpack( &#34;H*&#34;, $name );
+$print_header = &#34;Set-Cookie: $script_name=$cname,$msg_max; expires=&#34;
+. gmtime( time + $timeout ) . &#34;\n&#34;;
 reload($name);
 }
 else {
-stock_header('名前を教えてほしいの。');
+stock_header(&#39;名前を教えてほしいの。&#39;);
 stock_member();
-my $sel = qq(&lt;select name=&quot;max&quot;&gt;);
+my $sel = qq(&lt;select name=&#34;max&#34;&gt;);
 my $sd  = qq( selected);
 foreach (@max_list) {
-$sel .= qq(&lt;option value=&quot;$_&quot;$sd&gt;$_ 件&lt;/option&gt;);
-$sd = '';
+$sel .= qq(&lt;option value=&#34;$_&#34;$sd&gt;$_ 件&lt;/option&gt;);
+$sd = &#39;&#39;;
 }
-$sel .= '&lt;/select&gt;';
+$sel .= &#39;&lt;/select&gt;&#39;;
 $print_str .= &lt;&lt;EOM;
-&lt;div class=&quot;nano&quot;&gt;
-&lt;form method=&quot;get&quot; action=&quot;$script_uri&quot;&gt;
-&lt;p&gt;&lt;input type=&quot;text&quot; name=&quot;n&quot; size=&quot;20&quot; maxlength=&quot;20&quot; tabindex=&quot;1&quot;&gt; ←ここに名前を書いてほしいの。&lt;/p&gt;
-&lt;p&gt;書いたら、表示するメッセージ数を $sel にして &lt;input type=&quot;submit&quot; value=&quot;部屋に入るの。&quot; tabindex=&quot;2&quot;&gt;&lt;input type=&quot;hidden&quot; name=&quot;login&quot; value=&quot;1&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;input type=&quot;submit&quot; name=&quot;logout&quot; value=&quot;やっぱり帰るの。&quot; tabindex=&quot;3&quot;&gt;&lt;/p&gt;
+&lt;div class=&#34;nano&#34;&gt;
+&lt;form method=&#34;get&#34; action=&#34;$script_uri&#34;&gt;
+&lt;p&gt;&lt;input type=&#34;text&#34; name=&#34;n&#34; size=&#34;20&#34; maxlength=&#34;20&#34; tabindex=&#34;1&#34;&gt; ←ここに名前を書いてほしいの。&lt;/p&gt;
+&lt;p&gt;書いたら、表示するメッセージ数を $sel にして &lt;input type=&#34;submit&#34; value=&#34;部屋に入るの。&#34; tabindex=&#34;2&#34;&gt;&lt;input type=&#34;hidden&#34; name=&#34;login&#34; value=&#34;1&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;input type=&#34;submit&#34; name=&#34;logout&#34; value=&#34;やっぱり帰るの。&#34; tabindex=&#34;3&#34;&gt;&lt;/p&gt;
 &lt;/form&gt;&lt;/div&gt;&lt;hr&gt;
 EOM
 stock_log($msg_min);
@@ -366,18 +802,18 @@ stock_footer();
 }
 }
 else {
-$print_header = &quot;Set-Cookie: $script_name=,10; expires=&quot;
-. gmtime( time + $timeout ) . &quot;\n&quot;;
-stock_header('いらっしゃいなの。');
+$print_header = &#34;Set-Cookie: $script_name=,10; expires=&#34;
+. gmtime( time + $timeout ) . &#34;\n&#34;;
+stock_header(&#39;いらっしゃいなの。&#39;);
 my $limit = int( $timeout / 60 );
 $print_str .= &lt;&lt;EOM;
-&lt;div class=&quot;nano&quot;&gt;
-&lt;p&gt;ここの入退室管理を任されてる &lt;strong class=&quot;name&quot;&gt;$nano&lt;/strong&gt; なの。よろしくなの。&lt;/p&gt;
+&lt;div class=&#34;nano&#34;&gt;
+&lt;p&gt;ここの入退室管理を任されてる &lt;strong class=&#34;name&#34;&gt;$nano&lt;/strong&gt; なの。よろしくなの。&lt;/p&gt;
 &lt;p&gt;この部屋へ入るにはクッキーが必要なの。退室するときにちゃんと消してあげるから、名札だと思ってつけてほしいの。今つけた人は、ついてるかどうかわからないから１回読みなおしてほしいの。&lt;/p&gt;
 &lt;p&gt;JavaScriptが使えると、マウスを使わなくてもチャットできるの。とってもおすすめなの。&lt;/p&gt;
 &lt;p&gt;あと、$limit分くらい何も発言しないと部屋から追い出されちゃうの。気をつけてほしいの。&lt;/p&gt;
 &lt;p&gt;あ、ホームページ（http://から書くの）とかメールアドレス（mailto:から書くの）とかを書くと、リンクしてあげるの。よくわからないから発言を全部リンクしちゃうけど、そのくらいは許してほしいの。&lt;/p&gt;
-&lt;p&gt;準備ができたら&lt;a href=&quot;$script_uri&quot;&gt;入口&lt;/a&gt;で名前を教えてほしいの。&lt;/p&gt;
+&lt;p&gt;準備ができたら&lt;a href=&#34;$script_uri&#34;&gt;入口&lt;/a&gt;で名前を教えてほしいの。&lt;/p&gt;
 &lt;/div&gt;
 EOM
 stock_footer();
@@ -400,11 +836,11 @@ delete $ip{$_};
 }
 }
 sub member_write {
-my $member = join( &quot;\t&quot;, %members );
-my $ip     = join( &quot;\t&quot;, %ip );
-open OUT, &quot;&gt; $member_log&quot; or die;
-print OUT $member . &quot;\n&quot;;
-print OUT $ip . &quot;\n&quot;;
+my $member = join( &#34;\t&#34;, %members );
+my $ip     = join( &#34;\t&#34;, %ip );
+open OUT, &#34;&gt; $member_log&#34; or die;
+print OUT $member . &#34;\n&#34;;
+print OUT $ip . &#34;\n&#34;;
 close OUT;
 }
 # ファイルを最後の方から読むの。
@@ -417,9 +853,9 @@ open IN, $main_log or die;
 binmode(IN);
 my $size = ( -s IN ) / $bufsize;
 $pos += $size &lt;=&gt; ( $pos = int($size) );
-my $buf_tmp = '';
+my $buf_tmp = &#39;&#39;;
 while ( $pos-- ) {
-my $buf   = '';
+my $buf   = &#39;&#39;;
 my @lines = ();
 seek( IN, $bufsize * $pos, 0 );
 read( IN, $buf, $bufsize );
@@ -438,34 +874,34 @@ unshift( @logs, $buf_tmp ) if $buf_tmp;
 # でも、表示する時に切るから放っておくの。
 }
 sub log_write {
-open OUT, &quot;&gt;&gt; $main_log&quot; or die;
+open OUT, &#34;&gt;&gt; $main_log&#34; or die;
 seek OUT, 0, 2;
-print OUT &quot;$_\n&quot; foreach reverse @logs_now;
+print OUT &#34;$_\n&#34; foreach reverse @logs_now;
 close OUT;
 return if %members;
 $msg_max = ( sort { $b &lt;=&gt; $a } @max_list )[0];
 @logs = ();
 log_read();
-open OUT, &quot;&gt; $main_log&quot; or die;
+open OUT, &#34;&gt; $main_log&#34; or die;
 foreach (@logs) {
 tr/\x0D\x0A//d;
 $_ or next;
-print OUT &quot;$_\n&quot;;
+print OUT &#34;$_\n&#34;;
 }
 close OUT;
 }
 sub ref_login {
 my ($f) = @_;
 $f-&gt;{n}
-or error_exit(&quot;名前を教えてほしいって言ってるの。名無しさんはいやなの。&quot;);
+or error_exit(&#34;名前を教えてほしいって言ってるの。名無しさんはいやなの。&#34;);
 $f-&gt;{n} eq $nano
 and error_exit(
-qq(&lt;strong class=&quot;name&quot;&gt;$f-&gt;{n}&lt;/strong&gt; はわたしなの。同じ名前はいやなの。)
+qq(&lt;strong class=&#34;name&#34;&gt;$f-&gt;{n}&lt;/strong&gt; はわたしなの。同じ名前はいやなの。)
 );
 exists $members{ $f-&gt;{n} }
 and $ip{ $f-&gt;{n} } ne $ENV{REMOTE_ADDR}
 and error_exit(
-qq(&lt;strong class=&quot;name&quot;&gt;$f-&gt;{n}&lt;/strong&gt; さんはもういるの。名前を変えてほしいの。)
+qq(&lt;strong class=&#34;name&#34;&gt;$f-&gt;{n}&lt;/strong&gt; さんはもういるの。名前を変えてほしいの。)
 );
 $members{ $f-&gt;{n} } = time;
 exists $ip{ $f-&gt;{n} } and return;
@@ -473,7 +909,7 @@ $ip{ $f-&gt;{n} } = $ENV{REMOTE_ADDR};
 ref_make_log(
 {
 msg =&gt;
-qq(&lt;strong class=&quot;name&quot;&gt;$f-&gt;{n}&lt;/strong&gt; さんが入室したの。仲良くしてなの。),
+qq(&lt;strong class=&#34;name&#34;&gt;$f-&gt;{n}&lt;/strong&gt; さんが入室したの。仲良くしてなの。),
 },
 $nano
 );
@@ -481,24 +917,24 @@ $nano
 sub ref_logout {
 my ( $f, $name ) = @_;
 $print_header =
-&quot;Set-Cookie: $script_name=,0; expires=Sat Jan 1 00:00:00 2000\n&quot;;
+&#34;Set-Cookie: $script_name=,0; expires=Sat Jan 1 00:00:00 2000\n&#34;;
 if ( delete $members{$name} and delete $ip{$name} ) {
 ref_make_log(
 {
 msg =&gt;
-qq(&lt;strong class=&quot;name&quot;&gt;$name&lt;/strong&gt; さんが退室したの。ちょっと淋しいの。),
+qq(&lt;strong class=&#34;name&#34;&gt;$name&lt;/strong&gt; さんが退室したの。ちょっと淋しいの。),
 },
 $nano
 );
 %members
 or
-ref_make_log( { msg =&gt; '誰もいなくなったの。淋しいの。', }, $nano );
-stock_header('ばいばいなの。');
+ref_make_log( { msg =&gt; &#39;誰もいなくなったの。淋しいの。&#39;, }, $nano );
+stock_header(&#39;ばいばいなの。&#39;);
 $print_str .= &lt;&lt;EOM;
-&lt;div class=&quot;nano&quot;&gt;
-&lt;p&gt;&lt;strong class=&quot;name&quot;&gt;$name&lt;/strong&gt; さん、ありがとうなの。また来てほしいの。&lt;/p&gt;
+&lt;div class=&#34;nano&#34;&gt;
+&lt;p&gt;&lt;strong class=&#34;name&#34;&gt;$name&lt;/strong&gt; さん、ありがとうなの。また来てほしいの。&lt;/p&gt;
 &lt;p&gt;そういえば、ブラウザに履歴がいっぱいあると思うの。ごめんねなの。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;$return_uri&quot;&gt;戻るの。&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;$return_uri&#34;&gt;戻るの。&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 EOM
 log_write();
@@ -506,11 +942,11 @@ member_write();
 stock_footer();
 }
 else {
-stock_header('残念なの。');
+stock_header(&#39;残念なの。&#39;);
 $print_str .= &lt;&lt;EOM;
-&lt;div class=&quot;nano&quot;&gt;
+&lt;div class=&#34;nano&#34;&gt;
 &lt;p&gt;今度はちゃんと入ってほしいの。また来てなの。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;$return_uri&quot;&gt;戻るの。&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;$return_uri&#34;&gt;戻るの。&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 EOM
 stock_footer();
@@ -528,33 +964,33 @@ return undef;
 }
 sub ref_make_log {
 my ( $f, $name ) = @_;
-my $str  = '';
+my $str  = &#39;&#39;;
 my @date = localtime;
-if (   index( $f-&gt;{msg}, &quot;http://&quot; ) == 0
-or index( $f-&gt;{msg}, &quot;mailto:&quot; ) == 0 )
+if (   index( $f-&gt;{msg}, &#34;http://&#34; ) == 0
+or index( $f-&gt;{msg}, &#34;mailto:&#34; ) == 0 )
 {
-$f-&gt;{msg} = qq(&lt;a href=&quot;$f-&gt;{msg}&quot;&gt;$f-&gt;{msg}&lt;/a&gt;);
+$f-&gt;{msg} = qq(&lt;a href=&#34;$f-&gt;{msg}&#34;&gt;$f-&gt;{msg}&lt;/a&gt;);
 }
-$f-&gt;{msg} .= sprintf &quot; &lt;small&gt;(%ld/%02d/%02d %02d:%02d:%02d)&lt;/small&gt;&quot;,
+$f-&gt;{msg} .= sprintf &#34; &lt;small&gt;(%ld/%02d/%02d %02d:%02d:%02d)&lt;/small&gt;&#34;,
 $date[5] + 1900, $date[4] + 1, @date[ 3, 2, 1, 0 ];
 if ( $name eq $nano ) {
-$str = qq(&lt;p class=&quot;nano&quot;&gt;);
+$str = qq(&lt;p class=&#34;nano&#34;&gt;);
 }
 else {
-$str = &quot;&lt;p&gt;&quot;;
+$str = &#34;&lt;p&gt;&#34;;
 $members{$name} = time;
 }
 unshift @logs_now,
-qq($str&lt;strong class=&quot;name&quot;&gt;$name&lt;/strong&gt; ： $f-&gt;{msg}&lt;/p&gt;);
+qq($str&lt;strong class=&#34;name&#34;&gt;$name&lt;/strong&gt; ： $f-&gt;{msg}&lt;/p&gt;);
 }
 sub reload {
-stock_header( $nano . 'チャットなの。' );
+stock_header( $nano . &#39;チャットなの。&#39; );
 stock_member();
 $print_str .= &lt;&lt;EOM;
-&lt;div class=&quot;nano&quot;&gt;
-&lt;form method=&quot;get&quot; action=&quot;$script_uri&quot;&gt;
-&lt;p&gt;あなたは &lt;strong class=&quot;name&quot;&gt;$_[0]&lt;/strong&gt; さんなの。改行するとたぶん送信するの。何も書いてない時は再読込になるの。&lt;/p&gt;
-&lt;p&gt;&lt;input type=&quot;text&quot; name=&quot;msg&quot; size=&quot;80&quot; value=&quot;&quot; tabindex=&quot;1&quot;&gt;&lt;br&gt;&lt;input type=&quot;submit&quot; value=&quot;送信するの。&quot; tabindex=&quot;2&quot;&gt; &lt;input type=&quot;submit&quot; name=&quot;logout&quot; value=&quot;退室するの。&quot; tabindex=&quot;3&quot;&gt;&lt;/p&gt;
+&lt;div class=&#34;nano&#34;&gt;
+&lt;form method=&#34;get&#34; action=&#34;$script_uri&#34;&gt;
+&lt;p&gt;あなたは &lt;strong class=&#34;name&#34;&gt;$_[0]&lt;/strong&gt; さんなの。改行するとたぶん送信するの。何も書いてない時は再読込になるの。&lt;/p&gt;
+&lt;p&gt;&lt;input type=&#34;text&#34; name=&#34;msg&#34; size=&#34;80&#34; value=&#34;&#34; tabindex=&#34;1&#34;&gt;&lt;br&gt;&lt;input type=&#34;submit&#34; value=&#34;送信するの。&#34; tabindex=&#34;2&#34;&gt; &lt;input type=&#34;submit&#34; name=&#34;logout&#34; value=&#34;退室するの。&#34; tabindex=&#34;3&#34;&gt;&lt;/p&gt;
 &lt;/form&gt;&lt;/div&gt;&lt;hr&gt;
 EOM
 stock_log($msg_max);
@@ -566,58 +1002,58 @@ member_write();
 }
 sub stock_member {
 my $cnt = 0;
-$print_str .= qq(&lt;p class=&quot;nano&quot;&gt;今は、 );
+$print_str .= qq(&lt;p class=&#34;nano&#34;&gt;今は、 );
 foreach ( sort { $members{$b} &lt;=&gt; $members{$a} } keys %members ) {
-$print_str .= qq(&lt;strong class=&quot;name&quot;&gt;$_&lt;/strong&gt; さんと );
+$print_str .= qq(&lt;strong class=&#34;name&#34;&gt;$_&lt;/strong&gt; さんと );
 ++$cnt;
 }
-my $only = $cnt ? &quot; &quot; : &quot; だけ&quot;;
-$print_str .= qq(&lt;strong class=&quot;name&quot;&gt;$nano&lt;/strong&gt;$onlyがいるの。&lt;/p&gt;\n);
+my $only = $cnt ? &#34; &#34; : &#34; だけ&#34;;
+$print_str .= qq(&lt;strong class=&#34;name&#34;&gt;$nano&lt;/strong&gt;$onlyがいるの。&lt;/p&gt;\n);
 }
 sub stock_log {
 my $cnt = 0;
 @logs_now or @logs or return;
-$print_str .= qq(&lt;div class=&quot;logs&quot;&gt;);
+$print_str .= qq(&lt;div class=&#34;logs&#34;&gt;);
 foreach ( @logs_now, reverse @logs ) {
 $_[0] &lt; ++$cnt and last;
 tr/\x0D\x0A//d;
 $print_str .= $_;
 }
-$print_str .= '&lt;/div&gt;';
+$print_str .= &#39;&lt;/div&gt;&#39;;
 }
 sub stock_header {
 $print_str .= &lt;&lt;EOM;
-&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD HTML 4.01//EN&quot;
-&quot;http://www.w3.org/TR/html4/strict.dtd&quot;&gt;
-&lt;html lang=&quot;ja&quot;&gt;
+&lt;!DOCTYPE html PUBLIC &#34;-//W3C//DTD HTML 4.01//EN&#34;
+&#34;http://www.w3.org/TR/html4/strict.dtd&#34;&gt;
+&lt;html lang=&#34;ja&#34;&gt;
 &lt;head&gt;
-&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;$ss_uri&quot; title=&quot;Default&quot; media=&quot;screen&quot;&gt;
-&lt;meta name=&quot;ROBOTS&quot; content=&quot;NOINDEX&quot;&gt;
+&lt;link rel=&#34;stylesheet&#34; type=&#34;text/css&#34; href=&#34;$ss_uri&#34; title=&#34;Default&#34; media=&#34;screen&#34;&gt;
+&lt;meta name=&#34;ROBOTS&#34; content=&#34;NOINDEX&#34;&gt;
 &lt;title&gt;$_[0]&lt;/title&gt;
 &lt;/head&gt;
-&lt;body onload=&quot;obj = document.forms[0];if(obj)obj.elements[0].focus();&quot;&gt;
-&lt;h2 class=&quot;nano&quot;&gt;$_[0]&lt;/h2&gt;&lt;hr&gt;
+&lt;body onload=&#34;obj = document.forms[0];if(obj)obj.elements[0].focus();&#34;&gt;
+&lt;h2 class=&#34;nano&#34;&gt;$_[0]&lt;/h2&gt;&lt;hr&gt;
 EOM
 }
 sub stock_footer {
-my $cost = sprintf &quot;このお仕事に %.2f 秒くらいかかったの。&quot;, times;
+my $cost = sprintf &#34;このお仕事に %.2f 秒くらいかかったの。&#34;, times;
 my $copy =
-qq(&lt;a href=&quot;http://www.age.ne.jp/x/nobu3/perl/nanochat.htm&quot; title=&quot;このスクリプトの最新版はこのリンク先にあるの。&quot;&gt;$script_name Ver0.12&lt;/a&gt;);
+qq(&lt;a href=&#34;http://www.age.ne.jp/x/nobu3/perl/nanochat.htm&#34; title=&#34;このスクリプトの最新版はこのリンク先にあるの。&#34;&gt;$script_name Ver0.12&lt;/a&gt;);
 $print_str .= &lt;&lt;EOM;
 &lt;hr&gt;
-&lt;p class=&quot;nano&quot;&gt;$cost&lt;/p&gt;
+&lt;p class=&#34;nano&#34;&gt;$cost&lt;/p&gt;
 &lt;address&gt;$copy&lt;/address&gt;
 &lt;/body&gt;
 &lt;/html&gt;
 EOM
 }
 sub error_exit {
-$print_str = '';
-stock_header('そんな事したらダメなの。');
+$print_str = &#39;&#39;;
+stock_header(&#39;そんな事したらダメなの。&#39;);
 $print_str .= &lt;&lt;EOM;
-&lt;div class=&quot;nano&quot;&gt;
+&lt;div class=&#34;nano&#34;&gt;
 &lt;p&gt;$_[0]&lt;/p&gt;
-&lt;p&gt;お仕事の邪魔しないでほしいの。&lt;a href=&quot;$script_uri&quot;&gt;入口まで戻るの。&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;お仕事の邪魔しないでほしいの。&lt;a href=&#34;$script_uri&#34;&gt;入口まで戻るの。&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 EOM
 stock_footer();
@@ -625,15 +1061,15 @@ print_exit();
 }
 sub print_exit {
 $print_str =~ tr/\x0D\x0A//d;
-print &quot;Content-Type: text/html; charset=euc-jp\n&quot;;
-print &quot;Content-Language: ja\n&quot;;
-print &quot;Content-Script-Type: text/javascript\n&quot;;
-print &quot;Content-Style-Type: text/css\n&quot;;
-print &quot;Pragma: no-cache\n&quot;;
-print &quot;Cache-Control: no-cache\n&quot;;
+print &#34;Content-Type: text/html; charset=euc-jp\n&#34;;
+print &#34;Content-Language: ja\n&#34;;
+print &#34;Content-Script-Type: text/javascript\n&#34;;
+print &#34;Content-Style-Type: text/css\n&#34;;
+print &#34;Pragma: no-cache\n&#34;;
+print &#34;Cache-Control: no-cache\n&#34;;
 $print_header and print $print_header;
-printf &quot;Content-Length: %ld\n&quot;, length $print_str;
-print &quot;\n&quot;;
+printf &#34;Content-Length: %ld\n&#34;, length $print_str;
+print &#34;\n&#34;;
 print $print_str;
 exit;
 }
@@ -643,14 +1079,14 @@ $num = $msg_min if $num =~ /\D/;
 $msg_max = $msg_max &lt; $num ? $msg_max : $num &lt; $msg_min ? $msg_min : $num;
 }
 sub check_env {
-my $str = '';
--r $main_log   or $str .= $main_log . 'が読めないの。&lt;br&gt;';
--w $main_log   or $str .= $main_log . 'に書けないの。&lt;br&gt;';
--r $member_log or $str .= $member_log . 'が読めないの。&lt;br&gt;';
--w $member_log or $str .= $member_log . 'に書けないの。&lt;br&gt;';
-ord('漢') == 0xb4
+my $str = &#39;&#39;;
+-r $main_log   or $str .= $main_log . &#39;が読めないの。&lt;br&gt;&#39;;
+-w $main_log   or $str .= $main_log . &#39;に書けないの。&lt;br&gt;&#39;;
+-r $member_log or $str .= $member_log . &#39;が読めないの。&lt;br&gt;&#39;;
+-w $member_log or $str .= $member_log . &#39;に書けないの。&lt;br&gt;&#39;;
+ord(&#39;漢&#39;) == 0xb4
 or $str .=
-qq(&lt;strong class=&quot;name&quot;&gt;$nano&lt;/strong&gt; は、eucが好きなの。変えてほしいの。&lt;br&gt;);
+qq(&lt;strong class=&#34;name&#34;&gt;$nano&lt;/strong&gt; は、eucが好きなの。変えてほしいの。&lt;br&gt;);
 $str and error_exit($str);
 }
 __END__
@@ -666,8 +1102,64 @@ Ver 0.12 (2001/04/26)
 最大表示件数のチェックを強化。
 ロボット対策をつけた。
 スタイルシートを若干変更。
-</code></pre><p>nanochat.css</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">/***********************/
+</code></pre></td></tr></table>
+</div>
+</div><p>nanochat.css</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">/***********************/
 /*    for  NANOChat    */
 /* Designed by NANO(?) */
 /***********************/
@@ -715,9 +1207,11 @@ color: #ac8;
 address{
 text-align: right;
 font-size: 80%;
-font-family: &quot;Times New Roman&quot;, Times, serif;
+font-family: &#34;Times New Roman&#34;, Times, serif;
 }
-</code></pre>
+</code></pre></td></tr></table>
+</div>
+</div>
   </div>
 
   

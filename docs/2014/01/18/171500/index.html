@@ -14,7 +14,7 @@
 <meta itemprop="name" content="Mojolicious::Plugin::JSON_XSを書いた">
 <meta itemprop="description" content="@nqounetです． MojoliciousでJSONを使う"><meta itemprop="datePublished" content="2014-01-18T17:15:00+09:00" />
 <meta itemprop="dateModified" content="2014-01-18T17:15:00+09:00" />
-<meta itemprop="wordCount" content="815">
+<meta itemprop="wordCount" content="838">
 <meta itemprop="keywords" content="mojolicious,perl," />
 
 <meta name="twitter:card" content="summary"/>
@@ -217,13 +217,33 @@
   <div>
   <p><!-- raw HTML omitted -->@nqounet<!-- raw HTML omitted -->です．</p>
 <p>MojoliciousでJSONを使う時は，renderメソッドにjsonを指定してやると変数をそのままJSONにして渡せるので簡単です．</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">my $args = { a =&gt; [1,2], b =&gt; 'c' };
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">my $args = { a =&gt; [1,2], b =&gt; &#39;c&#39; };
 $self-&gt;render(json =&gt; $args);
-</code></pre><p>しかし，この時に使用されるMojo::JSONはPurePerlなので，できればXSのモジュール（JSON::XS）を使って高速化したいですよね．</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>しかし，この時に使用されるMojo::JSONはPurePerlなので，できればXSのモジュール（JSON::XS）を使って高速化したいですよね．</p>
 <!-- raw HTML omitted -->
 <p>ついでなので，便利に使えるJSONも一緒に測ってみます．</p>
 <p>ソースコードは最後に載せていますので適当にお使いください．</p>
-<pre tabindex="0"><code class="language-default" data-lang="default"># Benchmark: running json, mojo, xs for at least 3 CPU seconds...
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text"># Benchmark: running json, mojo, xs for at least 3 CPU seconds...
 #       json: 3.03104 wallclock secs ( 3.02 usr +  0.00 sys =  3.02 CPU) @ 173870.86/s (n=525090)
 #       mojo: 3.19469 wallclock secs ( 3.17 usr +  0.00 sys =  3.17 CPU) @ 14308.83/s (n=45359)
 #         xs: 3.16628 wallclock secs ( 3.15 usr +  0.00 sys =  3.15 CPU) @ 195861.27/s (n=616963)
@@ -231,12 +251,26 @@ $self-&gt;render(json =&gt; $args);
 # mojo  14309/s    --  -92%  -93%
 # json 173871/s 1115%    --  -11%
 # xs   195861/s 1269%   13%    --
-</code></pre><p>mojoはMojo::JSON，xsはJSON::XS，jsonは，JSONです．</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>mojoはMojo::JSON，xsはJSON::XS，jsonは，JSONです．</p>
 <p>JSON::XSの方がMojo::JSONよりも10倍以上速いですね．</p>
 <p>JSONモジュールは，JSON::XSがあるとこれを使うのですが，若干差がありますね．</p>
 <p>インスタンスを作るときなどに多少のオーバーヘッドがあるのかもしれません．</p>
 <p>ちなみに，インスタンスを再利用するとこんな感じの結果になりました．</p>
-<pre tabindex="0"><code class="language-default" data-lang="default"># Benchmark: running json, mojo, xs for at least 3 CPU seconds...
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text"># Benchmark: running json, mojo, xs for at least 3 CPU seconds...
 #       json: 3.18115 wallclock secs ( 3.16 usr +  0.00 sys =  3.16 CPU) @ 285812.66/s (n=903168)
 #       mojo: 3.26202 wallclock secs ( 3.22 usr +  0.00 sys =  3.22 CPU) @ 14538.20/s (n=46813)
 #         xs: 3.19833 wallclock secs ( 3.18 usr +  0.00 sys =  3.18 CPU) @ 309832.39/s (n=985267)
@@ -244,18 +278,31 @@ $self-&gt;render(json =&gt; $args);
 # mojo  14538/s    --  -95%  -95%
 # json 285813/s 1866%    --   -8%
 # xs   309832/s 2031%    8%    --
-</code></pre><p>…さらに差がつきましたね．</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>…さらに差がつきましたね．</p>
 <p>ここまで速いのであれば，使える環境なら使いたいですね．</p>
 <!-- raw HTML omitted -->
 <p>最近は更新がないのでどこまで互換性があるか心配ではありますが，少し使ってみた感じでは問題ありませんでした．</p>
 <!-- raw HTML omitted -->
 <p>使う時はいつもと同じようにpluginメソッドで呼び出すだけです．</p>
-<pre tabindex="0"><code class="language-default" data-lang="default"># Mojolicious::Lite
-plugin 'JSON_XS';
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text"># Mojolicious::Lite
+plugin &#39;JSON_XS&#39;;
 
 # Mojolicious
-$app-&gt;plugin('JSON_XS');
-</code></pre><p>正直なところ，JSON部分だけが速くなってもあまり効果はない気がします．</p>
+$app-&gt;plugin(&#39;JSON_XS&#39;);
+</code></pre></td></tr></table>
+</div>
+</div><p>正直なところ，JSON部分だけが速くなってもあまり効果はない気がします．</p>
 <p>ただし，とてつもなく大きなJSONをやりとりする機会があるなら使えると思います．</p>
 <p>ハンドラーを書き換える方法はこちらをどうぞ．</p>
 <!-- raw HTML omitted -->

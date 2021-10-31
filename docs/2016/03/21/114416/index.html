@@ -14,7 +14,7 @@
 <meta itemprop="name" content="Kansai.pm第16回ミーティングを開催してきました">
 <meta itemprop="description" content="おはようございます！ 若林（@nqounet）です。 興奮冷めや"><meta itemprop="datePublished" content="2016-03-21T11:44:16+09:00" />
 <meta itemprop="dateModified" content="2016-03-21T11:44:16+09:00" />
-<meta itemprop="wordCount" content="3392">
+<meta itemprop="wordCount" content="3408">
 <meta itemprop="keywords" content="kansaipm,perl," />
 
 <meta name="twitter:card" content="summary"/>
@@ -236,8 +236,15 @@
 <li><!-- raw HTML omitted -->App::revealup - HTTP Server application for viewing Markdown formatted text as slides - metacpan.org<!-- raw HTML omitted --></li>
 </ul>
 <p>私の使い方が悪いだけかもしれませんが、最新版だとCSSが微妙なので、 <code>carton</code> でバージョンを 0.19 に固定して使っています。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl">requires <span style="color:#e6db74">&#39;App::revealup&#39;</span>, <span style="color:#e6db74">&#39;==0.19&#39;</span>;
-</code></pre></div><p>Markdownは、幾つかの書き方を覚えるだけでもかなり捗りますので、IT系じゃない方でもパソコンを使う方全般におすすめです。</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl">requires <span style="color:#e6db74">&#39;App::revealup&#39;</span>, <span style="color:#e6db74">&#39;==0.19&#39;</span>;
+</code></pre></td></tr></table>
+</div>
+</div><p>Markdownは、幾つかの書き方を覚えるだけでもかなり捗りますので、IT系じゃない方でもパソコンを使う方全般におすすめです。</p>
 <p>見出し（H[1-6]）とリスト（UL, LI）と整形済みテキスト（PRE）に対応する書き方はすぐに覚えられるので是非お試しください。</p>
 <p>以下のページがそこそこいい感じにまとまっています。</p>
 <ul>
@@ -254,7 +261,26 @@
 <p>スライドを作成するときは、自分にあったツールを使えば発表のハードルが低くもなりますので、是非お試しください。</p>
 <p>閑話休題。</p>
 <p>日数や秒数は計算するのは面倒なので、当然Perlで計算しています。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#75715e">#!/usr/bin/env perl</span>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#75715e">#!/usr/bin/env perl</span>
 <span style="color:#66d9ef">use</span> utf8;
 <span style="color:#66d9ef">use</span> strict;
 <span style="color:#66d9ef">use</span> warnings;
@@ -269,7 +295,9 @@ say $kansaipm16<span style="color:#f92672">-&gt;</span>delta_years($kansaipm15);
 say $kansaipm16<span style="color:#f92672">-&gt;</span>delta_days($kansaipm15);
 say $kansaipm16<span style="color:#f92672">-&gt;</span>delta_hours($kansaipm15);
 say $kansaipm16<span style="color:#f92672">-&gt;</span>delta_seconds($kansaipm15);
-</code></pre></div><p><!-- raw HTML omitted -->@karupanerura<!-- raw HTML omitted --> さんのトークにもありましたが、 Time::Moment は非常に高速です。</p>
+</code></pre></td></tr></table>
+</div>
+</div><p><!-- raw HTML omitted -->@karupanerura<!-- raw HTML omitted --> さんのトークにもありましたが、 Time::Moment は非常に高速です。</p>
 <p>from_string は確かに汎用的ではないのですが、 Moment.js との親和性は高いので、モダンなウェブアプリならこれ一択でしょう。</p>
 <ul>
 <li><!-- raw HTML omitted -->JavaScriptで時間を扱うならMoment.js | IT Office Nishimiyahara<!-- raw HTML omitted --></li>

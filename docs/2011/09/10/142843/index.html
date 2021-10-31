@@ -14,7 +14,7 @@
 <meta itemprop="name" content="sakuraサーバーでcpanmを快適に使うまでにしたこと、あるいは、2行でcpanmを使う方法">
 <meta itemprop="description" content="sakuraサーバーのプレミアムプランを契約したので、早速c"><meta itemprop="datePublished" content="2011-09-10T14:28:43+09:00" />
 <meta itemprop="dateModified" content="2011-09-10T14:28:43+09:00" />
-<meta itemprop="wordCount" content="566">
+<meta itemprop="wordCount" content="572">
 <meta itemprop="keywords" content="perl," />
 
 <meta name="twitter:card" content="summary"/>
@@ -217,21 +217,51 @@
   <p>sakuraサーバーのプレミアムプランを契約したので、早速cpanmをインストールしようと、以前まとめた内容でやってみました。
 1行目からアウトでした。
 ということで、curlを使ったやり方に変更し、2行目までを同時に実行しようとしました。</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">curl -L http://cpanmin.us | perl - --local-lib=~/perl5 local::lib App::cpanminus
-</code></pre><p>ところが、local::libが上手く入りません。
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">curl -L http://cpanmin.us | perl - --local-lib=~/perl5 local::lib App::cpanminus
+</code></pre></td></tr></table>
+</div>
+</div><p>ところが、local::libが上手く入りません。
 幸い、cpanmは入ったので、コレでいいかと思っていたのですが、シェルで使ったときに何かと不便な（PATHが通っていなかったり、「-l ~/perl5」を毎回指定しなければいけなかったり、@INCに「/home/username/perl5/lib/perl5」が追加されなかったり）ので、まずはそれらの設定を手作業でやりました。
 ホームディレクトリの「.cshrc」を開いて、
 set path = (/sbin /bin /usr/sbin /usr/bin /usr/local/sbin /usr/local/bin $HOME/bin)
 となっていた部分に「$HOME/perl5/bin」を追記して、以下のようにしました。</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">set path = ($HOME/perl5/bin /sbin /bin /usr/sbin /usr/bin /usr/local/sbin /usr/local/bin $HOME/bin)
-</code></pre><p>で、あとは適当な所に以下の2行を追記しました。「username」は適宜読み替えてください。</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">setenv  PERL_CPANM_OPT &quot;-l ~/perl5&quot;
-setenv  PERL5LIB &quot;/home/username/perl5/lib/perl5&quot;
-</code></pre><p>その状態だと、local::libがすんなりと入ったので、実際にはこうすればよかったのでは？というのを次回のために書いておきます。
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">set path = ($HOME/perl5/bin /sbin /bin /usr/sbin /usr/bin /usr/local/sbin /usr/local/bin $HOME/bin)
+</code></pre></td></tr></table>
+</div>
+</div><p>で、あとは適当な所に以下の2行を追記しました。「username」は適宜読み替えてください。</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">setenv  PERL_CPANM_OPT &#34;-l ~/perl5&#34;
+setenv  PERL5LIB &#34;/home/username/perl5/lib/perl5&#34;
+</code></pre></td></tr></table>
+</div>
+</div><p>その状態だと、local::libがすんなりと入ったので、実際にはこうすればよかったのでは？というのを次回のために書いておきます。
 うまくいくかどうかはわかりません。</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">curl -L http://cpanmin.us | perl -I$HOME/perl5/lib/perl5 - --local-lib=~/perl5 local::lib App::cpanminus
-echo 'eval $(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)' &gt;&gt; ~/.cshrc
-</code></pre><p>どうでしょうね、コレ。</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">curl -L http://cpanmin.us | perl -I$HOME/perl5/lib/perl5 - --local-lib=~/perl5 local::lib App::cpanminus
+echo &#39;eval $(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)&#39; &gt;&gt; ~/.cshrc
+</code></pre></td></tr></table>
+</div>
+</div><p>どうでしょうね、コレ。</p>
 
   </div>
 

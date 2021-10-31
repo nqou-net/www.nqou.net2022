@@ -12,18 +12,18 @@
   
 
 <meta itemprop="name" content="Data::Modelで$row-&gt;get_columnsを覚えた">
-<meta itemprop="description" content="my @json; for my $msg (@{$messages}) { push @json, { id =&gt; $msg-&gt;id, msg =&gt; $msg-&gt;msg, ts =&gt; $msg-&gt;ts, }; } $self-&gt;render(json =&gt; [@json]); my @json; for my $msg (@{$messages})"><meta itemprop="datePublished" content="2011-01-11T20:42:58+09:00" />
+<meta itemprop="description" content="1 2 3 4 5 6 7 8 9 10 my @json; for my $msg (@{$messages}) { push @json, { id =&gt; $msg-&gt;id, msg =&gt; $msg-&gt;msg, ts =&gt; $msg-&gt;ts, };"><meta itemprop="datePublished" content="2011-01-11T20:42:58+09:00" />
 <meta itemprop="dateModified" content="2011-01-11T20:42:58+09:00" />
-<meta itemprop="wordCount" content="56">
+<meta itemprop="wordCount" content="74">
 <meta itemprop="keywords" content="perl," />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Data::Modelで$row-&gt;get_columnsを覚えた"/>
-<meta name="twitter:description" content="my @json; for my $msg (@{$messages}) { push @json, { id =&gt; $msg-&gt;id, msg =&gt; $msg-&gt;msg, ts =&gt; $msg-&gt;ts, }; } $self-&gt;render(json =&gt; [@json]); my @json; for my $msg (@{$messages})"/>
+<meta name="twitter:description" content="1 2 3 4 5 6 7 8 9 10 my @json; for my $msg (@{$messages}) { push @json, { id =&gt; $msg-&gt;id, msg =&gt; $msg-&gt;msg, ts =&gt; $msg-&gt;ts, };"/>
 
 
 <meta property="og:title" content="Data::Modelで$row-&gt;get_columnsを覚えた" />
-<meta property="og:description" content="my @json; for my $msg (@{$messages}) { push @json, { id =&gt; $msg-&gt;id, msg =&gt; $msg-&gt;msg, ts =&gt; $msg-&gt;ts, }; } $self-&gt;render(json =&gt; [@json]); my @json; for my $msg (@{$messages})" />
+<meta property="og:description" content="1 2 3 4 5 6 7 8 9 10 my @json; for my $msg (@{$messages}) { push @json, { id =&gt; $msg-&gt;id, msg =&gt; $msg-&gt;msg, ts =&gt; $msg-&gt;ts, };" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.nqou.net/2011/01/11/204258/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2011-01-11T20:42:58+09:00" />
@@ -70,7 +70,7 @@
       },
       "datePublished": "2011-01-11T20:42:58+09:00",
       "dateModified": "2011-01-11T20:42:58+09:00",
-      "description": "my @json; for my $msg (@{$messages}) { push @json, { id =\u0026gt; $msg-\u0026gt;id, msg =\u0026gt; $msg-\u0026gt;msg, ts =\u0026gt; $msg-\u0026gt;ts, }; } $self-\u0026gt;render(json =\u0026gt; [@json]); my @json; for my $msg (@{$messages})",
+      "description": "1 2 3 4 5 6 7 8 9 10 my @json; for my $msg (@{$messages}) { push @json, { id =\u0026gt; $msg-\u0026gt;id, msg =\u0026gt; $msg-\u0026gt;msg, ts =\u0026gt; $msg-\u0026gt;ts, };",
       "inLanguage": "ja",
       "potentialAction": [
         {
@@ -215,7 +215,21 @@
 
   <div>
   <!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#66d9ef">my</span> @json;
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#66d9ef">my</span> @json;
 <span style="color:#66d9ef">for</span> <span style="color:#66d9ef">my</span> $msg (@{$messages}) {
     push @json,
       {
@@ -225,18 +239,46 @@
       };
 }
 $self<span style="color:#f92672">-&gt;</span>render(json <span style="color:#f92672">=&gt;</span> [@json]);
-</code></pre></div><!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#66d9ef">my</span> @json;
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#66d9ef">my</span> @json;
 <span style="color:#66d9ef">for</span> <span style="color:#66d9ef">my</span> $msg (@{$messages}) {
     push @json, $msg<span style="color:#f92672">-&gt;</span>get_columns;
 }
 $self<span style="color:#f92672">-&gt;</span>render(json <span style="color:#f92672">=&gt;</span> [@json]);
-</code></pre></div><!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#66d9ef">my</span> @json <span style="color:#f92672">=</span> map { $_<span style="color:#f92672">-&gt;</span>get_columns } @{$messages};
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#66d9ef">my</span> @json <span style="color:#f92672">=</span> map { $_<span style="color:#f92672">-&gt;</span>get_columns } @{$messages};
 $self<span style="color:#f92672">-&gt;</span>render(json <span style="color:#f92672">=&gt;</span> [@json]);
-</code></pre></div><!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl">$self<span style="color:#f92672">-&gt;</span>render(json <span style="color:#f92672">=&gt;</span> [map { $_<span style="color:#f92672">-&gt;</span>get_columns } @{$messages}]);
-</code></pre></div><!-- raw HTML omitted -->
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl">$self<span style="color:#f92672">-&gt;</span>render(json <span style="color:#f92672">=&gt;</span> [map { $_<span style="color:#f92672">-&gt;</span>get_columns } @{$messages}]);
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
 
   </div>
 

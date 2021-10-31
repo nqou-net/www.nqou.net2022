@@ -12,18 +12,18 @@
   
 
 <meta itemprop="name" content="Mojolicious::Liteで作ったアプリをHerokuで動かす">
-<meta itemprop="description" content="mkdir myapp &amp;&amp; cd myapp git init mojo generate lite_app myapp.pl heroku create --buildpack https://github.com/pnu/heroku-buildpack-perl.git touch app.psgi echo &#39;requires &#34;Mojolicious&#34;;&#39; &gt; cpanfile echo &#39;web: starman --preload-app --port $PORT myapp.pl psgi&#39;"><meta itemprop="datePublished" content="2015-04-08T11:40:23+09:00" />
+<meta itemprop="description" content="@nqounetです。 Mojolicious::Liteに限"><meta itemprop="datePublished" content="2015-04-08T11:40:23+09:00" />
 <meta itemprop="dateModified" content="2015-04-08T11:40:23+09:00" />
-<meta itemprop="wordCount" content="59">
+<meta itemprop="wordCount" content="878">
 <meta itemprop="keywords" content="git,heroku,mojolicious,perl," />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Mojolicious::Liteで作ったアプリをHerokuで動かす"/>
-<meta name="twitter:description" content="mkdir myapp &amp;&amp; cd myapp git init mojo generate lite_app myapp.pl heroku create --buildpack https://github.com/pnu/heroku-buildpack-perl.git touch app.psgi echo &#39;requires &#34;Mojolicious&#34;;&#39; &gt; cpanfile echo &#39;web: starman --preload-app --port $PORT myapp.pl psgi&#39;"/>
+<meta name="twitter:description" content="@nqounetです。 Mojolicious::Liteに限"/>
 
 
 <meta property="og:title" content="Mojolicious::Liteで作ったアプリをHerokuで動かす" />
-<meta property="og:description" content="mkdir myapp &amp;&amp; cd myapp git init mojo generate lite_app myapp.pl heroku create --buildpack https://github.com/pnu/heroku-buildpack-perl.git touch app.psgi echo &#39;requires &#34;Mojolicious&#34;;&#39; &gt; cpanfile echo &#39;web: starman --preload-app --port $PORT myapp.pl psgi&#39;" />
+<meta property="og:description" content="@nqounetです。 Mojolicious::Liteに限" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.nqou.net/2015/04/08/114023/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2015-04-08T11:40:23+09:00" />
@@ -70,7 +70,7 @@
       },
       "datePublished": "2015-04-08T11:40:23+09:00",
       "dateModified": "2015-04-08T11:40:23+09:00",
-      "description": "mkdir myapp \u0026amp;\u0026amp; cd myapp git init mojo generate lite_app myapp.pl heroku create --buildpack https://github.com/pnu/heroku-buildpack-perl.git touch app.psgi echo \u0026#39;requires \u0026#34;Mojolicious\u0026#34;;\u0026#39; \u0026gt; cpanfile echo \u0026#39;web: starman --preload-app --port $PORT myapp.pl psgi\u0026#39;",
+      "description": "@nqounetです。 Mojolicious::Liteに限",
       "inLanguage": "ja",
       "potentialAction": [
         {
@@ -213,14 +213,29 @@
   
 
   <div class="post-date">
-    <time datetime="2015-04-08T11:40:23&#43;0900">Apr 8, 2015</time> <span class="readtime">&middot; 1 min read</span>
+    <time datetime="2015-04-08T11:40:23&#43;0900">Apr 8, 2015</time> <span class="readtime">&middot; 2 min read</span>
   </div>
 
   <div>
-  <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir myapp <span style="color:#f92672">&amp;&amp;</span> cd myapp
+  <p><a href="https://twitter.com/nqounet">@nqounet</a>です。</p>
+<p>Mojolicious::Liteに限らず、PerlのアプリはHerokuで簡単に動かせる、ということなので試してみました。</p>
+<h3 id="まとめ">まとめ</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">mkdir myapp <span style="color:#f92672">&amp;&amp;</span> cd myapp
 git init
 mojo generate lite_app myapp.pl
 heroku create --buildpack https://github.com/pnu/heroku-buildpack-perl.git
@@ -231,28 +246,53 @@ git add .
 git commit -m <span style="color:#e6db74">&#39;go to heroku&#39;</span>
 git push heroku master
 heroku open
-</code></pre></div><!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl">requires <span style="color:#e6db74">&#39;Mojolicious&#39;</span>;
-</code></pre></div><!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<pre tabindex="0"><code class="language-default" data-lang="default">web: starman --preload-app --port $PORT myapp.pl psgi
-</code></pre><!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<pre tabindex="0"><code class="language-default" data-lang="default">web: perl app.pl
-</code></pre><!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="heroku-buildpack">heroku buildpack</h3>
+<p>Herokuではbuildpackという仕組みで、Perl製のウェブアプリも動かすことができます。</p>
+<ul>
+<li><a href="https://qiita.com/vzvu3k6k/items/6d893462c790742ed230">Perl5のPSGIアプリ用buildpackのまとめ - Qiita</a></li>
+</ul>
+<p>上で紹介した記事が推奨している <a href="https://github.com/pnu/heroku-buildpack-perl">https://github.com/pnu/heroku-buildpack-perl</a> は使いやすいです。</p>
+<h3 id="cpanfile">cpanfile</h3>
+<p>依存モジュールを、cpanfileに書いておくと自動的にインストールされます。</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl">requires <span style="color:#e6db74">&#39;Mojolicious&#39;</span>;
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="apppsgi-vs-procfile">app.psgi vs Procfile</h3>
+<p>上記のbuildpackでは、基本的にはPSGIの規格に沿ったapp.psgiを用意する必要があるのですが、適切にProcfileを書けばapp.psgiは空でも問題ありません。（app.psgiという名前のファイルが存在すればbuildpackが有効になります）</p>
+<p>その辺を利用して、Mojolicious::Liteで作成したアプリを（とりあえず）PSGIとして動かすようにProcfileに書いておきます。</p>
+<p>上記のbuildpackでは、標準でstarmanがインストールされるので、それを利用します。</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">web: starman --preload-app --port $PORT myapp.pl psgi
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="hypnotoadで動かしたい">hypnotoadで動かしたい</h3>
+<p>Mojoliciousのhypnotoadでも動作させられるのですが、portの設定をファイルに書く必要がある（コマンドのオプションでは指定できないっぽい）ので、ちょっと面倒です。</p>
+<p>どうしてもhypnotoadで動かしたい場合は適宜お調べください。</p>
+<h3 id="procfileの応用">Procfileの応用</h3>
+<p>app.psgiよりもProcfileが優先されるので、応用すればapp.plで起動するようなアプリを動かすことも可能ですよ。</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">web: perl app.pl
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="cpanモジュールを使う手もある">cpanモジュールを使う手もある？</h3>
+<p>実は、Mojolicious::Command::deploy::herokuを使うと簡単に動かせるらしいのですが…。</p>
+<p><a href="http://tempire.github.io/mojolicious-command-deploy-heroku/">Deploy Perl Mojolicious web apps to Heroku</a></p>
+<p>二段階認証に対応していないのか、私の環境ではうまく動作しませんでした。</p>
 
   </div>
 

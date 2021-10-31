@@ -14,7 +14,7 @@
 <meta itemprop="name" content="Perl の「令和」への対応">
 <meta itemprop="description" content="Date::Japanese::Era というとても便利な Perl のモジュールがあります。 和暦をいい感じ"><meta itemprop="datePublished" content="2019-05-14T01:54:21+09:00" />
 <meta itemprop="dateModified" content="2019-05-14T01:54:21+09:00" />
-<meta itemprop="wordCount" content="204">
+<meta itemprop="wordCount" content="227">
 <meta itemprop="keywords" content="perl," />
 
 <meta name="twitter:card" content="summary"/>
@@ -217,7 +217,34 @@
   <p><code>Date::Japanese::Era</code> というとても便利な Perl のモジュールがあります。</p>
 <p>和暦をいい感じに扱うモジュールです。</p>
 <p>もちろん「令和」にも対応しています。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#75715e">#!/usr/bin/env perl</span>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#75715e">#!/usr/bin/env perl</span>
 <span style="color:#66d9ef">use</span> utf8;
 <span style="color:#66d9ef">use</span> strict;
 <span style="color:#66d9ef">use</span> warnings;
@@ -240,7 +267,9 @@
     <span style="color:#66d9ef">my</span> $era <span style="color:#f92672">=</span> Date::Japanese::Era<span style="color:#f92672">-&gt;</span><span style="color:#66d9ef">new</span>(<span style="color:#e6db74">&#34;令和&#34;</span>, <span style="color:#ae81ff">1</span>);
     p $era<span style="color:#f92672">-&gt;</span>gregorian_year;
 }
-</code></pre></div><p>このモジュールですが、「令和」への対応は 2019-03-31 に発表されています。</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>このモジュールですが、「令和」への対応は 2019-03-31 に発表されています。</p>
 <p>…PDT（アメリカ太平洋夏時間）ですが。</p>
 <ul>
 <li><a href="https://metacpan.org/changes/release/MIYAGAWA/Date-Japanese-Era-0.07">Changes - metacpan.org</a></li>

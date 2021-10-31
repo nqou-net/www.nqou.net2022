@@ -14,7 +14,7 @@
 <meta itemprop="name" content="デプロイツール「Cinnamon」を使ってみた">
 <meta itemprop="description" content="@nqounetです。 Kansai.pmで@shiba_yu"><meta itemprop="datePublished" content="2013-02-27T07:30:00+09:00" />
 <meta itemprop="dateModified" content="2013-02-27T07:30:00+09:00" />
-<meta itemprop="wordCount" content="1268">
+<meta itemprop="wordCount" content="1271">
 <meta itemprop="keywords" content="git,kansaipm,perl," />
 
 <meta name="twitter:card" content="summary"/>
@@ -224,8 +224,15 @@
 <!-- raw HTML omitted -->
 <p>まずはCinnamonをインストールします。</p>
 <p>CinnamonはCPANに上がっているので、cpanmなどでインストールが可能です。</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">$ cpanm Cinnamon
-</code></pre><p>依存関係のモジュールも自動的にインストールしてくれるので、簡単です。</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">$ cpanm Cinnamon
+</code></pre></td></tr></table>
+</div>
+</div><p>依存関係のモジュールも自動的にインストールしてくれるので、簡単です。</p>
 <p>インストールが完了すると、「cinnamon」というコマンドが実行できるようになります。</p>
 <p>このコマンドを実行すると、そのディレクトリから見て「config/deploy.pl」というファイルを自動的に読み込んでくれるので、gitで管理している場合は、プロジェクトのホームディレクトリからみて、「config/deploy.pl」になるように設定ファイルを作成すると便利です。</p>
 <p>細かい書き方は、@naoyaさんのブログか、@shiba_yu36さんのスライド資料などを見ながら書くと良いでしょう。</p>
@@ -236,8 +243,15 @@
 <p>それでもエラーになる場合は、tty経由でしかsudo出来ないようになっている可能性があるので、その設定を解除します。</p>
 <p>*<!-- raw HTML omitted -->TTY経由でないsudoの実行 - shibainu55日記<!-- raw HTML omitted --></p>
 <p>具体的には、rootになってからのvisudoで、</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">Defaults    requiretty
-</code></pre><p>になっている部分をコメント（先頭に「#」を入力）にして無効にします。</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Defaults    requiretty
+</code></pre></td></tr></table>
+</div>
+</div><p>になっている部分をコメント（先頭に「#」を入力）にして無効にします。</p>
 <!-- raw HTML omitted -->
 <h1 id="うまくいく例">うまくいく例</h1>
 <p>remote {
@@ -252,7 +266,7 @@ sudo qq{cd /var/www/myapp &amp;&amp; git fetch origin &amp;&amp; git checkout -q
 それらを踏まえて（sudoはありませんが）作成した「config/deploy.pl」がこちらです。
 
 @argsは要らなさそうなのですが、とりあえずつけています。
-```default
+```text
 use utf8;
 use v5.12;
 use Cinnamon::DSL;
@@ -282,8 +296,15 @@ task restart =&gt; sub {
 };
 </code></pre><!-- raw HTML omitted -->
 <p>そのあと、以下のコマンドを実行。</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">$ cinnamon production udpate
-</code></pre><p>席を立ってトイレに行って戻ってくると、サーバーの再起動まで終わっていました。</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">$ cinnamon production udpate
+</code></pre></td></tr></table>
+</div>
+</div><p>席を立ってトイレに行って戻ってくると、サーバーの再起動まで終わっていました。</p>
 <p>これは楽チンですね。</p>
 
   </div>

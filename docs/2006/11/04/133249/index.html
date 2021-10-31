@@ -14,7 +14,7 @@
 <meta itemprop="name" content="Atom.xmlで「続きを読む」を表現する方法">
 <meta itemprop="description" content="追記（more）に記事を書いていると、メインページなどで「続"><meta itemprop="datePublished" content="2006-11-04T13:32:49+09:00" />
 <meta itemprop="dateModified" content="2006-11-04T13:32:49+09:00" />
-<meta itemprop="wordCount" content="501">
+<meta itemprop="wordCount" content="511">
 <meta itemprop="keywords" content="movabletype," />
 
 <meta name="twitter:card" content="summary"/>
@@ -210,7 +210,7 @@
   
 
   <div class="post-date">
-    <time datetime="2006-11-04T13:32:49&#43;0900">Nov 4, 2006</time> <span class="readtime">&middot; 1 min read</span>
+    <time datetime="2006-11-04T13:32:49&#43;0900">Nov 4, 2006</time> <span class="readtime">&middot; 2 min read</span>
   </div>
 
   <div>
@@ -219,20 +219,44 @@
 それがどうにも気になって、なんとかしてやろうと思ってみた。</p>
 <p>変更するのは「entry」内の「content」。</p>
 <p>Atom.xmlのデフォルトテンプレートでは、「MTEntryBody」と「MTEntryMore」がそのまま表示されている。</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">&lt;content type=&quot;html&quot; xml:lang=&quot;&lt;$MTBlogLanguage ietf=&quot; 1&quot;$&gt;&quot; xml:base=&quot;&lt;$MTBlogURL encode_xml=&quot;1&quot; $&gt;&quot;&gt;
-    &lt;$MTEntryBody encode_xml=&quot;1&quot; convert_breaks=&quot;0&quot; $&gt;
-      &lt;$MTEntryMore encode_xml=&quot;1&quot; convert_breaks=&quot;0&quot; $&gt;
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">&lt;content type=&#34;html&#34; xml:lang=&#34;&lt;$MTBlogLanguage ietf=&#34; 1&#34;$&gt;&#34; xml:base=&#34;&lt;$MTBlogURL encode_xml=&#34;1&#34; $&gt;&#34;&gt;
+    &lt;$MTEntryBody encode_xml=&#34;1&#34; convert_breaks=&#34;0&#34; $&gt;
+      &lt;$MTEntryMore encode_xml=&#34;1&#34; convert_breaks=&#34;0&#34; $&gt;
 &lt;/content&gt;
-</code></pre><p>これを以下のように変更する。</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">&lt;content type=&quot;html&quot; xml:lang=&quot;&lt;$MTBlogLanguage ietf=&quot; 1&quot;$&gt;&quot; xml:base=&quot;&lt;$MTBlogURL encode_xml=&quot;1&quot; $&gt;&quot;&gt;
-    &lt;MTIfNonEmpty tag=&quot;EntryBody&quot; encode_xml=&quot;1&quot;&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>これを以下のように変更する。</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">&lt;content type=&#34;html&#34; xml:lang=&#34;&lt;$MTBlogLanguage ietf=&#34; 1&#34;$&gt;&#34; xml:base=&#34;&lt;$MTBlogURL encode_xml=&#34;1&#34; $&gt;&#34;&gt;
+    &lt;MTIfNonEmpty tag=&#34;EntryBody&#34; encode_xml=&#34;1&#34;&gt;
       &lt;$MTEntryBody$&gt;
-        &lt;MTIfNonEmpty tag=&quot;EntryMore&quot;&gt;
-          &lt;p&gt;&lt;a href=&quot;&lt;$MTEntryPermalink$&gt;&quot;&gt;続きを読む&lt;/a&gt;&lt;/p&gt;
+        &lt;MTIfNonEmpty tag=&#34;EntryMore&#34;&gt;
+          &lt;p&gt;&lt;a href=&#34;&lt;$MTEntryPermalink$&gt;&#34;&gt;続きを読む&lt;/a&gt;&lt;/p&gt;
         &lt;/MTIfNonEmpty&gt;
     &lt;/MTIfNonEmpty&gt;
 &lt;/content&gt;
-</code></pre><p>content全体を一度にencode_xmlするために、冗長なタグも使っているが、少なくともSleipnirのHeadline-Reader Pluginではきれいに読めるようになったので、一石二鳥である。</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>content全体を一度にencode_xmlするために、冗長なタグも使っているが、少なくともSleipnirのHeadline-Reader Pluginではきれいに読めるようになったので、一石二鳥である。</p>
 
   </div>
 

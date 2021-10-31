@@ -14,7 +14,7 @@
 <meta itemprop="name" content="mixiのコミュニティのトピックから画像をダウンロードするスクリプトを書いた">
 <meta itemprop="description" content="mixiページが始まってから、また、mixiを使うようになり"><meta itemprop="datePublished" content="2011-09-20T08:56:57+09:00" />
 <meta itemprop="dateModified" content="2011-09-20T08:56:57+09:00" />
-<meta itemprop="wordCount" content="918">
+<meta itemprop="wordCount" content="1060">
 <meta itemprop="keywords" content="perl," />
 
 <meta name="twitter:card" content="summary"/>
@@ -210,7 +210,7 @@
   
 
   <div class="post-date">
-    <time datetime="2011-09-20T08:56:57&#43;0900">Sep 20, 2011</time> <span class="readtime">&middot; 2 min read</span>
+    <time datetime="2011-09-20T08:56:57&#43;0900">Sep 20, 2011</time> <span class="readtime">&middot; 3 min read</span>
   </div>
 
   <div>
@@ -220,28 +220,81 @@
 <!-- raw HTML omitted -->
 <p>WWW::Mixi::Scraperを使いました。
 WWW::Mixi::Scraper::Plugin::ViewBBSを見てみたところ、トピックのサブジェクトの画像は取得しているのですが、コメントの画像は取得していないので、取得するように改造しました。</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">--- WWW-Mixi-Scraper-0.33/lib/WWW/Mixi/Scraper/Plugin/ViewBBS.pm	2011-09-20 09:43:10.000000000 +0900
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">--- WWW-Mixi-Scraper-0.33/lib/WWW/Mixi/Scraper/Plugin/ViewBBS.pm	2011-09-20 09:43:10.000000000 +0900
 +++ lib/WWW/Mixi/Scraper/Plugin/ViewBBS.pm	2011-09-18 00:07:30.000000000 +0900
 @@ -53,7 +53,9 @@
-name =&gt; 'TEXT';
-process 'dd',
+name =&gt; &#39;TEXT&#39;;
+process &#39;dd&#39;,
 description =&gt; $self-&gt;html_or_text;
 -    result qw( link name description );
-+    process 'dd&gt;div.communityPhoto&gt;table&gt;tr&gt;td',
-+      'images[]' =&gt; $scraper{images};
++    process &#39;dd&gt;div.communityPhoto&gt;table&gt;tr&gt;td&#39;,
++      &#39;images[]&#39; =&gt; $scraper{images};
 +    result qw( link name description images );
 };
 $scraper{list} = scraper {
 @@ -77,6 +79,7 @@
 # incompatible with WWW::Mixi to let comment links
-# look more 'permanent' to make plagger/rss readers happier
+# look more &#39;permanent&#39; to make plagger/rss readers happier
 +    $comment-&gt;{images} = WWW::Mixi::Scraper::Plugin::_images( $comment-&gt;{images} ) if defined $comment-&gt;{images};
 $comment-&gt;{name_link} = _uri( $comment-&gt;{link} );
 $comment-&gt;{link}      = $stash-&gt;{link}
-? _uri( $stash-&gt;{link} . '#' . $comment-&gt;{subject} )
-</code></pre><p>その上で、画像に直接アクセスするように、Pluginを2つほど追加しました。
+? _uri( $stash-&gt;{link} . &#39;#&#39; . $comment-&gt;{subject} )
+</code></pre></td></tr></table>
+</div>
+</div><p>その上で、画像に直接アクセスするように、Pluginを2つほど追加しました。
 lib/WWW/Mixi/Plugin/ShowBBSPicture.pm</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">package WWW::Mixi::Scraper::Plugin::ShowBBSPicture;
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">package WWW::Mixi::Scraper::Plugin::ShowBBSPicture;
 use strict;
 use warnings;
 use WWW::Mixi::Scraper::Plugin;
@@ -255,8 +308,8 @@ sub scrape {
 my ($self, $html) = @_;
 my %scraper;
 $scraper{picture} = scraper {
-process 'img',
-link =&gt; '@src';
+process &#39;img&#39;,
+link =&gt; &#39;@src&#39;;
 result qw( link );
 };
 # bbs picture
@@ -265,8 +318,39 @@ $stash-&gt;{link} = _uri($scraper{picture}-&gt;scrape(\$html));
 return $stash;
 }
 1;
-</code></pre><p>lib/WWW/Mixi/Plugin/ShowBBSCommentPicture.pm</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">package WWW::Mixi::Scraper::Plugin::ShowBBSCommentPicture;
+</code></pre></td></tr></table>
+</div>
+</div><p>lib/WWW/Mixi/Plugin/ShowBBSCommentPicture.pm</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">package WWW::Mixi::Scraper::Plugin::ShowBBSCommentPicture;
 use strict;
 use warnings;
 use WWW::Mixi::Scraper::Plugin;
@@ -281,8 +365,8 @@ sub scrape {
 my ($self, $html) = @_;
 my %scraper;
 $scraper{picture} = scraper {
-process 'img',
-link =&gt; '@src';
+process &#39;img&#39;,
+link =&gt; &#39;@src&#39;;
 result qw( link );
 };
 # bbs picture
@@ -291,48 +375,128 @@ $stash-&gt;{link} = _uri($scraper{picture}-&gt;scrape(\$html));
 return $stash;
 }
 1;
-</code></pre><p>これらを踏まえた上で、以下が本体です。
+</code></pre></td></tr></table>
+</div>
+</div><p>これらを踏まえた上で、以下が本体です。
 ./get_mixi_photo.pl <a href="http://mixi.jp/view_bbs.pl?id=38584544&amp;comm_id=6896&amp;page=all">http://mixi.jp/view_bbs.pl?id=38584544&amp;comm_id=6896&amp;page=all</a>
 という感じに使います。
 Config::Pitについては「<!-- raw HTML omitted -->パスワード設定をコードに書かない(Config::Pit) - モダンなPerl入門 - モダンなPerl入門<!-- raw HTML omitted -->」を参考にしてアカウント情報を入力してください。</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">#!/usr/bin/env perl
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">66
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">67
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">68
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">69
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">70
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">71
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">72
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">73
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">74
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">#!/usr/bin/env perl
 #ｕｔｆ８
 use utf8;
 use 5.12.1;
 use WWW::Mixi::Scraper;
-use lib 'lib';
+use lib &#39;lib&#39;;
 use Digest::MD5 qw( md5_hex );
 use Encode;
 use Config::Pit;
 my $config = pit_get(
-'nqounet@mixi.jp',
+&#39;nqounet@mixi.jp&#39;,
 require =&gt; {
-email =&gt; 'username@domain.com',
-password =&gt; 'password',
+email =&gt; &#39;username@domain.com&#39;,
+password =&gt; &#39;password&#39;,
 },
 );
 use Log::Handler;
 my $log = Log::Handler-&gt;new(
 file =&gt; {
-filename =&gt; 'log/app.log',
+filename =&gt; &#39;log/app.log&#39;,
 utf8 =&gt; 1,
-maxlevel =&gt; 'info',# 'debug',
-timeformat =&gt; '%Y/%m/%d %H:%M:%S',
-message_layout =&gt; '[%T][%L] %m (%C)',
+maxlevel =&gt; &#39;info&#39;,# &#39;debug&#39;,
+timeformat =&gt; &#39;%Y/%m/%d %H:%M:%S&#39;,
+message_layout =&gt; &#39;[%T][%L] %m (%C)&#39;,
 },
 );
 my $mixi = WWW::Mixi::Scraper-&gt;new(
-mode =&gt; 'TEXT',
+mode =&gt; &#39;TEXT&#39;,
 %{$config},
 );
 my $topic = shift(@ARGV);
-$log-&gt;die('Usage: ./get_mixi_photo.pl topicURL') unless $topic;
+$log-&gt;die(&#39;Usage: ./get_mixi_photo.pl topicURL&#39;) unless $topic;
 my @list = $mixi-&gt;parse( $topic );
 $log-&gt;dump( debug =&gt; \@list );
 # トピックのタイトル
 my $dir = md5_hex( Encode::encode_utf8( $list[0]{subject} ) );
 mkdir $dir;
-open my $fh, '&gt;:utf8', qq{$dir/info.txt} or $log-&gt;die( qq{Can not open $dir/info.txt.} );
+open my $fh, &#39;&gt;:utf8&#39;, qq{$dir/info.txt} or $log-&gt;die( qq{Can not open $dir/info.txt.} );
 print $fh $list[0]{subject};
 close $fh;
 # トピックのトップ画像
@@ -360,16 +524,18 @@ my $link = $url-&gt;{link}-&gt;as_string;
 $log-&gt;dump( debug =&gt; $url-&gt;{link} );
 my ($ext) = $link =~ /(\.[a-zA-Z]+)$/ms;
 $log-&gt;dump( debug =&gt; $ext );
-$ext = '.jpg' unless $ext;
+$ext = &#39;.jpg&#39; unless $ext;
 my $filename = md5_hex( $link ) . $ext;
 return if -f qq{$dir/$filename};
 my $content = $mixi-&gt;{mech}-&gt;get_content( $url-&gt;{link} );
 $log-&gt;dump( debug =&gt; $content );
-open my $fh, &quot;&gt;:raw&quot;, qq{$dir/$filename} or $log-&gt;die( qq{Can not open $dir/$filename.} );
+open my $fh, &#34;&gt;:raw&#34;, qq{$dir/$filename} or $log-&gt;die( qq{Can not open $dir/$filename.} );
 print $fh $content;
 close $fh;
 }
-</code></pre>
+</code></pre></td></tr></table>
+</div>
+</div>
   </div>
 
   

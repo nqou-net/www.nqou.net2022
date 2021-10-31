@@ -177,7 +177,7 @@
         </div>
 
         <div>
-          #!/usr/bin/env perl use Mojolicious::Lite; get &#39;/&#39; =&gt; sub { my $c = shift; my $user = $c-&gt;param(&#39;user&#39;); $c-&gt;stash(hello =&gt; qq{Hello $user!}); $c-&gt;render(template =&gt; &#39;index&#39;); }; app-&gt;start; __DATA__ @@ index.html.ep &lt;!DOCTYPE
+          1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 #!/usr/bin/env
         </div>
 
         <div class="read-more-link">
@@ -228,7 +228,7 @@
         </div>
 
         <div>
-          #!/usr/bin/env perl use Mojolicious::Lite; get &#39;/&#39; =&gt; sub { my $c = shift; my $user = $c-&gt;param(&#39;user&#39;); $c-&gt;stash(hello =&gt; qq{Hello $user!}); $c-&gt;render(template =&gt; &#39;index&#39;); }; app-&gt;start; __DATA__ @@ index.html.ep &lt;!DOCTYPE
+          1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 #!/usr/bin/env
         </div>
 
         <div class="read-more-link">
@@ -245,7 +245,7 @@
         </div>
 
         <div>
-          ... any &#39;/&#39; =&gt; sub { my ($c) = @_; my $config = $c-&gt;config; my $counter = $c-&gt;session-&gt;get(&#39;counter&#39;) || $config-&gt;{initial_counter}; $counter++; $c-&gt;session-&gt;set(&#39;counter&#39; =&gt; $counter); return $c-&gt;render(&#39;index.tx&#39;, { counter =&gt; $counter,
+          1 2 3 4 5 6 7 8 9 10 11 12 13 14 ... any &#39;/&#39; =&gt; sub { my ($c) = @_; my $config = $c-&gt;config; my $counter
         </div>
 
         <div class="read-more-link">
@@ -262,7 +262,7 @@
         </div>
 
         <div>
-          #!/usr/bin/env perl use utf8; use strict; use warnings; use feature &#39;say&#39;; use open qw/:encoding(utf8) :std/; use Data::Printer {deparse =&gt; 1};
+          @nqounetです。 先ほど書いていたひな形ですが、song
         </div>
 
         <div class="read-more-link">
@@ -275,11 +275,11 @@
         </h1>
 
         <div class="post-date">
-          <time datetime="2015-02-07T08:10:45&#43;0900">Feb 7, 2015</time> &middot; 1 min read
+          <time datetime="2015-02-07T08:10:45&#43;0900">Feb 7, 2015</time> &middot; 4 min read
         </div>
 
         <div>
-          #!/usr/bin/env perl use utf8; use v5.12; use open qw/:encoding(utf-8) :std/; use DDP {deparse =&gt; 1}; $ perl -Mutf8 -le &#39;print length &#34;あいうえ
+          （追記: 2015/02/07 ） このひな形ではwarningsが有効になっていな
         </div>
 
         <div class="read-more-link">
@@ -296,7 +296,7 @@
         </div>
 
         <div>
-          #!/usr/bin/env perl use Mojolicious::Lite; get &#39;/&#39; =&gt; &#39;index&#39;; get &#39;/foo&#39; =&gt; sub { my $c = shift; my $user = $c-&gt;param(&#39;user&#39;); $c-&gt;render(text =&gt; qq{Hello $user!}); }; app-&gt;start; __DATA__ @@ index.html.ep
+          1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 #!/usr/bin/env
         </div>
 
         <div class="read-more-link">
@@ -313,7 +313,7 @@
         </div>
 
         <div>
-          #!/usr/bin/env perl use Mojolicious::Lite; get &#39;/&#39; =&gt; sub { my $c = shift; $c-&gt;redirect_to(&#39;/foo?user=nqounet&#39;); }; get &#39;/foo&#39; =&gt; sub { my $c = shift; my $user = $c-&gt;param(&#39;user&#39;); $c-&gt;render(text =&gt;
+          1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 #!/usr/bin/env perl use Mojolicious::Lite; get &#39;/&#39; =&gt; sub { my $c = shift; $c-&gt;redirect_to(&#39;/foo?user=nqounet&#39;); };
         </div>
 
         <div class="read-more-link">
@@ -330,7 +330,7 @@
         </div>
 
         <div>
-          #!/usr/bin/env perl use Mojolicious::Lite; get &#39;/&#39; =&gt; sub { shift-&gt;render(text =&gt; q{Hello World!}); }; get &#39;/foo&#39; =&gt; sub { my $c = shift; $c-&gt;render(text =&gt; q{Foo!}); }; app-&gt;start; #!/usr/bin/env perl
+          1 2 3 4 5 6 7 8 9 10 11 12 13 #!/usr/bin/env perl use Mojolicious::Lite; get &#39;/&#39; =&gt; sub { shift-&gt;render(text =&gt; q{Hello World!}); }; get &#39;/foo&#39; =&gt;
         </div>
 
         <div class="read-more-link">

@@ -14,7 +14,7 @@
 <meta itemprop="name" content="DockerでHerokuでMojoliciousが動いたぞ!!!">
 <meta itemprop="description" content="久しぶりに Heroku を使ってみたら、いつの間にかコンテナも使えるよう"><meta itemprop="datePublished" content="2017-12-03T01:20:37+09:00" />
 <meta itemprop="dateModified" content="2017-12-03T01:20:37+09:00" />
-<meta itemprop="wordCount" content="724">
+<meta itemprop="wordCount" content="730">
 <meta itemprop="keywords" content="docker,heroku,mojolicious,perl," />
 
 <meta name="twitter:card" content="summary"/>
@@ -225,7 +225,26 @@
 <p>Dockerfile を書く時、これまでユーザーを意識していなかったので、今回は、 root 以外のユーザーで実行するようにした。</p>
 <p><code>USER</code> を指定すると、その後の <code>COPY</code> とかもユーザーで実行するのかと思ったら、そうでもなかったようだ。</p>
 <p>調べてみると、最近追加された機能で、ファイルのオーナーを変更できるようになったらしい。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Dockerfile" data-lang="Dockerfile"><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> perl:5.20.3-threaded</span><span style="color:#960050;background-color:#1e0010">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Dockerfile" data-lang="Dockerfile"><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> perl:5.20.3-threaded</span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> useradd -m -s /bin/bash appuser <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    <span style="color:#f92672">&amp;&amp;</span> cpanm Carton<span style="color:#960050;background-color:#1e0010">
@@ -240,14 +259,36 @@
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> --chown<span style="color:#f92672">=</span>appuser:appuser webapp /home/appuser/webapp<span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">CMD</span> carton exec -- /home/appuser/webapp/myapp.pl daemon -l http://0.0.0.0:$PORT<span style="color:#960050;background-color:#1e0010">
-</span></code></pre></div><p>最後の <code>CMD</code> はとりあえず Mojolicious で動かしたいので適当に書きました。</p>
+</span></code></pre></td></tr></table>
+</div>
+</div><p>最後の <code>CMD</code> はとりあえず Mojolicious で動かしたいので適当に書きました。</p>
 <p>ローカルでの開発はあまり意識していないのですが、やるとしたらこんな感じで起動するのかなと。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker build -t nqounet/serene-lake-43934 .
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker build -t nqounet/serene-lake-43934 .
 docker run --rm -p 3000:3000 nqounet/serene-lake-43934 carton exec -- morbo myapp.pl
-</code></pre></div><p>…面倒くさそうですね。</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>…面倒くさそうですね。</p>
 <h2 id="デプロイ方法">デプロイ方法</h2>
 <p>コンテナを使う時は、 Container Registry にログインする必要があるようです。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 必要なら作成</span>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 必要なら作成</span>
 heroku create
 
 <span style="color:#75715e"># Container Registry にログイン</span>
@@ -255,7 +296,9 @@ heroku container:login
 
 <span style="color:#75715e"># デプロイ</span>
 heroku container:push web
-</code></pre></div><h2 id="感想">感想</h2>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="感想">感想</h2>
 <p>buildpack を使う方法よりは真っ当な方法な気がします。</p>
 <p>というか、コンテナがそのまま公開できるって凄い。</p>
 <h3 id="参考">参考</h3>

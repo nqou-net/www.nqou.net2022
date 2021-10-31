@@ -14,7 +14,7 @@
 <meta itemprop="name" content="はてブのお気に入りを見つけるスクリプトを使ってみた">
 <meta itemprop="description" content="面白そうなスクリプトを見つけたので試してみた。 はてなブックマ"><meta itemprop="datePublished" content="2009-03-28T08:43:06+09:00" />
 <meta itemprop="dateModified" content="2009-03-28T08:43:06+09:00" />
-<meta itemprop="wordCount" content="389">
+<meta itemprop="wordCount" content="429">
 <meta itemprop="keywords" content="perl," />
 
 <meta name="twitter:card" content="summary"/>
@@ -217,11 +217,33 @@
   <p>面白そうなスクリプトを見つけたので試してみた。
 <!-- raw HTML omitted -->はてなブックマークのお気に入り候補を見つけるPerlスクリプト/楽<!-- raw HTML omitted --></p>
 <p>が、途中でエラーになった。</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">Not Found
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Not Found
 Can not parse [http://b.hatena.ne.jp/entry/rss/http://d.hatena.ne.jp/amatubu/20090322#p1].
-</code></pre><p>ソースを見たら、XML::Feedでエラーになったら死ぬ事になっていたが、まあ、飛ばすだけでいいだろうと言うことで、適当に改造して使った。
+</code></pre></td></tr></table>
+</div>
+</div><p>ソースを見たら、XML::Feedでエラーになったら死ぬ事になっていたが、まあ、飛ばすだけでいいだろうと言うことで、適当に改造して使った。
 結果はこんな感じ。</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">001 : 017 :          otsune : http://b.hatena.ne.jp/otsune/
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">001 : 017 :          otsune : http://b.hatena.ne.jp/otsune/
 002 : 017 :         lapis25 : http://b.hatena.ne.jp/lapis25/
 003 : 015 :       typewhite : http://b.hatena.ne.jp/typewhite/
 004 : 013 :        charsbar : http://b.hatena.ne.jp/charsbar/
@@ -231,9 +253,43 @@ Can not parse [http://b.hatena.ne.jp/entry/rss/http://d.hatena.ne.jp/amatubu/200
 008 : 010 :       jazzanova : http://b.hatena.ne.jp/jazzanova/
 009 : 009 :     bayashi_net : http://b.hatena.ne.jp/bayashi_net/
 010 : 009 :        tomisima : http://b.hatena.ne.jp/tomisima/
-</code></pre><p>少し新しい世界が見えた気がします。</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>少し新しい世界が見えた気がします。</p>
 <p>パッチは以下のとおり。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">Index: early-hatena-bookmarkers.pl
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">Index: early-hatena-bookmarkers.pl
 ===================================================================
 <span style="color:#f92672">--- early-hatena-bookmarkers.pl    (リビジョン 31631)
 </span><span style="color:#f92672"></span><span style="color:#a6e22e">+++ early-hatena-bookmarkers.pl    (作業コピー)
@@ -261,7 +317,9 @@ for my $url (@bookmarks) {
 </span><span style="color:#a6e22e">+        }
 </span><span style="color:#a6e22e"></span>my $me = 0;
 for my $item ($rss-&gt;entries) {
-</code></pre></div>
+</code></pre></td></tr></table>
+</div>
+</div>
   </div>
 
   

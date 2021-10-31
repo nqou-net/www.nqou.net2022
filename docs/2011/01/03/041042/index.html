@@ -14,7 +14,7 @@
 <meta itemprop="name" content="Mojolicious::LiteでDBIx::Skinnyを使ってみた">
 <meta itemprop="description" content="基本的には前記事と同じです。 私の観測範囲ではData::Mo"><meta itemprop="datePublished" content="2011-01-03T04:10:42+09:00" />
 <meta itemprop="dateModified" content="2011-01-03T04:10:42+09:00" />
-<meta itemprop="wordCount" content="770">
+<meta itemprop="wordCount" content="850">
 <meta itemprop="keywords" content="mojolicious,perl," />
 
 <meta name="twitter:card" content="summary"/>
@@ -225,7 +225,91 @@ ORLite.pmのソースコードを書き換えてやればうまく動くのは�
 まあ、そんなわけで和製のORMの代表格であるDBIx::Skinnyも使っておこうかと、そんな感じです。</p>
 <!-- raw HTML omitted -->
 <p>カラムの細かい定義方法が分からなかったので、適当に設定してますが、とりあえず動きます。</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">#!/usr/bin/env perl
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">66
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">67
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">68
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">69
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">70
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">71
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">72
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">73
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">74
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">75
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">76
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">77
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">78
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">79
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">80
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">#!/usr/bin/env perl
 #ｕｔｆ８
 # use Acme::PerlTidy;
 package DBIxSkinny;
@@ -238,43 +322,43 @@ package DBIxSkinny::Schema;
 use utf8;
 use DBIx::Skinny::Schema;
 install_table motorcycles =&gt; schema {
-pk 'id';
+pk &#39;id&#39;;
 columns qw/id type brand color/;
 };
 package main;
 use utf8;
 use Mojolicious::Lite;
 use Mojo::Util qw/md5_sum/;
-app-&gt;log-&gt;level('debug')-&gt;path(qq{$0.log});
+app-&gt;log-&gt;level(&#39;debug&#39;)-&gt;path(qq{$0.log});
 app-&gt;secret(md5_sum $0 )-&gt;log-&gt;debug(app-&gt;secret);
 app-&gt;helper(model =&gt; sub { my $dbh = DBIxSkinny-&gt;new });
 app-&gt;model-&gt;do(
-'CREATE TABLE IF NOT EXISTS motorcycles (
+&#39;CREATE TABLE IF NOT EXISTS motorcycles (
 id INTEGER PRIMARY KEY,
 type TEXT NOT NULL,
 brand TEXT NOT NULL,
-color TEXT)'
+color TEXT)&#39;
 );
-get '/' =&gt; sub {
+get &#39;/&#39; =&gt; sub {
 my $self  = shift;
 my $model = $self-&gt;model;
 my $motorbikes =
-[$model-&gt;search('motorcycles', {}, {order_by =&gt; [{type =&gt; 'ASC'}]},)];
+[$model-&gt;search(&#39;motorcycles&#39;, {}, {order_by =&gt; [{type =&gt; &#39;ASC&#39;}]},)];
 $self-&gt;stash(
 motorbikes =&gt; $motorbikes,
 debug      =&gt; $self-&gt;dumper([$self, $model]),
 );
-} =&gt; 'index';
-post '/' =&gt; sub {
+} =&gt; &#39;index&#39;;
+post &#39;/&#39; =&gt; sub {
 my $self = shift;
 $self-&gt;model-&gt;create(
-'motorcycles',
-{   type  =&gt; $self-&gt;param('type'),
-brand =&gt; $self-&gt;param('brand'),
-color =&gt; $self-&gt;param('color')
+&#39;motorcycles&#39;,
+{   type  =&gt; $self-&gt;param(&#39;type&#39;),
+brand =&gt; $self-&gt;param(&#39;brand&#39;),
+color =&gt; $self-&gt;param(&#39;color&#39;)
 }
 );
-$self-&gt;redirect_to('/');
+$self-&gt;redirect_to(&#39;/&#39;);
 };
 app-&gt;start;
 __DATA__
@@ -295,17 +379,19 @@ __DATA__
 &lt;/table&gt;
 &lt;p&gt;バイクを登録してください。&lt;/p&gt;
 &lt;p&gt;
-&lt;%= form_for '/' =&gt; (method =&gt; 'post') =&gt; begin %&gt;
+&lt;%= form_for &#39;/&#39; =&gt; (method =&gt; &#39;post&#39;) =&gt; begin %&gt;
 % foreach (qw/type brand color/) {
-&lt;%= uc($_) %&gt;: &lt;%= input_tag $_, 'type' =&gt; 'text' %&gt;&lt;br /&gt;
+&lt;%= uc($_) %&gt;: &lt;%= input_tag $_, &#39;type&#39; =&gt; &#39;text&#39; %&gt;&lt;br /&gt;
 % }
-&lt;%= submit_button 'Submit motorcycle' %&gt;
+&lt;%= submit_button &#39;Submit motorcycle&#39; %&gt;
 &lt;% end %&gt;
 &lt;/p&gt;
 &lt;pre&gt;&lt;%= $debug %&gt;&lt;/pre&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-</code></pre>
+</code></pre></td></tr></table>
+</div>
+</div>
   </div>
 
   

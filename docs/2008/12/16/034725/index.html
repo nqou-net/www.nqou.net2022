@@ -14,7 +14,7 @@
 <meta itemprop="name" content="NANOChatのMENTA化、その2">
 <meta itemprop="description" content="ほんの少し進んだ。 「入口」では、今現在滞在中のメンバーを出力"><meta itemprop="datePublished" content="2008-12-16T03:47:25+09:00" />
 <meta itemprop="dateModified" content="2008-12-16T03:47:25+09:00" />
-<meta itemprop="wordCount" content="440">
+<meta itemprop="wordCount" content="471">
 <meta itemprop="keywords" content="perl," />
 
 <meta name="twitter:card" content="summary"/>
@@ -224,7 +224,28 @@ JSONを使うとオブジェクトを文字列に変換できるので、デー�
 今までは割と標準モジュールしか使えないという縛りがありましたが、今後はそれもなくなりますね。
 ま、とりあえず簡単にサンプルを書いてみました。</p>
 <p>サンプルコード</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#66d9ef">use</span> strict;
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#66d9ef">use</span> strict;
 <span style="color:#66d9ef">use</span> warnings;
 <span style="color:#66d9ef">use</span> JSON;
 <span style="color:#66d9ef">print</span> $JSON::VERSION;
@@ -241,22 +262,44 @@ JSONを使うとオブジェクトを文字列に変換できるので、デー�
 <span style="color:#66d9ef">my</span> $r_obj <span style="color:#f92672">=</span> from_json($json_text);
 <span style="color:#66d9ef">use</span> Data::Dumper;
 <span style="color:#66d9ef">print</span> Dumper($r_obj);
-</code></pre></div><p>実行結果</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">4.02
-{&quot;b&quot;:[2,3],&quot;a&quot;:1,&quot;d&quot;:6,&quot;c&quot;:{&quot;c1&quot;:4,&quot;c2&quot;:5}}
+</code></pre></td></tr></table>
+</div>
+</div><p>実行結果</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">4.02
+{&#34;b&#34;:[2,3],&#34;a&#34;:1,&#34;d&#34;:6,&#34;c&#34;:{&#34;c1&#34;:4,&#34;c2&#34;:5}}
 $VAR1 = {
-          'a' =&gt; 1,
-          'b' =&gt; [
+          &#39;a&#39; =&gt; 1,
+          &#39;b&#39; =&gt; [
                    2,
                    3
                  ],
-          'c' =&gt; {
-                   'c2' =&gt; 5,
-                   'c1' =&gt; 4
+          &#39;c&#39; =&gt; {
+                   &#39;c2&#39; =&gt; 5,
+                   &#39;c1&#39; =&gt; 4
                  },
-          'd' =&gt; 6
+          &#39;d&#39; =&gt; 6
         };
-</code></pre>
+</code></pre></td></tr></table>
+</div>
+</div>
   </div>
 
   

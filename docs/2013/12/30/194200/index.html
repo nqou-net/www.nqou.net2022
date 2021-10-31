@@ -14,7 +14,7 @@
 <meta itemprop="name" content="HTMLの正当性を検査するのにHTML::Tidyを使ってみた">
 <meta itemprop="description" content="@nqounetです． PerlでHTMLの正当性（valid"><meta itemprop="datePublished" content="2013-12-30T19:42:00+09:00" />
 <meta itemprop="dateModified" content="2013-12-30T19:42:00+09:00" />
-<meta itemprop="wordCount" content="1194">
+<meta itemprop="wordCount" content="1207">
 <meta itemprop="keywords" content="jquery,perl," />
 
 <meta name="twitter:card" content="summary"/>
@@ -221,22 +221,53 @@
 <p>少なくとも今一番新しいバージョンでは，<!-- raw HTML omitted -->Alien::Tidyp<!-- raw HTML omitted -->をいうモジュールを予めインストールしておくことで使えるようになります．</p>
 <p>依存情報が書かれていないため<!-- raw HTML omitted -->HTML::Tidy<!-- raw HTML omitted -->をインストールしても自動的にはインストールされません．</p>
 <p>試してみる方は以下の様な感じでインストールしてみてください．</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">cpanm Alien::Tidyp
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">cpanm Alien::Tidyp
 cpanm HTML::Tidy
-</code></pre><p>使い方は極々簡単．</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">#!/usr/bin/env perl
+</code></pre></td></tr></table>
+</div>
+</div><p>使い方は極々簡単．</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">#!/usr/bin/env perl
 use v5.12;
 use HTML::Tidy;
 
 my $tidy = HTML::Tidy-&gt;new;
-$tidy-&gt;parse( 'hoge.html', 'hoge' );
+$tidy-&gt;parse( &#39;hoge.html&#39;, &#39;hoge&#39; );
 
 foreach my $message ( $tidy-&gt;messages ) {
-  print $message-&gt;as_string, &quot;\n&quot;;
+  print $message-&gt;as_string, &#34;\n&#34;;
 }
-</code></pre><p>結果はこんな感じになります．</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">hoge.html (1:22) Warning: discarding unexpectedhoge.html (1:16) Warning: inserting missing 'title' element
-</code></pre><!-- raw HTML omitted -->
+</code></pre></td></tr></table>
+</div>
+</div><p>結果はこんな感じになります．</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">hoge.html (1:22) Warning: discarding unexpectedhoge.html (1:16) Warning: inserting missing &#39;title&#39; element
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
 <p>HTMLの構造体を簡単にチェックできると良かったんですが…．</p>
 <p>実際にjQuery Mobileで作ったページを通してみると，<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <p>のまえにがありません的なWarningが沢山あって戦々恐々としています．</p>

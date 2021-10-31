@@ -14,7 +14,7 @@
 <meta itemprop="name" content="WindowsPowerShell&#43;Test::Moreでテストの時の文字化けを解消する方法">
 <meta itemprop="description" content="@nqounetです． ここのところ，Macでもリロードするの"><meta itemprop="datePublished" content="2013-12-13T01:02:00+09:00" />
 <meta itemprop="dateModified" content="2013-12-13T01:02:00+09:00" />
-<meta itemprop="wordCount" content="970">
+<meta itemprop="wordCount" content="1008">
 <meta itemprop="keywords" content="undef," />
 
 <meta name="twitter:card" content="summary"/>
@@ -210,7 +210,7 @@
   
 
   <div class="post-date">
-    <time datetime="2013-12-13T01:02:00&#43;0900">Dec 13, 2013</time> <span class="readtime">&middot; 2 min read</span>
+    <time datetime="2013-12-13T01:02:00&#43;0900">Dec 13, 2013</time> <span class="readtime">&middot; 3 min read</span>
   </div>
 
   <div>
@@ -218,7 +218,45 @@
 <p>ここのところ，MacでもリロードするのにF5を押したり（もちろん動きません）しています．</p>
 <!-- raw HTML omitted -->
 <p>変更したのは<!-- raw HTML omitted -->print<!-- raw HTML omitted -->の部分で，encodeの処理を加えただけです．</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">use utf8;
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">use utf8;
 use strict;
 use warnings;
 use Test::More;
@@ -227,7 +265,7 @@ use Term::Encoding qw(term_encoding);
 my $charset = term_encoding;
 
 {
-  no warnings 'redefine';
+  no warnings &#39;redefine&#39;;
   sub Test::Builder::_print_to_fh {
       my( $self, $fh, @msgs ) = @_;
 
@@ -235,24 +273,26 @@ my $charset = term_encoding;
       # tests are deparsed with B::Deparse
       return if $^C;
 
-      my $msg = join '', @msgs;
+      my $msg = join &#39;&#39;, @msgs;
       my $indent = $self-&gt;_indent;
 
-      local( $\, $&quot;, $, ) = ( undef, ' ', '' );
+      local( $\, $&#34;, $, ) = ( undef, &#39; &#39;, &#39;&#39; );
 
-      # Escape each line after the first with a # so we don't
+      # Escape each line after the first with a # so we don&#39;t
       # confuse Test::Harness.
       $msg =~ s{\n(?!\z)}{\n$indent# }sg;
 
       # Stick a newline on the end if it needs it.
-      $msg .= &quot;\n&quot; unless $msg =~ /\n\z/;
+      $msg .= &#34;\n&#34; unless $msg =~ /\n\z/;
 
       return print $fh $indent, encode($charset, $msg);
   }
 }
 
 ... # テストを書く
-</code></pre><p>いろいろ試しているうちに<!-- raw HTML omitted -->find_encoding<!-- raw HTML omitted -->を消してしまったのすが，これだったら<!-- raw HTML omitted -->find_encoding<!-- raw HTML omitted -->を使ったほうが速そうです．</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>いろいろ試しているうちに<!-- raw HTML omitted -->find_encoding<!-- raw HTML omitted -->を消してしまったのすが，これだったら<!-- raw HTML omitted -->find_encoding<!-- raw HTML omitted -->を使ったほうが速そうです．</p>
 <p>実際のスクリプトは，Test::Mojoを継承してゴニョゴニョしているものなので，この状態で動くかどうかはわかりません．</p>
 <p>いずれにしろ，プライベートな関数を再定義しているので行儀が良いわけではありません．</p>
 <!-- raw HTML omitted -->
@@ -260,11 +300,21 @@ my $charset = term_encoding;
 <p>どうにかしたいな〜と思いながらTest::Moreのドキュメントを読んでいて，今更ですが<!-- raw HTML omitted -->Wide character in print<!-- raw HTML omitted -->について書いてあるのを発見しました．</p>
 <!-- raw HTML omitted -->
 <p>これは良さそうです，ということで試したのですが，どうもうまく行きませんでした．</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">my $builder = Test::More-&gt;builder;
-binmode $builder-&gt;output,         &quot;:encoding($charset)&quot;;
-binmode $builder-&gt;failure_output, &quot;:encoding($charset)&quot;;
-binmode $builder-&gt;todo_output,    &quot;:encoding($charset)&quot;;
-</code></pre><p>どこかで変なミスをしたのかもしれないのですが，cp932にマッピングされていない文字がある！，というふうに文字ごとに警告がでました．</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">my $builder = Test::More-&gt;builder;
+binmode $builder-&gt;output,         &#34;:encoding($charset)&#34;;
+binmode $builder-&gt;failure_output, &#34;:encoding($charset)&#34;;
+binmode $builder-&gt;todo_output,    &#34;:encoding($charset)&#34;;
+</code></pre></td></tr></table>
+</div>
+</div><p>どこかで変なミスをしたのかもしれないのですが，cp932にマッピングされていない文字がある！，というふうに文字ごとに警告がでました．</p>
 <p>正確な文字コードは忘れましたが，すべての文字に何かがくっついていた感じです．</p>
 <p>もしかすると，変数をやめて<!-- raw HTML omitted -->cp932<!-- raw HTML omitted -->を直打ちしたかもしれませんが，結果は同じだったと思います．</p>
 <p>メモってなくて記憶で書いているのでアレですが．</p>

@@ -12,18 +12,18 @@
   
 
 <meta itemprop="name" content="HTTPの改行について">
-<meta itemprop="description" content="# Define the CRLF sequence. You can&#39;t use a simple &quot;\r\n&quot; because of system # specific &#39;features&#39;. On EBCDIC systems &quot;\t&quot; ne &quot;\011&quot; as the don&#39;t use ASCII sub crlf"><meta itemprop="datePublished" content="2010-02-10T01:23:44+09:00" />
+<meta itemprop="description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 # Define the CRLF sequence. You can&#39;t use a simple &#34;\r\n&#34; because of system #"><meta itemprop="datePublished" content="2010-02-10T01:23:44+09:00" />
 <meta itemprop="dateModified" content="2010-02-10T01:23:44+09:00" />
-<meta itemprop="wordCount" content="89">
+<meta itemprop="wordCount" content="104">
 <meta itemprop="keywords" content="perl," />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="HTTPの改行について"/>
-<meta name="twitter:description" content="# Define the CRLF sequence. You can&#39;t use a simple &quot;\r\n&quot; because of system # specific &#39;features&#39;. On EBCDIC systems &quot;\t&quot; ne &quot;\011&quot; as the don&#39;t use ASCII sub crlf"/>
+<meta name="twitter:description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 # Define the CRLF sequence. You can&#39;t use a simple &#34;\r\n&#34; because of system #"/>
 
 
 <meta property="og:title" content="HTTPの改行について" />
-<meta property="og:description" content="# Define the CRLF sequence. You can&#39;t use a simple &quot;\r\n&quot; because of system # specific &#39;features&#39;. On EBCDIC systems &quot;\t&quot; ne &quot;\011&quot; as the don&#39;t use ASCII sub crlf" />
+<meta property="og:description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 # Define the CRLF sequence. You can&#39;t use a simple &#34;\r\n&#34; because of system #" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.nqou.net/2010/02/10/012344/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2010-02-10T01:23:44+09:00" />
@@ -70,7 +70,7 @@
       },
       "datePublished": "2010-02-10T01:23:44+09:00",
       "dateModified": "2010-02-10T01:23:44+09:00",
-      "description": "# Define the CRLF sequence. You can't use a simple \u0026quot;\\r\\n\u0026quot; because of system # specific 'features'. On EBCDIC systems \u0026quot;\\t\u0026quot; ne \u0026quot;\\011\u0026quot; as the don't use ASCII sub crlf",
+      "description": "1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 # Define the CRLF sequence. You can\u0026#39;t use a simple \u0026#34;\\r\\n\u0026#34; because of system #",
       "inLanguage": "ja",
       "potentialAction": [
         {
@@ -219,22 +219,43 @@
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
-<pre tabindex="0"><code class="language-default" data-lang="default"># Define the CRLF sequence.  You can't use a simple &quot;\r\n&quot; because of system
-# specific 'features'. On EBCDIC systems &quot;\t&quot; ne &quot;\011&quot; as the don't use ASCII
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text"># Define the CRLF sequence.  You can&#39;t use a simple &#34;\r\n&#34; because of system
+# specific &#39;features&#39;. On EBCDIC systems &#34;\t&#34; ne &#34;\011&#34; as the don&#39;t use ASCII
 sub crlf {
 my ( $self, $CRLF ) = @_;
-$self-&gt;{'.crlf'} = $CRLF if $CRLF;    # allow value to be set manually
-unless ( $self-&gt;{'.crlf'} ) {
+$self-&gt;{&#39;.crlf&#39;} = $CRLF if $CRLF;    # allow value to be set manually
+unless ( $self-&gt;{&#39;.crlf&#39;} ) {
 my $OS = $^O
-|| do { require Config; $Config::Config{'osname'} };
-$self-&gt;{'.crlf'}
-= ( $OS =~ m/VMS/i ) ? &quot;\n&quot;
-: ( &quot;\t&quot; ne &quot;\011&quot; ) ? &quot;\r\n&quot;
-:                      &quot;\015\012&quot;;
+|| do { require Config; $Config::Config{&#39;osname&#39;} };
+$self-&gt;{&#39;.crlf&#39;}
+= ( $OS =~ m/VMS/i ) ? &#34;\n&#34;
+: ( &#34;\t&#34; ne &#34;\011&#34; ) ? &#34;\r\n&#34;
+:                      &#34;\015\012&#34;;
 }
-return $self-&gt;{'.crlf'};
+return $self-&gt;{&#39;.crlf&#39;};
 }
-</code></pre><!-- raw HTML omitted -->
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
 
   </div>
 

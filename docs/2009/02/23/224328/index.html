@@ -14,7 +14,7 @@
 <meta itemprop="name" content="RSSのパース速度の比較">
 <meta itemprop="description" content="色々と触発されてやってみた。 参考： Perl で XML の処理はどれが速いか"><meta itemprop="datePublished" content="2009-02-23T22:43:28+09:00" />
 <meta itemprop="dateModified" content="2009-02-23T22:43:28+09:00" />
-<meta itemprop="wordCount" content="1086">
+<meta itemprop="wordCount" content="1196">
 <meta itemprop="keywords" content="perl," />
 
 <meta name="twitter:card" content="summary"/>
@@ -219,7 +219,29 @@
 <!-- raw HTML omitted -->Perl で XML の処理はどれが速いかベンチ : NDO::Weblog<!-- raw HTML omitted -->
 <!-- raw HTML omitted -->iandeth. - XML::Simple は遅い説における意外な落とし穴<!-- raw HTML omitted -->
 <!-- raw HTML omitted -->XML::Simple におけるパーサーの実行速度比較 - naoyaのはてなダイアリー<!-- raw HTML omitted --></p>
-<pre tabindex="0"><code class="language-default" data-lang="default">Benchmark: running XML::FeedPP, XML::LibXML, XML::RSS, XML::RSS::LibXML, XML::RSS::Parser, XML::RSSLite, XML::Simple, regexp for at least 3 CPU seconds...
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Benchmark: running XML::FeedPP, XML::LibXML, XML::RSS, XML::RSS::LibXML, XML::RSS::Parser, XML::RSSLite, XML::Simple, regexp for at least 3 CPU seconds...
 XML::FeedPP:  2 wallclock secs ( 3.02 usr +  0.00 sys =  3.02 CPU) @ 55.37/s (n=167)
 XML::LibXML:  3 wallclock secs ( 3.25 usr +  0.02 sys =  3.27 CPU) @ 496.02/s (n=1620)
 XML::RSS:  4 wallclock secs ( 3.27 usr +  0.00 sys =  3.27 CPU) @  2.76/s (n=9)
@@ -237,7 +259,9 @@ XML::Simple      61.1/s    2118%            1524%              23%         10%  
 XML::RSSLite      112/s    3967%            2878%             126%        102%         83%           --        -77%   -98%
 XML::LibXML       496/s   17894%           13078%             901%        796%        711%         342%          --   -92%
 regexp           6340/s  229906%          168336%           12698%      11350%      10272%        5556%       1178%     --
-</code></pre><p>読み込んだRSSファイルは、「<!-- raw HTML omitted -->はてなブックマーク - タグ - 石原さとみ（タグ「石原さとみ」を含む新着エントリー）<!-- raw HTML omitted -->」な感じの20件です。
+</code></pre></td></tr></table>
+</div>
+</div><p>読み込んだRSSファイルは、「<!-- raw HTML omitted -->はてなブックマーク - タグ - 石原さとみ（タグ「石原さとみ」を含む新着エントリー）<!-- raw HTML omitted -->」な感じの20件です。
 正規表現はパターンがちがちで応用は利きませんが、速さはピカイチ。
 XML::LibXMLはXPathがよくわからないのでアレですが、使いこなせれば速さも申し分なしです。
 XML::RSSLiteが結構頑張っている印象ですね。関数呼び出しなのが、この中では違和感ありますが。
@@ -248,7 +272,112 @@ XML::FeedPPがかなり健闘していると思います。ファイル構成も
 ソースコードは以下のとおり。
 使う場合はRSSファイルを適宜用意してください。</p>
 <p>ソースコード</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">use strict;
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 62
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 63
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 64
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 65
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 66
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 67
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 68
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 69
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 70
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 71
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 72
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 73
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 74
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 75
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 76
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 77
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 78
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 79
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 80
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 81
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 82
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 83
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 84
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 85
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 86
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 87
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 88
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 89
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 90
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 91
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 92
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 93
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 94
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 95
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 96
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 97
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 98
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 99
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">100
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">101
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">use strict;
 use warnings;
 use Data::Dumper;
 use Benchmark qw(:all);
@@ -256,27 +385,27 @@ use FileHandle;
 use XML::LibXML;
 use XML::RSS;
 use XML::Simple;
-$XML::Simple::PREFERRED_PARSER = 'XML::Parser';
+$XML::Simple::PREFERRED_PARSER = &#39;XML::Parser&#39;;
 use XML::RSS::LibXML;
 use XML::RSS::Parser;
 use XML::FeedPP;
 use XML::RSSLite;
-my $rss_file = &quot;../satomi.xml&quot;;
+my $rss_file = &#34;../satomi.xml&#34;;
 my $fh = FileHandle-&gt;new($rss_file)
-or die &quot;cannot open $rss_file: $!&quot;;
+or die &#34;cannot open $rss_file: $!&#34;;
 local $/; # slurp mode
 our $content = $fh-&gt;getline;
 $fh-&gt;close;
 cmpthese(timethese(0,
 {
-'regexp'           =&gt; \&amp;with_regexp,
-'XML::Simple'      =&gt; \&amp;with_xml_simple,
-'XML::RSS'         =&gt; \&amp;with_xml_rss,
-'XML::LibXML'      =&gt; \&amp;with_xml_libxml,
-'XML::RSS::LibXML' =&gt; \&amp;with_xml_rss_libxml,
-'XML::RSS::Parser' =&gt; \&amp;with_xml_rss_parser,
-'XML::FeedPP'      =&gt; \&amp;with_xml_feedpp,
-'XML::RSSLite'     =&gt; \&amp;with_xml_rsslite,
+&#39;regexp&#39;           =&gt; \&amp;with_regexp,
+&#39;XML::Simple&#39;      =&gt; \&amp;with_xml_simple,
+&#39;XML::RSS&#39;         =&gt; \&amp;with_xml_rss,
+&#39;XML::LibXML&#39;      =&gt; \&amp;with_xml_libxml,
+&#39;XML::RSS::LibXML&#39; =&gt; \&amp;with_xml_rss_libxml,
+&#39;XML::RSS::Parser&#39; =&gt; \&amp;with_xml_rss_parser,
+&#39;XML::FeedPP&#39;      =&gt; \&amp;with_xml_feedpp,
+&#39;XML::RSSLite&#39;     =&gt; \&amp;with_xml_rsslite,
 }));
 sub with_xml_rsslite {
 my @links = ();
@@ -299,13 +428,13 @@ sub with_xml_rss_parser {
 my @links = ();
 my $parser = XML::RSS::Parser-&gt;new;
 my $feed = $parser-&gt;parse_string($content);
-foreach my $item ( $feed-&gt;query('item') ) {
-push @links, $item-&gt;query('link')-&gt;text_content;
+foreach my $item ( $feed-&gt;query(&#39;item&#39;) ) {
+push @links, $item-&gt;query(&#39;link&#39;)-&gt;text_content;
 }
 #    print Dumper \@links;
 }
 sub with_regexp {
-my $pattern = &quot;&lt;item .*?&gt;.*?&lt;link&gt;(.*?)&lt;/link&gt;.*?&lt;/item&gt;&quot;;
+my $pattern = &#34;&lt;item .*?&gt;.*?&lt;link&gt;(.*?)&lt;/link&gt;.*?&lt;/item&gt;&#34;;
 my @links =
 ($content =~ m/$pattern/smg);
 #    print Dumper \@links;
@@ -333,7 +462,7 @@ my @links =();
 my $parser = XML::LibXML-&gt;new;
 my $doc = $parser-&gt;parse_string($content);
 my @nodes = $doc-&gt;findnodes(
-&quot;//*[local-name()='item']/*[local-name()='link']/text()&quot;
+&#34;//*[local-name()=&#39;item&#39;]/*[local-name()=&#39;link&#39;]/text()&#34;
 );
 for my $node (@nodes) {
 push @links, $node-&gt;nodeValue;
@@ -349,7 +478,9 @@ push  @links, $item-&gt;{link};
 }
 #    print Dumper \@links;
 }
-</code></pre>
+</code></pre></td></tr></table>
+</div>
+</div>
   </div>
 
   

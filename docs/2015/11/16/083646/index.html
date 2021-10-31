@@ -14,7 +14,7 @@
 <meta itemprop="name" content="JSON::RPC::Spec v1.0.5 をリリースしました">
 <meta itemprop="description" content="おはようございます。 若林（@nqounet）です。 JSON:"><meta itemprop="datePublished" content="2015-11-16T08:36:46+09:00" />
 <meta itemprop="dateModified" content="2015-11-16T08:36:46+09:00" />
-<meta itemprop="wordCount" content="1779">
+<meta itemprop="wordCount" content="1795">
 <meta itemprop="keywords" content="mojolicious,perl," />
 
 <meta name="twitter:card" content="summary"/>
@@ -253,10 +253,36 @@ $rpc-&gt;register('myapp.{action}' =&gt; sub {
 <p>少ししっかり目のサンプルを書いてみました。</p>
 <p><!-- raw HTML omitted --><a href="https://github.com/nqounet/p5-json-rpc-spec/tree/master/examples/extra_args">https://github.com/nqounet/p5-json-rpc-spec/tree/master/examples/extra_args</a><!-- raw HTML omitted --></p>
 <p>main.plを実行した時、parseの時に、以下のようにして変数を渡すと、</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#75715e"># https://github.com/nqounet/p5-json-rpc-spec/blob/657ede22dd44be863281e8775602ce7c1e8d20c2/examples/extra_args/main.pl#L25</span>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#75715e"># https://github.com/nqounet/p5-json-rpc-spec/blob/657ede22dd44be863281e8775602ce7c1e8d20c2/examples/extra_args/main.pl#L25</span>
 <span style="color:#66d9ef">my</span> $result <span style="color:#f92672">=</span> $app<span style="color:#f92672">-&gt;</span>jsonrpc<span style="color:#f92672">-&gt;</span>parse($json, $extra_args);
-</code></pre></div><p>ディスパッチ先（例としては、MyApp::Fooのbar関数）で受け取ることができます。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#75715e"># https://github.com/nqounet/p5-json-rpc-spec/blob/657ede22dd44be863281e8775602ce7c1e8d20c2/examples/extra_args/lib/MyApp/Foo.pm#L10-L22</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>ディスパッチ先（例としては、MyApp::Fooのbar関数）で受け取ることができます。</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#75715e"># https://github.com/nqounet/p5-json-rpc-spec/blob/657ede22dd44be863281e8775602ce7c1e8d20c2/examples/extra_args/lib/MyApp/Foo.pm#L10-L22</span>
 <span style="color:#66d9ef">sub</span> <span style="color:#a6e22e">bar</span> {
     <span style="color:#66d9ef">my</span> $self <span style="color:#f92672">=</span> shift;
 
@@ -270,7 +296,9 @@ $rpc-&gt;register('myapp.{action}' =&gt; sub {
         extra_args <span style="color:#f92672">=&gt;</span> $extra_args,
     };
 }
-</code></pre></div><p>Mojolicious::Lite のように1枚のファイルに書く場合は不要なのですが、ちゃんとクラスに分けて書こうとすると変数がなかなか渡しづらいので、こういう場面で使えるように考えました。</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>Mojolicious::Lite のように1枚のファイルに書く場合は不要なのですが、ちゃんとクラスに分けて書こうとすると変数がなかなか渡しづらいので、こういう場面で使えるように考えました。</p>
 <h2 id="実際に使おうとしている場面">実際に使おうとしている場面</h2>
 <p>Mojolicious でシステムを作っているのですが、そのシステムにJSON-RPCの方式で外部からアクセスできるようにしていたのです。</p>
 <p>register は アプリ（Mojoliciousを継承しているモジュール） の startup のタイミングで定義しており、実際に処理したいJSON文字列は、コントローラー（Mojolicious::Controllerを継承しているモジュール）に実装しています。</p>

@@ -14,7 +14,7 @@
 <meta itemprop="name" content="MTの「encode_html」">
 <meta itemprop="description" content="MTのテンプレートの仕組みには感動しますね。 Zeitgeis"><meta itemprop="datePublished" content="2007-07-19T14:45:26+09:00" />
 <meta itemprop="dateModified" content="2007-07-19T14:45:26+09:00" />
-<meta itemprop="wordCount" content="143">
+<meta itemprop="wordCount" content="144">
 <meta itemprop="keywords" content="movabletype," />
 
 <meta name="twitter:card" content="summary"/>
@@ -218,8 +218,15 @@
 <p>Zeitgeistの表示にHTMLタグが入っていて変なことになっていたので対策しました。
 セキュリティホールでしたので表示されるHTMLタグを無効にする処理を入れました。</p>
 <p>具体的には</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">&lt;$テンプレートタグ名 encode_html=&quot;1&quot; $&gt;
-</code></pre><p>としただけなのです。
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">&lt;$テンプレートタグ名 encode_html=&#34;1&#34; $&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>としただけなのです。
 便利ですね。</p>
 
   </div>

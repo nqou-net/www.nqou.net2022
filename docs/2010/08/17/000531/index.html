@@ -14,7 +14,7 @@
 <meta itemprop="name" content="POSIXのstrftimeが生perlcodeよりも速い件について">
 <meta itemprop="description" content="しばらく前に、POSIXにstrftimeという便利なコマン"><meta itemprop="datePublished" content="2010-08-17T00:05:31+09:00" />
 <meta itemprop="dateModified" content="2010-08-17T00:05:31+09:00" />
-<meta itemprop="wordCount" content="562">
+<meta itemprop="wordCount" content="605">
 <meta itemprop="keywords" content="perl," />
 
 <meta name="twitter:card" content="summary"/>
@@ -220,20 +220,50 @@ DateTime等とのベンチマークだったと思う。
 タグのつけ方が安定しない。
 ともかく。
 日付時刻を表示するときは、localtimeをスカラーコンテキストで表示することが多いのだが、日本風に表示しようとすると、それなりに面倒。</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">my @now = localtime;
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">my @now = localtime;
 $now[5] += 1900;
 $now[4]++;
 printf qq{%04d/%02d/%02d %02d:%02d:%02d}, reverse(@now[0..5]);
-</code></pre><p>そこで便利なのが、POSIXのstrftimeですよ。</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">use POSIX;
-print POSIX::strftime '%Y/%m/%d %H:%M:%S', localtime;
-</code></pre><p>これで同じ出力を得ることが出来る。
+</code></pre></td></tr></table>
+</div>
+</div><p>そこで便利なのが、POSIXのstrftimeですよ。</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">use POSIX;
+print POSIX::strftime &#39;%Y/%m/%d %H:%M:%S&#39;, localtime;
+</code></pre></td></tr></table>
+</div>
+</div><p>これで同じ出力を得ることが出来る。
 しかも、手元の環境では、strftimeを使ったほうが速い。</p>
 <p>生のコードは2種類。
 先ほどのスライスを使ったものと、配列を展開したもの。
 それらとstrftimeを比較してみた。
 結果は以下のとおり、POSIXを使ったほうが2割程度速かった。</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">Benchmark: running coding1, coding2, posix for at least 3 CPU seconds...
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Benchmark: running coding1, coding2, posix for at least 3 CPU seconds...
 coding1:  4 wallclock secs ( 3.10 usr +  0.00 sys =  3.10 CPU) @ 75042.20/s (n=232931)
 coding2:  4 wallclock secs ( 3.15 usr +  0.00 sys =  3.15 CPU) @ 84113.30/s (n=265041)
 posix:  4 wallclock secs ( 3.14 usr +  0.00 sys =  3.14 CPU) @ 103140.63/s (n=323449)
@@ -241,25 +271,60 @@ Rate coding1 coding2   posix
 coding1  75042/s      --    -11%    -27%
 coding2  84113/s     12%      --    -18%
 posix   103141/s     37%     23%      --
-</code></pre><p>ソースコードも見た目にわかりやすいので、今後は重宝しそうです。
+</code></pre></td></tr></table>
+</div>
+</div><p>ソースコードも見た目にわかりやすいので、今後は重宝しそうです。
 ベンチマークに使ったソースは以下のとおり。</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">#ｕｔｆ８
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">#ｕｔｆ８
 use strict;
 use warnings;
 use utf8;
-use Benchmark ':all';
+use Benchmark &#39;:all&#39;;
 use POSIX;
 use Perl6::Say;
 say posix();
 say coding();
 say coding2();
 cmpthese(timethese( -3, {
-'posix'   =&gt; \&amp;posix,
-'coding1' =&gt; \&amp;coding,
-'coding2' =&gt; \&amp;coding2,
+&#39;posix&#39;   =&gt; \&amp;posix,
+&#39;coding1&#39; =&gt; \&amp;coding,
+&#39;coding2&#39; =&gt; \&amp;coding2,
 }));
 sub posix {
-POSIX::strftime '%Y/%m/%d %H:%M:%S', localtime;
+POSIX::strftime &#39;%Y/%m/%d %H:%M:%S&#39;, localtime;
 }
 sub coding {
 my @now = localtime;
@@ -272,7 +337,9 @@ my @now = localtime;
 sprintf qq{%04d/%02d/%02d %02d:%02d:%02d},
 $now[5] + 1900, $now[4] + 1, $now[3], $now[2], $now[1], $now[0];
 }
-</code></pre>
+</code></pre></td></tr></table>
+</div>
+</div>
   </div>
 
   

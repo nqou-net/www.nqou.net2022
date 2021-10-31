@@ -177,7 +177,7 @@
         </div>
 
         <div>
-          #!/usr/bin/env perl use Mojolicious::Lite; get &#39;/&#39; =&gt; sub { shift-&gt;render(text =&gt; q{ハローワールド！}); }; app-&gt;start; #!/usr/bin/env perl use Mojolicious::Lite;
+          1 2 3 4 5 6 7 8 #!/usr/bin/env perl use Mojolicious::Lite; get &#39;/&#39; =&gt; sub { shift-&gt;render(text =&gt; q{ハローワールド！}
         </div>
 
         <div class="read-more-link">
@@ -194,7 +194,7 @@
         </div>
 
         <div>
-          #!/usr/bin/env perl use utf8; use Mojolicious::Lite; get &#39;/&#39; =&gt; sub { shift-&gt;redirect_to(&#39;/everything/54?name=hoge&#39;); }; get &#39;/everything/:stuff&#39; =&gt; [stuff =&gt; qr/\d+/] =&gt; {stuff =&gt; 23} =&gt; sub { shift-&gt;render(&#39;welcome&#39;); }; app-&gt;log-&gt;level(&#39;error&#39;); app-&gt;start;
+          1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 #!/usr/bin/env perl use utf8; use Mojolicious::Lite; get &#39;/&#39; =&gt; sub { shift-&gt;redirect_to(&#39;/everything/54?name=hoge&#39;); };
         </div>
 
         <div class="read-more-link">

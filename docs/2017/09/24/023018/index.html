@@ -14,7 +14,7 @@
 <meta itemprop="name" content="WordPressで使っていたURLに合わせよう">
 <meta itemprop="description" content="ディレクトリとファイル名 Hexo では、 source/_posts のディレクトリ内に、フラッ"><meta itemprop="datePublished" content="2017-09-24T02:30:18+09:00" />
 <meta itemprop="dateModified" content="2017-09-24T02:30:18+09:00" />
-<meta itemprop="wordCount" content="750">
+<meta itemprop="wordCount" content="780">
 <meta itemprop="keywords" content="hexo,perl,wordpress," />
 
 <meta name="twitter:card" content="summary"/>
@@ -223,8 +223,15 @@
 <p>これは調べている時に見た方法で、どこで見たのかはわからなくなってしまった。
 よくあることだけど。
 改めて検索すると見つからないんだよね…。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">new_post_name</span>: :<span style="color:#ae81ff">year/:month/:day/:title.md</span>
-</code></pre></div><p><code>new_post_name</code> は、初期設定は <code>:title.md</code> だけなので、タイトルがそのままファイル名になる。</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">new_post_name</span>: :<span style="color:#ae81ff">year/:month/:day/:title.md</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><code>new_post_name</code> は、初期設定は <code>:title.md</code> だけなので、タイトルがそのままファイル名になる。</p>
 <p>なお、この設定は <code>hexo new post &lt;title&gt;</code> とした時に、 <code>&lt;title&gt;</code> に書いた文字列がそのままタイトルとされる。</p>
 <p>なので、記事を書こうと思ったらタイトルを書かなければならない。
 …というのはあんまりじゃないかと思ってタイトル無しでコマンドを実行すると <code>post</code> が指定されたことになるようだ。</p>
@@ -232,13 +239,52 @@
 <p>大体、記事を書いているとタイトルと合わなくなってくるので、タイトルは最後に書きたい派です。</p>
 <p>話がそれた。</p>
 <p>で、元々、日本語のURLが嫌だったので、WordPressのURLはタイムスタンプで決まるようにしていた。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain"># カスタム構造
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain"># カスタム構造
 /%year%/%monthnum%/%day%/%hour%%minute%%second%
-</code></pre></div><p>まあ、雰囲気で書くと <code>/年/月/日/時分秒</code> みたいな。</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>まあ、雰囲気で書くと <code>/年/月/日/時分秒</code> みたいな。</p>
 <p>Hexo ではファイルはフラットに置かれるが、URLは<code>/年/月/日/</code> の配下になるため、URLを想定して <code>時分秒.md</code> みたいにすると、ファイル名が衝突する可能性が結構高い。</p>
 <p>なので、ファイル自体もURLと同じように配置することで衝突を回避することができる。</p>
 <p>というわけで、リネームツールも一部変更した。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#75715e">#!/usr/bin/env perl</span>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#75715e">#!/usr/bin/env perl</span>
 <span style="color:#66d9ef">use</span> utf8;
 <span style="color:#66d9ef">use</span> strict;
 <span style="color:#66d9ef">use</span> warnings;
@@ -265,7 +311,9 @@
     $post<span style="color:#f92672">-&gt;</span>move($new_post<span style="color:#f92672">-&gt;</span>stringify);
 }
 
-</code></pre></div>
+</code></pre></td></tr></table>
+</div>
+</div>
   </div>
 
   

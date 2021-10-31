@@ -12,18 +12,18 @@
   
 
 <meta itemprop="name" content="サブルーチンに初期値を持たせる方法">
-<meta itemprop="description" content="sub hoge { my %elm = ( foo =&gt; &quot;FOO&quot;, bar =&gt; &quot;BAR&quot;, @_ ); print $elm{foo}.&quot;n&quot;; print $elm{bar}.&quot;n&quot;; } &lt;p&gt;実"><meta itemprop="datePublished" content="2006-09-26T07:49:02+09:00" />
+<meta itemprop="description" content="1 2 3 4 5 6 7 8 9 sub hoge { my %elm = ( foo =&gt; &#34;FOO&#34;, bar =&gt; &#34;BAR&#34;, @_ ); print $elm{foo}.&#34;n&#34;; print $elm{bar}.&#34;n&#34;; } &"><meta itemprop="datePublished" content="2006-09-26T07:49:02+09:00" />
 <meta itemprop="dateModified" content="2006-09-26T07:49:02+09:00" />
-<meta itemprop="wordCount" content="169">
+<meta itemprop="wordCount" content="189">
 <meta itemprop="keywords" content="perl," />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="サブルーチンに初期値を持たせる方法"/>
-<meta name="twitter:description" content="sub hoge { my %elm = ( foo =&gt; &quot;FOO&quot;, bar =&gt; &quot;BAR&quot;, @_ ); print $elm{foo}.&quot;n&quot;; print $elm{bar}.&quot;n&quot;; } &lt;p&gt;実"/>
+<meta name="twitter:description" content="1 2 3 4 5 6 7 8 9 sub hoge { my %elm = ( foo =&gt; &#34;FOO&#34;, bar =&gt; &#34;BAR&#34;, @_ ); print $elm{foo}.&#34;n&#34;; print $elm{bar}.&#34;n&#34;; } &"/>
 
 
 <meta property="og:title" content="サブルーチンに初期値を持たせる方法" />
-<meta property="og:description" content="sub hoge { my %elm = ( foo =&gt; &quot;FOO&quot;, bar =&gt; &quot;BAR&quot;, @_ ); print $elm{foo}.&quot;n&quot;; print $elm{bar}.&quot;n&quot;; } &lt;p&gt;実" />
+<meta property="og:description" content="1 2 3 4 5 6 7 8 9 sub hoge { my %elm = ( foo =&gt; &#34;FOO&#34;, bar =&gt; &#34;BAR&#34;, @_ ); print $elm{foo}.&#34;n&#34;; print $elm{bar}.&#34;n&#34;; } &" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.nqou.net/2006/09/26/074902/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2006-09-26T07:49:02+09:00" />
@@ -70,7 +70,7 @@
       },
       "datePublished": "2006-09-26T07:49:02+09:00",
       "dateModified": "2006-09-26T07:49:02+09:00",
-      "description": "sub hoge { my %elm = ( foo =\u0026gt; \u0026quot;FOO\u0026quot;, bar =\u0026gt; \u0026quot;BAR\u0026quot;, @_ ); print $elm{foo}.\u0026quot;n\u0026quot;; print $elm{bar}.\u0026quot;n\u0026quot;; } \u0026lt;p\u0026gt;実",
+      "description": "1 2 3 4 5 6 7 8 9 sub hoge { my %elm = ( foo =\u0026gt; \u0026#34;FOO\u0026#34;, bar =\u0026gt; \u0026#34;BAR\u0026#34;, @_ ); print $elm{foo}.\u0026#34;n\u0026#34;; print $elm{bar}.\u0026#34;n\u0026#34;; } \u0026",
       "inLanguage": "ja",
       "potentialAction": [
         {
@@ -215,43 +215,107 @@
 
   <div>
   <!-- raw HTML omitted -->
-<pre tabindex="0"><code class="language-default" data-lang="default">sub hoge {
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">sub hoge {
     my %elm = (
-        foo =&gt; &quot;FOO&quot;,
-        bar =&gt; &quot;BAR&quot;,
+        foo =&gt; &#34;FOO&#34;,
+        bar =&gt; &#34;BAR&#34;,
         @_
     );
-    print $elm{foo}.&quot;n&quot;;
-    print $elm{bar}.&quot;n&quot;;
+    print $elm{foo}.&#34;n&#34;;
+    print $elm{bar}.&#34;n&#34;;
 }
-</code></pre><pre><code>                             &lt;p&gt;実際の呼び出し方法は、&lt;/p&gt;
+</code></pre></td></tr></table>
+</div>
+</div><pre><code>                             &lt;p&gt;実際の呼び出し方法は、&lt;/p&gt;
 </code></pre>
-<pre tabindex="0"><code class="language-default" data-lang="default">&amp;amp;hoge;
-&amp;amp;hoge(foo =&gt; &quot;ＦＯＯ&quot;);
-&amp;amp;hoge(bar =&gt; &quot;ｂａｒ&quot;);
-</code></pre><!-- raw HTML omitted -->
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">&amp;amp;hoge;
+&amp;amp;hoge(foo =&gt; &#34;ＦＯＯ&#34;);
+&amp;amp;hoge(bar =&gt; &#34;ｂａｒ&#34;);
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
-<pre tabindex="0"><code class="language-default" data-lang="default">sub fuga {
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">sub fuga {
     my $elm = shift;
     $elm = {} unless defined $elm;
     my %elm = (
-        foo =&gt; &quot;FOO&quot;,
-        bar =&gt; &quot;BAR&quot;,
+        foo =&gt; &#34;FOO&#34;,
+        bar =&gt; &#34;BAR&#34;,
         %{$elm}
     );
-    print $elm{foo}.&quot;n&quot;;
-    print $elm{bar}.&quot;n&quot;;
+    print $elm{foo}.&#34;n&#34;;
+    print $elm{bar}.&#34;n&#34;;
 }
-</code></pre><!-- raw HTML omitted -->
-<pre tabindex="0"><code class="language-default" data-lang="default">&amp;amp;fuga;
-&amp;amp;fuga({foo =&gt; &quot;ＦＯＯ&quot;});
-&amp;amp;fuga({bar =&gt; &quot;ｂａｒ&quot;});
-</code></pre><!-- raw HTML omitted -->
-<pre tabindex="0"><code class="language-default" data-lang="default">$elm = {} unless defined $elm;
-</code></pre><!-- raw HTML omitted -->
-<pre tabindex="0"><code class="language-default" data-lang="default">$elm ||= {};
-</code></pre><!-- raw HTML omitted -->
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">&amp;amp;fuga;
+&amp;amp;fuga({foo =&gt; &#34;ＦＯＯ&#34;});
+&amp;amp;fuga({bar =&gt; &#34;ｂａｒ&#34;});
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">$elm = {} unless defined $elm;
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">$elm ||= {};
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
 
   </div>
 

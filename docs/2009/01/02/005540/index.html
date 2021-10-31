@@ -14,7 +14,7 @@
 <meta itemprop="name" content="うるう秒の瞬間">
 <meta itemprop="description" content="私は寝てましたが。 ありえないと思いながら、パソコンではどうな"><meta itemprop="datePublished" content="2009-01-02T00:55:40+09:00" />
 <meta itemprop="dateModified" content="2009-01-02T00:55:40+09:00" />
-<meta itemprop="wordCount" content="179">
+<meta itemprop="wordCount" content="188">
 <meta itemprop="keywords" content="perl," />
 
 <meta name="twitter:card" content="summary"/>
@@ -217,18 +217,39 @@
   <p>私は寝てましたが。</p>
 <!-- raw HTML omitted -->
 <p>ありえないと思いながら、パソコンではどうなってるのかやってみたくなったので、実際にやってみた。</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">use strict;
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">use strict;
 use warnings;
 use Perl6::Say;
 my $time = 1230767999;
 for ( 0 .. 2 ) {
 say scalar localtime $time++;
 }
-</code></pre><p>結果はやってみてください。
+</code></pre></td></tr></table>
+</div>
+</div><p>結果はやってみてください。
 timeの値ですが、以下のように計算できます。</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">use Time::Local;
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">use Time::Local;
 print scalar timelocal(59,59,8,1,0,109);
-</code></pre><p>それにしても、Perl6::Sayは便利ですね。
+</code></pre></td></tr></table>
+</div>
+</div><p>それにしても、Perl6::Sayは便利ですね。
 &ldquo;\n&quot;が不要というのはとても使い勝手が良いです。</p>
 
   </div>

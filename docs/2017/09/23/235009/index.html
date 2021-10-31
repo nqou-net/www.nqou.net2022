@@ -14,7 +14,7 @@
 <meta itemprop="name" content="マルチバイトの憂鬱">
 <meta itemprop="description" content="日本語とプログラミング Hexo は基本的にはタイトルの名前をファイル"><meta itemprop="datePublished" content="2017-09-23T23:50:09+09:00" />
 <meta itemprop="dateModified" content="2017-09-23T23:50:09+09:00" />
-<meta itemprop="wordCount" content="568">
+<meta itemprop="wordCount" content="597">
 <meta itemprop="keywords" content="hexo,perl," />
 
 <meta name="twitter:card" content="summary"/>
@@ -224,7 +224,34 @@
 <p>元々、URLに日本語が入っているのは気持ち悪いので設定を変えたいと思っていたのだけど、設定を変更するとよくわからないエラーになるし、調べても今一つな感じでした。</p>
 <p>救いなのは、ファイル名を変更すれば、そのファイル名がURLになるので、ファイル名を変更するのが安全な方法というのがわかった。</p>
 <p>なので、 Perl を使ってポストの時間からファイル名を生成するようにした。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#75715e">#!/usr/bin/env perl</span>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#75715e">#!/usr/bin/env perl</span>
 <span style="color:#66d9ef">use</span> utf8;
 <span style="color:#66d9ef">use</span> strict;
 <span style="color:#66d9ef">use</span> warnings;
@@ -247,15 +274,29 @@
     <span style="color:#66d9ef">my</span> $new_post <span style="color:#f92672">=</span> path($post<span style="color:#f92672">-&gt;</span>parent, <span style="color:#e6db74">qq{$basename.md}</span>)<span style="color:#f92672">-&gt;</span>absolute;
     $post<span style="color:#f92672">-&gt;</span>move($new_post<span style="color:#f92672">-&gt;</span>stringify);
 }
-</code></pre></div><p>デプロイの前に自動的に実行するようにしておいた。</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>デプロイの前に自動的に実行するようにしておいた。</p>
 <p>npm でもコマンドが作れるみたいだけど、いつも使っているので daiku で。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl">desc <span style="color:#e6db74">&#39;deploy&#39;</span>;
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl">desc <span style="color:#e6db74">&#39;deploy&#39;</span>;
 task deploy <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">sub</span> {
     sh <span style="color:#e6db74">qw{hexo clean}</span>;
     sh <span style="color:#e6db74">qw{tools/rename_posts}</span>;
     sh <span style="color:#e6db74">qw{hexo deploy}</span>;
 };
-</code></pre></div><p>こうすることで、記事を書いたあと、 <code>daiku deploy</code> すればサイトを更新できるようになった。</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>こうすることで、記事を書いたあと、 <code>daiku deploy</code> すればサイトを更新できるようになった。</p>
 
   </div>
 

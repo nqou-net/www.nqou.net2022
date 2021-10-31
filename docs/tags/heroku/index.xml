@@ -13,7 +13,7 @@
       <pubDate>Tue, 12 Jun 2018 11:52:34 +0900</pubDate>
       
       <guid>https://www.nqou.net/2018/06/12/115234/</guid>
-      <description>久しぶりに Heroku に push すると警告が出た。 $ heroku container:push web === Building web (/Users/nobu/local/src/github.com/nqounet/heroku-enigmatic-castle-35725/Dockerfile) Sending build context to Docker</description>
+      <description>久しぶりに Heroku に push すると警告が出た。 1 2 3 4 5 6 7 $ heroku container:push web === Building</description>
     </item>
     
     <item>
@@ -67,7 +67,7 @@
       <pubDate>Wed, 08 Apr 2015 11:40:23 +0900</pubDate>
       
       <guid>https://www.nqou.net/2015/04/08/114023/</guid>
-      <description>mkdir myapp &amp;amp;&amp;amp; cd myapp git init mojo generate lite_app myapp.pl heroku create --buildpack https://github.com/pnu/heroku-buildpack-perl.git touch app.psgi echo &amp;#39;requires &amp;#34;Mojolicious&amp;#34;;&amp;#39; &amp;gt; cpanfile echo &amp;#39;web: starman --preload-app --port $PORT myapp.pl psgi&amp;#39;</description>
+      <description>@nqounetです。 Mojolicious::Liteに限</description>
     </item>
     
     <item>

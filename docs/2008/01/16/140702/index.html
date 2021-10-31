@@ -14,7 +14,7 @@
 <meta itemprop="name" content="携帯動画変換君">
 <meta itemprop="description" content="iTunesとiPodをはじめて同期した時、再生できない形式"><meta itemprop="datePublished" content="2008-01-16T14:07:02+09:00" />
 <meta itemprop="dateModified" content="2008-01-16T14:07:02+09:00" />
-<meta itemprop="wordCount" content="652">
+<meta itemprop="wordCount" content="659">
 <meta itemprop="keywords" content="windows," />
 
 <meta name="twitter:card" content="summary"/>
@@ -234,14 +234,27 @@
 </ul>
 <p>NicMP4Box.zipをダウンロードして（<!-- raw HTML omitted -->入手先<!-- raw HTML omitted -->）、zipファイル中のNicMP4Box.exeをあらかじめcoresフォルダの中に入れておく。
 あとは、設定ファイル（Transcoding_iPod.ini）を変更してやればOK。</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">[Item*]
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">[Item*]
 Title=H.264 QVGA(384kbps/128kbps)
 FileNameMax=59
-Command0=&quot;&quot;&lt;%AppPath%&gt;coresffmpeg&quot; -y -maxfr 30 -i &quot;&lt;%InputFile%&gt;&quot; -title &quot;&lt;%Title%&gt;&quot; -bitexact -hq -vcodec h264 -vprofile baseline -vlevel 30 -fixaspect -s 320x240 -b 384 -maxrate 700 -qmin 18 -qmax 51 -bufsize 1024 -g 250 -acodec aac -ac 2 -ar 48000 -ab 64 &quot;&lt;%TemporaryFile%&gt;.mp4&quot;&quot;
-Command1=&quot;&quot;&lt;%AppPath%&gt;coresNicMP4Box&quot; -add &quot;&lt;%TemporaryFile%&gt;.mp4&quot; &quot;&lt;%OutputFile%&gt;.mp4&quot;&quot;
-Command2=&quot;rm &quot;&lt;%TemporaryFile%&gt;.mp4&quot;&quot;
-Command3=&quot;&quot;&lt;%AppPath%&gt;coresAddiTunes&quot; &quot;&lt;%OutputFile%&gt;.mp4&quot;&quot;
-</code></pre><p>細かい設定値はとりあえず置いておいて、この設定でほとんどの動画がiPodで再生できるように変換される。</p>
+Command0=&#34;&#34;&lt;%AppPath%&gt;coresffmpeg&#34; -y -maxfr 30 -i &#34;&lt;%InputFile%&gt;&#34; -title &#34;&lt;%Title%&gt;&#34; -bitexact -hq -vcodec h264 -vprofile baseline -vlevel 30 -fixaspect -s 320x240 -b 384 -maxrate 700 -qmin 18 -qmax 51 -bufsize 1024 -g 250 -acodec aac -ac 2 -ar 48000 -ab 64 &#34;&lt;%TemporaryFile%&gt;.mp4&#34;&#34;
+Command1=&#34;&#34;&lt;%AppPath%&gt;coresNicMP4Box&#34; -add &#34;&lt;%TemporaryFile%&gt;.mp4&#34; &#34;&lt;%OutputFile%&gt;.mp4&#34;&#34;
+Command2=&#34;rm &#34;&lt;%TemporaryFile%&gt;.mp4&#34;&#34;
+Command3=&#34;&#34;&lt;%AppPath%&gt;coresAddiTunes&#34; &#34;&lt;%OutputFile%&gt;.mp4&#34;&#34;
+</code></pre></td></tr></table>
+</div>
+</div><p>細かい設定値はとりあえず置いておいて、この設定でほとんどの動画がiPodで再生できるように変換される。</p>
 
   </div>
 

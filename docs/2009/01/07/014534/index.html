@@ -12,18 +12,18 @@
   
 
 <meta itemprop="name" content="Class::Accessor::Fastを触ってみる">
-<meta itemprop="description" content="#ｕｔｆ８ use strict; use warnings; use utf8; use Data::Dumper; sub p ($) { print Data::Dumper::Dumper(shift); } package Point; use base qw/Class::Accessor::Fast/; __PACKAGE__-&gt;mk_accessors(qw/x y/); package main; my"><meta itemprop="datePublished" content="2009-01-07T01:45:34+09:00" />
+<meta itemprop="description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 #ｕｔｆ８ use strict; use warnings; use utf8; use"><meta itemprop="datePublished" content="2009-01-07T01:45:34+09:00" />
 <meta itemprop="dateModified" content="2009-01-07T01:45:34+09:00" />
-<meta itemprop="wordCount" content="154">
+<meta itemprop="wordCount" content="213">
 <meta itemprop="keywords" content="perl," />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Class::Accessor::Fastを触ってみる"/>
-<meta name="twitter:description" content="#ｕｔｆ８ use strict; use warnings; use utf8; use Data::Dumper; sub p ($) { print Data::Dumper::Dumper(shift); } package Point; use base qw/Class::Accessor::Fast/; __PACKAGE__-&gt;mk_accessors(qw/x y/); package main; my"/>
+<meta name="twitter:description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 #ｕｔｆ８ use strict; use warnings; use utf8; use"/>
 
 
 <meta property="og:title" content="Class::Accessor::Fastを触ってみる" />
-<meta property="og:description" content="#ｕｔｆ８ use strict; use warnings; use utf8; use Data::Dumper; sub p ($) { print Data::Dumper::Dumper(shift); } package Point; use base qw/Class::Accessor::Fast/; __PACKAGE__-&gt;mk_accessors(qw/x y/); package main; my" />
+<meta property="og:description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 #ｕｔｆ８ use strict; use warnings; use utf8; use" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.nqou.net/2009/01/07/014534/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2009-01-07T01:45:34+09:00" />
@@ -70,7 +70,7 @@
       },
       "datePublished": "2009-01-07T01:45:34+09:00",
       "dateModified": "2009-01-07T01:45:34+09:00",
-      "description": "#ｕｔｆ８ use strict; use warnings; use utf8; use Data::Dumper; sub p ($) { print Data::Dumper::Dumper(shift); } package Point; use base qw/Class::Accessor::Fast/; __PACKAGE__-\u0026gt;mk_accessors(qw/x y/); package main; my",
+      "description": "1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 #ｕｔｆ８ use strict; use warnings; use utf8; use",
       "inLanguage": "ja",
       "potentialAction": [
         {
@@ -216,7 +216,29 @@
   <div>
   <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
-<pre tabindex="0"><code class="language-default" data-lang="default">#ｕｔｆ８
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">#ｕｔｆ８
 use strict;
 use warnings;
 use utf8;
@@ -234,37 +256,90 @@ warn $@ if $@;
 p $p-&gt;x;
 p $p-&gt;y;
 p $p;
-</code></pre><!-- raw HTML omitted -->
-<pre tabindex="0"><code class="language-default" data-lang="default">Can't locate object method &quot;z&quot; via package &quot;Point&quot; at D:\devel\test\point.pl line 18.
-$VAR1 = bless( {}, 'Point' );
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Can&#39;t locate object method &#34;z&#34; via package &#34;Point&#34; at D:\devel\test\point.pl line 18.
+$VAR1 = bless( {}, &#39;Point&#39; );
 $VAR1 = 128;
 $VAR1 = 256;
 $VAR1 = bless( {
-'y' =&gt; 256,
-'x' =&gt; 128
-}, 'Point' );
-</code></pre><!-- raw HTML omitted -->
-<pre tabindex="0"><code class="language-default" data-lang="default">use utf8;
+&#39;y&#39; =&gt; 256,
+&#39;x&#39; =&gt; 128
+}, &#39;Point&#39; );
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">use utf8;
 use Data::Dumper;
 sub p ($) {
 use warnings;
-use strict 'refs';
+use strict &#39;refs&#39;;
 print Data::Dumper::Dumper(shift @_);
 }
 package Point;
 sub BEGIN {
 use warnings;
-use strict 'refs';
+use strict &#39;refs&#39;;
 require base;
 do {
-'base'-&gt;import('Class::Accessor::Fast')
+&#39;base&#39;-&gt;import(&#39;Class::Accessor::Fast&#39;)
 };
 }
 use warnings;
-use strict 'refs';
-'Point'-&gt;mk_accessors('x', 'y');
+use strict &#39;refs&#39;;
+&#39;Point&#39;-&gt;mk_accessors(&#39;x&#39;, &#39;y&#39;);
 package main;
-my $p = 'Point'-&gt;new;
+my $p = &#39;Point&#39;-&gt;new;
 p $p;
 $p-&gt;x(128);
 $p-&gt;y(256);
@@ -277,7 +352,9 @@ warn $@ if $@;
 p($p-&gt;x);
 p($p-&gt;y);
 p $p;
-</code></pre>
+</code></pre></td></tr></table>
+</div>
+</div>
   </div>
 
   

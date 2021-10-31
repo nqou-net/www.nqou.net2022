@@ -14,7 +14,7 @@
 <meta itemprop="name" content="イベント駆動プログラミングはGOTO文を使っている気分になる">
 <meta itemprop="description" content="(function($, global, undefined){ &#39;use strict&#39;; var lscache, Mustache, processing = {}, generateCacheKey = function(path){ return &#39;fetched:&#39; &#43; path; }, fetchTemplate = function(path){ console.debug(&#39;fetchTemplate&#39;); var key = generateCacheKey(path); $.get(path, function(template){ console.debug(&#39;run"><meta itemprop="datePublished" content="2014-04-26T01:11:10+09:00" />
 <meta itemprop="dateModified" content="2014-04-26T01:11:10+09:00" />
-<meta itemprop="wordCount" content="267">
+<meta itemprop="wordCount" content="273">
 <meta itemprop="keywords" content="jquery," />
 
 <meta name="twitter:card" content="summary"/>
@@ -281,14 +281,32 @@
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// コールバックの場合
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// コールバックの場合
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">templates</span>.<span style="color:#a6e22e">render</span>(<span style="color:#e6db74">&#39;templates/sns.mst&#39;</span>, <span style="color:#a6e22e">fbObj</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">content</span>){ <span style="color:#a6e22e">$this</span>.<span style="color:#a6e22e">append</span>(<span style="color:#a6e22e">content</span>) });
 
 <span style="color:#75715e">// jQueryオブジェクトの場合は、引数の順序はこんな感じ？メソッド名も変えておかないとねぇ
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">templates</span>.<span style="color:#a6e22e">renderTo</span>(<span style="color:#a6e22e">$this</span>, <span style="color:#e6db74">&#39;templates/sns.mst&#39;</span>, <span style="color:#a6e22e">fbObj</span>);
-</code></pre></div><!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">$</span>.<span style="color:#a6e22e">templates</span>(<span style="color:#e6db74">&#39;templates/sns.mst&#39;</span>, <span style="color:#a6e22e">fbObj</span>).<span style="color:#a6e22e">appendTo</span>(<span style="color:#a6e22e">$this</span>);
-</code></pre></div><!-- raw HTML omitted -->
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">$</span>.<span style="color:#a6e22e">templates</span>(<span style="color:#e6db74">&#39;templates/sns.mst&#39;</span>, <span style="color:#a6e22e">fbObj</span>).<span style="color:#a6e22e">appendTo</span>(<span style="color:#a6e22e">$this</span>);
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->

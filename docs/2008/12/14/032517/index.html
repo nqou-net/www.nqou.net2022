@@ -12,18 +12,18 @@
   
 
 <meta itemprop="name" content="NANOChatのMENTA化、その1">
-<meta itemprop="description" content="? my $title = shift ?= render(&#39;header.mt&#39;, &#39;インデックス&#39;) &lt;title&gt;&lt;? if ($title) { ?&gt;&lt;?= &quot;$title - &quot; ?&gt;&lt;? } ?&gt;menta.nqou.net&lt;/title&gt; if ($title) {"><meta itemprop="datePublished" content="2008-12-14T03:25:17+09:00" />
+<meta itemprop="description" content="1 ? my $title = shift 1 ?= render(&#39;header.mt&#39;, &#39;インデックス&#39;) 1 &lt;title&gt;&lt;? if ($title)"><meta itemprop="datePublished" content="2008-12-14T03:25:17+09:00" />
 <meta itemprop="dateModified" content="2008-12-14T03:25:17+09:00" />
-<meta itemprop="wordCount" content="819">
+<meta itemprop="wordCount" content="887">
 <meta itemprop="keywords" content="perl," />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="NANOChatのMENTA化、その1"/>
-<meta name="twitter:description" content="? my $title = shift ?= render(&#39;header.mt&#39;, &#39;インデックス&#39;) &lt;title&gt;&lt;? if ($title) { ?&gt;&lt;?= &quot;$title - &quot; ?&gt;&lt;? } ?&gt;menta.nqou.net&lt;/title&gt; if ($title) {"/>
+<meta name="twitter:description" content="1 ? my $title = shift 1 ?= render(&#39;header.mt&#39;, &#39;インデックス&#39;) 1 &lt;title&gt;&lt;? if ($title)"/>
 
 
 <meta property="og:title" content="NANOChatのMENTA化、その1" />
-<meta property="og:description" content="? my $title = shift ?= render(&#39;header.mt&#39;, &#39;インデックス&#39;) &lt;title&gt;&lt;? if ($title) { ?&gt;&lt;?= &quot;$title - &quot; ?&gt;&lt;? } ?&gt;menta.nqou.net&lt;/title&gt; if ($title) {" />
+<meta property="og:description" content="1 ? my $title = shift 1 ?= render(&#39;header.mt&#39;, &#39;インデックス&#39;) 1 &lt;title&gt;&lt;? if ($title)" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.nqou.net/2008/12/14/032517/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2008-12-14T03:25:17+09:00" />
@@ -70,7 +70,7 @@
       },
       "datePublished": "2008-12-14T03:25:17+09:00",
       "dateModified": "2008-12-14T03:25:17+09:00",
-      "description": "? my $title = shift ?= render('header.mt', 'インデックス') \u0026lt;title\u0026gt;\u0026lt;? if ($title) { ?\u0026gt;\u0026lt;?= \u0026quot;$title - \u0026quot; ?\u0026gt;\u0026lt;? } ?\u0026gt;menta.nqou.net\u0026lt;/title\u0026gt; if ($title) {",
+      "description": "1 ? my $title = shift 1 ?= render(\u0026#39;header.mt\u0026#39;, \u0026#39;インデックス\u0026#39;) 1 \u0026lt;title\u0026gt;\u0026lt;? if ($title)",
       "inLanguage": "ja",
       "potentialAction": [
         {
@@ -215,71 +215,188 @@
 
   <div>
   <!-- raw HTML omitted -->
-<pre tabindex="0"><code class="language-default" data-lang="default">? my $title = shift
-</code></pre><!-- raw HTML omitted -->
-<pre tabindex="0"><code class="language-default" data-lang="default">?= render('header.mt', 'インデックス')
-</code></pre><!-- raw HTML omitted -->
-<pre tabindex="0"><code class="language-default" data-lang="default">&lt;title&gt;&lt;? if ($title) { ?&gt;&lt;?= &quot;$title - &quot; ?&gt;&lt;? } ?&gt;menta.nqou.net&lt;/title&gt;
-</code></pre><!-- raw HTML omitted -->
-<pre tabindex="0"><code class="language-default" data-lang="default">if ($title) {
-print &quot;$title - &quot;
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">? my $title = shift
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">?= render(&#39;header.mt&#39;, &#39;インデックス&#39;)
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">&lt;title&gt;&lt;? if ($title) { ?&gt;&lt;?= &#34;$title - &#34; ?&gt;&lt;? } ?&gt;menta.nqou.net&lt;/title&gt;
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">if ($title) {
+print &#34;$title - &#34;
 }
-</code></pre><!-- raw HTML omitted -->
-<pre tabindex="0"><code class="language-default" data-lang="default">&lt;h1&gt;&lt;?= &quot;$title - &quot; if $title ?&gt;menta.nqou.net&lt;/h1&gt;
-</code></pre><!-- raw HTML omitted -->
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">&lt;h1&gt;&lt;?= &#34;$title - &#34; if $title ?&gt;menta.nqou.net&lt;/h1&gt;
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
-<pre tabindex="0"><code class="language-default" data-lang="default">? my $title = shift
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">? my $title = shift
 &lt;!doctype html&gt;
-&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; xml:lang=&quot;ja&quot; lang=&quot;ja&quot;&gt;
+&lt;html xmlns=&#34;http://www.w3.org/1999/xhtml&#34; xml:lang=&#34;ja&#34; lang=&#34;ja&#34;&gt;
 &lt;head&gt;
-&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot; /&gt;
-&lt;title&gt;&lt;? if ($title) { ?&gt;&lt;?= &quot;$title - &quot; ?&gt;&lt;? } ?&gt;menta.nqou.net&lt;/title&gt;
+&lt;meta http-equiv=&#34;Content-Type&#34; content=&#34;text/html; charset=UTF-8&#34; /&gt;
+&lt;title&gt;&lt;? if ($title) { ?&gt;&lt;?= &#34;$title - &#34; ?&gt;&lt;? } ?&gt;menta.nqou.net&lt;/title&gt;
 &lt;/head&gt;
 &lt;body&gt;
-&lt;h1&gt;&lt;?= &quot;$title - &quot; if $title ?&gt;menta.nqou.net&lt;/h1&gt;
-</code></pre><!-- raw HTML omitted -->
-<pre tabindex="0"><code class="language-default" data-lang="default">&lt;p&gt;Powered by MENTA &lt;?= $MENTA::VERSION ?&gt;&lt;/p&gt;
+&lt;h1&gt;&lt;?= &#34;$title - &#34; if $title ?&gt;menta.nqou.net&lt;/h1&gt;
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">&lt;p&gt;Powered by MENTA &lt;?= $MENTA::VERSION ?&gt;&lt;/p&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-</code></pre><!-- raw HTML omitted -->
-<pre tabindex="0"><code class="language-default" data-lang="default">?= render('header.mt', 'インデックス')
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">?= render(&#39;header.mt&#39;, &#39;インデックス&#39;)
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a name=&quot;menta.nanochat&quot; href=&quot;&lt;?= uri_for('nanochat/index') ?&gt;&quot;&gt;NANOChat&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a name=&#34;menta.nanochat&#34; href=&#34;&lt;?= uri_for(&#39;nanochat/index&#39;) ?&gt;&#34;&gt;NANOChat&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
-?= render('footer.mt')
-</code></pre><!-- raw HTML omitted -->
-<pre tabindex="0"><code class="language-default" data-lang="default">? my $title = shift
-&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD HTML 4.01//EN&quot;
-&quot;http://www.w3.org/TR/html4/strict.dtd&quot;&gt;
-&lt;html lang=&quot;ja&quot;&gt;
+?= render(&#39;footer.mt&#39;)
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">? my $title = shift
+&lt;!DOCTYPE html PUBLIC &#34;-//W3C//DTD HTML 4.01//EN&#34;
+&#34;http://www.w3.org/TR/html4/strict.dtd&#34;&gt;
+&lt;html lang=&#34;ja&#34;&gt;
 &lt;head&gt;
-&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;&lt;?= static_file_path('nanochat.css') ?&gt;&quot; title=&quot;Default&quot; media=&quot;screen&quot;&gt;
-&lt;meta name=&quot;ROBOTS&quot; content=&quot;NOINDEX&quot;&gt;
-&lt;title&gt;&lt;? if ($title) { ?&gt;&lt;?= &quot;$title - &quot; ?&gt;&lt;? } ?&gt;NANOChat&lt;/title&gt;
+&lt;link rel=&#34;stylesheet&#34; type=&#34;text/css&#34; href=&#34;&lt;?= static_file_path(&#39;nanochat.css&#39;) ?&gt;&#34; title=&#34;Default&#34; media=&#34;screen&#34;&gt;
+&lt;meta name=&#34;ROBOTS&#34; content=&#34;NOINDEX&#34;&gt;
+&lt;title&gt;&lt;? if ($title) { ?&gt;&lt;?= &#34;$title - &#34; ?&gt;&lt;? } ?&gt;NANOChat&lt;/title&gt;
 &lt;/head&gt;
-&lt;body onload=&quot;obj = document.forms[0];if(obj)obj.elements[0].focus();&quot;&gt;
-&lt;h2 class=&quot;nano&quot;&gt;&lt;? if ($title) { ?&gt;&lt;?= &quot;$title - &quot; ?&gt;&lt;? } ?&gt;NANOChat&lt;/h2&gt;&lt;hr&gt;
-</code></pre><!-- raw HTML omitted -->
-<pre tabindex="0"><code class="language-default" data-lang="default">? my $cost = sprintf &quot;%.2f&quot;, times
+&lt;body onload=&#34;obj = document.forms[0];if(obj)obj.elements[0].focus();&#34;&gt;
+&lt;h2 class=&#34;nano&#34;&gt;&lt;? if ($title) { ?&gt;&lt;?= &#34;$title - &#34; ?&gt;&lt;? } ?&gt;NANOChat&lt;/h2&gt;&lt;hr&gt;
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">? my $cost = sprintf &#34;%.2f&#34;, times
 &lt;hr&gt;
-&lt;p class=&quot;nano&quot;&gt;このお仕事に &lt;?= $cost ?&gt; 秒くらいかかったの。&lt;/p&gt;
-&lt;address&gt;&lt;a href=&quot;&lt;?= uri_for('#nanochat') ?&gt;&quot; title=&quot;このスクリプトの最新版はこのリンク先にあるの。&quot;&gt;NANOChat Ver0.12&lt;/a&gt;&lt;/address&gt;
+&lt;p class=&#34;nano&#34;&gt;このお仕事に &lt;?= $cost ?&gt; 秒くらいかかったの。&lt;/p&gt;
+&lt;address&gt;&lt;a href=&#34;&lt;?= uri_for(&#39;#nanochat&#39;) ?&gt;&#34; title=&#34;このスクリプトの最新版はこのリンク先にあるの。&#34;&gt;NANOChat Ver0.12&lt;/a&gt;&lt;/address&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-</code></pre><!-- raw HTML omitted -->
-<pre tabindex="0"><code class="language-default" data-lang="default">?= render('nanochat/header.mt', 'いらっしゃいなの。')
-&lt;div class=&quot;nano&quot;&gt;
-&lt;p&gt;ここの入退室管理を任されてる &lt;strong class=&quot;name&quot;&gt;なの&lt;/strong&gt; なの。よろしくなの。&lt;/p&gt;
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">?= render(&#39;nanochat/header.mt&#39;, &#39;いらっしゃいなの。&#39;)
+&lt;div class=&#34;nano&#34;&gt;
+&lt;p&gt;ここの入退室管理を任されてる &lt;strong class=&#34;name&#34;&gt;なの&lt;/strong&gt; なの。よろしくなの。&lt;/p&gt;
 &lt;p&gt;この部屋へ入るにはクッキーが必要なの。退室するときにちゃんと消してあげるから、名札だと思ってつけてほしいの。今つけた人は、ついてるかどうかわからないから１回読みなおしてほしいの。&lt;/p&gt;
 &lt;p&gt;JavaScriptが使えると、マウスを使わなくてもチャットできるの。とってもおすすめなの。&lt;/p&gt;
 &lt;p&gt;あと、$limit分くらい何も発言しないと部屋から追い出されちゃうの。気をつけてほしいの。&lt;/p&gt;
 &lt;p&gt;あ、ホームページ（http://から書くの）とかメールアドレス（mailto:から書くの）とかを書くと、リンクしてあげるの。よくわからないから発言を全部リンクしちゃうけど、そのくらいは許してほしいの。&lt;/p&gt;
-&lt;p&gt;準備ができたら&lt;a href=&quot;&lt;?= uri_for('nanochat/enter') ?&gt;&quot;&gt;入口&lt;/a&gt;で名前を教えてほしいの。&lt;/p&gt;
+&lt;p&gt;準備ができたら&lt;a href=&#34;&lt;?= uri_for(&#39;nanochat/enter&#39;) ?&gt;&#34;&gt;入口&lt;/a&gt;で名前を教えてほしいの。&lt;/p&gt;
 &lt;/div&gt;
-?= render('nanochat/footer.mt')
-</code></pre>
+?= render(&#39;nanochat/footer.mt&#39;)
+</code></pre></td></tr></table>
+</div>
+</div>
   </div>
 
   

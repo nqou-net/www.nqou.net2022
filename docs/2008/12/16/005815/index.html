@@ -14,7 +14,7 @@
 <meta itemprop="name" content="Module::StarterとかPBPとか">
 <meta itemprop="description" content="Perlといえば、何はなくともCPANです。 で、そのCPAN"><meta itemprop="datePublished" content="2008-12-16T00:58:15+09:00" />
 <meta itemprop="dateModified" content="2008-12-16T00:58:15+09:00" />
-<meta itemprop="wordCount" content="732">
+<meta itemprop="wordCount" content="735">
 <meta itemprop="keywords" content="perl," />
 
 <meta name="twitter:card" content="summary"/>
@@ -227,10 +227,19 @@
 Module::StarterとModule::Starter::PBPのインストール、そして、Module::Starter::PBPのセットアップまでは無事終了しました。
 いざ、モジュールの作成です。
 サンプルどおりモジュール名だけを入力してみると「authorが必須ですよ」というエラーが出た。</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">C:\nqou&gt;module-starter --module=My::First
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">C:\nqou&gt;module-starter --module=My::First
 Must specify an author
 at C:/strawberry/perl/site/lib/Module/Starter/App.pm line 97
-</code></pre><p>Module::Starter::PBPのセットアップをするとホームディレクトリに「config」というファイルができて、起動時にそれを読み込んでくれるはずなのだが。
+</code></pre></td></tr></table>
+</div>
+</div><p>Module::Starter::PBPのセットアップをするとホームディレクトリに「config」というファイルができて、起動時にそれを読み込んでくれるはずなのだが。
 まあ、仕方なく、authorとemailを指定して実行した。
 ファイルやディレクトリができたようなので中身を確認すると、なんだか数が足りない。
 Build.PLが無いですよ。

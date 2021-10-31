@@ -12,18 +12,18 @@
   
 
 <meta itemprop="name" content="Perlでファイルをサブディレクトリごとコピーする">
-<meta itemprop="description" content="use strict; use warnings; use File::Copy::Recursive qw(rcopy); my $from_dir = &quot;.&quot;; my $to_dir = &quot;/temp&quot;; rcopy($from_dir, $to_dir); use warnings; use strict; use File::Copy::Recursive qw(rcopy); use Path::Class; my $from_dir = dir(&quot;.&quot;);"><meta itemprop="datePublished" content="2009-02-11T01:11:02+09:00" />
+<meta itemprop="description" content="1 2 3 4 5 6 use strict; use warnings; use File::Copy::Recursive qw(rcopy); my $from_dir = &#34;.&#34;; my $to_dir = &#34;/temp&#34;; rcopy($from_dir, $to_dir); 1 2 3 4 5 6 7"><meta itemprop="datePublished" content="2009-02-11T01:11:02+09:00" />
 <meta itemprop="dateModified" content="2009-02-11T01:11:02+09:00" />
-<meta itemprop="wordCount" content="37">
+<meta itemprop="wordCount" content="50">
 <meta itemprop="keywords" content="perl," />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Perlでファイルをサブディレクトリごとコピーする"/>
-<meta name="twitter:description" content="use strict; use warnings; use File::Copy::Recursive qw(rcopy); my $from_dir = &quot;.&quot;; my $to_dir = &quot;/temp&quot;; rcopy($from_dir, $to_dir); use warnings; use strict; use File::Copy::Recursive qw(rcopy); use Path::Class; my $from_dir = dir(&quot;.&quot;);"/>
+<meta name="twitter:description" content="1 2 3 4 5 6 use strict; use warnings; use File::Copy::Recursive qw(rcopy); my $from_dir = &#34;.&#34;; my $to_dir = &#34;/temp&#34;; rcopy($from_dir, $to_dir); 1 2 3 4 5 6 7"/>
 
 
 <meta property="og:title" content="Perlでファイルをサブディレクトリごとコピーする" />
-<meta property="og:description" content="use strict; use warnings; use File::Copy::Recursive qw(rcopy); my $from_dir = &quot;.&quot;; my $to_dir = &quot;/temp&quot;; rcopy($from_dir, $to_dir); use warnings; use strict; use File::Copy::Recursive qw(rcopy); use Path::Class; my $from_dir = dir(&quot;.&quot;);" />
+<meta property="og:description" content="1 2 3 4 5 6 use strict; use warnings; use File::Copy::Recursive qw(rcopy); my $from_dir = &#34;.&#34;; my $to_dir = &#34;/temp&#34;; rcopy($from_dir, $to_dir); 1 2 3 4 5 6 7" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.nqou.net/2009/02/11/011102/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2009-02-11T01:11:02+09:00" />
@@ -70,7 +70,7 @@
       },
       "datePublished": "2009-02-11T01:11:02+09:00",
       "dateModified": "2009-02-11T01:11:02+09:00",
-      "description": "use strict; use warnings; use File::Copy::Recursive qw(rcopy); my $from_dir = \u0026quot;.\u0026quot;; my $to_dir = \u0026quot;/temp\u0026quot;; rcopy($from_dir, $to_dir); use warnings; use strict; use File::Copy::Recursive qw(rcopy); use Path::Class; my $from_dir = dir(\u0026quot;.\u0026quot;);",
+      "description": "1 2 3 4 5 6 use strict; use warnings; use File::Copy::Recursive qw(rcopy); my $from_dir = \u0026#34;.\u0026#34;; my $to_dir = \u0026#34;/temp\u0026#34;; rcopy($from_dir, $to_dir); 1 2 3 4 5 6 7",
       "inLanguage": "ja",
       "potentialAction": [
         {
@@ -218,22 +218,47 @@
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
-<pre tabindex="0"><code class="language-default" data-lang="default">use strict;
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">use strict;
 use warnings;
 use File::Copy::Recursive qw(rcopy);
-my $from_dir = &quot;.&quot;;
-my $to_dir   = &quot;/temp&quot;;
+my $from_dir = &#34;.&#34;;
+my $to_dir   = &#34;/temp&#34;;
 rcopy($from_dir, $to_dir);
-</code></pre><!-- raw HTML omitted -->
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
-<pre tabindex="0"><code class="language-default" data-lang="default">use warnings;
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">use warnings;
 use strict;
 use File::Copy::Recursive qw(rcopy);
 use Path::Class;
-my $from_dir = dir(&quot;.&quot;);
-my $to_dir   = dir(&quot;&quot;, &quot;temp&quot;);
+my $from_dir = dir(&#34;.&#34;);
+my $to_dir   = dir(&#34;&#34;, &#34;temp&#34;);
 rcopy($from_dir, $to_dir);
-</code></pre>
+</code></pre></td></tr></table>
+</div>
+</div>
   </div>
 
   

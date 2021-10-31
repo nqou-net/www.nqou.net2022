@@ -14,7 +14,7 @@
 <meta itemprop="name" content="ローカルでの開発は docker-compose を使うと楽だった">
 <meta itemprop="description" content="さっきの記事を書いて面倒だなと思ったので、ローカルの開発時は"><meta itemprop="datePublished" content="2017-12-03T02:57:13+09:00" />
 <meta itemprop="dateModified" content="2017-12-03T02:57:13+09:00" />
-<meta itemprop="wordCount" content="349">
+<meta itemprop="wordCount" content="364">
 <meta itemprop="keywords" content="docker,git," />
 
 <meta name="twitter:card" content="summary"/>
@@ -216,28 +216,61 @@
 
   <div>
   <p>さっきの記事を書いて面倒だなと思ったので、ローカルの開発時は <code>docker-compose</code> を使えば楽かなと思ってやってみた。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#34;3&#34;</span>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#34;3&#34;</span>
 <span style="color:#f92672">services</span>:
     <span style="color:#f92672">webapp</span>:
         <span style="color:#f92672">build</span>: <span style="color:#ae81ff">.</span>
         <span style="color:#f92672">command</span>: <span style="color:#ae81ff">carton exec -- morbo myapp.pl</span>
         <span style="color:#f92672">ports</span>:
             - <span style="color:#ae81ff">3000</span>:<span style="color:#ae81ff">3000</span>
-</code></pre></div><p>このファイルからみると、 <code>myapp.pl</code> の場所が違うので直感的ではないけれど、 <code>COPY</code> で <code>.git</code> までコピーされているのを見ると、アプリに必要なファイルだけをコピーするのが良いんじゃないか、と思った次第。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker-compose up
+</code></pre></td></tr></table>
+</div>
+</div><p>このファイルからみると、 <code>myapp.pl</code> の場所が違うので直感的ではないけれど、 <code>COPY</code> で <code>.git</code> までコピーされているのを見ると、アプリに必要なファイルだけをコピーするのが良いんじゃないか、と思った次第。</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ docker-compose up
 Creating network <span style="color:#e6db74">&#34;serenelake43934_default&#34;</span> with the default driver
 Creating serenelake43934_webapp_1 ...
 Creating serenelake43934_webapp_1 ... <span style="color:#66d9ef">done</span>
 Attaching to serenelake43934_webapp_1
 webapp_1  | Server available at http://127.0.0.1:3000
-</code></pre></div><h2 id="感想">感想</h2>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="感想">感想</h2>
 <p>楽だった。</p>
 <p>多くのコンテナを使うようなものじゃなくても、 <code>Dockerfile</code> を上書きするように使えるのは便利。</p>
 <p><code>docker build</code> する度に、タグを入れるのは面倒だし、そうでなくても <code>docker images</code> で <code>&lt;none&gt;</code> がたくさん生成されるのを見ると色々と正しく指定しなければいけないのかなと思ってくる。</p>
 <p>まあ、一段落したら、全部止めて要らなさそうなやつは消しておくようにはしてます。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker ps -a -q | xargs docker stop
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ docker ps -a -q | xargs docker stop
 $ docker image prune
-</code></pre></div>
+</code></pre></td></tr></table>
+</div>
+</div>
   </div>
 
   

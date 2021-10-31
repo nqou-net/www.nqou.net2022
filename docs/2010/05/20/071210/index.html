@@ -14,7 +14,7 @@
 <meta itemprop="name" content="cpan-outdatedも使ってみた（完結編）">
 <meta itemprop="description" content="試行錯誤してきましたが、ようやく正解にたどり着きました。 これ"><meta itemprop="datePublished" content="2010-05-20T07:12:10+09:00" />
 <meta itemprop="dateModified" content="2010-05-20T07:12:10+09:00" />
-<meta itemprop="wordCount" content="209">
+<meta itemprop="wordCount" content="210">
 <meta itemprop="keywords" content="undef," />
 
 <meta name="twitter:card" content="summary"/>
@@ -217,8 +217,15 @@
   <p>試行錯誤してきましたが、ようやく正解にたどり着きました。
 これで、cpanmとcpan-outdatedの組み合わせでも、minicpanを有効に使うことができます。
 minicpanの場所（minicpanを実行する時のlオプションの場所）が「C:\strawberry\minicpan」の場合は、以下のように書きます。</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">cpan-outdated --mirror file:///C:/strawberry/minicpan | cpanm --mirror file:///C:/strawberry/minicpan
-</code></pre><p>考えてみれば、fileプロトコルでちゃんとアクセスすることを考えればよかったのです。</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">cpan-outdated --mirror file:///C:/strawberry/minicpan | cpanm --mirror file:///C:/strawberry/minicpan
+</code></pre></td></tr></table>
+</div>
+</div><p>考えてみれば、fileプロトコルでちゃんとアクセスすることを考えればよかったのです。</p>
 
   </div>
 

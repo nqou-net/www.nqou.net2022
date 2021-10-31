@@ -14,7 +14,7 @@
 <meta itemprop="name" content="【2019年4月頃まで有効】Mojolicious::Liteで作ったアプリをHerokuで動かす">
 <meta itemprop="description" content="結構前に書いた heroku で Mojolicious::Lite で作ったアプリを動かす記事が今でも使える"><meta itemprop="datePublished" content="2017-12-02T17:03:42+09:00" />
 <meta itemprop="dateModified" content="2017-12-02T17:03:42+09:00" />
-<meta itemprop="wordCount" content="400">
+<meta itemprop="wordCount" content="411">
 <meta itemprop="keywords" content="git,heroku,mojolicious,perl," />
 
 <meta name="twitter:card" content="summary"/>
@@ -219,7 +219,7 @@
   <div>
   <p>結構前に書いた heroku で Mojolicious::Lite で作ったアプリを動かす記事が今でも使えるのか確認してみた。</p>
 <ul>
-<li><a href="https://www.nqou.net/2015/04/08/114023">Mojolicious::Liteで作ったアプリをHerokuで動かす | IT Office Nishimiyahara</a></li>
+<li><a href="/2015/04/08/114023">Mojolicious::Liteで作ったアプリをHerokuで動かす | IT Office Nishimiyahara</a></li>
 </ul>
 <p>経緯としては、先日の Perl 入学式の後の懇親会で、「自分の作ったアプリが公開できる、と思うとやる気が出る」みたいな話になったので、おさらいしてみるか、という感じです。</p>
 <p>結果として、動きませんでした。</p>
@@ -228,7 +228,22 @@
 <p>ひとことで言うと、デフォルトで使用される Stack が cedar-14 から heroku-16 に変わっていて、 buildpack が heroku-16 に対応していなかった、ということのようです。</p>
 <p>なので、 stack を指定してやればまだ使えます。</p>
 <p>改訂版はこちら。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir myapp <span style="color:#f92672">&amp;&amp;</span> cd myapp
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">mkdir myapp <span style="color:#f92672">&amp;&amp;</span> cd myapp
 git init
 mojo generate lite_app myapp.pl
 heroku create --stack cedar-14 --buildpack https://github.com/pnu/heroku-buildpack-perl.git
@@ -239,7 +254,9 @@ git add .
 git commit -m <span style="color:#e6db74">&#39;go to heroku&#39;</span>
 git push heroku master
 heroku open
-</code></pre></div><p>cedar-14 は 2019年4月までサポートされる、ということなので、まだしばらくは遊べますね。</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>cedar-14 は 2019年4月までサポートされる、ということなので、まだしばらくは遊べますね。</p>
 <h3 id="参考">参考</h3>
 <ul>
 <li><a href="https://devcenter.heroku.com/articles/cedar-14-stack">Cedar-14 Stack | Heroku Dev Center</a></li>

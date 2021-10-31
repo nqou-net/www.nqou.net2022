@@ -14,7 +14,7 @@
 <meta itemprop="name" content="WWW::MechanizeとWeb::ScraperでLast.fmからfreemp3をダウンロードする">
 <meta itemprop="description" content="最近からかもしれないけど、Last.fmでmp3の無料ダウン"><meta itemprop="datePublished" content="2009-03-02T03:48:17+09:00" />
 <meta itemprop="dateModified" content="2009-03-02T03:48:17+09:00" />
-<meta itemprop="wordCount" content="667">
+<meta itemprop="wordCount" content="716">
 <meta itemprop="keywords" content="perl," />
 
 <meta name="twitter:card" content="summary"/>
@@ -220,24 +220,83 @@
 <p>アカウントを持っているのが前提です。
 アカウント情報は以下のように、YAMLで記述しておきます。
 ソースコードをこのまま使う場合は、スクリプトのあるディレクトリに「lastfm.freemp3.yaml」という名前で保存しておきます。</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">---
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">---
 config:
 id: xxxxxxxx
 pw: ********
-</code></pre><p>最後は改行で終了しておく必要があります。たぶん。
+</code></pre></td></tr></table>
+</div>
+</div><p>最後は改行で終了しておく必要があります。たぶん。
 ソースコードをこのまま使う場合は、スクリプトのあるディレクトリに「lastfm」というディレクトリが必要です。
 実行すると、そのディレクトリにダウンロードしていきます。
 また、保存する時に「mirror」を使うと、通常はファイルの比較をして再ダウンロードを防いでくれるのですが、Last.fmのサーバーの仕様なのかわかりませんが、その機能が効いていません。
 その辺はもう少しどうにかしたいですね。
 結構ダウンロードに時間がかかるので。
 ソースコード。</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">use strict;
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">use strict;
 use warnings;
 use utf8;
 use Perl6::Say;
 use Encode;
 use Config::YAML;
-my $config = Config::YAML-&gt;new( config =&gt; './lastfm.freemp3.yaml' );
+my $config = Config::YAML-&gt;new( config =&gt; &#39;./lastfm.freemp3.yaml&#39; );
 use Web::Scraper;
 use WWW::Mechanize;
 use File::Basename;
@@ -266,17 +325,19 @@ $mech-&gt;get($uri);
 sleep 1;
 my ( $scraper, $result );
 $scraper = scraper {
-process 'a[href=~/\.mp3$/]', 'hrefs[]' =&gt; '@href';
-result 'hrefs';
+process &#39;a[href=~/\.mp3$/]&#39;, &#39;hrefs[]&#39; =&gt; &#39;@href&#39;;
+result &#39;hrefs&#39;;
 };
 $result = $scraper-&gt;scrape( $mech-&gt;content, $mech-&gt;uri );
 foreach my $mp3 ( uniq @{$result} ) {
 my $filename = basename($mp3);
-print &quot;try fetch : $mp3 : &quot;;
-say $mech-&gt;mirror( $mp3, sprintf( &quot;%s/%s&quot;, 'lastfm', $filename ) )-&gt;message;
+print &#34;try fetch : $mp3 : &#34;;
+say $mech-&gt;mirror( $mp3, sprintf( &#34;%s/%s&#34;, &#39;lastfm&#39;, $filename ) )-&gt;message;
 sleep 1;
 }
-</code></pre>
+</code></pre></td></tr></table>
+</div>
+</div>
   </div>
 
   

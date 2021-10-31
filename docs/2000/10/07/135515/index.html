@@ -12,18 +12,18 @@
   
 
 <meta itemprop="name" content="再帰呼出し型サブルーチン">
-<meta itemprop="description" content="&lt;p&gt;ソースコード&lt;/p&gt; #!/usr/bin/perl #BEGIN{ # print &quot;Content-type:"><meta itemprop="datePublished" content="2000-10-07T13:55:15+09:00" />
+<meta itemprop="description" content="&lt;p&gt;ソースコード&lt;/p&gt; 1 2 3 4 5"><meta itemprop="datePublished" content="2000-10-07T13:55:15+09:00" />
 <meta itemprop="dateModified" content="2000-10-07T13:55:15+09:00" />
-<meta itemprop="wordCount" content="625">
+<meta itemprop="wordCount" content="782">
 <meta itemprop="keywords" content="perl," />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="再帰呼出し型サブルーチン"/>
-<meta name="twitter:description" content="&lt;p&gt;ソースコード&lt;/p&gt; #!/usr/bin/perl #BEGIN{ # print &quot;Content-type:"/>
+<meta name="twitter:description" content="&lt;p&gt;ソースコード&lt;/p&gt; 1 2 3 4 5"/>
 
 
 <meta property="og:title" content="再帰呼出し型サブルーチン" />
-<meta property="og:description" content="&lt;p&gt;ソースコード&lt;/p&gt; #!/usr/bin/perl #BEGIN{ # print &quot;Content-type:" />
+<meta property="og:description" content="&lt;p&gt;ソースコード&lt;/p&gt; 1 2 3 4 5" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.nqou.net/2000/10/07/135515/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2000-10-07T13:55:15+09:00" />
@@ -70,7 +70,7 @@
       },
       "datePublished": "2000-10-07T13:55:15+09:00",
       "dateModified": "2000-10-07T13:55:15+09:00",
-      "description": "\u0026lt;p\u0026gt;ソースコード\u0026lt;/p\u0026gt; #!/usr/bin/perl #BEGIN{ # print \u0026quot;Content-type:",
+      "description": "\u0026lt;p\u0026gt;ソースコード\u0026lt;/p\u0026gt; 1 2 3 4 5",
       "inLanguage": "ja",
       "potentialAction": [
         {
@@ -228,17 +228,138 @@
 <!-- raw HTML omitted -->
 <pre><code>                             &lt;p&gt;ソースコード&lt;/p&gt;
 </code></pre>
-<pre tabindex="0"><code class="language-default" data-lang="default">#!/usr/bin/perl
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 62
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 63
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 64
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 65
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 66
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 67
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 68
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 69
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 70
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 71
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 72
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 73
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 74
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 75
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 76
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 77
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 78
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 79
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 80
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 81
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 82
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 83
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 84
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 85
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 86
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 87
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 88
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 89
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 90
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 91
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 92
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 93
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 94
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 95
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 96
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 97
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 98
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 99
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">100
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">101
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">102
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">103
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">104
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">105
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">106
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">107
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">108
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">109
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">110
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">111
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">112
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">113
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">114
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">115
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">116
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">117
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">#!/usr/bin/perl
 
 #BEGIN{
-#   print &quot;Content-type: text/plainnn&quot;;
-#   open(STDERR, &quot;&gt;&amp;amp;STDOUT&quot;);
+#   print &#34;Content-type: text/plainnn&#34;;
+#   open(STDERR, &#34;&gt;&amp;amp;STDOUT&#34;);
 #   $|=1;
 #}
 
-$usr_title = 'テスト２９';
+$usr_title = &#39;テスト２９&#39;;
 
-require &quot;tsenv.pl&quot;;
+require &#34;tsenv.pl&#34;;
 
 {
     $rh_form = getForm();
@@ -247,7 +368,7 @@ require &quot;tsenv.pl&quot;;
         if($rh_form-&gt;{num}){
             outputNumber($rh_form-&gt;{num});
         }else{
-            error('Data is `Nothing` or `Zero`');
+            error(&#39;Data is `Nothing` or `Zero`&#39;);
         }
     }else{
         inputNumber();
@@ -258,25 +379,25 @@ require &quot;tsenv.pl&quot;;
 
 sub error{
     my($err, $num) = @_;
-    print &quot;Content-type: text/html; charset=iso-8859-1nn&quot;;
-    print &quot;&lt;html lang=en&gt;&lt;head&gt;&lt;title&gt;Error&lt;/title&gt;&lt;/head&gt;n&quot;;
-    print &quot;&lt;h1&gt;$err&lt;/h1&gt;n&quot;;
-    print &quot;&lt;p&gt;Request is `$num`&lt;/p&gt;n&quot; if $num;
-    print &quot;&lt;/body&gt;&lt;/html&gt;n&quot;;
+    print &#34;Content-type: text/html; charset=iso-8859-1nn&#34;;
+    print &#34;&lt;html lang=en&gt;&lt;head&gt;&lt;title&gt;Error&lt;/title&gt;&lt;/head&gt;n&#34;;
+    print &#34;&lt;h1&gt;$err&lt;/h1&gt;n&#34;;
+    print &#34;&lt;p&gt;Request is `$num`&lt;/p&gt;n&#34; if $num;
+    print &#34;&lt;/body&gt;&lt;/html&gt;n&#34;;
     exit(1);
 }
 
 sub inputNumber{
-    my $title = $usr_title.'（数値入力）';
+    my $title = $usr_title.&#39;（数値入力）&#39;;
     printHeader($title);
     printBodyHeader($title);
 
-    print qq(&lt;form action=&quot;$ENV{SCRIPT_NAME}&quot;&gt;n);
-    Jprint('&lt;p&gt;不要っぽい「０」を消し、３桁ずつ区切って表示します。'.&quot;n&quot;);
-    Jprint('&lt;p&gt;適当な数値を入力してください。'.&quot;n&quot;);
+    print qq(&lt;form action=&#34;$ENV{SCRIPT_NAME}&#34;&gt;n);
+    Jprint(&#39;&lt;p&gt;不要っぽい「０」を消し、３桁ずつ区切って表示します。&#39;.&#34;n&#34;);
+    Jprint(&#39;&lt;p&gt;適当な数値を入力してください。&#39;.&#34;n&#34;);
     print qq(&lt;p&gt;&lt;input type=text name=num size=30&gt;n);
-    Jprint(qq(&lt;p&gt;&lt;input type=submit value=&quot;区切ってみる&quot;&gt;n));
-    Jprint(qq(&lt;input type=reset value=&quot;とりあえず消す&quot;&gt;n));
+    Jprint(qq(&lt;p&gt;&lt;input type=submit value=&#34;区切ってみる&#34;&gt;n));
+    Jprint(qq(&lt;input type=reset value=&#34;とりあえず消す&#34;&gt;n));
     print qq(&lt;/p&gt;&lt;/form&gt;n);
 
     printFooter();
@@ -286,15 +407,15 @@ sub outputNumber{
     my($num) = @_;
     my $outnum = numbering($num);
 
-    my $title = $usr_title.'（結果出力）';
+    my $title = $usr_title.&#39;（結果出力）&#39;;
     printHeader($title);
     printBodyHeader($title);
 
-    print &quot;&lt;table border=1 cellpadding=4&gt;n&quot;;
+    print &#34;&lt;table border=1 cellpadding=4&gt;n&#34;;
     Jprint(qq(&lt;tr&gt;&lt;th&gt;入力された値&lt;td&gt;$numn));
     Jprint(qq(&lt;tr&gt;&lt;th&gt;整形後&lt;td&gt;$outnumn));
-    print &quot;&lt;/table&gt;&quot;;
-    Jprint('&lt;p&gt;合ってるでしょうか・・・？');
+    print &#34;&lt;/table&gt;&#34;;
+    Jprint(&#39;&lt;p&gt;合ってるでしょうか・・・？&#39;);
 
     printFooter();
 }
@@ -303,17 +424,17 @@ sub getForm{
     my $method = $ENV{REQUEST_METHOD};
     my $len = $ENV{CONTENT_LENGTH};
     my($query, $key, $value, @elm, %form);
-    if($method eq 'POST'){
-        error('Memory Over') if(8191 &lt; $len);
+    if($method eq &#39;POST&#39;){
+        error(&#39;Memory Over&#39;) if(8191 &lt; $len);
         read(STDIN, $query, $len);
-    }elsif($method eq 'GET'){
+    }elsif($method eq &#39;GET&#39;){
         $query = $ENV{QUERY_STRING};
     }else{
-        error('Unknown Request');
+        error(&#39;Unknown Request&#39;);
     }
-    @elm = split('&amp;amp;', $query);
+    @elm = split(&#39;&amp;amp;&#39;, $query);
     foreach(@elm){
-        ($key, $value) = split('=');
+        ($key, $value) = split(&#39;=&#39;);
         $form{$key} = $value;
     }
     return %form;
@@ -322,15 +443,15 @@ sub getForm{
 sub numbering{
     my($num) = @_;
     my($f);
-    error('Not a Number', $num) if($num !~ /^[0-9]*.?[0-9]*$/);
+    error(&#39;Not a Number&#39;, $num) if($num !~ /^[0-9]*.?[0-9]*$/);
     $num =~ s/^0+//;
     if($num =~ /./){
         ($num, $f) = split(/./, $num);
         $f =~ s/0+$// if $f;
     }
-    $num = '0' unless $num;
+    $num = &#39;0&#39; unless $num;
     $num = divideNum($num);
-    $num .= '.'.$f if $f;
+    $num .= &#39;.&#39;.$f if $f;
     return $num;
 }
 
@@ -340,12 +461,14 @@ sub divideNum{
     if(3 &lt; $len){
         my $hn = substr($num, -3);
         my $th = divideNum(substr($num, 0, $len - 3));
-        return $th.','.$hn;
+        return $th.&#39;,&#39;.$hn;
     }else{
         return $num;
     }
 }
-</code></pre><pre><code>                          &lt;/div&gt;
+</code></pre></td></tr></table>
+</div>
+</div><pre><code>                          &lt;/div&gt;
 </code></pre>
 
   </div>

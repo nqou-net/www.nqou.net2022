@@ -14,7 +14,7 @@
 <meta itemprop="name" content="NanoAでインデックスページを作ると良いことがあった">
 <meta itemprop="description" content="NanoAについては、ローカル環境で色々と試行錯誤しているわ"><meta itemprop="datePublished" content="2010-02-07T20:05:15+09:00" />
 <meta itemprop="dateModified" content="2010-02-07T20:05:15+09:00" />
-<meta itemprop="wordCount" content="711">
+<meta itemprop="wordCount" content="724">
 <meta itemprop="keywords" content="perl," />
 
 <meta name="twitter:card" content="summary"/>
@@ -218,7 +218,24 @@
 <p>で、ソースを読んでいたら、appディレクトリの下にindexというディレクトリを作ってやれば、そちらを読んでくれそうだったので試してみた。</p>
 <p>ローカル環境では、サーバーポートは80以外でやっているのだが、元々のDispatch.pmではポートのことを考慮していないようだった。</p>
 <p>修正したらうまくいったので参考までに。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">Index: Dispatch.pm
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">Index: Dispatch.pm
 ===================================================================
 <span style="color:#f92672">--- Dispatch.pm    (リビジョン 36612)
 </span><span style="color:#f92672"></span><span style="color:#a6e22e">+++ Dispatch.pm    (作業コピー)
@@ -231,7 +248,9 @@ if ($handler_path eq &#39;&#39; &amp;&amp; -d &#39;app/index&#39;) {
 </span><span style="color:#a6e22e"></span>CGI::ExceptionManager::detach();
 }
 $handler_path =~ s{..}{}g;
-</code></pre></div><p>これで、nanoa.cgiにアクセスしても、nanoa.cgi/index/にリダイレクトされるようになった。</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>これで、nanoa.cgiにアクセスしても、nanoa.cgi/index/にリダイレクトされるようになった。</p>
 <p>このおかげで、トップページがアプリケーションの一つとして管理できるので、headerやfooterを含め、スタイルシートを使ったレイアウトの切り替えが簡単になった。</p>
 <p>こんなところまで考えてあったんだなぁ。</p>
 <p>あと、nanoa.cgiと同じ場所にstaticディレクトリを作って、スタイルシートをそっちにおくようにした。</p>

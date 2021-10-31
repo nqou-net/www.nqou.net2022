@@ -14,7 +14,7 @@
 <meta itemprop="name" content="以前は動いていた Dockerfile で permission denied が出るようになった話">
 <meta itemprop="description" content="Mac に入っている docker を stable から edge に変えたところ、以前は build できていた"><meta itemprop="datePublished" content="2018-06-12T11:02:04+09:00" />
 <meta itemprop="dateModified" content="2018-06-12T11:02:04+09:00" />
-<meta itemprop="wordCount" content="385">
+<meta itemprop="wordCount" content="413">
 <meta itemprop="keywords" content="perl,docker," />
 
 <meta name="twitter:card" content="summary"/>
@@ -216,7 +216,24 @@
 
   <div>
   <p>Mac に入っている docker を stable から edge に変えたところ、以前は build できていたはずの Dockerfile が build に失敗するようになった。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ docker-compose build
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ docker-compose build
 Building webapp
 Step 1/9 : FROM perl:latest
  ---&gt; dbada67dc42d
@@ -229,8 +246,29 @@ Step 3/9 : USER appuser
 Step 4/9 : RUN mkdir -p ~/webapp
  ---&gt; Running in ec4f449376a8
 ERROR: Service <span style="color:#e6db74">&#39;webapp&#39;</span> failed to build: OCI runtime create failed: container_linux.go:348: starting container process caused <span style="color:#e6db74">&#34;chdir to cwd (\&#34;/root\&#34;) set in config.json failed: permission denied&#34;</span>: unknown
-</code></pre></div><p>たまたまタイミングがそうだっただけで、実際には正しくない書き方だったのかもしれないと思って、より堅実そうな書き方に変更した。</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">FROM perl:latest
+</code></pre></td></tr></table>
+</div>
+</div><p>たまたまタイミングがそうだっただけで、実際には正しくない書き方だったのかもしれないと思って、より堅実そうな書き方に変更した。</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">FROM perl:latest
 
 RUN useradd -m -s /bin/bash appuser \
     &amp;&amp; cpanm Carmel --notest
@@ -245,13 +283,15 @@ RUN carmel install
 COPY --chown=appuser:appuser webapp .
 
 CMD carmel exec -- ./myapp.pl daemon -l http://0.0.0.0:$PORT
-</code></pre><p>変更したのはディレクトリを作成する部分。
+</code></pre></td></tr></table>
+</div>
+</div><p>変更したのはディレクトリを作成する部分。
 以前は appuser に切り替えてディレクトリを作成していたけど、そこがエラーになっていた。</p>
 <p>なので、ディレクトリを作ったあと chown で所有者を変更することにした。
 結果として同じ状態にはなるので問題ないと思います。</p>
 <h2 id="参考">参考</h2>
 <ul>
-<li><a href="https://www.nqou.net/2017/12/13/103356/">DockerでHerokuでMojoliciousが動いたぞ!!!（改定版） | nqou.net</a></li>
+<li><a href="/2017/12/13/103356/">DockerでHerokuでMojoliciousが動いたぞ!!!（改定版） | nqou.net</a></li>
 </ul>
 
   </div>

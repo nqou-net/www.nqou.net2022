@@ -94,7 +94,7 @@
       <pubDate>Tue, 12 Jun 2018 11:52:34 +0900</pubDate>
       
       <guid>https://www.nqou.net/2018/06/12/115234/</guid>
-      <description>久しぶりに Heroku に push すると警告が出た。 $ heroku container:push web === Building web (/Users/nobu/local/src/github.com/nqounet/heroku-enigmatic-castle-35725/Dockerfile) Sending build context to Docker</description>
+      <description>久しぶりに Heroku に push すると警告が出た。 1 2 3 4 5 6 7 $ heroku container:push web === Building</description>
     </item>
     
     <item>
@@ -328,7 +328,7 @@
       <pubDate>Sat, 13 May 2017 17:25:28 +0900</pubDate>
       
       <guid>https://www.nqou.net/2017/05/13/172528/</guid>
-      <description>おはようございます。 若林（@nqounet）です。 GRUB_CMDLINE_LINUX_DEFAULT=&amp;quot;systemd.unit=multi-user.target quiet nosplash&amp;quot;</description>
+      <description>おはようございます。 若林（@nqounet）です。 1 GRUB_CMDLINE_LINUX_DEFAULT=&amp;#34;systemd.unit=multi-user.target quiet nosplash&amp;#34;</description>
     </item>
     
     <item>
@@ -364,7 +364,7 @@
       <pubDate>Fri, 02 Dec 2016 00:14:19 +0900</pubDate>
       
       <guid>https://www.nqou.net/2016/12/02/001419/</guid>
-      <description>おはようございます。 若林（@nqounet）です。 #!/usr/bin/env perl use strict; use</description>
+      <description>おはようございます。 若林（@nqounet）です。 1 2 3 4 5</description>
     </item>
     
     <item>
@@ -409,7 +409,7 @@
       <pubDate>Wed, 03 Aug 2016 08:09:32 +0900</pubDate>
       
       <guid>https://www.nqou.net/2016/08/03/080932/</guid>
-      <description>おはようございます。 若林（@nqounet）です。 use KeyedMutex::Memcached; my $key =</description>
+      <description>おはようございます。 若林（@nqounet）です。 1 2 3 4 5</description>
     </item>
     
     <item>
@@ -445,7 +445,7 @@
       <pubDate>Sun, 21 Feb 2016 15:09:20 +0900</pubDate>
       
       <guid>https://www.nqou.net/2016/02/21/150920/</guid>
-      <description>おはようございます。 若林（@nqounet）です。 package MyApp; use Moo; has</description>
+      <description>おはようございます。 若林（@nqounet）です。 1 2 3 4 5</description>
     </item>
     
     <item>
@@ -562,7 +562,7 @@
       <pubDate>Sat, 04 Jul 2015 15:27:07 +0900</pubDate>
       
       <guid>https://www.nqou.net/2015/07/04/152707/</guid>
-      <description>sub update { shift-&amp;gt;delete（条件）-&amp;gt;in</description>
+      <description>1 2 3 sub update { shift-&amp;gt;delete（条件）-&amp;gt</description>
     </item>
     
     <item>
@@ -589,7 +589,7 @@
       <pubDate>Sat, 06 Jun 2015 14:13:59 +0900</pubDate>
       
       <guid>https://www.nqou.net/2015/06/06/141359/</guid>
-      <description>$ ssh-keygen -t rsa -f ~/.ssh/gitolite-admin $ scp ~/.ssh/gitolite-admin.pub user@host:./admin.pub $ sudo mv admin.pub /home/gitolite $ sudo chown gitolite:gitolite /home/gitolite/admin.pub $ sudo su - gitolite $ /path/to/gitolite setup -pk admin.pub</description>
+      <description>1 $ ssh-keygen -t rsa -f ~/.ssh/gitolite-admin 1 $ scp ~/.ssh/gitolite-admin.pub user@host:./admin.pub 1 2 $ sudo mv admin.pub /home/gitolite $ sudo chown gitolite:gitolite /home/gitolite/admin.pub 1 2 $ sudo su -</description>
     </item>
     
     <item>
@@ -625,7 +625,7 @@
       <pubDate>Wed, 08 Apr 2015 11:40:23 +0900</pubDate>
       
       <guid>https://www.nqou.net/2015/04/08/114023/</guid>
-      <description>mkdir myapp &amp;amp;&amp;amp; cd myapp git init mojo generate lite_app myapp.pl heroku create --buildpack https://github.com/pnu/heroku-buildpack-perl.git touch app.psgi echo &amp;#39;requires &amp;#34;Mojolicious&amp;#34;;&amp;#39; &amp;gt; cpanfile echo &amp;#39;web: starman --preload-app --port $PORT myapp.pl psgi&amp;#39;</description>
+      <description>@nqounetです。 Mojolicious::Liteに限</description>
     </item>
     
     <item>
@@ -634,7 +634,7 @@
       <pubDate>Sat, 07 Mar 2015 07:12:19 +0900</pubDate>
       
       <guid>https://www.nqou.net/2015/03/07/071219/</guid>
-      <description>#!/usr/bin/env perl use Mojolicious::Lite; get &amp;#39;/&amp;#39; =&amp;gt; sub { my $c = shift; $c-&amp;gt;render(template =&amp;gt; &amp;#39;index&amp;#39;); }; post &amp;#39;/&amp;#39; =&amp;gt; sub { my $c = shift; my $user = $c-&amp;gt;param(&amp;#39;user&amp;#39;);</description>
+      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30</description>
     </item>
     
     <item>
@@ -643,7 +643,7 @@
       <pubDate>Thu, 05 Mar 2015 07:33:44 +0900</pubDate>
       
       <guid>https://www.nqou.net/2015/03/05/073344/</guid>
-      <description>#!/usr/bin/env perl use Mojolicious::Lite; get &amp;#39;/&amp;#39; =&amp;gt; sub { my $c = shift; my $user = $c-&amp;gt;param(&amp;#39;user&amp;#39;); $c-&amp;gt;stash(hello =&amp;gt; qq{Hello $user!}); $c-&amp;gt;render(template =&amp;gt; &amp;#39;index&amp;#39;); }; app-&amp;gt;start; __DATA__ @@ index.html.ep &amp;lt;!DOCTYPE</description>
+      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 #!/usr/bin/env</description>
     </item>
     
     <item>
@@ -670,7 +670,7 @@
       <pubDate>Thu, 12 Feb 2015 08:12:57 +0900</pubDate>
       
       <guid>https://www.nqou.net/2015/02/12/081257/</guid>
-      <description>#!/usr/bin/env perl use Mojolicious::Lite; get &amp;#39;/&amp;#39; =&amp;gt; sub { my $c = shift; my $user = $c-&amp;gt;param(&amp;#39;user&amp;#39;); $c-&amp;gt;stash(hello =&amp;gt; qq{Hello $user!}); $c-&amp;gt;render(template =&amp;gt; &amp;#39;index&amp;#39;); }; app-&amp;gt;start; __DATA__ @@ index.html.ep &amp;lt;!DOCTYPE</description>
+      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 #!/usr/bin/env</description>
     </item>
     
     <item>
@@ -679,7 +679,7 @@
       <pubDate>Sun, 08 Feb 2015 08:13:58 +0900</pubDate>
       
       <guid>https://www.nqou.net/2015/02/08/081358/</guid>
-      <description>... any &amp;#39;/&amp;#39; =&amp;gt; sub { my ($c) = @_; my $config = $c-&amp;gt;config; my $counter = $c-&amp;gt;session-&amp;gt;get(&amp;#39;counter&amp;#39;) || $config-&amp;gt;{initial_counter}; $counter++; $c-&amp;gt;session-&amp;gt;set(&amp;#39;counter&amp;#39; =&amp;gt; $counter); return $c-&amp;gt;render(&amp;#39;index.tx&amp;#39;, { counter =&amp;gt; $counter,</description>
+      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 ... any &amp;#39;/&amp;#39; =&amp;gt; sub { my ($c) = @_; my $config = $c-&amp;gt;config; my $counter</description>
     </item>
     
     <item>
@@ -688,7 +688,7 @@
       <pubDate>Sat, 07 Feb 2015 14:27:27 +0900</pubDate>
       
       <guid>https://www.nqou.net/2015/02/07/142727/</guid>
-      <description>#!/usr/bin/env perl use utf8; use strict; use warnings; use feature &amp;#39;say&amp;#39;; use open qw/:encoding(utf8) :std/; use Data::Printer {deparse =&amp;gt; 1};</description>
+      <description>@nqounetです。 先ほど書いていたひな形ですが、song</description>
     </item>
     
     <item>
@@ -697,7 +697,7 @@
       <pubDate>Sat, 07 Feb 2015 08:10:45 +0900</pubDate>
       
       <guid>https://www.nqou.net/2015/02/07/081045/</guid>
-      <description>#!/usr/bin/env perl use utf8; use v5.12; use open qw/:encoding(utf-8) :std/; use DDP {deparse =&amp;gt; 1}; $ perl -Mutf8 -le &amp;#39;print length &amp;#34;あいうえ</description>
+      <description>（追記: 2015/02/07 ） このひな形ではwarningsが有効になっていな</description>
     </item>
     
     <item>
@@ -706,7 +706,7 @@
       <pubDate>Thu, 05 Feb 2015 08:50:40 +0900</pubDate>
       
       <guid>https://www.nqou.net/2015/02/05/085040/</guid>
-      <description>#!/usr/bin/env perl use Mojolicious::Lite; get &amp;#39;/&amp;#39; =&amp;gt; &amp;#39;index&amp;#39;; get &amp;#39;/foo&amp;#39; =&amp;gt; sub { my $c = shift; my $user = $c-&amp;gt;param(&amp;#39;user&amp;#39;); $c-&amp;gt;render(text =&amp;gt; qq{Hello $user!}); }; app-&amp;gt;start; __DATA__ @@ index.html.ep</description>
+      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 #!/usr/bin/env</description>
     </item>
     
     <item>
@@ -715,7 +715,7 @@
       <pubDate>Wed, 04 Feb 2015 07:57:56 +0900</pubDate>
       
       <guid>https://www.nqou.net/2015/02/04/075756/</guid>
-      <description>#!/usr/bin/env perl use Mojolicious::Lite; get &amp;#39;/&amp;#39; =&amp;gt; sub { my $c = shift; $c-&amp;gt;redirect_to(&amp;#39;/foo?user=nqounet&amp;#39;); }; get &amp;#39;/foo&amp;#39; =&amp;gt; sub { my $c = shift; my $user = $c-&amp;gt;param(&amp;#39;user&amp;#39;); $c-&amp;gt;render(text =&amp;gt;</description>
+      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 #!/usr/bin/env perl use Mojolicious::Lite; get &amp;#39;/&amp;#39; =&amp;gt; sub { my $c = shift; $c-&amp;gt;redirect_to(&amp;#39;/foo?user=nqounet&amp;#39;); };</description>
     </item>
     
     <item>
@@ -724,7 +724,7 @@
       <pubDate>Tue, 03 Feb 2015 07:38:28 +0900</pubDate>
       
       <guid>https://www.nqou.net/2015/02/03/073828/</guid>
-      <description>#!/usr/bin/env perl use Mojolicious::Lite; get &amp;#39;/&amp;#39; =&amp;gt; sub { shift-&amp;gt;render(text =&amp;gt; q{Hello World!}); }; get &amp;#39;/foo&amp;#39; =&amp;gt; sub { my $c = shift; $c-&amp;gt;render(text =&amp;gt; q{Foo!}); }; app-&amp;gt;start; #!/usr/bin/env perl</description>
+      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 #!/usr/bin/env perl use Mojolicious::Lite; get &amp;#39;/&amp;#39; =&amp;gt; sub { shift-&amp;gt;render(text =&amp;gt; q{Hello World!}); }; get &amp;#39;/foo&amp;#39; =&amp;gt;</description>
     </item>
     
     <item>
@@ -733,7 +733,7 @@
       <pubDate>Mon, 02 Feb 2015 07:54:35 +0900</pubDate>
       
       <guid>https://www.nqou.net/2015/02/02/075435/</guid>
-      <description>#!/usr/bin/env perl use Mojolicious::Lite; get &amp;#39;/&amp;#39; =&amp;gt; sub { shift-&amp;gt;render(text =&amp;gt; q{ハローワールド！}); }; app-&amp;gt;start; #!/usr/bin/env perl use Mojolicious::Lite;</description>
+      <description>1 2 3 4 5 6 7 8 #!/usr/bin/env perl use Mojolicious::Lite; get &amp;#39;/&amp;#39; =&amp;gt; sub { shift-&amp;gt;render(text =&amp;gt; q{ハローワールド！}</description>
     </item>
     
     <item>
@@ -742,7 +742,7 @@
       <pubDate>Sat, 31 Jan 2015 08:24:26 +0900</pubDate>
       
       <guid>https://www.nqou.net/2015/01/31/082426/</guid>
-      <description>#!/usr/bin/env perl use utf8; use Mojolicious::Lite; get &amp;#39;/&amp;#39; =&amp;gt; sub { shift-&amp;gt;redirect_to(&amp;#39;/everything/54?name=hoge&amp;#39;); }; get &amp;#39;/everything/:stuff&amp;#39; =&amp;gt; [stuff =&amp;gt; qr/\d+/] =&amp;gt; {stuff =&amp;gt; 23} =&amp;gt; sub { shift-&amp;gt;render(&amp;#39;welcome&amp;#39;); }; app-&amp;gt;log-&amp;gt;level(&amp;#39;error&amp;#39;); app-&amp;gt;start;</description>
+      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 #!/usr/bin/env perl use utf8; use Mojolicious::Lite; get &amp;#39;/&amp;#39; =&amp;gt; sub { shift-&amp;gt;redirect_to(&amp;#39;/everything/54?name=hoge&amp;#39;); };</description>
     </item>
     
     <item>
@@ -832,7 +832,7 @@
       <pubDate>Wed, 17 Dec 2014 00:47:13 +0900</pubDate>
       
       <guid>https://www.nqou.net/2014/12/17/004713/</guid>
-      <description>package Nukadoko;</description>
+      <description>1 package Nukadoko;</description>
     </item>
     
     <item>
@@ -841,7 +841,7 @@
       <pubDate>Mon, 15 Dec 2014 08:45:51 +0900</pubDate>
       
       <guid>https://www.nqou.net/2014/12/15/084551/</guid>
-      <description>cpanm Daiku curl -L https://cpanmin.us | perl - App::cpanminus desc &amp;#39;install perl modules&amp;#39;; task install =&amp;gt; sub { sh q(cpanm --with-all-features --installdeps .); }; namespace migrate =&amp;gt; sub { desc</description>
+      <description>1 cpanm Daiku 1 curl -L https://cpanmin.us | perl - App::cpanminus 1 2 3 4 desc &amp;#39;install perl modules&amp;#39;; task install =&amp;gt; sub { sh q(cpanm --with-all-features --installdeps .); };</description>
     </item>
     
     <item>
@@ -859,7 +859,7 @@
       <pubDate>Wed, 10 Dec 2014 08:38:02 +0900</pubDate>
       
       <guid>https://www.nqou.net/2014/12/10/083802/</guid>
-      <description>use JSON::MaybeXS qw(JSON);</description>
+      <description>1 use JSON::MaybeXS qw(JSON);</description>
     </item>
     
     <item>
@@ -868,7 +868,7 @@
       <pubDate>Tue, 09 Dec 2014 08:53:54 +0900</pubDate>
       
       <guid>https://www.nqou.net/2014/12/09/085354/</guid>
-      <description># Amon2のコントローラーと思ってください # 簡素化のため色</description>
+      <description>1 2 3 4 5 6 7 8 9 10 11 12 # Amon2のコントローラーと思って</description>
     </item>
     
     <item>
@@ -895,7 +895,7 @@
       <pubDate>Sat, 06 Dec 2014 08:40:44 +0900</pubDate>
       
       <guid>https://www.nqou.net/2014/12/06/084044/</guid>
-      <description>&amp;lt;a href=&amp;#34;#/hello&amp;#34;&amp;gt;ハロー</description>
+      <description>1 2 3 4 5 6 7 &amp;lt;a href=&amp;#34;#/hello&amp;#34;</description>
     </item>
     
     <item>
@@ -931,7 +931,7 @@
       <pubDate>Mon, 15 Sep 2014 22:48:26 +0900</pubDate>
       
       <guid>https://www.nqou.net/2014/09/15/224826/</guid>
-      <description>#!/usr/bin/env perl use utf8; use v5.12; use AnyEvent::Twitter::Stream; use Encode; use Furl; use Config::Pit; my $config = pit_get( &amp;#39;nqounet@twitter.com&amp;#39;, require =&amp;gt; { consumer_key =&amp;gt; &amp;#39;consumer_key&amp;#39;, consumer_secret =&amp;gt; &amp;#39;consumer_secret&amp;#39;, token =&amp;gt;</description>
+      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30</description>
     </item>
     
     <item>
@@ -940,7 +940,7 @@
       <pubDate>Thu, 11 Sep 2014 08:20:56 +0900</pubDate>
       
       <guid>https://www.nqou.net/2014/09/11/082056/</guid>
-      <description>use Mojolicious::Lite; get &amp;#39;/&amp;#39; =&amp;gt; {text =&amp;gt; &amp;#39;Hello World!&amp;#39;}; app-&amp;gt;start; #!/usr/bin/env perl use strict; use warnings; if ($ENV{&amp;#39;REQUEST_METHOD&amp;#39;} eq &amp;#39;GET&amp;#39; and $ENV{&amp;#39;PATH_INFO&amp;#39;} eq &amp;#39;/&amp;#39; or $ENV{&amp;#39;PATH_INFO&amp;#39;} eq &amp;#39;&amp;#39;) { print</description>
+      <description>1 2 3 use Mojolicious::Lite; get &amp;#39;/&amp;#39; =&amp;gt; {text =&amp;gt; &amp;#39;Hello World!&amp;#39;}; app-&amp;gt;start; 1 2 3 4 5 6 7 #!/usr/bin/env perl use strict; use warnings; if ($ENV{&amp;#39;REQUEST_METHOD&amp;#39;} eq &amp;#39;GET&amp;#39;</description>
     </item>
     
     <item>
@@ -949,7 +949,7 @@
       <pubDate>Tue, 09 Sep 2014 08:42:02 +0900</pubDate>
       
       <guid>https://www.nqou.net/2014/09/09/084202/</guid>
-      <description>use Mojolicious::Lite; get &amp;#39;/&amp;#39; =&amp;gt; {text =&amp;gt; &amp;#39;Hello World!&amp;#39;}; app-&amp;gt;start; #!/usr/bin/env perl use strict; use warnings; print &amp;#34;Content-Type: text/plain\n\n&amp;#34;; print &amp;#39;Hello World!&amp;#39;;</description>
+      <description>1 2 3 use Mojolicious::Lite; get &amp;#39;/&amp;#39; =&amp;gt; {text =&amp;gt; &amp;#39;Hello World!&amp;#39;}; app-&amp;gt;start; 1 2 3 4 5 #!/usr/bin/env perl use strict; use warnings; print &amp;#34;Content-Type: text/plain\n\n&amp;#34;; print &amp;#39;Hello World!&amp;#39;;</description>
     </item>
     
     <item>
@@ -976,7 +976,7 @@
       <pubDate>Sat, 30 Aug 2014 02:21:46 +0900</pubDate>
       
       <guid>https://www.nqou.net/2014/08/30/022146/</guid>
-      <description>$ say Ya -o ya</description>
+      <description>1 $ say Ya -o ya</description>
     </item>
     
     <item>
@@ -994,7 +994,7 @@
       <pubDate>Thu, 28 Aug 2014 16:34:44 +0900</pubDate>
       
       <guid>https://www.nqou.net/2014/08/28/163444/</guid>
-      <description>$ cpanm Alien::ZMQ $ cpanm ZMQ::LibZMQ3 $ PERL_ZMQ_BACKEND=ZMQ::LibZMQ3 cpanm ZMQ $ PERL_ZMQ_BACKEND=ZMQ::LibZMQ3 cpanm Alien::ZMQ ZMQ::LibZMQ3 ZMQ # sub.pl 16行目付近 recv() -&amp;gt; recvmsg() my $msg =</description>
+      <description>1 $ cpanm Alien::ZMQ 1 $ cpanm ZMQ::LibZMQ3 1 $ PERL_ZMQ_BACKEND=ZMQ::LibZMQ3 cpanm ZMQ 1 $ PERL_ZMQ_BACKEND=ZMQ::LibZMQ3 cpanm Alien::ZMQ ZMQ::LibZMQ3 ZMQ 1 2 3 4 5 # sub.pl 16行</description>
     </item>
     
     <item>
@@ -1021,7 +1021,7 @@
       <pubDate>Thu, 14 Aug 2014 22:18:29 +0900</pubDate>
       
       <guid>https://www.nqou.net/2014/08/14/221829/</guid>
-      <description>use JSON::RPC::Spec; my $rpc = JSON::RPC::Spec-&amp;gt;new; $rpc-&amp;gt;register( &amp;#39;echo.{action}&amp;#39; =&amp;gt; sub { my ($params, $matched) = @_; return $matched-&amp;gt;{action}; } ); say $rpc-&amp;gt;parse( &amp;#39;{&amp;#34;jsonrpc&amp;#34;: &amp;#34;2.0&amp;#34;, &amp;#34;method&amp;#34;: &amp;#34;echo.hoge&amp;#34;, &amp;#34;params&amp;#34;: [1, 2, 3,</description>
+      <description>1 2 3 4 5 6 7 8 9 10 11 use JSON::RPC::Spec; my $rpc = JSON::RPC::Spec-&amp;gt;new; $rpc-&amp;gt;register( &amp;#39;echo.{action}&amp;#39; =&amp;gt; sub { my ($params, $matched) = @_; return $matched-&amp;gt;{action}; }</description>
     </item>
     
     <item>
@@ -1030,7 +1030,7 @@
       <pubDate>Thu, 14 Aug 2014 19:22:29 +0900</pubDate>
       
       <guid>https://www.nqou.net/2014/08/14/192229/</guid>
-      <description>use Plack::App::JSONRPC; use Plack::Builder; my $jsonrpc = Plack::App::JSONRPC-&amp;gt;new( methods =&amp;gt; { echo =&amp;gt; sub { $_[0] }, empty =&amp;gt; sub {&amp;#39;&amp;#39;} } ); my $app = sub { [200, [&amp;#39;Content-Type&amp;#39;</description>
+      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 use Plack::App::JSONRPC; use Plack::Builder; my $jsonrpc = Plack::App::JSONRPC-&amp;gt;new( methods =&amp;gt; { echo =&amp;gt; sub</description>
     </item>
     
     <item>
@@ -1039,7 +1039,7 @@
       <pubDate>Thu, 14 Aug 2014 18:24:40 +0900</pubDate>
       
       <guid>https://www.nqou.net/2014/08/14/182440/</guid>
-      <description>use JSON::RPC::Lite; method &amp;#39;echo&amp;#39; =&amp;gt; sub { $_[0] }; as_psgi_app;</description>
+      <description>1 2 3 4 5 use JSON::RPC::Lite; method &amp;#39;echo&amp;#39; =&amp;gt; sub { $_[0] }; as_psgi_app;</description>
     </item>
     
     <item>
@@ -1048,7 +1048,7 @@
       <pubDate>Thu, 14 Aug 2014 12:26:38 +0900</pubDate>
       
       <guid>https://www.nqou.net/2014/08/14/122638/</guid>
-      <description>use JSON::RPC::Spec; my $rpc = JSON::RPC::Spec-&amp;gt;new; $rpc-&amp;gt;register(echo =&amp;gt; sub { $_[0] }); print $rpc-&amp;gt;parse( &amp;#39;{&amp;#34;jsonrpc&amp;#34;: &amp;#34;2.0&amp;#34;, &amp;#34;method&amp;#34;: &amp;#34;echo&amp;#34;, &amp;#34;params&amp;#34;: &amp;#34;Hello, World!&amp;#34;, &amp;#34;id&amp;#34;: 1}&amp;#39; ); # -&amp;gt; {&amp;#34;jsonrpc&amp;#34;:&amp;#34;2.0&amp;#34;,&amp;#34;result&amp;#34;:&amp;#34;Hello, World!&amp;#34;,&amp;#34;id&amp;#34;:1}</description>
+      <description>1 2 3 4 5 6 7 use JSON::RPC::Spec; my $rpc = JSON::RPC::Spec-&amp;gt;new; $rpc-&amp;gt;register(echo =&amp;gt; sub { $_[0] }); print $rpc-&amp;gt;parse( &amp;#39;{&amp;#34;jsonrpc&amp;#34;: &amp;#34;2.0&amp;#34;, &amp;#34;method&amp;#34;: &amp;#34;echo&amp;#34;, &amp;#34;params&amp;#34;: &amp;#34;Hello, World!&amp;#34;, &amp;#34;id&amp;#34;: 1}&amp;#39;</description>
     </item>
     
     <item>
@@ -1057,7 +1057,7 @@
       <pubDate>Sat, 09 Aug 2014 10:14:54 +0900</pubDate>
       
       <guid>https://www.nqou.net/2014/08/09/101454/</guid>
-      <description>use JSON::RPC::Lite; method &amp;#39;echo&amp;#39; =&amp;gt; sub { my ($param) = @_; return $param; }; as_psgi_app; $ plackup app.psgi {&amp;#34;jsonrpc&amp;#34;:&amp;#34;2.0&amp;#34;,&amp;#34;method&amp;#34;:&amp;#34;echo&amp;#34;,&amp;#34;params&amp;#34;:&amp;#34;Hello!&amp;#34;,&amp;#34;id&amp;#34;:1} {&amp;#34;id&amp;#34;:1,&amp;#34;jsonrpc&amp;#34;:&amp;#34;2.0&amp;#34;,&amp;#34;result&amp;#34;:&amp;#34;Hello!&amp;#34;}</description>
+      <description>1 2 3 4 5 6 7 8 use JSON::RPC::Lite; method &amp;#39;echo&amp;#39; =&amp;gt; sub { my ($param) = @_; return $param; }; as_psgi_app; 1 $ plackup app.psgi 1 {&amp;#34;jsonrpc&amp;#34;:&amp;#34;2.0&amp;#34;,&amp;#34;method&amp;#34;:&amp;#34;echo&amp;#34;,&amp;#34;params&amp;#34;:&amp;#34;Hello!&amp;#34;,&amp;#34;id&amp;#34;:1} 1</description>
     </item>
     
     <item>
@@ -1066,7 +1066,7 @@
       <pubDate>Sun, 20 Jul 2014 16:45:22 +0900</pubDate>
       
       <guid>https://www.nqou.net/2014/07/20/164522/</guid>
-      <description>&amp;lt;div style=&amp;#34;{{style}}&amp;#34;&amp;gt;</description>
+      <description>1 &amp;lt;div style=&amp;#34;{{style}}&amp;#34;&amp;gt</description>
     </item>
     
     <item>
@@ -1093,7 +1093,7 @@
       <pubDate>Mon, 14 Jul 2014 23:31:25 +0900</pubDate>
       
       <guid>https://www.nqou.net/2014/07/14/233125/</guid>
-      <description>#!/usr/bin/env perl use strict; use warnings FATAL =&amp;gt; &amp;#39;all&amp;#39;; my $args = &amp;#39;hoge&amp;#39;; if ($args == 0) { print &amp;#34;$args is 0 !\n&amp;#34;; } else { print &amp;#34;$args is not</description>
+      <description>1 2 3 4 5 6 7 8 9 10 11 12 #!/usr/bin/env perl use strict; use warnings FATAL =&amp;gt; &amp;#39;all&amp;#39;; my $args = &amp;#39;hoge&amp;#39;; if ($args == 0) {</description>
     </item>
     
     <item>
@@ -1111,7 +1111,7 @@
       <pubDate>Wed, 25 Jun 2014 07:11:23 +0900</pubDate>
       
       <guid>https://www.nqou.net/2014/06/25/071123/</guid>
-      <description># phpenvのインストール git clone https://github.com/CHH/phpenv.git $HOME/src/phpenv PHPENV_ROOT=$HOME/.anyenv/envs/phpenv $HOME/src/phpenv/bin/phpenv-install.sh # php-build</description>
+      <description>1 2 3 4 5 6 7 # phpenvのインストール git clone https://github.com/CHH/phpenv.git $HOME/src/phpenv PHPENV_ROOT=$HOME/.anyenv/envs/phpenv $HOME/src/phpenv/bin/phpenv-install.sh # ph</description>
     </item>
     
     <item>
@@ -1120,7 +1120,7 @@
       <pubDate>Tue, 24 Jun 2014 06:55:52 +0900</pubDate>
       
       <guid>https://www.nqou.net/2014/06/24/065552/</guid>
-      <description># ダウンロード curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar # 動作確認 php wp-cli.phar --info # 実行権限付与 chmod +x wp-cli.phar # P</description>
+      <description>1 2 3 4 5 6 7 8 # ダウンロード curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar # 動作確認 php wp-cli.phar --info # 実行権</description>
     </item>
     
     <item>
@@ -1156,7 +1156,7 @@
       <pubDate>Tue, 17 Jun 2014 01:05:12 +0900</pubDate>
       
       <guid>https://www.nqou.net/2014/06/17/010512/</guid>
-      <description>var text = &amp;#39;hoge&amp;#39;; var $el = $(&amp;#39;&amp;lt;ul/&amp;gt;&amp;#39;).append( $(&amp;#39;&amp;lt;li/&amp;gt;&amp;#39;).append( $(&amp;#39;&amp;lt;p/&amp;gt;&amp;#39;).html(text) ) ); &amp;lt;ul&amp;gt; &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;hoge&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; var $ul = $(&amp;#39;&amp;lt;ul/&amp;gt;&amp;#39;); var $li = Mustache.render(&amp;#39;&amp;lt;li&amp;gt;&amp;lt;p&amp;gt;{{text}}&amp;lt;/p&amp;gt;&amp;lt;/li&amp;gt;&amp;#39;, {text: &amp;#39;hoge&amp;#39;}); $ul.append($li); { list:</description>
+      <description>1 2 3 4 5 6 7 var text = &amp;#39;hoge&amp;#39;; var $el = $(&amp;#39;&amp;lt;ul/&amp;gt;&amp;#39;).append( $(&amp;#39;&amp;lt;li/&amp;gt;&amp;#39;).append( $(&amp;#39;&amp;lt;p/&amp;gt;&amp;#39;).html(text) ) ); 1 2 3 4 5 &amp;lt;ul&amp;gt; &amp;lt;li&amp;gt; &amp;lt;p&amp;gt;hoge&amp;lt;/p&amp;gt; &amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; 1</description>
     </item>
     
     <item>
@@ -1165,7 +1165,7 @@
       <pubDate>Tue, 17 Jun 2014 00:28:48 +0900</pubDate>
       
       <guid>https://www.nqou.net/2014/06/17/002848/</guid>
-      <description>sub startup { my $app = shift; $app-&amp;gt;log-&amp;gt;format(sub { my ($time, $level, @lines) = @_; my $time_string = localtime($time); my @caller = caller(4); my $caller = join &amp;#39; &amp;#39;, $caller[0],</description>
+      <description>1 2 3 4 5 6 7 8 9 10 11 12 sub startup { my $app = shift; $app-&amp;gt;log-&amp;gt;format(sub { my ($time, $level, @lines) = @_; my $time_string =</description>
     </item>
     
     <item>
@@ -1174,7 +1174,7 @@
       <pubDate>Mon, 16 Jun 2014 00:45:53 +0900</pubDate>
       
       <guid>https://www.nqou.net/2014/06/16/004553/</guid>
-      <description>sub startup { my $app = shift; $app-&amp;gt;renderer-&amp;gt;default_format(&amp;#39;json&amp;#39;); my $r = $app-&amp;gt;routes; $r = $r-&amp;gt;under(&amp;#39;/api/v1&amp;#39;); $r-&amp;gt;get(&amp;#39;/images&amp;#39;)-&amp;gt;to(&amp;#39;images#get&amp;#39;); }</description>
+      <description>1 2 3 4 5 6 7 sub startup { my $app = shift; $app-&amp;gt;renderer-&amp;gt;default_format(&amp;#39;json&amp;#39;); my $r = $app-&amp;gt;routes; $r = $r-&amp;gt;under(&amp;#39;/api/v1&amp;#39;); $r-&amp;gt;get(&amp;#39;/images&amp;#39;)-&amp;gt;to(&amp;#39;images#get&amp;#39;); }</description>
     </item>
     
     <item>
@@ -1219,7 +1219,7 @@
       <pubDate>Sat, 31 May 2014 10:38:29 +0900</pubDate>
       
       <guid>https://www.nqou.net/2014/05/31/103829/</guid>
-      <description>oboe(&amp;#39;http://registry.gulpjs.com/_search?fields=name,description&amp;amp;q=keywords:gulpplugin,gulpfriendly&amp;amp;size=10&amp;amp;start=0&amp;#39;) .node(&amp;#39;{name description}&amp;#39;, function(args){ console.log(&amp;#39;name, description:&amp;#39;, args.name, args.description); });</description>
+      <description>1 2 3 4 oboe(&amp;#39;http://registry.gulpjs.com/_search?fields=name,description&amp;amp;q=keywords:gulpplugin,gulpfriendly&amp;amp;size=10&amp;amp;start=0&amp;#39;) .node(&amp;#39;{name description}&amp;#39;, function(args){ console.log(&amp;#39;name, description:&amp;#39;, args.name, args.description); });</description>
     </item>
     
     <item>
@@ -1228,7 +1228,7 @@
       <pubDate>Sat, 31 May 2014 01:07:15 +0900</pubDate>
       
       <guid>https://www.nqou.net/2014/05/31/010715/</guid>
-      <description>(function($, window, document, undefined){ &amp;#39;use strict&amp;#39;; var console, modules, vars, setVars = function(){ console = window.console; window.modules = modules = window.modules || {}; window.vars = vars = window.vars || {};</description>
+      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30</description>
     </item>
     
     <item>
@@ -1237,7 +1237,7 @@
       <pubDate>Thu, 29 May 2014 07:11:16 +0900</pubDate>
       
       <guid>https://www.nqou.net/2014/05/29/071116/</guid>
-      <description>gzip_static on; npm install -g grunt-contrib-compress compress: { all: { options: { mode: &amp;#39;gzip&amp;#39;, level: 9 }, files: [{ expand: true, cwd: &amp;#39;&amp;lt;%= config.dist %&amp;gt;&amp;#39;, dest: &amp;#39;&amp;lt;%= config.dist %&amp;gt;&amp;#39;, src:</description>
+      <description>gzip_static on; npm install -g grunt-contrib-compress 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24</description>
     </item>
     
     <item>
@@ -1246,7 +1246,7 @@
       <pubDate>Wed, 28 May 2014 00:25:21 +0900</pubDate>
       
       <guid>https://www.nqou.net/2014/05/28/002521/</guid>
-      <description>npm WARN deprecated grunt-bower-install@1.6.0: use grunt-wiredep instead npm uninstall -D grunt-bower-install npm install -D grunt-wiredep Warning: Task &amp;quot;wiredep&amp;quot; failed. Use --force to continue. wiredep: { app: { src: [&#39;&amp;lt;%= config.app</description>
+      <description>npm WARN deprecated grunt-bower-install@1.6.0: use grunt-wiredep instead 1 2 npm uninstall -D grunt-bower-install npm install -D grunt-wiredep Warning: Task &amp;quot;wiredep&amp;quot; failed. Use --force to continue. wiredep: { app: { src:</description>
     </item>
     
     <item>
@@ -1255,7 +1255,7 @@
       <pubDate>Sat, 24 May 2014 01:22:14 +0900</pubDate>
       
       <guid>https://www.nqou.net/2014/05/24/012214/</guid>
-      <description>&amp;lt;div class=&amp;#34;jumbotron fade in&amp;#34;&amp;gt; &amp;lt;button data-dismiss=&amp;#34;alert&amp;#34;&amp;gt;&amp;amp;times;&amp;lt;/button&amp;gt; &amp;lt;h1&amp;gt;&amp;#39;Allo, &amp;#39;Allo!&amp;lt;/h1&amp;gt; &amp;lt;p class=&amp;#34;lead&amp;#34;&amp;gt;Always a pleasure scaffolding your apps.&amp;lt;/p&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a class=&amp;#34;btn btn-lg btn-success&amp;#34; href=&amp;#34;#&amp;#34;&amp;gt;Splendid! &amp;lt;span class=&amp;#34;glyphicon glyphicon-ok&amp;#34;&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;/div&amp;gt;</description>
+      <description>1 2 3 4 5 6 &amp;lt;div class=&amp;#34;jumbotron fade in&amp;#34;&amp;gt; &amp;lt;button data-dismiss=&amp;#34;alert&amp;#34;&amp;gt;&amp;amp;times;&amp;lt;/button&amp;gt; &amp;lt;h1&amp;gt;&amp;#39;Allo, &amp;#39;Allo!&amp;lt;/h1&amp;gt; &amp;lt;p class=&amp;#34;lead&amp;#34;&amp;gt;Always a pleasure scaffolding your apps.&amp;lt;/p&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a class=&amp;#34;btn btn-lg btn-success&amp;#34; href=&amp;#34;#&amp;#34;&amp;gt;Splendid! &amp;lt;span class=&amp;#34;glyphicon glyphicon-ok&amp;#34;&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;/div&amp;gt;</description>
     </item>
     
     <item>
@@ -1264,7 +1264,7 @@
       <pubDate>Thu, 22 May 2014 17:12:13 +0900</pubDate>
       
       <guid>https://www.nqou.net/2014/05/22/171213/</guid>
-      <description>var now = moment(); var date = moment.unix(1318781876); now.format(); // =&amp;gt; 2014-05-22T16:53:16+09:00 date.format(&amp;#39;YYYY/MM/DD&amp;#39;); // =&amp;gt; 2011/10/17 date.fromNow(); // =&amp;gt; 3 years ago var now = moment(); console.debug(&amp;#39;now:&amp;#39;, now.format()); var date</description>
+      <description>1 var now = moment(); 1 var date = moment.unix(1318781876); 1 2 now.format(); // =&amp;gt; 2014-05-22T16:53:16+09:00 date.format(&amp;#39;YYYY/MM/DD&amp;#39;); // =&amp;gt; 2011/10/17 1 date.fromNow(); // =&amp;gt; 3 years ago 1 2 3</description>
     </item>
     
     <item>
@@ -1336,7 +1336,7 @@
       <pubDate>Fri, 16 May 2014 23:14:31 +0900</pubDate>
       
       <guid>https://www.nqou.net/2014/05/16/231431/</guid>
-      <description>var router = { hello: function(req){ console.debug(&amp;#39;req:&amp;#39;, req); alert(&amp;#39;Hello Grapnel!&amp;#39;); } }; Grapnel.listen(router); &amp;lt;a href=&amp;#34;#hello&amp;#34;&amp;gt;Hello Grapnel!&amp;lt;/a&amp;gt;</description>
+      <description>1 2 3 4 5 6 7 var router = { hello: function(req){ console.debug(&amp;#39;req:&amp;#39;, req); alert(&amp;#39;Hello Grapnel!&amp;#39;); } }; Grapnel.listen(router); 1 &amp;lt;a href=&amp;#34;#hello&amp;#34;&amp;gt;Hello Grapnel!&amp;lt;/a&amp;gt;</description>
     </item>
     
     <item>
@@ -1408,7 +1408,7 @@
       <pubDate>Mon, 12 May 2014 00:13:05 +0900</pubDate>
       
       <guid>https://www.nqou.net/2014/05/12/001305/</guid>
-      <description>useminPrepare: { options: { dest: &amp;#39;&amp;lt;%= config.dist %&amp;gt;&amp;#39;, flow: { steps: { js: [&amp;#39;concat&amp;#39;, &amp;#39;uglifyjs&amp;#39;], css: [&amp;#39;concat&amp;#39;, &amp;#39;cssmin&amp;#39;] }, post: { css: [{ name: &amp;#39;concat&amp;#39;, createConfig: function(context, block){ var generated</description>
+      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30</description>
     </item>
     
     <item>
@@ -1426,7 +1426,7 @@
       <pubDate>Wed, 30 Apr 2014 02:25:34 +0900</pubDate>
       
       <guid>https://www.nqou.net/2014/04/30/022534/</guid>
-      <description>bower install -S loglevel npm install -D grunt-remove-logging grunt bowerInstall removelogging: { options: { namespace: [&amp;#39;log&amp;#39;], methods: [&amp;#39;setLevel&amp;#39;, &amp;#39;trace&amp;#39;, &amp;#39;debug&amp;#39;] }, dist: { src: &amp;#34;.tmp/concat/scripts/*.js&amp;#34; } }, grunt.registerTask(&amp;#39;build&amp;#39;, [ &amp;#39;clean:dist&amp;#39;,</description>
+      <description>1 2 3 bower install -S loglevel npm install -D grunt-remove-logging grunt bowerInstall 1 2 3 4 5 6 7 8 9 removelogging: { options: { namespace: [&amp;#39;log&amp;#39;], methods: [&amp;#39;setLevel&amp;#39;,</description>
     </item>
     
     <item>
@@ -1435,7 +1435,7 @@
       <pubDate>Tue, 29 Apr 2014 22:11:24 +0900</pubDate>
       
       <guid>https://www.nqou.net/2014/04/29/221124/</guid>
-      <description>#!/usr/bin/env perl use utf8; use 5.012; use JSON::XS qw(decode_json); use Path::Tiny qw(path); my $json = decode_json(path(&amp;#39;package.json&amp;#39;)-&amp;gt;slurp); my $modules = join(&amp;#39; &amp;#39;, keys $json-&amp;gt;{devDependencies}); system(qq{npm install -D $modules});</description>
+      <description>1 2 3 4 5 6 7 8 9 10 #!/usr/bin/env perl use utf8; use 5.012; use JSON::XS qw(decode_json); use Path::Tiny qw(path); my $json = decode_json(path(&amp;#39;package.json&amp;#39;)-&amp;gt;slurp); my $modules = join(&amp;#39;</description>
     </item>
     
     <item>
@@ -1453,7 +1453,7 @@
       <pubDate>Mon, 28 Apr 2014 03:40:22 +0900</pubDate>
       
       <guid>https://www.nqou.net/2014/04/28/034022/</guid>
-      <description>grunt release</description>
+      <description>1 grunt release</description>
     </item>
     
     <item>
@@ -1462,7 +1462,7 @@
       <pubDate>Sat, 26 Apr 2014 15:19:55 +0900</pubDate>
       
       <guid>https://www.nqou.net/2014/04/26/151955/</guid>
-      <description>npm install -D grunt-google-cdn google-cdn-data cdnify: { options: { cdn: require(&amp;#39;google-cdn-data&amp;#39;) }, dist: { html: [&amp;#39;app/*.html&amp;#39;] } }, grunt cdnify grunt bowerInstall</description>
+      <description>1 npm install -D grunt-google-cdn google-cdn-data 1 2 3 4 5 6 7 8 cdnify: { options: { cdn: require(&amp;#39;google-cdn-data&amp;#39;) }, dist: { html: [&amp;#39;app/*.html&amp;#39;] } }, 1 grunt cdnify</description>
     </item>
     
     <item>
@@ -1480,7 +1480,7 @@
       <pubDate>Fri, 25 Apr 2014 01:26:45 +0900</pubDate>
       
       <guid>https://www.nqou.net/2014/04/25/012645/</guid>
-      <description>use List::Util qw(sum); my $array = [1, 2, 3, 4, 5]; sub func { print sum(@_); } func(@$array); # ここで$arrayを展</description>
+      <description>1 2 3 4 5 use List::Util qw(sum); my $array = [1, 2, 3, 4, 5]; sub func { print sum(@_); } func(@$array); # ここで$ar</description>
     </item>
     
     <item>
@@ -1489,7 +1489,7 @@
       <pubDate>Wed, 09 Apr 2014 22:48:17 +0900</pubDate>
       
       <guid>https://www.nqou.net/2014/04/09/224817/</guid>
-      <description>use Mojolicious::Lite; use Text::LTSV; get &amp;#39;/&amp;#39; =&amp;gt; sub { my $self = shift; my $p = Text::LTSV-&amp;gt;new; my $datafile = &amp;#39;hoge.ltsv&amp;#39;; my $data = $p-&amp;gt;parse_file($datafile) or die; $self-&amp;gt;stash(data =&amp;gt; $data);</description>
+      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 use Mojolicious::Lite; use Text::LTSV; get &amp;#39;/&amp;#39; =&amp;gt; sub { my $self</description>
     </item>
     
     <item>
@@ -1525,7 +1525,7 @@
       <pubDate>Fri, 21 Mar 2014 17:19:31 +0900</pubDate>
       
       <guid>https://www.nqou.net/2014/03/21/171931/</guid>
-      <description># インストールできるバージョンを確認する ndenv install -l # 最新の安定版</description>
+      <description>1 2 3 4 # インストールできるバージョンを確認する ndenv install -l # 最新</description>
     </item>
     
     <item>
@@ -1543,7 +1543,7 @@
       <pubDate>Tue, 18 Mar 2014 01:23:18 +0900</pubDate>
       
       <guid>https://www.nqou.net/2014/03/18/012318/</guid>
-      <description>$ sudo yum -y update $ sudo yum -y install zabbix zabbix-agent zabbix-server zabbix-server-mysql zabbix-web zabbix-web-mysql # rpm -ivh http://repo.zabbix.com/zabbix/2.2/rhel/6/x86_64/zabbix-release-2.2-1.el6.noarch.rpm # yum install zabbix-server-mysql zabbix-web-mysql # yum install zabbix-agent</description>
+      <description>1 2 $ sudo yum -y update $ sudo yum -y install zabbix zabbix-agent zabbix-server zabbix-server-mysql zabbix-web zabbix-web-mysql 1 2 3 # rpm -ivh http://repo.zabbix.com/zabbix/2.2/rhel/6/x86_64/zabbix-release-2.2-1.el6.noarch.rpm # yum install zabbix-server-mysql zabbix-web-mysql</description>
     </item>
     
     <item>
@@ -1552,7 +1552,7 @@
       <pubDate>Sun, 16 Mar 2014 02:17:10 +0900</pubDate>
       
       <guid>https://www.nqou.net/2014/03/16/021710/</guid>
-      <description># chown nginx.nginx /etc/zabbix/web</description>
+      <description>1 # chown nginx.nginx /etc/zabbix/web</description>
     </item>
     
     <item>
@@ -1570,7 +1570,7 @@
       <pubDate>Wed, 12 Mar 2014 01:14:21 +0900</pubDate>
       
       <guid>https://www.nqou.net/2014/03/12/011421/</guid>
-      <description>#!/usr/bin/env perl use utf8; use 5.012; use Encode; package Human; use Mojo::Base &amp;#39;Mojo::EventEmitter&amp;#39;; sub walk { my $self = shift; $self-&amp;gt;emit(message =&amp;gt; &amp;#39;歩いて</description>
+      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30</description>
     </item>
     
     <item>
@@ -1588,7 +1588,7 @@
       <pubDate>Sat, 08 Mar 2014 17:09:03 +0900</pubDate>
       
       <guid>https://www.nqou.net/2014/03/08/170903/</guid>
-      <description>package Cat; use Mojo::Base &amp;#39;Mojo::EventEmitter&amp;#39;; # Emit events sub poke { my $self = shift; $self-&amp;gt;emit(roar =&amp;gt; 3); } package main; # Subscribe to events my $tiger = Cat-&amp;gt;new; $tiger-&amp;gt;on(roar</description>
+      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 package Cat; use Mojo::Base &amp;#39;Mojo::EventEmitter&amp;#39;; # Emit events sub poke { my</description>
     </item>
     
     <item>
@@ -1768,7 +1768,7 @@
       <pubDate>Fri, 29 Nov 2013 00:19:00 +0900</pubDate>
       
       <guid>https://www.nqou.net/2013/11/29/001900/</guid>
-      <description>use Encode; use Term::Encoding qw(term_encoding); my $enc = Encode::find_encoding(term_encoding); print $enc-&amp;gt;encode(&amp;quo</description>
+      <description>1 2 3 4 use Encode; use Term::Encoding qw(term_encoding); my $enc = Encode::find_encoding(term_encoding); print $enc-&amp;gt;encode(</description>
     </item>
     
     <item>
@@ -1858,7 +1858,7 @@
       <pubDate>Tue, 10 Sep 2013 11:30:00 +0900</pubDate>
       
       <guid>https://www.nqou.net/2013/09/10/113000/</guid>
-      <description>$ cpanm DBD::SQLite --configure-args=&amp;quot;-Wl,&amp;quot; cc -c -I. -I/home/hoge/perl5/perlbrew/perls/perl-5.14.2/lib/site_perl/5.14.2/i386-freebsd/auto/DBI -DHAS_FPSETMASK -DHAS_FLOATINGPOINT_H -fno-strict-aliasing -pipe -fstack-protector -I/usr/local/include -Wl,-Bsymbolic -O -O2 -DVERSION=\&amp;quot;1.40\&amp;quot; -DXS_VERSION=\&amp;quot;1.40\&amp;quot; -DPIC -fPIC &amp;quot;-I/home/hoge/perl5/perlbrew/perls/perl-5.14.2/lib/5.14.2/i386-freebsd/CORE&amp;quot; -DSQLITE_ENABLE_FTS4 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_COLUMN_METADATA -DSQLITE_ENABLE_STAT3 -DNDEBUG=1 -DHAVE_USLEEP=1 -DTHREADSAFE=0</description>
+      <description>1 $ cpanm DBD::SQLite --configure-args=&amp;#34;-Wl,&amp;#34; 1 2 cc -c -I. -I/home/hoge/perl5/perlbrew/perls/perl-5.14.2/lib/site_perl/5.14.2/i386-freebsd/auto/DBI -DHAS_FPSETMASK -DHAS_FLOATINGPOINT_H -fno-strict-aliasing -pipe -fstack-protector -I/usr/local/include -Wl,-Bsymbolic -O -O2 -DVERSION=\&amp;#34;1.40\&amp;#34; -DXS_VERSION=\&amp;#34;1.40\&amp;#34; -DPIC -fPIC &amp;#34;-I/home/hoge/perl5/perlbrew/perls/perl-5.14.2/lib/5.14.2/i386-freebsd/CORE&amp;#34; -DSQLITE_ENABLE_FTS4 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_COLUMN_METADATA -DSQLITE_ENABLE_STAT3</description>
     </item>
     
     <item>
@@ -1867,7 +1867,7 @@
       <pubDate>Tue, 10 Sep 2013 10:00:00 +0900</pubDate>
       
       <guid>https://www.nqou.net/2013/09/10/100000/</guid>
-      <description>$ perlbrew install-patchperl ERROR: Failed to retrieve patchperl executable. cpanm Devel::PatchPerl perlbrew install --notest perl-5.16.3 -D=usethreads $ which bash /usr/local/bin/bash $ chsh -s /usr/local/bin/bash</description>
+      <description>1 2 $ perlbrew install-patchperl ERROR: Failed to retrieve patchperl executable. 1 2 cpanm Devel::PatchPerl perlbrew install --notest perl-5.16.3 -D=usethreads 1 2 3 $ which bash /usr/local/bin/bash $ chsh -s</description>
     </item>
     
     <item>
@@ -1885,7 +1885,7 @@
       <pubDate>Tue, 03 Sep 2013 19:42:00 +0900</pubDate>
       
       <guid>https://www.nqou.net/2013/09/03/194200/</guid>
-      <description>mkdir ~/src cd ~/src git clone git://github.com/joelthelion/autojump.git cd autojump sudo ./install.sh [[ -s /etc/profile.d/autojump.zsh ]] &amp;amp;amp;&amp;amp;amp; . /etc/profile.d/autojump.zsh autoload -U compinit &amp;amp;amp;&amp;amp;amp; compinit -u</description>
+      <description>1 2 3 4 5 mkdir ~/src cd ~/src git clone git://github.com/joelthelion/autojump.git cd autojump sudo ./install.sh 1 [[ -s /etc/profile.d/autojump.zsh ]] &amp;amp;amp;&amp;amp;amp; . /etc/profile.d/autojump.zsh 1 autoload -U compinit &amp;amp;amp;&amp;amp;amp; compinit</description>
     </item>
     
     <item>
@@ -1930,7 +1930,7 @@
       <pubDate>Wed, 28 Aug 2013 15:49:00 +0900</pubDate>
       
       <guid>https://www.nqou.net/2013/08/28/154900/</guid>
-      <description>Cannot load RubyCocoa library wkpdf requires that RubyCocoa is installed, which is shipped by default since Mac OS X 10.5. If you use Mac OS X 10.4, you have to</description>
+      <description>1 2 3 4 Cannot load RubyCocoa library wkpdf requires that RubyCocoa is installed, which is shipped by default since Mac OS X 10.5. If you use Mac OS X</description>
     </item>
     
     <item>
@@ -1975,7 +1975,7 @@
       <pubDate>Sun, 23 Jun 2013 08:30:00 +0900</pubDate>
       
       <guid>https://www.nqou.net/2013/06/23/083000/</guid>
-      <description>git diff でとった差分はこちらです。 diff --git a/app/controllers/milestones_controller.rb b/app/controllers/milestones_controller.rb index 25647f9..1b3d11b 100644 --- a/app/controllers/milestones_controller.rb +++ b/app/controllers/milestones_controller.rb @@ -12,9 +12,9 @@</description>
+      <description>git diff でとった差分はこちらです。 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15</description>
     </item>
     
     <item>
@@ -2002,7 +2002,7 @@
       <pubDate>Mon, 17 Jun 2013 08:30:00 +0900</pubDate>
       
       <guid>https://www.nqou.net/2013/06/17/083000/</guid>
-      <description>#!/usr/bin/env perl use strict; use warnings; my $x; my $y; print $x - $y; Use of uninitialized value $y in subtraction (-) at warnings.pl line 8. Use of uninitialized value</description>
+      <description>1 2 3 4 5 6 7 8 #!/usr/bin/env perl use strict; use warnings; my $x; my $y; print $x - $y; 1 2 3 Use of uninitialized value $y</description>
     </item>
     
     <item>
@@ -2029,7 +2029,7 @@
       <pubDate>Sat, 02 Mar 2013 07:30:00 +0900</pubDate>
       
       <guid>https://www.nqou.net/2013/03/02/073000/</guid>
-      <description>$ find . -name &amp;#34;*.cgi&amp;#34; -print0 | xargs -0 perl -i.bak -pe &amp;#34;s|^#\!/usr/bin/perl|#\!/usr/bin/env perl|&amp;#34; # mt-config.cgi CGIPath http://localhost:5000/mt/ StaticWebPath http://localhost:5000/mt/mt-static ObjectDriver DBI::mysql Database mt DBUser mt DBPassword passw0rd DBHost localhost</description>
+      <description>1 $ find . -name &amp;#34;*.cgi&amp;#34; -print0 | xargs -0 perl -i.bak -pe &amp;#34;s|^#\!/usr/bin/perl|#\!/usr/bin/env perl|&amp;#34; 1 2 3 4 5 6 7 8 9 10 11 12 # mt-config.cgi CGIPath</description>
     </item>
     
     <item>
@@ -2074,7 +2074,7 @@
       <pubDate>Sat, 09 Feb 2013 16:22:00 +0900</pubDate>
       
       <guid>https://www.nqou.net/2013/02/09/162200/</guid>
-      <description>curl -L http://cpanmin.us | perl - --self-upgrade cpanm Mojolicious Path::Class Text::Markdown git clone git://github.com/nqounet/p5-md2reveal.git cd p5-md2reveal mv md2reveal.conf.sample md2reveal.conf mv assets/example.md.sample assets/example.md mv assets/example.md.conf.sample assets/example.md.conf git submodule init git submodule</description>
+      <description>1 2 curl -L http://cpanmin.us | perl - --self-upgrade cpanm Mojolicious Path::Class Text::Markdown 1 2 3 4 5 6 7 8 git clone git://github.com/nqounet/p5-md2reveal.git cd p5-md2reveal mv md2reveal.conf.sample md2reveal.conf mv</description>
     </item>
     
     <item>
@@ -2155,7 +2155,7 @@
       <pubDate>Fri, 30 Nov 2012 20:13:00 +0900</pubDate>
       
       <guid>https://www.nqou.net/2012/11/30/201300/</guid>
-      <description>use LWP::Protocol::Net::Curl; use Net::Twitter::Lite; ...</description>
+      <description>1 2 3 use LWP::Protocol::Net::Curl; use Net::Twitter::Lite; ...</description>
     </item>
     
     <item>
@@ -2182,7 +2182,7 @@
       <pubDate>Fri, 09 Nov 2012 08:00:00 +0900</pubDate>
       
       <guid>https://www.nqou.net/2012/11/09/080000/</guid>
-      <description>package MyappPL; use Mojo::Base &amp;#39;Mojolicious&amp;#39;; # This method will run once at server start sub startup { my $self = shift; # ここから if ($self-&amp;gt;log-&amp;gt;is_level(&amp;#39;debug&amp;#39;)) { no</description>
+      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30</description>
     </item>
     
     <item>
@@ -2191,7 +2191,7 @@
       <pubDate>Thu, 08 Nov 2012 13:50:00 +0900</pubDate>
       
       <guid>https://www.nqou.net/2012/11/08/135000/</guid>
-      <description>var $public_query_vars = array(&#39;m&#39;, &#39;p&#39;, &#39;posts&#39;, &#39;w&#39;, &#39;cat&#39;, &#39;withcomments&#39;, &#39;withoutcomments&#39;, &#39;s&#39;, &#39;search&#39;, &#39;exact&#39;, &#39;sentence&#39;, &#39;debug&#39;, &#39;calendar&#39;, &#39;page&#39;, &#39;paged&#39;, &#39;more&#39;, &#39;tb&#39;, &#39;pb&#39;, &#39;author&#39;, &#39;order&#39;, &#39;orderby&#39;, &#39;year&#39;, &#39;monthnum&#39;, &#39;day&#39;, &#39;hour&#39;, &#39;minute&#39;, &#39;second&#39;,</description>
+      <description>1 var $public_query_vars = array(&amp;#39;m&amp;#39;, &amp;#39;p&amp;#39;, &amp;#39;posts&amp;#39;, &amp;#39;w&amp;#39;, &amp;#39;cat&amp;#39;, &amp;#39;withcomments&amp;#39;, &amp;#39;withoutcomments&amp;#39;, &amp;#39;s&amp;#39;, &amp;#39;search&amp;#39;, &amp;#39;exact&amp;#39;, &amp;#39;sentence&amp;#39;, &amp;#39;debug&amp;#39;, &amp;#39;calendar&amp;#39;, &amp;#39;page&amp;#39;, &amp;#39;paged&amp;#39;, &amp;#39;more&amp;#39;, &amp;#39;tb&amp;#39;, &amp;#39;pb&amp;#39;, &amp;#39;author&amp;#39;, &amp;#39;order&amp;#39;, &amp;#39;orderby&amp;#39;, &amp;#39;year&amp;#39;, &amp;#39;monthnum&amp;#39;, &amp;#39;day&amp;#39;, &amp;#39;hour&amp;#39;, &amp;#39;minute&amp;#39;,</description>
     </item>
     
     <item>
@@ -2308,7 +2308,7 @@
       <pubDate>Mon, 27 Aug 2012 02:50:00 +0900</pubDate>
       
       <guid>https://www.nqou.net/2012/08/27/025000/</guid>
-      <description>my $input = &amp;quot;John is Great Man!&amp;quot;;&amp;lt;br&amp;gt;my $pattern = qr/(?:[jJ]ohn)/;&amp;lt;br&amp;gt;if ($input =~ $pattern) {&amp;lt;br&amp;gt; print &amp;quot;マッチした！&amp;qu</description>
+      <description>1 my $input = &amp;#34;John is Great Man!&amp;#34;;&amp;lt;br&amp;gt;my $pattern = qr/(?:[jJ]ohn)/;&amp;lt;br&amp;gt;if ($input =~ $pattern) {&amp;lt;br&amp;gt; print &amp;#34;マッチした！&amp;#3</description>
     </item>
     
     <item>
@@ -2317,7 +2317,7 @@
       <pubDate>Sat, 21 Jul 2012 12:00:00 +0900</pubDate>
       
       <guid>https://www.nqou.net/2012/07/21/120000/</guid>
-      <description>No references other than a SCALAR reference can use a update column my $upload = $self-&amp;gt;param(&#39;upload&#39;); if (ref $upload eq &#39;Mojo::Upload&#39;) { if ($upload-&amp;gt;filename) { $upload-&amp;gt;move_to(file(&#39;path&#39;, &#39;to&#39;, $upload-&amp;gt;filename)); } $upload</description>
+      <description>1 No references other than a SCALAR reference can use a update column 1 2 3 4 5 6 7 my $upload = $self-&amp;gt;param(&amp;#39;upload&amp;#39;); if (ref $upload eq &amp;#39;Mojo::Upload&amp;#39;) {</description>
     </item>
     
     <item>
@@ -2326,7 +2326,7 @@
       <pubDate>Thu, 12 Jul 2012 13:35:00 +0900</pubDate>
       
       <guid>https://www.nqou.net/2012/07/12/133500/</guid>
-      <description>$ find . -type f -print0 | xargs -0 chmod 0604&amp;lt;br&amp;gt; $ find . -type d -print0 | xargs -0 chmod 0705&amp;lt;br&amp;gt;</description>
+      <description>1 $ find . -type f -print0 | xargs -0 chmod 0604&amp;lt;br&amp;gt; 1 $ find . -type d -print0 | xargs -0 chmod 0705&amp;lt;br&amp;gt;</description>
     </item>
     
     <item>
@@ -2335,7 +2335,7 @@
       <pubDate>Wed, 30 May 2012 07:30:00 +0900</pubDate>
       
       <guid>https://www.nqou.net/2012/05/30/073000/</guid>
-      <description>${$scalar_ref}&amp;lt;br&amp;gt;@{$array_ref}&amp;lt;br&amp;gt;%{$hash_ref}&amp;lt;br&amp;gt; # 良くない例&amp;lt;br&amp;gt;@{$array_ref}</description>
+      <description>1 ${$scalar_ref}&amp;lt;br&amp;gt;@{$array_ref}&amp;lt;br&amp;gt;%{$hash_ref}&amp;lt;br&amp;gt; 1 # 良くない例&amp;lt;br&amp;gt;@{$array_re</description>
     </item>
     
     <item>
@@ -2587,7 +2587,7 @@
       <pubDate>Mon, 27 Feb 2012 03:00:00 +0900</pubDate>
       
       <guid>https://www.nqou.net/2012/02/27/030000/</guid>
-      <description>#! /usr/bin/env perl use strict; use warnings; print &amp;quot;Hello, world!\n&amp;quot;; #! /usr/bin/env perl use strict; use warnings; use utf8; =pod # binmode STDOUT, &amp;quot;:encoding(utf8)&amp;quot;; binmode STDOUT, &amp;quot;:utf8&amp;quot;; my $greeting =</description>
+      <description>1 2 3 4 5 #! /usr/bin/env perl use strict; use warnings; print &amp;#34;Hello, world!\n&amp;#34;; 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15</description>
     </item>
     
     <item>
@@ -2659,7 +2659,7 @@
       <pubDate>Tue, 05 Jul 2011 06:00:00 +0900</pubDate>
       
       <guid>https://www.nqou.net/2011/07/05/060000/</guid>
-      <description>$ rm -rf concrete/ $ ln -s /path/to/concrete_dir concrete # if &amp;quot;concrete/&amp;quot; does NOT exist in DIR_BASE then we set multi_site to on if (!is_dir(DIR_BASE . &#39;/&#39; . DIRNAME_APP)) {</description>
+      <description>1 2 $ rm -rf concrete/ $ ln -s /path/to/concrete_dir concrete 1 2 3 4 # if &amp;#34;concrete/&amp;#34; does NOT exist in DIR_BASE then we set multi_site to on if</description>
     </item>
     
     <item>
@@ -2794,7 +2794,7 @@
       <pubDate>Wed, 19 Jan 2011 01:22:32 +0900</pubDate>
       
       <guid>https://www.nqou.net/2011/01/19/012232/</guid>
-      <description>ということで、まずは結果から。 Benchmark: timing 10000 iterations of Dumper, JSON, MsgPack, Storable, YAML... Dumper: 5 wallclock secs (</description>
+      <description>ということで、まずは結果から。 1 2 3 4 5 6 7 8 9 10 11 12 Benchmark: timing 10000</description>
     </item>
     
     <item>
@@ -2812,7 +2812,7 @@
       <pubDate>Tue, 11 Jan 2011 20:42:58 +0900</pubDate>
       
       <guid>https://www.nqou.net/2011/01/11/204258/</guid>
-      <description>my @json; for my $msg (@{$messages}) { push @json, { id =&amp;gt; $msg-&amp;gt;id, msg =&amp;gt; $msg-&amp;gt;msg, ts =&amp;gt; $msg-&amp;gt;ts, }; } $self-&amp;gt;render(json =&amp;gt; [@json]); my @json; for my $msg (@{$messages})</description>
+      <description>1 2 3 4 5 6 7 8 9 10 my @json; for my $msg (@{$messages}) { push @json, { id =&amp;gt; $msg-&amp;gt;id, msg =&amp;gt; $msg-&amp;gt;msg, ts =&amp;gt; $msg-&amp;gt;ts, };</description>
     </item>
     
     <item>
@@ -2821,7 +2821,7 @@
       <pubDate>Mon, 10 Jan 2011 01:43:14 +0900</pubDate>
       
       <guid>https://www.nqou.net/2011/01/10/014314/</guid>
-      <description>#!/usr/bin/env perl #ｕｔｆ８ # use Acme::PerlTidy; use utf8; package DataModel; use base &#39;Data::Model&#39;; use Data::Model::Schema; use Data::Model::Driver::DBI; my $dbfile = qq{$0.db}; my $dsn = qq{dbi:SQLite:dbname=$dbfile}; my</description>
+      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30</description>
     </item>
     
     <item>
@@ -2893,7 +2893,7 @@
       <pubDate>Fri, 23 Jul 2010 03:22:43 +0900</pubDate>
       
       <guid>https://www.nqou.net/2010/07/23/032243/</guid>
-      <description>#!/usr/bin/perl use strict; use CGI::Carp qw/fatalsToBrowser/; die; #!/usr/bin/perl use strict; use CGI::Carp::DebugScreen ( debug =&amp;gt; 1 ); die;</description>
+      <description>1 2 3 4 #!/usr/bin/perl use strict; use CGI::Carp qw/fatalsToBrowser/; die; 1 2 3 4 #!/usr/bin/perl use strict; use CGI::Carp::DebugScreen ( debug =&amp;gt; 1 ); die;</description>
     </item>
     
     <item>
@@ -2911,7 +2911,7 @@
       <pubDate>Mon, 07 Jun 2010 03:05:28 +0900</pubDate>
       
       <guid>https://www.nqou.net/2010/06/07/030528/</guid>
-      <description># ｕｔｆ８ use 5.8.1; use strict; use warnings; use utf8; use Encode; use Term::Encoding qw(term_encoding); my $enc = Encode::find_encoding(term_encoding); use Data::Feed; use URI; # url</description>
+      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 # ｕｔｆ８ use 5.8.1; use strict; use warnings; use utf8; use Encode;</description>
     </item>
     
     <item>
@@ -2920,7 +2920,7 @@
       <pubDate>Mon, 07 Jun 2010 02:48:13 +0900</pubDate>
       
       <guid>https://www.nqou.net/2010/06/07/024813/</guid>
-      <description># ｕｔｆ８ # インスパイヤ：[Perl]簡単！たった１３行のコ</description>
+      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 # ｕｔｆ</description>
     </item>
     
     <item>
@@ -2929,7 +2929,7 @@
       <pubDate>Wed, 02 Jun 2010 01:37:59 +0900</pubDate>
       
       <guid>https://www.nqou.net/2010/06/02/013759/</guid>
-      <description># ｕｔｆ８ use 5.8.1; use strict; use warnings; use utf8; use Data::Dumper; use Term::Encoding qw(term_encoding); my $encoding = term_encoding; print Dumper $encoding; $VAR1 = &#39;cp932&#39;; # ｕ</description>
+      <description>1 2 3 4 5 6 7 8 9 # ｕｔｆ８ use 5.8.1; use strict; use warnings; use utf8; use Data::Dumper; use Term::Encoding qw(term_encoding); my $encoding =</description>
     </item>
     
     <item>
@@ -2938,7 +2938,7 @@
       <pubDate>Mon, 31 May 2010 00:41:08 +0900</pubDate>
       
       <guid>https://www.nqou.net/2010/05/31/004108/</guid>
-      <description>cpanm http://search.cpan.org/CPAN/authors/id/X/XS/XSAWYERX/App-Genpass-0.08.tar.gz 1&amp;amp;3XXFXAQG8tIzAi0eC2 9Ukqb!t02bGWPyj#N&amp;amp;uZ %oywF%)(#*gU%QUA9w2f #7%A7w)RQoZGEfb$16uh ifU91Ls2S^KzD#h$tOdu jGIl2oc9$lTX#6MHVhwV uiAU*uVszyxsQKY6@#Z&amp;amp; z3z)%hfffgbYTqflC0rU XGeR10#pD9g#AZ^HEXrj Os6c4$MNlSn6XUcIzL6^</description>
+      <description>1 cpanm http://search.cpan.org/CPAN/authors/id/X/XS/XSAWYERX/App-Genpass-0.08.tar.gz 1 2 3 4 5 6 7 8 9 10 1&amp;amp;3XXFXAQG8tIzAi0eC2 9Ukqb!t02bGWPyj#N&amp;amp;uZ %oywF%)(#*gU%QUA9w2f #7%A7w)RQoZGEfb$16uh ifU91Ls2S^KzD#h$tOdu jGIl2oc9$lTX#6MHVhwV uiAU*uVszyxsQKY6@#Z&amp;amp; z3z)%hfffgbYTqflC0rU XGeR10#pD9g#AZ^HEXrj Os6c4$MNlSn6XUcIzL6^</description>
     </item>
     
     <item>
@@ -2947,7 +2947,7 @@
       <pubDate>Wed, 26 May 2010 22:02:07 +0900</pubDate>
       
       <guid>https://www.nqou.net/2010/05/26/220207/</guid>
-      <description>Benchmark: timing 100000 iterations of caf, cafr, cal, os, otrw... caf: 4 wallclock secs ( 5.09 usr + 0.00 sys = 5.09 CPU) @ 19661.82/s (n=100000) cafr: 5 wallclock secs</description>
+      <description>1 2 3 4 5 6 7 8 9 10 11 12 Benchmark: timing 100000 iterations of caf, cafr, cal, os, otrw... caf: 4 wallclock secs ( 5.09 usr +</description>
     </item>
     
     <item>
@@ -2983,7 +2983,7 @@
       <pubDate>Wed, 19 May 2010 07:29:06 +0900</pubDate>
       
       <guid>https://www.nqou.net/2010/05/19/072906/</guid>
-      <description>cpan-outdated --mirror file:///strawberry/minicpan | cpanm --mirror file:///stwawberry/minicpan</description>
+      <description>1 cpan-outdated --mirror file:///strawberry/minicpan | cpanm --mirror file:///stwawberry/minicpan</description>
     </item>
     
     <item>
@@ -3001,7 +3001,7 @@
       <pubDate>Wed, 19 May 2010 00:00:24 +0900</pubDate>
       
       <guid>https://www.nqou.net/2010/05/19/000024/</guid>
-      <description>cpan -r cpan-outdated | cpanm cpan-outdated --mirror file:///strawberry/minicpan | cpanm</description>
+      <description>1 cpan -r 1 cpan-outdated | cpanm 1 cpan-outdated --mirror file:///strawberry/minicpan | cpanm</description>
     </item>
     
     <item>
@@ -3100,7 +3100,7 @@
       <pubDate>Wed, 10 Feb 2010 23:58:03 +0900</pubDate>
       
       <guid>https://www.nqou.net/2010/02/10/235803/</guid>
-      <description>Yacafiのソースを読んでいたら気づいてしまった。 my $CRLF = &amp;quot;\r\n&amp;quot;;</description>
+      <description>Yacafiのソースを読んでいたら気づいてしまった。 1 my $CRLF =</description>
     </item>
     
     <item>
@@ -3109,7 +3109,7 @@
       <pubDate>Wed, 10 Feb 2010 01:23:44 +0900</pubDate>
       
       <guid>https://www.nqou.net/2010/02/10/012344/</guid>
-      <description># Define the CRLF sequence. You can&#39;t use a simple &amp;quot;\r\n&amp;quot; because of system # specific &#39;features&#39;. On EBCDIC systems &amp;quot;\t&amp;quot; ne &amp;quot;\011&amp;quot; as the don&#39;t use ASCII sub crlf</description>
+      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 # Define the CRLF sequence. You can&amp;#39;t use a simple &amp;#34;\r\n&amp;#34; because of system #</description>
     </item>
     
     <item>
@@ -3154,7 +3154,7 @@
       <pubDate>Sat, 06 Feb 2010 00:06:12 +0900</pubDate>
       
       <guid>https://www.nqou.net/2010/02/06/000612/</guid>
-      <description>? use plugin::mobile;</description>
+      <description>1 ? use plugin::mobile;</description>
     </item>
     
     <item>
@@ -3316,7 +3316,7 @@
       <pubDate>Thu, 09 Apr 2009 00:20:19 +0900</pubDate>
       
       <guid>https://www.nqou.net/2009/04/09/002019/</guid>
-      <description>面白そうなネタを見つけたので、便乗してみた。 my @update = grep { my $a =</description>
+      <description>面白そうなネタを見つけたので、便乗してみた。 1 my @update = grep { my $a</description>
     </item>
     
     <item>
@@ -3352,7 +3352,7 @@
       <pubDate>Fri, 27 Mar 2009 00:03:58 +0900</pubDate>
       
       <guid>https://www.nqou.net/2009/03/27/000358/</guid>
-      <description># ｕｔｆ８ use strict; use warnings; use YAML qw (Dump); sub p (@) { print Dump(@_); } use utf8; binmode STDOUT =&amp;gt; &#39;:encoding(cp932)&#39;; # ｕｔｆ</description>
+      <description>1 2 3 4 5 6 7 # ｕｔｆ８ use strict; use warnings; use YAML qw (Dump); sub p (@) { print Dump(@_); } use utf8; binmode</description>
     </item>
     
     <item>
@@ -3388,7 +3388,7 @@
       <pubDate>Sat, 21 Mar 2009 04:24:58 +0900</pubDate>
       
       <guid>https://www.nqou.net/2009/03/21/042458/</guid>
-      <description>&amp;lt;?=r $hoge ?&amp;gt; &amp;lt;?= raw_string($hoge) ?&amp;gt;</description>
+      <description>1 &amp;lt;?=r $hoge ?&amp;gt; 1 &amp;lt;?= raw_string($hoge) ?&amp;gt;</description>
     </item>
     
     <item>
@@ -3415,7 +3415,7 @@
       <pubDate>Wed, 18 Mar 2009 04:09:42 +0900</pubDate>
       
       <guid>https://www.nqou.net/2009/03/18/040942/</guid>
-      <description>Modification of a read-only value attempted at app/plugin/session.pm line 38.</description>
+      <description>1 Modification of a read-only value attempted at app/plugin/session.pm line 38.</description>
     </item>
     
     <item>
@@ -3478,7 +3478,7 @@
       <pubDate>Sun, 01 Mar 2009 14:07:28 +0900</pubDate>
       
       <guid>https://www.nqou.net/2009/03/01/140728/</guid>
-      <description>わかってしまえば単純なことでした。 process &amp;#39;a[href=~/\.jpe?g$/]&amp;#39;, &amp;#39;urls[]&amp;#39; =&amp;gt; &amp;#39;@href&amp;#39;; XPathでも同</description>
+      <description>わかってしまえば単純なことでした。 1 process &amp;#39;a[href=~/\.jpe?g$/]&amp;#39;, &amp;#39;urls[]&amp;#39; =&amp;gt; &amp;#39;@href&amp;#39;; XPathでも</description>
     </item>
     
     <item>
@@ -3505,7 +3505,7 @@
       <pubDate>Mon, 23 Feb 2009 23:10:43 +0900</pubDate>
       
       <guid>https://www.nqou.net/2009/02/23/231043/</guid>
-      <description>Benchmark: running XML::LibXML::SAX, XML::Parser, XML::SAX::Expat, XML::SAX::ExpatXS, XML::SAX::PP for at least 3 CPU seconds... XML::LibXML::SAX: 3 wallclock secs ( 3.03 usr + 0.00 sys = 3.03 CPU) @ 20.79/s (n=63) XML::Parser:</description>
+      <description>1 2 3 4 5 6 7 8 9 10 11 12 Benchmark: running XML::LibXML::SAX, XML::Parser, XML::SAX::Expat, XML::SAX::ExpatXS, XML::SAX::PP for at least 3 CPU seconds... XML::LibXML::SAX: 3 wallclock secs (</description>
     </item>
     
     <item>
@@ -3568,7 +3568,7 @@
       <pubDate>Thu, 12 Feb 2009 23:36:29 +0900</pubDate>
       
       <guid>https://www.nqou.net/2009/02/12/233629/</guid>
-      <description>use Moose (); $n = 999; print $n; use Moose; $n = 999; print $n; Moose does not export its sugar to the &#39;main&#39; package. Global symbol &amp;quot;$n&amp;quot; requires explicit</description>
+      <description>1 2 3 use Moose (); $n = 999; print $n; 1 2 3 use Moose; $n = 999; print $n; 1 2 3 4 Moose does not export its</description>
     </item>
     
     <item>
@@ -3586,7 +3586,7 @@
       <pubDate>Wed, 11 Feb 2009 01:11:02 +0900</pubDate>
       
       <guid>https://www.nqou.net/2009/02/11/011102/</guid>
-      <description>use strict; use warnings; use File::Copy::Recursive qw(rcopy); my $from_dir = &amp;quot;.&amp;quot;; my $to_dir = &amp;quot;/temp&amp;quot;; rcopy($from_dir, $to_dir); use warnings; use strict; use File::Copy::Recursive qw(rcopy); use Path::Class; my $from_dir = dir(&amp;quot;.&amp;quot;);</description>
+      <description>1 2 3 4 5 6 use strict; use warnings; use File::Copy::Recursive qw(rcopy); my $from_dir = &amp;#34;.&amp;#34;; my $to_dir = &amp;#34;/temp&amp;#34;; rcopy($from_dir, $to_dir); 1 2 3 4 5 6 7</description>
     </item>
     
     <item>
@@ -3649,7 +3649,7 @@
       <pubDate>Mon, 02 Feb 2009 01:20:00 +0900</pubDate>
       
       <guid>https://www.nqou.net/2009/02/02/012000/</guid>
-      <description>// for menu $(&amp;quot;#menu ul.list-item-list&amp;quot;).css({ display:&amp;quot;none&amp;quot; }); var effect_speed = &#39;fast&#39;; $(&amp;quot;#menu ul.list li.list-item&amp;quot;).hover( function () { $(this).children(&amp;quot;ul.list-item-list&amp;quot;).slideDown(effect_speed); }, function () { $(this).children(&amp;quot;ul.list-item-list&amp;quot;).slideUp(effect_speed); }); /* for menu */ #menu, #menu</description>
+      <description>1 2 3 4 5 6 7 8 // for menu $(&amp;#34;#menu ul.list-item-list&amp;#34;).css({ display:&amp;#34;none&amp;#34; }); var effect_speed = &amp;#39;fast&amp;#39;; $(&amp;#34;#menu ul.list li.list-item&amp;#34;).hover( function () { $(this).children(&amp;#34;ul.list-item-list&amp;#34;).slideDown(effect_speed); }, function () {</description>
     </item>
     
     <item>
@@ -3667,7 +3667,7 @@
       <pubDate>Wed, 21 Jan 2009 02:36:39 +0900</pubDate>
       
       <guid>https://www.nqou.net/2009/01/21/023639/</guid>
-      <description>&amp;lt;a href=&amp;quot;javascript:void(0);&amp;quot; onclick=&amp;quot;$.jGrowl(&#39;これがメ</description>
+      <description>1 &amp;lt;a href=&amp;#34;javascript:void(0);&amp;#34; onclick=&amp;#34;$.jGrowl(&amp;#39;</description>
     </item>
     
     <item>
@@ -3730,7 +3730,7 @@
       <pubDate>Wed, 07 Jan 2009 01:45:34 +0900</pubDate>
       
       <guid>https://www.nqou.net/2009/01/07/014534/</guid>
-      <description>#ｕｔｆ８ use strict; use warnings; use utf8; use Data::Dumper; sub p ($) { print Data::Dumper::Dumper(shift); } package Point; use base qw/Class::Accessor::Fast/; __PACKAGE__-&amp;gt;mk_accessors(qw/x y/); package main; my</description>
+      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 #ｕｔｆ８ use strict; use warnings; use utf8; use</description>
     </item>
     
     <item>
@@ -3748,7 +3748,7 @@
       <pubDate>Tue, 06 Jan 2009 00:47:16 +0900</pubDate>
       
       <guid>https://www.nqou.net/2009/01/06/004716/</guid>
-      <description>package main; my $fetcher = FlickrFetcher-&amp;gt;new_with_options(); $fetcher-&amp;gt;run(); package FlickrFetcher; use Moose; use Moose::Util::TypeConstraints; use Params::Coerce (); use Digest::MD5 qw(md5_hex); use Encode; use LWP::UserAgent; use Path::Class; use POSIX qw(ceil); use WebService::Simple;</description>
+      <description>1 2 3 package main; my $fetcher = FlickrFetcher-&amp;gt;new_with_options(); $fetcher-&amp;gt;run(); 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20</description>
     </item>
     
     <item>
@@ -3757,7 +3757,7 @@
       <pubDate>Mon, 05 Jan 2009 22:38:56 +0900</pubDate>
       
       <guid>https://www.nqou.net/2009/01/05/223856/</guid>
-      <description>sub BUILD { my ( $self, $args ) = @_; unless ( $self-&amp;gt;api_key ) { if ( my $api_key = $ENV{FLICKR_API_KEY} ) { $self-&amp;gt;api_key($api_key); } else { die &amp;quot;api_key is</description>
+      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 sub BUILD { my (</description>
     </item>
     
     <item>
@@ -3784,7 +3784,7 @@
       <pubDate>Thu, 01 Jan 2009 22:12:52 +0900</pubDate>
       
       <guid>https://www.nqou.net/2009/01/01/221252/</guid>
-      <description>C:\&amp;gt; cpan -i Module::Setup C:\&amp;gt; cpan -f Module::Collect C:\&amp;gt; cpan -f Module::Setup C:\home\nqou&amp;gt; module-setup --init Creating *****\.module-setup\flavors\default\template\Makefile.PL Creating *****\.module-setup\flavors\default\template\t\00_compile.t Creating *****\.module-setup\flavors\default\template\xt\01_podspell.t Creating *****\.module-setup\flavors\default\template\xt\02_perlcritic.t Creating *****\.module-setup\flavors\default\template\xt\03_pod.t Creating *****\.module-setup\flavors\default\template\xt\perlcriticrc Creating *****\.module-setup\flavors\default\template\Changes Creating</description>
+      <description>1 C:\&amp;gt; cpan -i Module::Setup 1 C:\&amp;gt; cpan -f Module::Collect 1 C:\&amp;gt; cpan -f Module::Setup 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15</description>
     </item>
     
     <item>
@@ -3802,7 +3802,7 @@
       <pubDate>Tue, 30 Dec 2008 20:29:42 +0900</pubDate>
       
       <guid>https://www.nqou.net/2008/12/30/202942/</guid>
-      <description>PHP Notice: Undefined variable: root in *****/jqueryFileTree.php on line 21 ? my $title = shift; &amp;lt;!doctype html&amp;gt; &amp;lt;html xmlns=&amp;quot;http://www.w3.org/1999/xhtml&amp;quot; xml:lang=&amp;quot;ja&amp;quot; lang=&amp;quot;ja&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta http-equiv=&amp;quot;Content-Type&amp;quot; content=&amp;quot;text/html; charset=UTF-8&amp;quot; /&amp;gt; &amp;lt;title&amp;gt;&amp;lt;? if ($title)</description>
+      <description>1 PHP Notice: Undefined variable: root in *****/jqueryFileTree.php on line 21 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19</description>
     </item>
     
     <item>
@@ -3811,7 +3811,7 @@
       <pubDate>Tue, 30 Dec 2008 01:42:23 +0900</pubDate>
       
       <guid>https://www.nqou.net/2008/12/30/014223/</guid>
-      <description>&amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;http://google-code-prettify.googlecode.com/svn/trunk/src/prettify.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt; $(document).ready(function(){ $(&#39;pre code&#39;).addClass(&amp;quot;prettyprint&amp;quot;); prettyPrint(); }); &amp;lt;/script&amp;gt;</description>
+      <description>1 2 3 4 5 6 7 8 &amp;lt;script type=&amp;#34;text/javascript&amp;#34; src=&amp;#34;http://google-code-prettify.googlecode.com/svn/trunk/src/prettify.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script type=&amp;#34;text/javascript&amp;#34; src=&amp;#34;http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script type=&amp;#34;text/javascript&amp;#34;&amp;gt; $(document).ready(function(){ $(&amp;#39;pre code&amp;#39;).addClass(&amp;#34;prettyprint&amp;#34;); prettyPrint(); }); &amp;lt;/script&amp;gt;</description>
     </item>
     
     <item>
@@ -3820,7 +3820,7 @@
       <pubDate>Mon, 29 Dec 2008 22:48:36 +0900</pubDate>
       
       <guid>https://www.nqou.net/2008/12/29/224836/</guid>
-      <description>#!/usr/bin/perl use strict; use LWP::Simple; use File::Basename; use Digest::MD5 qw(md5_hex); use Perl6::Say; my $uri = shift or die &amp;quot;uri please!. &amp;quot;; my $content = get($uri); my @l = $content =~</description>
+      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 #!/usr/bin/perl use strict; use LWP::Simple; use File::Basename; use</description>
     </item>
     
     <item>
@@ -3865,7 +3865,7 @@
       <pubDate>Sun, 14 Dec 2008 03:25:17 +0900</pubDate>
       
       <guid>https://www.nqou.net/2008/12/14/032517/</guid>
-      <description>? my $title = shift ?= render(&#39;header.mt&#39;, &#39;インデックス&#39;) &amp;lt;title&amp;gt;&amp;lt;? if ($title) { ?&amp;gt;&amp;lt;?= &amp;quot;$title - &amp;quot; ?&amp;gt;&amp;lt;? } ?&amp;gt;menta.nqou.net&amp;lt;/title&amp;gt; if ($title) {</description>
+      <description>1 ? my $title = shift 1 ?= render(&amp;#39;header.mt&amp;#39;, &amp;#39;インデックス&amp;#39;) 1 &amp;lt;title&amp;gt;&amp;lt;? if ($title)</description>
     </item>
     
     <item>
@@ -3892,7 +3892,7 @@
       <pubDate>Fri, 12 Dec 2008 22:11:28 +0900</pubDate>
       
       <guid>https://www.nqou.net/2008/12/12/221128/</guid>
-      <description>C:\strawb~1\perl\bin\perl.exe Summary of my perl5 (revision 5 version 10 subversion 0) configuration: Platform: osname=MSWin32, osvers=5.1, archname=MSWin32-x86-multi-thread uname=&#39;&#39; config_args=&#39;undef&#39; hint=recommended, useposix=true, d_sigaction=undef useithreads=define, usemultiplicity=define useperlio=define, d_sfio=undef, uselargefiles=define, usesocks=undef use64bitint=undef, use64bitall=undef, uselongdouble=undef</description>
+      <description>1 C:\strawb~1\perl\bin\perl.exe 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28</description>
     </item>
     
     <item>
@@ -3910,7 +3910,7 @@
       <pubDate>Fri, 21 Nov 2008 03:00:15 +0900</pubDate>
       
       <guid>https://www.nqou.net/2008/11/21/030015/</guid>
-      <description>static/menta-logo.png/ を処理する方法がわかりません at lib/MENTA.pm line 96, &amp;lt;DATA&amp;gt; line 16. &amp;lt;img src=&amp;quot;&amp;lt;?= static_file_path(&#39;menta-logo.png&#39;) ?&amp;gt;&amp;quot; alt=&amp;quot;Web Application Framework -</description>
+      <description>1 static/menta-logo.png/ を処理する方法がわかりません at lib/MENTA.pm line 96, &amp;lt;DATA&amp;gt; line 16. 1 &amp;lt;img src=&amp;#34;&amp;lt;?= static_file_path(&amp;#39;menta-logo.png&amp;#39;) ?&amp;gt;&amp;#34; alt=&amp;#34;Web Application</description>
     </item>
     
     <item>
@@ -3937,7 +3937,7 @@
       <pubDate>Thu, 20 Nov 2008 01:33:21 +0900</pubDate>
       
       <guid>https://www.nqou.net/2008/11/20/013321/</guid>
-      <description>...lang\perl\MENTA\tags\release-0.03&amp;gt;perl bin/cgi-server.pl HTTP::Server::Simple: You can connect to your server at http://localhost:5555/</description>
+      <description>1 ...lang\perl\MENTA\tags\release-0.03&amp;gt;perl bin/cgi-server.pl 1 HTTP::Server::Simple: You can connect to your server at http://localhost:5555/</description>
     </item>
     
     <item>
@@ -4198,7 +4198,7 @@
       <pubDate>Tue, 29 Jul 2008 00:46:04 +0900</pubDate>
       
       <guid>https://www.nqou.net/2008/07/29/004604/</guid>
-      <description>#!/usr/bin/perl use strict; use warnings; use POSIX; my @vars = (1, 0.999, 0.9, 0.1, -0.1, -0.9, -0.999, -1); foreach my $var (@vars) { print &amp;quot;Target is $var\n&amp;quot;; print &amp;quot;ceil :</description>
+      <description>1 2 3 4 5 6 7 8 9 10 11 #!/usr/bin/perl use strict; use warnings; use POSIX; my @vars = (1, 0.999, 0.9, 0.1, -0.1, -0.9, -0.999, -1); foreach</description>
     </item>
     
     <item>
@@ -4423,7 +4423,7 @@
       <pubDate>Tue, 06 May 2008 20:28:52 +0900</pubDate>
       
       <guid>https://www.nqou.net/2008/05/06/202852/</guid>
-      <description>Setting environment for using Microsoft Visual Studio 2008 x86 tools. C:\Program Files\Microsoft Visual Studio 9.0\VC&amp;gt; C:\Program Files\Microsoft Visual Studio 9.0\VC&amp;gt;d: D:\&amp;gt;cd usr\bin D:\usr\bin&amp;gt;cpan cpan shell -- CPAN exploration and modules</description>
+      <description>1 2 Setting environment for using Microsoft Visual Studio 2008 x86 tools. C:\Program Files\Microsoft Visual Studio 9.0\VC&amp;gt; 1 2 3 4 5 6 C:\Program Files\Microsoft Visual Studio 9.0\VC&amp;gt;d: D:\&amp;gt;cd usr\bin</description>
     </item>
     
     <item>
@@ -4981,7 +4981,7 @@
       <pubDate>Sun, 13 Jan 2008 07:09:45 +0900</pubDate>
       
       <guid>https://www.nqou.net/2008/01/13/070945/</guid>
-      <description>&amp;lt;label&amp;gt;&amp;lt;input type=&amp;quot;radio&amp;quot; name=&amp;quot;new_class&amp;quot; value=&amp;quot;1&amp;quot; disabled=&amp;quot;disabled&amp;quot; tabindex=&amp;quot;1&amp;quot; /&amp;gt;1&amp;lt;/label&amp;gt; &amp;lt;label&amp;gt;&amp;lt;input type=&amp;quot;radio&amp;quot; name=&amp;quot;new_class&amp;quot; value=&amp;quot;2&amp;quot; tabindex=&amp;quot;2&amp;quot; /&amp;gt;2&amp;lt;/label&amp;gt; &amp;lt;p&amp;gt;調べていくと、ど</description>
+      <description>1 2 &amp;lt;label&amp;gt;&amp;lt;input type=&amp;#34;radio&amp;#34; name=&amp;#34;new_class&amp;#34; value=&amp;#34;1&amp;#34; disabled=&amp;#34;disabled&amp;#34; tabindex=&amp;#34;1&amp;#34; /&amp;gt;1&amp;lt;/label&amp;gt; &amp;lt;label&amp;gt;&amp;lt;input type=&amp;#34;radio&amp;#34; name=&amp;#34;new_class&amp;#34; value=&amp;#34;2&amp;#34; tabindex=&amp;#34;2&amp;#34; /&amp;gt;2&amp;lt;/label&amp;gt; &amp;lt;p&amp;gt;調べていくと</description>
     </item>
     
     <item>
@@ -5332,7 +5332,7 @@
       <pubDate>Wed, 29 Nov 2006 15:37:53 +0900</pubDate>
       
       <guid>https://www.nqou.net/2006/11/29/153753/</guid>
-      <description>&amp;lt;p&amp;gt;ソースコード&amp;lt;/p&amp;gt; #!/usr/bin/perl -T # 日本</description>
+      <description>&amp;lt;p&amp;gt;ソースコード&amp;lt;/p&amp;gt; 1 2 3 4 5</description>
     </item>
     
     <item>
@@ -5431,7 +5431,7 @@
       <pubDate>Wed, 15 Nov 2006 14:46:42 +0900</pubDate>
       
       <guid>https://www.nqou.net/2006/11/15/144642/</guid>
-      <description>perl -MCPAN -e &amp;quot;CPAN::Shell-&amp;gt;install(CPAN::Shell-&amp;gt;r)&amp;quot; perl -MCPAN -e &amp;quot;CPAN::Shell-&amp;gt;upgrade&amp;quot;</description>
+      <description>1 perl -MCPAN -e &amp;#34;CPAN::Shell-&amp;gt;install(CPAN::Shell-&amp;gt;r)&amp;#34; 1 perl -MCPAN -e &amp;#34;CPAN::Shell-&amp;gt;upgrade&amp;#34;</description>
     </item>
     
     <item>
@@ -5638,7 +5638,7 @@
       <pubDate>Fri, 27 Oct 2006 14:12:47 +0900</pubDate>
       
       <guid>https://www.nqou.net/2006/10/27/141247/</guid>
-      <description>&amp;lt;p&amp;gt;ソースコード&amp;lt;/p&amp;gt; #!/usr/bin/perl use strict; use warnings;</description>
+      <description>&amp;lt;p&amp;gt;ソースコード&amp;lt;/p&amp;gt; 1 2 3 4 5</description>
     </item>
     
     <item>
@@ -5791,7 +5791,7 @@
       <pubDate>Sun, 22 Oct 2006 02:23:28 +0900</pubDate>
       
       <guid>https://www.nqou.net/2006/10/22/022328/</guid>
-      <description>&amp;lt;p&amp;gt;ソースコード&amp;lt;/p&amp;gt; #!/usr/bin/perl use strict; use warnings;</description>
+      <description>&amp;lt;p&amp;gt;ソースコード&amp;lt;/p&amp;gt; 1 2 3 4 5</description>
     </item>
     
     <item>
@@ -5863,7 +5863,7 @@
       <pubDate>Thu, 19 Oct 2006 12:24:29 +0900</pubDate>
       
       <guid>https://www.nqou.net/2006/10/19/122429/</guid>
-      <description>&amp;lt;MTEntryIfTagged&amp;gt; &amp;lt;MTEntryTags&amp;gt; &amp;lt;category term=&amp;quot;&amp;lt;$MTTagID encode_xml=&amp;quot; 1&amp;quot;$&amp;gt;&amp;quot; label=&amp;quot;&amp;lt;$MTTagName encode_xml=&amp;quot;1&amp;quot; $&amp;gt;&amp;quot; scheme=&amp;quot;http://www.sixapart.com/ns/types#tag&amp;quot; /&amp;gt; &amp;lt;/MTEntryTags&amp;gt; &amp;lt;/MTEntryIfTagged&amp;gt; &amp;lt;MTEntryCategories&amp;gt; &amp;lt;category term=&amp;quot;&amp;lt;$MTCategoryLabel encode_xml=&amp;quot; 1&amp;quot;$&amp;gt;&amp;quot; scheme=&amp;quot;http://www.sixapart.com/ns/types#category&amp;quot; /&amp;gt; &amp;lt;/MTEntryCategories&amp;gt;</description>
+      <description>1 2 3 4 5 6 7 8 &amp;lt;MTEntryIfTagged&amp;gt; &amp;lt;MTEntryTags&amp;gt; &amp;lt;category term=&amp;#34;&amp;lt;$MTTagID encode_xml=&amp;#34; 1&amp;#34;$&amp;gt;&amp;#34; label=&amp;#34;&amp;lt;$MTTagName encode_xml=&amp;#34;1&amp;#34; $&amp;gt;&amp;#34; scheme=&amp;#34;http://www.sixapart.com/ns/types#tag&amp;#34; /&amp;gt; &amp;lt;/MTEntryTags&amp;gt; &amp;lt;/MTEntryIfTagged&amp;gt; &amp;lt;MTEntryCategories&amp;gt; &amp;lt;category term=&amp;#34;&amp;lt;$MTCategoryLabel encode_xml=&amp;#34; 1&amp;#34;$&amp;gt;&amp;#34; scheme=&amp;#34;http://www.sixapart.com/ns/types#category&amp;#34; /&amp;gt; &amp;lt;/MTEntryCategories&amp;gt;</description>
     </item>
     
     <item>
@@ -5971,7 +5971,7 @@
       <pubDate>Wed, 04 Oct 2006 03:44:22 +0900</pubDate>
       
       <guid>https://www.nqou.net/2006/10/04/034422/</guid>
-      <description>my ($hoge1, $hoge2, $hoge3) = @_; my $hoge1 = shift; my $hoge2 = shift; my $hoge3 = shift; &amp;lt;p&amp;gt;ここ最</description>
+      <description>1 my ($hoge1, $hoge2, $hoge3) = @_; 1 2 3 my $hoge1 = shift; my $hoge2 = shift; my $hoge3 = shift; &amp;lt;p&amp;gt</description>
     </item>
     
     <item>
@@ -5980,7 +5980,7 @@
       <pubDate>Tue, 03 Oct 2006 04:57:26 +0900</pubDate>
       
       <guid>https://www.nqou.net/2006/10/03/045726/</guid>
-      <description>$elm = {} unless defined $elm; $elm ||= {}; &amp;lt;p&amp;gt;「&amp;lt;a href=&amp;</description>
+      <description>1 $elm = {} unless defined $elm; 1 $elm ||= {}; &amp;lt;p&amp;gt;「&amp;lt;a href</description>
     </item>
     
     <item>
@@ -5998,7 +5998,7 @@
       <pubDate>Wed, 27 Sep 2006 07:23:43 +0900</pubDate>
       
       <guid>https://www.nqou.net/2006/09/27/072343/</guid>
-      <description>sub get_1 {print &#39;a&#39;; 1;} sub get_2 {print &#39;b&#39;; 2;} sub get_3 {print &#39;c&#39;; 3;} print get_1; print get_2; print get_3; print &amp;quot;n&amp;quot;; print &amp;quot;-----n&amp;quot;; print get_1, get_2, get_3, &amp;quot;n&amp;quot;;</description>
+      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 sub get_1 {print &amp;#39;a&amp;#39;; 1;} sub get_2 {print &amp;#39;b&amp;#39;; 2;} sub get_3 {print &amp;#39;c&amp;#39;; 3;} print get_1;</description>
     </item>
     
     <item>
@@ -6007,7 +6007,7 @@
       <pubDate>Tue, 26 Sep 2006 07:49:02 +0900</pubDate>
       
       <guid>https://www.nqou.net/2006/09/26/074902/</guid>
-      <description>sub hoge { my %elm = ( foo =&amp;gt; &amp;quot;FOO&amp;quot;, bar =&amp;gt; &amp;quot;BAR&amp;quot;, @_ ); print $elm{foo}.&amp;quot;n&amp;quot;; print $elm{bar}.&amp;quot;n&amp;quot;; } &amp;lt;p&amp;gt;実</description>
+      <description>1 2 3 4 5 6 7 8 9 sub hoge { my %elm = ( foo =&amp;gt; &amp;#34;FOO&amp;#34;, bar =&amp;gt; &amp;#34;BAR&amp;#34;, @_ ); print $elm{foo}.&amp;#34;n&amp;#34;; print $elm{bar}.&amp;#34;n&amp;#34;; } &amp;</description>
     </item>
     
     <item>
@@ -6025,7 +6025,7 @@
       <pubDate>Fri, 22 Sep 2006 02:10:02 +0900</pubDate>
       
       <guid>https://www.nqou.net/2006/09/22/021002/</guid>
-      <description>regsvr32 /u zipfldr.dll regsvr32 /u cabview.dll</description>
+      <description>1 2 regsvr32 /u zipfldr.dll regsvr32 /u cabview.dll</description>
     </item>
     
     <item>
@@ -6043,7 +6043,7 @@
       <pubDate>Wed, 20 Sep 2006 08:26:47 +0900</pubDate>
       
       <guid>https://www.nqou.net/2006/09/20/082647/</guid>
-      <description>next if index $foo, &amp;#34;hoge&amp;#34;; 意味的には、$fooが「hoge」ではじまっていな</description>
+      <description>1 next if index $foo, &amp;#34;hoge&amp;#34;; 意味的には、$fooが「hoge」ではじまってい</description>
     </item>
     
     <item>
@@ -6133,7 +6133,7 @@
       <pubDate>Mon, 26 Jun 2006 15:55:57 +0900</pubDate>
       
       <guid>https://www.nqou.net/2006/06/26/155557/</guid>
-      <description>if ($CGI::Session::VERSION &amp;lt; 4) {# Ver3.xx require CGI::Session::MySQL; $CGI::Session::MySQL::TABLE_NAME = &amp;quot;&amp;quot;;# -w対策 $CGI::Session::MySQL::TABLE_NAME = $tn-&amp;gt;{session}; $session = CGI::Session-&amp;gt;new(&amp;quot;dr:MySQL&amp;quot;, $cgi, {Handle =&amp;gt; $dbh}); # クッキー</description>
+      <description>1 2 3 4 5 6 7 8 if ($CGI::Session::VERSION &amp;lt; 4) {# Ver3.xx require CGI::Session::MySQL; $CGI::Session::MySQL::TABLE_NAME = &amp;#34;&amp;#34;;# -w対策 $CGI::Session::MySQL::TABLE_NAME = $tn-&amp;gt;{session}; $session = CGI::Session-&amp;gt;new(&amp;#34;dr:MySQL&amp;#34;, $cgi,</description>
     </item>
     
     <item>
@@ -6160,7 +6160,7 @@
       <pubDate>Wed, 07 Jun 2006 23:34:04 +0900</pubDate>
       
       <guid>https://www.nqou.net/2006/06/07/233404/</guid>
-      <description>if (eval q{require &amp;quot;CGI::Session::MySQL&amp;quot;}) { # Ver3.xx $CGI::Session::MySQL::TABLE_NAME = $tablename; $session = CGI::Session-&amp;gt;new(&amp;quot;dr:MySQL&amp;quot;, $cgi, {Handle =&amp;gt; $dbh}); } else { # Ver4.xx $session = CGI::Session-&amp;gt;new(&amp;quot;dr:mysql&amp;quot;, $cgi, {Handle =&amp;gt; $dbh, TableName</description>
+      <description>1 2 3 4 5 6 7 8 if (eval q{require &amp;#34;CGI::Session::MySQL&amp;#34;}) { # Ver3.xx $CGI::Session::MySQL::TABLE_NAME = $tablename; $session = CGI::Session-&amp;gt;new(&amp;#34;dr:MySQL&amp;#34;, $cgi, {Handle =&amp;gt; $dbh}); } else { # Ver4.xx</description>
     </item>
     
     <item>
@@ -6169,7 +6169,7 @@
       <pubDate>Thu, 01 Jun 2006 02:49:23 +0900</pubDate>
       
       <guid>https://www.nqou.net/2006/06/01/024923/</guid>
-      <description>use CGI::Session qw(-ip_match); use CGI::Session::MySQL; $CGI::Session::MySQL::TABLE_NAME = $tablename; my $session = CGI::Session-&amp;gt;new(&amp;quot;dr:MySQL&amp;quot;, $cgi, {Handle =&amp;gt; $dbh}); use CGI::Session qw(-ip_match); my $session = CGI::Session-&amp;gt;new(&amp;quot;dr:mysql&amp;quot;, $cgi, {Handle =&amp;gt; $dbh, TableName =&amp;gt; $tablename});</description>
+      <description>1 2 3 4 use CGI::Session qw(-ip_match); use CGI::Session::MySQL; $CGI::Session::MySQL::TABLE_NAME = $tablename; my $session = CGI::Session-&amp;gt;new(&amp;#34;dr:MySQL&amp;#34;, $cgi, {Handle =&amp;gt; $dbh}); 1 2 use CGI::Session qw(-ip_match); my $session = CGI::Session-&amp;gt;new(&amp;#34;dr:mysql&amp;#34;, $cgi,</description>
     </item>
     
     <item>
@@ -6691,7 +6691,7 @@
       <pubDate>Thu, 14 Oct 2004 05:42:52 +0900</pubDate>
       
       <guid>https://www.nqou.net/2004/10/14/054252/</guid>
-      <description>my $n = 10; my $sum = 0; for (my $i = 1; $i &amp;lt;= $n; $i++) { $sum += $i; } print $sum; &amp;lt;p&amp;</description>
+      <description>1 2 3 4 5 6 my $n = 10; my $sum = 0; for (my $i = 1; $i &amp;lt;= $n; $i++) { $sum += $i; } print $sum;</description>
     </item>
     
     <item>
@@ -7087,7 +7087,7 @@
       <pubDate>Wed, 29 Sep 2004 01:54:15 +0900</pubDate>
       
       <guid>https://www.nqou.net/2004/09/29/015415/</guid>
-      <description>my $cgi = new CGI; my $cgi = CGI-&amp;gt;new;</description>
+      <description>1 my $cgi = new CGI; 1 my $cgi = CGI-&amp;gt;new;</description>
     </item>
     
     <item>
@@ -7474,7 +7474,7 @@
       <pubDate>Sat, 07 Oct 2000 14:13:37 +0900</pubDate>
       
       <guid>https://www.nqou.net/2000/10/07/141337/</guid>
-      <description>&amp;lt;p&amp;gt;ソースコード&amp;lt;/p&amp;gt; #!/usr/bin/perl #BEGIN{ # print &amp;quot;Content-type:</description>
+      <description>&amp;lt;p&amp;gt;ソースコード&amp;lt;/p&amp;gt; 1 2 3 4 5</description>
     </item>
     
     <item>
@@ -7483,7 +7483,7 @@
       <pubDate>Sat, 07 Oct 2000 13:57:39 +0900</pubDate>
       
       <guid>https://www.nqou.net/2000/10/07/135739/</guid>
-      <description>&amp;lt;p&amp;gt;ソースコード&amp;lt;/p&amp;gt; #!/usr/bin/perl #BEGIN{ # print &amp;quot;Content-type:</description>
+      <description>&amp;lt;p&amp;gt;ソースコード&amp;lt;/p&amp;gt; 1 2 3 4 5</description>
     </item>
     
     <item>
@@ -7492,7 +7492,7 @@
       <pubDate>Sat, 07 Oct 2000 13:57:07 +0900</pubDate>
       
       <guid>https://www.nqou.net/2000/10/07/135707/</guid>
-      <description>&amp;lt;p&amp;gt;ソースコード&amp;lt;/p&amp;gt; #!/usr/bin/perl #BEGIN{ # print &amp;quot;Content-type:</description>
+      <description>&amp;lt;p&amp;gt;ソースコード&amp;lt;/p&amp;gt; 1 2 3 4 5</description>
     </item>
     
     <item>
@@ -7501,7 +7501,7 @@
       <pubDate>Sat, 07 Oct 2000 13:55:15 +0900</pubDate>
       
       <guid>https://www.nqou.net/2000/10/07/135515/</guid>
-      <description>&amp;lt;p&amp;gt;ソースコード&amp;lt;/p&amp;gt; #!/usr/bin/perl #BEGIN{ # print &amp;quot;Content-type:</description>
+      <description>&amp;lt;p&amp;gt;ソースコード&amp;lt;/p&amp;gt; 1 2 3 4 5</description>
     </item>
     
     <item>
@@ -7510,7 +7510,7 @@
       <pubDate>Sat, 07 Oct 2000 13:53:02 +0900</pubDate>
       
       <guid>https://www.nqou.net/2000/10/07/135302/</guid>
-      <description>&amp;lt;p&amp;gt;ソースコード&amp;lt;/p&amp;gt; #!/usr/bin/perl #BEGIN{ # print &amp;quot;Content-type:</description>
+      <description>&amp;lt;p&amp;gt;ソースコード&amp;lt;/p&amp;gt; 1 2 3 4 5</description>
     </item>
     
     <item>
@@ -7519,7 +7519,7 @@
       <pubDate>Sat, 07 Oct 2000 13:52:09 +0900</pubDate>
       
       <guid>https://www.nqou.net/2000/10/07/135209/</guid>
-      <description>&amp;lt;p&amp;gt;ソースコード&amp;lt;/p&amp;gt; #!/usr/bin/perl #BEGIN{ # print &amp;quot;Content-type:</description>
+      <description>&amp;lt;p&amp;gt;ソースコード&amp;lt;/p&amp;gt; 1 2 3 4 5</description>
     </item>
     
     <item>
@@ -7528,7 +7528,7 @@
       <pubDate>Sat, 07 Oct 2000 13:49:29 +0900</pubDate>
       
       <guid>https://www.nqou.net/2000/10/07/134929/</guid>
-      <description>&amp;lt;p&amp;gt;ソースコード&amp;lt;/p&amp;gt; #!/usr/bin/perl #BEGIN{ # print &amp;quot;Content-type:</description>
+      <description>&amp;lt;p&amp;gt;ソースコード&amp;lt;/p&amp;gt; 1 2 3 4 5</description>
     </item>
     
     <item>
@@ -7537,7 +7537,7 @@
       <pubDate>Sat, 07 Oct 2000 13:43:40 +0900</pubDate>
       
       <guid>https://www.nqou.net/2000/10/07/134340/</guid>
-      <description>&amp;lt;p&amp;gt;ソースコード&amp;lt;/p&amp;gt; #!/usr/bin/perl #BEGIN{ # print &amp;quot;Content-type:</description>
+      <description>&amp;lt;p&amp;gt;ソースコード&amp;lt;/p&amp;gt; 1 2 3 4 5</description>
     </item>
     
     <item>
@@ -7546,7 +7546,7 @@
       <pubDate>Sat, 07 Oct 2000 13:42:47 +0900</pubDate>
       
       <guid>https://www.nqou.net/2000/10/07/134247/</guid>
-      <description>&amp;lt;p&amp;gt;ソースコード&amp;lt;/p&amp;gt; #!/usr/bin/perl #BEGIN{ # print &amp;quot;Content-type:</description>
+      <description>&amp;lt;p&amp;gt;ソースコード&amp;lt;/p&amp;gt; 1 2 3 4 5</description>
     </item>
     
     <item>
@@ -7555,7 +7555,7 @@
       <pubDate>Sat, 07 Oct 2000 13:42:00 +0900</pubDate>
       
       <guid>https://www.nqou.net/2000/10/07/134200/</guid>
-      <description>&amp;lt;p&amp;gt;ソースコード&amp;lt;/p&amp;gt; #!/usr/bin/perl -w BEGIN{ print &amp;quot;Content-type:</description>
+      <description>&amp;lt;p&amp;gt;ソースコード&amp;lt;/p&amp;gt; 1 2 3 4 5</description>
     </item>
     
     <item>
@@ -7564,7 +7564,7 @@
       <pubDate>Sat, 07 Oct 2000 13:39:06 +0900</pubDate>
       
       <guid>https://www.nqou.net/2000/10/07/133906/</guid>
-      <description>&amp;lt;p&amp;gt;ソースコード&amp;lt;/p&amp;gt; #!/usr/bin/perl use Benchmark; use Jcode;</description>
+      <description>&amp;lt;p&amp;gt;ソースコード&amp;lt;/p&amp;gt; 1 2 3 4 5</description>
     </item>
     
     <item>
@@ -7573,7 +7573,7 @@
       <pubDate>Sat, 07 Oct 2000 13:36:15 +0900</pubDate>
       
       <guid>https://www.nqou.net/2000/10/07/133615/</guid>
-      <description>&amp;lt;p&amp;gt;ソースコード&amp;lt;/p&amp;gt; #!/usr/bin/perl # 初期設</description>
+      <description>&amp;lt;p&amp;gt;ソースコード&amp;lt;/p&amp;gt; 1 2 3 4 5</description>
     </item>
     
     <item>
@@ -7582,7 +7582,7 @@
       <pubDate>Sat, 07 Oct 2000 13:33:48 +0900</pubDate>
       
       <guid>https://www.nqou.net/2000/10/07/133348/</guid>
-      <description>&amp;lt;p&amp;gt;ソースコード&amp;lt;/p&amp;gt; #!/usr/bin/perl # print &amp;quot;Content-type: text/htmlnn&amp;quot;;</description>
+      <description>&amp;lt;p&amp;gt;ソースコード&amp;lt;/p&amp;gt; 1 2 3 4 5</description>
     </item>
     
     <item>
@@ -7591,7 +7591,7 @@
       <pubDate>Sat, 07 Oct 2000 13:33:11 +0900</pubDate>
       
       <guid>https://www.nqou.net/2000/10/07/133311/</guid>
-      <description>&amp;lt;p&amp;gt;ソースコード&amp;lt;/p&amp;gt; #!/usr/bin/perl # 初期設</description>
+      <description>&amp;lt;p&amp;gt;ソースコード&amp;lt;/p&amp;gt; 1 2 3 4 5</description>
     </item>
     
     <item>
@@ -7600,7 +7600,7 @@
       <pubDate>Sat, 07 Oct 2000 13:32:38 +0900</pubDate>
       
       <guid>https://www.nqou.net/2000/10/07/133238/</guid>
-      <description>&amp;lt;p&amp;gt;ソースコード&amp;lt;/p&amp;gt; #!/usr/bin/perl # 初期設</description>
+      <description>&amp;lt;p&amp;gt;ソースコード&amp;lt;/p&amp;gt; 1 2 3 4 5</description>
     </item>
     
     <item>
@@ -7609,7 +7609,7 @@
       <pubDate>Sat, 07 Oct 2000 13:32:00 +0900</pubDate>
       
       <guid>https://www.nqou.net/2000/10/07/133200/</guid>
-      <description>&amp;lt;p&amp;gt;ソースコード&amp;lt;/p&amp;gt; #!/usr/bin/perl # 初期設</description>
+      <description>&amp;lt;p&amp;gt;ソースコード&amp;lt;/p&amp;gt; 1 2 3 4 5</description>
     </item>
     
     <item>
@@ -7618,7 +7618,7 @@
       <pubDate>Sat, 07 Oct 2000 13:31:16 +0900</pubDate>
       
       <guid>https://www.nqou.net/2000/10/07/133116/</guid>
-      <description>&amp;lt;p&amp;gt;ソースコード&amp;lt;/p&amp;gt; #!/usr/bin/perl # 初期設</description>
+      <description>&amp;lt;p&amp;gt;ソースコード&amp;lt;/p&amp;gt; 1 2 3 4 5</description>
     </item>
     
     <item>
@@ -7627,7 +7627,7 @@
       <pubDate>Sat, 07 Oct 2000 13:30:10 +0900</pubDate>
       
       <guid>https://www.nqou.net/2000/10/07/133010/</guid>
-      <description>&amp;lt;p&amp;gt;ソースコード&amp;lt;/p&amp;gt; #!/usr/bin/perl # 初期設</description>
+      <description>&amp;lt;p&amp;gt;ソースコード&amp;lt;/p&amp;gt; 1 2 3 4 5</description>
     </item>
     
     <item>
@@ -7645,7 +7645,7 @@
       <pubDate>Sat, 07 Oct 2000 13:28:17 +0900</pubDate>
       
       <guid>https://www.nqou.net/2000/10/07/132817/</guid>
-      <description>&amp;lt;p&amp;gt;ソースコード&amp;lt;/p&amp;gt; #!/usr/bin/perl # 初期設</description>
+      <description>&amp;lt;p&amp;gt;ソースコード&amp;lt;/p&amp;gt; 1 2 3 4 5</description>
     </item>
     
     <item>
@@ -7654,7 +7654,7 @@
       <pubDate>Sat, 07 Oct 2000 13:27:43 +0900</pubDate>
       
       <guid>https://www.nqou.net/2000/10/07/132743/</guid>
-      <description>&amp;lt;p&amp;gt;ソースコード&amp;lt;/p&amp;gt; #!/usr/bin/perl # require Jcode; #</description>
+      <description>&amp;lt;p&amp;gt;ソースコード&amp;lt;/p&amp;gt; 1 2 3 4 5</description>
     </item>
     
     <item>
@@ -7663,7 +7663,7 @@
       <pubDate>Sat, 07 Oct 2000 13:27:00 +0900</pubDate>
       
       <guid>https://www.nqou.net/2000/10/07/132700/</guid>
-      <description>&amp;lt;p&amp;gt;ソースコード&amp;lt;/p&amp;gt; #!/usr/bin/perl # require Jcode; #</description>
+      <description>&amp;lt;p&amp;gt;ソースコード&amp;lt;/p&amp;gt; 1 2 3 4 5</description>
     </item>
     
     <item>
@@ -7672,7 +7672,7 @@
       <pubDate>Sat, 07 Oct 2000 13:25:52 +0900</pubDate>
       
       <guid>https://www.nqou.net/2000/10/07/132552/</guid>
-      <description>&amp;lt;p&amp;gt;ソースコード&amp;lt;/p&amp;gt; #!/usr/bin/perl # require Jcode; #</description>
+      <description>&amp;lt;p&amp;gt;ソースコード&amp;lt;/p&amp;gt; 1 2 3 4 5</description>
     </item>
     
     <item>
@@ -7681,7 +7681,7 @@
       <pubDate>Sat, 07 Oct 2000 13:25:19 +0900</pubDate>
       
       <guid>https://www.nqou.net/2000/10/07/132519/</guid>
-      <description>&amp;lt;p&amp;gt;ソースコード&amp;lt;/p&amp;gt; #!/usr/bin/perl @styles=(&amp;quot;../../ipp.css&amp;quot;,&amp;quot;../test.css&amp;quot;); $ti</description>
+      <description>&amp;lt;p&amp;gt;ソースコード&amp;lt;/p&amp;gt; 1 2 3 4 5</description>
     </item>
     
     <item>
@@ -7690,7 +7690,7 @@
       <pubDate>Sat, 07 Oct 2000 13:23:59 +0900</pubDate>
       
       <guid>https://www.nqou.net/2000/10/07/132359/</guid>
-      <description>&amp;lt;p&amp;gt;ソースコード&amp;lt;/p&amp;gt; #!/usr/bin/perl @styles=(&amp;quot;../../ipp.css&amp;quot;,&amp;quot;../test.css&amp;quot;); $ti</description>
+      <description>&amp;lt;p&amp;gt;ソースコード&amp;lt;/p&amp;gt; 1 2 3 4 5</description>
     </item>
     
     <item>
@@ -7699,7 +7699,7 @@
       <pubDate>Sat, 07 Oct 2000 13:23:30 +0900</pubDate>
       
       <guid>https://www.nqou.net/2000/10/07/132330/</guid>
-      <description>&amp;lt;p&amp;gt;ソースコード&amp;lt;/p&amp;gt; #!/usr/bin/perl @styles=(&amp;quot;../../ipp.css&amp;quot;,&amp;quot;../test.css&amp;quot;); $ti</description>
+      <description>&amp;lt;p&amp;gt;ソースコード&amp;lt;/p&amp;gt; 1 2 3 4 5</description>
     </item>
     
     <item>
@@ -7708,7 +7708,7 @@
       <pubDate>Sat, 07 Oct 2000 13:22:45 +0900</pubDate>
       
       <guid>https://www.nqou.net/2000/10/07/132245/</guid>
-      <description>&amp;lt;p&amp;gt;ソースコード&amp;lt;/p&amp;gt; #!/usr/bin/perl @styles=(&amp;quot;../../ipp.css&amp;quot;,&amp;quot;../test.css&amp;quot;); $scrname=&amp;quot;&amp;quot;; $filename=&amp;quot;&amp;quot;; {</description>
+      <description>&amp;lt;p&amp;gt;ソースコード&amp;lt;/p&amp;gt; 1 2 3 4 5</description>
     </item>
     
     <item>
@@ -7717,7 +7717,7 @@
       <pubDate>Sat, 07 Oct 2000 13:21:59 +0900</pubDate>
       
       <guid>https://www.nqou.net/2000/10/07/132159/</guid>
-      <description>&amp;lt;p&amp;gt;ソースコード&amp;lt;/p&amp;gt; #!/usr/bin/perl @styles=(&amp;quot;../../ipp.css&amp;quot;,&amp;quot;../test.css&amp;quot;); { &amp;a</description>
+      <description>&amp;lt;p&amp;gt;ソースコード&amp;lt;/p&amp;gt; 1 2 3 4 5</description>
     </item>
     
     <item>
@@ -7726,7 +7726,7 @@
       <pubDate>Sat, 07 Oct 2000 13:21:04 +0900</pubDate>
       
       <guid>https://www.nqou.net/2000/10/07/132104/</guid>
-      <description>&amp;lt;p&amp;gt;ソースコード&amp;lt;/p&amp;gt; #!/usr/bin/perl @styles=(&amp;quot;../../ipp.css&amp;quot;,&amp;quot;../test.css&amp;quot;); { &amp;a</description>
+      <description>&amp;lt;p&amp;gt;ソースコード&amp;lt;/p&amp;gt; 1 2 3 4 5</description>
     </item>
     
     <item>
@@ -7735,7 +7735,7 @@
       <pubDate>Sat, 07 Oct 2000 13:18:13 +0900</pubDate>
       
       <guid>https://www.nqou.net/2000/10/07/131813/</guid>
-      <description>&amp;lt;p&amp;gt;ソースコード&amp;lt;/p&amp;gt; #!/usr/bin/perl @styles=(&amp;quot;../../ipp.css&amp;quot;,&amp;quot;../test.css&amp;quot;); @wdays = (</description>
+      <description>&amp;lt;p&amp;gt;ソースコード&amp;lt;/p&amp;gt; 1 2 3 4 5</description>
     </item>
     
     <item>
@@ -7744,7 +7744,7 @@
       <pubDate>Sat, 07 Oct 2000 13:16:48 +0900</pubDate>
       
       <guid>https://www.nqou.net/2000/10/07/131648/</guid>
-      <description>&amp;lt;p&amp;gt;ソースコード&amp;lt;/p&amp;gt; #!/usr/bin/perl @styles=(&amp;quot;../../ipp.css&amp;quot;,&amp;quot;../test.css&amp;quot;); { &amp;a</description>
+      <description>&amp;lt;p&amp;gt;ソースコード&amp;lt;/p&amp;gt; 1 2 3 4 5</description>
     </item>
     
     <item>
@@ -7753,7 +7753,7 @@
       <pubDate>Sat, 07 Oct 2000 12:50:35 +0900</pubDate>
       
       <guid>https://www.nqou.net/2000/10/07/125035/</guid>
-      <description>&amp;lt;p&amp;gt;ソースコード&amp;lt;/p&amp;gt; #!/usr/bin/perl @styles=(&amp;quot;../../ipp.css&amp;quot;); { &amp;a</description>
+      <description>&amp;lt;p&amp;gt;ソースコード&amp;lt;/p&amp;gt; 1 2 3 4 5</description>
     </item>
     
     <item>

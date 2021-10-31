@@ -14,7 +14,7 @@
 <meta itemprop="name" content="CodeRepos版NanoAをWindowsで動かす方法">
 <meta itemprop="description" content="前回は失敗したが、CodeReposにあるNanoAで再挑戦"><meta itemprop="datePublished" content="2009-03-20T03:42:44+09:00" />
 <meta itemprop="dateModified" content="2009-03-20T03:42:44+09:00" />
-<meta itemprop="wordCount" content="1015">
+<meta itemprop="wordCount" content="1030">
 <meta itemprop="keywords" content="perl," />
 
 <meta name="twitter:card" content="summary"/>
@@ -218,16 +218,47 @@
 <p>NanoAの配布元は0.16が最新だったが、CodeReposの最新版は、バージョンが0.17であった。</p>
 <p>CodeRepos版は開発版ということで、そのまま使えるはずだったのだが、Windows上で使うには少し工夫が必要だった（詳しい説明は「lib/NanoA/Config.pm」に書いてあるので、そちらを読もう）ので、将来のため（？）に手順をメモしておく。
 まず、CodeReposからsvnで外部参照ごとチェックアウトする。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">svn co http://svn.coderepos.org/share/lang/perl/NanoA/trunk NanoA
-</code></pre></div><p>次に「nanoa.cgi」と同じフォルダに「nanoa-conf.cgi」という名前のファイルを作成する。その中身はとりあえず以下のとおりにしておく。</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">data_dir = var
-</code></pre><p>ついでに、同じフォルダに新しく「var」というフォルダを作っておく。</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">svn co http://svn.coderepos.org/share/lang/perl/NanoA/trunk NanoA
+</code></pre></td></tr></table>
+</div>
+</div><p>次に「nanoa.cgi」と同じフォルダに「nanoa-conf.cgi」という名前のファイルを作成する。その中身はとりあえず以下のとおりにしておく。</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">data_dir = var
+</code></pre></td></tr></table>
+</div>
+</div><p>ついでに、同じフォルダに新しく「var」というフォルダを作っておく。</p>
 <p>ここまでやってから、nanoa.cgiにブラウザでアクセスすると、管理用パスワードの設定画面になる（はず）。</p>
 <p>開発版のまま使うのならこれでOK。</p>
 <p>NanoAには、配布版を作成する機能があるのだが、Windows上では簡単には動かない。</p>
 <p>が、とりあえず、nanoa.cgiを作ればあとは何とかなるので、それもついでにメモしておく。</p>
 <p>nanoa.cgiと同じフォルダの「Makefile.PL」を少し変更する。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">Index: Makefile.PL
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">Index: Makefile.PL
 ===================================================================
 <span style="color:#f92672">--- Makefile.PL    (リビジョン 31380)
 </span><span style="color:#f92672"></span><span style="color:#a6e22e">+++ Makefile.PL    (作業コピー)
@@ -240,7 +271,9 @@ nanoadir:
 </span><span style="color:#a6e22e">+    $(NOECHO)$(MKPATH) $(NANOADIR)
 </span><span style="color:#a6e22e"></span>nanoacgi: $(NANOA_CGI_FILES)
 $(FULLPERLRUN) tools/concat.pl -s -n strict,warnings $(NANOA_CGI_FILES) &gt; $(NANOADIR)/nanoa.cgi
-</code></pre></div><p>この状態で、いつものように「perl Makefile.PL」→「dmake」としたあと「dmake nanoa」とする。</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>この状態で、いつものように「perl Makefile.PL」→「dmake」としたあと「dmake nanoa」とする。</p>
 <p>途中で「tar」がない、あるいは、tarコマンドに失敗した、とか言われるが、「dist-cgi」の中にバージョン名（今回は「0.17」）のフォルダがあり、さらにその中に配布版「nanoa.cgi」ができています。</p>
 <p>あとは、その新しくできた「nanoa.cgi」と同じフォルダに「appフォルダ」と、MENTAから「extlibフォルダ」をコピーしてやれば、ほぼ配布版ができあがり。</p>
 <p>必要なら「.htaccess」や「nanoa-conf.cgi」、「varフォルダ」もコピーすれば使える。</p>

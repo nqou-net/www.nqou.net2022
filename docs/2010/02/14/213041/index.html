@@ -14,7 +14,7 @@
 <meta itemprop="name" content="NanoAでデータベースを使ってみる">
 <meta itemprop="description" content="小さな事からコツコツと。 ということで、nopasteのデータ"><meta itemprop="datePublished" content="2010-02-14T21:30:41+09:00" />
 <meta itemprop="dateModified" content="2010-02-14T21:30:41+09:00" />
-<meta itemprop="wordCount" content="886">
+<meta itemprop="wordCount" content="962">
 <meta itemprop="keywords" content="perl," />
 
 <meta name="twitter:card" content="summary"/>
@@ -220,26 +220,100 @@
 <p>データベースを使うにあたって、はじめは素のDBIを使っていたのだが、折角なのでプラグインを作ってみた。
 と言っても、MENTAのプラグインをNanoA用に書き直しただけなんだけど。
 やはりページネーションが便利ですよ。</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">package plugin::sql;
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">66
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">67
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">68
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">69
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">70
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">package plugin::sql;
 use strict;
 use warnings;
 use utf8;
 use base qw(NanoA::Plugin);
 sub init_plugin {
 my ($klass, $controller) = @_;
-no strict 'refs';
-no warnings 'redefine';
+no strict &#39;refs&#39;;
+no warnings &#39;redefine&#39;;
 # Usage: $app-&gt;sql_do($statement);
-*{$controller . '::sql_do'} = sub {
+*{$controller . &#39;::sql_do&#39;} = sub {
 my ($app, $sql) = @_;
 my $dbh = $app-&gt;db;
 $dbh-&gt;do($sql) or die $dbh-&gt;errstr;
 };
 # Usage: $app-&gt;sql_prepare_exec($statement, \@params);
-*{$controller . '::sql_prepare_exec'} = sub {
+*{$controller . &#39;::sql_prepare_exec&#39;} = sub {
 my ($app, $sql, $params) = @_;
 my $dbh = $app-&gt;db;
-$params = [] unless ref $params eq 'ARRAY';
+$params = [] unless ref $params eq &#39;ARRAY&#39;;
 my $sth = $dbh-&gt;prepare($sql) or die $dbh-&gt;errstr;
 $sth-&gt;execute(@{$params}) or die $dbh-&gt;errstr;
 $sth-&gt;finish;
@@ -247,10 +321,10 @@ undef $sth;
 };
 # Usage: my $rows = $app-&gt;sql_select_all($statement, \@params);
 # $rows : foreach my $row (@{$rows}) { $row-&gt;{field} }
-*{$controller . '::sql_select_all'} = sub {
+*{$controller . &#39;::sql_select_all&#39;} = sub {
 my ($app, $sql, $params) = @_;
 my $dbh = $app-&gt;db;
-$params = [] unless ref $params eq 'ARRAY';
+$params = [] unless ref $params eq &#39;ARRAY&#39;;
 my $sth = $dbh-&gt;prepare($sql) or die $dbh-&gt;errstr;
 $sth-&gt;execute(@{$params}) or die $dbh-&gt;errstr;
 my @res;
@@ -266,11 +340,11 @@ return \@res;
 # $pager-&gt;{page}    : page number
 # $pager-&gt;{has_next}: has next page
 # $pager-&gt;{has_prev}: has prev page
-*{$controller . '::sql_select_paginate'} = sub {
+*{$controller . &#39;::sql_select_paginate&#39;} = sub {
 my ($app, $sql, $params, $paging) = @_;
 my $dbh = $app-&gt;db;
-$params = [] unless ref $params eq 'ARRAY';
-$sql .= ' LIMIT ? OFFSET ?';
+$params = [] unless ref $params eq &#39;ARRAY&#39;;
+$sql .= &#39; LIMIT ? OFFSET ?&#39;;
 my $sth = $dbh-&gt;prepare($sql) or die $dbh-&gt;errstr;
 $sth-&gt;execute(@{$params}, $paging-&gt;{rows}+1, ($paging-&gt;{page}-1)*$paging-&gt;{rows}) or die $dbh-&gt;errstr;
 my @res;
@@ -290,23 +364,45 @@ return (\@res, {page =&gt; $paging-&gt;{page}, has_next =&gt; $has_next, has_pre
 # initialize myself
 __PACKAGE__-&gt;init_plugin(__PACKAGE__);
 1;
-</code></pre><p>ついでに、それ用のテンプレートも作ってみた。
+</code></pre></td></tr></table>
+</div>
+</div><p>ついでに、それ用のテンプレートも作ってみた。
 まあ、MENTAの（以下略</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">? my $pager = $c-&gt;{pager};
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">? my $pager = $c-&gt;{pager};
 ? my $action = $c-&gt;{action};
 ? my $page_n = $pager-&gt;{page};
 ? if ($pager-&gt;{has_prev}) {
-&lt;a href=&quot;&lt;?= $app-&gt;uri_for($action, { page =&gt; $page_n - 1 }) ?&gt;&quot; rel=&quot;prev&quot;&gt;前&lt;/a&gt;
+&lt;a href=&#34;&lt;?= $app-&gt;uri_for($action, { page =&gt; $page_n - 1 }) ?&gt;&#34; rel=&#34;prev&#34;&gt;前&lt;/a&gt;
 ? } else {
-&lt;span class=&quot;disabled&quot;&gt;前&lt;/span&gt;
+&lt;span class=&#34;disabled&#34;&gt;前&lt;/span&gt;
 ? }
 |（現在：&lt;?= $page_n ?&gt;ページ）|
 ? if ($pager-&gt;{has_next}) {
-&lt;a href=&quot;&lt;?= $app-&gt;uri_for($action, { page =&gt; $page_n + 1 }) ?&gt;&quot; rel=&quot;next&quot;&gt;次&lt;/a&gt;
+&lt;a href=&#34;&lt;?= $app-&gt;uri_for($action, { page =&gt; $page_n + 1 }) ?&gt;&#34; rel=&#34;next&#34;&gt;次&lt;/a&gt;
 ? } else {
-&lt;span class=&quot;disabled&quot;&gt;次&lt;/span&gt;
+&lt;span class=&#34;disabled&#34;&gt;次&lt;/span&gt;
 ? }
-</code></pre><p>formプラグインを通じてHTML::AutoFormを使っているが、checkboxのcheckedが思ったように動かない。
+</code></pre></td></tr></table>
+</div>
+</div><p>formプラグインを通じてHTML::AutoFormを使っているが、checkboxのcheckedが思ったように動かない。
 checked=&gt;1にしても、チェックが入っていない状態になる。
 HTML::AutoFormのtディレクトリにあるコードと同じように書いているのだけど。
 何故だ。</p>

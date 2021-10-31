@@ -14,7 +14,7 @@
 <meta itemprop="name" content="Windowsでエラーを無視してファイルをコピーするには">
 <meta itemprop="description" content="Windowsでエラーを無視してファイルをコピーするには結局"><meta itemprop="datePublished" content="2008-07-21T00:18:06+09:00" />
 <meta itemprop="dateModified" content="2008-07-21T00:18:06+09:00" />
-<meta itemprop="wordCount" content="299">
+<meta itemprop="wordCount" content="300">
 <meta itemprop="keywords" content="windows," />
 
 <meta name="twitter:card" content="summary"/>
@@ -217,8 +217,15 @@
   <p>Windowsでエラーを無視してファイルをコピーするには結局これしかないんでしょうか。</p>
 <!-- raw HTML omitted -->
 <p>まあ、定型文みたいなものでしょうけど、頻繁に使うコマンドでもないので、とっさには出てこないですね。</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">C:¥backup&gt;xcopy /s /e /c /h g:¥*.* c:¥backup
-</code></pre><p>ディレクトリの構造ごとコピーするのは、GUIのエクスプローラのほうが秀でているわけですし、エラーを無視するオプションを（例えば右ドラッグ＆ドロップで）選択できたりすることは可能だと思うのですがね。
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">C:¥backup&gt;xcopy /s /e /c /h g:¥*.* c:¥backup
+</code></pre></td></tr></table>
+</div>
+</div><p>ディレクトリの構造ごとコピーするのは、GUIのエクスプローラのほうが秀でているわけですし、エラーを無視するオプションを（例えば右ドラッグ＆ドロップで）選択できたりすることは可能だと思うのですがね。
 で、エラーがあったファイルはあとで画面に表示して、かつ、そのリストは名前をつけて保存できるようにする。
 その程度のことはできると思うのですけどね。</p>
 

@@ -14,7 +14,7 @@
 <meta itemprop="name" content="リメイク：ファイルに書き出す">
 <meta itemprop="description" content="&lt;p&gt;CGI::Prettyは、出力するHTML"><meta itemprop="datePublished" content="2006-11-02T12:50:32+09:00" />
 <meta itemprop="dateModified" content="2006-11-02T12:50:32+09:00" />
-<meta itemprop="wordCount" content="594">
+<meta itemprop="wordCount" content="659">
 <meta itemprop="keywords" content="perl," />
 
 <meta name="twitter:card" content="summary"/>
@@ -221,27 +221,147 @@
 <pre><code>                             &lt;p&gt;CGI::Prettyは、出力するHTMLソースをインデントをつけて整形して出力してくれる。&lt;br /&gt;
 </code></pre>
 <p>それ以外は、CGI.pmと同じで、使い方も<!-- raw HTML omitted --></p>
-<pre tabindex="0"><code class="language-default" data-lang="default">use CGI;
-</code></pre><!-- raw HTML omitted -->
-<pre tabindex="0"><code class="language-default" data-lang="default">use CGI::Pretty;
-</code></pre><!-- raw HTML omitted -->
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">use CGI;
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">use CGI::Pretty;
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
-<pre tabindex="0"><code class="language-default" data-lang="default">use encoding &quot;euc-jp&quot;;
-</code></pre><!-- raw HTML omitted -->
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">use encoding &#34;euc-jp&#34;;
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
-<pre tabindex="0"><code class="language-default" data-lang="default">Wide character in print at ....
-</code></pre><!-- raw HTML omitted -->
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Wide character in print at ....
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
-<pre tabindex="0"><code class="language-default" data-lang="default">#!/usr/bin/perl -T
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">66
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">67
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">68
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">69
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">70
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">71
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">72
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">73
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">74
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">75
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">76
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">77
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">78
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">79
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">80
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">81
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">82
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">83
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">84
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">85
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">86
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">87
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">88
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">#!/usr/bin/perl -T
 
 use strict;
 use warnings;
 use Encode;
-use encoding &quot;euc-jp&quot;;
+use encoding &#34;euc-jp&#34;;
 
 use CGI::Pretty;
 use FileHandle;
@@ -249,29 +369,29 @@ use FileHandle;
 {
     my $cgi    = CGI::Pretty-&gt;new;
     my $styles = [q{../../ipp.css}, q{../test.css}];
-    my $wdays  = [&quot;日&quot;, &quot;月&quot;, &quot;火&quot;, &quot;水&quot;, &quot;木&quot;, &quot;金&quot;, &quot;土&quot;];
+    my $wdays  = [&#34;日&#34;, &#34;月&#34;, &#34;火&#34;, &#34;水&#34;, &#34;木&#34;, &#34;金&#34;, &#34;土&#34;];
 
-    my $output = &quot;&quot;;
+    my $output = &#34;&#34;;
 
-    $output .= &amp;amp;print_header($cgi, &quot;テスト３&quot;, $styles);
+    $output .= &amp;amp;print_header($cgi, &#34;テスト３&#34;, $styles);
 
-    $output .= $cgi-&gt;p(&quot;「temp.txt」に書き出します。&quot;);
+    $output .= $cgi-&gt;p(&#34;「temp.txt」に書き出します。&#34;);
 
-    my $fh = FileHandle-&gt;new(&quot;./temp.txt&quot;, &quot;w&quot;) or die;
-    my $fh_output = &quot;&quot;;
-    $fh_output .= &quot;この文は temp.txt の中身になるはずです。n&quot;;
-    $fh_output .= &quot;書き込んだ時間は、&quot;;
+    my $fh = FileHandle-&gt;new(&#34;./temp.txt&#34;, &#34;w&#34;) or die;
+    my $fh_output = &#34;&#34;;
+    $fh_output .= &#34;この文は temp.txt の中身になるはずです。n&#34;;
+    $fh_output .= &#34;書き込んだ時間は、&#34;;
 
     my ($sec, $min, $hour, $mday, $mon, $year, $wday, $yday, $isdst) = localtime;
-    $fh_output .= sprintf(&quot;%04d/%02d/%02d(%s) %02d:%02d:%02dです。n&quot;, $year + 1900, $mon + 1, $mday, $wdays-&gt;[$wday], $hour, $min, $sec);
-    $fh-&gt;print(Encode::encode(&quot;utf8&quot;, $fh_output));
+    $fh_output .= sprintf(&#34;%04d/%02d/%02d(%s) %02d:%02d:%02dです。n&#34;, $year + 1900, $mon + 1, $mday, $wdays-&gt;[$wday], $hour, $min, $sec);
+    $fh-&gt;print(Encode::encode(&#34;utf8&#34;, $fh_output));
     undef $fh;
 
-    $output .= $cgi-&gt;div({-class =&gt; &quot;test&quot;}, $cgi-&gt;a({-href =&gt; &quot;./temp.txt&quot;}, &quot;temp.txtを見る&quot;));
+    $output .= $cgi-&gt;div({-class =&gt; &#34;test&#34;}, $cgi-&gt;a({-href =&gt; &#34;./temp.txt&#34;}, &#34;temp.txtを見る&#34;));
 
     $output .= &amp;amp;print_footer($cgi);
 
-    print Encode::encode(&quot;utf8&quot;, $output);
+    print Encode::encode(&#34;utf8&#34;, $output);
 }
 
 exit;
@@ -280,21 +400,21 @@ exit;
 sub print_header {
     my ($cgi, $title, $styles) = @_;
 
-    my $result = &quot;&quot;;
-    $result .= $cgi-&gt;header({ -charset =&gt; &quot;utf-8&quot; });
+    my $result = &#34;&#34;;
+    $result .= $cgi-&gt;header({ -charset =&gt; &#34;utf-8&#34; });
     $result .= $cgi-&gt;start_html({
-            -lang  =&gt; 'ja',
+            -lang  =&gt; &#39;ja&#39;,
             -title =&gt; $title,
             -style =&gt; { src =&gt; $styles },
         });
-    $result .= $cgi-&gt;div({-class =&gt; &quot;head&quot;},
+    $result .= $cgi-&gt;div({-class =&gt; &#34;head&#34;},
             $cgi-&gt;h1($title),
             $cgi-&gt;hr,
-            $cgi-&gt;a({-href =&gt; &quot;../../../&quot; }, &quot;Home&quot;),
-            &quot;/&quot;,
-            $cgi-&gt;a({-href =&gt; &quot;../../&quot; }, &quot;Perl&quot;),
-            &quot;/&quot;,
-            $cgi-&gt;a({-href =&gt; &quot;../&quot; }, &quot;TestCGI Index&quot;),
+            $cgi-&gt;a({-href =&gt; &#34;../../../&#34; }, &#34;Home&#34;),
+            &#34;/&#34;,
+            $cgi-&gt;a({-href =&gt; &#34;../../&#34; }, &#34;Perl&#34;),
+            &#34;/&#34;,
+            $cgi-&gt;a({-href =&gt; &#34;../&#34; }, &#34;TestCGI Index&#34;),
             $cgi-&gt;hr,
         );
 
@@ -305,18 +425,18 @@ sub print_header {
 sub print_footer {
     my ($cgi) = @_;
 
-    my $fh = FileHandle-&gt;new(&quot;../../sig.txt&quot;) or die;
-    my $sig = join &quot;&quot;, $fh-&gt;getlines;
+    my $fh = FileHandle-&gt;new(&#34;../../sig.txt&#34;) or die;
+    my $sig = join &#34;&#34;, $fh-&gt;getlines;
     undef $fh;
 
-    my $result = &quot;&quot;;
-    $result .= $cgi-&gt;div({-class =&gt; &quot;foot&quot;},
+    my $result = &#34;&#34;;
+    $result .= $cgi-&gt;div({-class =&gt; &#34;foot&#34;},
             $cgi-&gt;hr,
-            $cgi-&gt;a({-href =&gt; &quot;../../../&quot; }, &quot;Home&quot;),
-            &quot;/&quot;,
-            $cgi-&gt;a({-href =&gt; &quot;../../&quot; }, &quot;Perl&quot;),
-            &quot;/&quot;,
-            $cgi-&gt;a({-href =&gt; &quot;../&quot; }, &quot;TestCGI Index&quot;),
+            $cgi-&gt;a({-href =&gt; &#34;../../../&#34; }, &#34;Home&#34;),
+            &#34;/&#34;,
+            $cgi-&gt;a({-href =&gt; &#34;../../&#34; }, &#34;Perl&#34;),
+            &#34;/&#34;,
+            $cgi-&gt;a({-href =&gt; &#34;../&#34; }, &#34;TestCGI Index&#34;),
             $cgi-&gt;hr,
             $sig,
         );
@@ -324,7 +444,9 @@ sub print_footer {
 
     return $result;
 }
-</code></pre><pre><code>                          &lt;/div&gt;
+</code></pre></td></tr></table>
+</div>
+</div><pre><code>                          &lt;/div&gt;
 </code></pre>
 
   </div>

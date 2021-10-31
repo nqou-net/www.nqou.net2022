@@ -14,7 +14,7 @@
 <meta itemprop="name" content="Mojo::URLでschemeが変更できなくて困っていた話">
 <meta itemprop="description" content="Mojoliciousで、必ずhttpsの状態でアクセスされ"><meta itemprop="datePublished" content="2011-10-04T12:00:00+09:00" />
 <meta itemprop="dateModified" content="2011-10-04T12:00:00+09:00" />
-<meta itemprop="wordCount" content="546">
+<meta itemprop="wordCount" content="562">
 <meta itemprop="keywords" content="mojolicious," />
 
 <meta name="twitter:card" content="summary"/>
@@ -216,30 +216,58 @@
   <div>
   <p>Mojoliciousで、必ずhttpsの状態でアクセスされるように、こんな感じのコードを書いていたのですが、思ったように動かなくて困りました。
 schemeの部分がhttpsにならなくて、無限ループになっていました。</p>
-<pre tabindex="0"><code class="language-default" data-lang="default"># NG
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text"># NG
 if ( $self-&gt;req-&gt;is_secure ) {
-$self-&gt;redirect_to('/login');
+$self-&gt;redirect_to(&#39;/login&#39;);
 }
 else {
-my $url = $self-&gt;url_for('/login')-&gt;scheme('https');
+my $url = $self-&gt;url_for(&#39;/login&#39;)-&gt;scheme(&#39;https&#39;);
 $self-&gt;redirect_to($url-&gt;to_abs);
 }
-</code></pre><p>schemeは属性（attribute）という風になっていたし、オブジェクトの中身を見ても、schemeは値を持っているように見えたので、何故変更できないんだろう、と思っていました。
+</code></pre></td></tr></table>
+</div>
+</div><p>schemeは属性（attribute）という風になっていたし、オブジェクトの中身を見ても、schemeは値を持っているように見えたので、何故変更できないんだろう、と思っていました。
 色々試しているうちに、to_absが文字列を返すのではないことに気づきました。
 なんとなく、文字列を返すメソッドだと思っていたのですが、実際にはオブジェクトを返しています。
 文字列を返しているように見えたのは、実際にはto_stringが呼ばれていたからです。
 敗因は、to_absが何を返すのかを理解できていなかった事です。
 実は、to_absを呼んだ時点で、現在のbaseになるURLがcloneされるので、先に設定した（つもりの）schemeが無視されてしまうようです。
 つまり、schemeを設定しようと思えば、まずto_absで絶対URLオブジェクト（？）にしておいてからやれば良い、ということですね。</p>
-<pre tabindex="0"><code class="language-default" data-lang="default"># OK
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text"># OK
 if ( $self-&gt;req-&gt;is_secure ) {
-$self-&gt;redirect_to('/login');
+$self-&gt;redirect_to(&#39;/login&#39;);
 }
 else {
-my $url = $self-&gt;url_for('/login')-&gt;to_abs-&gt;scheme('https');
+my $url = $self-&gt;url_for(&#39;/login&#39;)-&gt;to_abs-&gt;scheme(&#39;https&#39;);
 $self-&gt;redirect_to($url);
 }
-</code></pre><p>思い込みって怖いですね。</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>思い込みって怖いですね。</p>
 <!-- raw HTML omitted -->
 
   </div>

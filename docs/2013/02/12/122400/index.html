@@ -14,7 +14,7 @@
 <meta itemprop="name" content="「QRコネクト」なら遠慮無く複雑なパスワードが設定できる">
 <meta itemprop="description" content="おはようございます。 若林（@nqounet）です。 無線LAN"><meta itemprop="datePublished" content="2013-02-12T12:24:00+09:00" />
 <meta itemprop="dateModified" content="2013-02-12T12:24:00+09:00" />
-<meta itemprop="wordCount" content="707">
+<meta itemprop="wordCount" content="711">
 <meta itemprop="keywords" content="undef," />
 
 <meta name="twitter:card" content="summary"/>
@@ -226,11 +226,21 @@
 <h2 id="qrコネクトの仕様非公式">QRコネクトの仕様（非公式）</h2>
 <p>「QRコネクト」で使うQRコードは、単純なテキストです。</p>
 <p>そのテキストの書式例は概ね以下のとおりです。</p>
-<pre tabindex="0"><code class="language-default" data-lang="default">WI:
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">WI:
 SS:SSID
 EN:WPA
 PA:password
-</code></pre><p>「WI」は認識用のheaderと思われます。</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>「WI」は認識用のheaderと思われます。</p>
 <p>「SS」はSSIDです。ステルス状態のものでも問題ありません。</p>
 <p>「EN」は暗号化の方法です。WPA2でも設定は「WPA」で可能です。「WEP」は試していませんが、このアプリを使ってもらうのであれば「WPA」で良いと思います。</p>
 <p>「PA」はパスワードです。これまで設定が面倒なので短い設定にしていたかもしれませんが、遠慮無く複雑なパスワードが設定できます。</p>
