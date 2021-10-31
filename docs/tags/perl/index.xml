@@ -6,7 +6,16 @@
     <description>Recent content in perl on nqou.net</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 14 May 2019 01:54:21 +0900</lastBuildDate><atom:link href="https://www.nqou.net/tags/perl/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 31 Oct 2021 19:10:08 +0900</lastBuildDate><atom:link href="https://www.nqou.net/tags/perl/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>第1回-Mooで覚えるオブジェクト指向プログラミング</title>
+      <link>https://www.nqou.net/2021/10/31/191008/</link>
+      <pubDate>Sun, 31 Oct 2021 19:10:08 +0900</pubDate>
+      
+      <guid>https://www.nqou.net/2021/10/31/191008/</guid>
+      <description>@nqounetです。 （前文） もうかなり前ですが、初心者向け</description>
+    </item>
+    
     <item>
       <title>Perl の「令和」への対応</title>
       <link>https://www.nqou.net/2019/05/14/015421/</link>

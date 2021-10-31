@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.88.1" />
+
+  <title>第1回-Mooで覚えるオブジェクト指向プログラミング &middot; nqou.net</title>
+
+  <meta name="description" content="" />
+
+  
+
+<meta itemprop="name" content="第1回-Mooで覚えるオブジェクト指向プログラミング">
+<meta itemprop="description" content="@nqounetです。 （前文） もうかなり前ですが、初心者向け"><meta itemprop="datePublished" content="2021-10-31T19:10:08+09:00" />
+<meta itemprop="dateModified" content="2021-10-31T19:10:08+09:00" />
+<meta itemprop="wordCount" content="1263">
+<meta itemprop="keywords" content="perl,programming," />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="第1回-Mooで覚えるオブジェクト指向プログラミング"/>
+<meta name="twitter:description" content="@nqounetです。 （前文） もうかなり前ですが、初心者向け"/>
+
+
+<meta property="og:title" content="第1回-Mooで覚えるオブジェクト指向プログラミング" />
+<meta property="og:description" content="@nqounetです。 （前文） もうかなり前ですが、初心者向け" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.nqou.net/2021/10/31/191008/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-10-31T19:10:08+09:00" />
+<meta property="article:modified_time" content="2021-10-31T19:10:08+09:00" /><meta property="og:site_name" content="nqou.net" />
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type":"Person",
+      "@id": "https://www.nqou.net/#author",
+      "name":  null ,
+      "image": {
+        "@type":"ImageObject",
+        "url": "https://www.gravatar.com/avatar/96267d00f89345335b76d21e0417ae39?s=400&d=mp"
+      },
+      "description": "Whisky, Perl, Kansai.pm"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.nqou.net/#website",
+      "url": "https://www.nqou.net/",
+      "name": "nqou.net",
+      "description": "Whisky, Perl, Kansai.pm",
+      "publisher": {
+        "@id": "https://www.nqou.net/#author"
+      },
+      "inLanguage": "ja"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.nqou.net/2021/10/31/191008/#webpage",
+      "url": "https://www.nqou.net/2021/10/31/191008/",
+      "name": "第1回-Mooで覚えるオブジェクト指向プログラミング",
+      "isPartOf": {
+        "@id": "https://www.nqou.net/#website"
+      },
+      "about": {
+         "@id": "https://www.nqou.net/#author"
+      },
+      "datePublished": "2021-10-31T19:10:08+09:00",
+      "dateModified": "2021-10-31T19:10:08+09:00",
+      "description": "@nqounetです。 （前文） もうかなり前ですが、初心者向け",
+      "inLanguage": "ja",
+      "potentialAction": [
+        {
+          "@type": "ReadAction",
+          "target": [
+            "https://www.nqou.net/2021/10/31/191008/"
+          ]
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "isPartOf": {
+        "@id": "https://www.nqou.net/2021/10/31/191008/#webpage"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://www.nqou.net/2021/10/31/191008/#webpage"
+      },
+      "headline": "第1回-Mooで覚えるオブジェクト指向プログラミング",
+      "datePublished": "2021-10-31T19:10:08+09:00",
+      "dateModified": "2021-10-31T19:10:08+09:00",
+      "publisher": {
+        "@id": "https://www.nqou.net/#author"
+      },
+      "keywords": [
+        "perl",
+        "programming"
+      ],
+      "articleSection": [
+      ],
+      "inLanguage": "ja",
+      "author": {
+        "@type": "Person",
+        "name":  null 
+      },
+      "potentialAction": [
+        {
+          "@type": "CommentAction",
+          "name": "Comment",
+          "target": [
+            "https://www.nqou.net/2021/10/31/191008/#comments"
+          ]
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/print.css"
+        media="print">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/poole.css">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/hyde.css">
+
+  
+
+
+  
+
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+        crossorigin="anonymous" />
+
+  <link rel="apple-touch-icon-precomposed"
+        sizes="144x144"
+        href="/apple-touch-icon-144-precomposed.png">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  </head>
+<body>
+  <aside class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      
+      <div class="author-image">
+        <a href="https://www.nqou.net/">
+          <img src="https://www.gravatar.com/avatar/96267d00f89345335b76d21e0417ae39?s=200&d=mp" class="img-circle img-headshot center" alt="Gravatar">
+        </a>
+      </div>
+      
+
+      <h1>nqou.net</h1>
+
+      
+      <p class="lead">Whisky, Perl, Kansai.pm</p>
+      
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li>
+          <a href="https://www.nqou.net/">Home</a>
+        </li>
+        <li>
+          <a href="/about/">About</a>
+        </li><li>
+          <a href="/post/">Posts</a>
+        </li><li>
+          <a href="/tags/">Tags</a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="social-icons">
+      
+      <a href="https://github.com/nqounet" rel="me" title="GitHub" target="_blank">
+        <i class="fab fa-github" aria-hidden="true"></i>
+      </a>
+      
+      <a href="https://twitter.com/nqounet" rel="me" title="Twitter" target="_blank">
+        <i class="fab fa-twitter" aria-hidden="true"></i>
+      </a>
+      
+    </section>
+  </div>
+</aside>
+
+
+  <main class="content container">
+  <div class="post">
+  <h1 class="title">第1回-Mooで覚えるオブジェクト指向プログラミング</h1>
+  
+
+  <div class="post-date">
+    <time datetime="2021-10-31T19:10:08&#43;0900">Oct 31, 2021</time> <span class="readtime">&middot; 3 min read</span>
+  </div>
+
+  <div>
+  <p><a href="https://twitter.com/nqounet">@nqounet</a>です。</p>
+<p>（前文）</p>
+<p>もうかなり前ですが、初心者向けにMooを使ったオブジェクト指向プログラミングの記事を書こうとしていて、下書きが残ったままでした。</p>
+<p>今回、サイトジェネレータをHugoに変更しましたが、下書きになっていたものを順次解放していこうと思います。</p>
+<p>（本文）</p>
+<p>Perl鍋やなにわPerlでもそこそこ評判が良かったので、Mooを使ったオブジェクト指向なプログラミングについて書いてみます。</p>
+<p>なお、なるべくシンプルな記述にしたいので、厳密には正しくない事も書いています。</p>
+<p>Mooについて深く知りたい方は、原典を見ることをオススメします。</p>
+<ul>
+<li><a href="https://perlnabe.connpass.com/">Perl鍋</a></li>
+<li><a href="https://naniwaperl.doorkeeper.jp/">なにわPerl</a></li>
+<li><a href="https://metacpan.org/pod/Moo">Moo</a></li>
+</ul>
+<h2 id="blessについて">blessについて</h2>
+<p>これまでにPerlのオブジェクト指向について学んだ方は、blessすればOK、みたいに覚えている方が多いと思います。</p>
+<p>しかし、改めてPerlでオブジェクト指向プログラミングを楽しむのであれば、blessについては忘れてしまいましょう。</p>
+<p>今は、もっと良い方法があります。</p>
+<h2 id="mooを使ってみる">Mooを使ってみる</h2>
+<p>まずは数行のプログラムを書いて動かしてみましょう。</p>
+<p>Perlの実行環境が無い場合は、Perl入学式の資料を見ながら環境構築をしてみましょう。</p>
+<p><a href="https://github.com/perl-entrance-org/workshop-2015-01/blob/master/slide.md">https://github.com/perl-entrance-org/workshop-2015-01/blob/master/slide.md</a></p>
+<p>つまづいたらTwitterなどで「#Perl入学式」というハッシュタグを付けてつぶやいてみると、誰かが助けてくれるかもしれません。</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#66d9ef">package</span> MyApp {
+    <span style="color:#66d9ef">use</span> utf8;
+    <span style="color:#66d9ef">use</span> Moo;
+    has hoge <span style="color:#f92672">=&gt;</span> (is <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;rw&#39;</span>);
+
+    <span style="color:#66d9ef">sub</span> <span style="color:#a6e22e">show</span> {
+        <span style="color:#66d9ef">my</span> $self <span style="color:#f92672">=</span> shift;
+        <span style="color:#66d9ef">print</span> $self<span style="color:#f92672">-&gt;</span>hoge;
+    }
+};
+
+<span style="color:#66d9ef">my</span> $app <span style="color:#f92672">=</span> MyApp<span style="color:#f92672">-&gt;</span><span style="color:#66d9ef">new</span>;
+$app<span style="color:#f92672">-&gt;</span>hoge(<span style="color:#e6db74">&#39;ほげ&#39;</span>);
+$app<span style="color:#f92672">-&gt;</span>show;
+</code></pre></td></tr></table>
+</div>
+</div><p>上記のコードを「hoge.pl」として保存してから、ターミナルで以下のように入力し、書いたプログラム（コード）を実行してみましょう。</p>
+<p>コピペでも良いのですが、自分自身の手で書いてみるとより深く理解できると思います。</p>
+<p>まずはコピペで動くのが確認できたら、改めて書いてみて、実行してみてください。</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cpanm Moo
+perl hoge.pl
+</code></pre></td></tr></table>
+</div>
+</div><p>「ほげ」という風に表示されましたか？</p>
+<p>よくわからないかもしれませんが、これがオブジェクト指向の第一歩です。</p>
+<h2 id="まずは用語を覚えましょう">まずは用語を覚えましょう</h2>
+<p>オブジェクト指向プログラミングでは、いくつかの専門的な用語を使います。</p>
+<p>まず「オブジェクト」というのは、「属性」と「機能」を持った「まとまり」の事です。</p>
+<p>そして、その「まとまり」は「クラス」で定義します。</p>
+<p>「属性」は、「プロパティ（property）」や「メンバ（member）」「アトリビュート（attribute）」などと呼ばれています。
+私は「プロパティ」と呼んでいるので、今後はプロパティと書いていきます。</p>
+<p>「機能」は、「メソッド（method）」と呼ぶことが多いでしょう。</p>
+<p>これらの用語は、何も考えずにそのまま覚えてしまうほうが良いです。日本語だと用語として覚えにくい場合は、カタカナで覚えてしまいましょう。使っていくうちに自然と理解できるようになります。</p>
+<p>次回は先ほど書いたコードの説明もしてみたいと思います。</p>
+<h2 id="まとめ">まとめ</h2>
+<ul>
+<li>bless は忘れよう</li>
+<li>コピペではなく書いて動かしてみよう</li>
+<li>用語（オブジェクト、クラス、プロパティ、メソッド）を覚えよう</li>
+</ul>
+
+  </div>
+
+  
+<div>
+  <ul class="tags">
+  <li>
+    <a href="https://www.nqou.net/tags/perl/" class="tag-link">perl</a>
+  </li>
+  
+  <li>
+    <a href="https://www.nqou.net/tags/programming/" class="tag-link">programming</a>
+  </li>
+  </ul>
+</div>
+
+
+
+  <div class="share-buttons">
+  <a class="twitter-share-button"
+     href="#"
+     title="Share on Twitter"
+     data-url="https://www.nqou.net/2021/10/31/191008/"
+     data-text="第1回-Mooで覚えるオブジェクト指向プログラミング"><i class="fab fa-twitter"></i></a>
+
+  <a class="linkedin-share-button"
+     href="#"
+     title="Share on LinkedIn"
+     data-url="https://www.nqou.net/2021/10/31/191008/"
+     data-text="第1回-Mooで覚えるオブジェクト指向プログラミング"><i class="fab fa-linkedin-in"></i></a>
+
+  <a class="facebook-share-button"
+     href="#"
+     title="Share on Facebook"
+     data-url="https://www.nqou.net/2021/10/31/191008/"
+     data-text="第1回-Mooで覚えるオブジェクト指向プログラミング"><i class="fab fa-facebook"></i></a>
+
+  <a class="telegram-share-button"
+     href="#"
+     title="Share on Telegram"
+     data-url="https://www.nqou.net/2021/10/31/191008/"
+     data-text="第1回-Mooで覚えるオブジェクト指向プログラミング"><i class="fab fa-telegram"></i></a>
+
+  <a class="pinterest-share-button"
+     href="#"
+     title="Share on Pinterest"
+     data-url="https://www.nqou.net/2021/10/31/191008/"
+     data-text="第1回-Mooで覚えるオブジェクト指向プログラミング"><i class="fab fa-pinterest"></i></a>
+</div>
+
+
+  <div class="comments">
+    <h2>Comments</h2>
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "nqounet" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+</div>
+  </main>
+
+  <footer>
+  <div>
+    <p>
+      &copy; nqounet 2021
+
+      &middot; <a href="https://creativecommons.org/licenses/by/4.0" target="_blank">CC BY 4.0</a>
+
+      
+    </p>
+  </div>
+</footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
+          integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
+          crossorigin="anonymous"></script>
+
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/soho.js"></script>
+
+  
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-E50H9ESN7E', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>
