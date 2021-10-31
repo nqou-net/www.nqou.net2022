@@ -12,18 +12,18 @@
   
 
 <meta itemprop="name" content="実行順序">
-<meta itemprop="description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 sub get_1 {print &#39;a&#39;; 1;} sub get_2 {print &#39;b&#39;; 2;} sub get_3 {print &#39;c&#39;; 3;} print get_1;"><meta itemprop="datePublished" content="2006-09-27T07:23:43+09:00" />
+<meta itemprop="description" content="見るともなく古いファイルを見ていたら、変なコードを見つけた。"><meta itemprop="datePublished" content="2006-09-27T07:23:43+09:00" />
 <meta itemprop="dateModified" content="2006-09-27T07:23:43+09:00" />
-<meta itemprop="wordCount" content="117">
+<meta itemprop="wordCount" content="174">
 <meta itemprop="keywords" content="perl," />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="実行順序"/>
-<meta name="twitter:description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 sub get_1 {print &#39;a&#39;; 1;} sub get_2 {print &#39;b&#39;; 2;} sub get_3 {print &#39;c&#39;; 3;} print get_1;"/>
+<meta name="twitter:description" content="見るともなく古いファイルを見ていたら、変なコードを見つけた。"/>
 
 
 <meta property="og:title" content="実行順序" />
-<meta property="og:description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 sub get_1 {print &#39;a&#39;; 1;} sub get_2 {print &#39;b&#39;; 2;} sub get_3 {print &#39;c&#39;; 3;} print get_1;" />
+<meta property="og:description" content="見るともなく古いファイルを見ていたら、変なコードを見つけた。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.nqou.net/2006/09/27/072343/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2006-09-27T07:23:43+09:00" />
@@ -70,7 +70,7 @@
       },
       "datePublished": "2006-09-27T07:23:43+09:00",
       "dateModified": "2006-09-27T07:23:43+09:00",
-      "description": "1 2 3 4 5 6 7 8 9 10 11 12 13 sub get_1 {print \u0026#39;a\u0026#39;; 1;} sub get_2 {print \u0026#39;b\u0026#39;; 2;} sub get_3 {print \u0026#39;c\u0026#39;; 3;} print get_1;",
+      "description": "見るともなく古いファイルを見ていたら、変なコードを見つけた。",
       "inLanguage": "ja",
       "potentialAction": [
         {
@@ -214,7 +214,7 @@
   </div>
 
   <div>
-  <!-- raw HTML omitted -->
+  <p>見るともなく古いファイルを見ていたら、変なコードを見つけた。</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -232,26 +232,39 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">sub get_1 {print &#39;a&#39;; 1;}
-sub get_2 {print &#39;b&#39;; 2;}
-sub get_3 {print &#39;c&#39;; 3;}
-print get_1;
-print get_2;
-print get_3;
-print &#34;n&#34;;
-print &#34;-----n&#34;;
-print get_1,
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#66d9ef">sub</span> <span style="color:#a6e22e">get_1</span> {<span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#39;a&#39;</span>; <span style="color:#ae81ff">1</span>;}
+<span style="color:#66d9ef">sub</span> <span style="color:#a6e22e">get_2</span> {<span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#39;b&#39;</span>; <span style="color:#ae81ff">2</span>;}
+<span style="color:#66d9ef">sub</span> <span style="color:#a6e22e">get_3</span> {<span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#39;c&#39;</span>; <span style="color:#ae81ff">3</span>;}
+<span style="color:#66d9ef">print</span> get_1;
+<span style="color:#66d9ef">print</span> get_2;
+<span style="color:#66d9ef">print</span> get_3;
+<span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#34;\n&#34;</span>;
+<span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#34;-----\n&#34;</span>;
+<span style="color:#66d9ef">print</span> get_1,
       get_2,
       get_3,
-      &#34;n&#34;;
-print &#34;-----n&#34;;
+      <span style="color:#e6db74">&#34;\n&#34;</span>;
+<span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#34;-----\n&#34;</span>;
 </code></pre></td></tr></table>
 </div>
-</div><!-- raw HTML omitted -->
-<pre><code>                             &lt;p&gt;どこかで見た記憶があったので探してみたら、「&lt;a href=&quot;http://d.hatena.ne.jp/hiratara/20060424/1145888188&quot;&gt;a geek - perlの評価順&lt;/a&gt;」だった。&lt;/p&gt;
-</code></pre>
-<!-- raw HTML omitted -->
-
+</div><p>なんだろう？と思って実行してみてびっくりした。</p>
+<p>どこかで見た記憶があったので探してみたら、「<a href="http://d.hatena.ne.jp/hiratara/20060424/1145888188">a geek - perlの評価順</a>」だった。</p>
+<p>同じネタで何度もびっくりしてしまうのは、記憶力の欠如ですか？</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">a1b2c3
+-----
+abc123
+-----
+</code></pre></td></tr></table>
+</div>
+</div>
   </div>
 
   

@@ -2443,7 +2443,7 @@
       <pubDate>Wed, 27 Sep 2006 07:23:43 +0900</pubDate>
       
       <guid>https://www.nqou.net/2006/09/27/072343/</guid>
-      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 sub get_1 {print &amp;#39;a&amp;#39;; 1;} sub get_2 {print &amp;#39;b&amp;#39;; 2;} sub get_3 {print &amp;#39;c&amp;#39;; 3;} print get_1;</description>
+      <description>見るともなく古いファイルを見ていたら、変なコードを見つけた。</description>
     </item>
     
     <item>
@@ -2452,7 +2452,7 @@
       <pubDate>Tue, 26 Sep 2006 07:49:02 +0900</pubDate>
       
       <guid>https://www.nqou.net/2006/09/26/074902/</guid>
-      <description>1 2 3 4 5 6 7 8 9 sub hoge { my %elm = ( foo =&amp;gt; &amp;#34;FOO&amp;#34;, bar =&amp;gt; &amp;#34;BAR&amp;#34;, @_ ); print $elm{foo}.&amp;#34;n&amp;#34;; print $elm{bar}.&amp;#34;n&amp;#34;; } &amp;</description>
+      <description>サブルーチンで初期値を持っておきたい時や、サブルーチン呼び出</description>
     </item>
     
     <item>
@@ -2488,7 +2488,7 @@
       <pubDate>Mon, 18 Sep 2006 06:29:01 +0900</pubDate>
       
       <guid>https://www.nqou.net/2006/09/18/062901/</guid>
-      <description></description>
+      <description>さっき気付いたのだが、ActivePerlでモジュール管理を</description>
     </item>
     
     <item>
