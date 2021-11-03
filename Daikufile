@@ -1,6 +1,6 @@
 desc 'build';
 task build => sub {
-    sh qw{tools/rename_posts.pl};
+    sh qw{tools/build.pl};
     sh qw{hugo -v};
 };
 

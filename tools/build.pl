@@ -70,8 +70,8 @@ while (my $post = $iterator->()) {
     # }
 
     # # 本文に文字列が含まれていたらタグを追加
-    # my $target = 'perl';
-    # my $tag    = 'perl';
+    # my $target = 'heroku';
+    # my $tag    = 'heroku';
     # if ($after =~ /$target\b/i) {
     #     my $tags = $info->{tags};
     #
