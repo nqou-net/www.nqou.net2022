@@ -6,7 +6,16 @@
     <description>Recent content in heroku on nqou.net</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 12 Jun 2018 11:52:34 +0900</lastBuildDate><atom:link href="https://www.nqou.net/tags/heroku/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 09 Sep 2020 08:42:05 +0900</lastBuildDate><atom:link href="https://www.nqou.net/tags/heroku/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>何か書こうとしていた</title>
+      <link>https://www.nqou.net/2020/09/09/084205/</link>
+      <pubDate>Wed, 09 Sep 2020 08:42:05 +0900</pubDate>
+      
+      <guid>https://www.nqou.net/2020/09/09/084205/</guid>
+      <description>最近 Kotlin を勉強し始めた。 なかなか刺激になったので、久しぶりに何</description>
+    </item>
+    
     <item>
       <title>heroku の container:push が非推奨になっていた</title>
       <link>https://www.nqou.net/2018/06/12/115234/</link>

@@ -3,7 +3,7 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.88.1" />
+  <meta name="generator" content="Hugo 0.89.0" />
 
   <title>ファイルから読み込む &middot; nqou.net</title>
 
@@ -12,18 +12,18 @@
   
 
 <meta itemprop="name" content="ファイルから読み込む">
-<meta itemprop="description" content="&lt;p&gt;ソースコード&lt;/p&gt; 1 2 3 4 5"><meta itemprop="datePublished" content="2000-10-07T13:16:48+09:00" />
+<meta itemprop="description" content="そりゃ、includeと同じ事くらいはCGIでもやってみない"><meta itemprop="datePublished" content="2000-10-07T13:16:48+09:00" />
 <meta itemprop="dateModified" content="2000-10-07T13:16:48+09:00" />
-<meta itemprop="wordCount" content="224">
+<meta itemprop="wordCount" content="859">
 <meta itemprop="keywords" content="perl," />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="ファイルから読み込む"/>
-<meta name="twitter:description" content="&lt;p&gt;ソースコード&lt;/p&gt; 1 2 3 4 5"/>
+<meta name="twitter:description" content="そりゃ、includeと同じ事くらいはCGIでもやってみない"/>
 
 
 <meta property="og:title" content="ファイルから読み込む" />
-<meta property="og:description" content="&lt;p&gt;ソースコード&lt;/p&gt; 1 2 3 4 5" />
+<meta property="og:description" content="そりゃ、includeと同じ事くらいはCGIでもやってみない" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.nqou.net/2000/10/07/131648/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2000-10-07T13:16:48+09:00" />
@@ -70,7 +70,7 @@
       },
       "datePublished": "2000-10-07T13:16:48+09:00",
       "dateModified": "2000-10-07T13:16:48+09:00",
-      "description": "\u0026lt;p\u0026gt;ソースコード\u0026lt;/p\u0026gt; 1 2 3 4 5",
+      "description": "そりゃ、includeと同じ事くらいはCGIでもやってみない",
       "inLanguage": "ja",
       "potentialAction": [
         {
@@ -137,7 +137,7 @@
   
 
 
-  
+  <link type="text/css" rel="stylesheet" href="/css/custom.css">
 
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap">
@@ -210,19 +210,18 @@
   
 
   <div class="post-date">
-    <time datetime="2000-10-07T13:16:48&#43;0900">Oct 7, 2000</time> <span class="readtime">&middot; 1 min read</span>
+    <time datetime="2000-10-07T13:16:48&#43;0900">Oct 7, 2000</time> <span class="readtime">&middot; 2 min read</span>
   </div>
 
   <div>
-  <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<pre><code>                             &lt;p&gt;ソースコード&lt;/p&gt;
-</code></pre>
+  <p>そりゃ、includeと同じ事くらいはCGIでもやってみないとね・・・。</p>
+<p>「open(IN,&ldquo;ファイル名&rdquo;)」だけど、ファイル名にはサーバーのルートからの指定は無視されるのかな？「/sig.txt」とやると何も表示されなかった・・・。</p>
+<p>と思っていたけど、思いっきり勘違いをしていた。CGIを実行するときは、サーバー自身のディレクトリの参照が必要なのだった。だから、ホストのルートではなく、ルートディレクトリを参照していたみたい。ディレクトリの指定も気をつけないと、変なところにファイルを作りかねない・・・。</p>
+<p>実は、「テスト１」（便宜上こう呼ぶ）の方だけど、titleタグの方の変数が訂正してなかった。よく考えてみると、タイトルバーにはURLが表示されていたような気がする。サブルーチンでの引数の扱い方も気をつけよう。</p>
+<p>ちなみに、エディタは「Perl Editor」を使っている。プログラミング用のエディタみたいで、サブルーチンや変数の一覧が表示されて、使用されている場所へジャンプする事もできる。エディタとしては少し能力不足だけど、他の人が作ったプログラムを見るのにはとても便利だ。ホイールも認識するのが気に入ってる。意外といいエディタだと思っても、ホイールに対応してないのが多いから、この手のソフトはバージョンアップに期待したい。作者のページは「川千原千」です。</p>
+<p>・・・時は過ぎ・・・</p>
+<p>「Perl Editor」も結構便利になってきた。漢字コードや改行の種類を気にしないで編集できるのが特にいい感じ。</p>
+<p>ソースコード</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -273,57 +272,55 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">#!/usr/bin/perl
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#75715e">#!/usr/bin/perl</span>
 
-@styles=(&#34;../../ipp.css&#34;,&#34;../test.css&#34;);
+@styles<span style="color:#f92672">=</span>(<span style="color:#e6db74">&#34;../../ipp.css&#34;</span>,<span style="color:#e6db74">&#34;../test.css&#34;</span>);
 
 {
-    &amp;amp;printHeader(&#34;テスト２&#34;);
+    <span style="color:#f92672">&amp;</span>amp;printHeader(<span style="color:#e6db74">&#34;テスト２&#34;</span>);
 
-    print &#34;「sig.txt」を読み込みます。n&#34;;
-    print &#34;&lt;div class=test&gt;&#34;;
-    open(IN,&#34;../../sig.txt&#34;);
-    @sig1=&lt;IN&gt;;
-    foreach $line(@sig1){
-        print $line;
+    <span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#34;「sig.txt」を読み込みます。n&#34;</span>;
+    <span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#34;&lt;div class=test&gt;&#34;</span>;
+    open(IN,<span style="color:#e6db74">&#34;../../sig.txt&#34;</span>);
+    @sig1<span style="color:#f92672">=</span><span style="color:#e6db74">&lt;IN&gt;</span>;
+    <span style="color:#66d9ef">foreach</span> $line(@sig1){
+        <span style="color:#66d9ef">print</span> $line;
     }
     close(IN);
-    print &#34;&lt;/div&gt;&#34;;
+    <span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#34;&lt;/div&gt;&#34;</span>;
 
-    &amp;amp;printFooter;
+    <span style="color:#f92672">&amp;</span>amp;printFooter;
 
     exit;
 }
 
-sub printHeader{
-    print &#34;Content-type: text/htmlnn&#34;;
-    print &#34;&lt;html lang=ja&gt;&lt;head&gt;&lt;title&gt;$_[0]&lt;/title&gt;n&#34;;
-    foreach $st (@styles){
-        print &#34;&lt;link rel=&#34;stylesheet&#34; type=&#34;text/css&#34; href=&#34;$st&#34;&gt;n&#34;;
+<span style="color:#66d9ef">sub</span> <span style="color:#a6e22e">printHeader</span>{
+    <span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#34;Content-type: text/htmlnn&#34;</span>;
+    <span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#34;&lt;html lang=ja&gt;&lt;head&gt;&lt;title&gt;$_[0]&lt;/title&gt;n&#34;</span>;
+    <span style="color:#66d9ef">foreach</span> $st (@styles){
+        <span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#34;&lt;link rel=&#34;</span>stylesheet<span style="color:#e6db74">&#34; type=&#34;</span>text<span style="color:#f92672">/</span>css<span style="color:#e6db74">&#34; href=&#34;</span>$st<span style="color:#e6db74">&#34;&gt;n&#34;</span>;
     }
-    print &#34;&lt;/head&gt;&lt;body&gt;n&#34;;
-    print &#34;&lt;div class=head&gt;n&#34;;
-    print &#34;&lt;h1&gt;$_[0]&lt;/h1&gt;&lt;hr&gt;n&#34;;
-    print &#34;&lt;a href=&#34;../../../index.htm&#34;&gt;Home&lt;/a&gt; / &lt;a href=&#34;../../&#34;&gt;Perl&lt;/a&gt; / &lt;a href=&#34;../&#34;&gt;TestCGI Index&lt;/a&gt;n&#34;;
-    print &#34;&lt;hr&gt;&lt;/div&gt;n&#34;;
+    <span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#34;&lt;/head&gt;&lt;body&gt;n&#34;</span>;
+    <span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#34;&lt;div class=head&gt;n&#34;</span>;
+    <span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#34;&lt;h1&gt;$_[0]&lt;/h1&gt;&lt;hr&gt;n&#34;</span>;
+    <span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#34;&lt;a href=&#34;</span><span style="color:#f92672">..</span><span style="color:#e6db74">/../</span><span style="color:#f92672">..</span><span style="color:#e6db74">/index.htm&#34;&gt;Home&lt;/</span>a<span style="color:#f92672">&gt;</span> <span style="color:#e6db74">/ &lt;a href=&#34;../</span><span style="color:#f92672">..</span><span style="color:#e6db74">/&#34;&gt;Perl&lt;/</span>a<span style="color:#f92672">&gt;</span> <span style="color:#e6db74">/ &lt;a href=&#34;../</span><span style="color:#e6db74">&#34;&gt;TestCGI Index&lt;/a&gt;n&#34;</span>;
+    <span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#34;&lt;hr&gt;&lt;/div&gt;n&#34;</span>;
 }
 
-sub printFooter{
-    print &#34;&lt;div class=foot&gt;n&#34;;
-    print &#34;&lt;hr&gt;n&#34;;
-    print &#34;&lt;a href=&#34;../../../index.htm&#34;&gt;Home&lt;/a&gt; / &lt;a href=&#34;../../&#34;&gt;Perl&lt;/a&gt; / &lt;a href=&#34;../&#34;&gt;TestCGI Index&lt;/a&gt;n&#34;;
-    print &#34;&lt;hr&gt;n&#34;;
-    open(IN,&#34;../../sig.txt&#34;);
-    while ($sig=&lt;IN&gt;){print $sig;}
+<span style="color:#66d9ef">sub</span> <span style="color:#a6e22e">printFooter</span>{
+    <span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#34;&lt;div class=foot&gt;n&#34;</span>;
+    <span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#34;&lt;hr&gt;n&#34;</span>;
+    <span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#34;&lt;a href=&#34;</span><span style="color:#f92672">..</span><span style="color:#e6db74">/../</span><span style="color:#f92672">..</span><span style="color:#e6db74">/index.htm&#34;&gt;Home&lt;/</span>a<span style="color:#f92672">&gt;</span> <span style="color:#e6db74">/ &lt;a href=&#34;../</span><span style="color:#f92672">..</span><span style="color:#e6db74">/&#34;&gt;Perl&lt;/</span>a<span style="color:#f92672">&gt;</span> <span style="color:#e6db74">/ &lt;a href=&#34;../</span><span style="color:#e6db74">&#34;&gt;TestCGI Index&lt;/a&gt;n&#34;</span>;
+    <span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#34;&lt;hr&gt;n&#34;</span>;
+    open(IN,<span style="color:#e6db74">&#34;../../sig.txt&#34;</span>);
+    <span style="color:#66d9ef">while</span> ($sig<span style="color:#f92672">=</span><span style="color:#e6db74">&lt;IN&gt;</span>){<span style="color:#66d9ef">print</span> $sig;}
     close(IN);
-    print &#34;&lt;/div&gt;n&#34;;
-    print &#34;&lt;/body&gt;&lt;/html&gt;n&#34;;
+    <span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#34;&lt;/div&gt;n&#34;</span>;
+    <span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#34;&lt;/body&gt;&lt;/html&gt;n&#34;</span>;
 }
 </code></pre></td></tr></table>
 </div>
-</div><pre><code>                          &lt;/div&gt;
-</code></pre>
-
+</div>
   </div>
 
   

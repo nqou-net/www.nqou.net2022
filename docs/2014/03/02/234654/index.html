@@ -3,7 +3,7 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.88.1" />
+  <meta name="generator" content="Hugo 0.89.0" />
 
   <title>「HTML Import 2」は超便利でした &middot; nqou.net</title>
 
@@ -12,18 +12,18 @@
   
 
 <meta itemprop="name" content="「HTML Import 2」は超便利でした">
-<meta itemprop="description" content=""><meta itemprop="datePublished" content="2014-03-02T23:46:54+09:00" />
+<meta itemprop="description" content="@nqounetです。 ここのところWordpressばかりい"><meta itemprop="datePublished" content="2014-03-02T23:46:54+09:00" />
 <meta itemprop="dateModified" content="2014-03-02T23:46:54+09:00" />
-<meta itemprop="wordCount" content="0">
+<meta itemprop="wordCount" content="1027">
 <meta itemprop="keywords" content="wordpress," />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="「HTML Import 2」は超便利でした"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:description" content="@nqounetです。 ここのところWordpressばかりい"/>
 
 
 <meta property="og:title" content="「HTML Import 2」は超便利でした" />
-<meta property="og:description" content="" />
+<meta property="og:description" content="@nqounetです。 ここのところWordpressばかりい" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.nqou.net/2014/03/02/234654/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2014-03-02T23:46:54+09:00" />
@@ -70,7 +70,7 @@
       },
       "datePublished": "2014-03-02T23:46:54+09:00",
       "dateModified": "2014-03-02T23:46:54+09:00",
-      "description": "",
+      "description": "@nqounetです。 ここのところWordpressばかりい",
       "inLanguage": "ja",
       "potentialAction": [
         {
@@ -137,7 +137,7 @@
   
 
 
-  
+  <link type="text/css" rel="stylesheet" href="/css/custom.css">
 
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap">
@@ -210,32 +210,36 @@
   
 
   <div class="post-date">
-    <time datetime="2014-03-02T23:46:54&#43;0900">Mar 2, 2014</time> <span class="readtime">&middot; 0 min read</span>
+    <time datetime="2014-03-02T23:46:54&#43;0900">Mar 2, 2014</time> <span class="readtime">&middot; 3 min read</span>
   </div>
 
   <div>
-  <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+  <p><a href="https://twitter.com/nqounet">@nqounet</a>です。</p>
+<p>ここのところWordpressばかりいじっているような気がします。</p>
+<p>ということで、今日はその関係のネタです。</p>
+<p>今回、ブログを引っ越すに際して、過去記事をインポートしようと思っていました。</p>
+<p>bloggerを使っていた前回で、すでに3つに点在していたので、一つに集めようと思いました。</p>
+<p>一番古いMT3時代の記事が、出力後のHTMLファイルしかなくて困っていたんですが、それを解決してくれるプラグインがありました。</p>
+<p><a href="http://wordpress.org/plugins/import-html-pages/">HTML Import 2</a>です。</p>
+<p>これは、HTMLファイルからスクレイピングしてインポートしてくれるので、必要な部分をタグで示してやればうまくインポートしてくれます。</p>
+<p><a href="/wp-content/uploads/2014/03/html-import2.png"><img src="https://www.nqou.net/wp-content/uploads/2014/03/html-import2-300x187.png" alt="html-import2"></a></p>
+<p>もともと機械的に出力したものなので、構造がしっかりしていて読み込みが簡単そうでした。</p>
+<p>ただ、一番困ったのが時間です。</p>
+<p>ファイルの更新時を取得する、という方法が示されていたのですが、さすがにそれは無理でした。</p>
+<p>で、なにか情報がないかと思ってソースを眺めていたら、コメントの中に更新時間のメタ情報（<code>&lt;dc:date&gt;&lt;/dc:date&gt;</code>）があったので、それを使うことにしました。</p>
+<p>このプラグインはコメント部分は無視するのか、あるいは無効な文字があるのか</p>
+<p>スクリプトを書こうかと思ったのですが、1回しか使わないので、エディタを使っていくつか加工してからインポートしました。</p>
+<p>加工したのは以下のとおり。</p>
+<ul>
+<li>コメントを外す（開始タグ（<code>&lt;!--</code>）のみを適当に置き換えました）</li>
+<li><code>&lt;dc:date&gt;</code>の部分を<code>&lt;div id=&quot;entry-date&quot;&gt;</code>で読めるように置き換え</li>
+<li>moreを作るために、<code>&lt;/div&gt;</code>から<code>&lt;div class=&quot;entry-more&quot;&gt;</code>までのタグを削除</li>
+</ul>
+<p>こうすることで、<code>&lt;div class=&quot;entry-body&quot;&gt;</code>を読み込むだけで綺麗にインポートできるようになりました。</p>
+<h2 id="時間のかかる処理は控えめに">時間のかかる処理は控えめに</h2>
+<p>インポートした記事数は全部で350弱だったと思いますが、さすがにHTTP越しでやるとブラウザが固まったようになります。</p>
+<p>返ってきたと思ったら真っ白な画面だったので、インポートできていないのかと思いましたが、確認するとちゃんと出来ていました。</p>
+<p>プラグインがどこまで可能なのかはわかりませんが、こういう処理の見せ方がもう少し丁寧に作りこまれるといいなぁ、と思いました。</p>
 
   </div>
 
