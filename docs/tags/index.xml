@@ -6,7 +6,16 @@
     <description>Recent content in Tags on nqou.net</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 31 Oct 2021 19:10:08 +0900</lastBuildDate><atom:link href="https://www.nqou.net/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 01 Jan 2022 00:00:00 +0900</lastBuildDate><atom:link href="https://www.nqou.net/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>undef</title>
+      <link>https://www.nqou.net/tags/undef/</link>
+      <pubDate>Sat, 01 Jan 2022 00:00:00 +0900</pubDate>
+      
+      <guid>https://www.nqou.net/tags/undef/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>perl</title>
       <link>https://www.nqou.net/tags/perl/</link>
@@ -247,15 +256,6 @@
       <pubDate>Sun, 21 Feb 2016 15:09:20 +0900</pubDate>
       
       <guid>https://www.nqou.net/tags/yonabe-perl/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>undef</title>
-      <link>https://www.nqou.net/tags/undef/</link>
-      <pubDate>Fri, 24 Jul 2015 11:36:02 +0900</pubDate>
-      
-      <guid>https://www.nqou.net/tags/undef/</guid>
       <description></description>
     </item>
     
