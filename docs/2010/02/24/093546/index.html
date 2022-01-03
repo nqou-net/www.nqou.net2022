@@ -14,7 +14,7 @@
 <meta itemprop="name" content="NanoAでAuthenticationしたい">
 <meta itemprop="description" content="データベースを使った簡単な掲示板もできたので、ユーザー登録出"><meta itemprop="datePublished" content="2010-02-24T09:35:46+09:00" />
 <meta itemprop="dateModified" content="2010-02-24T09:35:46+09:00" />
-<meta itemprop="wordCount" content="179">
+<meta itemprop="wordCount" content="556">
 <meta itemprop="keywords" content="undef," />
 
 <meta name="twitter:card" content="summary"/>
@@ -210,7 +210,7 @@
   
 
   <div class="post-date">
-    <time datetime="2010-02-24T09:35:46&#43;0900">Feb 24, 2010</time> <span class="readtime">&middot; 1 min read</span>
+    <time datetime="2010-02-24T09:35:46&#43;0900">Feb 24, 2010</time> <span class="readtime">&middot; 2 min read</span>
   </div>
 
   <div>
@@ -218,11 +218,23 @@
 折角なので参考になるようなモジュールをCPANで探してみようと思った。
 そうしたら出るわ出るわ。
 Catalystのプラグインが多いこと。</p>
-<!-- raw HTML omitted -->
 <p>とはいえ。
 CatalystではなくNanoAでAuthenticationしたいわけで。
 少し探してみたら、便利そうなモジュールがあった。</p>
-<!-- raw HTML omitted -->
+<ul>
+<li><a href="https://metacpan.org/pod/Authen::Users">Authen::Users - DBI Based User Authentication - metacpan.org</a></li>
+</ul>
+<p>SQLiteかMySQLを使って、ユーザー情報の保管や認証を助けてくれるモジュールのようだ。
+NanoAのデータベースハンドルを使えればよかったのだが、生憎とそんな機能はついていなかった。
+newすると、自動的にデータベースハンドルを作ってしまうので、認証システムは単独で使ってみることにした。
+…これは楽だ。</p>
+<p>結構簡単にユーザー登録はできた。
+本当は、ハッシュの作成に<a href="http://search.cpan.org/dist/Crypt-SaltedHash/">Crypt::SaltedHash</a>を使いたかった。
+ソースを読んでも仕組みが理解できなかったが、同じ文字列でも毎回結果がちがうので、逆引きが不可能になるしろものだ。
+しかし、Authen::Usersは、パスワードの保存方法を選べない。
+というか、結構ガチガチに仕様が決まっているようで、応用は難しそうだった。
+ということで、NanoAでどうにかしないと。
+というか、どうにかしたいなと。</p>
 
   </div>
 
