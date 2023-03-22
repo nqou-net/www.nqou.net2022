@@ -22,7 +22,7 @@
       <pubDate>Fri, 24 Jul 2015 11:36:02 +0900</pubDate>
       
       <guid>https://www.nqou.net/2015/07/24/113602/</guid>
-      <description>my @array = $self-&amp;gt;array || (); sub array { my @array = (1, 2, 3); return @array; } my @array = array() || (); print &amp;#34;@array&amp;#34;; sub array { my</description>
+      <description>@nqounetです。 何故か変にはまってしまったことがあった</description>
     </item>
     
     <item>
@@ -31,7 +31,7 @@
       <pubDate>Mon, 06 Jul 2015 07:35:35 +0900</pubDate>
       
       <guid>https://www.nqou.net/2015/07/06/073535/</guid>
-      <description></description>
+      <description>@nqounetです。 博多の人気ラーメン店「博多一双」に行っ</description>
     </item>
     
     <item>
@@ -40,7 +40,7 @@
       <pubDate>Thu, 11 Jun 2015 11:03:41 +0900</pubDate>
       
       <guid>https://www.nqou.net/2015/06/11/110341/</guid>
-      <description></description>
+      <description>@nqounetです。 大阪駅直結の大丸梅田店に、噂の「ずんだ</description>
     </item>
     
     <item>
@@ -49,7 +49,7 @@
       <pubDate>Sat, 06 Jun 2015 14:13:59 +0900</pubDate>
       
       <guid>https://www.nqou.net/2015/06/06/141359/</guid>
-      <description>1 $ ssh-keygen -t rsa -f ~/.ssh/gitolite-admin 1 $ scp ~/.ssh/gitolite-admin.pub user@host:./admin.pub 1 2 $ sudo mv admin.pub /home/gitolite $ sudo chown gitolite:gitolite /home/gitolite/admin.pub 1 2 $ sudo su -</description>
+      <description>@nqounetです。 かなり久しぶりにgitolite を触る</description>
     </item>
     
     <item>
@@ -58,7 +58,7 @@
       <pubDate>Thu, 19 Feb 2015 08:11:42 +0900</pubDate>
       
       <guid>https://www.nqou.net/2015/02/19/081142/</guid>
-      <description></description>
+      <description>@nqounetです。 今日の知見です。 そんなことも知らなかっ</description>
     </item>
     
     <item>

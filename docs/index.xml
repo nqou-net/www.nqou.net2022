@@ -409,7 +409,7 @@
       <pubDate>Sun, 20 Nov 2016 21:07:19 +0900</pubDate>
       
       <guid>https://www.nqou.net/2016/11/20/210719/</guid>
-      <description>おはようございます。 若林（@nqounet）です。 $ brew cask install macdown</description>
+      <description>おはようございます。 若林（@nqounet）です。 Lion時</description>
     </item>
     
     <item>
@@ -418,7 +418,7 @@
       <pubDate>Sun, 20 Nov 2016 00:17:05 +0900</pubDate>
       
       <guid>https://www.nqou.net/2016/11/20/001705/</guid>
-      <description>おはようございます。 若林（@nqounet）です。</description>
+      <description>おはようございます。 若林（@nqounet）です。 タッチバー</description>
     </item>
     
     <item>
@@ -427,7 +427,7 @@
       <pubDate>Sat, 29 Oct 2016 15:43:43 +0900</pubDate>
       
       <guid>https://www.nqou.net/2016/10/29/154343/</guid>
-      <description>おはようございます。 若林（@nqounet）です。</description>
+      <description>おはようございます。 若林（@nqounet）です。 開発環境の</description>
     </item>
     
     <item>
@@ -436,7 +436,7 @@
       <pubDate>Wed, 03 Aug 2016 08:09:32 +0900</pubDate>
       
       <guid>https://www.nqou.net/2016/08/03/080932/</guid>
-      <description>おはようございます。 若林（@nqounet）です。 1 2 3 4 5</description>
+      <description>おはようございます。 若林（@nqounet）です。 memcached を使って</description>
     </item>
     
     <item>
@@ -463,7 +463,7 @@
       <pubDate>Fri, 26 Feb 2016 08:25:52 +0900</pubDate>
       
       <guid>https://www.nqou.net/2016/02/26/082552/</guid>
-      <description>おはようございます。 若林（@nqounet）です。</description>
+      <description>おはようございます。 若林（@nqounet）です。 この前の水</description>
     </item>
     
     <item>
@@ -472,7 +472,7 @@
       <pubDate>Sun, 21 Feb 2016 15:09:20 +0900</pubDate>
       
       <guid>https://www.nqou.net/2016/02/21/150920/</guid>
-      <description>おはようございます。 若林（@nqounet）です。 1 2 3 4 5</description>
+      <description>おはようございます。 若林（@nqounet）です。 先日、よな</description>
     </item>
     
     <item>
@@ -481,7 +481,7 @@
       <pubDate>Mon, 08 Feb 2016 22:33:33 +0900</pubDate>
       
       <guid>https://www.nqou.net/2016/02/08/223333/</guid>
-      <description>おはようございます。 若林（@nqounet）です。</description>
+      <description>おはようございます。 若林（@nqounet）です。 2月18日</description>
     </item>
     
     <item>
@@ -490,7 +490,7 @@
       <pubDate>Mon, 08 Feb 2016 00:04:01 +0900</pubDate>
       
       <guid>https://www.nqou.net/2016/02/08/000401/</guid>
-      <description>おはようございます。 若林（@nqounet）です。</description>
+      <description>おはようございます。 若林（@nqounet）です。 ナレッジサ</description>
     </item>
     
     <item>
@@ -508,7 +508,7 @@
       <pubDate>Tue, 02 Feb 2016 08:40:59 +0900</pubDate>
       
       <guid>https://www.nqou.net/2016/02/02/084059/</guid>
-      <description>おはようございます。 若林（@nqounet）です。</description>
+      <description>おはようございます。 若林（@nqounet）です。 この前の土</description>
     </item>
     
     <item>
@@ -517,7 +517,7 @@
       <pubDate>Thu, 07 Jan 2016 07:35:26 +0900</pubDate>
       
       <guid>https://www.nqou.net/2016/01/07/073526/</guid>
-      <description>おはようございます。 若林（@nqounet）です。</description>
+      <description>おはようございます。 若林（@nqounet）です。 Kansa</description>
     </item>
     
     <item>
@@ -544,7 +544,7 @@
       <pubDate>Thu, 17 Sep 2015 07:22:09 +0900</pubDate>
       
       <guid>https://www.nqou.net/2015/09/17/072209/</guid>
-      <description>おはようございます。 若林（@nqounet）です。</description>
+      <description>おはようございます。 若林（@nqounet）です。 仕事の関係</description>
     </item>
     
     <item>
@@ -562,7 +562,7 @@
       <pubDate>Sun, 09 Aug 2015 17:35:36 +0900</pubDate>
       
       <guid>https://www.nqou.net/2015/08/09/173536/</guid>
-      <description></description>
+      <description>@nqounetです。 YAPC::Asiaも近いということで</description>
     </item>
     
     <item>
@@ -571,7 +571,7 @@
       <pubDate>Fri, 24 Jul 2015 11:36:02 +0900</pubDate>
       
       <guid>https://www.nqou.net/2015/07/24/113602/</guid>
-      <description>my @array = $self-&amp;gt;array || (); sub array { my @array = (1, 2, 3); return @array; } my @array = array() || (); print &amp;#34;@array&amp;#34;; sub array { my</description>
+      <description>@nqounetです。 何故か変にはまってしまったことがあった</description>
     </item>
     
     <item>
@@ -580,7 +580,7 @@
       <pubDate>Mon, 06 Jul 2015 07:35:35 +0900</pubDate>
       
       <guid>https://www.nqou.net/2015/07/06/073535/</guid>
-      <description></description>
+      <description>@nqounetです。 博多の人気ラーメン店「博多一双」に行っ</description>
     </item>
     
     <item>
@@ -589,7 +589,7 @@
       <pubDate>Sat, 04 Jul 2015 15:27:07 +0900</pubDate>
       
       <guid>https://www.nqou.net/2015/07/04/152707/</guid>
-      <description>1 2 3 sub update { shift-&amp;gt;delete（条件）-&amp;gt</description>
+      <description>@nqounetです。 mysqlで運用しているサービスで、1</description>
     </item>
     
     <item>
@@ -607,7 +607,7 @@
       <pubDate>Thu, 11 Jun 2015 11:03:41 +0900</pubDate>
       
       <guid>https://www.nqou.net/2015/06/11/110341/</guid>
-      <description></description>
+      <description>@nqounetです。 大阪駅直結の大丸梅田店に、噂の「ずんだ</description>
     </item>
     
     <item>
@@ -616,7 +616,7 @@
       <pubDate>Sat, 06 Jun 2015 14:13:59 +0900</pubDate>
       
       <guid>https://www.nqou.net/2015/06/06/141359/</guid>
-      <description>1 $ ssh-keygen -t rsa -f ~/.ssh/gitolite-admin 1 $ scp ~/.ssh/gitolite-admin.pub user@host:./admin.pub 1 2 $ sudo mv admin.pub /home/gitolite $ sudo chown gitolite:gitolite /home/gitolite/admin.pub 1 2 $ sudo su -</description>
+      <description>@nqounetです。 かなり久しぶりにgitolite を触る</description>
     </item>
     
     <item>
@@ -625,7 +625,7 @@
       <pubDate>Thu, 14 May 2015 09:58:42 +0900</pubDate>
       
       <guid>https://www.nqou.net/2015/05/14/095842/</guid>
-      <description>├── client.pl ├── cpanfile ├── lib │ └── MyTask │ └── Echo.pm ├── main.pl └── worker.pl</description>
+      <description>@nqounetです。 Perlで、Redisを使ったメッセー</description>
     </item>
     
     <item>
@@ -634,7 +634,7 @@
       <pubDate>Sat, 09 May 2015 09:49:41 +0900</pubDate>
       
       <guid>https://www.nqou.net/2015/05/09/094941/</guid>
-      <description>{ hypnotoad =&amp;gt; { accepts =&amp;gt; 1000, backlog =&amp;gt; 10, clients =&amp;gt; 10, graceful_timeout =&amp;gt; 20, heartbeat_interval =&amp;gt; 5, heartbeat_timeout =&amp;gt; 20, listen =&amp;gt; [qq{http://*:$ENV{PORT}}], proxy =&amp;gt; 1, requests =&amp;gt;</description>
+      <description>@nqounetです。 Mojoliciousのプロダクション</description>
     </item>
     
     <item>
@@ -643,7 +643,7 @@
       <pubDate>Mon, 13 Apr 2015 11:25:30 +0900</pubDate>
       
       <guid>https://www.nqou.net/2015/04/13/112530/</guid>
-      <description></description>
+      <description>@nqounetです。 前回に続いてHerokuネタです。 この</description>
     </item>
     
     <item>
@@ -661,7 +661,7 @@
       <pubDate>Sat, 07 Mar 2015 07:12:19 +0900</pubDate>
       
       <guid>https://www.nqou.net/2015/03/07/071219/</guid>
-      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30</description>
+      <description>@nqounetです。 第7回では、フォームに値を残しておく方</description>
     </item>
     
     <item>
@@ -679,7 +679,7 @@
       <pubDate>Tue, 03 Mar 2015 10:07:03 +0900</pubDate>
       
       <guid>https://www.nqou.net/2015/03/03/100703/</guid>
-      <description></description>
+      <description>@nqounetです。 この前の土曜日に、Perlの勉強会であ</description>
     </item>
     
     <item>
@@ -688,7 +688,7 @@
       <pubDate>Thu, 19 Feb 2015 08:11:42 +0900</pubDate>
       
       <guid>https://www.nqou.net/2015/02/19/081142/</guid>
-      <description></description>
+      <description>@nqounetです。 今日の知見です。 そんなことも知らなかっ</description>
     </item>
     
     <item>
@@ -697,7 +697,7 @@
       <pubDate>Thu, 12 Feb 2015 08:12:57 +0900</pubDate>
       
       <guid>https://www.nqou.net/2015/02/12/081257/</guid>
-      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 #!/usr/bin/env</description>
+      <description>@nqounetです。 第5回はフォームを使えるようにしました</description>
     </item>
     
     <item>
@@ -706,7 +706,7 @@
       <pubDate>Sun, 08 Feb 2015 08:13:58 +0900</pubDate>
       
       <guid>https://www.nqou.net/2015/02/08/081358/</guid>
-      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 ... any &amp;#39;/&amp;#39; =&amp;gt; sub { my ($c) = @_; my $config = $c-&amp;gt;config; my $counter</description>
+      <description>@nqounetです。 少し前にAmon2で、それなりのアプリ</description>
     </item>
     
     <item>

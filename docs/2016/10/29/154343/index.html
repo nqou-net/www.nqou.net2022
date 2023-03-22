@@ -10,18 +10,18 @@
   <meta name="description" content="" />
 
   <meta itemprop="name" content="本番環境にPerlを入れる便利な方法を忘れるので書いておく">
-<meta itemprop="description" content="おはようございます。 若林（@nqounet）です。"><meta itemprop="datePublished" content="2016-10-29T15:43:43+09:00" />
+<meta itemprop="description" content="おはようございます。 若林（@nqounet）です。 開発環境の"><meta itemprop="datePublished" content="2016-10-29T15:43:43+09:00" />
 <meta itemprop="dateModified" content="2016-10-29T15:43:43+09:00" />
-<meta itemprop="wordCount" content="25">
+<meta itemprop="wordCount" content="742">
 <meta itemprop="keywords" content="git,perl," />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="本番環境にPerlを入れる便利な方法を忘れるので書いておく"/>
-<meta name="twitter:description" content="おはようございます。 若林（@nqounet）です。"/>
+<meta name="twitter:description" content="おはようございます。 若林（@nqounet）です。 開発環境の"/>
 
 
 <meta property="og:title" content="本番環境にPerlを入れる便利な方法を忘れるので書いておく" />
-<meta property="og:description" content="おはようございます。 若林（@nqounet）です。" />
+<meta property="og:description" content="おはようございます。 若林（@nqounet）です。 開発環境の" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.nqou.net/2016/10/29/154343/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2016-10-29T15:43:43+09:00" />
@@ -67,7 +67,7 @@
       },
       "datePublished": "2016-10-29T15:43:43+09:00",
       "dateModified": "2016-10-29T15:43:43+09:00",
-      "description": "おはようございます。 若林（@nqounet）です。",
+      "description": "おはようございます。 若林（@nqounet）です。 開発環境の",
       "inLanguage": "ja",
       "potentialAction": [
         {
@@ -208,27 +208,31 @@
   
 
   <div class="post-date">
-    <time datetime="2016-10-29T15:43:43&#43;0900">Oct 29, 2016</time> <span class="readtime">&middot; 1 min read</span>
+    <time datetime="2016-10-29T15:43:43&#43;0900">Oct 29, 2016</time> <span class="readtime">&middot; 2 min read</span>
   </div>
 
   <div>
   <p>おはようございます。
 若林（<a href="https://twitter.com/nqounet">@nqounet</a>）です。</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<p>開発環境の更新は、新しい方法を発見した時にその場で変更してみて、気に入ったらそのまま使い続けたりしています。</p>
+<p>ただ、本番環境はなかなかそういうわけにはいかないので、新しい方法を発見してもなかなか試せないですよね。</p>
+<p>今さっきも、思い出して検索してみたけど、相当検索してようやく発見できたので、もう忘れないように書いておくことにしました。</p>
+<p>サーバーのセットアップ、しかも本番用となると、なかなか機会がありません。</p>
+<p>Perlの利点として、ほとんどのサーバーに入っている、という事がありましたが、最近は事情が違うと思います。</p>
+<p>ちょっとしたアプリを作る場合でも、本番環境と開発環境とは同じような状態にしたいので、plenv（perl-build）などを使ってアプリのためにPerlをビルドして使用するのが望ましいと思います。</p>
+<p>実際のところ、本番環境を構築する時は、開発環境と同じようにplenvを入れて、同じバージョンのPerlを作成して動作させる、ということをやっていました。</p>
+<p>しかし、世の中にはもっと便利なものが存在しているのでした。</p>
+<ul>
+<li><a href="https://github.com/tagomoris/xbuild">tagomoris/xbuild: Language runtimes installer for production environment</a></li>
+</ul>
+<p>本番環境でいろいろな言語をインストールするためのソフトウェアです。</p>
+<p>bashのスクリプトなので「git clone」するだけで使用可能。お手軽ですね。</p>
+<p>なお、plenvを使用せずにperl-buildだけでビルドするのはわりと定番らしいのですが、私は最近まで知りませんでした。</p>
+<ul>
+<li><a href="http://tagomoris.hatenablog.com/entry/20130326/1364289705">本番環境でのperl/ruby/nodeのセットアップ - たごもりすメモ</a></li>
+</ul>
+<p>ちなみに、この記事はブックマーク済みでしたが、この記事を探すつもりで「はてブ」を検索したんですが、出てこなかったんですよね。</p>
+<p>やはり、自分でメモするのが一番ってことで。</p>
 
   </div>
 

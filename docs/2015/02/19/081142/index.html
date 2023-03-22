@@ -10,18 +10,18 @@
   <meta name="description" content="" />
 
   <meta itemprop="name" content="Test::mysqldのbase_dirは環境変数TMPDIRで指定することもできる">
-<meta itemprop="description" content=""><meta itemprop="datePublished" content="2015-02-19T08:11:42+09:00" />
+<meta itemprop="description" content="@nqounetです。 今日の知見です。 そんなことも知らなかっ"><meta itemprop="datePublished" content="2015-02-19T08:11:42+09:00" />
 <meta itemprop="dateModified" content="2015-02-19T08:11:42+09:00" />
-<meta itemprop="wordCount" content="0">
+<meta itemprop="wordCount" content="416">
 <meta itemprop="keywords" content="undef," />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Test::mysqldのbase_dirは環境変数TMPDIRで指定することもできる"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:description" content="@nqounetです。 今日の知見です。 そんなことも知らなかっ"/>
 
 
 <meta property="og:title" content="Test::mysqldのbase_dirは環境変数TMPDIRで指定することもできる" />
-<meta property="og:description" content="" />
+<meta property="og:description" content="@nqounetです。 今日の知見です。 そんなことも知らなかっ" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.nqou.net/2015/02/19/081142/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2015-02-19T08:11:42+09:00" />
@@ -67,7 +67,7 @@
       },
       "datePublished": "2015-02-19T08:11:42+09:00",
       "dateModified": "2015-02-19T08:11:42+09:00",
-      "description": "",
+      "description": "@nqounetです。 今日の知見です。 そんなことも知らなかっ",
       "inLanguage": "ja",
       "potentialAction": [
         {
@@ -207,21 +207,23 @@
   
 
   <div class="post-date">
-    <time datetime="2015-02-19T08:11:42&#43;0900">Feb 19, 2015</time> <span class="readtime">&middot; 0 min read</span>
+    <time datetime="2015-02-19T08:11:42&#43;0900">Feb 19, 2015</time> <span class="readtime">&middot; 1 min read</span>
   </div>
 
   <div>
-  <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<pre tabindex="0"><code class="language-$" data-lang="$"></code></pre><!-- raw HTML omitted -->
+  <p><a href="https://twitter.com/nqounet">@nqounet</a>です。</p>
+<p>今日の知見です。</p>
+<p>そんなことも知らなかったのか、と思われるかもしれませんが、知りませんでした。</p>
+<p>どうせすぐに忘れるので、忘れる前に備忘録。</p>
+<h2 id="諦めないで">諦めないで</h2>
+<p><code>Test::mysqld</code>では、<code>base_dir</code>を指定しない場合は、<code>File::Temp</code>の<code>tempdir</code>で一時的なディレクトリを作って、そこにデータ置き場を作ります。</p>
+<p><code>File::Temp</code>の<code>tempdir</code>は<code>File::Spec</code>の<code>tmpdir</code>を利用して作成されますが、その作成場所は環境変数の<code>TMPDIR</code>
+で指定することができます。</p>
+<p>ソースコードを読んでいて発見したのですが、後でドキュメントを確認するとちゃんと書いてありました…。</p>
+<h2 id="実行前に設定する">実行前に設定する</h2>
+<p>テストを実行するときにだけに設定できれば良いので、<code>env</code>を使って設定し実行します。</p>
+<pre tabindex="0"><code>$ env TMPDIR=./tmp prove -vlr t
+</code></pre><p>テストの前に読み書きの高速なRAMドライブを作成しておいて、<code>TMPDIR</code>でそのディレクトリを指定する、というような使い方ができますね。</p>
 
   </div>
 

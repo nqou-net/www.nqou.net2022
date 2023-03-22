@@ -12,7 +12,7 @@
   <meta itemprop="name" content="Kansai.pm第16回ミーティングを開催してきました">
 <meta itemprop="description" content="おはようございます！ 若林（@nqounet）です。 興奮冷めや"><meta itemprop="datePublished" content="2016-03-21T11:44:16+09:00" />
 <meta itemprop="dateModified" content="2016-03-21T11:44:16+09:00" />
-<meta itemprop="wordCount" content="3332">
+<meta itemprop="wordCount" content="3517">
 <meta itemprop="keywords" content="kansaipm,perl," />
 
 <meta name="twitter:card" content="summary"/>
@@ -208,29 +208,32 @@
   
 
   <div class="post-date">
-    <time datetime="2016-03-21T11:44:16&#43;0900">Mar 21, 2016</time> <span class="readtime">&middot; 7 min read</span>
+    <time datetime="2016-03-21T11:44:16&#43;0900">Mar 21, 2016</time> <span class="readtime">&middot; 8 min read</span>
   </div>
 
   <div>
   <p>おはようございます！
-若林（<!-- raw HTML omitted -->@nqounet<!-- raw HTML omitted -->）です。</p>
+若林（<a href="https://twitter.com/nqounet">@nqounet</a>）です。</p>
 <p>興奮冷めやらぬ感じですが、感想ブログを書きますよ。</p>
 <p>「ブログを書くまでが Kansai.pm 」を実践します。</p>
-<!-- raw HTML omitted -->
+<h2 id="迷子">迷子</h2>
 <p>会場はナレッジサロンだったのですが、初めての方には結構迷う場所のようです。</p>
 <p>そういう私も、最初は迷ってスタッフさん用の入り口のほうから無理やり入れていただいた口です。</p>
 <p>案内に気をつけていたつもりですが、2,3人のかたは迷ってしまっていました。</p>
 <p>この辺り、ナレッジサロンでセミナーなりカンファレンスなりを開催している方に対策を聴いてみたいところですね。</p>
-<!-- raw HTML omitted -->
+<h2 id="本編">本編</h2>
 <p>開始は10分ほど遅くなりましたが、発表者が全員揃ったので本編に突入です。</p>
 <p>オープニングで使ったスライドの原本はこちらです。</p>
-<!-- raw HTML omitted -->
+<ul>
+<li><a href="https://github.com/nqounet/meetups/blob/master/talks/20160320-kansai-pm-opening.md">meetups/20160320-kansai-pm-opening.md at master · nqounet/meetups</a></li>
+</ul>
 <p>前日に、「どんな話が聴きたいですか」というアンケートの結果を公開したら、皆さんがいい感じにトークに取り入れてくれたので最高でした。これは次回もやりたいですね。</p>
-<p>というか、このオープニングで追加した項目にまで対応してくれた <!-- raw HTML omitted -->@__papix__<!-- raw HTML omitted --> 氏は、むしろちゃんとトークを聴いたほうが良いと思いますw</p>
+<p>というか、このオープニングで追加した項目にまで対応してくれた <a href="https://twitter.com/__papix__">@__papix__</a>
+氏は、むしろちゃんとトークを聴いたほうが良いと思いますw</p>
 <p>ところで、スライドを作るのが面倒なので、私はいつも「App::revealup」を使っています。Markdownで書いたテキストをいい感じにスライドにしてくれるツールです。</p>
 <p>元々Markdownからスライドにしてくれるツールを自作したりしていたのですが、こっちのほうが便利なので乗り換えました。</p>
 <ul>
-<li><!-- raw HTML omitted -->App::revealup - HTTP Server application for viewing Markdown formatted text as slides - metacpan.org<!-- raw HTML omitted --></li>
+<li><a href="https://metacpan.org/pod/App::revealup">App::revealup - HTTP Server application for viewing Markdown formatted text as slides - metacpan.org</a></li>
 </ul>
 <p>私の使い方が悪いだけかもしれませんが、最新版だとCSSが微妙なので、 <code>carton</code> でバージョンを 0.19 に固定して使っています。</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
@@ -245,15 +248,15 @@
 <p>見出し（H[1-6]）とリスト（UL, LI）と整形済みテキスト（PRE）に対応する書き方はすぐに覚えられるので是非お試しください。</p>
 <p>以下のページがそこそこいい感じにまとまっています。</p>
 <ul>
-<li><!-- raw HTML omitted -->MarkDownの書き方 ‹ 技術の犬小屋<!-- raw HTML omitted --></li>
+<li><a href="http://promamo.com/?p=3558">MarkDownの書き方 ‹ 技術の犬小屋</a></li>
 </ul>
 <p>Markdownのエディタは、MacならMouがオススメです。2年以上前からいろんな人に推奨しています。</p>
 <ul>
-<li><!-- raw HTML omitted -->これがないと何もできないと感じたソフトウェア for MacOSX | IT Office Nishimiyahara<!-- raw HTML omitted --></li>
+<li><a href="/2013/08/31/143200">これがないと何もできないと感じたソフトウェア for MacOSX | IT Office Nishimiyahara</a></li>
 </ul>
 <p>Windowsは、2年以上前に探したきりですが、いくつかオススメはありました。今はどうかわかりませんが。</p>
 <ul>
-<li><!-- raw HTML omitted -->Windowsにも使えるMarkdownエディタがあった | IT Office Nishimiyahara<!-- raw HTML omitted --></li>
+<li><a href="/2013/11/28/023300">Windowsにも使えるMarkdownエディタがあった | IT Office Nishimiyahara</a></li>
 </ul>
 <p>スライドを作成するときは、自分にあったツールを使えば発表のハードルが低くもなりますので、是非お試しください。</p>
 <p>閑話休題。</p>
@@ -294,36 +297,43 @@
 </span></span><span style="display:flex;"><span>say $kansaipm16<span style="color:#f92672">-&gt;</span>delta_seconds($kansaipm15);
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><!-- raw HTML omitted -->@karupanerura<!-- raw HTML omitted --> さんのトークにもありましたが、 Time::Moment は非常に高速です。</p>
+</div><p><a href="https://twitter.com/karupanerura">@karupanerura</a> さんのトークにもありましたが、 Time::Moment は非常に高速です。</p>
 <p>from_string は確かに汎用的ではないのですが、 Moment.js との親和性は高いので、モダンなウェブアプリならこれ一択でしょう。</p>
 <ul>
-<li><!-- raw HTML omitted -->JavaScriptで時間を扱うならMoment.js | IT Office Nishimiyahara<!-- raw HTML omitted --></li>
+<li><a href="/2014/05/22/171213">JavaScriptで時間を扱うならMoment.js | IT Office Nishimiyahara</a></li>
 </ul>
 <p>今見ていたら、トーク内で紹介されていた issue がクローズしていたので、今後が楽しみですね。</p>
 <ul>
-<li><!-- raw HTML omitted -->I would like to document Time::Strptime as a companion module to Time::Moment · Issue #1 · karupanerura/Time-Strptime<!-- raw HTML omitted --></li>
+<li><a href="https://github.com/karupanerura/Time-Strptime/issues/1">I would like to document Time::Strptime as a companion module to Time::Moment · Issue #1 · karupanerura/Time-Strptime</a></li>
 </ul>
-<p><!-- raw HTML omitted -->@azumakuniyuki<!-- raw HTML omitted --> さんの、 Perl から Ruby に移植するデモ（？）が、かなり大雑把で良かったです。</p>
-<p><!-- raw HTML omitted -->||=<!-- raw HTML omitted --> は確かにハマるような気がしました。</p>
-<p>関係ないですが、「しました」と入力する時によく「姉妹sた」ってなるのですが、Perl と　Ruby の姉妹ってところを思い出してうっかり笑ってしまいました。</p>
-<p><!-- raw HTML omitted -->@sago35tk<!-- raw HTML omitted --> さんの、同じものを作るのが何故良いのか、というところは思い出してみると本当にそのとおりでした。感想戦というんでしょうか、何故そうしたのかというのをお互いに話すことで得るものがあります。ペアプログラミングと似たような効果もありそうですね。</p>
+<p><a href="https://twitter.com/azumakuniyuki">@azumakuniyuki</a> さんの、 Perl から Ruby に移植するデモ（？）が、かなり大雑把で良かったです。</p>
+<p><code>||=</code> は確かにハマるような気がしました。</p>
+<p>関係ないですが、「しました」と入力する時によく「姉妹sた」ってなるのですが、Perl と Ruby の姉妹ってところを思い出してうっかり笑ってしまいました。</p>
+<p><a href="https://twitter.com/sago35tk">@sago35tk</a>
+さんの、同じものを作るのが何故良いのか、というところは思い出してみると本当にそのとおりでした。感想戦というんでしょうか、何故そうしたのかというのをお互いに話すことで得るものがあります。ペアプログラミングと似たような効果もありそうですね。</p>
 <p>最後のまとめに、業界の苦労や勉強会に参加する意義がいい感じにまとまっています。「楽しく失敗体験できる」というのは本当に涙が出そうです。成功体験も大事ですが、楽しい失敗体験も大事ですね。</p>
-<p><!-- raw HTML omitted -->@xtetsuji<!-- raw HTML omitted --> さんの、トークを聴いていて、どのCMSを使うのかはやっぱり用途次第だな、と思いました。</p>
-<p><!-- raw HTML omitted -->Kansai.pmのウェブサイト<!-- raw HTML omitted -->は、Rijiを使っていますが、これはライターにはある程度のスキルが必要になりますが、オフラインでも記事（下書き的意味ではなく）を書くことができるし、Markdownで書けるし、gitで管理できるのでライターの概念がありながらもユーザー管理はないし、HTMLファイルを生成するのでサーバーを選ばない（githubでもOK）などの特長があります。</p>
+<p><a href="https://twitter.com/xtetsuji">@xtetsuji</a> さんの、トークを聴いていて、どのCMSを使うのかはやっぱり用途次第だな、と思いました。</p>
+<p><a href="http://kansai.pm.org/">Kansai.pmのウェブサイト</a>
+は、Rijiを使っていますが、これはライターにはある程度のスキルが必要になりますが、オフラインでも記事（下書き的意味ではなく）を書くことができるし、Markdownで書けるし、gitで管理できるのでライターの概念がありながらもユーザー管理はないし、HTMLファイルを生成するのでサーバーを選ばない（githubでもOK）などの特長があります。</p>
 <p>どれを選べば一番みんながハッピーなのかを考えて選択するのが肝心だなぁ、と思いました。</p>
-<!-- raw HTML omitted -->
-<p><!-- raw HTML omitted -->@__papix__<!-- raw HTML omitted --> さんは主催者泣かせですね。発表時間はなるべく守ってください。</p>
+<ul>
+<li><a href="/2016/01/07/073526">Kansai.pmのウェブサイトをRijiで作った話、または最近のpm.orgの管理方法 | IT Office Nishimiyahara</a></li>
+</ul>
+<p><a href="https://twitter.com/__papix__">@__papix__</a> さんは主催者泣かせですね。発表時間はなるべく守ってください。</p>
 <p>まあ、アンケートの結果について沢山話してくれていたので、参加者の皆さんには参考にしていただけたのではないかと思います。</p>
 <p>過去に書いたコードは資産、というのは完全に同意です。そして、その資産から新しい資産が生まれる。</p>
 <p>ライブコーディングも、ペアプログラミングと同じように、他の人のプログラミングスタイルとか、成果物からは見えない部分を見ることができる（シェルの使い方とか）のでいいと思います。</p>
-<p>呪文のように唱えていた「subako」を呼び出していたのは、たぶん <!-- raw HTML omitted -->peco<!-- raw HTML omitted --> を使っていると思うのですが、こういう系の知識ってなかなか得られないんですよね。調べる方法がまずわからないし、そもそもそういう事ができる、ということを知る機会もないと思いますが、そういった部分をざっくり質問したりできるのが、勉強会の良い所だなと思います。</p>
-<p>それと、値を表示する時に使っていた <!-- raw HTML omitted -->DDP<!-- raw HTML omitted --> は Data::Printer というモジュールで、かなりオススメしています。</p>
-<!-- raw HTML omitted -->
-<p>この記事には、少しですが <!-- raw HTML omitted -->peco<!-- raw HTML omitted --> についても書いているので参考に読んでみてください。1年半ほど前に書いたものですが、まだ使える記事だと思います。</p>
+<p>呪文のように唱えていた「subako」を呼び出していたのは、たぶん <code>peco</code>
+を使っていると思うのですが、こういう系の知識ってなかなか得られないんですよね。調べる方法がまずわからないし、そもそもそういう事ができる、ということを知る機会もないと思いますが、そういった部分をざっくり質問したりできるのが、勉強会の良い所だなと思います。</p>
+<p>それと、値を表示する時に使っていた <code>DDP</code> は Data::Printer というモジュールで、かなりオススメしています。</p>
+<ul>
+<li><a href="/2014/07/19/133400">Perlで自走するエンジニアに必要なたった1つのモジュール | IT Office Nishimiyahara</a></li>
+</ul>
+<p>この記事には、少しですが <code>peco</code> についても書いているので参考に読んでみてください。1年半ほど前に書いたものですが、まだ使える記事だと思います。</p>
 <p>そんなこんなで、結局時間一杯までライブコーディングだったので、懇親会の準備などがバタバタになり、懇親会に参加されない方にはちょっと申し訳ない感じの締め方になってしまったのが心残りです。</p>
-<p>会場のナレッジサロンは、1人だと2時間までしか確保できないので、<!-- raw HTML omitted -->@tomcha_<!-- raw HTML omitted --> さんが追加で2時間確保してくれました。</p>
+<p>会場のナレッジサロンは、1人だと2時間までしか確保できないので、<a href="https://twitter.com/tomcha_">@tomcha_</a> さんが追加で2時間確保してくれました。</p>
 <p>打ち合わせもしていないのに、参加者の会場の出入りやOAタップの確保など、的確に動いていただいて本当に助かりました。ありがとうございました。</p>
-<!-- raw HTML omitted -->
+<h2 id="懇親会lt">懇親会、LT</h2>
 <p>会場が4時間確保できたので、ナレッジサロンのパーティプランを試してみました。</p>
 <p>できることは知っていて、開催されていることも知っていたのですが、実際に頼んだのは初めてです。</p>
 <p>準備も手際よく、料理も美味しいし、素晴らしいですね。</p>
@@ -333,20 +343,24 @@
 <p>LTというか、タイムキーパーもいない、ドラもない、ツッコミありの、とても自由な発表でした。</p>
 <p>勉強会の懇親会らしいことができるのが本当に良いですね。</p>
 <p>会場が確保できれば、次回もこの感じでやりたいです。</p>
-<!-- raw HTML omitted -->
+<h2 id="二次会">二次会</h2>
 <p>二次会は総勢12名の大所帯でしたが、ダメ元で突撃した鶏の唐揚げが美味しい店を確保できて良かったです。</p>
-<p>確保に走ってくれた <!-- raw HTML omitted -->@stc1988<!-- raw HTML omitted --> さん、ありがとうございました。</p>
+<p>確保に走ってくれた <a href="https://twitter.com/stc1988">@stc1988</a> さん、ありがとうございました。</p>
 <p>全部で唐揚げいくつ頼んだんだろうか？</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr"><a href="https://twitter.com/hashtag/kansaipm?src=hash&amp;ref_src=twsrc%5Etfw">#kansaipm</a> 二次会 (@ 勝男 in Kita, Ōsaka w/ <a href="https://twitter.com/__papix__?ref_src=twsrc%5Etfw">@__papix__</a> <a href="https://twitter.com/nqounet?ref_src=twsrc%5Etfw">@nqounet</a>) <a href="https://t.co/rH5eCaqlNF">https://t.co/rH5eCaqlNF</a> <a href="https://t.co/fetRnwo1YH">pic.twitter.com/fetRnwo1YH</a></p>&mdash; OGATA Tetsuji (@xtetsuji) <a href="https://twitter.com/xtetsuji/status/711518512435634176?ref_src=twsrc%5Etfw">March 20, 2016</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 <p>二次会とはいえ、かなり飲み食いしたと思うのですが、一人あたり２０００円でお釣りが来る、本当に良い店です。</p>
 <p>そういえば、この店は私がメイヤーらしいです。</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<ul>
+<li><a href="https://www.swarmapp.com/c/hYSgrYMdoor">Nobutaka | 勝男</a></li>
+</ul>
+<h2 id="まとめ">まとめ</h2>
 <p>まとめられないのですが、無事開催できて本当に良かったです。</p>
 <p>次回は８月にやります、とか口走ったようなので、それに向けて邁進したいと思います。</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">8月に第17回ミーティングやりますよ！！！！！<br>それまでにネタを仕込んでおいてくださいね〜！ <a href="https://twitter.com/hashtag/kansaipm?src=hash&amp;ref_src=twsrc%5Etfw">#kansaipm</a></p>&mdash; Nobutaka WAKABAYASHI (@nqounet) <a href="https://twitter.com/nqounet/status/711557554648653826?ref_src=twsrc%5Etfw">March 20, 2016</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 <p>その際は、是非ご参加のほど、よろしくお願い申し上げます。</p>
 
   </div>

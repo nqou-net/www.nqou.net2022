@@ -58,7 +58,7 @@
       <pubDate>Sat, 09 May 2015 09:49:41 +0900</pubDate>
       
       <guid>https://www.nqou.net/2015/05/09/094941/</guid>
-      <description>{ hypnotoad =&amp;gt; { accepts =&amp;gt; 1000, backlog =&amp;gt; 10, clients =&amp;gt; 10, graceful_timeout =&amp;gt; 20, heartbeat_interval =&amp;gt; 5, heartbeat_timeout =&amp;gt; 20, listen =&amp;gt; [qq{http://*:$ENV{PORT}}], proxy =&amp;gt; 1, requests =&amp;gt;</description>
+      <description>@nqounetです。 Mojoliciousのプロダクション</description>
     </item>
     
     <item>
@@ -67,7 +67,7 @@
       <pubDate>Mon, 13 Apr 2015 11:25:30 +0900</pubDate>
       
       <guid>https://www.nqou.net/2015/04/13/112530/</guid>
-      <description></description>
+      <description>@nqounetです。 前回に続いてHerokuネタです。 この</description>
     </item>
     
     <item>
