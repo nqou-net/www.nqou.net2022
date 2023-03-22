@@ -3,15 +3,13 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.91.0" />
+  <meta name="generator" content="Hugo 0.111.3">
 
   <title>CORESERVERでconcrete5を動かしてみた &middot; nqou.net</title>
 
   <meta name="description" content="" />
 
-  
-
-<meta itemprop="name" content="CORESERVERでconcrete5を動かしてみた">
+  <meta itemprop="name" content="CORESERVERでconcrete5を動かしてみた">
 <meta itemprop="description" content="「concrete5」というCMSをOSC2011Kobeで"><meta itemprop="datePublished" content="2011-04-17T11:26:50+09:00" />
 <meta itemprop="dateModified" content="2011-04-17T11:26:50+09:00" />
 <meta itemprop="wordCount" content="1145">
@@ -28,7 +26,6 @@
 <meta property="og:url" content="https://www.nqou.net/2011/04/17/112650/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2011-04-17T11:26:50+09:00" />
 <meta property="article:modified_time" content="2011-04-17T11:26:50+09:00" /><meta property="og:site_name" content="nqou.net" />
-
 
 
 
@@ -222,13 +219,13 @@ PHPをCGIとして動かす設定がないと、セーフモードで動くら�
 で、ちゃんとtmpディレクトリも作成します。
 使ったバージョンは「concrete5.4.1.1.1.ja」です。
 ディレクトリも同じ名前になりますので、とりあえず名前を変えておきたいところですが、なんとなくシンボリックリンクにしておきます。</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">$ ln -s concrete5.4.1.1.1.ja c5
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ ln -s concrete5.4.1.1.1.ja c5
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>とりあえず「c5」という名前にしておきます。
 さて、ここまで来たら今度はブラウザの出番です。
@@ -248,13 +245,13 @@ PHPをCGIとして動かす設定がないと、セーフモードで動くら�
 httpヘッダを見てみると、「Expires」が「Date」と同じ時間になっているのが原因らしいのがわかります。
 本来なら、ココを適切に直したいところですが、そこはよく分からないので消してしまいましょう。
 「/concrete/tools/css.php」を開いて、29行目の</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">header(&#34;Expires: &#34;. gmdate(&#34;D, j M Y H:i:s&#34;, time() + DAY) .&#34; GMT&#34;);
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>header(&#34;Expires: &#34;. gmdate(&#34;D, j M Y H:i:s&#34;, time() + DAY) .&#34; GMT&#34;);
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>の行をコメントにしていまいます。
 ブラウザをリロードすると、スタイルシートが反映されていました。
@@ -314,7 +311,7 @@ httpヘッダを見てみると、「Expires」が「Date」と同じ時間に�
     <h2>Comments</h2>
     <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -339,7 +336,7 @@ httpヘッダを見てみると、「Expires」が「Date」と同じ時間に�
   <footer>
   <div>
     <p>
-      &copy; nqounet 2022
+      &copy; nqounet 2023
 
       &middot; <a href="https://creativecommons.org/licenses/by/4.0" target="_blank">CC BY 4.0</a>
 
@@ -359,17 +356,19 @@ httpヘッダを見てみると、「Expires」が「Date」と同じ時間に�
 
   
 
-  
-<script type="application/javascript">
+    
+      
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E50H9ESN7E"></script>
+<script>
 var doNotTrack = false;
 if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'G-E50H9ESN7E', 'auto');
-	
-	ga('send', 'pageview');
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-E50H9ESN7E', { 'anonymize_ip': false });
 }
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
 
+    
 </body>
 </html>

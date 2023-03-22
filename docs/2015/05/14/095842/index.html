@@ -3,15 +3,13 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.91.0" />
+  <meta name="generator" content="Hugo 0.111.3">
 
   <title>Resqueでメッセージキューをやってみた &middot; nqou.net</title>
 
   <meta name="description" content="" />
 
-  
-
-<meta itemprop="name" content="Resqueでメッセージキューをやってみた">
+  <meta itemprop="name" content="Resqueでメッセージキューをやってみた">
 <meta itemprop="description" content="├── client.pl ├── cpanfile ├── lib │ └── MyTask │ └── Echo.pm ├── main.pl └── worker.pl"><meta itemprop="datePublished" content="2015-05-14T09:58:42+09:00" />
 <meta itemprop="dateModified" content="2015-05-14T09:58:42+09:00" />
 <meta itemprop="wordCount" content="225">
@@ -28,7 +26,6 @@
 <meta property="og:url" content="https://www.nqou.net/2015/05/14/095842/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2015-05-14T09:58:42+09:00" />
 <meta property="article:modified_time" content="2015-05-14T09:58:42+09:00" /><meta property="og:site_name" content="nqou.net" />
-
 
 
 
@@ -233,11 +230,11 @@
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
-<pre tabindex="0"><code>requires 'Log::Minimal';
-requires 'Path::Tiny';
-requires 'Proclet';
-requires 'Resque';
-requires 'Test::RedisServer';
+<pre tabindex="0"><code>requires &#39;Log::Minimal&#39;;
+requires &#39;Path::Tiny&#39;;
+requires &#39;Proclet&#39;;
+requires &#39;Resque&#39;;
+requires &#39;Test::RedisServer&#39;;
 </code></pre><!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
@@ -257,7 +254,7 @@ my $count = 10;
 while ($count--) {
     $resque-&gt;push(
         echo =&gt; +{
-            class =&gt; 'MyTask::Echo',
+            class =&gt; &#39;MyTask::Echo&#39;,
             args  =&gt; +[+{count =&gt; $count}]
         }
     );
@@ -275,15 +272,15 @@ use strict;
 use warnings;
 use Resque;
 use Log::Minimal;
-use lib 'lib';
+use lib &#39;lib&#39;;
 
 
 my $worker = Resque-&gt;new-&gt;worker;
 
-$worker-&gt;add_queue('echo');
-infof('### start worker');
+$worker-&gt;add_queue(&#39;echo&#39;);
+infof(&#39;### start worker&#39;);
 $worker-&gt;work;
-infof('### stop worker');
+infof(&#39;### stop worker&#39;);
 </code></pre><!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
@@ -298,7 +295,7 @@ use Log::Minimal;
 
 sub perform {
     my $job = shift;
-    debugf('dequeue: %s', ddf($job-&gt;args));
+    debugf(&#39;dequeue: %s&#39;, ddf($job-&gt;args));
     infof($job-&gt;args-&gt;[0]{count});
 }
 
@@ -327,17 +324,17 @@ $proclet-&gt;service(
         $redis-&gt;exec;
     },
     worker =&gt; 1,
-    tag    =&gt; 'redis'
+    tag    =&gt; &#39;redis&#39;
 );
 $proclet-&gt;service(
     code   =&gt; [qw{carton exec -- perl worker.pl}],
     worker =&gt; 5,
-    tag    =&gt; 'worker'
+    tag    =&gt; &#39;worker&#39;
 );
 $proclet-&gt;service(
     code   =&gt; [qw{carton exec -- perl client.pl}],
     worker =&gt; 1,
-    tag    =&gt; 'client'
+    tag    =&gt; &#39;client&#39;
 );
 $proclet-&gt;run;
 </code></pre><!-- raw HTML omitted -->
@@ -412,7 +409,7 @@ $ carton exec -- perl main.pl
     <h2>Comments</h2>
     <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -437,7 +434,7 @@ $ carton exec -- perl main.pl
   <footer>
   <div>
     <p>
-      &copy; nqounet 2022
+      &copy; nqounet 2023
 
       &middot; <a href="https://creativecommons.org/licenses/by/4.0" target="_blank">CC BY 4.0</a>
 
@@ -457,17 +454,19 @@ $ carton exec -- perl main.pl
 
   
 
-  
-<script type="application/javascript">
+    
+      
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E50H9ESN7E"></script>
+<script>
 var doNotTrack = false;
 if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'G-E50H9ESN7E', 'auto');
-	
-	ga('send', 'pageview');
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-E50H9ESN7E', { 'anonymize_ip': false });
 }
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
 
+    
 </body>
 </html>

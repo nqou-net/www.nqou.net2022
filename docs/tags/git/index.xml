@@ -148,7 +148,7 @@
       <pubDate>Thu, 29 Aug 2013 08:30:00 +0900</pubDate>
       
       <guid>https://www.nqou.net/2013/08/29/083000/</guid>
-      <description>git clone https://github.com/sstephenson/rbenv.git ~/.rbenv echo &#39;export PATH=&amp;quot;$HOME/.rbenv/bin:$PATH&amp;quot;&#39; &amp;gt;&amp;gt; ~/.bash_profile echo &#39;eval &amp;quot;$(rbenv init -)&amp;quot;&#39; &amp;gt;&amp;gt; ~/.bash_profile exec $SHELL -l git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build rbenv install --list rbenv install 2.0.0-p247 rbenv</description>
+      <description>git clone https://github.com/sstephenson/rbenv.git ~/.rbenv echo &amp;#39;export PATH=&amp;#34;$HOME/.rbenv/bin:$PATH&amp;#34;&amp;#39; &amp;gt;&amp;gt; ~/.bash_profile echo &amp;#39;eval &amp;#34;$(rbenv init -)&amp;#34;&amp;#39; &amp;gt;&amp;gt; ~/.bash_profile exec $SHELL -l git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build rbenv install --list rbenv install 2.0.0-p247 rbenv</description>
     </item>
     
     <item>

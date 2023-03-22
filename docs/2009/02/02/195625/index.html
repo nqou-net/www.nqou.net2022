@@ -3,15 +3,13 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.91.0" />
+  <meta name="generator" content="Hugo 0.111.3">
 
   <title>hashの全ての要素に何かするベンチマーク　その２ &middot; nqou.net</title>
 
   <meta name="description" content="" />
 
-  
-
-<meta itemprop="name" content="hashの全ての要素に何かするベンチマーク　その２">
+  <meta itemprop="name" content="hashの全ての要素に何かするベンチマーク　その２">
 <meta itemprop="description" content="Summary of my perl5 (revision 5 version 10 subversion 0) configuration: Platform: osname=MSWin32, osvers=5.1, archname=MSWin32-x86-multi-thread uname=&#39;&#39; config_args=&#39;undef&#39; hint=recommended, useposix=true, d_sigaction=undef useithreads=define, usemultiplicity=define useperlio=define, d_sfio=undef, uselargefiles=define, usesocks=undef use64bitint=undef, use64bitall=undef, uselongdouble=undef usemymalloc=n,"><meta itemprop="datePublished" content="2009-02-02T19:56:25+09:00" />
 <meta itemprop="dateModified" content="2009-02-02T19:56:25+09:00" />
 <meta itemprop="wordCount" content="382">
@@ -28,7 +26,6 @@
 <meta property="og:url" content="https://www.nqou.net/2009/02/02/195625/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2009-02-02T19:56:25+09:00" />
 <meta property="article:modified_time" content="2009-02-02T19:56:25+09:00" /><meta property="og:site_name" content="nqou.net" />
-
 
 
 
@@ -70,7 +67,7 @@
       },
       "datePublished": "2009-02-02T19:56:25+09:00",
       "dateModified": "2009-02-02T19:56:25+09:00",
-      "description": "Summary of my perl5 (revision 5 version 10 subversion 0) configuration: Platform: osname=MSWin32, osvers=5.1, archname=MSWin32-x86-multi-thread uname='' config_args='undef' hint=recommended, useposix=true, d_sigaction=undef useithreads=define, usemultiplicity=define useperlio=define, d_sfio=undef, uselargefiles=define, usesocks=undef use64bitint=undef, use64bitall=undef, uselongdouble=undef usemymalloc=n,",
+      "description": "Summary of my perl5 (revision 5 version 10 subversion 0) configuration: Platform: osname=MSWin32, osvers=5.1, archname=MSWin32-x86-multi-thread uname=\u0026#39;\u0026#39; config_args=\u0026#39;undef\u0026#39; hint=recommended, useposix=true, d_sigaction=undef useithreads=define, usemultiplicity=define useperlio=define, d_sfio=undef, uselargefiles=define, usesocks=undef use64bitint=undef, use64bitall=undef, uselongdouble=undef usemymalloc=n,",
       "inLanguage": "ja",
       "potentialAction": [
         {
@@ -218,27 +215,27 @@
 <pre tabindex="0"><code>Summary of my perl5 (revision 5 version 10 subversion 0) configuration:
 Platform:
 osname=MSWin32, osvers=5.1, archname=MSWin32-x86-multi-thread
-uname=''
-config_args='undef'
+uname=&#39;&#39;
+config_args=&#39;undef&#39;
 hint=recommended, useposix=true, d_sigaction=undef
 useithreads=define, usemultiplicity=define
 useperlio=define, d_sfio=undef, uselargefiles=define, usesocks=undef
 use64bitint=undef, use64bitall=undef, uselongdouble=undef
 usemymalloc=n, bincompat5005=undef
 Compiler:
-cc='gcc', ccflags =' -s -O2 -DWIN32 -DHAVE_DES_FCRYPT  -DPERL_IMPLICIT_CONTE
-XT -DPERL_IMPLICIT_SYS -fno-strict-aliasing -DPERL_MSVCRT_READFIX',
-optimize='-s -O2',
-cppflags='-DWIN32'
-ccversion='', gccversion='3.4.5', gccosandvers=''
+cc=&#39;gcc&#39;, ccflags =&#39; -s -O2 -DWIN32 -DHAVE_DES_FCRYPT  -DPERL_IMPLICIT_CONTE
+XT -DPERL_IMPLICIT_SYS -fno-strict-aliasing -DPERL_MSVCRT_READFIX&#39;,
+optimize=&#39;-s -O2&#39;,
+cppflags=&#39;-DWIN32&#39;
+ccversion=&#39;&#39;, gccversion=&#39;3.4.5&#39;, gccosandvers=&#39;&#39;
 intsize=4, longsize=4, ptrsize=4, doublesize=8, byteorder=1234
 d_longlong=undef, longlongsize=8, d_longdbl=define, longdblsize=12
-ivtype='long', ivsize=4, nvtype='double', nvsize=8, Off_t='long long', lseek
+ivtype=&#39;long&#39;, ivsize=4, nvtype=&#39;double&#39;, nvsize=8, Off_t=&#39;long long&#39;, lseek
 size=8
 alignbytes=8, prototype=define
 Linker and Libraries:
-ld='g++', ldflags ='-s -L&quot;C:\strawberry\perl\lib\CORE&quot; -L&quot;C:\strawberry\c\li
-b&quot;'
+ld=&#39;g++&#39;, ldflags =&#39;-s -L&#34;C:\strawberry\perl\lib\CORE&#34; -L&#34;C:\strawberry\c\li
+b&#34;&#39;
 libpth=C:\strawberry\c\lib
 libs= -lmsvcrt -lmoldname -lkernel32 -luser32 -lgdi32 -lwinspool -lcomdlg32
 -ladvapi32 -lshell32 -lole32 -loleaut32 -lnetapi32 -luuid -lws2_32 -lmpr -lwinmm
@@ -247,11 +244,11 @@ perllibs= -lmsvcrt -lmoldname -lkernel32 -luser32 -lgdi32 -lwinspool -lcomdl
 g32 -ladvapi32 -lshell32 -lole32 -loleaut32 -lnetapi32 -luuid -lws2_32 -lmpr -lw
 inmm -lversion -lodbc32 -lodbccp32
 libc=-lmsvcrt, so=dll, useshrplib=true, libperl=libperl510.a
-gnulibc_version=''
+gnulibc_version=&#39;&#39;
 Dynamic Linking:
-dlsrc=dl_win32.xs, dlext=dll, d_dlsymun=undef, ccdlflags=' '
-cccdlflags=' ', lddlflags='-mdll -s -L&quot;C:\strawberry\perl\lib\CORE&quot; -L&quot;C:\st
-rawberry\c\lib&quot;'
+dlsrc=dl_win32.xs, dlext=dll, d_dlsymun=undef, ccdlflags=&#39; &#39;
+cccdlflags=&#39; &#39;, lddlflags=&#39;-mdll -s -L&#34;C:\strawberry\perl\lib\CORE&#34; -L&#34;C:\st
+rawberry\c\lib&#34;&#39;
 Characteristics of this binary (from libperl):
 Compile-time options: MULTIPLICITY PERL_DONT_CREATE_GVSV
 PERL_IMPLICIT_CONTEXT PERL_IMPLICIT_SYS
@@ -269,79 +266,79 @@ sub_each    28.4/s          --         -9%        -10%
 sub_foreach 31.2/s         10%          --         -2%
 sub_for     31.6/s         11%          2%          --
 </code></pre><!-- raw HTML omitted -->
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">#!/usr/bin/perl
-use strict;
-use warnings;
-use Benchmark qw(:all);
-use Digest::MD5 ();
-# use Data::Dumper;
-my %hash;
-for my $i (1 .. 10000) {
-my $digest = Digest::MD5::md5($i);
-$hash{ $digest } = $i;
-}
-cmpthese( 100, {
-sub_for =&gt; sub {
-my @array;
-for my $key (keys %hash) {
-push @array, { -key =&gt; $key, -val =&gt; $hash{$key} };
-}
-#        print Dumper(\@array);
-},
-sub_foreach =&gt; sub {
-my @array;
-foreach my $key (keys %hash) {
-push @array, { -key =&gt; $key, -val =&gt; $hash{$key} };
-}
-#        print Dumper(\@array);
-},
-sub_each =&gt; sub {
-my @array;
-while ( my ($key, $value) =  each %hash) {
-push @array, { -key =&gt; $key, -val =&gt; $value };
-}
-#        print Dumper(\@array);
-},
-});
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>#!/usr/bin/perl
+</span></span><span style="display:flex;"><span>use strict;
+</span></span><span style="display:flex;"><span>use warnings;
+</span></span><span style="display:flex;"><span>use Benchmark qw(:all);
+</span></span><span style="display:flex;"><span>use Digest::MD5 ();
+</span></span><span style="display:flex;"><span># use Data::Dumper;
+</span></span><span style="display:flex;"><span>my %hash;
+</span></span><span style="display:flex;"><span>for my $i (1 .. 10000) {
+</span></span><span style="display:flex;"><span>my $digest = Digest::MD5::md5($i);
+</span></span><span style="display:flex;"><span>$hash{ $digest } = $i;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>cmpthese( 100, {
+</span></span><span style="display:flex;"><span>sub_for =&gt; sub {
+</span></span><span style="display:flex;"><span>my @array;
+</span></span><span style="display:flex;"><span>for my $key (keys %hash) {
+</span></span><span style="display:flex;"><span>push @array, { -key =&gt; $key, -val =&gt; $hash{$key} };
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>#        print Dumper(\@array);
+</span></span><span style="display:flex;"><span>},
+</span></span><span style="display:flex;"><span>sub_foreach =&gt; sub {
+</span></span><span style="display:flex;"><span>my @array;
+</span></span><span style="display:flex;"><span>foreach my $key (keys %hash) {
+</span></span><span style="display:flex;"><span>push @array, { -key =&gt; $key, -val =&gt; $hash{$key} };
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>#        print Dumper(\@array);
+</span></span><span style="display:flex;"><span>},
+</span></span><span style="display:flex;"><span>sub_each =&gt; sub {
+</span></span><span style="display:flex;"><span>my @array;
+</span></span><span style="display:flex;"><span>while ( my ($key, $value) =  each %hash) {
+</span></span><span style="display:flex;"><span>push @array, { -key =&gt; $key, -val =&gt; $value };
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>#        print Dumper(\@array);
+</span></span><span style="display:flex;"><span>},
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></td></tr></table>
 </div>
 </div><!-- raw HTML omitted -->
 <pre tabindex="0"><code>              Rate    sub_each sub_foreach     sub_for
@@ -404,7 +401,7 @@ sub_foreach 27233/s         26%          1%          --
     <h2>Comments</h2>
     <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -429,7 +426,7 @@ sub_foreach 27233/s         26%          1%          --
   <footer>
   <div>
     <p>
-      &copy; nqounet 2022
+      &copy; nqounet 2023
 
       &middot; <a href="https://creativecommons.org/licenses/by/4.0" target="_blank">CC BY 4.0</a>
 
@@ -449,17 +446,19 @@ sub_foreach 27233/s         26%          1%          --
 
   
 
-  
-<script type="application/javascript">
+    
+      
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E50H9ESN7E"></script>
+<script>
 var doNotTrack = false;
 if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'G-E50H9ESN7E', 'auto');
-	
-	ga('send', 'pageview');
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-E50H9ESN7E', { 'anonymize_ip': false });
 }
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
 
+    
 </body>
 </html>

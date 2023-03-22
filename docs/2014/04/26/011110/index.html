@@ -3,15 +3,13 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.91.0" />
+  <meta name="generator" content="Hugo 0.111.3">
 
   <title>イベント駆動プログラミングはGOTO文を使っている気分になる &middot; nqou.net</title>
 
   <meta name="description" content="" />
 
-  
-
-<meta itemprop="name" content="イベント駆動プログラミングはGOTO文を使っている気分になる">
+  <meta itemprop="name" content="イベント駆動プログラミングはGOTO文を使っている気分になる">
 <meta itemprop="description" content="(function($, global, undefined){ &#39;use strict&#39;; var lscache, Mustache, processing = {}, generateCacheKey = function(path){ return &#39;fetched:&#39; &#43; path; }, fetchTemplate = function(path){ console.debug(&#39;fetchTemplate&#39;); var key = generateCacheKey(path); $.get(path, function(template){ console.debug(&#39;run"><meta itemprop="datePublished" content="2014-04-26T01:11:10+09:00" />
 <meta itemprop="dateModified" content="2014-04-26T01:11:10+09:00" />
 <meta itemprop="wordCount" content="273">
@@ -28,7 +26,6 @@
 <meta property="og:url" content="https://www.nqou.net/2014/04/26/011110/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2014-04-26T01:11:10+09:00" />
 <meta property="article:modified_time" content="2014-04-26T01:11:10+09:00" /><meta property="og:site_name" content="nqou.net" />
-
 
 
 
@@ -70,7 +67,7 @@
       },
       "datePublished": "2014-04-26T01:11:10+09:00",
       "dateModified": "2014-04-26T01:11:10+09:00",
-      "description": "(function($, global, undefined){ 'use strict'; var lscache, Mustache, processing = {}, generateCacheKey = function(path){ return 'fetched:' + path; }, fetchTemplate = function(path){ console.debug('fetchTemplate'); var key = generateCacheKey(path); $.get(path, function(template){ console.debug('run",
+      "description": "(function($, global, undefined){ \u0026#39;use strict\u0026#39;; var lscache, Mustache, processing = {}, generateCacheKey = function(path){ return \u0026#39;fetched:\u0026#39; + path; }, fetchTemplate = function(path){ console.debug(\u0026#39;fetchTemplate\u0026#39;); var key = generateCacheKey(path); $.get(path, function(template){ console.debug(\u0026#39;run",
       "inLanguage": "ja",
       "potentialAction": [
         {
@@ -219,30 +216,30 @@
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <pre tabindex="0"><code>(function($, global, undefined){
-    'use strict';
+    &#39;use strict&#39;;
     var lscache,
     Mustache,
     processing = {},
     generateCacheKey = function(path){
-        return 'fetched:' + path;
+        return &#39;fetched:&#39; + path;
     },
     fetchTemplate = function(path){
-        console.debug('fetchTemplate');
+        console.debug(&#39;fetchTemplate&#39;);
         var key = generateCacheKey(path);
         $.get(path, function(template){
-            console.debug('run $.get');
+            console.debug(&#39;run $.get&#39;);
             lscache.set(key, template, 1);
             delete processing[key];
             $(global).triggerHandler(key); // fetch完了イベントを発行
         });
     },
     renderOnEvent = function(e){
-        console.debug('renderOnEvent');
+        console.debug(&#39;renderOnEvent&#39;);
         var args = Array.prototype.slice.apply(e.data);
         render.apply(this, args);
     },
     render = function(path, args, cb){
-        console.debug('render');
+        console.debug(&#39;render&#39;);
         var key = generateCacheKey(path);
         var template = lscache.get(key);
         if (template) {
@@ -258,13 +255,13 @@
     },
     setVars = function(){
         // localize
-        lscache = global.lscache || console.error('not ready `lscache.js`. hint : `bower install lscache`.');
-        Mustache = global.Mustache || console.error('not ready `mustache.js`. hint : `bower install mustache`.');
+        lscache = global.lscache || console.error(&#39;not ready `lscache.js`. hint : `bower install lscache`.&#39;);
+        Mustache = global.Mustache || console.error(&#39;not ready `mustache.js`. hint : `bower install mustache`.&#39;);
     },
     init = function(){
         setVars();
         return {
-            'render': render
+            &#39;render&#39;: render
         };
     };
     global.templates = init();
@@ -281,30 +278,30 @@
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// コールバックの場合
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">templates</span>.<span style="color:#a6e22e">render</span>(<span style="color:#e6db74">&#39;templates/sns.mst&#39;</span>, <span style="color:#a6e22e">fbObj</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">content</span>){ <span style="color:#a6e22e">$this</span>.<span style="color:#a6e22e">append</span>(<span style="color:#a6e22e">content</span>) });
-
-<span style="color:#75715e">// jQueryオブジェクトの場合は、引数の順序はこんな感じ？メソッド名も変えておかないとねぇ
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">templates</span>.<span style="color:#a6e22e">renderTo</span>(<span style="color:#a6e22e">$this</span>, <span style="color:#e6db74">&#39;templates/sns.mst&#39;</span>, <span style="color:#a6e22e">fbObj</span>);
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">// コールバックの場合
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">templates</span>.<span style="color:#a6e22e">render</span>(<span style="color:#e6db74">&#39;templates/sns.mst&#39;</span>, <span style="color:#a6e22e">fbObj</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">content</span>){ <span style="color:#a6e22e">$this</span>.<span style="color:#a6e22e">append</span>(<span style="color:#a6e22e">content</span>) });
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// jQueryオブジェクトの場合は、引数の順序はこんな感じ？メソッド名も変えておかないとねぇ
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">templates</span>.<span style="color:#a6e22e">renderTo</span>(<span style="color:#a6e22e">$this</span>, <span style="color:#e6db74">&#39;templates/sns.mst&#39;</span>, <span style="color:#a6e22e">fbObj</span>);
+</span></span></code></pre></td></tr></table>
 </div>
 </div><!-- raw HTML omitted -->
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">$</span>.<span style="color:#a6e22e">templates</span>(<span style="color:#e6db74">&#39;templates/sns.mst&#39;</span>, <span style="color:#a6e22e">fbObj</span>).<span style="color:#a6e22e">appendTo</span>(<span style="color:#a6e22e">$this</span>);
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">$</span>.<span style="color:#a6e22e">templates</span>(<span style="color:#e6db74">&#39;templates/sns.mst&#39;</span>, <span style="color:#a6e22e">fbObj</span>).<span style="color:#a6e22e">appendTo</span>(<span style="color:#a6e22e">$this</span>);
+</span></span></code></pre></td></tr></table>
 </div>
 </div><!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
@@ -374,7 +371,7 @@
     <h2>Comments</h2>
     <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -399,7 +396,7 @@
   <footer>
   <div>
     <p>
-      &copy; nqounet 2022
+      &copy; nqounet 2023
 
       &middot; <a href="https://creativecommons.org/licenses/by/4.0" target="_blank">CC BY 4.0</a>
 
@@ -419,17 +416,19 @@
 
   
 
-  
-<script type="application/javascript">
+    
+      
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E50H9ESN7E"></script>
+<script>
 var doNotTrack = false;
 if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'G-E50H9ESN7E', 'auto');
-	
-	ga('send', 'pageview');
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-E50H9ESN7E', { 'anonymize_ip': false });
 }
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
 
+    
 </body>
 </html>

@@ -13,7 +13,7 @@
       <pubDate>Fri, 09 Dec 2016 14:03:21 +0900</pubDate>
       
       <guid>https://www.nqou.net/2016/12/09/140321/</guid>
-      <description>この記事は、 Perl入学式 Advent Calendar 2016の9日目の記事です。 昨</description>
+      <description>この記事は、 Perl入学式 Advent Calendar 2016 の9日目の記事です。 昨日は ken5owata</description>
     </item>
     
     <item>
@@ -22,7 +22,7 @@
       <pubDate>Thu, 08 Dec 2016 20:21:41 +0900</pubDate>
       
       <guid>https://www.nqou.net/2016/12/08/202141/</guid>
-      <description>use strict; use warnings; use feature &#39;say&#39;; my @job; push @job, sub { say 1 }; push @job, sub { say 2 }; say &amp;quot;hoge&amp;quot;; unshift @job, sub { say</description>
+      <description>use strict; use warnings; use feature &amp;#39;say&amp;#39;; my @job; push @job, sub { say 1 }; push @job, sub { say 2 }; say &amp;#34;hoge&amp;#34;; unshift @job, sub { say</description>
     </item>
     
     <item>

@@ -3,15 +3,13 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.91.0" />
+  <meta name="generator" content="Hugo 0.111.3">
 
   <title>nqou.net</title>
 
   <meta name="description" content="Whisky, Perl, Kansai.pm" />
 
-  
-
-<meta itemprop="name" content="nqou.net">
+  <meta itemprop="name" content="nqou.net">
 <meta itemprop="description" content="Whisky, Perl, Kansai.pm">
 
 <meta name="twitter:card" content="summary"/>
@@ -23,7 +21,6 @@
 <meta property="og:description" content="Whisky, Perl, Kansai.pm" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.nqou.net/" /><meta property="og:site_name" content="nqou.net" />
-
 
 
 
@@ -63,7 +60,7 @@
       "about": {
          "@id": "https://www.nqou.net/#author"
       },
-      "dateModified": "2022-01-01T00:00:00+09:00",
+      "dateModified": "2023-03-21T13:26:30+09:00",
       "description": "Whisky, Perl, Kansai.pm",
       "inLanguage": "ja",
       "potentialAction": [
@@ -169,6 +166,23 @@
   <div class="posts">
       <article class="post">
         <h1 class="post-title">
+          <a href="https://www.nqou.net/2014/04/30/022534/">buildした時に、不要なデバッグ出力を無くすgruntプラグイン</a>
+        </h1>
+
+        <div class="post-date">
+          <time datetime="2014-04-30T02:25:34&#43;0900">Apr 30, 2014</time> &middot; 1 min read
+        </div>
+
+        <div>
+          1 2 3 bower install -S loglevel npm install -D grunt-remove-logging grunt bowerInstall 1 2 3 4 5 6 7 8 9 removelogging: { options: { namespace: [&#39;log&#39;], methods: [&#39;setLevel&#39;,
+        </div>
+
+        <div class="read-more-link">
+          <a href="https://www.nqou.net/2014/04/30/022534/">Read More</a>
+        </div>
+      </article>
+      <article class="post">
+        <h1 class="post-title">
           <a href="https://www.nqou.net/2014/04/29/221124/">開発時用のNodeモジュールをPerlでアップデートする</a>
         </h1>
 
@@ -194,7 +208,7 @@
         </div>
 
         <div>
-          replace: { siteInformation: { src: ['&lt;%= config.dist %&gt;/*.html'], dest: '&lt;%= config.dist %&gt;/', replacements: [{ from: '\{\{pkg.version\}\}', to: 'v&lt;%= pkg.version %&gt;' }] } },
+          replace: { siteInformation: { src: [&#39;&lt;%= config.dist %&gt;/*.html&#39;], dest: &#39;&lt;%= config.dist %&gt;/&#39;, replacements: [{ from: &#39;\{\{pkg.version\}\}&#39;, to: &#39;v&lt;%= pkg.version %&gt;&#39; }] } },
         </div>
 
         <div class="read-more-link">
@@ -245,7 +259,7 @@
         </div>
 
         <div>
-          (function($, global, undefined){ 'use strict'; var lscache, Mustache, processing = {}, generateCacheKey = function(path){ return 'fetched:' + path; }, fetchTemplate = function(path){ console.debug('fetchTemplate'); var key = generateCacheKey(path); $.get(path, function(template){ console.debug('run
+          (function($, global, undefined){ &#39;use strict&#39;; var lscache, Mustache, processing = {}, generateCacheKey = function(path){ return &#39;fetched:&#39; + path; }, fetchTemplate = function(path){ console.debug(&#39;fetchTemplate&#39;); var key = generateCacheKey(path); $.get(path, function(template){ console.debug(&#39;run
         </div>
 
         <div class="read-more-link">
@@ -320,23 +334,6 @@
           <a href="https://www.nqou.net/2014/04/03/081322/">Read More</a>
         </div>
       </article>
-      <article class="post">
-        <h1 class="post-title">
-          <a href="https://www.nqou.net/2014/03/25/234054/">bowerっていいわぁ</a>
-        </h1>
-
-        <div class="post-date">
-          <time datetime="2014-03-25T23:40:54&#43;0900">Mar 25, 2014</time> &middot; 0 min read
-        </div>
-
-        <div>
-          
-        </div>
-
-        <div class="read-more-link">
-          <a href="https://www.nqou.net/2014/03/25/234054/">Read More</a>
-        </div>
-      </article>
   </div>
 
   
@@ -374,7 +371,7 @@
   <footer>
   <div>
     <p>
-      &copy; nqounet 2022
+      &copy; nqounet 2023
 
       &middot; <a href="https://creativecommons.org/licenses/by/4.0" target="_blank">CC BY 4.0</a>
 
@@ -394,17 +391,19 @@
 
   
 
-  
-<script type="application/javascript">
+    
+      
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E50H9ESN7E"></script>
+<script>
 var doNotTrack = false;
 if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'G-E50H9ESN7E', 'auto');
-	
-	ga('send', 'pageview');
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-E50H9ESN7E', { 'anonymize_ip': false });
 }
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
 
+    
 </body>
 </html>

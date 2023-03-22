@@ -31,7 +31,7 @@
       <pubDate>Fri, 09 Dec 2016 14:03:21 +0900</pubDate>
       
       <guid>https://www.nqou.net/2016/12/09/140321/</guid>
-      <description>この記事は、 Perl入学式 Advent Calendar 2016の9日目の記事です。 昨</description>
+      <description>この記事は、 Perl入学式 Advent Calendar 2016 の9日目の記事です。 昨日は ken5owata</description>
     </item>
     
     <item>
@@ -148,7 +148,7 @@
       <pubDate>Sun, 31 Aug 2014 21:25:27 +0900</pubDate>
       
       <guid>https://www.nqou.net/2014/08/31/212527/</guid>
-      <description>#!/usr/bin/env perl use utf8; use 5.012001; use DDP {deparse =&amp;gt; 1}; my @list = (); while (my $in = &amp;lt;&amp;gt;) { chomp $in; if ($in == 1) { print &#39;&amp;gt;&amp;gt;&amp;gt;</description>
+      <description>#!/usr/bin/env perl use utf8; use 5.012001; use DDP {deparse =&amp;gt; 1}; my @list = (); while (my $in = &amp;lt;&amp;gt;) { chomp $in; if ($in == 1) { print &amp;#39;&amp;gt;&amp;gt;&amp;gt;</description>
     </item>
     
     <item>
@@ -166,7 +166,7 @@
       <pubDate>Sat, 19 Jul 2014 13:34:00 +0900</pubDate>
       
       <guid>https://www.nqou.net/2014/07/19/133400/</guid>
-      <description>#!/usr/bin/env perl use utf8; use 5.012; use DDP {deparse =&amp;gt; 1}; my $string = &#39;Perl入学式&#39;; my @foo = (&#39;foo&#39;, &#39;bar&#39;); p</description>
+      <description>#!/usr/bin/env perl use utf8; use 5.012; use DDP {deparse =&amp;gt; 1}; my $string = &amp;#39;Perl入学式&amp;#39</description>
     </item>
     
     <item>

@@ -3,15 +3,13 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.91.0" />
+  <meta name="generator" content="Hugo 0.111.3">
 
   <title>【2019年4月頃まで有効】Mojolicious::Liteで作ったアプリをHerokuで動かす &middot; nqou.net</title>
 
   <meta name="description" content="" />
 
-  
-
-<meta itemprop="name" content="【2019年4月頃まで有効】Mojolicious::Liteで作ったアプリをHerokuで動かす">
+  <meta itemprop="name" content="【2019年4月頃まで有効】Mojolicious::Liteで作ったアプリをHerokuで動かす">
 <meta itemprop="description" content="結構前に書いた heroku で Mojolicious::Lite で作ったアプリを動かす記事が今でも使える"><meta itemprop="datePublished" content="2017-12-02T17:03:42+09:00" />
 <meta itemprop="dateModified" content="2017-12-02T17:03:42+09:00" />
 <meta itemprop="wordCount" content="411">
@@ -28,7 +26,6 @@
 <meta property="og:url" content="https://www.nqou.net/2017/12/02/170342/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2017-12-02T17:03:42+09:00" />
 <meta property="article:modified_time" content="2017-12-02T17:03:42+09:00" /><meta property="og:site_name" content="nqou.net" />
-
 
 
 
@@ -228,33 +225,33 @@
 <p>ひとことで言うと、デフォルトで使用される Stack が cedar-14 から heroku-16 に変わっていて、 buildpack が heroku-16 に対応していなかった、ということのようです。</p>
 <p>なので、 stack を指定してやればまだ使えます。</p>
 <p>改訂版はこちら。</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">mkdir myapp <span style="color:#f92672">&amp;&amp;</span> cd myapp
-git init
-mojo generate lite_app myapp.pl
-heroku create --stack cedar-14 --buildpack https://github.com/pnu/heroku-buildpack-perl.git
-touch app.psgi
-echo <span style="color:#e6db74">&#39;requires &#34;Mojolicious&#34;;&#39;</span> &gt; cpanfile
-echo <span style="color:#e6db74">&#39;web: starman --preload-app --port $PORT myapp.pl psgi&#39;</span> &gt; Procfile
-git add .
-git commit -m <span style="color:#e6db74">&#39;go to heroku&#39;</span>
-git push heroku master
-heroku open
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>mkdir myapp <span style="color:#f92672">&amp;&amp;</span> cd myapp
+</span></span><span style="display:flex;"><span>git init
+</span></span><span style="display:flex;"><span>mojo generate lite_app myapp.pl
+</span></span><span style="display:flex;"><span>heroku create --stack cedar-14 --buildpack https://github.com/pnu/heroku-buildpack-perl.git
+</span></span><span style="display:flex;"><span>touch app.psgi
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;requires &#34;Mojolicious&#34;;&#39;</span> &gt; cpanfile
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;web: starman --preload-app --port $PORT myapp.pl psgi&#39;</span> &gt; Procfile
+</span></span><span style="display:flex;"><span>git add .
+</span></span><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#39;go to heroku&#39;</span>
+</span></span><span style="display:flex;"><span>git push heroku master
+</span></span><span style="display:flex;"><span>heroku open
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>cedar-14 は 2019年4月までサポートされる、ということなので、まだしばらくは遊べますね。</p>
 <h3 id="参考">参考</h3>
@@ -325,7 +322,7 @@ heroku open
     <h2>Comments</h2>
     <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -350,7 +347,7 @@ heroku open
   <footer>
   <div>
     <p>
-      &copy; nqounet 2022
+      &copy; nqounet 2023
 
       &middot; <a href="https://creativecommons.org/licenses/by/4.0" target="_blank">CC BY 4.0</a>
 
@@ -370,17 +367,19 @@ heroku open
 
   
 
-  
-<script type="application/javascript">
+    
+      
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E50H9ESN7E"></script>
+<script>
 var doNotTrack = false;
 if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'G-E50H9ESN7E', 'auto');
-	
-	ga('send', 'pageview');
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-E50H9ESN7E', { 'anonymize_ip': false });
 }
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
 
+    
 </body>
 </html>

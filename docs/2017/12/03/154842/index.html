@@ -3,15 +3,13 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.91.0" />
+  <meta name="generator" content="Hugo 0.111.3">
 
   <title>Wordpress から Hexo に乗り換えた（ついでにドメイン移転） &middot; nqou.net</title>
 
   <meta name="description" content="" />
 
-  
-
-<meta itemprop="name" content="Wordpress から Hexo に乗り換えた（ついでにドメイン移転）">
+  <meta itemprop="name" content="Wordpress から Hexo に乗り換えた（ついでにドメイン移転）">
 <meta itemprop="description" content="TL;DR migration 時に気をつけること hexo-migrator-wordpress を修正し、 HTML を無理に markdown に変換しないよ"><meta itemprop="datePublished" content="2017-12-03T15:48:42+09:00" />
 <meta itemprop="dateModified" content="2017-12-03T15:48:42+09:00" />
 <meta itemprop="wordCount" content="752">
@@ -28,7 +26,6 @@
 <meta property="og:url" content="https://www.nqou.net/2017/12/03/154842/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2017-12-03T15:48:42+09:00" />
 <meta property="article:modified_time" content="2017-12-03T15:48:42+09:00" /><meta property="og:site_name" content="nqou.net" />
-
 
 
 
@@ -223,7 +220,7 @@
 <li><code>{{</code> は <code>{{</code> に変換する</li>
 </ul>
 <h2 id="お知らせ">お知らせ</h2>
-<p>Wordpress で書いていた <a href="http://www.nishimiyahara.net">www.nishimiyahara.net</a> から、すべての記事を引っ越しました。</p>
+<p>Wordpress で書いていた <a href="https://www.nishimiyahara.net">www.nishimiyahara.net</a> から、すべての記事を引っ越しました。</p>
 <p>hexo も色々難点はあるけど、そこを理解して付き合っていけば何とかなりそうな気がしてきた。</p>
 <p>まあ、そう思えるのは、結果的に記事のインポートが（かなり躓いたけど）うまくいった（少なくとも構築できる状態になった）からだと思う。</p>
 <h2 id="元凶は-migrator-だった">元凶は migrator だった</h2>
@@ -301,7 +298,7 @@
     <h2>Comments</h2>
     <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -326,7 +323,7 @@
   <footer>
   <div>
     <p>
-      &copy; nqounet 2022
+      &copy; nqounet 2023
 
       &middot; <a href="https://creativecommons.org/licenses/by/4.0" target="_blank">CC BY 4.0</a>
 
@@ -346,17 +343,19 @@
 
   
 
-  
-<script type="application/javascript">
+    
+      
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E50H9ESN7E"></script>
+<script>
 var doNotTrack = false;
 if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'G-E50H9ESN7E', 'auto');
-	
-	ga('send', 'pageview');
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-E50H9ESN7E', { 'anonymize_ip': false });
 }
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
 
+    
 </body>
 </html>

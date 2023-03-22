@@ -3,15 +3,13 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.91.0" />
+  <meta name="generator" content="Hugo 0.111.3">
 
   <title>Mojoliciousでlogディレクトリを作っても画面でログを確認する方法 &middot; nqou.net</title>
 
   <meta name="description" content="" />
 
-  
-
-<meta itemprop="name" content="Mojoliciousでlogディレクトリを作っても画面でログを確認する方法">
+  <meta itemprop="name" content="Mojoliciousでlogディレクトリを作っても画面でログを確認する方法">
 <meta itemprop="description" content="# Mojolicious::Liteの場合 app-&gt;log-&gt;handle(\*STDERR) if app-&gt;mode eq &#39;development&#39;;"><meta itemprop="datePublished" content="2015-01-26T08:21:43+09:00" />
 <meta itemprop="dateModified" content="2015-01-26T08:21:43+09:00" />
 <meta itemprop="wordCount" content="26">
@@ -28,7 +26,6 @@
 <meta property="og:url" content="https://www.nqou.net/2015/01/26/082143/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2015-01-26T08:21:43+09:00" />
 <meta property="article:modified_time" content="2015-01-26T08:21:43+09:00" /><meta property="og:site_name" content="nqou.net" />
-
 
 
 
@@ -70,7 +67,7 @@
       },
       "datePublished": "2015-01-26T08:21:43+09:00",
       "dateModified": "2015-01-26T08:21:43+09:00",
-      "description": "# Mojolicious::Liteの場合 app-\u0026gt;log-\u0026gt;handle(\\*STDERR) if app-\u0026gt;mode eq 'development';",
+      "description": "# Mojolicious::Liteの場合 app-\u0026gt;log-\u0026gt;handle(\\*STDERR) if app-\u0026gt;mode eq \u0026#39;development\u0026#39;;",
       "inLanguage": "ja",
       "potentialAction": [
         {
@@ -224,7 +221,7 @@
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <pre tabindex="0"><code># Mojolicious::Liteの場合
-app-&gt;log-&gt;handle(\*STDERR) if app-&gt;mode eq 'development';
+app-&gt;log-&gt;handle(\*STDERR) if app-&gt;mode eq &#39;development&#39;;
 </code></pre><!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
@@ -285,7 +282,7 @@ app-&gt;log-&gt;handle(\*STDERR) if app-&gt;mode eq 'development';
     <h2>Comments</h2>
     <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -310,7 +307,7 @@ app-&gt;log-&gt;handle(\*STDERR) if app-&gt;mode eq 'development';
   <footer>
   <div>
     <p>
-      &copy; nqounet 2022
+      &copy; nqounet 2023
 
       &middot; <a href="https://creativecommons.org/licenses/by/4.0" target="_blank">CC BY 4.0</a>
 
@@ -330,17 +327,19 @@ app-&gt;log-&gt;handle(\*STDERR) if app-&gt;mode eq 'development';
 
   
 
-  
-<script type="application/javascript">
+    
+      
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E50H9ESN7E"></script>
+<script>
 var doNotTrack = false;
 if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'G-E50H9ESN7E', 'auto');
-	
-	ga('send', 'pageview');
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-E50H9ESN7E', { 'anonymize_ip': false });
 }
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
 
+    
 </body>
 </html>

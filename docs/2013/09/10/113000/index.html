@@ -3,15 +3,13 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.91.0" />
+  <meta name="generator" content="Hugo 0.111.3">
 
   <title>さくらのレンタルサーバーにDBD::SQLiteをインストールできた話 &middot; nqou.net</title>
 
   <meta name="description" content="" />
 
-  
-
-<meta itemprop="name" content="さくらのレンタルサーバーにDBD::SQLiteをインストールできた話">
+  <meta itemprop="name" content="さくらのレンタルサーバーにDBD::SQLiteをインストールできた話">
 <meta itemprop="description" content="1 $ cpanm DBD::SQLite --configure-args=&#34;-Wl,&#34; 1 2 cc -c -I. -I/home/hoge/perl5/perlbrew/perls/perl-5.14.2/lib/site_perl/5.14.2/i386-freebsd/auto/DBI -DHAS_FPSETMASK -DHAS_FLOATINGPOINT_H -fno-strict-aliasing -pipe -fstack-protector -I/usr/local/include -Wl,-Bsymbolic -O -O2 -DVERSION=\&#34;1.40\&#34; -DXS_VERSION=\&#34;1.40\&#34; -DPIC -fPIC &#34;-I/home/hoge/perl5/perlbrew/perls/perl-5.14.2/lib/5.14.2/i386-freebsd/CORE&#34; -DSQLITE_ENABLE_FTS4 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_COLUMN_METADATA -DSQLITE_ENABLE_STAT3"><meta itemprop="datePublished" content="2013-09-10T11:30:00+09:00" />
 <meta itemprop="dateModified" content="2013-09-10T11:30:00+09:00" />
 <meta itemprop="wordCount" content="45">
@@ -28,7 +26,6 @@
 <meta property="og:url" content="https://www.nqou.net/2013/09/10/113000/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2013-09-10T11:30:00+09:00" />
 <meta property="article:modified_time" content="2013-09-10T11:30:00+09:00" /><meta property="og:site_name" content="nqou.net" />
-
 
 
 
@@ -217,13 +214,13 @@
   <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">$ cpanm DBD::SQLite --configure-args=&#34;-Wl,&#34;
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ cpanm DBD::SQLite --configure-args=&#34;-Wl,&#34;
+</span></span></code></pre></td></tr></table>
 </div>
 </div><!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
@@ -231,15 +228,15 @@
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">cc -c  -I. -I/home/hoge/perl5/perlbrew/perls/perl-5.14.2/lib/site_perl/5.14.2/i386-freebsd/auto/DBI  -DHAS_FPSETMASK -DHAS_FLOATINGPOINT_H -fno-strict-aliasing -pipe -fstack-protector -I/usr/local/include -Wl,-Bsymbolic -O -O2    -DVERSION=\&#34;1.40\&#34;  -DXS_VERSION=\&#34;1.40\&#34; -DPIC -fPIC &#34;-I/home/hoge/perl5/perlbrew/perls/perl-5.14.2/lib/5.14.2/i386-freebsd/CORE&#34;  -DSQLITE_ENABLE_FTS4 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_COLUMN_METADATA -DSQLITE_ENABLE_STAT3 -DNDEBUG=1 -DHAVE_USLEEP=1 -DTHREADSAFE=0 -D_XOPEN_SOURCE SQLite.c
-cc: -Bsymbolic: linker input file unused because linking not done
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>cc -c  -I. -I/home/hoge/perl5/perlbrew/perls/perl-5.14.2/lib/site_perl/5.14.2/i386-freebsd/auto/DBI  -DHAS_FPSETMASK -DHAS_FLOATINGPOINT_H -fno-strict-aliasing -pipe -fstack-protector -I/usr/local/include -Wl,-Bsymbolic -O -O2    -DVERSION=\&#34;1.40\&#34;  -DXS_VERSION=\&#34;1.40\&#34; -DPIC -fPIC &#34;-I/home/hoge/perl5/perlbrew/perls/perl-5.14.2/lib/5.14.2/i386-freebsd/CORE&#34;  -DSQLITE_ENABLE_FTS4 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_COLUMN_METADATA -DSQLITE_ENABLE_STAT3 -DNDEBUG=1 -DHAVE_USLEEP=1 -DTHREADSAFE=0 -D_XOPEN_SOURCE SQLite.c
+</span></span><span style="display:flex;"><span>cc: -Bsymbolic: linker input file unused because linking not done
+</span></span></code></pre></td></tr></table>
 </div>
 </div><!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
@@ -306,7 +303,7 @@ cc: -Bsymbolic: linker input file unused because linking not done
     <h2>Comments</h2>
     <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -331,7 +328,7 @@ cc: -Bsymbolic: linker input file unused because linking not done
   <footer>
   <div>
     <p>
-      &copy; nqounet 2022
+      &copy; nqounet 2023
 
       &middot; <a href="https://creativecommons.org/licenses/by/4.0" target="_blank">CC BY 4.0</a>
 
@@ -351,17 +348,19 @@ cc: -Bsymbolic: linker input file unused because linking not done
 
   
 
-  
-<script type="application/javascript">
+    
+      
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E50H9ESN7E"></script>
+<script>
 var doNotTrack = false;
 if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'G-E50H9ESN7E', 'auto');
-	
-	ga('send', 'pageview');
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-E50H9ESN7E', { 'anonymize_ip': false });
 }
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
 
+    
 </body>
 </html>

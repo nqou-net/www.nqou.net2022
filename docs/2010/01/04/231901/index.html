@@ -3,15 +3,13 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.91.0" />
+  <meta name="generator" content="Hugo 0.111.3">
 
   <title>DBD::SQLiteの入出力をちゃんと考えてみる &middot; nqou.net</title>
 
   <meta name="description" content="" />
 
-  
-
-<meta itemprop="name" content="DBD::SQLiteの入出力をちゃんと考えてみる">
+  <meta itemprop="name" content="DBD::SQLiteの入出力をちゃんと考えてみる">
 <meta itemprop="description" content="なんとか上手くいく方法はないものかと。 基本的には、Perlの"><meta itemprop="datePublished" content="2010-01-04T23:19:01+09:00" />
 <meta itemprop="dateModified" content="2010-01-04T23:19:01+09:00" />
 <meta itemprop="wordCount" content="1190">
@@ -28,7 +26,6 @@
 <meta property="og:url" content="https://www.nqou.net/2010/01/04/231901/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2010-01-04T23:19:01+09:00" />
 <meta property="article:modified_time" content="2010-01-04T23:19:01+09:00" /><meta property="og:site_name" content="nqou.net" />
-
 
 
 
@@ -224,158 +221,158 @@ SQLiteはutf8の入出力が（少なくともver3.6.13では）可能のよう�
 そして入力の時、つまり、データベースからデータを取る時は、とって来た後に「Encode::decode_utf8」する。
 イメージは下の図。
 今回は出力だけなのでSTDINは使っていないが、binmode STDOUTをencodingで使う場合は、あわせて指定しておくのが定石だと思われる。</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">｜   　　｜→（binmode STDIN ）→｜    　　｜→（encode_utf8）→｜　　　　　　｜
-｜DOS画面｜　　              　　｜Perl内部｜　　           　　｜データベース｜
-｜   　　｜←（binmode STDOUT）←｜　　　　｜←（decode_utf8）←｜　　　　　　｜
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>｜   　　｜→（binmode STDIN ）→｜    　　｜→（encode_utf8）→｜　　　　　　｜
+</span></span><span style="display:flex;"><span>｜DOS画面｜　　              　　｜Perl内部｜　　           　　｜データベース｜
+</span></span><span style="display:flex;"><span>｜   　　｜←（binmode STDOUT）←｜　　　　｜←（decode_utf8）←｜　　　　　　｜
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>「binmode STDOUT =&gt; &ldquo;:encoding(cp932)&quot;;」とやる場合、printする時は内部形式のまま出力するように書けばいいので、他には何もすることがない。</p>
 <p>他にも挙動を調べたかったので、中身は少し変えた。</p>
 <p>スクリプト</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#75715e"># ｕｔｆ８</span>
-<span style="color:#66d9ef">use</span> <span style="color:#ae81ff">5.8.1</span>;
-<span style="color:#66d9ef">use</span> strict;
-<span style="color:#66d9ef">use</span> warnings;
-<span style="color:#66d9ef">use</span> utf8;
-<span style="color:#66d9ef">use</span> DBI;
-<span style="color:#66d9ef">use</span> Encode;
-<span style="color:#66d9ef">my</span> $lang_code <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;cp932&#39;</span>;
-binmode STDOUT <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;:encoding($lang_code)&#34;</span>;
-<span style="color:#66d9ef">my</span> $database <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;:memory:&#39;</span>;                         <span style="color:#75715e"># DBD::SQLite ver1.27以降</span>
-<span style="color:#66d9ef">my</span> @dsn      <span style="color:#f92672">=</span> (<span style="color:#e6db74">&#34;dbi:SQLite:dbname=$database&#34;</span>,);
-<span style="color:#66d9ef">my</span> $dbh      <span style="color:#f92672">=</span> DBI<span style="color:#f92672">-&gt;</span>connect(@dsn);
-printn(<span style="color:#e6db74">&#34;ver&#34;</span> <span style="color:#f92672">.</span> $dbh<span style="color:#f92672">-&gt;</span>{sqlite_version});
-<span style="color:#66d9ef">my</span> $create_table <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;CREATE TABLE IF NOT EXISTS books (&#39;</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;タイトル,&#39;</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;著者&#39;</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;);&#39;</span>;
-sub_do($dbh, $create_table);
-
-<span style="color:#75715e"># insert文の実行</span>
-<span style="color:#66d9ef">my</span> $statement;
-$statement <span style="color:#f92672">=</span> <span style="color:#e6db74">qq/insert into books (タイトル, 著者) values (&#39;Perl&#39;,   &#39;啓仁&#39;);/</span>;
-sub_do($dbh, $statement);
-$statement <span style="color:#f92672">=</span> <span style="color:#e6db74">qq/insert into books (タイトル, 著者) values (&#39;C++&#39;,    &#39;成憲&#39;);/</span>;
-sub_do($dbh, $statement);
-$statement <span style="color:#f92672">=</span> <span style="color:#e6db74">qq/insert into books (タイトル, 著者) values (&#39;C#&#39;,     &#39;☺鳳☻&#39;);/</span>;
-sub_do($dbh, $statement);
-$statement <span style="color:#f92672">=</span> <span style="color:#e6db74">q/insert into books (タイトル, 著者) values (&#39;Python&#39;, &#39;☻鳳☺&#39;);/</span>;
-sub_do($dbh, $statement);
-$statement <span style="color:#f92672">=</span> <span style="color:#e6db74">q/insert into books (タイトル, 著者) values (&#39;Java&#39;,   &#39;Keva&#39;);/</span>;
-sub_do($dbh, $statement);
-
-<span style="color:#75715e"># update文の実行</span>
-$statement <span style="color:#f92672">=</span> <span style="color:#e6db74">q/update books set タイトル = &#39;Ruby&#39; where 著者 = &#39;成憲&#39;/</span>;    <span style="color:#75715e"># 著者が&#39;成憲&#39;のタイトルを「Ruby」に更新</span>
-sub_do($dbh, $statement);
-
-<span style="color:#75715e"># delete文の実行</span>
-$statement <span style="color:#f92672">=</span> <span style="color:#e6db74">q/delete from books where 著者 = &#39;☻鳳☺&#39;;/</span>;
-sub_do($dbh, $statement);
-
-<span style="color:#75715e"># select文の実行</span>
-<span style="color:#66d9ef">my</span> $sth <span style="color:#f92672">=</span> $dbh<span style="color:#f92672">-&gt;</span>prepare(<span style="color:#e6db74">&#34;select * from books;&#34;</span>);
-$sth<span style="color:#f92672">-&gt;</span>execute;
-
-<span style="color:#75715e"># 各行のフェッチ</span>
-<span style="color:#66d9ef">while</span> (<span style="color:#66d9ef">my</span> $row <span style="color:#f92672">=</span> $sth<span style="color:#f92672">-&gt;</span>fetchrow_arrayref) {
-
-    <span style="color:#75715e"># 各行を出力</span>
-    <span style="color:#66d9ef">my</span> $str <span style="color:#f92672">=</span> $row<span style="color:#f92672">-&gt;</span>[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;:&#34;</span> <span style="color:#f92672">.</span> $row<span style="color:#f92672">-&gt;</span>[<span style="color:#ae81ff">1</span>];
-    $str <span style="color:#f92672">=</span> Encode::decode_utf8($str);
-    printn($str);
-}
-undef $sth;
-
-<span style="color:#75715e"># データベースの切断</span>
-$dbh<span style="color:#f92672">-&gt;</span>disconnect;
-
-<span style="color:#66d9ef">sub</span> <span style="color:#a6e22e">sub_do</span> {
-    <span style="color:#66d9ef">my</span> ($dbh, $statement) <span style="color:#f92672">=</span> @_;
-    $statement <span style="color:#f92672">=</span> Encode::encode_utf8($statement);
-    $dbh<span style="color:#f92672">-&gt;</span><span style="color:#66d9ef">do</span>($statement);
-}
-
-<span style="color:#66d9ef">sub</span> <span style="color:#a6e22e">printn</span> {
-    <span style="color:#66d9ef">print</span> @_;
-    <span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#34;\n&#34;</span>;
-}
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span><span style="color:#75715e"># ｕｔｆ８</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">use</span> <span style="color:#ae81ff">5.8.1</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">use</span> strict;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">use</span> warnings;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">use</span> utf8;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">use</span> DBI;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">use</span> Encode;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">my</span> $lang_code <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;cp932&#39;</span>;
+</span></span><span style="display:flex;"><span>binmode STDOUT <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;:encoding($lang_code)&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">my</span> $database <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;:memory:&#39;</span>;                         <span style="color:#75715e"># DBD::SQLite ver1.27以降</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">my</span> @dsn      <span style="color:#f92672">=</span> (<span style="color:#e6db74">&#34;dbi:SQLite:dbname=$database&#34;</span>,);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">my</span> $dbh      <span style="color:#f92672">=</span> DBI<span style="color:#f92672">-&gt;</span>connect(@dsn);
+</span></span><span style="display:flex;"><span>printn(<span style="color:#e6db74">&#34;ver&#34;</span> <span style="color:#f92672">.</span> $dbh<span style="color:#f92672">-&gt;</span>{sqlite_version});
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">my</span> $create_table <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;CREATE TABLE IF NOT EXISTS books (&#39;</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;タイトル,&#39;</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;著者&#39;</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;);&#39;</span>;
+</span></span><span style="display:flex;"><span>sub_do($dbh, $create_table);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># insert文の実行</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">my</span> $statement;
+</span></span><span style="display:flex;"><span>$statement <span style="color:#f92672">=</span> <span style="color:#e6db74">qq/insert into books (タイトル, 著者) values (&#39;Perl&#39;,   &#39;啓仁&#39;);/</span>;
+</span></span><span style="display:flex;"><span>sub_do($dbh, $statement);
+</span></span><span style="display:flex;"><span>$statement <span style="color:#f92672">=</span> <span style="color:#e6db74">qq/insert into books (タイトル, 著者) values (&#39;C++&#39;,    &#39;成憲&#39;);/</span>;
+</span></span><span style="display:flex;"><span>sub_do($dbh, $statement);
+</span></span><span style="display:flex;"><span>$statement <span style="color:#f92672">=</span> <span style="color:#e6db74">qq/insert into books (タイトル, 著者) values (&#39;C#&#39;,     &#39;☺鳳☻&#39;);/</span>;
+</span></span><span style="display:flex;"><span>sub_do($dbh, $statement);
+</span></span><span style="display:flex;"><span>$statement <span style="color:#f92672">=</span> <span style="color:#e6db74">q/insert into books (タイトル, 著者) values (&#39;Python&#39;, &#39;☻鳳☺&#39;);/</span>;
+</span></span><span style="display:flex;"><span>sub_do($dbh, $statement);
+</span></span><span style="display:flex;"><span>$statement <span style="color:#f92672">=</span> <span style="color:#e6db74">q/insert into books (タイトル, 著者) values (&#39;Java&#39;,   &#39;Keva&#39;);/</span>;
+</span></span><span style="display:flex;"><span>sub_do($dbh, $statement);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># update文の実行</span>
+</span></span><span style="display:flex;"><span>$statement <span style="color:#f92672">=</span> <span style="color:#e6db74">q/update books set タイトル = &#39;Ruby&#39; where 著者 = &#39;成憲&#39;/</span>;    <span style="color:#75715e"># 著者が&#39;成憲&#39;のタイトルを「Ruby」に更新</span>
+</span></span><span style="display:flex;"><span>sub_do($dbh, $statement);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># delete文の実行</span>
+</span></span><span style="display:flex;"><span>$statement <span style="color:#f92672">=</span> <span style="color:#e6db74">q/delete from books where 著者 = &#39;☻鳳☺&#39;;/</span>;
+</span></span><span style="display:flex;"><span>sub_do($dbh, $statement);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># select文の実行</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">my</span> $sth <span style="color:#f92672">=</span> $dbh<span style="color:#f92672">-&gt;</span>prepare(<span style="color:#e6db74">&#34;select * from books;&#34;</span>);
+</span></span><span style="display:flex;"><span>$sth<span style="color:#f92672">-&gt;</span>execute;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 各行のフェッチ</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">while</span> (<span style="color:#66d9ef">my</span> $row <span style="color:#f92672">=</span> $sth<span style="color:#f92672">-&gt;</span>fetchrow_arrayref) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 各行を出力</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">my</span> $str <span style="color:#f92672">=</span> $row<span style="color:#f92672">-&gt;</span>[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;:&#34;</span> <span style="color:#f92672">.</span> $row<span style="color:#f92672">-&gt;</span>[<span style="color:#ae81ff">1</span>];
+</span></span><span style="display:flex;"><span>    $str <span style="color:#f92672">=</span> Encode::decode_utf8($str);
+</span></span><span style="display:flex;"><span>    printn($str);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>undef $sth;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># データベースの切断</span>
+</span></span><span style="display:flex;"><span>$dbh<span style="color:#f92672">-&gt;</span>disconnect;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">sub</span> <span style="color:#a6e22e">sub_do</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">my</span> ($dbh, $statement) <span style="color:#f92672">=</span> @_;
+</span></span><span style="display:flex;"><span>    $statement <span style="color:#f92672">=</span> Encode::encode_utf8($statement);
+</span></span><span style="display:flex;"><span>    $dbh<span style="color:#f92672">-&gt;</span><span style="color:#66d9ef">do</span>($statement);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">sub</span> <span style="color:#a6e22e">printn</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">print</span> @_;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#34;\n&#34;</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>実行結果</p>
-<pre tabindex="0"><code>&quot;\x{263a}&quot; does not map to cp932.
-&quot;\x{263b}&quot; does not map to cp932.
+<pre tabindex="0"><code>&#34;\x{263a}&#34; does not map to cp932.
+&#34;\x{263b}&#34; does not map to cp932.
 ver3.6.13
 Perl:啓仁
 Ruby:成憲
@@ -433,7 +430,7 @@ Java:Keva
     <h2>Comments</h2>
     <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -458,7 +455,7 @@ Java:Keva
   <footer>
   <div>
     <p>
-      &copy; nqounet 2022
+      &copy; nqounet 2023
 
       &middot; <a href="https://creativecommons.org/licenses/by/4.0" target="_blank">CC BY 4.0</a>
 
@@ -478,17 +475,19 @@ Java:Keva
 
   
 
-  
-<script type="application/javascript">
+    
+      
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E50H9ESN7E"></script>
+<script>
 var doNotTrack = false;
 if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'G-E50H9ESN7E', 'auto');
-	
-	ga('send', 'pageview');
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-E50H9ESN7E', { 'anonymize_ip': false });
 }
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
 
+    
 </body>
 </html>

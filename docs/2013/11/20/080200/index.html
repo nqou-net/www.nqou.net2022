@@ -3,15 +3,13 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.91.0" />
+  <meta name="generator" content="Hugo 0.111.3">
 
   <title>Windowsの開発環境って難しい &middot; nqou.net</title>
 
   <meta name="description" content="" />
 
-  
-
-<meta itemprop="name" content="Windowsの開発環境って難しい">
+  <meta itemprop="name" content="Windowsの開発環境って難しい">
 <meta itemprop="description" content="@nqounetです． 最近，Windowsで開発する（Per"><meta itemprop="datePublished" content="2013-11-20T08:02:00+09:00" />
 <meta itemprop="dateModified" content="2013-11-20T08:02:00+09:00" />
 <meta itemprop="wordCount" content="1140">
@@ -28,7 +26,6 @@
 <meta property="og:url" content="https://www.nqou.net/2013/11/20/080200/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2013-11-20T08:02:00+09:00" />
 <meta property="article:modified_time" content="2013-11-20T08:02:00+09:00" /><meta property="og:site_name" content="nqou.net" />
-
 
 
 
@@ -229,23 +226,23 @@
 <p>結局リポジトリをイジって使えるフォントを増やす方法があったので，それでRictyを選べるようにした．</p>
 <!-- raw HTML omitted -->
 <p>エイリアスを作成するのに<!-- raw HTML omitted -->set-alias<!-- raw HTML omitted -->というコマンドがあるのだけど，引数は設定できないので，よく使う<!-- raw HTML omitted -->gst<!-- raw HTML omitted -->（<!-- raw HTML omitted -->git status -sb<!-- raw HTML omitted -->の短縮型）は関数にしてやらなければならない．</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">function gst { git status -sb }
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>function gst { git status -sb }
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>そんなに難しくなかった．</p>
 <p>Macでは，ターミナルから<!-- raw HTML omitted -->open .<!-- raw HTML omitted -->とする事も多かったので，<!-- raw HTML omitted -->explorer.exe<!-- raw HTML omitted -->も関数にしてやる．</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">function open($file_or_dir = &#34;.&#34;) { explorer.exe $file_or_dir }
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>function open($file_or_dir = &#34;.&#34;) { explorer.exe $file_or_dir }
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>関数は引数も使える，かつ，初期値を入れておくこともできるので，openだけでもカレントディレクトリを開くように出来た．</p>
 <!-- raw HTML omitted -->
@@ -314,7 +311,7 @@
     <h2>Comments</h2>
     <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -339,7 +336,7 @@
   <footer>
   <div>
     <p>
-      &copy; nqounet 2022
+      &copy; nqounet 2023
 
       &middot; <a href="https://creativecommons.org/licenses/by/4.0" target="_blank">CC BY 4.0</a>
 
@@ -359,17 +356,19 @@
 
   
 
-  
-<script type="application/javascript">
+    
+      
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E50H9ESN7E"></script>
+<script>
 var doNotTrack = false;
 if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'G-E50H9ESN7E', 'auto');
-	
-	ga('send', 'pageview');
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-E50H9ESN7E', { 'anonymize_ip': false });
 }
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
 
+    
 </body>
 </html>

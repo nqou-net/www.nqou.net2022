@@ -3,15 +3,13 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.91.0" />
+  <meta name="generator" content="Hugo 0.111.3">
 
   <title>ファイルのロック &middot; nqou.net</title>
 
   <meta name="description" content="" />
 
-  
-
-<meta itemprop="name" content="ファイルのロック">
+  <meta itemprop="name" content="ファイルのロック">
 <meta itemprop="description" content="&lt;p&gt;ソースコード&lt;/p&gt; 1 2 3 4 5"><meta itemprop="datePublished" content="2000-10-07T13:33:48+09:00" />
 <meta itemprop="dateModified" content="2000-10-07T13:33:48+09:00" />
 <meta itemprop="wordCount" content="2310">
@@ -28,7 +26,6 @@
 <meta property="og:url" content="https://www.nqou.net/2000/10/07/133348/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2000-10-07T13:33:48+09:00" />
 <meta property="article:modified_time" content="2000-10-07T13:33:48+09:00" /><meta property="og:site_name" content="nqou.net" />
-
 
 
 
@@ -266,613 +263,613 @@
 <!-- raw HTML omitted -->
 <pre><code>                             &lt;p&gt;ソースコード&lt;/p&gt;
 </code></pre>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 25
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 26
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 27
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 28
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 29
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 30
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 31
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 32
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 33
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 34
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 35
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 36
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 37
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 38
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 39
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 40
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 41
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 42
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 43
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 44
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 45
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 46
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 47
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 48
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 49
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 50
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 51
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 52
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 53
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 54
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 55
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 56
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 57
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 58
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 59
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 60
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 61
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 62
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 63
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 64
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 65
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 66
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 67
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 68
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 69
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 70
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 71
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 72
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 73
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 74
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 75
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 76
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 77
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 78
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 79
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 80
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 81
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 82
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 83
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 84
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 85
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 86
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 87
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 88
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 89
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 90
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 91
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 92
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 93
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 94
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 95
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 96
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 97
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 98
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 99
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">100
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">101
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">102
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">103
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">104
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">105
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">106
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">107
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">108
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">109
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">110
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">111
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">112
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">113
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">114
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">115
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">116
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">117
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">118
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">119
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">120
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">121
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">122
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">123
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">124
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">125
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">126
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">127
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">128
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">129
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">130
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">131
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">132
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">133
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">134
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">135
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">136
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">137
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">138
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">139
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">140
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">141
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">142
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">143
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">144
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">145
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">146
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">147
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">148
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">149
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">150
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">151
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">152
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">153
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">154
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">155
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">156
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">157
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">158
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">159
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">160
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">161
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">162
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">163
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">164
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">165
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">166
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">167
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">168
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">169
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">170
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">171
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">172
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">173
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">174
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">175
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">176
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">177
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">178
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">179
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">180
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">181
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">182
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">183
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">184
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">185
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">186
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">187
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">188
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">189
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">190
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">191
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">192
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">193
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">194
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">195
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">196
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">197
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">198
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">199
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">200
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">201
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">202
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">203
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">204
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">205
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">206
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">207
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">208
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">209
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">210
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">211
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">212
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">213
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">214
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">215
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">216
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">217
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">218
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">219
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">220
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">221
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">222
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">223
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">224
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">225
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">226
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">227
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">228
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">229
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">230
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">231
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">232
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">233
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">234
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">235
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">236
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">237
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">238
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">239
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">240
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">241
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">242
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">243
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">244
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">245
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">246
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">247
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">248
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">249
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">250
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">251
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">252
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">253
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">254
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">255
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">256
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">257
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">258
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">259
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">260
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">261
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">262
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">263
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">264
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">265
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">266
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">267
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">268
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">269
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">270
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">271
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">272
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">273
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">274
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">275
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">276
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">277
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">278
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">279
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">280
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">281
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">282
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">283
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">284
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">285
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">286
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">287
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">288
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">289
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">290
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">291
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">292
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">293
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">294
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">295
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">296
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">297
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">298
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">299
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">300
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">301
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 21
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 22
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 23
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 24
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 25
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 26
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 27
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 28
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 29
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 30
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 31
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 32
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 33
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 34
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 35
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 36
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 37
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 38
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 39
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 40
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 41
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 42
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 43
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 44
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 45
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 46
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 47
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 48
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 49
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 50
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 51
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 52
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 53
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 54
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 55
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 56
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 57
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 58
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 59
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 60
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 61
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 62
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 63
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 64
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 65
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 66
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 67
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 68
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 69
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 70
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 71
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 72
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 73
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 74
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 75
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 76
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 77
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 78
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 79
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 80
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 81
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 82
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 83
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 84
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 85
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 86
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 87
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 88
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 89
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 90
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 91
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 92
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 93
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 94
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 95
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 96
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 97
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 98
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 99
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">100
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">101
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">102
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">103
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">104
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">105
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">106
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">107
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">108
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">109
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">110
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">111
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">112
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">113
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">114
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">115
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">116
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">117
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">118
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">119
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">120
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">121
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">122
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">123
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">124
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">125
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">126
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">127
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">128
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">129
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">130
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">131
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">132
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">133
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">134
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">135
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">136
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">137
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">138
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">139
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">140
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">141
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">142
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">143
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">144
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">145
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">146
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">147
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">148
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">149
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">150
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">151
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">152
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">153
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">154
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">155
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">156
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">157
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">158
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">159
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">160
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">161
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">162
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">163
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">164
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">165
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">166
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">167
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">168
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">169
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">170
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">171
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">172
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">173
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">174
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">175
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">176
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">177
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">178
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">179
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">180
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">181
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">182
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">183
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">184
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">185
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">186
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">187
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">188
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">189
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">190
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">191
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">192
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">193
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">194
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">195
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">196
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">197
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">198
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">199
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">200
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">201
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">202
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">203
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">204
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">205
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">206
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">207
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">208
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">209
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">210
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">211
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">212
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">213
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">214
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">215
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">216
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">217
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">218
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">219
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">220
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">221
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">222
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">223
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">224
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">225
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">226
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">227
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">228
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">229
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">230
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">231
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">232
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">233
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">234
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">235
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">236
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">237
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">238
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">239
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">240
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">241
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">242
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">243
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">244
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">245
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">246
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">247
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">248
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">249
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">250
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">251
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">252
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">253
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">254
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">255
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">256
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">257
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">258
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">259
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">260
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">261
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">262
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">263
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">264
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">265
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">266
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">267
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">268
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">269
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">270
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">271
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">272
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">273
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">274
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">275
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">276
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">277
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">278
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">279
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">280
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">281
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">282
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">283
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">284
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">285
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">286
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">287
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">288
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">289
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">290
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">291
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">292
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">293
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">294
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">295
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">296
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">297
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">298
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">299
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">300
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">301
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">#!/usr/bin/perl
-
-# print &#34;Content-type: text/htmlnn&#34;;
-# open(STDERR, &#34;&gt;&amp;amp;STDOUT&#34;);
-# $|=1;
-
-# 初期設定
-# require Jcode;
-# $JcodeVer = &#34;Jcode $Jcode::VERSION&#34;;
-# *Jgetcode = &amp;amp;Jcode::getcode;
-# *Jconvert = &amp;amp;Jcode::convert;
-
-require &#34;../../../cgi-bin/jcode.pl&#34;;
-$JcodeVer = &#34;jcode.pl $jcode::version&#34;;
-*Jgetcode = &amp;amp;jcode::getcode;
-*Jconvert = sub { &amp;amp;jcode::to($_[1], $_[0], $_[2]); };
-
-@G_styles = (&#34;../../ipp.css&#34;,&#34;../test.css&#34;);
-$G_title = &#34;テスト２０&#34;;
-# $G_myCode = &amp;amp;Jgetcode(&#34;漢字&#34;);
-$G_myCode = &amp;amp;Jgetcode(&#34;漢字&#34;);
-$G_code = &#34;jis&#34;;
-$G_charset = &#34;iso-2022-jp&#34;;
-%G_form=();
-
-$G_scrName = $ENV{&#39;SCRIPT_NAME&#39;};
-if($G_scrName =~ /ts[0-9]{4}/){ # _1,_uなどと共通で使用する項目
-    $G_scrName = $&amp;amp;;
-    $G_dataFile = &#34;dat/$G_scrName.dat&#34;;
-    $G_lock = &#34;lock/$G_scrName&#34;;
-    $G_linkFile = &#34;../$G_scrName.htm&#34;;
-    $G_linkName = $G_title;
-}
-
-{
-    &amp;amp;sigInit;
-    if($#ARGV == -1){
-        &amp;amp;selectCode;
-    }elsif( $ENV{&#39;HTTP_REFERER&#39;} !~ /$ENV{&#39;SCRIPT_NAME&#39;}/ ||
-            $ENV{&#39;HTTP_REFERER&#39;} !~ /$ENV{&#39;HTTP_HOST&#39;}/ ){
-        exit;
-#    }elsif($ARGV[0] eq &#34;utf8&#34;){
-#        $G_code = &#34;utf8&#34;;
-#        $G_charset = &#34;UTF-8&#34;;
-#        &amp;amp;printForm(&#34;post&#34;);
-    }elsif($ARGV[0] eq &#34;sjis&#34;){
-        $G_code = &#34;sjis&#34;;
-        $G_charset = &#34;shift_jis&#34;;
-        &amp;amp;printForm(&#34;post&#34;);
-    }elsif($ARGV[0] eq &#34;euc&#34;){
-        $G_code = &#34;euc&#34;;
-        $G_charset = &#34;euc-jp&#34;;
-        &amp;amp;printForm(&#34;post&#34;);
-    }elsif($ARGV[0] eq &#34;jis&#34;){
-        &amp;amp;printForm(&#34;post&#34;);
-    }elsif($ARGV[0] eq &#34;output&#34;){
-        &amp;amp;formRead;
-        &amp;amp;formWrite;
-    }elsif($ARGV[0] eq &#34;read&#34;){
-        &amp;amp;dataOpen;
-    }else{
-        &amp;amp;error(&#34;&lt;h2&gt;無効なコマンドが渡されました。&lt;/h2&gt;&#34;);
-    }
-
-    exit;
-}
-
-sub sigInit{
-    $SIG{&#39;PIPE&#39;} = &#34;sigExit&#34;;
-    $SIG{&#39;INT&#39;} = &#34;sigExit&#34;;
-    $SIG{&#39;HUP&#39;} = &#34;sigExit&#34;;
-    $SIG{&#39;QUIT&#39;} = &#34;sigExit&#34;;
-    $SIG{&#39;TERM&#39;} = &#34;sigExit&#34;;
-}
-
-sub sigExit{
-    &amp;amp;dataUnlock;
-    exit;
-}
-
-sub error{
-    $G_title .= &#34;（エラー）&#34;;
-    &amp;amp;printHeader;
-    &amp;amp;Jprint(@_);
-    &amp;amp;printFooter;
-    exit;
-}
-
-sub selectCode{
-    $G_title .= &#34;（漢字コード選択）&#34;;
-    &amp;amp;printHeader;
-    print &#34;&lt;div class=test&gt;n&#34;;
-
-    &amp;amp;Jprint(&#34;&lt;p&gt;入力フォームで使用する漢字コードを選んでください。&lt;/p&gt;n&#34;);
-    print &lt;&lt;EOM;
-&lt;form method=post action=&#34;$ENV{&#39;SCRIPT_NAME&#39;}?jis&#34;&gt;&lt;input type=submit value=&#34;JIS(iso-2022-jp)&#34;&gt;&lt;/form&gt;
-&lt;form method=post action=&#34;$ENV{&#39;SCRIPT_NAME&#39;}?sjis&#34;&gt;&lt;input type=submit value=&#34;Shift_JIS&#34;&gt;&lt;/form&gt;
-&lt;form method=post action=&#34;$ENV{&#39;SCRIPT_NAME&#39;}?euc&#34;&gt;&lt;input type=submit value=&#34;EUC-JP&#34;&gt;&lt;/form&gt;
-EOM
-# 以下の一行を削除した
-# &lt;form method=post action=&#34;$ENV{&#39;SCRIPT_NAME&#39;}?utf8&#34;&gt;&lt;input type=submit value=&#34;Unicode(UTF-8)&#34;&gt;&lt;/form&gt;
-
-    print qq(&lt;form method=post action=&#34;$ENV{&#39;SCRIPT_NAME&#39;}?read&#34;&gt;n);
-    &amp;amp;Jprint(qq(&lt;input type=submit value=&#34;過去ログ（？）を見る&#34;&gt;n));
-    print &#34;&lt;/form&gt;n&#34;;
-    print &#34;&lt;/div&gt;n&#34;;
-    &amp;amp;printFooter;
-}
-
-sub dataLock{
-    local($i, $mtime);
-    for($i=0;$i&lt;2;$i++){
-        if(mkdir($G_lock, 0755)){
-            return;
-        }else{
-            unless($i){
-                ($mtime) = (stat($G_lock))[9];
-                if ($mtime &lt; time() - 60) { # １分以上前のロックは解除
-                    rmdir($G_lock);
-                }
-            }
-        }
-    }
-    &amp;amp;error(&#34;&lt;h2&gt;現在、ロック中です。ごめんなさい。&lt;/h2&gt;&#34;);
-}
-
-sub dataUnlock{
-    if(-d $G_lock){
-        rmdir($G_lock);
-    }
-}
-
-sub dataOpen{
-    $G_title .= &#34;（過去ログ）&#34;;
-    &amp;amp;printHeader;
-    print &#34;&lt;div class=test&gt;n&#34;;
-
-    &amp;amp;dataLock;
-
-    open(IN, &#34;&lt;$ G_dataFile&#34;)||die &#34;Can not open $G_dataFile....&#34;;
-    # データファイルはEUC記録なので時間短縮のつもり。
-    # 標準出力は「jis」だけど・・・。
-    if($G_code eq &#34;euc&#34;){
-        print while (&lt;IN&gt;);
-    }else{
-        while (&lt;IN&gt;){
-            print &amp;amp;Jconvert($_, $G_code, &#34;euc&#34;);
-        }
-    }
-    close(IN);
-
-    &amp;amp;dataUnlock;
-
-    print &#34;&lt;/div&gt;n&#34;;
-    &amp;amp;printFooter;
-}
-
-sub formWrite{
-    local($name, $value);
-
-    &amp;amp;dataLock;
-
-    open(OUT, &#34;&gt;&gt; $G_dataFile&#34;)||die &#34;Can not open $G_dataFile....&#34;;
-    print(OUT &#34;&lt;table border=1&gt;n&#34;);
-    print(OUT &#34;&lt;tr&gt;&lt;th&gt;Name&lt;th&gt;Value&lt;/tr&gt;n&#34;);
-    while (($name, $value) = each(%G_form)){
-        print(OUT &#34;&lt;tr&gt;&lt;td&gt;$name&lt;td&gt;$value&lt;/tr&gt;n&#34;);
-    }
-
-    sleep 5;
-
-    print(OUT &#34;&lt;/table&gt;n&#34;);
-
-    close(OUT);
-
-    &amp;amp;dataUnlock;
-
-    $G_title .= &#34;（送信完了）&#34;;
-    &amp;amp;printHeader;
-    print &#34;&lt;div class=test&gt;n&#34;;
-
-    &amp;amp;Jprint(&#34;&lt;p&gt;たぶん、無事に送信されました。n&#34;);
-    &amp;amp;Jprint(qq(&lt;p&gt;&lt;a href=&#34;$ENV{&#39;SCRIPT_NAME&#39;}?read&#34;&gt;心配だから、過去ログを見る。&lt;/a&gt;n));
-    print &#34;&lt;/p&gt;n&#34;;
-
-    print &#34;&lt;/div&gt;n&#34;;
-    &amp;amp;printFooter;
-}
-
-sub formRead{
-    local($query_string, @elements, $elm, $name, $value, $code, $method);
-    $method = $ENV{&#39;REQUEST_METHOD&#39;};
-    if($method eq &#34;POST&#34;){
-        read(STDIN, $query_string, $ENV{&#39;CONTENT_LENGTH&#39;});
-    }elsif($method eq &#34;GET&#34;){
-        $query_string = $ENV{&#39;QUERY_STRING&#39;};
-    }else{
-        &amp;amp;error(&#34;&lt;h2&gt;「POST」か「GET」のデータしか受け取れません。&lt;/h2&gt;&#34;);
-    }
-    @elements = split(/&amp;amp;/, $query_string);  # 中身はpostもgetも同じ
-    foreach $elm (@elements){
-        ($name, $value) = split(/=/, $elm);
-        $value =~ tr/+/ /;
-        $value =~ s/%([0-9a-fA-F][0-9a-fA-F])/pack(&#34;C&#34;, hex($1))/eg;
-#        $code = &amp;amp;Jgetcode($value);
-        $code = &amp;amp;Jgetcode($value);
-        if($code ne &#34;euc&#34;){
-            $value = &amp;amp;Jconvert($value, &#34;euc&#34;, $code); # とりあえずEUCに変換
-        }
-        $value =~ s/&amp;amp;/&amp;amp;amp;/g;  # メタ文字（？）を無効化
-#        $value =~ s/&lt;!--/&amp;amp;lt;!--/g;   # SSI入力を無効化
-#        $value =~ s/--&gt;/--&amp;amp;gt;/g;   # SSI入力を無効化
-        $value =~ s/&lt;/&amp;amp;lt;/g;   # タグを無効化
-        $value =~ s/&gt;/&amp;amp;gt;/g;   # タグを無効化
-        $value =~ s/rn*/n/g; # 改行を統一
-        $value =~ s/nnn+/nn/g; # 長い改行（３回以上）を２回（１行空き）に
-        $value =~ s/[ns]+$//g; # 最後の連続した空白、改行を削除
-        $value =~ s/n/&lt;br&gt;/g;  # 改行を&lt;br&gt;に変換
-        $G_form{$name} = $value .&#34;&lt;br&gt;InputCode : $coden&#34;;
-    }
-}
-
-sub printForm{
-    $G_title .= &#34;（入力画面）&#34;;
-    &amp;amp;printHeader;
-    print &#34;&lt;div class=test&gt;n&#34;;
-
-    print qq(&lt;form method=$_[0] action=&#34;$ENV{&#39;SCRIPT_NAME&#39;}?output&#34;&gt;n);
-    &amp;amp;Jprint(qq(&lt;input type=hidden name=tx0 value=&#34;画面表示：$G_codenブラウザ：$ENV{&#39;HTTP_USER_AGENT&#39;}nスクリプト：$G_myCode&#34;&gt;&lt;br&gt;n));
-    print qq(&lt;input type=text name=tx1 value=&#34;tx1&#34;&gt;&lt;br&gt;n);
-    &amp;amp;Jprint(&#34;&lt;textarea name=ta1 cols=40 rows=4&gt;ta1n何か適当にどうぞ。n&lt;/textarea&gt;&lt;br&gt;n&#34;);
-    &amp;amp;Jprint(&#34;&lt;p&gt;送信し、データを書き込んでいる最中に５秒間待ちます。&lt;/p&gt;n&#34;);
-    &amp;amp;Jprint(&#34;&lt;p&gt;この間は、しばらく待つか、他のブラウザなどから「送信」を試してみてください。&lt;/p&gt;n&#34;);
-    &amp;amp;Jprint(qq(&lt;p&gt;&lt;a href=&#34;$ENV{&#39;SCRIPT_NAME&#39;}&#34;&gt;ブラウザをもう一枚開く&lt;/a&gt;&lt;/p&gt;n));
-    &amp;amp;Jprint(qq(&lt;input type=submit value=&#34;送信する&#34;&gt;n));
-    print &#34;&lt;/form&gt;n&#34;;
-    print qq(&lt;form method=$_[0] action=&#34;$ENV{&#39;SCRIPT_NAME&#39;}?read&#34;&gt;n);
-    &amp;amp;Jprint(qq(&lt;input type=submit value=&#34;過去ログ（？）を見る&#34;&gt;n));
-    print &#34;&lt;/form&gt;n&#34;;
-
-    print &#34;&lt;/div&gt;n&#34;;
-    &amp;amp;printFooter;
-}
-
-sub printHeader{
-    if($G_charset){
-        print &#34;Content-type: text/html; charset=$G_charsetnn&#34;;
-    }else{
-        print &#34;Content-type: text/htmlnn&#34;;
-    }
-    print qq(&lt;!doctype html public &#34;-//W3C//DTD HTML 4.01 Transitional//EN&#34;&gt;n);
-    print &#34;&lt;html lang=ja&gt;n&lt;head&gt;n&#34;;
-    if($G_charset){
-        print qq(&lt;meta http-equiv=&#34;Content-Type&#34; content=&#34;text/html; charset=$G_charset&#34;&gt;n);
-    }
-    print qq(&lt;meta http-equiv=&#34;Content-Script-Type&#34; content=&#34;text/javascript&#34;&gt;n);
-    print qq(&lt;meta http-equiv=&#34;Content-Style-Type&#34; content=&#34;text/css&#34;&gt;n);
-    &amp;amp;Jprint(&#34;&lt;title&gt;$G_title&lt;/title&gt;n&#34;);
-    foreach (@G_styles){
-        print qq(&lt;link rel=&#34;stylesheet&#34; type=&#34;text/css&#34; href=&#34;$_&#34;&gt;n);
-    }
-    print &#34;&lt;/head&gt;n&lt;body&gt;n&#34;;
-    print &#34;&lt;div class=head&gt;n&#34;;
-    &amp;amp;Jprint(&#34;&lt;h1&gt;$G_title&lt;/h1&gt;&lt;hr&gt;n&#34;);
-    &amp;amp;printlinks;
-    print &#34;&lt;hr&gt;&lt;/div&gt;n&#34;;
-#    print $ENV{&#39;HTTP_REFERER&#39;}.&#34;&lt;br&gt;&#34;.$ENV{&#39;SCRIPT_NAME&#39;}.&#34;&lt;br&gt;&#34;.$ENV{&#39;HTTP_HOST&#39;};
-}
-
-sub printFooter{
-    print &#34;&lt;div class=foot&gt;&lt;hr&gt;n&#34;;
-    &amp;amp;printlinks;
-    print &#34;&lt;hr&gt;n&#34;;
-    &amp;amp;Jprint(&#34;漢字コード変換 ： $JcodeVer&lt;br&gt;n&#34;);
-    open(IN, &#34;../../sig.txt&#34;);
-    print while (&lt;IN&gt;);
-    close(IN);
-    print &#34;&lt;/div&gt;n&#34;;
-    print &#34;&lt;/body&gt;&lt;/html&gt;n&#34;;
-}
-
-sub printlinks{
-    print qq(&lt;a href=&#34;../../../index.htm&#34;&gt;Home&lt;/a&gt;n);
-    print qq(/n&lt;a href=&#34;../../&#34;&gt;Perl&lt;/a&gt;n);
-    print qq(/n&lt;a href=&#34;../&#34;&gt;TestCGI Index&lt;/a&gt;n);
-    if($G_linkFile){
-        &amp;amp;Jprint(qq(/n&lt;a href=&#34;$G_linkFile&#34;&gt;$G_linkNameの解説&lt;/a&gt;n));
-    }
-}
-
-sub Jprint{
-    if($G_code eq $G_myCode){
-        foreach (@_){ print; }
-    }else{
-        foreach (@_){ print &amp;amp;Jconvert($_, $G_code, $G_myCode); }
-    }
-}
-
-sub JconvPrint{
-    foreach (@_){ print &amp;amp;Jconvert($_, $G_code, &amp;amp;Jgetcode($_)); }
-}
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>#!/usr/bin/perl
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># print &#34;Content-type: text/htmlnn&#34;;
+</span></span><span style="display:flex;"><span># open(STDERR, &#34;&gt;&amp;amp;STDOUT&#34;);
+</span></span><span style="display:flex;"><span># $|=1;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># 初期設定
+</span></span><span style="display:flex;"><span># require Jcode;
+</span></span><span style="display:flex;"><span># $JcodeVer = &#34;Jcode $Jcode::VERSION&#34;;
+</span></span><span style="display:flex;"><span># *Jgetcode = &amp;amp;Jcode::getcode;
+</span></span><span style="display:flex;"><span># *Jconvert = &amp;amp;Jcode::convert;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>require &#34;../../../cgi-bin/jcode.pl&#34;;
+</span></span><span style="display:flex;"><span>$JcodeVer = &#34;jcode.pl $jcode::version&#34;;
+</span></span><span style="display:flex;"><span>*Jgetcode = &amp;amp;jcode::getcode;
+</span></span><span style="display:flex;"><span>*Jconvert = sub { &amp;amp;jcode::to($_[1], $_[0], $_[2]); };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>@G_styles = (&#34;../../ipp.css&#34;,&#34;../test.css&#34;);
+</span></span><span style="display:flex;"><span>$G_title = &#34;テスト２０&#34;;
+</span></span><span style="display:flex;"><span># $G_myCode = &amp;amp;Jgetcode(&#34;漢字&#34;);
+</span></span><span style="display:flex;"><span>$G_myCode = &amp;amp;Jgetcode(&#34;漢字&#34;);
+</span></span><span style="display:flex;"><span>$G_code = &#34;jis&#34;;
+</span></span><span style="display:flex;"><span>$G_charset = &#34;iso-2022-jp&#34;;
+</span></span><span style="display:flex;"><span>%G_form=();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$G_scrName = $ENV{&#39;SCRIPT_NAME&#39;};
+</span></span><span style="display:flex;"><span>if($G_scrName =~ /ts[0-9]{4}/){ # _1,_uなどと共通で使用する項目
+</span></span><span style="display:flex;"><span>    $G_scrName = $&amp;amp;;
+</span></span><span style="display:flex;"><span>    $G_dataFile = &#34;dat/$G_scrName.dat&#34;;
+</span></span><span style="display:flex;"><span>    $G_lock = &#34;lock/$G_scrName&#34;;
+</span></span><span style="display:flex;"><span>    $G_linkFile = &#34;../$G_scrName.htm&#34;;
+</span></span><span style="display:flex;"><span>    $G_linkName = $G_title;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    &amp;amp;sigInit;
+</span></span><span style="display:flex;"><span>    if($#ARGV == -1){
+</span></span><span style="display:flex;"><span>        &amp;amp;selectCode;
+</span></span><span style="display:flex;"><span>    }elsif( $ENV{&#39;HTTP_REFERER&#39;} !~ /$ENV{&#39;SCRIPT_NAME&#39;}/ ||
+</span></span><span style="display:flex;"><span>            $ENV{&#39;HTTP_REFERER&#39;} !~ /$ENV{&#39;HTTP_HOST&#39;}/ ){
+</span></span><span style="display:flex;"><span>        exit;
+</span></span><span style="display:flex;"><span>#    }elsif($ARGV[0] eq &#34;utf8&#34;){
+</span></span><span style="display:flex;"><span>#        $G_code = &#34;utf8&#34;;
+</span></span><span style="display:flex;"><span>#        $G_charset = &#34;UTF-8&#34;;
+</span></span><span style="display:flex;"><span>#        &amp;amp;printForm(&#34;post&#34;);
+</span></span><span style="display:flex;"><span>    }elsif($ARGV[0] eq &#34;sjis&#34;){
+</span></span><span style="display:flex;"><span>        $G_code = &#34;sjis&#34;;
+</span></span><span style="display:flex;"><span>        $G_charset = &#34;shift_jis&#34;;
+</span></span><span style="display:flex;"><span>        &amp;amp;printForm(&#34;post&#34;);
+</span></span><span style="display:flex;"><span>    }elsif($ARGV[0] eq &#34;euc&#34;){
+</span></span><span style="display:flex;"><span>        $G_code = &#34;euc&#34;;
+</span></span><span style="display:flex;"><span>        $G_charset = &#34;euc-jp&#34;;
+</span></span><span style="display:flex;"><span>        &amp;amp;printForm(&#34;post&#34;);
+</span></span><span style="display:flex;"><span>    }elsif($ARGV[0] eq &#34;jis&#34;){
+</span></span><span style="display:flex;"><span>        &amp;amp;printForm(&#34;post&#34;);
+</span></span><span style="display:flex;"><span>    }elsif($ARGV[0] eq &#34;output&#34;){
+</span></span><span style="display:flex;"><span>        &amp;amp;formRead;
+</span></span><span style="display:flex;"><span>        &amp;amp;formWrite;
+</span></span><span style="display:flex;"><span>    }elsif($ARGV[0] eq &#34;read&#34;){
+</span></span><span style="display:flex;"><span>        &amp;amp;dataOpen;
+</span></span><span style="display:flex;"><span>    }else{
+</span></span><span style="display:flex;"><span>        &amp;amp;error(&#34;&lt;h2&gt;無効なコマンドが渡されました。&lt;/h2&gt;&#34;);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    exit;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sub sigInit{
+</span></span><span style="display:flex;"><span>    $SIG{&#39;PIPE&#39;} = &#34;sigExit&#34;;
+</span></span><span style="display:flex;"><span>    $SIG{&#39;INT&#39;} = &#34;sigExit&#34;;
+</span></span><span style="display:flex;"><span>    $SIG{&#39;HUP&#39;} = &#34;sigExit&#34;;
+</span></span><span style="display:flex;"><span>    $SIG{&#39;QUIT&#39;} = &#34;sigExit&#34;;
+</span></span><span style="display:flex;"><span>    $SIG{&#39;TERM&#39;} = &#34;sigExit&#34;;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sub sigExit{
+</span></span><span style="display:flex;"><span>    &amp;amp;dataUnlock;
+</span></span><span style="display:flex;"><span>    exit;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sub error{
+</span></span><span style="display:flex;"><span>    $G_title .= &#34;（エラー）&#34;;
+</span></span><span style="display:flex;"><span>    &amp;amp;printHeader;
+</span></span><span style="display:flex;"><span>    &amp;amp;Jprint(@_);
+</span></span><span style="display:flex;"><span>    &amp;amp;printFooter;
+</span></span><span style="display:flex;"><span>    exit;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sub selectCode{
+</span></span><span style="display:flex;"><span>    $G_title .= &#34;（漢字コード選択）&#34;;
+</span></span><span style="display:flex;"><span>    &amp;amp;printHeader;
+</span></span><span style="display:flex;"><span>    print &#34;&lt;div class=test&gt;n&#34;;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    &amp;amp;Jprint(&#34;&lt;p&gt;入力フォームで使用する漢字コードを選んでください。&lt;/p&gt;n&#34;);
+</span></span><span style="display:flex;"><span>    print &lt;&lt;EOM;
+</span></span><span style="display:flex;"><span>&lt;form method=post action=&#34;$ENV{&#39;SCRIPT_NAME&#39;}?jis&#34;&gt;&lt;input type=submit value=&#34;JIS(iso-2022-jp)&#34;&gt;&lt;/form&gt;
+</span></span><span style="display:flex;"><span>&lt;form method=post action=&#34;$ENV{&#39;SCRIPT_NAME&#39;}?sjis&#34;&gt;&lt;input type=submit value=&#34;Shift_JIS&#34;&gt;&lt;/form&gt;
+</span></span><span style="display:flex;"><span>&lt;form method=post action=&#34;$ENV{&#39;SCRIPT_NAME&#39;}?euc&#34;&gt;&lt;input type=submit value=&#34;EUC-JP&#34;&gt;&lt;/form&gt;
+</span></span><span style="display:flex;"><span>EOM
+</span></span><span style="display:flex;"><span># 以下の一行を削除した
+</span></span><span style="display:flex;"><span># &lt;form method=post action=&#34;$ENV{&#39;SCRIPT_NAME&#39;}?utf8&#34;&gt;&lt;input type=submit value=&#34;Unicode(UTF-8)&#34;&gt;&lt;/form&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    print qq(&lt;form method=post action=&#34;$ENV{&#39;SCRIPT_NAME&#39;}?read&#34;&gt;n);
+</span></span><span style="display:flex;"><span>    &amp;amp;Jprint(qq(&lt;input type=submit value=&#34;過去ログ（？）を見る&#34;&gt;n));
+</span></span><span style="display:flex;"><span>    print &#34;&lt;/form&gt;n&#34;;
+</span></span><span style="display:flex;"><span>    print &#34;&lt;/div&gt;n&#34;;
+</span></span><span style="display:flex;"><span>    &amp;amp;printFooter;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sub dataLock{
+</span></span><span style="display:flex;"><span>    local($i, $mtime);
+</span></span><span style="display:flex;"><span>    for($i=0;$i&lt;2;$i++){
+</span></span><span style="display:flex;"><span>        if(mkdir($G_lock, 0755)){
+</span></span><span style="display:flex;"><span>            return;
+</span></span><span style="display:flex;"><span>        }else{
+</span></span><span style="display:flex;"><span>            unless($i){
+</span></span><span style="display:flex;"><span>                ($mtime) = (stat($G_lock))[9];
+</span></span><span style="display:flex;"><span>                if ($mtime &lt; time() - 60) { # １分以上前のロックは解除
+</span></span><span style="display:flex;"><span>                    rmdir($G_lock);
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    &amp;amp;error(&#34;&lt;h2&gt;現在、ロック中です。ごめんなさい。&lt;/h2&gt;&#34;);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sub dataUnlock{
+</span></span><span style="display:flex;"><span>    if(-d $G_lock){
+</span></span><span style="display:flex;"><span>        rmdir($G_lock);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sub dataOpen{
+</span></span><span style="display:flex;"><span>    $G_title .= &#34;（過去ログ）&#34;;
+</span></span><span style="display:flex;"><span>    &amp;amp;printHeader;
+</span></span><span style="display:flex;"><span>    print &#34;&lt;div class=test&gt;n&#34;;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    &amp;amp;dataLock;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    open(IN, &#34;&lt;$ G_dataFile&#34;)||die &#34;Can not open $G_dataFile....&#34;;
+</span></span><span style="display:flex;"><span>    # データファイルはEUC記録なので時間短縮のつもり。
+</span></span><span style="display:flex;"><span>    # 標準出力は「jis」だけど・・・。
+</span></span><span style="display:flex;"><span>    if($G_code eq &#34;euc&#34;){
+</span></span><span style="display:flex;"><span>        print while (&lt;IN&gt;);
+</span></span><span style="display:flex;"><span>    }else{
+</span></span><span style="display:flex;"><span>        while (&lt;IN&gt;){
+</span></span><span style="display:flex;"><span>            print &amp;amp;Jconvert($_, $G_code, &#34;euc&#34;);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    close(IN);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    &amp;amp;dataUnlock;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    print &#34;&lt;/div&gt;n&#34;;
+</span></span><span style="display:flex;"><span>    &amp;amp;printFooter;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sub formWrite{
+</span></span><span style="display:flex;"><span>    local($name, $value);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    &amp;amp;dataLock;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    open(OUT, &#34;&gt;&gt; $G_dataFile&#34;)||die &#34;Can not open $G_dataFile....&#34;;
+</span></span><span style="display:flex;"><span>    print(OUT &#34;&lt;table border=1&gt;n&#34;);
+</span></span><span style="display:flex;"><span>    print(OUT &#34;&lt;tr&gt;&lt;th&gt;Name&lt;th&gt;Value&lt;/tr&gt;n&#34;);
+</span></span><span style="display:flex;"><span>    while (($name, $value) = each(%G_form)){
+</span></span><span style="display:flex;"><span>        print(OUT &#34;&lt;tr&gt;&lt;td&gt;$name&lt;td&gt;$value&lt;/tr&gt;n&#34;);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    sleep 5;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    print(OUT &#34;&lt;/table&gt;n&#34;);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    close(OUT);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    &amp;amp;dataUnlock;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    $G_title .= &#34;（送信完了）&#34;;
+</span></span><span style="display:flex;"><span>    &amp;amp;printHeader;
+</span></span><span style="display:flex;"><span>    print &#34;&lt;div class=test&gt;n&#34;;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    &amp;amp;Jprint(&#34;&lt;p&gt;たぶん、無事に送信されました。n&#34;);
+</span></span><span style="display:flex;"><span>    &amp;amp;Jprint(qq(&lt;p&gt;&lt;a href=&#34;$ENV{&#39;SCRIPT_NAME&#39;}?read&#34;&gt;心配だから、過去ログを見る。&lt;/a&gt;n));
+</span></span><span style="display:flex;"><span>    print &#34;&lt;/p&gt;n&#34;;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    print &#34;&lt;/div&gt;n&#34;;
+</span></span><span style="display:flex;"><span>    &amp;amp;printFooter;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sub formRead{
+</span></span><span style="display:flex;"><span>    local($query_string, @elements, $elm, $name, $value, $code, $method);
+</span></span><span style="display:flex;"><span>    $method = $ENV{&#39;REQUEST_METHOD&#39;};
+</span></span><span style="display:flex;"><span>    if($method eq &#34;POST&#34;){
+</span></span><span style="display:flex;"><span>        read(STDIN, $query_string, $ENV{&#39;CONTENT_LENGTH&#39;});
+</span></span><span style="display:flex;"><span>    }elsif($method eq &#34;GET&#34;){
+</span></span><span style="display:flex;"><span>        $query_string = $ENV{&#39;QUERY_STRING&#39;};
+</span></span><span style="display:flex;"><span>    }else{
+</span></span><span style="display:flex;"><span>        &amp;amp;error(&#34;&lt;h2&gt;「POST」か「GET」のデータしか受け取れません。&lt;/h2&gt;&#34;);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    @elements = split(/&amp;amp;/, $query_string);  # 中身はpostもgetも同じ
+</span></span><span style="display:flex;"><span>    foreach $elm (@elements){
+</span></span><span style="display:flex;"><span>        ($name, $value) = split(/=/, $elm);
+</span></span><span style="display:flex;"><span>        $value =~ tr/+/ /;
+</span></span><span style="display:flex;"><span>        $value =~ s/%([0-9a-fA-F][0-9a-fA-F])/pack(&#34;C&#34;, hex($1))/eg;
+</span></span><span style="display:flex;"><span>#        $code = &amp;amp;Jgetcode($value);
+</span></span><span style="display:flex;"><span>        $code = &amp;amp;Jgetcode($value);
+</span></span><span style="display:flex;"><span>        if($code ne &#34;euc&#34;){
+</span></span><span style="display:flex;"><span>            $value = &amp;amp;Jconvert($value, &#34;euc&#34;, $code); # とりあえずEUCに変換
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        $value =~ s/&amp;amp;/&amp;amp;amp;/g;  # メタ文字（？）を無効化
+</span></span><span style="display:flex;"><span>#        $value =~ s/&lt;!--/&amp;amp;lt;!--/g;   # SSI入力を無効化
+</span></span><span style="display:flex;"><span>#        $value =~ s/--&gt;/--&amp;amp;gt;/g;   # SSI入力を無効化
+</span></span><span style="display:flex;"><span>        $value =~ s/&lt;/&amp;amp;lt;/g;   # タグを無効化
+</span></span><span style="display:flex;"><span>        $value =~ s/&gt;/&amp;amp;gt;/g;   # タグを無効化
+</span></span><span style="display:flex;"><span>        $value =~ s/rn*/n/g; # 改行を統一
+</span></span><span style="display:flex;"><span>        $value =~ s/nnn+/nn/g; # 長い改行（３回以上）を２回（１行空き）に
+</span></span><span style="display:flex;"><span>        $value =~ s/[ns]+$//g; # 最後の連続した空白、改行を削除
+</span></span><span style="display:flex;"><span>        $value =~ s/n/&lt;br&gt;/g;  # 改行を&lt;br&gt;に変換
+</span></span><span style="display:flex;"><span>        $G_form{$name} = $value .&#34;&lt;br&gt;InputCode : $coden&#34;;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sub printForm{
+</span></span><span style="display:flex;"><span>    $G_title .= &#34;（入力画面）&#34;;
+</span></span><span style="display:flex;"><span>    &amp;amp;printHeader;
+</span></span><span style="display:flex;"><span>    print &#34;&lt;div class=test&gt;n&#34;;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    print qq(&lt;form method=$_[0] action=&#34;$ENV{&#39;SCRIPT_NAME&#39;}?output&#34;&gt;n);
+</span></span><span style="display:flex;"><span>    &amp;amp;Jprint(qq(&lt;input type=hidden name=tx0 value=&#34;画面表示：$G_codenブラウザ：$ENV{&#39;HTTP_USER_AGENT&#39;}nスクリプト：$G_myCode&#34;&gt;&lt;br&gt;n));
+</span></span><span style="display:flex;"><span>    print qq(&lt;input type=text name=tx1 value=&#34;tx1&#34;&gt;&lt;br&gt;n);
+</span></span><span style="display:flex;"><span>    &amp;amp;Jprint(&#34;&lt;textarea name=ta1 cols=40 rows=4&gt;ta1n何か適当にどうぞ。n&lt;/textarea&gt;&lt;br&gt;n&#34;);
+</span></span><span style="display:flex;"><span>    &amp;amp;Jprint(&#34;&lt;p&gt;送信し、データを書き込んでいる最中に５秒間待ちます。&lt;/p&gt;n&#34;);
+</span></span><span style="display:flex;"><span>    &amp;amp;Jprint(&#34;&lt;p&gt;この間は、しばらく待つか、他のブラウザなどから「送信」を試してみてください。&lt;/p&gt;n&#34;);
+</span></span><span style="display:flex;"><span>    &amp;amp;Jprint(qq(&lt;p&gt;&lt;a href=&#34;$ENV{&#39;SCRIPT_NAME&#39;}&#34;&gt;ブラウザをもう一枚開く&lt;/a&gt;&lt;/p&gt;n));
+</span></span><span style="display:flex;"><span>    &amp;amp;Jprint(qq(&lt;input type=submit value=&#34;送信する&#34;&gt;n));
+</span></span><span style="display:flex;"><span>    print &#34;&lt;/form&gt;n&#34;;
+</span></span><span style="display:flex;"><span>    print qq(&lt;form method=$_[0] action=&#34;$ENV{&#39;SCRIPT_NAME&#39;}?read&#34;&gt;n);
+</span></span><span style="display:flex;"><span>    &amp;amp;Jprint(qq(&lt;input type=submit value=&#34;過去ログ（？）を見る&#34;&gt;n));
+</span></span><span style="display:flex;"><span>    print &#34;&lt;/form&gt;n&#34;;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    print &#34;&lt;/div&gt;n&#34;;
+</span></span><span style="display:flex;"><span>    &amp;amp;printFooter;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sub printHeader{
+</span></span><span style="display:flex;"><span>    if($G_charset){
+</span></span><span style="display:flex;"><span>        print &#34;Content-type: text/html; charset=$G_charsetnn&#34;;
+</span></span><span style="display:flex;"><span>    }else{
+</span></span><span style="display:flex;"><span>        print &#34;Content-type: text/htmlnn&#34;;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    print qq(&lt;!doctype html public &#34;-//W3C//DTD HTML 4.01 Transitional//EN&#34;&gt;n);
+</span></span><span style="display:flex;"><span>    print &#34;&lt;html lang=ja&gt;n&lt;head&gt;n&#34;;
+</span></span><span style="display:flex;"><span>    if($G_charset){
+</span></span><span style="display:flex;"><span>        print qq(&lt;meta http-equiv=&#34;Content-Type&#34; content=&#34;text/html; charset=$G_charset&#34;&gt;n);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    print qq(&lt;meta http-equiv=&#34;Content-Script-Type&#34; content=&#34;text/javascript&#34;&gt;n);
+</span></span><span style="display:flex;"><span>    print qq(&lt;meta http-equiv=&#34;Content-Style-Type&#34; content=&#34;text/css&#34;&gt;n);
+</span></span><span style="display:flex;"><span>    &amp;amp;Jprint(&#34;&lt;title&gt;$G_title&lt;/title&gt;n&#34;);
+</span></span><span style="display:flex;"><span>    foreach (@G_styles){
+</span></span><span style="display:flex;"><span>        print qq(&lt;link rel=&#34;stylesheet&#34; type=&#34;text/css&#34; href=&#34;$_&#34;&gt;n);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    print &#34;&lt;/head&gt;n&lt;body&gt;n&#34;;
+</span></span><span style="display:flex;"><span>    print &#34;&lt;div class=head&gt;n&#34;;
+</span></span><span style="display:flex;"><span>    &amp;amp;Jprint(&#34;&lt;h1&gt;$G_title&lt;/h1&gt;&lt;hr&gt;n&#34;);
+</span></span><span style="display:flex;"><span>    &amp;amp;printlinks;
+</span></span><span style="display:flex;"><span>    print &#34;&lt;hr&gt;&lt;/div&gt;n&#34;;
+</span></span><span style="display:flex;"><span>#    print $ENV{&#39;HTTP_REFERER&#39;}.&#34;&lt;br&gt;&#34;.$ENV{&#39;SCRIPT_NAME&#39;}.&#34;&lt;br&gt;&#34;.$ENV{&#39;HTTP_HOST&#39;};
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sub printFooter{
+</span></span><span style="display:flex;"><span>    print &#34;&lt;div class=foot&gt;&lt;hr&gt;n&#34;;
+</span></span><span style="display:flex;"><span>    &amp;amp;printlinks;
+</span></span><span style="display:flex;"><span>    print &#34;&lt;hr&gt;n&#34;;
+</span></span><span style="display:flex;"><span>    &amp;amp;Jprint(&#34;漢字コード変換 ： $JcodeVer&lt;br&gt;n&#34;);
+</span></span><span style="display:flex;"><span>    open(IN, &#34;../../sig.txt&#34;);
+</span></span><span style="display:flex;"><span>    print while (&lt;IN&gt;);
+</span></span><span style="display:flex;"><span>    close(IN);
+</span></span><span style="display:flex;"><span>    print &#34;&lt;/div&gt;n&#34;;
+</span></span><span style="display:flex;"><span>    print &#34;&lt;/body&gt;&lt;/html&gt;n&#34;;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sub printlinks{
+</span></span><span style="display:flex;"><span>    print qq(&lt;a href=&#34;../../../index.htm&#34;&gt;Home&lt;/a&gt;n);
+</span></span><span style="display:flex;"><span>    print qq(/n&lt;a href=&#34;../../&#34;&gt;Perl&lt;/a&gt;n);
+</span></span><span style="display:flex;"><span>    print qq(/n&lt;a href=&#34;../&#34;&gt;TestCGI Index&lt;/a&gt;n);
+</span></span><span style="display:flex;"><span>    if($G_linkFile){
+</span></span><span style="display:flex;"><span>        &amp;amp;Jprint(qq(/n&lt;a href=&#34;$G_linkFile&#34;&gt;$G_linkNameの解説&lt;/a&gt;n));
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sub Jprint{
+</span></span><span style="display:flex;"><span>    if($G_code eq $G_myCode){
+</span></span><span style="display:flex;"><span>        foreach (@_){ print; }
+</span></span><span style="display:flex;"><span>    }else{
+</span></span><span style="display:flex;"><span>        foreach (@_){ print &amp;amp;Jconvert($_, $G_code, $G_myCode); }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sub JconvPrint{
+</span></span><span style="display:flex;"><span>    foreach (@_){ print &amp;amp;Jconvert($_, $G_code, &amp;amp;Jgetcode($_)); }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></td></tr></table>
 </div>
 </div><pre><code>                          &lt;/div&gt;
 </code></pre>
@@ -927,7 +924,7 @@ sub JconvPrint{
     <h2>Comments</h2>
     <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -952,7 +949,7 @@ sub JconvPrint{
   <footer>
   <div>
     <p>
-      &copy; nqounet 2022
+      &copy; nqounet 2023
 
       &middot; <a href="https://creativecommons.org/licenses/by/4.0" target="_blank">CC BY 4.0</a>
 
@@ -972,17 +969,19 @@ sub JconvPrint{
 
   
 
-  
-<script type="application/javascript">
+    
+      
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E50H9ESN7E"></script>
+<script>
 var doNotTrack = false;
 if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'G-E50H9ESN7E', 'auto');
-	
-	ga('send', 'pageview');
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-E50H9ESN7E', { 'anonymize_ip': false });
 }
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
 
+    
 </body>
 </html>

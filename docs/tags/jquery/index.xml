@@ -67,7 +67,7 @@
       <pubDate>Sat, 26 Apr 2014 01:11:10 +0900</pubDate>
       
       <guid>https://www.nqou.net/2014/04/26/011110/</guid>
-      <description>(function($, global, undefined){ &#39;use strict&#39;; var lscache, Mustache, processing = {}, generateCacheKey = function(path){ return &#39;fetched:&#39; + path; }, fetchTemplate = function(path){ console.debug(&#39;fetchTemplate&#39;); var key = generateCacheKey(path); $.get(path, function(template){ console.debug(&#39;run</description>
+      <description>(function($, global, undefined){ &amp;#39;use strict&amp;#39;; var lscache, Mustache, processing = {}, generateCacheKey = function(path){ return &amp;#39;fetched:&amp;#39; + path; }, fetchTemplate = function(path){ console.debug(&amp;#39;fetchTemplate&amp;#39;); var key = generateCacheKey(path); $.get(path, function(template){ console.debug(&amp;#39;run</description>
     </item>
     
     <item>

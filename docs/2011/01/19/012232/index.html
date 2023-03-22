@@ -3,15 +3,13 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.91.0" />
+  <meta name="generator" content="Hugo 0.111.3">
 
   <title>Data::EncoderでBenchmarkしてみた &middot; nqou.net</title>
 
   <meta name="description" content="" />
 
-  
-
-<meta itemprop="name" content="Data::EncoderでBenchmarkしてみた">
+  <meta itemprop="name" content="Data::EncoderでBenchmarkしてみた">
 <meta itemprop="description" content="ということで、まずは結果から。 1 2 3 4 5 6 7 8 9 10 11 12 Benchmark: timing 10000"><meta itemprop="datePublished" content="2011-01-19T01:22:32+09:00" />
 <meta itemprop="dateModified" content="2011-01-19T01:22:32+09:00" />
 <meta itemprop="wordCount" content="473">
@@ -28,7 +26,6 @@
 <meta property="og:url" content="https://www.nqou.net/2011/01/19/012232/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2011-01-19T01:22:32+09:00" />
 <meta property="article:modified_time" content="2011-01-19T01:22:32+09:00" /><meta property="og:site_name" content="nqou.net" />
-
 
 
 
@@ -215,35 +212,35 @@
 
   <div>
   <p>ということで、まずは結果から。</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Benchmark: timing 10000 iterations of Dumper, JSON, MsgPack, Storable, YAML...
-Dumper:  5 wallclock secs ( 4.02 usr +  0.00 sys =  4.02 CPU) @ 2485.09/s (n=10000)
-JSON:  1 wallclock secs ( 1.37 usr +  0.02 sys =  1.39 CPU) @ 7199.42/s (n=10000)
-MsgPack:  1 wallclock secs ( 0.72 usr +  0.00 sys =  0.72 CPU) @ 13927.58/s (n=10000)
-Storable:  2 wallclock secs ( 1.53 usr +  0.05 sys =  1.58 CPU) @ 6349.21/s (n=10000)
-YAML: 40 wallclock secs (40.19 usr +  0.06 sys = 40.25 CPU) @ 248.45/s (n=10000)
-Rate     YAML   Dumper Storable     JSON  MsgPack
-YAML       248/s       --     -90%     -96%     -97%     -98%
-Dumper    2485/s     900%       --     -61%     -65%     -82%
-Storable  6349/s    2455%     155%       --     -12%     -54%
-JSON      7199/s    2798%     190%      13%       --     -48%
-MsgPack  13928/s    5506%     460%     119%      93%       --
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Benchmark: timing 10000 iterations of Dumper, JSON, MsgPack, Storable, YAML...
+</span></span><span style="display:flex;"><span>Dumper:  5 wallclock secs ( 4.02 usr +  0.00 sys =  4.02 CPU) @ 2485.09/s (n=10000)
+</span></span><span style="display:flex;"><span>JSON:  1 wallclock secs ( 1.37 usr +  0.02 sys =  1.39 CPU) @ 7199.42/s (n=10000)
+</span></span><span style="display:flex;"><span>MsgPack:  1 wallclock secs ( 0.72 usr +  0.00 sys =  0.72 CPU) @ 13927.58/s (n=10000)
+</span></span><span style="display:flex;"><span>Storable:  2 wallclock secs ( 1.53 usr +  0.05 sys =  1.58 CPU) @ 6349.21/s (n=10000)
+</span></span><span style="display:flex;"><span>YAML: 40 wallclock secs (40.19 usr +  0.06 sys = 40.25 CPU) @ 248.45/s (n=10000)
+</span></span><span style="display:flex;"><span>Rate     YAML   Dumper Storable     JSON  MsgPack
+</span></span><span style="display:flex;"><span>YAML       248/s       --     -90%     -96%     -97%     -98%
+</span></span><span style="display:flex;"><span>Dumper    2485/s     900%       --     -61%     -65%     -82%
+</span></span><span style="display:flex;"><span>Storable  6349/s    2455%     155%       --     -12%     -54%
+</span></span><span style="display:flex;"><span>JSON      7199/s    2798%     190%      13%       --     -48%
+</span></span><span style="display:flex;"><span>MsgPack  13928/s    5506%     460%     119%      93%       --
+</span></span></code></pre></td></tr></table>
 </div>
 </div><!-- raw HTML omitted -->
 <p>以下ベンチマークのソースです。
@@ -251,103 +248,103 @@ MsgPack  13928/s    5506%     460%     119%      93%       --
 まあ、私にとっては。
 あと、せっかく「Data::Encoder」を使うので、encodeとdecodeは共通化して使ってみることにしました。
 メソッドが共通化されるとソースが読みやすくて良いですね。</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">#!/usr/bin/env perl
-#ｕｔｆ８
-use utf8;
-use 5.12.1;
-# use Acme::PerlTidy;
-use Benchmark qw(:all);
-use Data::Dump qw/dd/;
-use Data::Encoder;
-sub run {
-my $encoder = shift;
-my $enc     = $encoder-&gt;encode([qw/foo bar/]);
-my $data    = $encoder-&gt;decode($enc);
-#    dd $data;
-}
-cmpthese(
-timethese(
-10000,
-{
-# Data::Encoder::JSON
-JSON =&gt; sub {
-my $encoder = Data::Encoder-&gt;load(&#39;JSON&#39;);
-&amp;run($encoder);
-},
-# Data::Encoder::Data::Dumper
-Dumper =&gt; sub {
-my $encoder = Data::Encoder-&gt;load(&#39;Data::Dumper&#39;);
-&amp;run($encoder);
-},
-# Data::Encoder::Data::MessagePack
-MsgPack =&gt; sub {
-my $encoder = Data::Encoder-&gt;load(&#39;Data::MessagePack&#39;);
-&amp;run($encoder);
-},
-# Data::Encoder::Storable
-Storable =&gt; sub {
-my $encoder = Data::Encoder-&gt;load(&#39;Storable&#39;);
-&amp;run($encoder);
-},
-# Data::Encoder::YAML
-YAML =&gt; sub {
-my $encoder = Data::Encoder-&gt;load(&#39;YAML&#39;);
-&amp;run($encoder);
-},
-}
-)
-);
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>#!/usr/bin/env perl
+</span></span><span style="display:flex;"><span>#ｕｔｆ８
+</span></span><span style="display:flex;"><span>use utf8;
+</span></span><span style="display:flex;"><span>use 5.12.1;
+</span></span><span style="display:flex;"><span># use Acme::PerlTidy;
+</span></span><span style="display:flex;"><span>use Benchmark qw(:all);
+</span></span><span style="display:flex;"><span>use Data::Dump qw/dd/;
+</span></span><span style="display:flex;"><span>use Data::Encoder;
+</span></span><span style="display:flex;"><span>sub run {
+</span></span><span style="display:flex;"><span>my $encoder = shift;
+</span></span><span style="display:flex;"><span>my $enc     = $encoder-&gt;encode([qw/foo bar/]);
+</span></span><span style="display:flex;"><span>my $data    = $encoder-&gt;decode($enc);
+</span></span><span style="display:flex;"><span>#    dd $data;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>cmpthese(
+</span></span><span style="display:flex;"><span>timethese(
+</span></span><span style="display:flex;"><span>10000,
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span># Data::Encoder::JSON
+</span></span><span style="display:flex;"><span>JSON =&gt; sub {
+</span></span><span style="display:flex;"><span>my $encoder = Data::Encoder-&gt;load(&#39;JSON&#39;);
+</span></span><span style="display:flex;"><span>&amp;run($encoder);
+</span></span><span style="display:flex;"><span>},
+</span></span><span style="display:flex;"><span># Data::Encoder::Data::Dumper
+</span></span><span style="display:flex;"><span>Dumper =&gt; sub {
+</span></span><span style="display:flex;"><span>my $encoder = Data::Encoder-&gt;load(&#39;Data::Dumper&#39;);
+</span></span><span style="display:flex;"><span>&amp;run($encoder);
+</span></span><span style="display:flex;"><span>},
+</span></span><span style="display:flex;"><span># Data::Encoder::Data::MessagePack
+</span></span><span style="display:flex;"><span>MsgPack =&gt; sub {
+</span></span><span style="display:flex;"><span>my $encoder = Data::Encoder-&gt;load(&#39;Data::MessagePack&#39;);
+</span></span><span style="display:flex;"><span>&amp;run($encoder);
+</span></span><span style="display:flex;"><span>},
+</span></span><span style="display:flex;"><span># Data::Encoder::Storable
+</span></span><span style="display:flex;"><span>Storable =&gt; sub {
+</span></span><span style="display:flex;"><span>my $encoder = Data::Encoder-&gt;load(&#39;Storable&#39;);
+</span></span><span style="display:flex;"><span>&amp;run($encoder);
+</span></span><span style="display:flex;"><span>},
+</span></span><span style="display:flex;"><span># Data::Encoder::YAML
+</span></span><span style="display:flex;"><span>YAML =&gt; sub {
+</span></span><span style="display:flex;"><span>my $encoder = Data::Encoder-&gt;load(&#39;YAML&#39;);
+</span></span><span style="display:flex;"><span>&amp;run($encoder);
+</span></span><span style="display:flex;"><span>},
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>);
+</span></span></code></pre></td></tr></table>
 </div>
 </div>
   </div>
@@ -400,7 +397,7 @@ my $encoder = Data::Encoder-&gt;load(&#39;YAML&#39;);
     <h2>Comments</h2>
     <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -425,7 +422,7 @@ my $encoder = Data::Encoder-&gt;load(&#39;YAML&#39;);
   <footer>
   <div>
     <p>
-      &copy; nqounet 2022
+      &copy; nqounet 2023
 
       &middot; <a href="https://creativecommons.org/licenses/by/4.0" target="_blank">CC BY 4.0</a>
 
@@ -445,17 +442,19 @@ my $encoder = Data::Encoder-&gt;load(&#39;YAML&#39;);
 
   
 
-  
-<script type="application/javascript">
+    
+      
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E50H9ESN7E"></script>
+<script>
 var doNotTrack = false;
 if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'G-E50H9ESN7E', 'auto');
-	
-	ga('send', 'pageview');
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-E50H9ESN7E', { 'anonymize_ip': false });
 }
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
 
+    
 </body>
 </html>

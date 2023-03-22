@@ -3,32 +3,29 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.91.0" />
+  <meta name="generator" content="Hugo 0.111.3">
 
   <title>遅延実行と仮実行（dry_run）について考えてみた &middot; nqou.net</title>
 
   <meta name="description" content="" />
 
-  
-
-<meta itemprop="name" content="遅延実行と仮実行（dry_run）について考えてみた">
-<meta itemprop="description" content="use strict; use warnings; use feature &#39;say&#39;; my @job; push @job, sub { say 1 }; push @job, sub { say 2 }; say &quot;hoge&quot;; unshift @job, sub { say"><meta itemprop="datePublished" content="2016-12-08T20:21:41+09:00" />
+  <meta itemprop="name" content="遅延実行と仮実行（dry_run）について考えてみた">
+<meta itemprop="description" content="use strict; use warnings; use feature &#39;say&#39;; my @job; push @job, sub { say 1 }; push @job, sub { say 2 }; say &#34;hoge&#34;; unshift @job, sub { say"><meta itemprop="datePublished" content="2016-12-08T20:21:41+09:00" />
 <meta itemprop="dateModified" content="2016-12-08T20:21:41+09:00" />
 <meta itemprop="wordCount" content="51">
 <meta itemprop="keywords" content="kansaipm,perl,yapc," />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="遅延実行と仮実行（dry_run）について考えてみた"/>
-<meta name="twitter:description" content="use strict; use warnings; use feature &#39;say&#39;; my @job; push @job, sub { say 1 }; push @job, sub { say 2 }; say &quot;hoge&quot;; unshift @job, sub { say"/>
+<meta name="twitter:description" content="use strict; use warnings; use feature &#39;say&#39;; my @job; push @job, sub { say 1 }; push @job, sub { say 2 }; say &#34;hoge&#34;; unshift @job, sub { say"/>
 
 
 <meta property="og:title" content="遅延実行と仮実行（dry_run）について考えてみた" />
-<meta property="og:description" content="use strict; use warnings; use feature &#39;say&#39;; my @job; push @job, sub { say 1 }; push @job, sub { say 2 }; say &quot;hoge&quot;; unshift @job, sub { say" />
+<meta property="og:description" content="use strict; use warnings; use feature &#39;say&#39;; my @job; push @job, sub { say 1 }; push @job, sub { say 2 }; say &#34;hoge&#34;; unshift @job, sub { say" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.nqou.net/2016/12/08/202141/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2016-12-08T20:21:41+09:00" />
 <meta property="article:modified_time" content="2016-12-08T20:21:41+09:00" /><meta property="og:site_name" content="nqou.net" />
-
 
 
 
@@ -70,7 +67,7 @@
       },
       "datePublished": "2016-12-08T20:21:41+09:00",
       "dateModified": "2016-12-08T20:21:41+09:00",
-      "description": "use strict; use warnings; use feature 'say'; my @job; push @job, sub { say 1 }; push @job, sub { say 2 }; say \u0026quot;hoge\u0026quot;; unshift @job, sub { say",
+      "description": "use strict; use warnings; use feature \u0026#39;say\u0026#39;; my @job; push @job, sub { say 1 }; push @job, sub { say 2 }; say \u0026#34;hoge\u0026#34;; unshift @job, sub { say",
       "inLanguage": "ja",
       "potentialAction": [
         {
@@ -231,12 +228,12 @@
 <!-- raw HTML omitted -->
 <pre tabindex="0"><code>use strict;
 use warnings;
-use feature 'say';
+use feature &#39;say&#39;;
 
 my @job;
 push @job, sub { say 1 };
 push @job, sub { say 2 };
-say &quot;hoge&quot;;
+say &#34;hoge&#34;;
 unshift @job, sub { say 3 };
 for (@job) { &amp;{$_} }
 </code></pre><!-- raw HTML omitted -->
@@ -327,7 +324,7 @@ for (@job) { &amp;{$_} }
     <h2>Comments</h2>
     <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -352,7 +349,7 @@ for (@job) { &amp;{$_} }
   <footer>
   <div>
     <p>
-      &copy; nqounet 2022
+      &copy; nqounet 2023
 
       &middot; <a href="https://creativecommons.org/licenses/by/4.0" target="_blank">CC BY 4.0</a>
 
@@ -372,17 +369,19 @@ for (@job) { &amp;{$_} }
 
   
 
-  
-<script type="application/javascript">
+    
+      
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E50H9ESN7E"></script>
+<script>
 var doNotTrack = false;
 if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'G-E50H9ESN7E', 'auto');
-	
-	ga('send', 'pageview');
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-E50H9ESN7E', { 'anonymize_ip': false });
 }
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
 
+    
 </body>
 </html>

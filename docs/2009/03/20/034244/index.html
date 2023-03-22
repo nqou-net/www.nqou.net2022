@@ -3,15 +3,13 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.91.0" />
+  <meta name="generator" content="Hugo 0.111.3">
 
   <title>CodeRepos版NanoAをWindowsで動かす方法 &middot; nqou.net</title>
 
   <meta name="description" content="" />
 
-  
-
-<meta itemprop="name" content="CodeRepos版NanoAをWindowsで動かす方法">
+  <meta itemprop="name" content="CodeRepos版NanoAをWindowsで動かす方法">
 <meta itemprop="description" content="前回は失敗したが、CodeReposにあるNanoAで再挑戦"><meta itemprop="datePublished" content="2009-03-20T03:42:44+09:00" />
 <meta itemprop="dateModified" content="2009-03-20T03:42:44+09:00" />
 <meta itemprop="wordCount" content="1030">
@@ -28,7 +26,6 @@
 <meta property="og:url" content="https://www.nqou.net/2009/03/20/034244/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2009-03-20T03:42:44+09:00" />
 <meta property="article:modified_time" content="2009-03-20T03:42:44+09:00" /><meta property="og:site_name" content="nqou.net" />
-
 
 
 
@@ -218,22 +215,22 @@
 <p>NanoAの配布元は0.16が最新だったが、CodeReposの最新版は、バージョンが0.17であった。</p>
 <p>CodeRepos版は開発版ということで、そのまま使えるはずだったのだが、Windows上で使うには少し工夫が必要だった（詳しい説明は「lib/NanoA/Config.pm」に書いてあるので、そちらを読もう）ので、将来のため（？）に手順をメモしておく。
 まず、CodeReposからsvnで外部参照ごとチェックアウトする。</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">svn co http://svn.coderepos.org/share/lang/perl/NanoA/trunk NanoA
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>svn co http://svn.coderepos.org/share/lang/perl/NanoA/trunk NanoA
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>次に「nanoa.cgi」と同じフォルダに「nanoa-conf.cgi」という名前のファイルを作成する。その中身はとりあえず以下のとおりにしておく。</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">data_dir = var
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>data_dir = var
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>ついでに、同じフォルダに新しく「var」というフォルダを作っておく。</p>
 <p>ここまでやってから、nanoa.cgiにブラウザでアクセスすると、管理用パスワードの設定画面になる（はず）。</p>
@@ -241,37 +238,37 @@
 <p>NanoAには、配布版を作成する機能があるのだが、Windows上では簡単には動かない。</p>
 <p>が、とりあえず、nanoa.cgiを作ればあとは何とかなるので、それもついでにメモしておく。</p>
 <p>nanoa.cgiと同じフォルダの「Makefile.PL」を少し変更する。</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">Index: Makefile.PL
-===================================================================
-<span style="color:#f92672">--- Makefile.PL    (リビジョン 31380)
-</span><span style="color:#f92672"></span><span style="color:#a6e22e">+++ Makefile.PL    (作業コピー)
-</span><span style="color:#a6e22e"></span><span style="color:#75715e">@@ -38,8 +38,8 @@
-</span><span style="color:#75715e"></span>NANOA_CGI_FILES = MENTA/extlib/Class/Accessor/Lite.pm MENTA/extlib/CGI/ExceptionManager.pm lib/NanoA/Config.pm lib/NanoA/Dispatch.pm lib/NanoA/Plugin.pm lib/NanoA/TemplateLoader.pm lib/NanoA.pm nanoa.pl
-nanoadir:
-<span style="color:#f92672">-    $(NOECHO)$(RM_RF) $(NANOADIR);
-</span><span style="color:#f92672">-    $(NOECHO)$(MKPATH) $(NANOADIR);
-</span><span style="color:#f92672"></span><span style="color:#a6e22e">+    $(NOECHO)$(RM_RF) $(NANOADIR)
-</span><span style="color:#a6e22e">+    $(NOECHO)$(MKPATH) $(NANOADIR)
-</span><span style="color:#a6e22e"></span>nanoacgi: $(NANOA_CGI_FILES)
-$(FULLPERLRUN) tools/concat.pl -s -n strict,warnings $(NANOA_CGI_FILES) &gt; $(NANOADIR)/nanoa.cgi
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-diff" data-lang="diff"><span style="display:flex;"><span>Index: Makefile.PL
+</span></span><span style="display:flex;"><span>===================================================================
+</span></span><span style="display:flex;"><span><span style="color:#f92672">--- Makefile.PL    (リビジョン 31380)
+</span></span></span><span style="display:flex;"><span><span style="color:#f92672"></span><span style="color:#a6e22e">+++ Makefile.PL    (作業コピー)
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e"></span><span style="color:#75715e">@@ -38,8 +38,8 @@
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>NANOA_CGI_FILES = MENTA/extlib/Class/Accessor/Lite.pm MENTA/extlib/CGI/ExceptionManager.pm lib/NanoA/Config.pm lib/NanoA/Dispatch.pm lib/NanoA/Plugin.pm lib/NanoA/TemplateLoader.pm lib/NanoA.pm nanoa.pl
+</span></span><span style="display:flex;"><span>nanoadir:
+</span></span><span style="display:flex;"><span><span style="color:#f92672">-    $(NOECHO)$(RM_RF) $(NANOADIR);
+</span></span></span><span style="display:flex;"><span><span style="color:#f92672">-    $(NOECHO)$(MKPATH) $(NANOADIR);
+</span></span></span><span style="display:flex;"><span><span style="color:#f92672"></span><span style="color:#a6e22e">+    $(NOECHO)$(RM_RF) $(NANOADIR)
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">+    $(NOECHO)$(MKPATH) $(NANOADIR)
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e"></span>nanoacgi: $(NANOA_CGI_FILES)
+</span></span><span style="display:flex;"><span>$(FULLPERLRUN) tools/concat.pl -s -n strict,warnings $(NANOA_CGI_FILES) &gt; $(NANOADIR)/nanoa.cgi
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>この状態で、いつものように「perl Makefile.PL」→「dmake」としたあと「dmake nanoa」とする。</p>
 <p>途中で「tar」がない、あるいは、tarコマンドに失敗した、とか言われるが、「dist-cgi」の中にバージョン名（今回は「0.17」）のフォルダがあり、さらにその中に配布版「nanoa.cgi」ができています。</p>
@@ -329,7 +326,7 @@ $(FULLPERLRUN) tools/concat.pl -s -n strict,warnings $(NANOA_CGI_FILES) &gt; $(N
     <h2>Comments</h2>
     <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -354,7 +351,7 @@ $(FULLPERLRUN) tools/concat.pl -s -n strict,warnings $(NANOA_CGI_FILES) &gt; $(N
   <footer>
   <div>
     <p>
-      &copy; nqounet 2022
+      &copy; nqounet 2023
 
       &middot; <a href="https://creativecommons.org/licenses/by/4.0" target="_blank">CC BY 4.0</a>
 
@@ -374,17 +371,19 @@ $(FULLPERLRUN) tools/concat.pl -s -n strict,warnings $(NANOA_CGI_FILES) &gt; $(N
 
   
 
-  
-<script type="application/javascript">
+    
+      
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E50H9ESN7E"></script>
+<script>
 var doNotTrack = false;
 if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'G-E50H9ESN7E', 'auto');
-	
-	ga('send', 'pageview');
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-E50H9ESN7E', { 'anonymize_ip': false });
 }
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
 
+    
 </body>
 </html>

@@ -148,7 +148,7 @@
       <pubDate>Mon, 26 Jan 2015 08:21:43 +0900</pubDate>
       
       <guid>https://www.nqou.net/2015/01/26/082143/</guid>
-      <description># Mojolicious::Liteの場合 app-&amp;gt;log-&amp;gt;handle(\*STDERR) if app-&amp;gt;mode eq &#39;development&#39;;</description>
+      <description># Mojolicious::Liteの場合 app-&amp;gt;log-&amp;gt;handle(\*STDERR) if app-&amp;gt;mode eq &amp;#39;development&amp;#39;;</description>
     </item>
     
     <item>

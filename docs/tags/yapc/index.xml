@@ -6,7 +6,16 @@
     <description>Recent content in yapc on nqou.net</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 30 Jan 2019 03:08:50 +0900</lastBuildDate><atom:link href="https://www.nqou.net/tags/yapc/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 21 Mar 2023 13:26:30 +0900</lastBuildDate><atom:link href="https://www.nqou.net/tags/yapc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>1679372790</title>
+      <link>https://www.nqou.net/2023/03/21/132630/</link>
+      <pubDate>Tue, 21 Mar 2023 13:26:30 +0900</pubDate>
+      
+      <guid>https://www.nqou.net/2023/03/21/132630/</guid>
+      <description>おはようございます。 @nqounet です。 2023年3月19日に開催された</description>
+    </item>
+    
     <item>
       <title>「YAPC::Tokyo 2019」に呼ばれたので行ってきました</title>
       <link>https://www.nqou.net/2019/01/30/030850/</link>
@@ -22,7 +31,7 @@
       <pubDate>Mon, 26 Dec 2016 04:34:12 +0900</pubDate>
       
       <guid>https://www.nqou.net/2016/12/26/043412/</guid>
-      <description>おはようございます。 若林（@nqounet）です。</description>
+      <description>おはようございます。 若林（@nqounet）です。 少し遅れま</description>
     </item>
     
     <item>
@@ -31,7 +40,7 @@
       <pubDate>Fri, 09 Dec 2016 14:03:21 +0900</pubDate>
       
       <guid>https://www.nqou.net/2016/12/09/140321/</guid>
-      <description>この記事は、 Perl入学式 Advent Calendar 2016の9日目の記事です。 昨</description>
+      <description>この記事は、 Perl入学式 Advent Calendar 2016 の9日目の記事です。 昨日は ken5owata</description>
     </item>
     
     <item>
@@ -40,7 +49,7 @@
       <pubDate>Thu, 08 Dec 2016 20:21:41 +0900</pubDate>
       
       <guid>https://www.nqou.net/2016/12/08/202141/</guid>
-      <description>use strict; use warnings; use feature &#39;say&#39;; my @job; push @job, sub { say 1 }; push @job, sub { say 2 }; say &amp;quot;hoge&amp;quot;; unshift @job, sub { say</description>
+      <description>use strict; use warnings; use feature &amp;#39;say&amp;#39;; my @job; push @job, sub { say 1 }; push @job, sub { say 2 }; say &amp;#34;hoge&amp;#34;; unshift @job, sub { say</description>
     </item>
     
     <item>
@@ -76,7 +85,7 @@
       <pubDate>Sun, 31 Aug 2014 21:25:27 +0900</pubDate>
       
       <guid>https://www.nqou.net/2014/08/31/212527/</guid>
-      <description>#!/usr/bin/env perl use utf8; use 5.012001; use DDP {deparse =&amp;gt; 1}; my @list = (); while (my $in = &amp;lt;&amp;gt;) { chomp $in; if ($in == 1) { print &#39;&amp;gt;&amp;gt;&amp;gt;</description>
+      <description>#!/usr/bin/env perl use utf8; use 5.012001; use DDP {deparse =&amp;gt; 1}; my @list = (); while (my $in = &amp;lt;&amp;gt;) { chomp $in; if ($in == 1) { print &amp;#39;&amp;gt;&amp;gt;&amp;gt;</description>
     </item>
     
     <item>
@@ -121,7 +130,7 @@
       <pubDate>Thu, 28 Aug 2014 09:07:12 +0900</pubDate>
       
       <guid>https://www.nqou.net/2014/08/28/090712/</guid>
-      <description>use strict; use Test::More 0.98; like &#39;a&#39;, qr/a/, q{ like }; eval {die &#39;a&#39;}; like $@, qr/a/, q{ like eval }; done_testing; use strict; use Test::More 0.98; use Test::Exception; like</description>
+      <description>use strict; use Test::More 0.98; like &amp;#39;a&amp;#39;, qr/a/, q{ like }; eval {die &amp;#39;a&amp;#39;}; like $@, qr/a/, q{ like eval }; done_testing; use strict; use Test::More 0.98; use Test::Exception; like</description>
     </item>
     
     <item>

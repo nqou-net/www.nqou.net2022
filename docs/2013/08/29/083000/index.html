@@ -3,32 +3,29 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.91.0" />
+  <meta name="generator" content="Hugo 0.111.3">
 
   <title>今更rbenvでrubyを管理してみる &middot; nqou.net</title>
 
   <meta name="description" content="" />
 
-  
-
-<meta itemprop="name" content="今更rbenvでrubyを管理してみる">
-<meta itemprop="description" content="git clone https://github.com/sstephenson/rbenv.git ~/.rbenv echo &#39;export PATH=&quot;$HOME/.rbenv/bin:$PATH&quot;&#39; &gt;&gt; ~/.bash_profile echo &#39;eval &quot;$(rbenv init -)&quot;&#39; &gt;&gt; ~/.bash_profile exec $SHELL -l git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build rbenv install --list rbenv install 2.0.0-p247 rbenv"><meta itemprop="datePublished" content="2013-08-29T08:30:00+09:00" />
+  <meta itemprop="name" content="今更rbenvでrubyを管理してみる">
+<meta itemprop="description" content="git clone https://github.com/sstephenson/rbenv.git ~/.rbenv echo &#39;export PATH=&#34;$HOME/.rbenv/bin:$PATH&#34;&#39; &gt;&gt; ~/.bash_profile echo &#39;eval &#34;$(rbenv init -)&#34;&#39; &gt;&gt; ~/.bash_profile exec $SHELL -l git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build rbenv install --list rbenv install 2.0.0-p247 rbenv"><meta itemprop="datePublished" content="2013-08-29T08:30:00+09:00" />
 <meta itemprop="dateModified" content="2013-08-29T08:30:00+09:00" />
 <meta itemprop="wordCount" content="39">
 <meta itemprop="keywords" content="git,perl," />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="今更rbenvでrubyを管理してみる"/>
-<meta name="twitter:description" content="git clone https://github.com/sstephenson/rbenv.git ~/.rbenv echo &#39;export PATH=&quot;$HOME/.rbenv/bin:$PATH&quot;&#39; &gt;&gt; ~/.bash_profile echo &#39;eval &quot;$(rbenv init -)&quot;&#39; &gt;&gt; ~/.bash_profile exec $SHELL -l git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build rbenv install --list rbenv install 2.0.0-p247 rbenv"/>
+<meta name="twitter:description" content="git clone https://github.com/sstephenson/rbenv.git ~/.rbenv echo &#39;export PATH=&#34;$HOME/.rbenv/bin:$PATH&#34;&#39; &gt;&gt; ~/.bash_profile echo &#39;eval &#34;$(rbenv init -)&#34;&#39; &gt;&gt; ~/.bash_profile exec $SHELL -l git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build rbenv install --list rbenv install 2.0.0-p247 rbenv"/>
 
 
 <meta property="og:title" content="今更rbenvでrubyを管理してみる" />
-<meta property="og:description" content="git clone https://github.com/sstephenson/rbenv.git ~/.rbenv echo &#39;export PATH=&quot;$HOME/.rbenv/bin:$PATH&quot;&#39; &gt;&gt; ~/.bash_profile echo &#39;eval &quot;$(rbenv init -)&quot;&#39; &gt;&gt; ~/.bash_profile exec $SHELL -l git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build rbenv install --list rbenv install 2.0.0-p247 rbenv" />
+<meta property="og:description" content="git clone https://github.com/sstephenson/rbenv.git ~/.rbenv echo &#39;export PATH=&#34;$HOME/.rbenv/bin:$PATH&#34;&#39; &gt;&gt; ~/.bash_profile echo &#39;eval &#34;$(rbenv init -)&#34;&#39; &gt;&gt; ~/.bash_profile exec $SHELL -l git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build rbenv install --list rbenv install 2.0.0-p247 rbenv" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.nqou.net/2013/08/29/083000/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2013-08-29T08:30:00+09:00" />
 <meta property="article:modified_time" content="2013-08-29T08:30:00+09:00" /><meta property="og:site_name" content="nqou.net" />
-
 
 
 
@@ -70,7 +67,7 @@
       },
       "datePublished": "2013-08-29T08:30:00+09:00",
       "dateModified": "2013-08-29T08:30:00+09:00",
-      "description": "git clone https://github.com/sstephenson/rbenv.git ~/.rbenv echo 'export PATH=\u0026quot;$HOME/.rbenv/bin:$PATH\u0026quot;' \u0026gt;\u0026gt; ~/.bash_profile echo 'eval \u0026quot;$(rbenv init -)\u0026quot;' \u0026gt;\u0026gt; ~/.bash_profile exec $SHELL -l git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build rbenv install --list rbenv install 2.0.0-p247 rbenv",
+      "description": "git clone https://github.com/sstephenson/rbenv.git ~/.rbenv echo \u0026#39;export PATH=\u0026#34;$HOME/.rbenv/bin:$PATH\u0026#34;\u0026#39; \u0026gt;\u0026gt; ~/.bash_profile echo \u0026#39;eval \u0026#34;$(rbenv init -)\u0026#34;\u0026#39; \u0026gt;\u0026gt; ~/.bash_profile exec $SHELL -l git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build rbenv install --list rbenv install 2.0.0-p247 rbenv",
       "inLanguage": "ja",
       "potentialAction": [
         {
@@ -220,8 +217,8 @@
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <pre tabindex="0"><code>git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
-echo 'export PATH=&quot;$HOME/.rbenv/bin:$PATH&quot;' &gt;&gt; ~/.bash_profile
-echo 'eval &quot;$(rbenv init -)&quot;' &gt;&gt; ~/.bash_profile
+echo &#39;export PATH=&#34;$HOME/.rbenv/bin:$PATH&#34;&#39; &gt;&gt; ~/.bash_profile
+echo &#39;eval &#34;$(rbenv init -)&#34;&#39; &gt;&gt; ~/.bash_profile
 exec $SHELL -l
 git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
 </code></pre><!-- raw HTML omitted -->
@@ -295,7 +292,7 @@ git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-bu
     <h2>Comments</h2>
     <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -320,7 +317,7 @@ git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-bu
   <footer>
   <div>
     <p>
-      &copy; nqounet 2022
+      &copy; nqounet 2023
 
       &middot; <a href="https://creativecommons.org/licenses/by/4.0" target="_blank">CC BY 4.0</a>
 
@@ -340,17 +337,19 @@ git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-bu
 
   
 
-  
-<script type="application/javascript">
+    
+      
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E50H9ESN7E"></script>
+<script>
 var doNotTrack = false;
 if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'G-E50H9ESN7E', 'auto');
-	
-	ga('send', 'pageview');
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-E50H9ESN7E', { 'anonymize_ip': false });
 }
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
 
+    
 </body>
 </html>

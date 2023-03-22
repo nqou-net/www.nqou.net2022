@@ -22,7 +22,7 @@
       <pubDate>Fri, 24 Jul 2015 11:36:02 +0900</pubDate>
       
       <guid>https://www.nqou.net/2015/07/24/113602/</guid>
-      <description>my @array = $self-&amp;gt;array || (); sub array { my @array = (1, 2, 3); return @array; } my @array = array() || (); print &amp;quot;@array&amp;quot;; sub array { my</description>
+      <description>my @array = $self-&amp;gt;array || (); sub array { my @array = (1, 2, 3); return @array; } my @array = array() || (); print &amp;#34;@array&amp;#34;; sub array { my</description>
     </item>
     
     <item>
@@ -211,7 +211,7 @@
       <pubDate>Wed, 28 May 2014 00:25:21 +0900</pubDate>
       
       <guid>https://www.nqou.net/2014/05/28/002521/</guid>
-      <description>npm WARN deprecated grunt-bower-install@1.6.0: use grunt-wiredep instead 1 2 npm uninstall -D grunt-bower-install npm install -D grunt-wiredep Warning: Task &amp;quot;wiredep&amp;quot; failed. Use --force to continue. wiredep: { app: { src:</description>
+      <description>npm WARN deprecated grunt-bower-install@1.6.0: use grunt-wiredep instead 1 2 npm uninstall -D grunt-bower-install npm install -D grunt-wiredep Warning: Task &amp;#34;wiredep&amp;#34; failed. Use --force to continue. wiredep: { app: { src:</description>
     </item>
     
     <item>
@@ -319,7 +319,7 @@
       <pubDate>Tue, 29 Apr 2014 04:00:29 +0900</pubDate>
       
       <guid>https://www.nqou.net/2014/04/29/040029/</guid>
-      <description>replace: { siteInformation: { src: [&#39;&amp;lt;%= config.dist %&amp;gt;/*.html&#39;], dest: &#39;&amp;lt;%= config.dist %&amp;gt;/&#39;, replacements: [{ from: &#39;\{\{pkg.version\}\}&#39;, to: &#39;v&amp;lt;%= pkg.version %&amp;gt;&#39; }] } },</description>
+      <description>replace: { siteInformation: { src: [&amp;#39;&amp;lt;%= config.dist %&amp;gt;/*.html&amp;#39;], dest: &amp;#39;&amp;lt;%= config.dist %&amp;gt;/&amp;#39;, replacements: [{ from: &amp;#39;\{\{pkg.version\}\}&amp;#39;, to: &amp;#39;v&amp;lt;%= pkg.version %&amp;gt;&amp;#39; }] } },</description>
     </item>
     
     <item>

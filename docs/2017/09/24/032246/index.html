@@ -3,15 +3,13 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.91.0" />
+  <meta name="generator" content="Hugo 0.111.3">
 
   <title>変数やプレースホルダーの名前は重要です &middot; nqou.net</title>
 
   <meta name="description" content="" />
 
-  
-
-<meta itemprop="name" content="変数やプレースホルダーの名前は重要です">
+  <meta itemprop="name" content="変数やプレースホルダーの名前は重要です">
 <meta itemprop="description" content="危うくハマるところだった 先程の記事を書いていて、ファイル名は"><meta itemprop="datePublished" content="2017-09-24T03:22:46+09:00" />
 <meta itemprop="dateModified" content="2017-09-24T03:22:46+09:00" />
 <meta itemprop="wordCount" content="599">
@@ -28,7 +26,6 @@
 <meta property="og:url" content="https://www.nqou.net/2017/09/24/032246/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2017-09-24T03:22:46+09:00" />
 <meta property="article:modified_time" content="2017-09-24T03:22:46+09:00" /><meta property="og:site_name" content="nqou.net" />
-
 
 
 
@@ -227,13 +224,13 @@
 <p>そこで、 <code>hexo clean</code> してから <code>hexo server</code> してみたところ、ようやくもとに戻りました。</p>
 <p>困ったとき、というか、設定を変えたあとは <code>hexo clean</code> が良さそうです。</p>
 <h2 id="プレースホルダーとは一体何なのか">プレースホルダーとは一体何なのか</h2>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">permalink</span>: :<span style="color:#ae81ff">year/:month/:day/:title/</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">permalink</span>: :<span style="color:#ae81ff">year/:month/:day/:title/</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>ここでいう <code>:title</code> というのは、一体何を示しているのでしょう？</p>
 <p>そもそもこれが <code>:title</code> になっているのが意味不明です。</p>
@@ -294,7 +291,7 @@
     <h2>Comments</h2>
     <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -319,7 +316,7 @@
   <footer>
   <div>
     <p>
-      &copy; nqounet 2022
+      &copy; nqounet 2023
 
       &middot; <a href="https://creativecommons.org/licenses/by/4.0" target="_blank">CC BY 4.0</a>
 
@@ -339,17 +336,19 @@
 
   
 
-  
-<script type="application/javascript">
+    
+      
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E50H9ESN7E"></script>
+<script>
 var doNotTrack = false;
 if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'G-E50H9ESN7E', 'auto');
-	
-	ga('send', 'pageview');
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-E50H9ESN7E', { 'anonymize_ip': false });
 }
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
 
+    
 </body>
 </html>

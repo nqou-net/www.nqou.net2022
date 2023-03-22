@@ -3,15 +3,13 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.91.0" />
+  <meta name="generator" content="Hugo 0.111.3">
 
   <title>Gitlabでmilestonesの並び方が不満なので変更した &middot; nqou.net</title>
 
   <meta name="description" content="" />
 
-  
-
-<meta itemprop="name" content="Gitlabでmilestonesの並び方が不満なので変更した">
+  <meta itemprop="name" content="Gitlabでmilestonesの並び方が不満なので変更した">
 <meta itemprop="description" content="git diff でとった差分はこちらです。 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15"><meta itemprop="datePublished" content="2013-06-23T08:30:00+09:00" />
 <meta itemprop="dateModified" content="2013-06-23T08:30:00+09:00" />
 <meta itemprop="wordCount" content="1021">
@@ -28,7 +26,6 @@
 <meta property="og:url" content="https://www.nqou.net/2013/06/23/083000/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2013-06-23T08:30:00+09:00" />
 <meta property="article:modified_time" content="2013-06-23T08:30:00+09:00" /><meta property="og:site_name" content="nqou.net" />
-
 
 
 
@@ -215,71 +212,71 @@
 
   <div>
   <p><code>git diff</code> でとった差分はこちらです。</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">
-diff --git a/app/controllers/milestones_controller.rb b/app/controllers/milestones_controller.rb
-index 25647f9..1b3d11b 100644
-<span style="color:#f92672">--- a/app/controllers/milestones_controller.rb
-</span><span style="color:#f92672"></span><span style="color:#a6e22e">+++ b/app/controllers/milestones_controller.rb
-</span><span style="color:#a6e22e"></span><span style="color:#75715e">@@ -12,9 +12,9 @@ class MilestonesController &lt; ProjectResourceController
-</span><span style="color:#75715e"></span>
- def index
- @milestones = case params[:f]
-<span style="color:#f92672">-when &#39;all&#39;; @project.milestones.order(&#34;state, due_date DESC&#34;)
-</span><span style="color:#f92672"></span><span style="color:#a6e22e">+when &#39;all&#39;; @project.milestones.order(&#34;state, due_date ASC&#34;)
-</span><span style="color:#a6e22e"></span> when &#39;closed&#39;; @project.milestones.closed.order(&#34;due_date DESC&#34;)
-<span style="color:#f92672">-else @project.milestones.active.order(&#34;due_date DESC&#34;)
-</span><span style="color:#f92672"></span><span style="color:#a6e22e">+else @project.milestones.active.order(&#34;due_date ASC&#34;)
-</span><span style="color:#a6e22e"></span> end
-
- @milestones = @milestones.includes(:project)
-diff --git a/app/helpers/issues_helper.rb b/app/helpers/issues_helper.rb
-index dc5aa6e..33a1cca 100644
-<span style="color:#f92672">--- a/app/helpers/issues_helper.rb
-</span><span style="color:#f92672"></span><span style="color:#a6e22e">+++ b/app/helpers/issues_helper.rb
-</span><span style="color:#a6e22e"></span><span style="color:#75715e">@@ -29,7 +29,7 @@ module IssuesHelper
-</span><span style="color:#75715e"></span> end
-
- def issues_active_milestones
-<span style="color:#f92672">-@project.milestones.active.order(&#34;id desc&#34;).all
-</span><span style="color:#f92672"></span><span style="color:#a6e22e">+@project.milestones.active.order(&#34;due_date ASC&#34;).all
-</span><span style="color:#a6e22e"></span> end
-
- def url_for_project_issues
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-diff" data-lang="diff"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>diff --git a/app/controllers/milestones_controller.rb b/app/controllers/milestones_controller.rb
+</span></span><span style="display:flex;"><span>index 25647f9..1b3d11b 100644
+</span></span><span style="display:flex;"><span><span style="color:#f92672">--- a/app/controllers/milestones_controller.rb
+</span></span></span><span style="display:flex;"><span><span style="color:#f92672"></span><span style="color:#a6e22e">+++ b/app/controllers/milestones_controller.rb
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e"></span><span style="color:#75715e">@@ -12,9 +12,9 @@ class MilestonesController &lt; ProjectResourceController
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span> def index
+</span></span><span style="display:flex;"><span> @milestones = case params[:f]
+</span></span><span style="display:flex;"><span><span style="color:#f92672">-when &#39;all&#39;; @project.milestones.order(&#34;state, due_date DESC&#34;)
+</span></span></span><span style="display:flex;"><span><span style="color:#f92672"></span><span style="color:#a6e22e">+when &#39;all&#39;; @project.milestones.order(&#34;state, due_date ASC&#34;)
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e"></span> when &#39;closed&#39;; @project.milestones.closed.order(&#34;due_date DESC&#34;)
+</span></span><span style="display:flex;"><span><span style="color:#f92672">-else @project.milestones.active.order(&#34;due_date DESC&#34;)
+</span></span></span><span style="display:flex;"><span><span style="color:#f92672"></span><span style="color:#a6e22e">+else @project.milestones.active.order(&#34;due_date ASC&#34;)
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e"></span> end
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> @milestones = @milestones.includes(:project)
+</span></span><span style="display:flex;"><span>diff --git a/app/helpers/issues_helper.rb b/app/helpers/issues_helper.rb
+</span></span><span style="display:flex;"><span>index dc5aa6e..33a1cca 100644
+</span></span><span style="display:flex;"><span><span style="color:#f92672">--- a/app/helpers/issues_helper.rb
+</span></span></span><span style="display:flex;"><span><span style="color:#f92672"></span><span style="color:#a6e22e">+++ b/app/helpers/issues_helper.rb
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e"></span><span style="color:#75715e">@@ -29,7 +29,7 @@ module IssuesHelper
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span> end
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> def issues_active_milestones
+</span></span><span style="display:flex;"><span><span style="color:#f92672">-@project.milestones.active.order(&#34;id desc&#34;).all
+</span></span></span><span style="display:flex;"><span><span style="color:#f92672"></span><span style="color:#a6e22e">+@project.milestones.active.order(&#34;due_date ASC&#34;).all
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e"></span> end
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> def url_for_project_issues
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="gitlabのissuesは使えますよ">GitlabのIssuesは使えますよ</h2>
 <p>GitlabのIssuesは、シンプルなプロジェクト管理機能です。
@@ -354,7 +351,7 @@ Issuesの並び順もどうにかしたいですね。</p>
     <h2>Comments</h2>
     <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -379,7 +376,7 @@ Issuesの並び順もどうにかしたいですね。</p>
   <footer>
   <div>
     <p>
-      &copy; nqounet 2022
+      &copy; nqounet 2023
 
       &middot; <a href="https://creativecommons.org/licenses/by/4.0" target="_blank">CC BY 4.0</a>
 
@@ -399,17 +396,19 @@ Issuesの並び順もどうにかしたいですね。</p>
 
   
 
-  
-<script type="application/javascript">
+    
+      
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E50H9ESN7E"></script>
+<script>
 var doNotTrack = false;
 if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'G-E50H9ESN7E', 'auto');
-	
-	ga('send', 'pageview');
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-E50H9ESN7E', { 'anonymize_ip': false });
 }
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
 
+    
 </body>
 </html>

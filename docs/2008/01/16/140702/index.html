@@ -3,15 +3,13 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.91.0" />
+  <meta name="generator" content="Hugo 0.111.3">
 
   <title>携帯動画変換君 &middot; nqou.net</title>
 
   <meta name="description" content="" />
 
-  
-
-<meta itemprop="name" content="携帯動画変換君">
+  <meta itemprop="name" content="携帯動画変換君">
 <meta itemprop="description" content="iTunesとiPodをはじめて同期した時、再生できない形式"><meta itemprop="datePublished" content="2008-01-16T14:07:02+09:00" />
 <meta itemprop="dateModified" content="2008-01-16T14:07:02+09:00" />
 <meta itemprop="wordCount" content="659">
@@ -28,7 +26,6 @@
 <meta property="og:url" content="https://www.nqou.net/2008/01/16/140702/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2008-01-16T14:07:02+09:00" />
 <meta property="article:modified_time" content="2008-01-16T14:07:02+09:00" /><meta property="og:site_name" content="nqou.net" />
-
 
 
 
@@ -234,25 +231,25 @@
 </ul>
 <p>NicMP4Box.zipをダウンロードして（<!-- raw HTML omitted -->入手先<!-- raw HTML omitted -->）、zipファイル中のNicMP4Box.exeをあらかじめcoresフォルダの中に入れておく。
 あとは、設定ファイル（Transcoding_iPod.ini）を変更してやればOK。</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">[Item*]
-Title=H.264 QVGA(384kbps/128kbps)
-FileNameMax=59
-Command0=&#34;&#34;&lt;%AppPath%&gt;coresffmpeg&#34; -y -maxfr 30 -i &#34;&lt;%InputFile%&gt;&#34; -title &#34;&lt;%Title%&gt;&#34; -bitexact -hq -vcodec h264 -vprofile baseline -vlevel 30 -fixaspect -s 320x240 -b 384 -maxrate 700 -qmin 18 -qmax 51 -bufsize 1024 -g 250 -acodec aac -ac 2 -ar 48000 -ab 64 &#34;&lt;%TemporaryFile%&gt;.mp4&#34;&#34;
-Command1=&#34;&#34;&lt;%AppPath%&gt;coresNicMP4Box&#34; -add &#34;&lt;%TemporaryFile%&gt;.mp4&#34; &#34;&lt;%OutputFile%&gt;.mp4&#34;&#34;
-Command2=&#34;rm &#34;&lt;%TemporaryFile%&gt;.mp4&#34;&#34;
-Command3=&#34;&#34;&lt;%AppPath%&gt;coresAddiTunes&#34; &#34;&lt;%OutputFile%&gt;.mp4&#34;&#34;
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>[Item*]
+</span></span><span style="display:flex;"><span>Title=H.264 QVGA(384kbps/128kbps)
+</span></span><span style="display:flex;"><span>FileNameMax=59
+</span></span><span style="display:flex;"><span>Command0=&#34;&#34;&lt;%AppPath%&gt;coresffmpeg&#34; -y -maxfr 30 -i &#34;&lt;%InputFile%&gt;&#34; -title &#34;&lt;%Title%&gt;&#34; -bitexact -hq -vcodec h264 -vprofile baseline -vlevel 30 -fixaspect -s 320x240 -b 384 -maxrate 700 -qmin 18 -qmax 51 -bufsize 1024 -g 250 -acodec aac -ac 2 -ar 48000 -ab 64 &#34;&lt;%TemporaryFile%&gt;.mp4&#34;&#34;
+</span></span><span style="display:flex;"><span>Command1=&#34;&#34;&lt;%AppPath%&gt;coresNicMP4Box&#34; -add &#34;&lt;%TemporaryFile%&gt;.mp4&#34; &#34;&lt;%OutputFile%&gt;.mp4&#34;&#34;
+</span></span><span style="display:flex;"><span>Command2=&#34;rm &#34;&lt;%TemporaryFile%&gt;.mp4&#34;&#34;
+</span></span><span style="display:flex;"><span>Command3=&#34;&#34;&lt;%AppPath%&gt;coresAddiTunes&#34; &#34;&lt;%OutputFile%&gt;.mp4&#34;&#34;
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>細かい設定値はとりあえず置いておいて、この設定でほとんどの動画がiPodで再生できるように変換される。</p>
 
@@ -306,7 +303,7 @@ Command3=&#34;&#34;&lt;%AppPath%&gt;coresAddiTunes&#34; &#34;&lt;%OutputFile%&gt
     <h2>Comments</h2>
     <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -331,7 +328,7 @@ Command3=&#34;&#34;&lt;%AppPath%&gt;coresAddiTunes&#34; &#34;&lt;%OutputFile%&gt
   <footer>
   <div>
     <p>
-      &copy; nqounet 2022
+      &copy; nqounet 2023
 
       &middot; <a href="https://creativecommons.org/licenses/by/4.0" target="_blank">CC BY 4.0</a>
 
@@ -351,17 +348,19 @@ Command3=&#34;&#34;&lt;%AppPath%&gt;coresAddiTunes&#34; &#34;&lt;%OutputFile%&gt
 
   
 
-  
-<script type="application/javascript">
+    
+      
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E50H9ESN7E"></script>
+<script>
 var doNotTrack = false;
 if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'G-E50H9ESN7E', 'auto');
-	
-	ga('send', 'pageview');
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-E50H9ESN7E', { 'anonymize_ip': false });
 }
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
 
+    
 </body>
 </html>

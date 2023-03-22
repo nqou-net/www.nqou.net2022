@@ -3,15 +3,13 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.91.0" />
+  <meta name="generator" content="Hugo 0.111.3">
 
   <title>最近更新されたエントリーを表示するためのアトリビュート（失敗作） &middot; nqou.net</title>
 
   <meta name="description" content="" />
 
-  
-
-<meta itemprop="name" content="最近更新されたエントリーを表示するためのアトリビュート（失敗作）">
+  <meta itemprop="name" content="最近更新されたエントリーを表示するためのアトリビュート（失敗作）">
 <meta itemprop="description" content="何を調べていたのかは忘れてしまったのだが、何故か気になった記"><meta itemprop="datePublished" content="2006-11-08T03:12:56+09:00" />
 <meta itemprop="dateModified" content="2006-11-08T03:12:56+09:00" />
 <meta itemprop="wordCount" content="436">
@@ -28,7 +26,6 @@
 <meta property="og:url" content="https://www.nqou.net/2006/11/08/031256/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2006-11-08T03:12:56+09:00" />
 <meta property="article:modified_time" content="2006-11-08T03:12:56+09:00" /><meta property="og:site_name" content="nqou.net" />
-
 
 
 
@@ -221,25 +218,25 @@
 <p><!-- raw HTML omitted -->Movable Type 3.3 マニュアル: テンプレート・タグ リファレンス<!-- raw HTML omitted --></p>
 <p>MTEntriesのアトリビュートにsort_byがあって、その対象として「modified_on（変更日時）」がありました。
 Movable Type 3.3から、複数のアトリビュートを指定できる、という事なので、最近更新された10件を表示する場合は、</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">&lt;ul class=&#34;module-list&#34;&gt;
-  &lt;MTEntries lastn=&#34;10&#34; sort_by=&#34;modified_on&#34; sort_order=&#34;descend&#34;&gt;
-    &lt;li class=&#34;module-list-item&#34;&gt;&lt;a href=&#34;&lt;$MTEntryPermalink$&gt;&#34;&gt;
-        &lt;$MTEntryTitle$&gt;
-      &lt;/a&gt;&lt;/li&gt;
-  &lt;/MTEntries&gt;
-&lt;/ul&gt;
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>&lt;ul class=&#34;module-list&#34;&gt;
+</span></span><span style="display:flex;"><span>  &lt;MTEntries lastn=&#34;10&#34; sort_by=&#34;modified_on&#34; sort_order=&#34;descend&#34;&gt;
+</span></span><span style="display:flex;"><span>    &lt;li class=&#34;module-list-item&#34;&gt;&lt;a href=&#34;&lt;$MTEntryPermalink$&gt;&#34;&gt;
+</span></span><span style="display:flex;"><span>        &lt;$MTEntryTitle$&gt;
+</span></span><span style="display:flex;"><span>      &lt;/a&gt;&lt;/li&gt;
+</span></span><span style="display:flex;"><span>  &lt;/MTEntries&gt;
+</span></span><span style="display:flex;"><span>&lt;/ul&gt;
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>という感じで可能のようですね。</p>
 <p>テンプレートタグの一覧を見たいときにはhxxk.jp - Movable Type 3.3 のテンプレートタグリファレンス自家用版が便利でよく使っています。</p>
@@ -295,7 +292,7 @@ Movable Type 3.3から、複数のアトリビュートを指定できる、と�
     <h2>Comments</h2>
     <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -320,7 +317,7 @@ Movable Type 3.3から、複数のアトリビュートを指定できる、と�
   <footer>
   <div>
     <p>
-      &copy; nqounet 2022
+      &copy; nqounet 2023
 
       &middot; <a href="https://creativecommons.org/licenses/by/4.0" target="_blank">CC BY 4.0</a>
 
@@ -340,17 +337,19 @@ Movable Type 3.3から、複数のアトリビュートを指定できる、と�
 
   
 
-  
-<script type="application/javascript">
+    
+      
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E50H9ESN7E"></script>
+<script>
 var doNotTrack = false;
 if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'G-E50H9ESN7E', 'auto');
-	
-	ga('send', 'pageview');
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-E50H9ESN7E', { 'anonymize_ip': false });
 }
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
 
+    
 </body>
 </html>

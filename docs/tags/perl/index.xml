@@ -148,7 +148,7 @@
       <pubDate>Mon, 26 Dec 2016 04:34:12 +0900</pubDate>
       
       <guid>https://www.nqou.net/2016/12/26/043412/</guid>
-      <description>おはようございます。 若林（@nqounet）です。</description>
+      <description>おはようございます。 若林（@nqounet）です。 少し遅れま</description>
     </item>
     
     <item>
@@ -157,7 +157,7 @@
       <pubDate>Fri, 09 Dec 2016 14:03:21 +0900</pubDate>
       
       <guid>https://www.nqou.net/2016/12/09/140321/</guid>
-      <description>この記事は、 Perl入学式 Advent Calendar 2016の9日目の記事です。 昨</description>
+      <description>この記事は、 Perl入学式 Advent Calendar 2016 の9日目の記事です。 昨日は ken5owata</description>
     </item>
     
     <item>
@@ -166,7 +166,7 @@
       <pubDate>Thu, 08 Dec 2016 20:21:41 +0900</pubDate>
       
       <guid>https://www.nqou.net/2016/12/08/202141/</guid>
-      <description>use strict; use warnings; use feature &#39;say&#39;; my @job; push @job, sub { say 1 }; push @job, sub { say 2 }; say &amp;quot;hoge&amp;quot;; unshift @job, sub { say</description>
+      <description>use strict; use warnings; use feature &amp;#39;say&amp;#39;; my @job; push @job, sub { say 1 }; push @job, sub { say 2 }; say &amp;#34;hoge&amp;#34;; unshift @job, sub { say</description>
     </item>
     
     <item>
@@ -490,7 +490,7 @@
       <pubDate>Mon, 26 Jan 2015 08:21:43 +0900</pubDate>
       
       <guid>https://www.nqou.net/2015/01/26/082143/</guid>
-      <description># Mojolicious::Liteの場合 app-&amp;gt;log-&amp;gt;handle(\*STDERR) if app-&amp;gt;mode eq &#39;development&#39;;</description>
+      <description># Mojolicious::Liteの場合 app-&amp;gt;log-&amp;gt;handle(\*STDERR) if app-&amp;gt;mode eq &amp;#39;development&amp;#39;;</description>
     </item>
     
     <item>
@@ -571,7 +571,7 @@
       <pubDate>Sun, 31 Aug 2014 21:25:27 +0900</pubDate>
       
       <guid>https://www.nqou.net/2014/08/31/212527/</guid>
-      <description>#!/usr/bin/env perl use utf8; use 5.012001; use DDP {deparse =&amp;gt; 1}; my @list = (); while (my $in = &amp;lt;&amp;gt;) { chomp $in; if ($in == 1) { print &#39;&amp;gt;&amp;gt;&amp;gt;</description>
+      <description>#!/usr/bin/env perl use utf8; use 5.012001; use DDP {deparse =&amp;gt; 1}; my @list = (); while (my $in = &amp;lt;&amp;gt;) { chomp $in; if ($in == 1) { print &amp;#39;&amp;gt;&amp;gt;&amp;gt;</description>
     </item>
     
     <item>
@@ -616,7 +616,7 @@
       <pubDate>Sat, 16 Aug 2014 16:46:30 +0900</pubDate>
       
       <guid>https://www.nqou.net/2014/08/16/164630/</guid>
-      <description>function show (args) { console.debug(args); } var str = &#39;string&#39;; show(str); // 配列 var array = [0, 1, 2]; // 配列の書き方で代入</description>
+      <description>function show (args) { console.debug(args); } var str = &amp;#39;string&amp;#39;; show(str); // 配列 var array = [0, 1, 2]; // 配列の書き方で代入</description>
     </item>
     
     <item>
@@ -670,7 +670,7 @@
       <pubDate>Sat, 19 Jul 2014 13:34:00 +0900</pubDate>
       
       <guid>https://www.nqou.net/2014/07/19/133400/</guid>
-      <description>#!/usr/bin/env perl use utf8; use 5.012; use DDP {deparse =&amp;gt; 1}; my $string = &#39;Perl入学式&#39;; my @foo = (&#39;foo&#39;, &#39;bar&#39;); p</description>
+      <description>#!/usr/bin/env perl use utf8; use 5.012; use DDP {deparse =&amp;gt; 1}; my $string = &amp;#39;Perl入学式&amp;#39</description>
     </item>
     
     <item>
@@ -985,7 +985,7 @@
       <pubDate>Thu, 29 Aug 2013 08:30:00 +0900</pubDate>
       
       <guid>https://www.nqou.net/2013/08/29/083000/</guid>
-      <description>git clone https://github.com/sstephenson/rbenv.git ~/.rbenv echo &#39;export PATH=&amp;quot;$HOME/.rbenv/bin:$PATH&amp;quot;&#39; &amp;gt;&amp;gt; ~/.bash_profile echo &#39;eval &amp;quot;$(rbenv init -)&amp;quot;&#39; &amp;gt;&amp;gt; ~/.bash_profile exec $SHELL -l git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build rbenv install --list rbenv install 2.0.0-p247 rbenv</description>
+      <description>git clone https://github.com/sstephenson/rbenv.git ~/.rbenv echo &amp;#39;export PATH=&amp;#34;$HOME/.rbenv/bin:$PATH&amp;#34;&amp;#39; &amp;gt;&amp;gt; ~/.bash_profile echo &amp;#39;eval &amp;#34;$(rbenv init -)&amp;#34;&amp;#39; &amp;gt;&amp;gt; ~/.bash_profile exec $SHELL -l git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build rbenv install --list rbenv install 2.0.0-p247 rbenv</description>
     </item>
     
     <item>
@@ -1966,7 +1966,7 @@
       <pubDate>Mon, 02 Feb 2009 19:56:25 +0900</pubDate>
       
       <guid>https://www.nqou.net/2009/02/02/195625/</guid>
-      <description>Summary of my perl5 (revision 5 version 10 subversion 0) configuration: Platform: osname=MSWin32, osvers=5.1, archname=MSWin32-x86-multi-thread uname=&#39;&#39; config_args=&#39;undef&#39; hint=recommended, useposix=true, d_sigaction=undef useithreads=define, usemultiplicity=define useperlio=define, d_sfio=undef, uselargefiles=define, usesocks=undef use64bitint=undef, use64bitall=undef, uselongdouble=undef usemymalloc=n,</description>
+      <description>Summary of my perl5 (revision 5 version 10 subversion 0) configuration: Platform: osname=MSWin32, osvers=5.1, archname=MSWin32-x86-multi-thread uname=&amp;#39;&amp;#39; config_args=&amp;#39;undef&amp;#39; hint=recommended, useposix=true, d_sigaction=undef useithreads=define, usemultiplicity=define useperlio=define, d_sfio=undef, uselargefiles=define, usesocks=undef use64bitint=undef, use64bitall=undef, uselongdouble=undef usemymalloc=n,</description>
     </item>
     
     <item>
@@ -2038,7 +2038,7 @@
       <pubDate>Sat, 03 Jan 2009 23:28:20 +0900</pubDate>
       
       <guid>https://www.nqou.net/2009/01/03/232820/</guid>
-      <description>MENTAで行き詰っているので、気分転換に。 Pipes: Rewire the webどん</description>
+      <description>MENTAで行き詰っているので、気分転換に。 Pipes: Rewire the web どんなこ</description>
     </item>
     
     <item>

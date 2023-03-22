@@ -3,15 +3,13 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.91.0" />
+  <meta name="generator" content="Hugo 0.111.3">
 
   <title>Path::Tiny を使っている時にディレクトリを自動的に作る &middot; nqou.net</title>
 
   <meta name="description" content="" />
 
-  
-
-<meta itemprop="name" content="Path::Tiny を使っている時にディレクトリを自動的に作る">
+  <meta itemprop="name" content="Path::Tiny を使っている時にディレクトリを自動的に作る">
 <meta itemprop="description" content="Path::Tiny 祭り Path::Tiny を使い始めてから、以前 Path::Class を使って書いていたものを書き"><meta itemprop="datePublished" content="2018-05-08T02:56:36+09:00" />
 <meta itemprop="dateModified" content="2018-05-08T02:56:36+09:00" />
 <meta itemprop="wordCount" content="500">
@@ -28,7 +26,6 @@
 <meta property="og:url" content="https://www.nqou.net/2018/05/08/025636/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2018-05-08T02:56:36+09:00" />
 <meta property="article:modified_time" content="2018-05-08T02:56:36+09:00" /><meta property="og:site_name" content="nqou.net" />
-
 
 
 
@@ -219,28 +216,28 @@
 <h2 id="touchpath-というのを知った">touchpath というのを知った</h2>
 <p>つい最近まで知らなかったのですが、ファイルを作る時にディレクトリがない場合に自動的に作成するメソッドがありました。
 というか、これまでは当たり前のようにディレクトリを作成してからファイルを作成していたのですが。</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#66d9ef">my</span> $path <span style="color:#f92672">=</span> path(<span style="color:#e6db74">&#39;var/foo/bar.txt&#39;</span>);
-$path<span style="color:#f92672">-&gt;</span>parent<span style="color:#f92672">-&gt;</span>mkpath;
-$path<span style="color:#f92672">-&gt;</span>touch;
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span><span style="color:#66d9ef">my</span> $path <span style="color:#f92672">=</span> path(<span style="color:#e6db74">&#39;var/foo/bar.txt&#39;</span>);
+</span></span><span style="display:flex;"><span>$path<span style="color:#f92672">-&gt;</span>parent<span style="color:#f92672">-&gt;</span>mkpath;
+</span></span><span style="display:flex;"><span>$path<span style="color:#f92672">-&gt;</span>touch;
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>実は以下のようにできるのです。</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#66d9ef">my</span> $path <span style="color:#f92672">=</span> path(<span style="color:#e6db74">&#39;var/foo/bar.txt&#39;</span>);
-$path<span style="color:#f92672">-&gt;</span>touchpath;
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span><span style="color:#66d9ef">my</span> $path <span style="color:#f92672">=</span> path(<span style="color:#e6db74">&#39;var/foo/bar.txt&#39;</span>);
+</span></span><span style="display:flex;"><span>$path<span style="color:#f92672">-&gt;</span>touchpath;
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>とっても便利。</p>
 <h2 id="プログラムが作るファイルの置き場所">プログラムが作るファイルの置き場所</h2>
@@ -300,7 +297,7 @@ $path<span style="color:#f92672">-&gt;</span>touchpath;
     <h2>Comments</h2>
     <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -325,7 +322,7 @@ $path<span style="color:#f92672">-&gt;</span>touchpath;
   <footer>
   <div>
     <p>
-      &copy; nqounet 2022
+      &copy; nqounet 2023
 
       &middot; <a href="https://creativecommons.org/licenses/by/4.0" target="_blank">CC BY 4.0</a>
 
@@ -345,17 +342,19 @@ $path<span style="color:#f92672">-&gt;</span>touchpath;
 
   
 
-  
-<script type="application/javascript">
+    
+      
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E50H9ESN7E"></script>
+<script>
 var doNotTrack = false;
 if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'G-E50H9ESN7E', 'auto');
-	
-	ga('send', 'pageview');
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-E50H9ESN7E', { 'anonymize_ip': false });
 }
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
 
+    
 </body>
 </html>

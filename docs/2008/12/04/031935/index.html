@@ -3,18 +3,16 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.91.0" />
+  <meta name="generator" content="Hugo 0.111.3">
 
   <title>今日のMENTA、2回目 &middot; nqou.net</title>
 
   <meta name="description" content="" />
 
-  
-
-<meta itemprop="name" content="今日のMENTA、2回目">
+  <meta itemprop="name" content="今日のMENTA、2回目">
 <meta itemprop="description" content="zipファイルは、lang_perl_MENTA_tags_"><meta itemprop="datePublished" content="2008-12-04T03:19:35+09:00" />
 <meta itemprop="dateModified" content="2008-12-04T03:19:35+09:00" />
-<meta itemprop="wordCount" content="5141">
+<meta itemprop="wordCount" content="5130">
 <meta itemprop="keywords" content="perl," />
 
 <meta name="twitter:card" content="summary"/>
@@ -28,7 +26,6 @@
 <meta property="og:url" content="https://www.nqou.net/2008/12/04/031935/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2008-12-04T03:19:35+09:00" />
 <meta property="article:modified_time" content="2008-12-04T03:19:35+09:00" /><meta property="og:site_name" content="nqou.net" />
-
 
 
 
@@ -234,982 +231,982 @@ nanochat.css     (604) : スタイルシート
 main.logとmember.logは空ファイルでOK（のはず）。
 <!-- raw HTML omitted -->サンプル<!-- raw HTML omitted -->
 nanochat.cgi</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 25
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 26
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 27
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 28
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 29
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 30
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 31
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 32
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 33
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 34
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 35
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 36
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 37
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 38
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 39
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 40
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 41
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 42
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 43
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 44
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 45
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 46
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 47
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 48
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 49
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 50
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 51
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 52
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 53
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 54
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 55
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 56
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 57
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 58
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 59
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 60
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 61
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 62
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 63
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 64
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 65
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 66
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 67
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 68
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 69
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 70
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 71
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 72
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 73
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 74
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 75
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 76
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 77
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 78
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 79
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 80
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 81
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 82
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 83
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 84
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 85
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 86
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 87
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 88
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 89
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 90
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 91
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 92
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 93
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 94
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 95
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 96
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 97
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 98
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 99
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">100
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">101
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">102
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">103
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">104
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">105
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">106
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">107
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">108
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">109
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">110
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">111
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">112
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">113
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">114
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">115
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">116
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">117
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">118
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">119
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">120
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">121
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">122
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">123
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">124
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">125
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">126
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">127
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">128
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">129
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">130
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">131
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">132
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">133
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">134
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">135
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">136
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">137
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">138
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">139
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">140
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">141
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">142
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">143
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">144
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">145
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">146
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">147
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">148
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">149
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">150
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">151
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">152
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">153
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">154
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">155
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">156
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">157
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">158
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">159
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">160
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">161
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">162
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">163
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">164
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">165
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">166
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">167
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">168
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">169
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">170
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">171
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">172
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">173
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">174
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">175
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">176
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">177
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">178
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">179
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">180
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">181
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">182
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">183
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">184
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">185
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">186
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">187
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">188
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">189
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">190
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">191
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">192
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">193
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">194
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">195
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">196
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">197
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">198
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">199
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">200
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">201
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">202
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">203
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">204
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">205
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">206
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">207
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">208
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">209
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">210
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">211
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">212
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">213
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">214
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">215
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">216
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">217
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">218
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">219
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">220
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">221
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">222
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">223
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">224
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">225
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">226
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">227
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">228
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">229
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">230
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">231
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">232
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">233
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">234
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">235
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">236
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">237
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">238
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">239
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">240
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">241
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">242
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">243
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">244
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">245
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">246
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">247
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">248
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">249
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">250
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">251
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">252
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">253
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">254
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">255
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">256
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">257
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">258
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">259
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">260
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">261
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">262
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">263
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">264
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">265
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">266
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">267
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">268
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">269
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">270
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">271
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">272
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">273
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">274
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">275
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">276
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">277
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">278
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">279
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">280
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">281
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">282
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">283
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">284
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">285
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">286
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">287
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">288
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">289
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">290
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">291
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">292
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">293
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">294
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">295
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">296
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">297
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">298
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">299
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">300
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">301
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">302
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">303
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">304
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">305
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">306
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">307
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">308
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">309
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">310
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">311
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">312
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">313
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">314
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">315
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">316
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">317
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">318
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">319
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">320
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">321
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">322
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">323
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">324
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">325
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">326
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">327
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">328
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">329
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">330
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">331
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">332
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">333
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">334
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">335
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">336
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">337
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">338
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">339
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">340
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">341
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">342
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">343
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">344
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">345
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">346
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">347
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">348
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">349
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">350
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">351
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">352
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">353
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">354
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">355
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">356
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">357
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">358
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">359
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">360
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">361
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">362
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">363
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">364
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">365
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">366
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">367
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">368
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">369
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">370
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">371
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">372
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">373
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">374
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">375
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">376
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">377
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">378
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">379
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">380
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">381
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">382
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">383
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">384
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">385
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">386
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">387
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">388
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">389
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">390
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">391
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">392
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">393
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">394
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">395
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">396
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">397
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">398
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">399
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">400
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">401
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">402
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">403
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">404
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">405
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">406
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">407
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">408
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">409
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">410
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">411
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">412
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">413
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">414
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">415
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">416
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">417
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">418
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">419
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">420
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">421
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">422
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">423
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">424
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">425
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">426
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">427
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">428
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">429
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">430
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">431
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">432
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 21
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 22
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 23
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 24
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 25
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 26
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 27
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 28
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 29
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 30
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 31
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 32
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 33
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 34
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 35
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 36
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 37
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 38
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 39
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 40
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 41
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 42
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 43
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 44
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 45
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 46
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 47
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 48
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 49
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 50
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 51
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 52
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 53
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 54
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 55
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 56
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 57
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 58
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 59
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 60
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 61
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 62
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 63
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 64
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 65
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 66
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 67
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 68
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 69
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 70
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 71
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 72
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 73
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 74
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 75
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 76
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 77
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 78
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 79
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 80
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 81
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 82
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 83
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 84
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 85
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 86
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 87
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 88
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 89
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 90
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 91
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 92
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 93
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 94
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 95
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 96
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 97
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 98
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 99
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">100
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">101
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">102
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">103
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">104
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">105
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">106
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">107
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">108
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">109
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">110
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">111
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">112
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">113
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">114
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">115
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">116
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">117
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">118
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">119
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">120
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">121
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">122
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">123
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">124
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">125
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">126
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">127
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">128
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">129
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">130
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">131
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">132
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">133
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">134
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">135
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">136
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">137
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">138
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">139
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">140
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">141
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">142
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">143
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">144
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">145
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">146
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">147
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">148
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">149
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">150
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">151
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">152
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">153
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">154
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">155
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">156
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">157
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">158
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">159
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">160
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">161
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">162
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">163
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">164
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">165
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">166
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">167
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">168
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">169
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">170
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">171
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">172
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">173
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">174
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">175
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">176
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">177
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">178
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">179
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">180
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">181
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">182
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">183
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">184
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">185
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">186
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">187
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">188
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">189
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">190
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">191
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">192
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">193
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">194
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">195
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">196
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">197
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">198
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">199
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">200
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">201
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">202
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">203
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">204
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">205
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">206
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">207
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">208
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">209
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">210
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">211
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">212
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">213
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">214
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">215
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">216
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">217
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">218
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">219
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">220
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">221
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">222
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">223
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">224
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">225
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">226
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">227
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">228
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">229
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">230
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">231
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">232
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">233
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">234
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">235
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">236
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">237
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">238
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">239
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">240
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">241
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">242
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">243
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">244
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">245
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">246
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">247
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">248
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">249
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">250
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">251
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">252
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">253
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">254
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">255
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">256
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">257
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">258
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">259
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">260
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">261
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">262
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">263
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">264
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">265
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">266
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">267
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">268
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">269
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">270
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">271
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">272
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">273
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">274
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">275
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">276
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">277
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">278
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">279
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">280
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">281
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">282
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">283
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">284
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">285
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">286
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">287
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">288
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">289
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">290
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">291
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">292
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">293
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">294
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">295
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">296
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">297
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">298
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">299
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">300
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">301
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">302
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">303
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">304
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">305
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">306
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">307
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">308
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">309
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">310
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">311
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">312
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">313
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">314
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">315
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">316
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">317
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">318
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">319
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">320
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">321
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">322
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">323
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">324
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">325
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">326
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">327
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">328
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">329
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">330
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">331
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">332
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">333
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">334
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">335
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">336
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">337
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">338
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">339
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">340
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">341
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">342
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">343
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">344
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">345
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">346
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">347
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">348
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">349
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">350
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">351
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">352
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">353
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">354
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">355
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">356
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">357
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">358
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">359
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">360
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">361
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">362
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">363
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">364
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">365
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">366
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">367
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">368
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">369
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">370
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">371
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">372
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">373
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">374
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">375
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">376
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">377
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">378
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">379
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">380
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">381
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">382
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">383
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">384
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">385
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">386
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">387
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">388
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">389
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">390
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">391
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">392
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">393
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">394
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">395
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">396
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">397
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">398
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">399
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">400
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">401
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">402
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">403
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">404
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">405
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">406
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">407
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">408
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">409
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">410
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">411
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">412
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">413
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">414
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">415
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">416
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">417
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">418
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">419
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">420
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">421
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">422
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">423
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">424
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">425
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">426
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">427
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">428
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">429
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">430
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">431
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">432
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">#!/usr/bin/perl
-# ↑は「#!/usr/local/bin/perl」が一般的みたいなの。
-# 動かないときはプロバイダに訊くの。
-#BEGIN{
-#    print &#34;Content-type: text/plain\n\n&#34;;
-#    open(STDERR, &#34;&gt;&amp;STDOUT&#34;);
-#    $|=1;
-#}
-# ↑はエラーが出て困った時にコメントを外すの。
-require 5.005;
-use strict;
-# ↑はさわったらだめなの。
-# いくつか設定することがあるの。
-my @max_list = qw(10 20 30 40 50);
-# 入口では表示する件数を選べるの。
-# ここに書いたのがドロップダウンに表示されるの。
-# でも、あんまり大きい数はいやなの。
-# 数字以外も書けるけど、書いたらいやなの。
-my $return_uri = &#39;../nanochat.htm&#39;;
-# 「戻るの。」でリンクする場所を決める事ができるの。
-my $ss_uri = &#39;./nanochat.css&#39;;
-# スタイルシートの場所なの。
-# このファイルはスクリプトと同じ場所だと効かない事があるらしいの。
-# そういう人はスタイルシートを他の場所において、ここを変えるの。
-# その時は「http://」から書いたほうが確実なの。
-my $timeout = 1800;
-# 書込みしてない人はクッキーの期限が切れるの。
-# その時間を決める事ができるの。単位は秒なの。
-my $main_log = &#39;./main.log&#39;;
-# 会話の中身を記録するファイルの名前なの。
-# 最初はこの名前だから、そのまま使うときは変えなくてもいいの。
-my $member_log = &#39;./member.log&#39;;
-# 誰が居るかを記録するファイルの名前なの。
-# 最初はこの名前だから、そのまま使うときは変えなくてもいいの。
-my $nano = &#39;なの&#39;;
-# これを変えたらなのじゃなくなるの。でもべつにいいの。
-my $script_uri = $ENV{SCRIPT_NAME} || &#39;./nanochat.cgi&#39;;
-# このファイルの名前を変えたら、右側の方にその名前を書くの。
-# ここから・・・
-my $msg_max = ( sort { $b &lt;=&gt; $a } @max_list )[0];
-my $msg_min = ( sort { $a &lt;=&gt; $b } @max_list )[0];
-my $script_name  = &#39;NANOChat&#39;;
-my $print_str    = &#39;&#39;;
-my $print_header = &#39;&#39;;
-my %members      = ();
-my %ip           = ();
-my @logs         = ();
-my @logs_now     = ();
-# ここまでは変えたらいやなの。
-# お仕事できなくなるの。
-check_env();
-# ↑はうまく動くか試してるの。ちゃんと動いたら消してもいいの。
-# 心配な人は消さなくてもいいの。
-# ここから最後までは細かい事をやってるの。
-# わからない人はさわったらダメなの。
-main();
-print_exit();
-sub main {
-my $cookie = get_cookie();
-# HTMLのチェック用なの。
-#    $cookie = &#39;,10&#39;;
-#    $cookie = &#39;61,10&#39;;
-#    $ENV{QUERY_STRING} = &#39;logout=1&#39;;
-# ここまでなの。でも、下のほうにもう少しあるの。
-if ( defined $cookie ) {
-my ( $name, $tmp ) = split /,/, $cookie, 3;
-if ($name) {
-$name = pack( &#34;H*&#34;, $name );
-check_max($tmp);
-}
-my %form = ();    # (ua =&gt; $ENV{HTTP_USER_AGENT});
-foreach ( split /[&amp;;]/, $ENV{QUERY_STRING} ) {
-my ( $key, $value ) = split /=/, $_, 2;
-if ( $value =~ /[%\+]/ ) {
-my $space = &#34;(?:\xA1\xA1)&#34;;
-$value =~ tr/+/ /;
-$value =~ s/%([0-9a-fA-F][0-9a-fA-F])/pack(&#34;H2&#34;, $1)/eg;
-$value =~ s/&amp;/&amp;amp;/g;
-$value =~ s/&lt;/&lt;/g;
-$value =~ s/&gt;/&gt;/g;
-$value =~ s/\t/  /g;
-$value =~ s/^(\s|$space)+//o;
-$value =~ s/(\s|$space)+$//o;
-$value =~ s/  / &amp;nbsp;/g;
-$value =~ tr/\x0D\x0A//d;
-}
-$form{$key} = $value;
-}
-member_read();
-# HTMLチェック用なの。
-#        $members{&#39;a&#39;} = time; $ip{&#39;a&#39;} = &#39;127.0.0.1&#39;;
-# これだけなの。
-if ( exists $form{logout} ) {
-ref_logout( \%form, $name );
-print_exit();
-}
-elsif ( exists $form{login} and $name eq &#39;&#39; ) {
-ref_login( \%form );
-$name = $form{n};
-check_max( $form{max} );
-}
-log_read();
-if ($name) {
-$form{msg} ne &#39;&#39; and ref_make_log( \%form, $name );
-my $cname = unpack( &#34;H*&#34;, $name );
-$print_header = &#34;Set-Cookie: $script_name=$cname,$msg_max; expires=&#34;
-. gmtime( time + $timeout ) . &#34;\n&#34;;
-reload($name);
-}
-else {
-stock_header(&#39;名前を教えてほしいの。&#39;);
-stock_member();
-my $sel = qq(&lt;select name=&#34;max&#34;&gt;);
-my $sd  = qq( selected);
-foreach (@max_list) {
-$sel .= qq(&lt;option value=&#34;$_&#34;$sd&gt;$_ 件&lt;/option&gt;);
-$sd = &#39;&#39;;
-}
-$sel .= &#39;&lt;/select&gt;&#39;;
-$print_str .= &lt;&lt;EOM;
-&lt;div class=&#34;nano&#34;&gt;
-&lt;form method=&#34;get&#34; action=&#34;$script_uri&#34;&gt;
-&lt;p&gt;&lt;input type=&#34;text&#34; name=&#34;n&#34; size=&#34;20&#34; maxlength=&#34;20&#34; tabindex=&#34;1&#34;&gt; ←ここに名前を書いてほしいの。&lt;/p&gt;
-&lt;p&gt;書いたら、表示するメッセージ数を $sel にして &lt;input type=&#34;submit&#34; value=&#34;部屋に入るの。&#34; tabindex=&#34;2&#34;&gt;&lt;input type=&#34;hidden&#34; name=&#34;login&#34; value=&#34;1&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;input type=&#34;submit&#34; name=&#34;logout&#34; value=&#34;やっぱり帰るの。&#34; tabindex=&#34;3&#34;&gt;&lt;/p&gt;
-&lt;/form&gt;&lt;/div&gt;&lt;hr&gt;
-EOM
-stock_log($msg_min);
-stock_footer();
-}
-}
-else {
-$print_header = &#34;Set-Cookie: $script_name=,10; expires=&#34;
-. gmtime( time + $timeout ) . &#34;\n&#34;;
-stock_header(&#39;いらっしゃいなの。&#39;);
-my $limit = int( $timeout / 60 );
-$print_str .= &lt;&lt;EOM;
-&lt;div class=&#34;nano&#34;&gt;
-&lt;p&gt;ここの入退室管理を任されてる &lt;strong class=&#34;name&#34;&gt;$nano&lt;/strong&gt; なの。よろしくなの。&lt;/p&gt;
-&lt;p&gt;この部屋へ入るにはクッキーが必要なの。退室するときにちゃんと消してあげるから、名札だと思ってつけてほしいの。今つけた人は、ついてるかどうかわからないから１回読みなおしてほしいの。&lt;/p&gt;
-&lt;p&gt;JavaScriptが使えると、マウスを使わなくてもチャットできるの。とってもおすすめなの。&lt;/p&gt;
-&lt;p&gt;あと、$limit分くらい何も発言しないと部屋から追い出されちゃうの。気をつけてほしいの。&lt;/p&gt;
-&lt;p&gt;あ、ホームページ（http://から書くの）とかメールアドレス（mailto:から書くの）とかを書くと、リンクしてあげるの。よくわからないから発言を全部リンクしちゃうけど、そのくらいは許してほしいの。&lt;/p&gt;
-&lt;p&gt;準備ができたら&lt;a href=&#34;$script_uri&#34;&gt;入口&lt;/a&gt;で名前を教えてほしいの。&lt;/p&gt;
-&lt;/div&gt;
-EOM
-stock_footer();
-}
-}
-sub member_read {
-open IN, $member_log or die;
-my $member = &lt;IN&gt;;
-my $ip     = &lt;IN&gt;;
-close IN;
-chomp $member;
-chomp $ip;
-%members = split /\t/, $member;
-%ip      = split /\t/, $ip;
-foreach ( keys %members ) {
-if ( $timeout &lt; time - $members{$_} ) {
-delete $members{$_};
-delete $ip{$_};
-}
-}
-}
-sub member_write {
-my $member = join( &#34;\t&#34;, %members );
-my $ip     = join( &#34;\t&#34;, %ip );
-open OUT, &#34;&gt; $member_log&#34; or die;
-print OUT $member . &#34;\n&#34;;
-print OUT $ip . &#34;\n&#34;;
-close OUT;
-}
-# ファイルを最後の方から読むの。
-# Perlメモ（http://www.din.or.jp/~ohzaki/perl.htm）を参考にしたの。
-# でも、ほとんどそのままなの。
-sub log_read {
-my $bufsize = 1024;
-my $pos     = 0;
-open IN, $main_log or die;
-binmode(IN);
-my $size = ( -s IN ) / $bufsize;
-$pos += $size &lt;=&gt; ( $pos = int($size) );
-my $buf_tmp = &#39;&#39;;
-while ( $pos-- ) {
-my $buf   = &#39;&#39;;
-my @lines = ();
-seek( IN, $bufsize * $pos, 0 );
-read( IN, $buf, $bufsize );
-$buf .= $buf_tmp;
-( $buf_tmp, @lines ) = $buf =~ /[^\x0D\x0A]*\x0D?\x0A?/g;
-pop(@lines);
-unshift( @logs, @lines );
-next if @logs &lt; $msg_max;
-last;
-}
-close IN;
-unshift( @logs, $buf_tmp ) if $buf_tmp;
-# 最後まで読んでる事も多いから必要なの。
-#    @logs = @logs[-$msg_max .. -1] if @logs &gt; $msg_max;
-# 本当は余ったら切らないといけないの。
-# でも、表示する時に切るから放っておくの。
-}
-sub log_write {
-open OUT, &#34;&gt;&gt; $main_log&#34; or die;
-seek OUT, 0, 2;
-print OUT &#34;$_\n&#34; foreach reverse @logs_now;
-close OUT;
-return if %members;
-$msg_max = ( sort { $b &lt;=&gt; $a } @max_list )[0];
-@logs = ();
-log_read();
-open OUT, &#34;&gt; $main_log&#34; or die;
-foreach (@logs) {
-tr/\x0D\x0A//d;
-$_ or next;
-print OUT &#34;$_\n&#34;;
-}
-close OUT;
-}
-sub ref_login {
-my ($f) = @_;
-$f-&gt;{n}
-or error_exit(&#34;名前を教えてほしいって言ってるの。名無しさんはいやなの。&#34;);
-$f-&gt;{n} eq $nano
-and error_exit(
-qq(&lt;strong class=&#34;name&#34;&gt;$f-&gt;{n}&lt;/strong&gt; はわたしなの。同じ名前はいやなの。)
-);
-exists $members{ $f-&gt;{n} }
-and $ip{ $f-&gt;{n} } ne $ENV{REMOTE_ADDR}
-and error_exit(
-qq(&lt;strong class=&#34;name&#34;&gt;$f-&gt;{n}&lt;/strong&gt; さんはもういるの。名前を変えてほしいの。)
-);
-$members{ $f-&gt;{n} } = time;
-exists $ip{ $f-&gt;{n} } and return;
-$ip{ $f-&gt;{n} } = $ENV{REMOTE_ADDR};
-ref_make_log(
-{
-msg =&gt;
-qq(&lt;strong class=&#34;name&#34;&gt;$f-&gt;{n}&lt;/strong&gt; さんが入室したの。仲良くしてなの。),
-},
-$nano
-);
-}
-sub ref_logout {
-my ( $f, $name ) = @_;
-$print_header =
-&#34;Set-Cookie: $script_name=,0; expires=Sat Jan 1 00:00:00 2000\n&#34;;
-if ( delete $members{$name} and delete $ip{$name} ) {
-ref_make_log(
-{
-msg =&gt;
-qq(&lt;strong class=&#34;name&#34;&gt;$name&lt;/strong&gt; さんが退室したの。ちょっと淋しいの。),
-},
-$nano
-);
-%members
-or
-ref_make_log( { msg =&gt; &#39;誰もいなくなったの。淋しいの。&#39;, }, $nano );
-stock_header(&#39;ばいばいなの。&#39;);
-$print_str .= &lt;&lt;EOM;
-&lt;div class=&#34;nano&#34;&gt;
-&lt;p&gt;&lt;strong class=&#34;name&#34;&gt;$name&lt;/strong&gt; さん、ありがとうなの。また来てほしいの。&lt;/p&gt;
-&lt;p&gt;そういえば、ブラウザに履歴がいっぱいあると思うの。ごめんねなの。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;$return_uri&#34;&gt;戻るの。&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-EOM
-log_write();
-member_write();
-stock_footer();
-}
-else {
-stock_header(&#39;残念なの。&#39;);
-$print_str .= &lt;&lt;EOM;
-&lt;div class=&#34;nano&#34;&gt;
-&lt;p&gt;今度はちゃんと入ってほしいの。また来てなの。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;$return_uri&#34;&gt;戻るの。&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-EOM
-stock_footer();
-}
-}
-sub get_cookie {
-return undef unless my $http_cookie = $ENV{HTTP_COOKIE};
-$http_cookie =~ tr/ //d;
-foreach ( split( /;/, $http_cookie ) ) {
-my ( $key, $value ) = split( /=/, $_, 2 );
-next if $key ne $script_name;
-return $value;
-}
-return undef;
-}
-sub ref_make_log {
-my ( $f, $name ) = @_;
-my $str  = &#39;&#39;;
-my @date = localtime;
-if (   index( $f-&gt;{msg}, &#34;http://&#34; ) == 0
-or index( $f-&gt;{msg}, &#34;mailto:&#34; ) == 0 )
-{
-$f-&gt;{msg} = qq(&lt;a href=&#34;$f-&gt;{msg}&#34;&gt;$f-&gt;{msg}&lt;/a&gt;);
-}
-$f-&gt;{msg} .= sprintf &#34; &lt;small&gt;(%ld/%02d/%02d %02d:%02d:%02d)&lt;/small&gt;&#34;,
-$date[5] + 1900, $date[4] + 1, @date[ 3, 2, 1, 0 ];
-if ( $name eq $nano ) {
-$str = qq(&lt;p class=&#34;nano&#34;&gt;);
-}
-else {
-$str = &#34;&lt;p&gt;&#34;;
-$members{$name} = time;
-}
-unshift @logs_now,
-qq($str&lt;strong class=&#34;name&#34;&gt;$name&lt;/strong&gt; ： $f-&gt;{msg}&lt;/p&gt;);
-}
-sub reload {
-stock_header( $nano . &#39;チャットなの。&#39; );
-stock_member();
-$print_str .= &lt;&lt;EOM;
-&lt;div class=&#34;nano&#34;&gt;
-&lt;form method=&#34;get&#34; action=&#34;$script_uri&#34;&gt;
-&lt;p&gt;あなたは &lt;strong class=&#34;name&#34;&gt;$_[0]&lt;/strong&gt; さんなの。改行するとたぶん送信するの。何も書いてない時は再読込になるの。&lt;/p&gt;
-&lt;p&gt;&lt;input type=&#34;text&#34; name=&#34;msg&#34; size=&#34;80&#34; value=&#34;&#34; tabindex=&#34;1&#34;&gt;&lt;br&gt;&lt;input type=&#34;submit&#34; value=&#34;送信するの。&#34; tabindex=&#34;2&#34;&gt; &lt;input type=&#34;submit&#34; name=&#34;logout&#34; value=&#34;退室するの。&#34; tabindex=&#34;3&#34;&gt;&lt;/p&gt;
-&lt;/form&gt;&lt;/div&gt;&lt;hr&gt;
-EOM
-stock_log($msg_max);
-stock_footer();
-if (@logs_now) {
-log_write();
-member_write();
-}
-}
-sub stock_member {
-my $cnt = 0;
-$print_str .= qq(&lt;p class=&#34;nano&#34;&gt;今は、 );
-foreach ( sort { $members{$b} &lt;=&gt; $members{$a} } keys %members ) {
-$print_str .= qq(&lt;strong class=&#34;name&#34;&gt;$_&lt;/strong&gt; さんと );
-++$cnt;
-}
-my $only = $cnt ? &#34; &#34; : &#34; だけ&#34;;
-$print_str .= qq(&lt;strong class=&#34;name&#34;&gt;$nano&lt;/strong&gt;$onlyがいるの。&lt;/p&gt;\n);
-}
-sub stock_log {
-my $cnt = 0;
-@logs_now or @logs or return;
-$print_str .= qq(&lt;div class=&#34;logs&#34;&gt;);
-foreach ( @logs_now, reverse @logs ) {
-$_[0] &lt; ++$cnt and last;
-tr/\x0D\x0A//d;
-$print_str .= $_;
-}
-$print_str .= &#39;&lt;/div&gt;&#39;;
-}
-sub stock_header {
-$print_str .= &lt;&lt;EOM;
-&lt;!DOCTYPE html PUBLIC &#34;-//W3C//DTD HTML 4.01//EN&#34;
-&#34;http://www.w3.org/TR/html4/strict.dtd&#34;&gt;
-&lt;html lang=&#34;ja&#34;&gt;
-&lt;head&gt;
-&lt;link rel=&#34;stylesheet&#34; type=&#34;text/css&#34; href=&#34;$ss_uri&#34; title=&#34;Default&#34; media=&#34;screen&#34;&gt;
-&lt;meta name=&#34;ROBOTS&#34; content=&#34;NOINDEX&#34;&gt;
-&lt;title&gt;$_[0]&lt;/title&gt;
-&lt;/head&gt;
-&lt;body onload=&#34;obj = document.forms[0];if(obj)obj.elements[0].focus();&#34;&gt;
-&lt;h2 class=&#34;nano&#34;&gt;$_[0]&lt;/h2&gt;&lt;hr&gt;
-EOM
-}
-sub stock_footer {
-my $cost = sprintf &#34;このお仕事に %.2f 秒くらいかかったの。&#34;, times;
-my $copy =
-qq(&lt;a href=&#34;http://www.age.ne.jp/x/nobu3/perl/nanochat.htm&#34; title=&#34;このスクリプトの最新版はこのリンク先にあるの。&#34;&gt;$script_name Ver0.12&lt;/a&gt;);
-$print_str .= &lt;&lt;EOM;
-&lt;hr&gt;
-&lt;p class=&#34;nano&#34;&gt;$cost&lt;/p&gt;
-&lt;address&gt;$copy&lt;/address&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-EOM
-}
-sub error_exit {
-$print_str = &#39;&#39;;
-stock_header(&#39;そんな事したらダメなの。&#39;);
-$print_str .= &lt;&lt;EOM;
-&lt;div class=&#34;nano&#34;&gt;
-&lt;p&gt;$_[0]&lt;/p&gt;
-&lt;p&gt;お仕事の邪魔しないでほしいの。&lt;a href=&#34;$script_uri&#34;&gt;入口まで戻るの。&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-EOM
-stock_footer();
-print_exit();
-}
-sub print_exit {
-$print_str =~ tr/\x0D\x0A//d;
-print &#34;Content-Type: text/html; charset=euc-jp\n&#34;;
-print &#34;Content-Language: ja\n&#34;;
-print &#34;Content-Script-Type: text/javascript\n&#34;;
-print &#34;Content-Style-Type: text/css\n&#34;;
-print &#34;Pragma: no-cache\n&#34;;
-print &#34;Cache-Control: no-cache\n&#34;;
-$print_header and print $print_header;
-printf &#34;Content-Length: %ld\n&#34;, length $print_str;
-print &#34;\n&#34;;
-print $print_str;
-exit;
-}
-sub check_max {
-my ($num) = @_;
-$num = $msg_min if $num =~ /\D/;
-$msg_max = $msg_max &lt; $num ? $msg_max : $num &lt; $msg_min ? $msg_min : $num;
-}
-sub check_env {
-my $str = &#39;&#39;;
--r $main_log   or $str .= $main_log . &#39;が読めないの。&lt;br&gt;&#39;;
--w $main_log   or $str .= $main_log . &#39;に書けないの。&lt;br&gt;&#39;;
--r $member_log or $str .= $member_log . &#39;が読めないの。&lt;br&gt;&#39;;
--w $member_log or $str .= $member_log . &#39;に書けないの。&lt;br&gt;&#39;;
-ord(&#39;漢&#39;) == 0xb4
-or $str .=
-qq(&lt;strong class=&#34;name&#34;&gt;$nano&lt;/strong&gt; は、eucが好きなの。変えてほしいの。&lt;br&gt;);
-$str and error_exit($str);
-}
-__END__
-Ver 0.10 (2000/12/27)
-公開版。
-Ver 0.11 (2001/04/19)
-入室時の２重投稿チェックをして入室ミスをなるべく防ぐようにした。
-ログの表示件数を正確にした。
-URIとMailに自動リンク。ただしとっても手抜き。
-出力するHTMLをHTML4.01Strict相当にした。
-Ver 0.12 (2001/04/26)
-名前の変更ができてしまうのを修正。
-最大表示件数のチェックを強化。
-ロボット対策をつけた。
-スタイルシートを若干変更。
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>#!/usr/bin/perl
+</span></span><span style="display:flex;"><span># ↑は「#!/usr/local/bin/perl」が一般的みたいなの。
+</span></span><span style="display:flex;"><span># 動かないときはプロバイダに訊くの。
+</span></span><span style="display:flex;"><span>#BEGIN{
+</span></span><span style="display:flex;"><span>#    print &#34;Content-type: text/plain\n\n&#34;;
+</span></span><span style="display:flex;"><span>#    open(STDERR, &#34;&gt;&amp;STDOUT&#34;);
+</span></span><span style="display:flex;"><span>#    $|=1;
+</span></span><span style="display:flex;"><span>#}
+</span></span><span style="display:flex;"><span># ↑はエラーが出て困った時にコメントを外すの。
+</span></span><span style="display:flex;"><span>require 5.005;
+</span></span><span style="display:flex;"><span>use strict;
+</span></span><span style="display:flex;"><span># ↑はさわったらだめなの。
+</span></span><span style="display:flex;"><span># いくつか設定することがあるの。
+</span></span><span style="display:flex;"><span>my @max_list = qw(10 20 30 40 50);
+</span></span><span style="display:flex;"><span># 入口では表示する件数を選べるの。
+</span></span><span style="display:flex;"><span># ここに書いたのがドロップダウンに表示されるの。
+</span></span><span style="display:flex;"><span># でも、あんまり大きい数はいやなの。
+</span></span><span style="display:flex;"><span># 数字以外も書けるけど、書いたらいやなの。
+</span></span><span style="display:flex;"><span>my $return_uri = &#39;../nanochat.htm&#39;;
+</span></span><span style="display:flex;"><span># 「戻るの。」でリンクする場所を決める事ができるの。
+</span></span><span style="display:flex;"><span>my $ss_uri = &#39;./nanochat.css&#39;;
+</span></span><span style="display:flex;"><span># スタイルシートの場所なの。
+</span></span><span style="display:flex;"><span># このファイルはスクリプトと同じ場所だと効かない事があるらしいの。
+</span></span><span style="display:flex;"><span># そういう人はスタイルシートを他の場所において、ここを変えるの。
+</span></span><span style="display:flex;"><span># その時は「http://」から書いたほうが確実なの。
+</span></span><span style="display:flex;"><span>my $timeout = 1800;
+</span></span><span style="display:flex;"><span># 書込みしてない人はクッキーの期限が切れるの。
+</span></span><span style="display:flex;"><span># その時間を決める事ができるの。単位は秒なの。
+</span></span><span style="display:flex;"><span>my $main_log = &#39;./main.log&#39;;
+</span></span><span style="display:flex;"><span># 会話の中身を記録するファイルの名前なの。
+</span></span><span style="display:flex;"><span># 最初はこの名前だから、そのまま使うときは変えなくてもいいの。
+</span></span><span style="display:flex;"><span>my $member_log = &#39;./member.log&#39;;
+</span></span><span style="display:flex;"><span># 誰が居るかを記録するファイルの名前なの。
+</span></span><span style="display:flex;"><span># 最初はこの名前だから、そのまま使うときは変えなくてもいいの。
+</span></span><span style="display:flex;"><span>my $nano = &#39;なの&#39;;
+</span></span><span style="display:flex;"><span># これを変えたらなのじゃなくなるの。でもべつにいいの。
+</span></span><span style="display:flex;"><span>my $script_uri = $ENV{SCRIPT_NAME} || &#39;./nanochat.cgi&#39;;
+</span></span><span style="display:flex;"><span># このファイルの名前を変えたら、右側の方にその名前を書くの。
+</span></span><span style="display:flex;"><span># ここから・・・
+</span></span><span style="display:flex;"><span>my $msg_max = ( sort { $b &lt;=&gt; $a } @max_list )[0];
+</span></span><span style="display:flex;"><span>my $msg_min = ( sort { $a &lt;=&gt; $b } @max_list )[0];
+</span></span><span style="display:flex;"><span>my $script_name  = &#39;NANOChat&#39;;
+</span></span><span style="display:flex;"><span>my $print_str    = &#39;&#39;;
+</span></span><span style="display:flex;"><span>my $print_header = &#39;&#39;;
+</span></span><span style="display:flex;"><span>my %members      = ();
+</span></span><span style="display:flex;"><span>my %ip           = ();
+</span></span><span style="display:flex;"><span>my @logs         = ();
+</span></span><span style="display:flex;"><span>my @logs_now     = ();
+</span></span><span style="display:flex;"><span># ここまでは変えたらいやなの。
+</span></span><span style="display:flex;"><span># お仕事できなくなるの。
+</span></span><span style="display:flex;"><span>check_env();
+</span></span><span style="display:flex;"><span># ↑はうまく動くか試してるの。ちゃんと動いたら消してもいいの。
+</span></span><span style="display:flex;"><span># 心配な人は消さなくてもいいの。
+</span></span><span style="display:flex;"><span># ここから最後までは細かい事をやってるの。
+</span></span><span style="display:flex;"><span># わからない人はさわったらダメなの。
+</span></span><span style="display:flex;"><span>main();
+</span></span><span style="display:flex;"><span>print_exit();
+</span></span><span style="display:flex;"><span>sub main {
+</span></span><span style="display:flex;"><span>my $cookie = get_cookie();
+</span></span><span style="display:flex;"><span># HTMLのチェック用なの。
+</span></span><span style="display:flex;"><span>#    $cookie = &#39;,10&#39;;
+</span></span><span style="display:flex;"><span>#    $cookie = &#39;61,10&#39;;
+</span></span><span style="display:flex;"><span>#    $ENV{QUERY_STRING} = &#39;logout=1&#39;;
+</span></span><span style="display:flex;"><span># ここまでなの。でも、下のほうにもう少しあるの。
+</span></span><span style="display:flex;"><span>if ( defined $cookie ) {
+</span></span><span style="display:flex;"><span>my ( $name, $tmp ) = split /,/, $cookie, 3;
+</span></span><span style="display:flex;"><span>if ($name) {
+</span></span><span style="display:flex;"><span>$name = pack( &#34;H*&#34;, $name );
+</span></span><span style="display:flex;"><span>check_max($tmp);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>my %form = ();    # (ua =&gt; $ENV{HTTP_USER_AGENT});
+</span></span><span style="display:flex;"><span>foreach ( split /[&amp;;]/, $ENV{QUERY_STRING} ) {
+</span></span><span style="display:flex;"><span>my ( $key, $value ) = split /=/, $_, 2;
+</span></span><span style="display:flex;"><span>if ( $value =~ /[%\+]/ ) {
+</span></span><span style="display:flex;"><span>my $space = &#34;(?:\xA1\xA1)&#34;;
+</span></span><span style="display:flex;"><span>$value =~ tr/+/ /;
+</span></span><span style="display:flex;"><span>$value =~ s/%([0-9a-fA-F][0-9a-fA-F])/pack(&#34;H2&#34;, $1)/eg;
+</span></span><span style="display:flex;"><span>$value =~ s/&amp;/&amp;amp;/g;
+</span></span><span style="display:flex;"><span>$value =~ s/&lt;/&lt;/g;
+</span></span><span style="display:flex;"><span>$value =~ s/&gt;/&gt;/g;
+</span></span><span style="display:flex;"><span>$value =~ s/\t/  /g;
+</span></span><span style="display:flex;"><span>$value =~ s/^(\s|$space)+//o;
+</span></span><span style="display:flex;"><span>$value =~ s/(\s|$space)+$//o;
+</span></span><span style="display:flex;"><span>$value =~ s/  / &amp;nbsp;/g;
+</span></span><span style="display:flex;"><span>$value =~ tr/\x0D\x0A//d;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>$form{$key} = $value;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>member_read();
+</span></span><span style="display:flex;"><span># HTMLチェック用なの。
+</span></span><span style="display:flex;"><span>#        $members{&#39;a&#39;} = time; $ip{&#39;a&#39;} = &#39;127.0.0.1&#39;;
+</span></span><span style="display:flex;"><span># これだけなの。
+</span></span><span style="display:flex;"><span>if ( exists $form{logout} ) {
+</span></span><span style="display:flex;"><span>ref_logout( \%form, $name );
+</span></span><span style="display:flex;"><span>print_exit();
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>elsif ( exists $form{login} and $name eq &#39;&#39; ) {
+</span></span><span style="display:flex;"><span>ref_login( \%form );
+</span></span><span style="display:flex;"><span>$name = $form{n};
+</span></span><span style="display:flex;"><span>check_max( $form{max} );
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>log_read();
+</span></span><span style="display:flex;"><span>if ($name) {
+</span></span><span style="display:flex;"><span>$form{msg} ne &#39;&#39; and ref_make_log( \%form, $name );
+</span></span><span style="display:flex;"><span>my $cname = unpack( &#34;H*&#34;, $name );
+</span></span><span style="display:flex;"><span>$print_header = &#34;Set-Cookie: $script_name=$cname,$msg_max; expires=&#34;
+</span></span><span style="display:flex;"><span>. gmtime( time + $timeout ) . &#34;\n&#34;;
+</span></span><span style="display:flex;"><span>reload($name);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>else {
+</span></span><span style="display:flex;"><span>stock_header(&#39;名前を教えてほしいの。&#39;);
+</span></span><span style="display:flex;"><span>stock_member();
+</span></span><span style="display:flex;"><span>my $sel = qq(&lt;select name=&#34;max&#34;&gt;);
+</span></span><span style="display:flex;"><span>my $sd  = qq( selected);
+</span></span><span style="display:flex;"><span>foreach (@max_list) {
+</span></span><span style="display:flex;"><span>$sel .= qq(&lt;option value=&#34;$_&#34;$sd&gt;$_ 件&lt;/option&gt;);
+</span></span><span style="display:flex;"><span>$sd = &#39;&#39;;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>$sel .= &#39;&lt;/select&gt;&#39;;
+</span></span><span style="display:flex;"><span>$print_str .= &lt;&lt;EOM;
+</span></span><span style="display:flex;"><span>&lt;div class=&#34;nano&#34;&gt;
+</span></span><span style="display:flex;"><span>&lt;form method=&#34;get&#34; action=&#34;$script_uri&#34;&gt;
+</span></span><span style="display:flex;"><span>&lt;p&gt;&lt;input type=&#34;text&#34; name=&#34;n&#34; size=&#34;20&#34; maxlength=&#34;20&#34; tabindex=&#34;1&#34;&gt; ←ここに名前を書いてほしいの。&lt;/p&gt;
+</span></span><span style="display:flex;"><span>&lt;p&gt;書いたら、表示するメッセージ数を $sel にして &lt;input type=&#34;submit&#34; value=&#34;部屋に入るの。&#34; tabindex=&#34;2&#34;&gt;&lt;input type=&#34;hidden&#34; name=&#34;login&#34; value=&#34;1&#34;&gt;&lt;/p&gt;
+</span></span><span style="display:flex;"><span>&lt;p&gt;&lt;input type=&#34;submit&#34; name=&#34;logout&#34; value=&#34;やっぱり帰るの。&#34; tabindex=&#34;3&#34;&gt;&lt;/p&gt;
+</span></span><span style="display:flex;"><span>&lt;/form&gt;&lt;/div&gt;&lt;hr&gt;
+</span></span><span style="display:flex;"><span>EOM
+</span></span><span style="display:flex;"><span>stock_log($msg_min);
+</span></span><span style="display:flex;"><span>stock_footer();
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>else {
+</span></span><span style="display:flex;"><span>$print_header = &#34;Set-Cookie: $script_name=,10; expires=&#34;
+</span></span><span style="display:flex;"><span>. gmtime( time + $timeout ) . &#34;\n&#34;;
+</span></span><span style="display:flex;"><span>stock_header(&#39;いらっしゃいなの。&#39;);
+</span></span><span style="display:flex;"><span>my $limit = int( $timeout / 60 );
+</span></span><span style="display:flex;"><span>$print_str .= &lt;&lt;EOM;
+</span></span><span style="display:flex;"><span>&lt;div class=&#34;nano&#34;&gt;
+</span></span><span style="display:flex;"><span>&lt;p&gt;ここの入退室管理を任されてる &lt;strong class=&#34;name&#34;&gt;$nano&lt;/strong&gt; なの。よろしくなの。&lt;/p&gt;
+</span></span><span style="display:flex;"><span>&lt;p&gt;この部屋へ入るにはクッキーが必要なの。退室するときにちゃんと消してあげるから、名札だと思ってつけてほしいの。今つけた人は、ついてるかどうかわからないから１回読みなおしてほしいの。&lt;/p&gt;
+</span></span><span style="display:flex;"><span>&lt;p&gt;JavaScriptが使えると、マウスを使わなくてもチャットできるの。とってもおすすめなの。&lt;/p&gt;
+</span></span><span style="display:flex;"><span>&lt;p&gt;あと、$limit分くらい何も発言しないと部屋から追い出されちゃうの。気をつけてほしいの。&lt;/p&gt;
+</span></span><span style="display:flex;"><span>&lt;p&gt;あ、ホームページ（http://から書くの）とかメールアドレス（mailto:から書くの）とかを書くと、リンクしてあげるの。よくわからないから発言を全部リンクしちゃうけど、そのくらいは許してほしいの。&lt;/p&gt;
+</span></span><span style="display:flex;"><span>&lt;p&gt;準備ができたら&lt;a href=&#34;$script_uri&#34;&gt;入口&lt;/a&gt;で名前を教えてほしいの。&lt;/p&gt;
+</span></span><span style="display:flex;"><span>&lt;/div&gt;
+</span></span><span style="display:flex;"><span>EOM
+</span></span><span style="display:flex;"><span>stock_footer();
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>sub member_read {
+</span></span><span style="display:flex;"><span>open IN, $member_log or die;
+</span></span><span style="display:flex;"><span>my $member = &lt;IN&gt;;
+</span></span><span style="display:flex;"><span>my $ip     = &lt;IN&gt;;
+</span></span><span style="display:flex;"><span>close IN;
+</span></span><span style="display:flex;"><span>chomp $member;
+</span></span><span style="display:flex;"><span>chomp $ip;
+</span></span><span style="display:flex;"><span>%members = split /\t/, $member;
+</span></span><span style="display:flex;"><span>%ip      = split /\t/, $ip;
+</span></span><span style="display:flex;"><span>foreach ( keys %members ) {
+</span></span><span style="display:flex;"><span>if ( $timeout &lt; time - $members{$_} ) {
+</span></span><span style="display:flex;"><span>delete $members{$_};
+</span></span><span style="display:flex;"><span>delete $ip{$_};
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>sub member_write {
+</span></span><span style="display:flex;"><span>my $member = join( &#34;\t&#34;, %members );
+</span></span><span style="display:flex;"><span>my $ip     = join( &#34;\t&#34;, %ip );
+</span></span><span style="display:flex;"><span>open OUT, &#34;&gt; $member_log&#34; or die;
+</span></span><span style="display:flex;"><span>print OUT $member . &#34;\n&#34;;
+</span></span><span style="display:flex;"><span>print OUT $ip . &#34;\n&#34;;
+</span></span><span style="display:flex;"><span>close OUT;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span># ファイルを最後の方から読むの。
+</span></span><span style="display:flex;"><span># Perlメモ（http://www.din.or.jp/~ohzaki/perl.htm）を参考にしたの。
+</span></span><span style="display:flex;"><span># でも、ほとんどそのままなの。
+</span></span><span style="display:flex;"><span>sub log_read {
+</span></span><span style="display:flex;"><span>my $bufsize = 1024;
+</span></span><span style="display:flex;"><span>my $pos     = 0;
+</span></span><span style="display:flex;"><span>open IN, $main_log or die;
+</span></span><span style="display:flex;"><span>binmode(IN);
+</span></span><span style="display:flex;"><span>my $size = ( -s IN ) / $bufsize;
+</span></span><span style="display:flex;"><span>$pos += $size &lt;=&gt; ( $pos = int($size) );
+</span></span><span style="display:flex;"><span>my $buf_tmp = &#39;&#39;;
+</span></span><span style="display:flex;"><span>while ( $pos-- ) {
+</span></span><span style="display:flex;"><span>my $buf   = &#39;&#39;;
+</span></span><span style="display:flex;"><span>my @lines = ();
+</span></span><span style="display:flex;"><span>seek( IN, $bufsize * $pos, 0 );
+</span></span><span style="display:flex;"><span>read( IN, $buf, $bufsize );
+</span></span><span style="display:flex;"><span>$buf .= $buf_tmp;
+</span></span><span style="display:flex;"><span>( $buf_tmp, @lines ) = $buf =~ /[^\x0D\x0A]*\x0D?\x0A?/g;
+</span></span><span style="display:flex;"><span>pop(@lines);
+</span></span><span style="display:flex;"><span>unshift( @logs, @lines );
+</span></span><span style="display:flex;"><span>next if @logs &lt; $msg_max;
+</span></span><span style="display:flex;"><span>last;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>close IN;
+</span></span><span style="display:flex;"><span>unshift( @logs, $buf_tmp ) if $buf_tmp;
+</span></span><span style="display:flex;"><span># 最後まで読んでる事も多いから必要なの。
+</span></span><span style="display:flex;"><span>#    @logs = @logs[-$msg_max .. -1] if @logs &gt; $msg_max;
+</span></span><span style="display:flex;"><span># 本当は余ったら切らないといけないの。
+</span></span><span style="display:flex;"><span># でも、表示する時に切るから放っておくの。
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>sub log_write {
+</span></span><span style="display:flex;"><span>open OUT, &#34;&gt;&gt; $main_log&#34; or die;
+</span></span><span style="display:flex;"><span>seek OUT, 0, 2;
+</span></span><span style="display:flex;"><span>print OUT &#34;$_\n&#34; foreach reverse @logs_now;
+</span></span><span style="display:flex;"><span>close OUT;
+</span></span><span style="display:flex;"><span>return if %members;
+</span></span><span style="display:flex;"><span>$msg_max = ( sort { $b &lt;=&gt; $a } @max_list )[0];
+</span></span><span style="display:flex;"><span>@logs = ();
+</span></span><span style="display:flex;"><span>log_read();
+</span></span><span style="display:flex;"><span>open OUT, &#34;&gt; $main_log&#34; or die;
+</span></span><span style="display:flex;"><span>foreach (@logs) {
+</span></span><span style="display:flex;"><span>tr/\x0D\x0A//d;
+</span></span><span style="display:flex;"><span>$_ or next;
+</span></span><span style="display:flex;"><span>print OUT &#34;$_\n&#34;;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>close OUT;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>sub ref_login {
+</span></span><span style="display:flex;"><span>my ($f) = @_;
+</span></span><span style="display:flex;"><span>$f-&gt;{n}
+</span></span><span style="display:flex;"><span>or error_exit(&#34;名前を教えてほしいって言ってるの。名無しさんはいやなの。&#34;);
+</span></span><span style="display:flex;"><span>$f-&gt;{n} eq $nano
+</span></span><span style="display:flex;"><span>and error_exit(
+</span></span><span style="display:flex;"><span>qq(&lt;strong class=&#34;name&#34;&gt;$f-&gt;{n}&lt;/strong&gt; はわたしなの。同じ名前はいやなの。)
+</span></span><span style="display:flex;"><span>);
+</span></span><span style="display:flex;"><span>exists $members{ $f-&gt;{n} }
+</span></span><span style="display:flex;"><span>and $ip{ $f-&gt;{n} } ne $ENV{REMOTE_ADDR}
+</span></span><span style="display:flex;"><span>and error_exit(
+</span></span><span style="display:flex;"><span>qq(&lt;strong class=&#34;name&#34;&gt;$f-&gt;{n}&lt;/strong&gt; さんはもういるの。名前を変えてほしいの。)
+</span></span><span style="display:flex;"><span>);
+</span></span><span style="display:flex;"><span>$members{ $f-&gt;{n} } = time;
+</span></span><span style="display:flex;"><span>exists $ip{ $f-&gt;{n} } and return;
+</span></span><span style="display:flex;"><span>$ip{ $f-&gt;{n} } = $ENV{REMOTE_ADDR};
+</span></span><span style="display:flex;"><span>ref_make_log(
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>msg =&gt;
+</span></span><span style="display:flex;"><span>qq(&lt;strong class=&#34;name&#34;&gt;$f-&gt;{n}&lt;/strong&gt; さんが入室したの。仲良くしてなの。),
+</span></span><span style="display:flex;"><span>},
+</span></span><span style="display:flex;"><span>$nano
+</span></span><span style="display:flex;"><span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>sub ref_logout {
+</span></span><span style="display:flex;"><span>my ( $f, $name ) = @_;
+</span></span><span style="display:flex;"><span>$print_header =
+</span></span><span style="display:flex;"><span>&#34;Set-Cookie: $script_name=,0; expires=Sat Jan 1 00:00:00 2000\n&#34;;
+</span></span><span style="display:flex;"><span>if ( delete $members{$name} and delete $ip{$name} ) {
+</span></span><span style="display:flex;"><span>ref_make_log(
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>msg =&gt;
+</span></span><span style="display:flex;"><span>qq(&lt;strong class=&#34;name&#34;&gt;$name&lt;/strong&gt; さんが退室したの。ちょっと淋しいの。),
+</span></span><span style="display:flex;"><span>},
+</span></span><span style="display:flex;"><span>$nano
+</span></span><span style="display:flex;"><span>);
+</span></span><span style="display:flex;"><span>%members
+</span></span><span style="display:flex;"><span>or
+</span></span><span style="display:flex;"><span>ref_make_log( { msg =&gt; &#39;誰もいなくなったの。淋しいの。&#39;, }, $nano );
+</span></span><span style="display:flex;"><span>stock_header(&#39;ばいばいなの。&#39;);
+</span></span><span style="display:flex;"><span>$print_str .= &lt;&lt;EOM;
+</span></span><span style="display:flex;"><span>&lt;div class=&#34;nano&#34;&gt;
+</span></span><span style="display:flex;"><span>&lt;p&gt;&lt;strong class=&#34;name&#34;&gt;$name&lt;/strong&gt; さん、ありがとうなの。また来てほしいの。&lt;/p&gt;
+</span></span><span style="display:flex;"><span>&lt;p&gt;そういえば、ブラウザに履歴がいっぱいあると思うの。ごめんねなの。&lt;/p&gt;
+</span></span><span style="display:flex;"><span>&lt;p&gt;&lt;a href=&#34;$return_uri&#34;&gt;戻るの。&lt;/a&gt;&lt;/p&gt;
+</span></span><span style="display:flex;"><span>&lt;/div&gt;
+</span></span><span style="display:flex;"><span>EOM
+</span></span><span style="display:flex;"><span>log_write();
+</span></span><span style="display:flex;"><span>member_write();
+</span></span><span style="display:flex;"><span>stock_footer();
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>else {
+</span></span><span style="display:flex;"><span>stock_header(&#39;残念なの。&#39;);
+</span></span><span style="display:flex;"><span>$print_str .= &lt;&lt;EOM;
+</span></span><span style="display:flex;"><span>&lt;div class=&#34;nano&#34;&gt;
+</span></span><span style="display:flex;"><span>&lt;p&gt;今度はちゃんと入ってほしいの。また来てなの。&lt;/p&gt;
+</span></span><span style="display:flex;"><span>&lt;p&gt;&lt;a href=&#34;$return_uri&#34;&gt;戻るの。&lt;/a&gt;&lt;/p&gt;
+</span></span><span style="display:flex;"><span>&lt;/div&gt;
+</span></span><span style="display:flex;"><span>EOM
+</span></span><span style="display:flex;"><span>stock_footer();
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>sub get_cookie {
+</span></span><span style="display:flex;"><span>return undef unless my $http_cookie = $ENV{HTTP_COOKIE};
+</span></span><span style="display:flex;"><span>$http_cookie =~ tr/ //d;
+</span></span><span style="display:flex;"><span>foreach ( split( /;/, $http_cookie ) ) {
+</span></span><span style="display:flex;"><span>my ( $key, $value ) = split( /=/, $_, 2 );
+</span></span><span style="display:flex;"><span>next if $key ne $script_name;
+</span></span><span style="display:flex;"><span>return $value;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>return undef;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>sub ref_make_log {
+</span></span><span style="display:flex;"><span>my ( $f, $name ) = @_;
+</span></span><span style="display:flex;"><span>my $str  = &#39;&#39;;
+</span></span><span style="display:flex;"><span>my @date = localtime;
+</span></span><span style="display:flex;"><span>if (   index( $f-&gt;{msg}, &#34;http://&#34; ) == 0
+</span></span><span style="display:flex;"><span>or index( $f-&gt;{msg}, &#34;mailto:&#34; ) == 0 )
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>$f-&gt;{msg} = qq(&lt;a href=&#34;$f-&gt;{msg}&#34;&gt;$f-&gt;{msg}&lt;/a&gt;);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>$f-&gt;{msg} .= sprintf &#34; &lt;small&gt;(%ld/%02d/%02d %02d:%02d:%02d)&lt;/small&gt;&#34;,
+</span></span><span style="display:flex;"><span>$date[5] + 1900, $date[4] + 1, @date[ 3, 2, 1, 0 ];
+</span></span><span style="display:flex;"><span>if ( $name eq $nano ) {
+</span></span><span style="display:flex;"><span>$str = qq(&lt;p class=&#34;nano&#34;&gt;);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>else {
+</span></span><span style="display:flex;"><span>$str = &#34;&lt;p&gt;&#34;;
+</span></span><span style="display:flex;"><span>$members{$name} = time;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>unshift @logs_now,
+</span></span><span style="display:flex;"><span>qq($str&lt;strong class=&#34;name&#34;&gt;$name&lt;/strong&gt; ： $f-&gt;{msg}&lt;/p&gt;);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>sub reload {
+</span></span><span style="display:flex;"><span>stock_header( $nano . &#39;チャットなの。&#39; );
+</span></span><span style="display:flex;"><span>stock_member();
+</span></span><span style="display:flex;"><span>$print_str .= &lt;&lt;EOM;
+</span></span><span style="display:flex;"><span>&lt;div class=&#34;nano&#34;&gt;
+</span></span><span style="display:flex;"><span>&lt;form method=&#34;get&#34; action=&#34;$script_uri&#34;&gt;
+</span></span><span style="display:flex;"><span>&lt;p&gt;あなたは &lt;strong class=&#34;name&#34;&gt;$_[0]&lt;/strong&gt; さんなの。改行するとたぶん送信するの。何も書いてない時は再読込になるの。&lt;/p&gt;
+</span></span><span style="display:flex;"><span>&lt;p&gt;&lt;input type=&#34;text&#34; name=&#34;msg&#34; size=&#34;80&#34; value=&#34;&#34; tabindex=&#34;1&#34;&gt;&lt;br&gt;&lt;input type=&#34;submit&#34; value=&#34;送信するの。&#34; tabindex=&#34;2&#34;&gt; &lt;input type=&#34;submit&#34; name=&#34;logout&#34; value=&#34;退室するの。&#34; tabindex=&#34;3&#34;&gt;&lt;/p&gt;
+</span></span><span style="display:flex;"><span>&lt;/form&gt;&lt;/div&gt;&lt;hr&gt;
+</span></span><span style="display:flex;"><span>EOM
+</span></span><span style="display:flex;"><span>stock_log($msg_max);
+</span></span><span style="display:flex;"><span>stock_footer();
+</span></span><span style="display:flex;"><span>if (@logs_now) {
+</span></span><span style="display:flex;"><span>log_write();
+</span></span><span style="display:flex;"><span>member_write();
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>sub stock_member {
+</span></span><span style="display:flex;"><span>my $cnt = 0;
+</span></span><span style="display:flex;"><span>$print_str .= qq(&lt;p class=&#34;nano&#34;&gt;今は、 );
+</span></span><span style="display:flex;"><span>foreach ( sort { $members{$b} &lt;=&gt; $members{$a} } keys %members ) {
+</span></span><span style="display:flex;"><span>$print_str .= qq(&lt;strong class=&#34;name&#34;&gt;$_&lt;/strong&gt; さんと );
+</span></span><span style="display:flex;"><span>++$cnt;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>my $only = $cnt ? &#34; &#34; : &#34; だけ&#34;;
+</span></span><span style="display:flex;"><span>$print_str .= qq(&lt;strong class=&#34;name&#34;&gt;$nano&lt;/strong&gt;$onlyがいるの。&lt;/p&gt;\n);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>sub stock_log {
+</span></span><span style="display:flex;"><span>my $cnt = 0;
+</span></span><span style="display:flex;"><span>@logs_now or @logs or return;
+</span></span><span style="display:flex;"><span>$print_str .= qq(&lt;div class=&#34;logs&#34;&gt;);
+</span></span><span style="display:flex;"><span>foreach ( @logs_now, reverse @logs ) {
+</span></span><span style="display:flex;"><span>$_[0] &lt; ++$cnt and last;
+</span></span><span style="display:flex;"><span>tr/\x0D\x0A//d;
+</span></span><span style="display:flex;"><span>$print_str .= $_;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>$print_str .= &#39;&lt;/div&gt;&#39;;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>sub stock_header {
+</span></span><span style="display:flex;"><span>$print_str .= &lt;&lt;EOM;
+</span></span><span style="display:flex;"><span>&lt;!DOCTYPE html PUBLIC &#34;-//W3C//DTD HTML 4.01//EN&#34;
+</span></span><span style="display:flex;"><span>&#34;http://www.w3.org/TR/html4/strict.dtd&#34;&gt;
+</span></span><span style="display:flex;"><span>&lt;html lang=&#34;ja&#34;&gt;
+</span></span><span style="display:flex;"><span>&lt;head&gt;
+</span></span><span style="display:flex;"><span>&lt;link rel=&#34;stylesheet&#34; type=&#34;text/css&#34; href=&#34;$ss_uri&#34; title=&#34;Default&#34; media=&#34;screen&#34;&gt;
+</span></span><span style="display:flex;"><span>&lt;meta name=&#34;ROBOTS&#34; content=&#34;NOINDEX&#34;&gt;
+</span></span><span style="display:flex;"><span>&lt;title&gt;$_[0]&lt;/title&gt;
+</span></span><span style="display:flex;"><span>&lt;/head&gt;
+</span></span><span style="display:flex;"><span>&lt;body onload=&#34;obj = document.forms[0];if(obj)obj.elements[0].focus();&#34;&gt;
+</span></span><span style="display:flex;"><span>&lt;h2 class=&#34;nano&#34;&gt;$_[0]&lt;/h2&gt;&lt;hr&gt;
+</span></span><span style="display:flex;"><span>EOM
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>sub stock_footer {
+</span></span><span style="display:flex;"><span>my $cost = sprintf &#34;このお仕事に %.2f 秒くらいかかったの。&#34;, times;
+</span></span><span style="display:flex;"><span>my $copy =
+</span></span><span style="display:flex;"><span>qq(&lt;a href=&#34;http://www.age.ne.jp/x/nobu3/perl/nanochat.htm&#34; title=&#34;このスクリプトの最新版はこのリンク先にあるの。&#34;&gt;$script_name Ver0.12&lt;/a&gt;);
+</span></span><span style="display:flex;"><span>$print_str .= &lt;&lt;EOM;
+</span></span><span style="display:flex;"><span>&lt;hr&gt;
+</span></span><span style="display:flex;"><span>&lt;p class=&#34;nano&#34;&gt;$cost&lt;/p&gt;
+</span></span><span style="display:flex;"><span>&lt;address&gt;$copy&lt;/address&gt;
+</span></span><span style="display:flex;"><span>&lt;/body&gt;
+</span></span><span style="display:flex;"><span>&lt;/html&gt;
+</span></span><span style="display:flex;"><span>EOM
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>sub error_exit {
+</span></span><span style="display:flex;"><span>$print_str = &#39;&#39;;
+</span></span><span style="display:flex;"><span>stock_header(&#39;そんな事したらダメなの。&#39;);
+</span></span><span style="display:flex;"><span>$print_str .= &lt;&lt;EOM;
+</span></span><span style="display:flex;"><span>&lt;div class=&#34;nano&#34;&gt;
+</span></span><span style="display:flex;"><span>&lt;p&gt;$_[0]&lt;/p&gt;
+</span></span><span style="display:flex;"><span>&lt;p&gt;お仕事の邪魔しないでほしいの。&lt;a href=&#34;$script_uri&#34;&gt;入口まで戻るの。&lt;/a&gt;&lt;/p&gt;
+</span></span><span style="display:flex;"><span>&lt;/div&gt;
+</span></span><span style="display:flex;"><span>EOM
+</span></span><span style="display:flex;"><span>stock_footer();
+</span></span><span style="display:flex;"><span>print_exit();
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>sub print_exit {
+</span></span><span style="display:flex;"><span>$print_str =~ tr/\x0D\x0A//d;
+</span></span><span style="display:flex;"><span>print &#34;Content-Type: text/html; charset=euc-jp\n&#34;;
+</span></span><span style="display:flex;"><span>print &#34;Content-Language: ja\n&#34;;
+</span></span><span style="display:flex;"><span>print &#34;Content-Script-Type: text/javascript\n&#34;;
+</span></span><span style="display:flex;"><span>print &#34;Content-Style-Type: text/css\n&#34;;
+</span></span><span style="display:flex;"><span>print &#34;Pragma: no-cache\n&#34;;
+</span></span><span style="display:flex;"><span>print &#34;Cache-Control: no-cache\n&#34;;
+</span></span><span style="display:flex;"><span>$print_header and print $print_header;
+</span></span><span style="display:flex;"><span>printf &#34;Content-Length: %ld\n&#34;, length $print_str;
+</span></span><span style="display:flex;"><span>print &#34;\n&#34;;
+</span></span><span style="display:flex;"><span>print $print_str;
+</span></span><span style="display:flex;"><span>exit;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>sub check_max {
+</span></span><span style="display:flex;"><span>my ($num) = @_;
+</span></span><span style="display:flex;"><span>$num = $msg_min if $num =~ /\D/;
+</span></span><span style="display:flex;"><span>$msg_max = $msg_max &lt; $num ? $msg_max : $num &lt; $msg_min ? $msg_min : $num;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>sub check_env {
+</span></span><span style="display:flex;"><span>my $str = &#39;&#39;;
+</span></span><span style="display:flex;"><span>-r $main_log   or $str .= $main_log . &#39;が読めないの。&lt;br&gt;&#39;;
+</span></span><span style="display:flex;"><span>-w $main_log   or $str .= $main_log . &#39;に書けないの。&lt;br&gt;&#39;;
+</span></span><span style="display:flex;"><span>-r $member_log or $str .= $member_log . &#39;が読めないの。&lt;br&gt;&#39;;
+</span></span><span style="display:flex;"><span>-w $member_log or $str .= $member_log . &#39;に書けないの。&lt;br&gt;&#39;;
+</span></span><span style="display:flex;"><span>ord(&#39;漢&#39;) == 0xb4
+</span></span><span style="display:flex;"><span>or $str .=
+</span></span><span style="display:flex;"><span>qq(&lt;strong class=&#34;name&#34;&gt;$nano&lt;/strong&gt; は、eucが好きなの。変えてほしいの。&lt;br&gt;);
+</span></span><span style="display:flex;"><span>$str and error_exit($str);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>__END__
+</span></span><span style="display:flex;"><span>Ver 0.10 (2000/12/27)
+</span></span><span style="display:flex;"><span>公開版。
+</span></span><span style="display:flex;"><span>Ver 0.11 (2001/04/19)
+</span></span><span style="display:flex;"><span>入室時の２重投稿チェックをして入室ミスをなるべく防ぐようにした。
+</span></span><span style="display:flex;"><span>ログの表示件数を正確にした。
+</span></span><span style="display:flex;"><span>URIとMailに自動リンク。ただしとっても手抜き。
+</span></span><span style="display:flex;"><span>出力するHTMLをHTML4.01Strict相当にした。
+</span></span><span style="display:flex;"><span>Ver 0.12 (2001/04/26)
+</span></span><span style="display:flex;"><span>名前の変更ができてしまうのを修正。
+</span></span><span style="display:flex;"><span>最大表示件数のチェックを強化。
+</span></span><span style="display:flex;"><span>ロボット対策をつけた。
+</span></span><span style="display:flex;"><span>スタイルシートを若干変更。
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>nanochat.css</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">/***********************/
-/*    for  NANOChat    */
-/* Designed by NANO(?) */
-/***********************/
-body{
-color: #642;
-background-color: #fed;
-}
-a:link{
-color: #c36;
-}
-a:visited{
-color: #63c;
-}
-a:active, a:hover{
-color: #f63;
-text-decoration: none;
-}
-.nano{
-color: #862;
-}
-.name{
-color: #621;
-}
-h2, form{
-margin: 1px 5px;
-}
-p{
-margin: 1px 5px;
-text-indent: 0.6em;
-}
-input{
-margin: 0;
-text-indent: 0;
-}
-div.logs p{
-padding: 1px 5px;
-border-width: 0px 0px 1px 0px;
-border-style: solid;
-border-color: #9cf;
-}
-small{
-font-size: 80%;
-color: #ac8;
-}
-address{
-text-align: right;
-font-size: 80%;
-font-family: &#34;Times New Roman&#34;, Times, serif;
-}
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>/***********************/
+</span></span><span style="display:flex;"><span>/*    for  NANOChat    */
+</span></span><span style="display:flex;"><span>/* Designed by NANO(?) */
+</span></span><span style="display:flex;"><span>/***********************/
+</span></span><span style="display:flex;"><span>body{
+</span></span><span style="display:flex;"><span>color: #642;
+</span></span><span style="display:flex;"><span>background-color: #fed;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>a:link{
+</span></span><span style="display:flex;"><span>color: #c36;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>a:visited{
+</span></span><span style="display:flex;"><span>color: #63c;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>a:active, a:hover{
+</span></span><span style="display:flex;"><span>color: #f63;
+</span></span><span style="display:flex;"><span>text-decoration: none;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>.nano{
+</span></span><span style="display:flex;"><span>color: #862;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>.name{
+</span></span><span style="display:flex;"><span>color: #621;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>h2, form{
+</span></span><span style="display:flex;"><span>margin: 1px 5px;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>p{
+</span></span><span style="display:flex;"><span>margin: 1px 5px;
+</span></span><span style="display:flex;"><span>text-indent: 0.6em;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>input{
+</span></span><span style="display:flex;"><span>margin: 0;
+</span></span><span style="display:flex;"><span>text-indent: 0;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>div.logs p{
+</span></span><span style="display:flex;"><span>padding: 1px 5px;
+</span></span><span style="display:flex;"><span>border-width: 0px 0px 1px 0px;
+</span></span><span style="display:flex;"><span>border-style: solid;
+</span></span><span style="display:flex;"><span>border-color: #9cf;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>small{
+</span></span><span style="display:flex;"><span>font-size: 80%;
+</span></span><span style="display:flex;"><span>color: #ac8;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>address{
+</span></span><span style="display:flex;"><span>text-align: right;
+</span></span><span style="display:flex;"><span>font-size: 80%;
+</span></span><span style="display:flex;"><span>font-family: &#34;Times New Roman&#34;, Times, serif;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></td></tr></table>
 </div>
 </div>
   </div>
@@ -1262,7 +1259,7 @@ font-family: &#34;Times New Roman&#34;, Times, serif;
     <h2>Comments</h2>
     <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -1287,7 +1284,7 @@ font-family: &#34;Times New Roman&#34;, Times, serif;
   <footer>
   <div>
     <p>
-      &copy; nqounet 2022
+      &copy; nqounet 2023
 
       &middot; <a href="https://creativecommons.org/licenses/by/4.0" target="_blank">CC BY 4.0</a>
 
@@ -1307,17 +1304,19 @@ font-family: &#34;Times New Roman&#34;, Times, serif;
 
   
 
-  
-<script type="application/javascript">
+    
+      
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E50H9ESN7E"></script>
+<script>
 var doNotTrack = false;
 if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'G-E50H9ESN7E', 'auto');
-	
-	ga('send', 'pageview');
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-E50H9ESN7E', { 'anonymize_ip': false });
 }
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
 
+    
 </body>
 </html>

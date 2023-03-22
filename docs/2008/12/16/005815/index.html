@@ -3,18 +3,16 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.91.0" />
+  <meta name="generator" content="Hugo 0.111.3">
 
   <title>Module::StarterとかPBPとか &middot; nqou.net</title>
 
   <meta name="description" content="" />
 
-  
-
-<meta itemprop="name" content="Module::StarterとかPBPとか">
+  <meta itemprop="name" content="Module::StarterとかPBPとか">
 <meta itemprop="description" content="Perlといえば、何はなくともCPANです。 で、そのCPAN"><meta itemprop="datePublished" content="2008-12-16T00:58:15+09:00" />
 <meta itemprop="dateModified" content="2008-12-16T00:58:15+09:00" />
-<meta itemprop="wordCount" content="735">
+<meta itemprop="wordCount" content="731">
 <meta itemprop="keywords" content="perl," />
 
 <meta name="twitter:card" content="summary"/>
@@ -28,7 +26,6 @@
 <meta property="og:url" content="https://www.nqou.net/2008/12/16/005815/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2008-12-16T00:58:15+09:00" />
 <meta property="article:modified_time" content="2008-12-16T00:58:15+09:00" /><meta property="og:site_name" content="nqou.net" />
-
 
 
 
@@ -227,17 +224,17 @@
 Module::StarterとModule::Starter::PBPのインストール、そして、Module::Starter::PBPのセットアップまでは無事終了しました。
 いざ、モジュールの作成です。
 サンプルどおりモジュール名だけを入力してみると「authorが必須ですよ」というエラーが出た。</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">C:\nqou&gt;module-starter --module=My::First
-Must specify an author
-at C:/strawberry/perl/site/lib/Module/Starter/App.pm line 97
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>C:\nqou&gt;module-starter --module=My::First
+</span></span><span style="display:flex;"><span>Must specify an author
+</span></span><span style="display:flex;"><span>at C:/strawberry/perl/site/lib/Module/Starter/App.pm line 97
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Module::Starter::PBPのセットアップをするとホームディレクトリに「config」というファイルができて、起動時にそれを読み込んでくれるはずなのだが。
 まあ、仕方なく、authorとemailを指定して実行した。
@@ -298,7 +295,7 @@ Module::Starterのバージョンが1.50でしたので、記事の当時（1.42
     <h2>Comments</h2>
     <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -323,7 +320,7 @@ Module::Starterのバージョンが1.50でしたので、記事の当時（1.42
   <footer>
   <div>
     <p>
-      &copy; nqounet 2022
+      &copy; nqounet 2023
 
       &middot; <a href="https://creativecommons.org/licenses/by/4.0" target="_blank">CC BY 4.0</a>
 
@@ -343,17 +340,19 @@ Module::Starterのバージョンが1.50でしたので、記事の当時（1.42
 
   
 
-  
-<script type="application/javascript">
+    
+      
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E50H9ESN7E"></script>
+<script>
 var doNotTrack = false;
 if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'G-E50H9ESN7E', 'auto');
-	
-	ga('send', 'pageview');
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-E50H9ESN7E', { 'anonymize_ip': false });
 }
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
 
+    
 </body>
 </html>

@@ -3,15 +3,13 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.91.0" />
+  <meta name="generator" content="Hugo 0.111.3">
 
   <title>NanoAでデータベースを使ってみる &middot; nqou.net</title>
 
   <meta name="description" content="" />
 
-  
-
-<meta itemprop="name" content="NanoAでデータベースを使ってみる">
+  <meta itemprop="name" content="NanoAでデータベースを使ってみる">
 <meta itemprop="description" content="小さな事からコツコツと。 ということで、nopasteのデータ"><meta itemprop="datePublished" content="2010-02-14T21:30:41+09:00" />
 <meta itemprop="dateModified" content="2010-02-14T21:30:41+09:00" />
 <meta itemprop="wordCount" content="962">
@@ -28,7 +26,6 @@
 <meta property="og:url" content="https://www.nqou.net/2010/02/14/213041/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2010-02-14T21:30:41+09:00" />
 <meta property="article:modified_time" content="2010-02-14T21:30:41+09:00" /><meta property="og:site_name" content="nqou.net" />
-
 
 
 
@@ -220,187 +217,187 @@
 <p>データベースを使うにあたって、はじめは素のDBIを使っていたのだが、折角なのでプラグインを作ってみた。
 と言っても、MENTAのプラグインをNanoA用に書き直しただけなんだけど。
 やはりページネーションが便利ですよ。</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">66
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">67
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">68
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">69
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">70
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">66
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">67
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">68
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">69
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">70
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">package plugin::sql;
-use strict;
-use warnings;
-use utf8;
-use base qw(NanoA::Plugin);
-sub init_plugin {
-my ($klass, $controller) = @_;
-no strict &#39;refs&#39;;
-no warnings &#39;redefine&#39;;
-# Usage: $app-&gt;sql_do($statement);
-*{$controller . &#39;::sql_do&#39;} = sub {
-my ($app, $sql) = @_;
-my $dbh = $app-&gt;db;
-$dbh-&gt;do($sql) or die $dbh-&gt;errstr;
-};
-# Usage: $app-&gt;sql_prepare_exec($statement, \@params);
-*{$controller . &#39;::sql_prepare_exec&#39;} = sub {
-my ($app, $sql, $params) = @_;
-my $dbh = $app-&gt;db;
-$params = [] unless ref $params eq &#39;ARRAY&#39;;
-my $sth = $dbh-&gt;prepare($sql) or die $dbh-&gt;errstr;
-$sth-&gt;execute(@{$params}) or die $dbh-&gt;errstr;
-$sth-&gt;finish;
-undef $sth;
-};
-# Usage: my $rows = $app-&gt;sql_select_all($statement, \@params);
-# $rows : foreach my $row (@{$rows}) { $row-&gt;{field} }
-*{$controller . &#39;::sql_select_all&#39;} = sub {
-my ($app, $sql, $params) = @_;
-my $dbh = $app-&gt;db;
-$params = [] unless ref $params eq &#39;ARRAY&#39;;
-my $sth = $dbh-&gt;prepare($sql) or die $dbh-&gt;errstr;
-$sth-&gt;execute(@{$params}) or die $dbh-&gt;errstr;
-my @res;
-while (my $row = $sth-&gt;fetchrow_hashref) {
-push @res, $row;
-}
-$sth-&gt;finish;
-undef $sth;
-return \@res;
-};
-# Usage: my ($rows, $pager) = $app-&gt;sql_select_paginate($statement, \@params, { page =&gt; num_of_page, rows =&gt; num_of_rows });
-# $rows             : foreach my $row (@{$rows}) { $row-&gt;{field} }
-# $pager-&gt;{page}    : page number
-# $pager-&gt;{has_next}: has next page
-# $pager-&gt;{has_prev}: has prev page
-*{$controller . &#39;::sql_select_paginate&#39;} = sub {
-my ($app, $sql, $params, $paging) = @_;
-my $dbh = $app-&gt;db;
-$params = [] unless ref $params eq &#39;ARRAY&#39;;
-$sql .= &#39; LIMIT ? OFFSET ?&#39;;
-my $sth = $dbh-&gt;prepare($sql) or die $dbh-&gt;errstr;
-$sth-&gt;execute(@{$params}, $paging-&gt;{rows}+1, ($paging-&gt;{page}-1)*$paging-&gt;{rows}) or die $dbh-&gt;errstr;
-my @res;
-while (my $row = $sth-&gt;fetchrow_hashref) {
-push @res, $row;
-}
-$sth-&gt;finish;
-undef $sth;
-my $has_next = 0;
-if ( @res == $paging-&gt;{rows} + 1 ) {
-pop @res;
-$has_next++;
-}
-return (\@res, {page =&gt; $paging-&gt;{page}, has_next =&gt; $has_next, has_prev =&gt; ($paging-&gt;{page} != 1) ? 1 : 0});
-};
-}
-# initialize myself
-__PACKAGE__-&gt;init_plugin(__PACKAGE__);
-1;
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>package plugin::sql;
+</span></span><span style="display:flex;"><span>use strict;
+</span></span><span style="display:flex;"><span>use warnings;
+</span></span><span style="display:flex;"><span>use utf8;
+</span></span><span style="display:flex;"><span>use base qw(NanoA::Plugin);
+</span></span><span style="display:flex;"><span>sub init_plugin {
+</span></span><span style="display:flex;"><span>my ($klass, $controller) = @_;
+</span></span><span style="display:flex;"><span>no strict &#39;refs&#39;;
+</span></span><span style="display:flex;"><span>no warnings &#39;redefine&#39;;
+</span></span><span style="display:flex;"><span># Usage: $app-&gt;sql_do($statement);
+</span></span><span style="display:flex;"><span>*{$controller . &#39;::sql_do&#39;} = sub {
+</span></span><span style="display:flex;"><span>my ($app, $sql) = @_;
+</span></span><span style="display:flex;"><span>my $dbh = $app-&gt;db;
+</span></span><span style="display:flex;"><span>$dbh-&gt;do($sql) or die $dbh-&gt;errstr;
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span># Usage: $app-&gt;sql_prepare_exec($statement, \@params);
+</span></span><span style="display:flex;"><span>*{$controller . &#39;::sql_prepare_exec&#39;} = sub {
+</span></span><span style="display:flex;"><span>my ($app, $sql, $params) = @_;
+</span></span><span style="display:flex;"><span>my $dbh = $app-&gt;db;
+</span></span><span style="display:flex;"><span>$params = [] unless ref $params eq &#39;ARRAY&#39;;
+</span></span><span style="display:flex;"><span>my $sth = $dbh-&gt;prepare($sql) or die $dbh-&gt;errstr;
+</span></span><span style="display:flex;"><span>$sth-&gt;execute(@{$params}) or die $dbh-&gt;errstr;
+</span></span><span style="display:flex;"><span>$sth-&gt;finish;
+</span></span><span style="display:flex;"><span>undef $sth;
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span># Usage: my $rows = $app-&gt;sql_select_all($statement, \@params);
+</span></span><span style="display:flex;"><span># $rows : foreach my $row (@{$rows}) { $row-&gt;{field} }
+</span></span><span style="display:flex;"><span>*{$controller . &#39;::sql_select_all&#39;} = sub {
+</span></span><span style="display:flex;"><span>my ($app, $sql, $params) = @_;
+</span></span><span style="display:flex;"><span>my $dbh = $app-&gt;db;
+</span></span><span style="display:flex;"><span>$params = [] unless ref $params eq &#39;ARRAY&#39;;
+</span></span><span style="display:flex;"><span>my $sth = $dbh-&gt;prepare($sql) or die $dbh-&gt;errstr;
+</span></span><span style="display:flex;"><span>$sth-&gt;execute(@{$params}) or die $dbh-&gt;errstr;
+</span></span><span style="display:flex;"><span>my @res;
+</span></span><span style="display:flex;"><span>while (my $row = $sth-&gt;fetchrow_hashref) {
+</span></span><span style="display:flex;"><span>push @res, $row;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>$sth-&gt;finish;
+</span></span><span style="display:flex;"><span>undef $sth;
+</span></span><span style="display:flex;"><span>return \@res;
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span># Usage: my ($rows, $pager) = $app-&gt;sql_select_paginate($statement, \@params, { page =&gt; num_of_page, rows =&gt; num_of_rows });
+</span></span><span style="display:flex;"><span># $rows             : foreach my $row (@{$rows}) { $row-&gt;{field} }
+</span></span><span style="display:flex;"><span># $pager-&gt;{page}    : page number
+</span></span><span style="display:flex;"><span># $pager-&gt;{has_next}: has next page
+</span></span><span style="display:flex;"><span># $pager-&gt;{has_prev}: has prev page
+</span></span><span style="display:flex;"><span>*{$controller . &#39;::sql_select_paginate&#39;} = sub {
+</span></span><span style="display:flex;"><span>my ($app, $sql, $params, $paging) = @_;
+</span></span><span style="display:flex;"><span>my $dbh = $app-&gt;db;
+</span></span><span style="display:flex;"><span>$params = [] unless ref $params eq &#39;ARRAY&#39;;
+</span></span><span style="display:flex;"><span>$sql .= &#39; LIMIT ? OFFSET ?&#39;;
+</span></span><span style="display:flex;"><span>my $sth = $dbh-&gt;prepare($sql) or die $dbh-&gt;errstr;
+</span></span><span style="display:flex;"><span>$sth-&gt;execute(@{$params}, $paging-&gt;{rows}+1, ($paging-&gt;{page}-1)*$paging-&gt;{rows}) or die $dbh-&gt;errstr;
+</span></span><span style="display:flex;"><span>my @res;
+</span></span><span style="display:flex;"><span>while (my $row = $sth-&gt;fetchrow_hashref) {
+</span></span><span style="display:flex;"><span>push @res, $row;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>$sth-&gt;finish;
+</span></span><span style="display:flex;"><span>undef $sth;
+</span></span><span style="display:flex;"><span>my $has_next = 0;
+</span></span><span style="display:flex;"><span>if ( @res == $paging-&gt;{rows} + 1 ) {
+</span></span><span style="display:flex;"><span>pop @res;
+</span></span><span style="display:flex;"><span>$has_next++;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>return (\@res, {page =&gt; $paging-&gt;{page}, has_next =&gt; $has_next, has_prev =&gt; ($paging-&gt;{page} != 1) ? 1 : 0});
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span># initialize myself
+</span></span><span style="display:flex;"><span>__PACKAGE__-&gt;init_plugin(__PACKAGE__);
+</span></span><span style="display:flex;"><span>1;
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>ついでに、それ用のテンプレートも作ってみた。
 まあ、MENTAの（以下略</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">? my $pager = $c-&gt;{pager};
-? my $action = $c-&gt;{action};
-? my $page_n = $pager-&gt;{page};
-? if ($pager-&gt;{has_prev}) {
-&lt;a href=&#34;&lt;?= $app-&gt;uri_for($action, { page =&gt; $page_n - 1 }) ?&gt;&#34; rel=&#34;prev&#34;&gt;前&lt;/a&gt;
-? } else {
-&lt;span class=&#34;disabled&#34;&gt;前&lt;/span&gt;
-? }
-|（現在：&lt;?= $page_n ?&gt;ページ）|
-? if ($pager-&gt;{has_next}) {
-&lt;a href=&#34;&lt;?= $app-&gt;uri_for($action, { page =&gt; $page_n + 1 }) ?&gt;&#34; rel=&#34;next&#34;&gt;次&lt;/a&gt;
-? } else {
-&lt;span class=&#34;disabled&#34;&gt;次&lt;/span&gt;
-? }
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>? my $pager = $c-&gt;{pager};
+</span></span><span style="display:flex;"><span>? my $action = $c-&gt;{action};
+</span></span><span style="display:flex;"><span>? my $page_n = $pager-&gt;{page};
+</span></span><span style="display:flex;"><span>? if ($pager-&gt;{has_prev}) {
+</span></span><span style="display:flex;"><span>&lt;a href=&#34;&lt;?= $app-&gt;uri_for($action, { page =&gt; $page_n - 1 }) ?&gt;&#34; rel=&#34;prev&#34;&gt;前&lt;/a&gt;
+</span></span><span style="display:flex;"><span>? } else {
+</span></span><span style="display:flex;"><span>&lt;span class=&#34;disabled&#34;&gt;前&lt;/span&gt;
+</span></span><span style="display:flex;"><span>? }
+</span></span><span style="display:flex;"><span>|（現在：&lt;?= $page_n ?&gt;ページ）|
+</span></span><span style="display:flex;"><span>? if ($pager-&gt;{has_next}) {
+</span></span><span style="display:flex;"><span>&lt;a href=&#34;&lt;?= $app-&gt;uri_for($action, { page =&gt; $page_n + 1 }) ?&gt;&#34; rel=&#34;next&#34;&gt;次&lt;/a&gt;
+</span></span><span style="display:flex;"><span>? } else {
+</span></span><span style="display:flex;"><span>&lt;span class=&#34;disabled&#34;&gt;次&lt;/span&gt;
+</span></span><span style="display:flex;"><span>? }
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>formプラグインを通じてHTML::AutoFormを使っているが、checkboxのcheckedが思ったように動かない。
 checked=&gt;1にしても、チェックが入っていない状態になる。
@@ -457,7 +454,7 @@ HTML::AutoFormのtディレクトリにあるコードと同じように書い�
     <h2>Comments</h2>
     <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -482,7 +479,7 @@ HTML::AutoFormのtディレクトリにあるコードと同じように書い�
   <footer>
   <div>
     <p>
-      &copy; nqounet 2022
+      &copy; nqounet 2023
 
       &middot; <a href="https://creativecommons.org/licenses/by/4.0" target="_blank">CC BY 4.0</a>
 
@@ -502,17 +499,19 @@ HTML::AutoFormのtディレクトリにあるコードと同じように書い�
 
   
 
-  
-<script type="application/javascript">
+    
+      
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E50H9ESN7E"></script>
+<script>
 var doNotTrack = false;
 if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'G-E50H9ESN7E', 'auto');
-	
-	ga('send', 'pageview');
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-E50H9ESN7E', { 'anonymize_ip': false });
 }
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
 
+    
 </body>
 </html>

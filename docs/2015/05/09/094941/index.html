@@ -3,15 +3,13 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.91.0" />
+  <meta name="generator" content="Hugo 0.111.3">
 
   <title>Herokuでhypnotoadを使ってMojoliciousを起動する &middot; nqou.net</title>
 
   <meta name="description" content="" />
 
-  
-
-<meta itemprop="name" content="Herokuでhypnotoadを使ってMojoliciousを起動する">
+  <meta itemprop="name" content="Herokuでhypnotoadを使ってMojoliciousを起動する">
 <meta itemprop="description" content="{ hypnotoad =&gt; { accepts =&gt; 1000, backlog =&gt; 10, clients =&gt; 10, graceful_timeout =&gt; 20, heartbeat_interval =&gt; 5, heartbeat_timeout =&gt; 20, listen =&gt; [qq{http://*:$ENV{PORT}}], proxy =&gt; 1, requests =&gt;"><meta itemprop="datePublished" content="2015-05-09T09:49:41+09:00" />
 <meta itemprop="dateModified" content="2015-05-09T09:49:41+09:00" />
 <meta itemprop="wordCount" content="114">
@@ -28,7 +26,6 @@
 <meta property="og:url" content="https://www.nqou.net/2015/05/09/094941/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2015-05-09T09:49:41+09:00" />
 <meta property="article:modified_time" content="2015-05-09T09:49:41+09:00" /><meta property="og:site_name" content="nqou.net" />
-
 
 
 
@@ -255,22 +252,22 @@ require IO::Socket::SSL;
 my $proclet = Proclet-&gt;new;
 
 $proclet-&gt;service(
-    code =&gt; ['hypnotoad', '-f', 'script/app'],
-    tag  =&gt; 'web',
+    code =&gt; [&#39;hypnotoad&#39;, &#39;-f&#39;, &#39;script/app&#39;],
+    tag  =&gt; &#39;web&#39;,
 );
 
 $proclet-&gt;service(
-    code =&gt; ['perl', 'script/worker'],
-    tag  =&gt; 'worker',
+    code =&gt; [&#39;perl&#39;, &#39;script/worker&#39;],
+    tag  =&gt; &#39;worker&#39;,
 );
 
 $proclet-&gt;service(
     code =&gt; sub {
-        my $keepalive_url = $ENV{APP_KEEPALIVE_URL} or die 'set env APP_KEEPALIVE_URL.';
+        my $keepalive_url = $ENV{APP_KEEPALIVE_URL} or die &#39;set env APP_KEEPALIVE_URL.&#39;;
         Furl-&gt;new-&gt;get($keepalive_url);
     },
-    tag   =&gt; 'keepalive',
-    every =&gt; '*/30 * * * *',
+    tag   =&gt; &#39;keepalive&#39;,
+    every =&gt; &#39;*/30 * * * *&#39;,
 );
 
 $proclet-&gt;run;
@@ -337,7 +334,7 @@ $proclet-&gt;run;
     <h2>Comments</h2>
     <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -362,7 +359,7 @@ $proclet-&gt;run;
   <footer>
   <div>
     <p>
-      &copy; nqounet 2022
+      &copy; nqounet 2023
 
       &middot; <a href="https://creativecommons.org/licenses/by/4.0" target="_blank">CC BY 4.0</a>
 
@@ -382,17 +379,19 @@ $proclet-&gt;run;
 
   
 
-  
-<script type="application/javascript">
+    
+      
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E50H9ESN7E"></script>
+<script>
 var doNotTrack = false;
 if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'G-E50H9ESN7E', 'auto');
-	
-	ga('send', 'pageview');
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-E50H9ESN7E', { 'anonymize_ip': false });
 }
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
 
+    
 </body>
 </html>

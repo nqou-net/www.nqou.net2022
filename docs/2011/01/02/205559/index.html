@@ -3,15 +3,13 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.91.0" />
+  <meta name="generator" content="Hugo 0.111.3">
 
   <title>Mojolicious::LiteでData::Modelを使ってみた &middot; nqou.net</title>
 
   <meta name="description" content="" />
 
-  
-
-<meta itemprop="name" content="Mojolicious::LiteでData::Modelを使ってみた">
+  <meta itemprop="name" content="Mojolicious::LiteでData::Modelを使ってみた">
 <meta itemprop="description" content="先日1.0にバージョンアップしたMojolicious（::"><meta itemprop="datePublished" content="2011-01-02T20:55:59+09:00" />
 <meta itemprop="dateModified" content="2011-01-02T20:55:59+09:00" />
 <meta itemprop="wordCount" content="606">
@@ -28,7 +26,6 @@
 <meta property="og:url" content="https://www.nqou.net/2011/01/02/205559/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2011-01-02T20:55:59+09:00" />
 <meta property="article:modified_time" content="2011-01-02T20:55:59+09:00" /><meta property="og:site_name" content="nqou.net" />
-
 
 
 
@@ -225,193 +222,193 @@ MojoliciousのWikiにORLiteを使ったサンプルがあったのですが、�
 <li><a href="https://github.com/mojolicious/mojo/wiki">Home · mojolicious/mojo Wiki</a></li>
 </ul>
 <p>ほとんどが元ネタのパクリですが。</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">66
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">67
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">68
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">69
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">70
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">71
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">72
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">73
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">74
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">75
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">76
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">77
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">78
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">79
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">80
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">81
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">82
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">83
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">84
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">85
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">86
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">87
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">88
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">89
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">90
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">91
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">66
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">67
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">68
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">69
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">70
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">71
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">72
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">73
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">74
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">75
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">76
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">77
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">78
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">79
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">80
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">81
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">82
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">83
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">84
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">85
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">86
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">87
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">88
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">89
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">90
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">91
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#75715e">#!/usr/bin/env perl</span>
-<span style="color:#75715e">#ｕｔｆ８</span>
-<span style="color:#75715e"># use Acme::PerlTidy;</span>
-<span style="color:#66d9ef">package</span> DataModel;
-<span style="color:#66d9ef">use</span> utf8;
-<span style="color:#66d9ef">use</span> base <span style="color:#e6db74">&#39;Data::Model&#39;</span>;
-<span style="color:#66d9ef">use</span> Data::Model::Schema;
-<span style="color:#66d9ef">use</span> Data::Model::Driver::DBI;
-<span style="color:#66d9ef">my</span> $dbfile <span style="color:#f92672">=</span> <span style="color:#e6db74">qq{$0.db}</span>;
-<span style="color:#66d9ef">my</span> $dsn    <span style="color:#f92672">=</span> <span style="color:#e6db74">qq{dbi:SQLite:dbname=$dbfile}</span>;
-<span style="color:#66d9ef">my</span> $driver <span style="color:#f92672">=</span> Data::Model::Driver::DBI<span style="color:#f92672">-&gt;</span><span style="color:#66d9ef">new</span>(
-    dsn             <span style="color:#f92672">=&gt;</span> $dsn,
-    connect_options <span style="color:#f92672">=&gt;</span> {sqlite_unicode <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">1</span>,},
-);
-base_driver($driver);
-install_model motorcycles <span style="color:#f92672">=&gt;</span> schema {
-    key <span style="color:#e6db74">&#39;id&#39;</span>;
-    column id    <span style="color:#f92672">=&gt;</span> int  <span style="color:#f92672">=&gt;</span> {auto_increment <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">1</span>};
-    column type  <span style="color:#f92672">=&gt;</span> char <span style="color:#f92672">=&gt;</span> {required       <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">1</span>};
-    column brand <span style="color:#f92672">=&gt;</span> char <span style="color:#f92672">=&gt;</span> {required       <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">1</span>};
-    column color <span style="color:#f92672">=&gt;</span> char <span style="color:#f92672">=&gt;</span> {required       <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">0</span>};
-};
-<span style="color:#66d9ef">unless</span> (<span style="color:#f92672">-</span>f $dbfile) {
-    <span style="color:#66d9ef">my</span> $dbh <span style="color:#f92672">=</span> DBI<span style="color:#f92672">-&gt;</span>connect($dsn, <span style="color:#e6db74">&#39;&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>, {RaiseError <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">1</span>, PrintError <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">0</span>})
-        <span style="color:#f92672">or</span> DBI<span style="color:#f92672">-&gt;</span>errstr;
-    <span style="color:#66d9ef">for</span> <span style="color:#66d9ef">my</span> $sql (__PACKAGE__<span style="color:#f92672">-&gt;</span>as_sqls) {
-        $dbh<span style="color:#f92672">-&gt;</span><span style="color:#66d9ef">do</span>($sql) <span style="color:#f92672">or</span> die $dbh<span style="color:#f92672">-&gt;</span>errstr;
-    }
-    $dbh<span style="color:#f92672">-&gt;</span>disconnect;
-}
-
-<span style="color:#66d9ef">package</span> main;
-<span style="color:#66d9ef">use</span> utf8;
-<span style="color:#66d9ef">use</span> Mojolicious::Lite;
-<span style="color:#66d9ef">use</span> Mojo::Util <span style="color:#e6db74">qw/md5_sum/</span>;
-app<span style="color:#f92672">-&gt;</span>log<span style="color:#f92672">-&gt;</span>level(<span style="color:#e6db74">&#39;debug&#39;</span>)<span style="color:#f92672">-&gt;</span>path(<span style="color:#e6db74">qq{$0.log}</span>);
-app<span style="color:#f92672">-&gt;</span>secret(md5_sum $0 )<span style="color:#f92672">-&gt;</span>log<span style="color:#f92672">-&gt;</span>debug(app<span style="color:#f92672">-&gt;</span>secret);
-app<span style="color:#f92672">-&gt;</span>helper(model <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">sub</span> { <span style="color:#66d9ef">my</span> $dbh <span style="color:#f92672">=</span> DataModel<span style="color:#f92672">-&gt;</span><span style="color:#66d9ef">new</span> });
-get <span style="color:#e6db74">&#39;/&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">sub</span> {
-    <span style="color:#66d9ef">my</span> $self       <span style="color:#f92672">=</span> shift;
-    <span style="color:#66d9ef">my</span> $model      <span style="color:#f92672">=</span> $self<span style="color:#f92672">-&gt;</span>model;
-    <span style="color:#66d9ef">my</span> $motorbikes <span style="color:#f92672">=</span> [$model<span style="color:#f92672">-&gt;</span>get(<span style="color:#e6db74">&#39;motorcycles&#39;</span> <span style="color:#f92672">=&gt;</span> {order <span style="color:#f92672">=&gt;</span> [{type <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;ASC&#39;</span>}],})];
-    $self<span style="color:#f92672">-&gt;</span>stash(
-        motorbikes <span style="color:#f92672">=&gt;</span> $motorbikes,
-        debug      <span style="color:#f92672">=&gt;</span> $self<span style="color:#f92672">-&gt;</span>dumper([$self, $model]),
-    );
-}        <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;index&#39;</span>;
-post <span style="color:#e6db74">&#39;/&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">sub</span> {
-    <span style="color:#66d9ef">my</span> $self  <span style="color:#f92672">=</span> shift;
-    <span style="color:#66d9ef">my</span> $model <span style="color:#f92672">=</span> $self<span style="color:#f92672">-&gt;</span>model;
-    $model<span style="color:#f92672">-&gt;</span>set(
-        <span style="color:#e6db74">&#39;motorcycles&#39;</span> <span style="color:#f92672">=&gt;</span> {
-            type  <span style="color:#f92672">=&gt;</span> $self<span style="color:#f92672">-&gt;</span>param(<span style="color:#e6db74">&#39;type&#39;</span>),
-            brand <span style="color:#f92672">=&gt;</span> $self<span style="color:#f92672">-&gt;</span>param(<span style="color:#e6db74">&#39;brand&#39;</span>),
-            color <span style="color:#f92672">=&gt;</span> $self<span style="color:#f92672">-&gt;</span>param(<span style="color:#e6db74">&#39;color&#39;</span>),
-        }
-    );
-    $self<span style="color:#f92672">-&gt;</span>redirect_to(<span style="color:#e6db74">&#39;/&#39;</span>);
-};
-app<span style="color:#f92672">-&gt;</span>start;
-__DATA__
-@@ index<span style="color:#f92672">.</span>html<span style="color:#f92672">.</span>ep
-<span style="color:#f92672">&lt;!</span>DOCTYPE html<span style="color:#f92672">&gt;</span>
-<span style="color:#e6db74">&lt;html&gt;</span>
-<span style="color:#e6db74">&lt;head&gt;</span>
-<span style="color:#f92672">&lt;</span>meta charset<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&lt;%= app-&gt;renderer-&gt;encoding %&gt;&#34;</span><span style="color:#f92672">&gt;</span>
-<span style="color:#e6db74">&lt;title&gt;</span>Motorcycles<span style="color:#e6db74">&lt;/title&gt;</span>
-<span style="color:#e6db74">&lt;/head&gt;</span>
-<span style="color:#e6db74">&lt;body&gt;</span>
-<span style="color:#e6db74">&lt;table&gt;</span>
-% foreach <span style="color:#66d9ef">my</span> $cycle (@{$motorbikes} ) {
-<span style="color:#e6db74">&lt;tr&gt;</span>
-<span style="color:#e6db74">&lt;td&gt;</span><span style="color:#f92672">&lt;</span>%<span style="color:#960050;background-color:#1e0010">=</span> <span style="color:#960050;background-color:#1e0010">$</span>cycle<span style="color:#f92672">-&gt;</span>id %<span style="color:#960050;background-color:#1e0010">&gt;&lt;/</span>td<span style="color:#f92672">&gt;</span>
-<span style="color:#e6db74">&lt;td&gt;</span><span style="color:#f92672">&lt;</span>%<span style="color:#960050;background-color:#1e0010">=</span> <span style="color:#960050;background-color:#1e0010">$</span>cycle<span style="color:#f92672">-&gt;</span>type %<span style="color:#960050;background-color:#1e0010">&gt;&lt;/</span>td<span style="color:#f92672">&gt;</span>
-<span style="color:#e6db74">&lt;td&gt;</span><span style="color:#f92672">&lt;</span>%<span style="color:#960050;background-color:#1e0010">=</span> <span style="color:#960050;background-color:#1e0010">$</span>cycle<span style="color:#f92672">-&gt;</span>brand %<span style="color:#960050;background-color:#1e0010">&gt;&lt;/</span>td<span style="color:#f92672">&gt;</span>
-<span style="color:#e6db74">&lt;td&gt;</span><span style="color:#f92672">&lt;</span>%<span style="color:#960050;background-color:#1e0010">=</span> <span style="color:#960050;background-color:#1e0010">$</span>cycle<span style="color:#f92672">-&gt;</span>color %<span style="color:#960050;background-color:#1e0010">&gt;&lt;/</span>td<span style="color:#f92672">&gt;</span>
-<span style="color:#e6db74">&lt;/tr&gt;</span>
-% <span style="color:#960050;background-color:#1e0010">}</span>
-<span style="color:#960050;background-color:#1e0010">&lt;/</span>table<span style="color:#f92672">&gt;</span>
-<span style="color:#e6db74">&lt;p&gt;</span>バイクを登録してください<span style="color:#960050;background-color:#1e0010">。</span><span style="color:#e6db74">&lt;/p&gt;</span>
-<span style="color:#e6db74">&lt;p&gt;</span>
-<span style="color:#f92672">&lt;</span>%<span style="color:#960050;background-color:#1e0010">=</span> form_for <span style="color:#e6db74">&#39;/&#39;</span> <span style="color:#f92672">=&gt;</span> (method <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;post&#39;</span>) <span style="color:#f92672">=&gt;</span> begin %<span style="color:#960050;background-color:#1e0010">&gt;</span>
-<span style="color:#960050;background-color:#1e0010">%</span> foreach (<span style="color:#e6db74">qw/type brand color/</span>) {
-<span style="color:#f92672">&lt;</span>%<span style="color:#960050;background-color:#1e0010">=</span> uc($_) %<span style="color:#960050;background-color:#1e0010">&gt;</span>: <span style="color:#f92672">&lt;</span>%<span style="color:#960050;background-color:#1e0010">=</span> input_tag $_, <span style="color:#e6db74">&#39;type&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;text&#39;</span> %<span style="color:#960050;background-color:#1e0010">&gt;&lt;</span>br <span style="color:#f92672">/&gt;</span>
-% <span style="color:#960050;background-color:#1e0010">}</span>
-<span style="color:#960050;background-color:#1e0010">&lt;%=</span> submit_button <span style="color:#e6db74">&#39;Submit motorcycle&#39;</span> %<span style="color:#960050;background-color:#1e0010">&gt;</span>
-<span style="color:#960050;background-color:#1e0010">&lt;%</span> end %<span style="color:#960050;background-color:#1e0010">&gt;</span>
-<span style="color:#960050;background-color:#1e0010">&lt;/</span>p<span style="color:#f92672">&gt;</span>
-<span style="color:#e6db74">&lt;pre&gt;</span><span style="color:#f92672">&lt;</span>%<span style="color:#960050;background-color:#1e0010">=</span> <span style="color:#960050;background-color:#1e0010">$</span>debug %<span style="color:#960050;background-color:#1e0010">&gt;&lt;/</span>pre<span style="color:#f92672">&gt;</span>
-<span style="color:#e6db74">&lt;/body&gt;</span>
-<span style="color:#e6db74">&lt;/html&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/env perl</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#ｕｔｆ８</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># use Acme::PerlTidy;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">package</span> DataModel;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">use</span> utf8;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">use</span> base <span style="color:#e6db74">&#39;Data::Model&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">use</span> Data::Model::Schema;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">use</span> Data::Model::Driver::DBI;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">my</span> $dbfile <span style="color:#f92672">=</span> <span style="color:#e6db74">qq{$0.db}</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">my</span> $dsn    <span style="color:#f92672">=</span> <span style="color:#e6db74">qq{dbi:SQLite:dbname=$dbfile}</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">my</span> $driver <span style="color:#f92672">=</span> Data::Model::Driver::DBI<span style="color:#f92672">-&gt;</span><span style="color:#66d9ef">new</span>(
+</span></span><span style="display:flex;"><span>    dsn             <span style="color:#f92672">=&gt;</span> $dsn,
+</span></span><span style="display:flex;"><span>    connect_options <span style="color:#f92672">=&gt;</span> {sqlite_unicode <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">1</span>,},
+</span></span><span style="display:flex;"><span>);
+</span></span><span style="display:flex;"><span>base_driver($driver);
+</span></span><span style="display:flex;"><span>install_model motorcycles <span style="color:#f92672">=&gt;</span> schema {
+</span></span><span style="display:flex;"><span>    key <span style="color:#e6db74">&#39;id&#39;</span>;
+</span></span><span style="display:flex;"><span>    column id    <span style="color:#f92672">=&gt;</span> int  <span style="color:#f92672">=&gt;</span> {auto_increment <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">1</span>};
+</span></span><span style="display:flex;"><span>    column type  <span style="color:#f92672">=&gt;</span> char <span style="color:#f92672">=&gt;</span> {required       <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">1</span>};
+</span></span><span style="display:flex;"><span>    column brand <span style="color:#f92672">=&gt;</span> char <span style="color:#f92672">=&gt;</span> {required       <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">1</span>};
+</span></span><span style="display:flex;"><span>    column color <span style="color:#f92672">=&gt;</span> char <span style="color:#f92672">=&gt;</span> {required       <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">0</span>};
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">unless</span> (<span style="color:#f92672">-</span>f $dbfile) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">my</span> $dbh <span style="color:#f92672">=</span> DBI<span style="color:#f92672">-&gt;</span>connect($dsn, <span style="color:#e6db74">&#39;&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>, {RaiseError <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">1</span>, PrintError <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">0</span>})
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">or</span> DBI<span style="color:#f92672">-&gt;</span>errstr;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> <span style="color:#66d9ef">my</span> $sql (__PACKAGE__<span style="color:#f92672">-&gt;</span>as_sqls) {
+</span></span><span style="display:flex;"><span>        $dbh<span style="color:#f92672">-&gt;</span><span style="color:#66d9ef">do</span>($sql) <span style="color:#f92672">or</span> die $dbh<span style="color:#f92672">-&gt;</span>errstr;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    $dbh<span style="color:#f92672">-&gt;</span>disconnect;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">package</span> main;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">use</span> utf8;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">use</span> Mojolicious::Lite;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">use</span> Mojo::Util <span style="color:#e6db74">qw/md5_sum/</span>;
+</span></span><span style="display:flex;"><span>app<span style="color:#f92672">-&gt;</span>log<span style="color:#f92672">-&gt;</span>level(<span style="color:#e6db74">&#39;debug&#39;</span>)<span style="color:#f92672">-&gt;</span>path(<span style="color:#e6db74">qq{$0.log}</span>);
+</span></span><span style="display:flex;"><span>app<span style="color:#f92672">-&gt;</span>secret(md5_sum $0 )<span style="color:#f92672">-&gt;</span>log<span style="color:#f92672">-&gt;</span>debug(app<span style="color:#f92672">-&gt;</span>secret);
+</span></span><span style="display:flex;"><span>app<span style="color:#f92672">-&gt;</span>helper(model <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">sub</span> { <span style="color:#66d9ef">my</span> $dbh <span style="color:#f92672">=</span> DataModel<span style="color:#f92672">-&gt;</span><span style="color:#66d9ef">new</span> });
+</span></span><span style="display:flex;"><span>get <span style="color:#e6db74">&#39;/&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">sub</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">my</span> $self       <span style="color:#f92672">=</span> shift;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">my</span> $model      <span style="color:#f92672">=</span> $self<span style="color:#f92672">-&gt;</span>model;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">my</span> $motorbikes <span style="color:#f92672">=</span> [$model<span style="color:#f92672">-&gt;</span>get(<span style="color:#e6db74">&#39;motorcycles&#39;</span> <span style="color:#f92672">=&gt;</span> {order <span style="color:#f92672">=&gt;</span> [{type <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;ASC&#39;</span>}],})];
+</span></span><span style="display:flex;"><span>    $self<span style="color:#f92672">-&gt;</span>stash(
+</span></span><span style="display:flex;"><span>        motorbikes <span style="color:#f92672">=&gt;</span> $motorbikes,
+</span></span><span style="display:flex;"><span>        debug      <span style="color:#f92672">=&gt;</span> $self<span style="color:#f92672">-&gt;</span>dumper([$self, $model]),
+</span></span><span style="display:flex;"><span>    );
+</span></span><span style="display:flex;"><span>}        <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;index&#39;</span>;
+</span></span><span style="display:flex;"><span>post <span style="color:#e6db74">&#39;/&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">sub</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">my</span> $self  <span style="color:#f92672">=</span> shift;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">my</span> $model <span style="color:#f92672">=</span> $self<span style="color:#f92672">-&gt;</span>model;
+</span></span><span style="display:flex;"><span>    $model<span style="color:#f92672">-&gt;</span>set(
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;motorcycles&#39;</span> <span style="color:#f92672">=&gt;</span> {
+</span></span><span style="display:flex;"><span>            type  <span style="color:#f92672">=&gt;</span> $self<span style="color:#f92672">-&gt;</span>param(<span style="color:#e6db74">&#39;type&#39;</span>),
+</span></span><span style="display:flex;"><span>            brand <span style="color:#f92672">=&gt;</span> $self<span style="color:#f92672">-&gt;</span>param(<span style="color:#e6db74">&#39;brand&#39;</span>),
+</span></span><span style="display:flex;"><span>            color <span style="color:#f92672">=&gt;</span> $self<span style="color:#f92672">-&gt;</span>param(<span style="color:#e6db74">&#39;color&#39;</span>),
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    );
+</span></span><span style="display:flex;"><span>    $self<span style="color:#f92672">-&gt;</span>redirect_to(<span style="color:#e6db74">&#39;/&#39;</span>);
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>app<span style="color:#f92672">-&gt;</span>start;
+</span></span><span style="display:flex;"><span>__DATA__
+</span></span><span style="display:flex;"><span>@@ index<span style="color:#f92672">.</span>html<span style="color:#f92672">.</span>ep
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;!</span>DOCTYPE html<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;html&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;head&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;</span>meta charset<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&lt;%= app-&gt;renderer-&gt;encoding %&gt;&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;title&gt;</span>Motorcycles<span style="color:#e6db74">&lt;/title&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;/head&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;body&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;table&gt;</span>
+</span></span><span style="display:flex;"><span>% foreach <span style="color:#66d9ef">my</span> $cycle (@{$motorbikes} ) {
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;tr&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;td&gt;</span><span style="color:#f92672">&lt;</span>%<span style="color:#960050;background-color:#1e0010">=</span> <span style="color:#960050;background-color:#1e0010">$</span>cycle<span style="color:#f92672">-&gt;</span>id %<span style="color:#960050;background-color:#1e0010">&gt;&lt;/</span>td<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;td&gt;</span><span style="color:#f92672">&lt;</span>%<span style="color:#960050;background-color:#1e0010">=</span> <span style="color:#960050;background-color:#1e0010">$</span>cycle<span style="color:#f92672">-&gt;</span>type %<span style="color:#960050;background-color:#1e0010">&gt;&lt;/</span>td<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;td&gt;</span><span style="color:#f92672">&lt;</span>%<span style="color:#960050;background-color:#1e0010">=</span> <span style="color:#960050;background-color:#1e0010">$</span>cycle<span style="color:#f92672">-&gt;</span>brand %<span style="color:#960050;background-color:#1e0010">&gt;&lt;/</span>td<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;td&gt;</span><span style="color:#f92672">&lt;</span>%<span style="color:#960050;background-color:#1e0010">=</span> <span style="color:#960050;background-color:#1e0010">$</span>cycle<span style="color:#f92672">-&gt;</span>color %<span style="color:#960050;background-color:#1e0010">&gt;&lt;/</span>td<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;/tr&gt;</span>
+</span></span><span style="display:flex;"><span>% <span style="color:#960050;background-color:#1e0010">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">&lt;/</span>table<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;p&gt;</span><span style="color:#960050;background-color:#1e0010">バイクを登録してください。</span><span style="color:#e6db74">&lt;/p&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;p&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;</span>%<span style="color:#960050;background-color:#1e0010">=</span> form_for <span style="color:#e6db74">&#39;/&#39;</span> <span style="color:#f92672">=&gt;</span> (method <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;post&#39;</span>) <span style="color:#f92672">=&gt;</span> begin %<span style="color:#960050;background-color:#1e0010">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">%</span> foreach (<span style="color:#e6db74">qw/type brand color/</span>) {
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;</span>%<span style="color:#960050;background-color:#1e0010">=</span> uc($_) %<span style="color:#960050;background-color:#1e0010">&gt;</span>: <span style="color:#f92672">&lt;</span>%<span style="color:#960050;background-color:#1e0010">=</span> input_tag $_, <span style="color:#e6db74">&#39;type&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;text&#39;</span> %<span style="color:#960050;background-color:#1e0010">&gt;&lt;</span>br <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>% <span style="color:#960050;background-color:#1e0010">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">&lt;%=</span> submit_button <span style="color:#e6db74">&#39;Submit motorcycle&#39;</span> %<span style="color:#960050;background-color:#1e0010">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">&lt;%</span> end %<span style="color:#960050;background-color:#1e0010">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">&lt;/</span>p<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;pre&gt;</span><span style="color:#f92672">&lt;</span>%<span style="color:#960050;background-color:#1e0010">=</span> <span style="color:#960050;background-color:#1e0010">$</span>debug %<span style="color:#960050;background-color:#1e0010">&gt;&lt;/</span>pre<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;/body&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;/html&gt;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div>
   </div>
@@ -468,7 +465,7 @@ __DATA__
     <h2>Comments</h2>
     <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -493,7 +490,7 @@ __DATA__
   <footer>
   <div>
     <p>
-      &copy; nqounet 2022
+      &copy; nqounet 2023
 
       &middot; <a href="https://creativecommons.org/licenses/by/4.0" target="_blank">CC BY 4.0</a>
 
@@ -513,17 +510,19 @@ __DATA__
 
   
 
-  
-<script type="application/javascript">
+    
+      
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E50H9ESN7E"></script>
+<script>
 var doNotTrack = false;
 if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'G-E50H9ESN7E', 'auto');
-	
-	ga('send', 'pageview');
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-E50H9ESN7E', { 'anonymize_ip': false });
 }
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
 
+    
 </body>
 </html>
