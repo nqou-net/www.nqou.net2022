@@ -2,9 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://www.nqou.net/2023/03/21/132630/</loc>
-    <lastmod>2023-03-21T13:26:30+09:00</lastmod>
-  </url><url>
     <loc>https://www.nqou.net/</loc>
     <lastmod>2023-03-21T13:26:30+09:00</lastmod>
   </url><url>
@@ -15,6 +12,9 @@
     <lastmod>2023-03-21T13:26:30+09:00</lastmod>
   </url><url>
     <loc>https://www.nqou.net/tags/yapc/</loc>
+    <lastmod>2023-03-21T13:26:30+09:00</lastmod>
+  </url><url>
+    <loc>https://www.nqou.net/2023/03/21/132630/</loc>
     <lastmod>2023-03-21T13:26:30+09:00</lastmod>
   </url><url>
     <loc>https://www.nqou.net/tags/undef/</loc>
