@@ -355,7 +355,7 @@
       <pubDate>Sat, 13 May 2017 17:25:28 +0900</pubDate>
       
       <guid>https://www.nqou.net/2017/05/13/172528/</guid>
-      <description>おはようございます。 若林（@nqounet）です。 1 GRUB_CMDLINE_LINUX_DEFAULT=&amp;#34;systemd.unit=multi-user.target quiet nosplash&amp;#34;</description>
+      <description>おはようございます。 若林（@nqounet）です。 ubunt</description>
     </item>
     
     <item>
@@ -382,7 +382,7 @@
       <pubDate>Thu, 08 Dec 2016 20:21:41 +0900</pubDate>
       
       <guid>https://www.nqou.net/2016/12/08/202141/</guid>
-      <description>use strict; use warnings; use feature &amp;#39;say&amp;#39;; my @job; push @job, sub { say 1 }; push @job, sub { say 2 }; say &amp;#34;hoge&amp;#34;; unshift @job, sub { say</description>
+      <description>この記事は Perl 5 Advent Calendar 2016 の8日目の記事です。 昨日は @wakegisky さんの Perl の基</description>
     </item>
     
     <item>
@@ -391,7 +391,7 @@
       <pubDate>Fri, 02 Dec 2016 00:14:19 +0900</pubDate>
       
       <guid>https://www.nqou.net/2016/12/02/001419/</guid>
-      <description>おはようございます。 若林（@nqounet）です。 1 2 3 4 5</description>
+      <description>おはようございます。 若林（@nqounet）です。 この記事は</description>
     </item>
     
     <item>
@@ -400,7 +400,7 @@
       <pubDate>Thu, 01 Dec 2016 01:08:47 +0900</pubDate>
       
       <guid>https://www.nqou.net/2016/12/01/010847/</guid>
-      <description>おはようございます。 若林（@nqounet）です。 $ perl -v This is</description>
+      <description>おはようございます。 若林（@nqounet）です。 この記事は</description>
     </item>
     
     <item>

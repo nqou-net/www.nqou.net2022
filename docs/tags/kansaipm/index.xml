@@ -22,7 +22,7 @@
       <pubDate>Thu, 08 Dec 2016 20:21:41 +0900</pubDate>
       
       <guid>https://www.nqou.net/2016/12/08/202141/</guid>
-      <description>use strict; use warnings; use feature &amp;#39;say&amp;#39;; my @job; push @job, sub { say 1 }; push @job, sub { say 2 }; say &amp;#34;hoge&amp;#34;; unshift @job, sub { say</description>
+      <description>この記事は Perl 5 Advent Calendar 2016 の8日目の記事です。 昨日は @wakegisky さんの Perl の基</description>
     </item>
     
     <item>
