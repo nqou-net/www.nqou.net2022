@@ -46,20 +46,20 @@ customCSS = ["/css/custom.css"]
 
   [[menu.main]]
   name = "Posts"
-  weight = 100
+  weight = 200
   identifier = "post"
   url = "/post/"
 
   [[menu.main]]
   name = "Tags"
-  weight = 200
+  weight = 300
   identifier = "tags"
   url = "/tags/"
 
   [[menu.main]]
   name = "About"
   identifier = "about"
-  weight = 10
+  weight = 100
   url = "/about/"
 
 [taxonomies]
